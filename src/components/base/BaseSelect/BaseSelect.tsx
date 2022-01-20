@@ -14,6 +14,11 @@ interface Props {
   optionsValue: any;
 }
 
+interface ISelectItem {
+  value: string;
+  title: string;
+}
+
 const BaseSelect: React.FC<Props> = ({
   defaultValue,
   placeholder,
@@ -22,6 +27,7 @@ const BaseSelect: React.FC<Props> = ({
   type = 'default',
   optionsValue,
 }) => {
+  // console.log('optionsValue: ', optionsValue);
   const [selectedOption, setSelectedOption] = useState(defaultValue || '');
   const [showDropdown, setShowDropdown] = useState(false);
   const showDropdownHandler = () => setShowDropdown(!showDropdown);
@@ -67,9 +73,9 @@ const BaseSelect: React.FC<Props> = ({
               : styles.HideDropdownOptions
           } `}
         >
-          {optionsValue.map((item) => {
+          {optionsValue.map((item: ISelectItem, index: number) => {
             return (
-              <Option value={item.value} key={item.value}>
+              <Option value={item.value} key={item.value + index}>
                 {item.title}
               </Option>
             );

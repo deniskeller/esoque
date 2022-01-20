@@ -1,7 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   BaseButton,
@@ -15,25 +12,33 @@ import styles from './Login.module.scss';
 interface Props {}
 
 const Login: React.FC<Props> = () => {
-  const router = useRouter();
-  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const changeHandlerName = (value: string) => {
-    setName(value);
-  };
-  const changeHandlerPassword = (value: string) => {
-    const starText = Array(value.length).fill('*').join('');
-    setPassword(starText);
+  const changeHandlerEmail = (value: string) => {
+    setEmail(value);
   };
 
-  const goToLogin = () => {
-    router.push('/login');
+  const changeHandlerPassword = (value: string) => {
+    //доделать здездочки на пароль вместо точек
+    // const starText = Array(value.length).fill('*').join('');
+    setPassword(value);
+  };
+
+  const submitHandler = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const data = {
+      email: email,
+      password: password,
+    };
+    console.log('data: ', data);
+    setEmail('');
+    setPassword('');
   };
 
   return (
     <BaseContainer>
-      <div className={styles.Login}>
+      <form action='' method='post' className={styles.Login}>
         <BaseTitle className={styles.Title}>Sign in to Esoque</BaseTitle>
         <BaseText className={styles.Subtitle}>
           It is great to see you back! Please log in.
@@ -41,9 +46,9 @@ const Login: React.FC<Props> = () => {
 
         <BaseInput
           // label='Email'
-          value={name}
-          name='name'
-          onChange={changeHandlerName}
+          value={email}
+          name='email'
+          onChange={changeHandlerEmail}
           placeholder='Email'
           type='text'
           required
@@ -70,14 +75,14 @@ const Login: React.FC<Props> = () => {
           </Link>
         </div>
 
-        <BaseButton onClick={goToLogin} className={styles.BtnLogin}>
+        <BaseButton onClick={submitHandler} className={styles.BtnLogin}>
           Log in
         </BaseButton>
 
         <Link href={'/'}>
           <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
         </Link>
-      </div>
+      </form>
     </BaseContainer>
   );
 };
