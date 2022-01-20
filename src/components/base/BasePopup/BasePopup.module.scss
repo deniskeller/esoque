@@ -1,0 +1,45 @@
+.BasePopup {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000000;
+  background: rgba(0, 0, 0, 0.85);
+  min-height: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+.BasePopup_content {
+  width: 100%;
+  min-height: inherit;
+  position: relative;
+  background: $white;
+  margin: 20px auto;
+  max-width: em(947px);
+  padding: em(60px) em(50px);
+  @include ifmobile {
+    margin: 0;
+    padding: em(60px) em(20px) em(40px);
+  }
+}
+.BasePopup_close {
+  width: em(30px);
+  height: em(30px);
+  position: absolute;
+  top: em(30px);
+  right: em(30px);
+  cursor: pointer;
+  @include ifmobile {
+    width: em(20px);
+    height: em(20px);
+    top: em(20px);
+    right: em(20px);
+  }
+}
+
+.visible {
+  display: block;
+}

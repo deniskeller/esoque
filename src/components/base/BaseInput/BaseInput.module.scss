@@ -1,0 +1,31 @@
+.BaseInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  // width: 100%;
+  // width: em(543px);
+  height: em(83px);
+  font-size: em(20px);
+  font-weight: 400;
+  color: $black;
+  outline: none;
+  position: relative;
+  background: #f2f5f6;
+  border: 2px solid #e2f063;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: em(10px);
+  padding: em(30px) em(37px);
+  @include placeholder-color($placeholder);
+}
+
+.Label {
+  color: $white;
+  font-size: em(18px);
+  pointer-events: none;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}

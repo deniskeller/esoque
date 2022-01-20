@@ -1,0 +1,23 @@
+.Title {
+  margin: 0;
+  color: $yellow;
+  line-height: 100%;
+
+  &_h1 {
+    @include ifdesktop {
+      font-size: em(69px);
+      font-weight: 700;
+    }
+    @include ifmobile {
+      font-size: em(26px);
+    }
+  }
+  &_h2 {
+    font-size: em(26px);
+  }
+  &_h3 {
+    text-transform: uppercase;
+    font-size: em(14px);
+    margin-bottom: 0.3em;
+  }
+}

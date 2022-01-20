@@ -1,0 +1,46 @@
+.Container {
+  width: 100%;
+  max-width: em(1350px);
+  margin: 0 auto;
+  position: relative;
+}
+.Navbar {
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 54px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include ifmobile {
+    // width: 100%;
+    // height: em($navbar-height);
+  }
+
+  &__burger {
+    display: none;
+    width: em(30px);
+    height: em(30px);
+    justify-self: end;
+    @include ifmobile {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: em(75px);
+    @include ifmobile {
+      display: none;
+    }
+  }
+}
+
+.Navbar__select_language {
+  width: em(87px);
+  margin-right: em(30px);
+}

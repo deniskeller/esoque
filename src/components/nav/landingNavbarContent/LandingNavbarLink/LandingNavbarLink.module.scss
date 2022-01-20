@@ -1,0 +1,14 @@
+.Li {
+  list-style: none;
+  letter-spacing: 2px;
+  font-size: em(18px);
+  color: $white;
+}
+
+.Link:hover {
+  color: $yellow;
+}
+.Active {
+  font-weight: bold;
+  color: $yellow;
+}

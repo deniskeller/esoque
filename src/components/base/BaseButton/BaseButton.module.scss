@@ -1,0 +1,44 @@
+//общие
+.Button {
+  height: em(43px);
+  min-width: em(158px);
+  font-size: em(18px);
+  border: none;
+  border-radius: em(10px);
+  outline: none;
+  font-weight: normal;
+  white-space: nowrap;
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @include iftablet {
+    min-width: em(100px);
+    font-size: em(14px);
+  }
+  @include ifmobile {
+    // width: 100%;
+  }
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+//стандартаня желтая
+.Button_default {
+  color: $black;
+  background: $yellow;
+}
+
+//пустая
+.Button_empty {
+  color: $white;
+  background: none;
+  &:hover {
+    color: $yellow;
+  }
+}

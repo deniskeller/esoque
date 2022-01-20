@@ -1,0 +1,17 @@
+.BaseContainer {
+  width: 100%;
+  max-width: em(1532px);
+  margin: 0 auto;
+  position: relative;
+  @include ifmobile {
+    // padding: em(25px);
+    // padding-top: em($navbar-height + 25px);
+  }
+}
+
+// .appContent {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   min-height: 100vh;
+// }

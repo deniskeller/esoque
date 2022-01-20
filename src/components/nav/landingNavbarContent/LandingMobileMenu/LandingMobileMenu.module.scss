@@ -1,0 +1,35 @@
+.MobileMenuPopup {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000000;
+  min-height: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+  // @extend %background-gradient;
+}
+
+.MobileMenuPopup_content {
+  width: 100%;
+  min-height: inherit;
+  padding: 90px 20px 40px;
+  position: relative;
+}
+.MobileMenuPopup_close {
+  width: em(30px);
+  height: em(30px);
+  position: absolute;
+  top: em(30px);
+  right: em(15px);
+  cursor: pointer;
+}
+
+.visible {
+  display: flex;
+}

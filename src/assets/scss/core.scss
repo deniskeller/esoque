@@ -1,0 +1,73 @@
+@use 'sass:math';
+
+html {
+  color: $black;
+  font-family: $font-Calibri;
+  font-size: math.div(18, 720) * 100vh;
+  min-height: 100%;
+  line-height: 1.8;
+}
+
+@media screen and (max-aspect-ratio: 1735/720) {
+  html {
+    font-size: math.div(18, 1735) * 100vw;
+  }
+}
+
+@media only screen and (min-width: 1735px) and (max-aspect-ratio: 1735/720) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-height: 720px) and (min-aspect-ratio: 1735/720) {
+  html {
+    font-size: 18px;
+  }
+}
+
+html {
+  @include ifmobile {
+    font-size: math.div(18, 375) * 100vw;
+  }
+
+  // @include iftablet {
+  //   font-size: math.div(14, 1024) * 100vw;
+  // }
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  // -webkit-box-shadow: 0 0 0px 1000px $light_grey inset !important;
+}
