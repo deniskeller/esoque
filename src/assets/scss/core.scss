@@ -2,7 +2,7 @@
 
 html {
   color: $black;
-  font-family: $font-Calibri;
+  font-family: $font-Circe;
   font-size: math.div(18, 720) * 100vh;
   min-height: 100%;
   line-height: 1.8;
@@ -28,12 +28,12 @@ html {
 
 html {
   @include ifmobile {
-    font-size: math.div(18, 375) * 100vw;
+    font-size: math.div(18, 360) * 100vw;
   }
 
-  // @include iftablet {
-  //   font-size: math.div(14, 1024) * 100vw;
-  // }
+  @include iftablet {
+    font-size: math.div(14, 1024) * 100vw;
+  }
 }
 
 body {

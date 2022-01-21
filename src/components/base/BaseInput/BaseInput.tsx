@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BaseInput.module.scss';
 
 interface Props {
-  value: string;
+  value: string | number;
   type: string;
   name: string;
   label?: string;
@@ -10,7 +10,7 @@ interface Props {
   required?: boolean;
   className?: string;
   error?: string | boolean;
-  onChange(value: string): void;
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const BaseInput: React.FC<Props> = ({
@@ -33,9 +33,7 @@ const BaseInput: React.FC<Props> = ({
         name={name}
         placeholder={placeholder}
         required={required}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.target.value)
-        }
+        onChange={onChange}
       />
     </div>
   );

@@ -19,6 +19,7 @@
   border-radius: em(10px);
   padding: em(30px) em(37px);
   @include placeholder-color($placeholder);
+  font-family: $font-Circe;
 }
 
 .Label {

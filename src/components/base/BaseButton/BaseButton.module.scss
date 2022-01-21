@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-family: $font-Circe;
   @include iftablet {
     min-width: em(100px);
     font-size: em(14px);
