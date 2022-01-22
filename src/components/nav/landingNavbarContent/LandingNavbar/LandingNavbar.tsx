@@ -1,10 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { BaseButton, BaseContainer, BaseSelect } from '@base/index';
+import { BaseButton, BaseContainer } from '@base/index';
 import { LandingMobileMenu, LandingNavbarLink } from '../../index';
 
 import styles from './LandingNavbar.module.scss';
+import SelectLanguage from '../SelectLanguage/SelectLanguage';
 
 interface Props {}
 
@@ -84,17 +85,23 @@ const LandingNavbar: React.FC<Props> = () => {
           })}
         </ul>
 
-        <BaseSelect
+        <SelectLanguage
           className={styles.Navbar__select_language}
           placeholder='en'
           optionsValue={languages}
           type='language'
         />
 
-        <BaseButton type='empty' onClick={goToLogin}>
+        <BaseButton
+          type='empty'
+          onClick={goToLogin}
+          className={styles.BtnLogin}
+        >
           Log In
         </BaseButton>
-        <BaseButton onClick={goToRegister}>Sign Up</BaseButton>
+        <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
+          Sign Up
+        </BaseButton>
 
         <LandingMobileMenu visible={modal} setVisible={setModal}>
           <ul>

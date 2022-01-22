@@ -8,19 +8,19 @@ html {
   line-height: 1.8;
 }
 
-@media screen and (max-aspect-ratio: 1735/720) {
+@media screen and (max-aspect-ratio: 1440/720) {
   html {
-    font-size: math.div(18, 1735) * 100vw;
+    font-size: math.div(18, 1440) * 100vw;
   }
 }
 
-@media only screen and (min-width: 1735px) and (max-aspect-ratio: 1735/720) {
+@media only screen and (min-width: 1440px) and (max-aspect-ratio: 1440/720) {
   html {
     font-size: 18px;
   }
 }
 
-@media only screen and (min-height: 720px) and (min-aspect-ratio: 1735/720) {
+@media only screen and (min-height: 720px) and (min-aspect-ratio: 1440/720) {
   html {
     font-size: 18px;
   }
@@ -32,7 +32,7 @@ html {
   }
 
   @include iftablet {
-    font-size: math.div(14, 1024) * 100vw;
+    font-size: math.div(18, 1024) * 100vw;
   }
 }
 

@@ -20,14 +20,16 @@ const BaseButton: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <button
-      disabled={disabled}
-      style={{ ...style }}
-      className={`${styles.Button} ${styles['Button_' + type]} ${className}`}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <div className={` ${className}`}>
+      <button
+        disabled={disabled}
+        style={{ ...style }}
+        className={`${styles.Button} ${styles['Button_' + type]}`}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    </div>
   );
 };
 

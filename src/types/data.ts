@@ -7,7 +7,7 @@ export interface IPersonalData {
 
 export interface IPersonalAdress {
   country: string;
-  postcode: '';
+  postcode: number;
   city: string;
   adress1: string;
   adress2: string;
@@ -24,6 +24,7 @@ export interface IBusiness {
 export interface IValues {
   email: string;
   phone: number;
+  phoneCode: number;
   password: string;
   personalData: IPersonalData;
   personalAdress: IPersonalAdress;

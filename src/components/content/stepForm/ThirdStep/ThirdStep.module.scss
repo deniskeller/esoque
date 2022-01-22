@@ -16,12 +16,6 @@
   margin-bottom: 97px;
 }
 
-.Input {
-  width: em(541px);
-  height: em(83px);
-  margin-bottom: em(127px);
-}
-
 .Link {
   font-size: em(16px);
   font-weight: 400;
@@ -43,12 +37,24 @@
   margin-bottom: em(23px);
 }
 
-.Question {
-  font-size: em(16px);
-  margin-bottom: em(23px);
+.Inputs {
+  width: 100%;
+  max-width: em(1104px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: em(127px);
+  @include ifmobile {
+    flex-wrap: wrap;
+  }
 }
 
-.LinkQuestion {
-  color: $yellow;
-  text-decoration: none;
+.Input {
+  width: em(541px);
+  height: em(83px);
+}
+
+.SearchSelect {
+  width: em(541px);
+  height: em(81px);
 }

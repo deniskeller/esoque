@@ -50,27 +50,67 @@
   background: #f2f5f6;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.ListItem {
+.Ul {
+  max-height: em(170px);
+  overflow-y: scroll;
+  // scrollbar-width: none; /* For Firefox */
+  // -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+// .Ul::-webkit-scrollbar {
+//   display: none;
+//   width: 0px; /* For Chrome, Safari, and Opera */
+// }
+
+.Li {
   cursor: pointer;
+  width: 100%;
   height: em(83px);
   font-size: em(20px);
   font-weight: normal;
   line-height: 120%;
   list-style: none;
-  padding: em(30px) em(42px);
+  padding: em(30px) em(40px) em(30px) em(66px);
   color: $placeholder;
-  border-radius: 10px;
-  &:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  &:last-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
   &:hover {
     background: $light_grey;
   }
+}
+
+.SelectSearch {
+  height: em(83px);
+  position: relative;
+  padding-left: em(72px);
+}
+
+.IconSearch {
+  width: em(34px);
+  height: em(34px);
+  position: absolute;
+  top: em(24px);
+  left: em(20px);
+}
+
+.Input {
+  width: 100%;
+  height: 100%;
+  font-size: em(20px);
+  line-height: 120%;
+  font-weight: 400;
+  color: $black;
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+  background: $input;
+  border-radius: em(10px);
+  padding: em(30px) em(42px) em(30px) 0px;
+  border: none;
+}
+
+.CountryCode {
+  color: $black;
+  margin-right: em(24px);
 }

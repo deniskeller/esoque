@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './BaseInput.module.scss';
 
 interface Props {
-  value: string | number;
   type: string;
   name: string;
   label?: string;
@@ -10,13 +9,15 @@ interface Props {
   required?: boolean;
   className?: string;
   error?: string | boolean;
-  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string | number;
+  onChange(value: string | number): void;
 }
 
 const BaseInput: React.FC<Props> = ({
   value,
   label,
   type,
+  error,
   name,
   required = false,
   placeholder,
@@ -29,12 +30,15 @@ const BaseInput: React.FC<Props> = ({
       <input
         value={value}
         type={type}
-        className={styles.Input}
+        className={`${styles.Input} ${error ? styles.Error : ''}`}
         name={name}
         placeholder={placeholder}
         required={required}
-        onChange={onChange}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          onChange(e.target.value)
+        }
       />
+      {error ? <label className={styles.ErrorText}>{error}</label> : ''}
     </div>
   );
 };

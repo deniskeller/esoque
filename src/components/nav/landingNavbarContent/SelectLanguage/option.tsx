@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useSelectContext } from './selectContext';
-import styles from './BaseSelect.module.scss';
+import styles from './SelectLanguage.module.scss';
 
 const Option: React.FC<{
   children: ReactNode | ReactNode[];

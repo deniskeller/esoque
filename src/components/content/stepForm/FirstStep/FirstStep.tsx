@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import {
-  BaseButton,
-  BaseContainer,
-  BaseInput,
-  BaseText,
-  BaseTitle,
-} from '@base/index';
+import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
 import styles from './FirstStep.module.scss';
-import { IValues } from 'types/data';
 
 interface Props {
   nextStep: () => void;
-  handleFormData: (value: string | number) => void;
-  values: IValues;
 }
 
-const FirstStep: React.FC<Props> = ({ nextStep, handleFormData, values }) => {
+const FirstStep: React.FC<Props> = ({ nextStep }) => {
+  const [email, setEmail] = React.useState<string>('');
+  const changeHandlerPhone = (value: string) => {
+    setEmail(value);
+  };
+
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
     nextStep();
@@ -31,9 +27,9 @@ const FirstStep: React.FC<Props> = ({ nextStep, handleFormData, values }) => {
 
       <BaseInput
         // label='Email'
-        value={values.email}
+        value={email}
         name='email'
-        onChange={handleFormData('email')}
+        onChange={changeHandlerPhone}
         placeholder='Email'
         type='text'
         required

@@ -1,8 +1,8 @@
 import React, { ReactNode, useState, useRef } from 'react';
 import useOnClickOutside from '@hooks/useOnClickOutside';
-import { SelectContext, useSelectContext } from './selectContext';
 import styles from './BaseSelect.module.scss';
-import Option from './option';
+import { BaseIcon } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
   defaultValue?: string;
@@ -11,7 +11,7 @@ interface Props {
   type?: string;
   className?: string;
   styles?: string;
-  optionsValue: any;
+  options: any;
 }
 
 interface ISelectItem {
@@ -19,70 +19,71 @@ interface ISelectItem {
   title: string;
 }
 
+const options1 = ['Mangoes', 'Apples', 'Oranges'];
+
 const BaseSelect: React.FC<Props> = ({
   defaultValue,
   placeholder,
   style,
   className,
   type = 'default',
-  optionsValue,
+  options,
 }) => {
-  // console.log('optionsValue: ', optionsValue);
-  const [selectedOption, setSelectedOption] = useState(defaultValue || '');
-  const [showDropdown, setShowDropdown] = useState(false);
-  const showDropdownHandler = () => setShowDropdown(!showDropdown);
-  const selectPlaceholder = placeholder || 'Choose an option';
-  const selectContainerRef = useRef(null);
-  const { changeSelectedOption } = useSelectContext();
+  console.log('options: ', options);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
+  const selectContainerRef = React.useRef(null);
 
-  const clickOutsideHandler = () => setShowDropdown(false);
-
+  const clickOutsideHandler = () => setIsOpen(false);
   useOnClickOutside(selectContainerRef, clickOutsideHandler);
 
-  const updateSelectedOption = (option: string) => {
-    console.log('option: ', option);
-    setSelectedOption(option);
-    setShowDropdown(false);
+  const toggling = () => setIsOpen(!isOpen);
+
+  const onOptionClicked = (value) => () => {
+    setSelectedOption(value);
+    setIsOpen(false);
+    console.log(selectedOption);
   };
 
   return (
-    <SelectContext.Provider
-      value={{ selectedOption, changeSelectedOption: updateSelectedOption }}
+    <div
+      className={`${styles.SelectContainer} ${
+        styles['Select_' + type]
+      } ${className}`}
+      ref={selectContainerRef}
     >
       <div
-        ref={selectContainerRef}
-        style={{ ...style }}
-        className={`${styles.SelectContainer} ${
-          styles['Select_' + type]
-        } ${className}`}
+        className={`${styles.SelectHeader}  ${
+          isOpen ? styles.SelectHeaderFocus : ''
+        } ${selectedOption ? styles.NotEmpty : ''}`}
+        onClick={toggling}
       >
-        <div
-          className={
-            showDropdown
-              ? `${styles.SelectedText} ${styles.Active}`
-              : `${styles.SelectedText}`
-          }
-          onClick={showDropdownHandler}
-        >
-          {selectedOption.length > 0 ? selectedOption : selectPlaceholder}
-        </div>
-        <ul
-          className={`${styles.Ul} ${styles.SelectOptions} ${
-            showDropdown
-              ? styles.ShowDropdownOptions
-              : styles.HideDropdownOptions
-          } `}
-        >
-          {optionsValue.map((item: ISelectItem, index: number) => {
-            return (
-              <Option value={item.value} key={item.value + index}>
-                {item.title}
-              </Option>
-            );
-          })}
-        </ul>
+        {selectedOption || placeholder}
+        <BaseIcon
+          icon={ALL_ICONS.SELECT_ARROW}
+          viewBox='0 0 16 16'
+          className={`${styles.IconArrow} ${styles.IconArrowTop}`}
+        />
+        <BaseIcon
+          icon={ALL_ICONS.SELECT_ARROW}
+          viewBox='0 0 16 16'
+          className={`${styles.IconArrow} ${styles.IconArrowBottom}`}
+        />
       </div>
-    </SelectContext.Provider>
+      {isOpen && (
+        <ul className={styles.SelectList}>
+          {options1.map((option) => (
+            <li
+              className={styles.ListItem}
+              onClick={onOptionClicked(option)}
+              key={Math.random()}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 

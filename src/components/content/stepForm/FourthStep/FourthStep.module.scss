@@ -16,12 +16,6 @@
   margin-bottom: 97px;
 }
 
-.Input {
-  width: em(541px);
-  height: em(83px);
-  margin-bottom: em(127px);
-}
-
 .Link {
   font-size: em(16px);
   font-weight: 400;
@@ -43,12 +37,8 @@
   margin-bottom: em(23px);
 }
 
-.Question {
-  font-size: em(16px);
-  margin-bottom: em(23px);
-}
-
-.LinkQuestion {
-  color: $yellow;
-  text-decoration: none;
+.Input {
+  width: em(541px);
+  height: em(83px);
+  margin-bottom: em(127px);
 }

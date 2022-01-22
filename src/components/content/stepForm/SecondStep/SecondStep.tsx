@@ -8,13 +8,16 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './SecondStep.module.scss';
+import { IValues } from 'types/data';
 
-interface Props {}
+interface Props {
+  nextStep: () => void;
+}
 
 //тестовый пароль для подтвержедния почты
 const mockEmail = 'alisa@wonderlabagency.com';
 
-const SecondStep: React.FC<Props> = ({ nextStep, handleFormData, values }) => {
+const SecondStep: React.FC<Props> = ({ nextStep }) => {
   const [confirmEmail, setConfirmEmail] = useState('');
 
   const confirmEmailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +31,7 @@ const SecondStep: React.FC<Props> = ({ nextStep, handleFormData, values }) => {
     if (mockEmail == confirmEmail) {
       alert('пароли совпадают');
       setConfirmEmail('');
-      // nextStep();
+      nextStep();
     } else {
       alert('пароли не совпадают');
     }
