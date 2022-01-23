@@ -1,0 +1,68 @@
+.PersonalAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding-top: em(297px);
+}
+
+.Title {
+  margin-bottom: 18px;
+}
+
+.Subtitle {
+  margin-bottom: 97px;
+}
+
+.Ul {
+  width: 100%;
+  max-width: em(1110px);
+}
+.Li {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: em(42px);
+  list-style: none;
+  @include ifmobile {
+    flex-wrap: wrap;
+  }
+}
+
+.Li:last-child {
+  margin-bottom: em(127px);
+}
+
+.Input {
+  height: em(83px);
+}
+
+.Country {
+  width: em(355px);
+}
+
+.Postcode {
+  width: em(320px);
+}
+
+.City {
+  width: em(367px);
+}
+
+.Address {
+  width: em(464px);
+}
+
+.AddressTwo {
+  width: em(615px);
+}
+
+.Btn {
+  width: em(289px);
+  height: em(82px);
+  margin-bottom: em(10px);
+}

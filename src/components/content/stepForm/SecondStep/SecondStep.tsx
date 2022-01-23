@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   BaseButton,
   BaseContainer,
@@ -8,7 +7,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './SecondStep.module.scss';
-import { IValues } from 'types/data';
+import { LinkHome } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -20,8 +19,8 @@ const mockEmail = 'alisa@wonderlabagency.com';
 const SecondStep: React.FC<Props> = ({ nextStep }) => {
   const [confirmEmail, setConfirmEmail] = useState('');
 
-  const confirmEmailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setConfirmEmail(e.target.value);
+  const confirmEmailHandler = (value: string) => {
+    setConfirmEmail(value);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
@@ -38,7 +37,7 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
   };
 
   return (
-    <form action='' method='post' className={styles.Login}>
+    <form action='' method='post' className={styles.ConfrimEmail}>
       <BaseTitle className={styles.Title}>Confirm your email</BaseTitle>
       <BaseText className={styles.Subtitle}>
         We've sent a confirmation code to {mockEmail}
@@ -59,9 +58,7 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
         Confirm and continue
       </BaseButton>
 
-      <Link href={'/'}>
-        <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
-      </Link>
+      <LinkHome />
     </form>
   );
 };

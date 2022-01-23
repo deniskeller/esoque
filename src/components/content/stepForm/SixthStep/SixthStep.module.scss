@@ -1,4 +1,4 @@
-.Phone {
+.PersonalData {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,15 +16,10 @@
   margin-bottom: 97px;
 }
 
-.BtnLogin {
-  width: em(289px);
-  height: em(82px);
-  margin-bottom: em(10px);
-}
-
 .Inputs {
   width: 100%;
-  max-width: em(1104px);
+  max-width: em(1110px);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,11 +30,24 @@
 }
 
 .Input {
-  width: em(541px);
   height: em(83px);
 }
 
-.SearchSelect {
-  width: em(541px);
-  height: em(81px);
+.SelectGender {
+  width: em(158px);
+}
+
+.FirstName,
+.LastName {
+  width: em(320px);
+}
+
+.Data {
+  width: em(257px);
+}
+
+.Btn {
+  width: em(289px);
+  height: em(82px);
+  margin-bottom: em(10px);
 }

@@ -8,6 +8,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './ThirdStep.module.scss';
+import { LinkHome } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -43,7 +44,7 @@ const ThirdStep: React.FC<Props> = ({ nextStep }) => {
   };
 
   return (
-    <form action='' method='post' className={styles.Login}>
+    <form action='' method='post' className={styles.Phone}>
       <BaseTitle className={styles.Title}>Enter your phone number</BaseTitle>
       <BaseText className={styles.Subtitle}>
         We will send you a 6-digit verification code
@@ -74,9 +75,7 @@ const ThirdStep: React.FC<Props> = ({ nextStep }) => {
         Confirm and continue
       </BaseButton>
 
-      <Link href={'/'}>
-        <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
-      </Link>
+      <LinkHome />
     </form>
   );
 };

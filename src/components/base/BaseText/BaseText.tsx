@@ -9,9 +9,11 @@ interface Props {
 
 const BaseText: React.FC<Props> = ({ children, style, className }) => {
   return (
-    <p style={{ ...style }} className={`${styles.Text}  ${className}`}>
-      {children}
-    </p>
+    <span className={`${className}`}>
+      <p style={{ ...style }} className={`${styles.Text}`}>
+        {children}
+      </p>
+    </span>
   );
 };
 

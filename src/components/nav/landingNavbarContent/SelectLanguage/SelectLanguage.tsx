@@ -11,7 +11,7 @@ interface Props {
   type?: string;
   className?: string;
   styles?: string;
-  optionsValue: any;
+  optionsValue: ISelectItem[];
 }
 
 interface ISelectItem {

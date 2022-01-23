@@ -1,0 +1,53 @@
+.Container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.LeftBlock {
+  width: 50vw;
+  height: auto;
+  min-height: 100vh;
+  background: $black;
+}
+
+.RightBlock {
+  width: 50vw;
+  height: auto;
+  min-height: 100vh;
+  background: $black2;
+}
+
+.CreatePassword {
+  padding-top: em(297px);
+  display: flex;
+  justify-content: flex-end;
+  margin-right: em(70px);
+}
+
+.Title {
+  margin-bottom: 41px;
+}
+
+.Subtitle {
+  margin-bottom: 97px;
+}
+
+.Input {
+  width: em(543px);
+  height: em(81px);
+  margin-bottom: em(30px);
+}
+
+.Btn {
+  width: em(289px);
+  height: em(82px);
+  margin-top: em(123px);
+  margin-bottom: em(10px);
+}
+
+.ValidationPassword {
+  text-align: left;
+  margin-left: em(70px);
+  padding-top: em(398px);
+}

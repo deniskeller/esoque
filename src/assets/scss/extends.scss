@@ -22,12 +22,10 @@
 
 %button {
   position: relative;
-  display: inline-block;
   box-sizing: border-box;
-  vertical-align: middle;
-  outline: none;
   border: none;
-  text-align: center;
+  outline: none;
+  @extend %center;
   text-decoration: none;
   cursor: pointer;
   user-select: none;

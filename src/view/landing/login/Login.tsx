@@ -8,6 +8,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './Login.module.scss';
+import { LinkHome } from '@content/index';
 
 interface Props {}
 
@@ -79,9 +80,7 @@ const Login: React.FC<Props> = () => {
           Log in
         </BaseButton>
 
-        <Link href={'/'}>
-          <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
-        </Link>
+        <LinkHome />
       </form>
     </BaseContainer>
   );

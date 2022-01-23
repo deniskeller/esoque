@@ -1,4 +1,4 @@
-.Reset {
+.Completed {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,19 +9,19 @@
 }
 
 .Title {
-  margin-bottom: 18px;
+  width: em(1047px);
+  margin-bottom: em(44px);
 }
 
 .Subtitle {
-  margin-bottom: em(97px);
+  margin-bottom: em(26px);
 }
 
-.Input {
-  width: em(543px);
-  margin-bottom: em(127px);
+.Image {
+  margin-bottom: em(49px);
 }
 
-.BtnLogin {
+.Btn {
   width: em(289px);
   height: em(82px);
   margin-bottom: em(10px);

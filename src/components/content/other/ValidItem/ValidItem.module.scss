@@ -1,0 +1,19 @@
+.ValidItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: em(28px);
+}
+
+.Icon {
+  width: em(32px);
+  height: em(32px);
+  margin-right: em(25px);
+}
+
+.Text {
+  font-size: em(20px);
+  line-height: 120%;
+  font-weight: 400;
+  color: $white;
+}

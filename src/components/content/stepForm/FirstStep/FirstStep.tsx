@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
 import styles from './FirstStep.module.scss';
+import { LinkHome } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -19,7 +20,7 @@ const FirstStep: React.FC<Props> = ({ nextStep }) => {
   };
 
   return (
-    <form action='' method='post' className={styles.Login}>
+    <form action='' method='post' className={styles.Email}>
       <BaseTitle className={styles.Title}>Enter your email</BaseTitle>
       <BaseText className={styles.Subtitle}>
         This address will be associated with your Company’s profile.
@@ -47,9 +48,7 @@ const FirstStep: React.FC<Props> = ({ nextStep }) => {
         </Link>
       </BaseText>
 
-      <Link href={'/'}>
-        <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
-      </Link>
+      <LinkHome className={styles.LinkToHome} />
     </form>
   );
 };

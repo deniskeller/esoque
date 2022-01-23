@@ -5,13 +5,13 @@ import { BaseIcon } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
-  defaultValue?: string;
   placeholder?: string;
   style?: object;
   type?: string;
   className?: string;
   styles?: string;
-  options: any;
+  options: ISelectItem[];
+  onChange: (value: string) => void;
 }
 
 interface ISelectItem {
@@ -19,17 +19,14 @@ interface ISelectItem {
   title: string;
 }
 
-const options1 = ['Mangoes', 'Apples', 'Oranges'];
-
 const BaseSelect: React.FC<Props> = ({
-  defaultValue,
   placeholder,
   style,
   className,
   type = 'default',
   options,
+  onChange,
 }) => {
-  console.log('options: ', options);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const selectContainerRef = React.useRef(null);
@@ -39,10 +36,10 @@ const BaseSelect: React.FC<Props> = ({
 
   const toggling = () => setIsOpen(!isOpen);
 
-  const onOptionClicked = (value) => () => {
+  const onOptionClicked = (value: string) => () => {
     setSelectedOption(value);
     setIsOpen(false);
-    console.log(selectedOption);
+    onChange(value);
   };
 
   return (
@@ -72,13 +69,13 @@ const BaseSelect: React.FC<Props> = ({
       </div>
       {isOpen && (
         <ul className={styles.SelectList}>
-          {options1.map((option) => (
+          {options.map((option: ISelectItem) => (
             <li
               className={styles.ListItem}
-              onClick={onOptionClicked(option)}
+              onClick={onOptionClicked(option.value)}
               key={Math.random()}
             >
-              {option}
+              {option.title}
             </li>
           ))}
         </ul>

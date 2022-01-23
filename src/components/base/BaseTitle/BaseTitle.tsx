@@ -16,30 +16,36 @@ const BaseTitle: React.FC<Props> = ({
 }) => {
   if (type == 'h1') {
     return (
-      <h1
-        style={{ ...style }}
-        className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-      >
-        {children}
-      </h1>
+      <span className={`${className}`}>
+        <h1
+          style={{ ...style }}
+          className={`${styles.Title} ${styles['Title_' + type]}`}
+        >
+          {children}
+        </h1>
+      </span>
     );
   } else if (type == 'h2') {
     return (
-      <h2
-        style={{ ...style }}
-        className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-      >
-        {children}
-      </h2>
+      <span className={`${className}`}>
+        <h2
+          style={{ ...style }}
+          className={`${styles.Title} ${styles['Title_' + type]}`}
+        >
+          {children}
+        </h2>
+      </span>
     );
   } else if (type == 'h3') {
     return (
-      <h3
-        style={{ ...style }}
-        className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-      >
-        {children}
-      </h3>
+      <span className={`${className}`}>
+        <h3
+          style={{ ...style }}
+          className={`${styles.Title} ${styles['Title_' + type]}`}
+        >
+          {children}
+        </h3>
+      </span>
     );
   }
 };

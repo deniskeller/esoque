@@ -24,16 +24,22 @@
   }
 }
 
+.InputError {
+  margin-bottom: em(65px);
+}
+
 .Error {
   border: 2px solid $error;
 }
 
 .ErrorText {
+  display: block;
   font-size: em(19px);
   line-height: 120%;
   color: $error;
-  margin-top: em(20px);
-  padding-left: 5px;
+  position: relative;
+  top: em(20px);
+  left: em(5px);
 }
 
 .Label {

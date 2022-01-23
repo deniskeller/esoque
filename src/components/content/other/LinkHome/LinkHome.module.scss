@@ -1,0 +1,11 @@
+.Link {
+  $size: 16px;
+  width: em(289px, $size);
+  height: em(82px);
+  font-size: em(16px);
+  font-weight: 600;
+  line-height: 120%;
+  color: $white;
+  @extend %center;
+  text-decoration: underline;
+}

@@ -8,6 +8,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './Reset.module.scss';
+import { LinkHome } from '@content/index';
 
 interface Props {}
 
@@ -29,7 +30,7 @@ const Reset: React.FC<Props> = () => {
 
   return (
     <BaseContainer>
-      <form action='' method='post' className={styles.Login}>
+      <form action='' method='post' className={styles.Reset}>
         <BaseTitle className={styles.Title}>Enter your email</BaseTitle>
         <BaseText className={styles.Subtitle}>
           You will receive recovery instructions shortly.
@@ -50,9 +51,7 @@ const Reset: React.FC<Props> = () => {
           Reset password
         </BaseButton>
 
-        <Link href={'/'}>
-          <a className={`${styles.Link} ${styles.LinkToHome}`}>Home</a>
-        </Link>
+        <LinkHome />
       </form>
     </BaseContainer>
   );

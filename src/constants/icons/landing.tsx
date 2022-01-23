@@ -28,10 +28,10 @@ export const landingIcons = {
       <path
         d='M24.3197 9.59961L14.0797 21.1196L7.67969 15.9996'
         stroke='#1E1E1E'
-        stroke-width='2'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </>
   ),
@@ -44,16 +44,16 @@ export const landingIcons = {
       <path
         d='M16 6.3999V20.4799'
         stroke='white'
-        stroke-width='2'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
+        strokeWidth='2'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
       />
       <path
         d='M16 23.6799V24.9599'
         stroke='white'
-        stroke-width='2'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
+        strokeWidth='2'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
       />
     </>
   ),

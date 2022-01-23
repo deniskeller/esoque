@@ -8,6 +8,7 @@ interface Props {
   placeholder?: string;
   required?: boolean;
   className?: string;
+  autocomplete?: string;
   error?: string | boolean;
   value: string | number;
   onChange(value: string | number): void;
@@ -22,10 +23,15 @@ const BaseInput: React.FC<Props> = ({
   required = false,
   placeholder,
   className,
+  autocomplete = 'off',
   onChange,
 }) => {
   return (
-    <div className={`${styles.BaseInput} ${className}`}>
+    <div
+      className={`${styles.BaseInput} ${className} ${
+        error ? styles.InputError : ''
+      }`}
+    >
       {label ? <label className={styles.Label}>{label}</label> : ''}
       <input
         value={value}
@@ -34,6 +40,7 @@ const BaseInput: React.FC<Props> = ({
         name={name}
         placeholder={placeholder}
         required={required}
+        autoComplete={autocomplete}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           onChange(e.target.value)
         }

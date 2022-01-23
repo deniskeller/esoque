@@ -2,18 +2,24 @@
 .Button {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: em(10px);
-  outline: none;
-  font-weight: normal;
-  white-space: nowrap;
-  user-select: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  @extend %button;
+
+  // position: relative;
+  // box-sizing: border-box;
+  // border: none;
+  // outline: none;
+  // display: inline-flex;
+  // justify-content: center;
+  // align-items: center;
+  // cursor: pointer;
+  // user-select: none;
+
   font-size: em(20px);
+  font-weight: 600;
+  line-height: 120%;
   font-family: $font-Circe;
-  cursor: pointer;
+  white-space: nowrap;
+  border-radius: em(10px);
   @include iftablet {
     min-width: em(100px);
     font-size: em(14px);

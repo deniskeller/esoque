@@ -13,11 +13,11 @@ interface Props {
   options: ISelectItem[];
   name: string;
   value: string | number;
-  onChange(value: number): void;
+  onChange(value: string | number): void;
 }
 
 interface ISelectItem {
-  code: number;
+  code?: number;
   title: string;
 }
 
@@ -32,8 +32,8 @@ const BaseSearchSelect: React.FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [search, setSearch] = React.useState('');
-  const [selectedOption, setSelectedOption] = React.useState<number | null>(
-    null
+  const [selectedOption, setSelectedOption] = React.useState<number | string>(
+    ''
   );
   const selectContainerRef = React.useRef(null);
 
@@ -42,7 +42,7 @@ const BaseSearchSelect: React.FC<Props> = ({
 
   const toggling = () => setIsOpen(!isOpen);
 
-  const onOptionClicked = (value: number) => () => {
+  const onOptionClicked = (value: string | number) => () => {
     setSelectedOption(value);
     onChange(value);
     setIsOpen(false);
@@ -99,7 +99,7 @@ const BaseSearchSelect: React.FC<Props> = ({
             {computedOptions(options).map((option: ISelectItem) => (
               <li
                 className={styles.Li}
-                onClick={onOptionClicked(option.code)}
+                onClick={onOptionClicked(option.title)}
                 key={Math.random()}
               >
                 {option.code && (
