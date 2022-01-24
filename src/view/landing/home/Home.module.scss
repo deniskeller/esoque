@@ -1,0 +1,152 @@
+// HeaderBlock
+.HeaderBlock {
+  background-image: url('/images/landing/bgHome.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.HeaderBlockContainer {
+  @extend %center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.LogoText {
+  width: em(269px);
+  height: em(20px);
+  margin-bottom: em(28px);
+}
+
+.Logo {
+  width: em(439px);
+  height: em(87px);
+}
+
+// HelloBlock
+.HelloBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: em(203px);
+  padding-bottom: em(128px);
+}
+
+.ContentText {
+  display: block;
+  font-family: $font-Calibri;
+}
+
+.HelloBlockTitle {
+  display: block;
+  margin-bottom: em(36px);
+  h1 {
+    color: $white;
+  }
+}
+
+.HelloBlockText {
+  display: block;
+  max-width: em(625px);
+  margin-bottom: em(60px);
+  p {
+    font-size: em(21px);
+  }
+}
+
+.ContentImage {
+  display: block;
+  position: relative;
+  width: em(653px);
+  height: em(503px);
+}
+
+.BlockRight {
+  margin-top: em(312px);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  .HelloBlockTitle {
+    width: em(416px);
+    align-self: flex-end;
+  }
+
+  .HelloBlockText {
+    width: em(547px);
+    margin-bottom: em(34px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//ServicesBlock
+.ServicesBlock {
+  padding-top: em(236px);
+  padding-bottom: em(265px);
+  background: $black2;
+
+  .ServicesBlockTitle {
+    margin-bottom: em(93px);
+  }
+
+  .ServicesBlockItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .ServicesBlockItem {
+      width: em(577px);
+      margin-bottom: em(94px);
+      &:nth-last-of-type(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    .ServicesItemTitle {
+      margin-bottom: em(52px);
+    }
+
+    .ServicesItemText {
+      font-size: em(21px);
+      font-weight: 400;
+      color: $white;
+      font-family: $font-Calibri;
+    }
+  }
+}
+
+//ConclusionBlock
+.ConclusionBlock {
+  background-image: url('/images/landing/bgHome2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  .ConclusionBlockContent {
+    padding-top: em(525px);
+    padding-bottom: em(403px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .ConclusionBlockImage {
+      position: relative;
+      width: em(138px);
+      height: em(199px);
+      margin-right: em(43px);
+    }
+
+    .ConclusionBlockTitle {
+      width: em(980px);
+      p {
+        font-size: em(50px);
+        font-weight: 700;
+        line-height: 120%;
+        color: $pink;
+      }
+    }
+  }
+}

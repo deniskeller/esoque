@@ -13,11 +13,13 @@
     }
   }
   &_h2 {
-    font-size: em(26px);
+    font-size: em(50px);
+    color: $white;
+    text-decoration: underline;
+    font-weight: bold;
   }
   &_h3 {
-    text-transform: uppercase;
-    font-size: em(14px);
-    margin-bottom: 0.3em;
+    font-size: em(20px);
+    font-weight: normal;
   }
 }
