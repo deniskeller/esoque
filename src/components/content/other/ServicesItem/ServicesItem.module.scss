@@ -7,17 +7,49 @@
   padding: em(26px) em(67px);
   position: relative;
 
+  @include iftablet {
+    padding: em(24px) em(75px);
+    margin-bottom: em(15px);
+  }
+
+  @include ifmobile {
+    padding: em(13px) em(40px);
+    margin-bottom: em(6px);
+  }
+
   .ServicesItemImage {
     top: em(28px);
     left: em(34px);
+    @include iftablet {
+      top: em(24px);
+      left: em(40px);
+    }
+    @include ifmobile {
+      width: em(15px);
+      height: em(15px);
+      top: em(13px);
+      left: em(13px);
+    }
   }
 
   .ServicesItemTitle {
     margin-bottom: em(15px);
+    @include ifmobile {
+      margin-bottom: em(9px);
+    }
   }
 
   .ServicesItemSubtitle {
     display: block;
+    P {
+      @include iftablet {
+        font-size: em(15px);
+      }
+
+      @include ifmobile {
+        font-size: em(9px);
+      }
+    }
   }
 
   .ServicesItemUl {
@@ -31,6 +63,13 @@
       color: $white;
       list-style: none;
       margin-top: em(2px);
+      @include iftablet {
+        font-size: em(15px);
+      }
+
+      @include ifmobile {
+        font-size: em(9px);
+      }
     }
   }
 

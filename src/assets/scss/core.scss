@@ -27,12 +27,12 @@ html {
 }
 
 html {
-  @include ifmobile {
-    font-size: math.div(18, 360) * 100vw;
-  }
-
   @include iftablet {
     font-size: math.div(18, 1024) * 100vw;
+  }
+
+  @include ifmobile {
+    font-size: math.div(18, 360) * 100vw;
   }
 }
 

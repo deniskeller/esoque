@@ -3,24 +3,61 @@
   padding-bottom: em(102px);
   position: relative;
 
+  @include iftablet {
+    padding-top: em(189px);
+    padding-bottom: em(50px);
+  }
+
+  @include ifmobile {
+    padding-top: em(84px);
+    padding-bottom: em(21px);
+  }
+
   .WelcomeBlockTitle {
     margin-bottom: em(37px);
+
     h1 {
       color: $white;
+    }
+
+    @include iftablet {
+      margin-bottom: em(35px);
+    }
+
+    @include ifmobile {
+      margin-bottom: em(27px);
     }
   }
 
   .WelcomeBlockUl {
-    max-width: em(715px);
-
     .WelcomeBlockLi {
       margin-bottom: em(20px);
       list-style: none;
+      max-width: em(715px);
+      @include iftablet {
+        max-width: em(502px);
+      }
+
+      @include ifmobile {
+        max-width: em(166px);
+        // max-width: 100%;
+        // &:first-child,
+        // &:nth-child(2) {
+        //   max-width: em(166px);
+        // }
+      }
 
       .WelcomeBlockText {
         p {
           font-size: em(21px);
           font-family: $font-Calibri;
+          @include iftablet {
+            font-size: em(18px);
+          }
+
+          @include ifmobile {
+            font-size: em(12px);
+          }
         }
       }
       &:last-child {
@@ -33,14 +70,33 @@
     position: absolute;
     z-index: 1000;
     top: em(233px);
-    right: em(21px);
+    right: 0;
     width: em(542px);
     height: em(522px);
+    @include iftablet {
+      top: em(131px);
+      width: em(354px);
+      height: em(341px);
+    }
+
+    @include ifmobile {
+      top: em(145px);
+      right: em(-14px);
+      width: em(137px);
+      height: em(132px);
+    }
   }
 }
 
 .ServicesBlock {
   padding-bottom: em(127px);
+  @include iftablet {
+    padding-bottom: em(112px);
+  }
+
+  @include ifmobile {
+    padding-bottom: em(58px);
+  }
 }
 
 .OurWorkBlockContainer {
@@ -48,8 +104,18 @@
 
   .OurWorkBlock {
     padding-top: em(136px);
-    padding-bottom: em(142px);
+    padding-bottom: em(146px);
     position: relative;
+
+    @include iftablet {
+      padding-top: em(104px);
+      padding-bottom: em(99px);
+    }
+
+    @include ifmobile {
+      padding-top: em(42px);
+      padding-bottom: em(51px);
+    }
 
     .OurWorkBlockImage {
       position: absolute;
@@ -58,6 +124,16 @@
       right: 0;
       width: em(526px);
       height: em(502px);
+
+      @include iftablet {
+        top: em(84px);
+        width: em(260px);
+        height: em(250px);
+      }
+
+      @include ifmobile {
+        display: none;
+      }
     }
 
     .OurWorkBlockTitle {
@@ -65,12 +141,30 @@
       h1 {
         color: $white;
       }
+
+      @include iftablet {
+        margin-bottom: em(48px);
+      }
+
+      @include ifmobile {
+        margin-bottom: em(34px);
+      }
     }
 
     .OurWorkBlockPlan {
-      max-width: em(624px);
-      margin-bottom: em(60px);
+      max-width: em(588px);
       margin-left: em(30px);
+      margin-bottom: em(60px);
+
+      @include iftablet {
+        margin-left: em(30px);
+        margin-bottom: em(39px);
+      }
+
+      @include ifmobile {
+        margin-bottom: em(39px);
+        margin-left: em(13px);
+      }
 
       .OurWorkBlockPlanItem {
         position: relative;
@@ -78,11 +172,32 @@
         list-style: none;
         padding-left: em(36px);
         margin-bottom: em(13px);
+
+        @include ifmobile {
+          padding-left: em(30px);
+        }
+
+        .PlanItemImage {
+          @include ifmobile {
+            width: em(15px);
+            height: em(15px);
+          }
+        }
+        &:last-child {
+          margin-bottom: 0px;
+        }
         p {
           font-size: em(21px);
           line-height: 120%;
           font-family: $font-Calibri;
           font-weight: 400;
+          @include iftablet {
+            font-size: em(18px);
+          }
+
+          @include ifmobile {
+            font-size: em(12px);
+          }
         }
       }
 
@@ -93,35 +208,85 @@
 
     .OurWorkBlockPs {
       display: block;
-      width: em(909px);
+      max-width: em(909px);
       font-family: $font-Calibri;
       color: $white;
       font-weight: 400;
       margin-bottom: em(99px);
+
+      @include iftablet {
+        max-width: em(730px);
+        margin-bottom: em(63px);
+      }
+
+      @include ifmobile {
+        margin-bottom: em(46px);
+      }
     }
 
     .OurWorkBlockSubtitle {
-      width: em(909px);
+      max-width: em(909px);
       margin-bottom: em(71px);
-      h1 {
-        font-size: em(30px);
-        line-height: 120%;
-        font-weight: 700;
-        color: $white;
+
+      @include iftablet {
+        margin-bottom: em(43px);
       }
-      h2 {
-        font-size: em(19px);
-        font-family: $font-Calibri;
-        color: $grey;
-        font-weight: 400;
-        text-transform: uppercase;
+
+      @include ifmobile {
+        margin-bottom: em(20px);
+      }
+
+      .H1 {
+        margin-bottom: em(10px);
+        h1 {
+          font-size: em(30px);
+          line-height: 120%;
+          font-weight: 700;
+          color: $white;
+          @include iftablet {
+            font-size: em(24px);
+          }
+
+          @include ifmobile {
+            font-size: em(16px);
+          }
+        }
+        @include iftablet {
+          margin-bottom: em(37px);
+        }
+
+        @include ifmobile {
+          margin-bottom: em(29px);
+        }
+      }
+      .P {
+        P {
+          font-size: em(19px);
+          font-family: $font-Calibri;
+          color: $grey;
+          font-weight: 400;
+          text-transform: uppercase;
+          @include ifmobile {
+            font-size: em(13px);
+          }
+        }
       }
     }
 
     .OurWorkBusinessItems {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: em(62px) em(119px);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: em(62px) em(118px);
+
+      @include iftablet {
+        gap: em(24px);
+      }
+
+      @include ifmobile {
+        gap: em(12px) em(24px);
+      }
     }
   }
 }

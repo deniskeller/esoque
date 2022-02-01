@@ -171,6 +171,14 @@ const mockBbusinessItems = [
     id: 12,
     title: 'Additional offers',
   },
+  // {
+  //   id: 13,
+  //   title: 'Additional offers',
+  // },
+  // {
+  //   id: 14,
+  //   title: 'Additional offers',
+  // },
 ];
 
 const Unicorns: React.FC<Props> = () => {
@@ -203,6 +211,8 @@ const Unicorns: React.FC<Props> = () => {
             <Image
               src='/images/landing/imgUnicornsHorse1.png'
               layout={'fill'}
+              // width={}
+              // height={}
               alt={'Unicorn image'}
             />
           </div>
@@ -230,7 +240,7 @@ const Unicorns: React.FC<Props> = () => {
               What do we do?
             </BaseTitle>
 
-            <ul className={styles.OurWorkBlockPlan}>
+            <div className={styles.OurWorkBlockPlan}>
               <li className={styles.OurWorkBlockPlanItem}>
                 <IconHorse className={styles.PlanItemImage} />
                 <p>Draft or review your procedures</p>
@@ -255,7 +265,7 @@ const Unicorns: React.FC<Props> = () => {
                   Prepare the business plan and make the financial forecasts
                 </p>
               </li>
-            </ul>
+            </div>
 
             <BaseText className={styles.OurWorkBlockPs}>
               For us, it is a unique journey that we start with you and work
@@ -265,19 +275,28 @@ const Unicorns: React.FC<Props> = () => {
             </BaseText>
 
             <div className={styles.OurWorkBlockSubtitle}>
-              <h1>
-                Together with the primary services, we also cover the following
-                ones to fully prepare your business:
-              </h1>
-              <h2>[ PRESS TO KNOW MORE ]</h2>
+              <div className={styles.H1}>
+                <h1>
+                  Together with the primary services, we also cover the
+                  following ones to fully prepare your business:
+                </h1>
+              </div>
+              <div className={styles.P}>
+                <p>[ PRESS TO KNOW MORE ]</p>
+              </div>
             </div>
 
             <div className={styles.OurWorkBusinessItems}>
-              {mockBbusinessItems.map((item) => {
-                return (
-                  <BusinessItem title={item.title} id={item.id} key={item.id} />
-                );
-              })}
+              {mockBbusinessItems &&
+                mockBbusinessItems.map((item) => {
+                  return (
+                    <BusinessItem
+                      title={item.title}
+                      id={item.id}
+                      key={item.id}
+                    />
+                  );
+                })}
             </div>
           </div>
         </BaseContainer>

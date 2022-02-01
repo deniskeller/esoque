@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
             {links &&
               links.map((item, idex) => {
                 return (
-                  <Link href={`/${item.href}`} key={idex}>
+                  <Link href={`${item.href}`} key={idex}>
                     <a className={styles.Link}>{item.title}</a>
                   </Link>
                 );

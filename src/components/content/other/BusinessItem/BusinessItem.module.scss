@@ -8,6 +8,18 @@
   padding-left: em(45px);
   padding-right: em(45px);
   text-align: center;
+
+  @include iftablet {
+    width: em(263px);
+    height: em(172px);
+  }
+
+  @include ifmobile {
+    width: em(131px);
+    height: em(117px);
+    padding-left: em(25px);
+    padding-right: em(25px);
+  }
 }
 
 .OurWorkBusinessItemTitle {
@@ -15,4 +27,10 @@
   font-weight: 700;
   line-height: 120%;
   color: #13de4c;
+  @include iftablet {
+    font-size: em(17px);
+  }
+  @include ifmobile {
+    font-size: em(11px);
+  }
 }
