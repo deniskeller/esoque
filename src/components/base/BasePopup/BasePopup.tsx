@@ -1,12 +1,15 @@
 // @ts-nocheck
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPopup } from 'store/modals/actions';
 import { RootState } from 'store/reducers/rootReducer';
+import useOnClickOutside from '@hooks/useOnClickOutside';
 import styles from './BasePopup.module.scss';
+import { BaseIcon } from '..';
+import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode | ReactNode[];
   className: string;
 }
 
@@ -14,13 +17,16 @@ const BasePopup: React.FC<Props> = ({ children, className }) => {
   const dispatch = useDispatch();
   const { popup, id } = useSelector((state: RootState) => state.modal);
 
-  const thisClass = useRef<HTMLDivElement>(null);
-  const thisModal = useRef<HTMLDivElement>(null);
+  const thisClass = React.useRef<HTMLDivElement>(null);
+  const thisModal = React.useRef<HTMLDivElement>(null);
+
+  const clickOutsideHandler = () => hidePopup();
+  useOnClickOutside(thisModal, clickOutsideHandler);
 
   const bodyClassName = 'overflow-hidden';
 
   React.useEffect(() => {
-    if (thisClass.current.classList.contains(popup)) {
+    if (thisClass.current?.classList.contains(popup)) {
       showPopup();
     }
     if (!popup) {
@@ -34,6 +40,7 @@ const BasePopup: React.FC<Props> = ({ children, className }) => {
     }
   };
 
+  //убрать @ts-nocheck  и разобратсья почему ругается на keyUp
   const showPopup = () => {
     document.body.classList.add(bodyClassName);
     document.addEventListener('keyup', keyUp);
@@ -48,26 +55,18 @@ const BasePopup: React.FC<Props> = ({ children, className }) => {
   return (
     <div
       className={` ${styles.BasePopup} ${
-        popup ? styles.visible : ''
+        popup ? styles.Visible : ''
       } ${className}`}
       ref={thisClass}
     >
-      <div className={styles.BasePopup_content} ref={thisModal}>
-        <svg
-          width='30'
-          height='30'
-          viewBox='0 0 30 30'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          className={styles.BasePopup_close}
-          onClick={hidePopup}
-        >
-          <path
-            d='M2.58211 0.707444C2.19158 0.31692 1.55842 0.31692 1.16789 0.707444C0.777369 1.09797 0.777369 1.73113 1.16789 2.12166L14.0465 15.0003L1.16796 27.8788C0.777439 28.2694 0.777438 28.9025 1.16796 29.293C1.55849 29.6836 2.19165 29.6836 2.58218 29.293L15.4607 16.4145L27.8787 28.8325C28.2692 29.223 28.9024 29.223 29.2929 28.8325C29.6834 28.4419 29.6834 27.8088 29.2929 27.4182L16.8749 15.0003L29.293 2.58224C29.6835 2.19172 29.6835 1.55856 29.293 1.16803C28.9025 0.777507 28.2693 0.777506 27.8788 1.16803L15.4607 13.5861L2.58211 0.707444Z'
-            fill='#004236'
+      <div className={styles.BasePopupContent} ref={thisModal}>
+        <span onClick={hidePopup}>
+          <BaseIcon
+            icon={ALL_ICONS.LANDING_POPUP_CLOSE}
+            viewBox='0 0 24 32'
+            className={styles.BasePopupClose}
           />
-        </svg>
-
+        </span>
         {children}
       </div>
     </div>

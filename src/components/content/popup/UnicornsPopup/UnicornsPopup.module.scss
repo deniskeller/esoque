@@ -1,0 +1,80 @@
+.UnicornsPopupTitle {
+  margin-bottom: em(65px);
+}
+
+.UnicornsPopupText {
+  display: block;
+  width: em(1124px);
+  margin-bottom: em(87px);
+  p {
+    font-size: em(19px);
+    font-family: $font-Calibri;
+  }
+}
+
+.UnicornsPopupContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .UnicornsPopupContentList {
+    .UnicornsPopupSubtitle {
+      max-width: em(375px);
+      margin-bottom: em(31px);
+      h1 {
+        font-weight: 700;
+      }
+    }
+
+    .UnicornsPopupContentUl {
+      .UnicornsPopupContentLi {
+        position: relative;
+        color: $white;
+        list-style: none;
+        padding-left: em(36px);
+        margin-bottom: em(13px);
+        max-width: em(485px);
+        p {
+          font-size: em(21px);
+          line-height: 120%;
+          font-family: $font-Calibri;
+          font-weight: 400;
+        }
+
+        .ContentLiImage {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.FullWidth {
+  grid-template-columns: 1fr;
+  max-width: 100% !important;
+}
+
+.UnicornsPopupNav {
+  position: absolute;
+  right: em(47px);
+  bottom: em(54px);
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .Btn {
+    width: em(21px);
+    height: em(24px);
+    cursor: pointer;
+  }
+
+  .PrevBtn {
+    -webkit-transform: scaleY(-1);
+    transform: scaleX(-1);
+  }
+
+  .Disable {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}

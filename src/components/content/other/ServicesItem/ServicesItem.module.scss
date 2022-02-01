@@ -1,0 +1,40 @@
+.ServicesItem {
+  width: 100%;
+  background: $black2;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: em(13px);
+  padding: em(26px) em(67px);
+  position: relative;
+
+  .ServicesItemImage {
+    top: em(28px);
+    left: em(34px);
+  }
+
+  .ServicesItemTitle {
+    margin-bottom: em(15px);
+  }
+
+  .ServicesItemSubtitle {
+    display: block;
+  }
+
+  .ServicesItemUl {
+    display: block;
+
+    .ServicesItemLi {
+      font-size: em(19px);
+      line-height: 120%;
+      font-family: $font-Calibri;
+      font-weight: 400;
+      color: $white;
+      list-style: none;
+      margin-top: em(2px);
+    }
+  }
+
+  .Hidden {
+    display: none;
+  }
+}

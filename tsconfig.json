@@ -9,9 +9,12 @@
       "@constants/*": ["constants/*"],
       "@view/*": ["view/*"],
       "@content/*": ["components/content/*"],
-      "@tinaComponents/*": ["tina/components/*"],
-      "@tinaPage/*": ["tina/page/*"],
-      "@hooks/*": ["hooks/*"]
+      // "@tinaComponents/*": ["components/tinaComponents/*"],
+      // "@tinaPage/*": ["tina/page/*"],
+      "@hooks/*": ["hooks/*"],
+      "@tina/*": ["tina/*"],
+      "@tinaDenis/*": ["tinaDenis/*"],
+      "@services/*": ["services/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

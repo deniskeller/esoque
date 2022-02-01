@@ -1,0 +1,18 @@
+.OurWorkBusinessItem {
+  width: em(371px);
+  height: em(189px);
+  background: $black;
+  border-radius: 10px;
+  @extend %center;
+  cursor: pointer;
+  padding-left: em(45px);
+  padding-right: em(45px);
+  text-align: center;
+}
+
+.OurWorkBusinessItemTitle {
+  font-size: em(20px);
+  font-weight: 700;
+  line-height: 120%;
+  color: #13de4c;
+}

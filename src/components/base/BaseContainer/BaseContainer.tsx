@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import styles from './BaseContainer.module.scss';
+import React, { ReactNode } from "react";
+import styles from "./BaseContainer.module.scss";
 
 interface Props {
   children: ReactNode;
@@ -10,7 +10,7 @@ const BaseContainer: React.FC<Props> = ({ children, appContent }) => {
   return (
     <div
       className={` ${styles.BaseContainer} ${
-        appContent ? styles.appContent : ''
+        appContent ? styles.appContent : ""
       }`}
     >
       {children}

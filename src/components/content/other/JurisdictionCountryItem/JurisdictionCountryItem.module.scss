@@ -1,0 +1,63 @@
+.CountryItem {
+  width: em(735px);
+  height: em(572px);
+  position: relative;
+  background: $black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: em(59px) em(75px) em(46px);
+  &:last-child {
+    margin: 0 auto;
+  }
+
+  .CountryItemImage {
+    position: relative;
+    width: em(588px);
+    height: em(391px);
+    border-radius: 10px;
+    margin-bottom: em(48px);
+
+    .CountryItemTitle {
+      position: absolute;
+      bottom: em(32px);
+      width: 100%;
+      text-align: center;
+      h1 {
+        font-family: $font-Flood;
+        font-style: italic;
+        font-weight: normal;
+        font-size: em(57px);
+        text-transform: uppercase;
+        line-height: 120%;
+        text-align: center;
+        color: $yellow;
+      }
+    }
+  }
+
+  .CountryItemDescription {
+    text-align: right;
+    color: $white;
+    position: relative;
+    padding-right: em(70px);
+    P {
+      font-size: em(21px);
+    }
+    span {
+      width: em(40px);
+      height: em(36px);
+      @extend %center;
+      background: $grey;
+      border-radius: 10px;
+      position: absolute;
+      right: 0;
+      top: em(-5px);
+      @extend %center;
+      p {
+        font-size: em(37px);
+        font-family: $font-Calibri;
+        margin-top: em(-1px);
+      }
+    }
+  }
+}

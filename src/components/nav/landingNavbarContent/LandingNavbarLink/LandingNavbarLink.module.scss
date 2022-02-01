@@ -3,6 +3,10 @@
   letter-spacing: 2px;
   font-size: em(18px);
   color: $white;
+
+  @include iftablet {
+    font-size: em(14px);
+  }
 }
 
 .Link:hover {

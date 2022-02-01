@@ -1,0 +1,65 @@
+.Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: em(92px);
+  padding-bottom: em(82px);
+
+  .FooterLogoContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .FooterLogoContentTop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: em(122px);
+      .LogoText {
+        width: em(145px);
+        height: em(11px);
+        margin-bottom: em(14px);
+      }
+
+      .Logo {
+        width: em(236px);
+        height: em(47px);
+      }
+    }
+
+    .FooterLogoContentBottom {
+      display: flex;
+      .LogoEsoque {
+        width: em(180px);
+        height: em(24px);
+      }
+    }
+  }
+
+  .FooterNavbar {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // max-width: em(670px);
+    .Link {
+      width: em(400px);
+      font-size: em(17px);
+      line-height: 120%;
+      color: $grey;
+      font-weight: 400;
+      display: grid;
+      align-self: end;
+      &:hover {
+        color: $yellow;
+      }
+      &:nth-child(2n) {
+        // width: em(400px);
+        width: max-content;
+        margin-left: em(75px);
+      }
+    }
+  }
+}

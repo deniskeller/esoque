@@ -1,0 +1,241 @@
+.WelcomeBlock {
+  padding-top: em(322px);
+  padding-bottom: em(235px);
+  position: relative;
+
+  .WelcomeBlockTitle {
+    margin-bottom: em(37px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .WelcomeBlockUl {
+    max-width: em(570px);
+
+    .WelcomeBlockLi {
+      margin-bottom: em(20px);
+      list-style: none;
+
+      .WelcomeBlockText {
+        p {
+          font-size: em(21px);
+          font-family: $font-Calibri;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .WelcomeBlockImage {
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    width: em(668px);
+    height: em(543px);
+  }
+}
+
+.WidgetBlock {
+  padding-top: em(322px);
+  padding-bottom: em(235px);
+  position: relative;
+
+  .WidgetBlockImage {
+    position: relative;
+    margin: 0 auto;
+    width: em(204px);
+    height: em(204px);
+    margin-bottom: em(37px);
+  }
+
+  .WidgetBlockTitle {
+    width: em(885px);
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: em(116px);
+    h1 {
+      font-size: em(50px);
+      color: $white;
+    }
+  }
+
+  .WidgetBlockWidget {
+    margin-bottom: em(184px);
+  }
+
+  .WidgetBlockAdvantages {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .WidgetBlockAdvantagesItem {
+      margin-top: em(40px);
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.JurisdictionsBlock {
+  padding-top: em(180px);
+  padding-bottom: em(230px);
+  position: relative;
+  background: $black2;
+
+  .WelcomeBlockTitle {
+    text-align: center;
+    margin-bottom: em(111px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .JurisdictionsBlockCountry {
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: em(28px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: em(1498px);
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: em(144px);
+  }
+
+  .HowItWorksTitle {
+    text-align: center;
+    margin-bottom: em(199px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .HowItWorksItems {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .HowItWorksItem {
+      margin-top: em(40px);
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.JurisdictionsCountryBlock {
+  padding-top: em(226px);
+  padding-bottom: em(245px);
+  position: relative;
+
+  .JurisdictionsCountryBlockTitle {
+    max-width: em(850px);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: em(168px);
+    h1 {
+      color: $white;
+      font-size: em(30px);
+    }
+  }
+
+  .JurisdictionsCountryItems {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: em(30px) em(55px);
+  }
+}
+
+.SomeBlockContainer {
+  background: $black2;
+  .SomeBlock {
+    padding-top: em(240px);
+    padding-bottom: em(267px);
+
+    .SomeBlockMore {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      // margin-bottom: em(82px);
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+
+      .SomeBlockMoreItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: em(523px);
+        margin-bottom: em(82px);
+
+        .WelcomeBlockImage {
+          position: relative;
+          width: em(88px);
+          height: em(88px);
+          margin-bottom: em(38px);
+        }
+
+        p {
+          font-size: em(30px);
+          color: $white;
+          font-weight: bold;
+          line-height: 120%;
+        }
+
+        .Small {
+          font-size: em(20px);
+          font-weight: 400;
+        }
+      }
+    }
+
+    .SomeBlockSolo {
+      margin-bottom: em(82px);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .SomeBlockSoloItem {
+        max-width: em(849px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: em(82px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .WelcomeBlockImage {
+          position: relative;
+          width: em(88px);
+          height: em(88px);
+          margin-bottom: em(38px);
+        }
+        p {
+          font-size: em(30px);
+          color: $white;
+          font-weight: bold;
+          line-height: 120%;
+        }
+
+        .Pink {
+          color: $pink;
+        }
+      }
+    }
+  }
+}

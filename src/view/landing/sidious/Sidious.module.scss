@@ -1,0 +1,251 @@
+.WelcomeBlock {
+  padding-top: em(311px);
+  padding-bottom: em(198px);
+  position: relative;
+
+  .WelcomeBlockTitle {
+    margin-bottom: em(37px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .WelcomeBlockUl {
+    max-width: em(630px);
+
+    .WelcomeBlockLi {
+      margin-bottom: em(20px);
+      list-style: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .WelcomeBlockText {
+        p {
+          font-size: em(21px);
+          font-family: $font-Calibri;
+        }
+      }
+
+      .GreenTExt {
+        P {
+          color: $green;
+          font-size: em(20px);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .WelcomeBlockImage {
+    position: absolute;
+    z-index: 1000;
+    right: em(-40px);
+    top: em(227px);
+    width: em(637px);
+    height: em(546px);
+  }
+
+  .AboutIcon {
+    width: em(168px);
+    height: em(168px);
+    border-radius: 50%;
+    background: $yellow;
+    @extend %center;
+    position: absolute;
+    bottom: em(-84px);
+    right: calc(50% - em(85px));
+
+    .AboutIconCircleDown {
+      position: absolute;
+      width: em(62px);
+      height: em(86px);
+    }
+  }
+}
+
+.WidgetBlockContainer {
+  padding-top: em(197px);
+  padding-bottom: em(199px);
+  background: $black2;
+
+  .Widget {
+    position: relative;
+    width: em(1350px);
+    height: em(652px);
+  }
+}
+
+.AdaptationBlock {
+  padding-top: em(147px);
+  padding-bottom: em(187px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .AdaptationBlockTitle {
+    width: em(1000px);
+    margin-bottom: em(48px);
+    h1 {
+      color: $white;
+      font-size: em(50px);
+      text-align: center;
+    }
+  }
+
+  .AdaptationBlockSubtitle {
+    width: em(1000px);
+    margin-bottom: em(123px);
+    h1 {
+      font-size: em(30px);
+      text-align: center;
+    }
+  }
+
+  .AdaptationBlockImage {
+    position: relative;
+    width: em(685px);
+    height: em(538px);
+  }
+}
+
+.PlatformBenefitsBlockContainer {
+  background: $black2;
+
+  .PlatformBenefitsBlock {
+    padding-top: em(164px);
+    padding-bottom: em(191px);
+
+    .PlatformBenefitsBlockTitle {
+      width: em(1000px);
+      margin: 0 auto;
+      margin-bottom: em(55px);
+      h1 {
+        color: $white;
+        font-size: em(50px);
+        text-align: center;
+      }
+    }
+
+    .PlatformBenefits {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .PlatformBenefitsText {
+        .PlatformBenefitsBlockSubtitle {
+          margin-bottom: em(63px);
+          h1 {
+            font-size: em(30px);
+          }
+        }
+
+        .PlatformBenefitsBlockList {
+          max-width: em(910px);
+
+          .PlatformBenefitsBlockListItem {
+            color: $white;
+            position: relative;
+            font-family: $font-Calibri;
+            font-style: normal;
+            font-weight: normal;
+            font-size: em(19px);
+            line-height: 120%;
+            margin-bottom: em(10px);
+            list-style: none;
+            padding-left: em(36px);
+            span {
+              width: em(16px);
+              height: em(16px);
+              border-radius: 3px;
+              background: $light_grey;
+              position: absolute;
+              left: 0;
+              top: em(3px);
+            }
+          }
+        }
+      }
+
+      .PlatformBenefitsImage {
+        position: relative;
+        top: em(-40px);
+        width: em(239px);
+        height: em(354px);
+      }
+    }
+  }
+}
+
+.ImprovingBlock {
+  padding-top: em(164px);
+  padding-bottom: em(118px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .ImprovingBlockTitle {
+    width: em(1000px);
+    margin-bottom: em(48px);
+    h1 {
+      color: $white;
+      font-size: em(50px);
+      text-align: center;
+    }
+  }
+
+  .ImprovingBlockSubtitle {
+    width: em(1000px);
+    margin-bottom: em(71px);
+    h1 {
+      font-size: em(30px);
+      text-align: center;
+    }
+  }
+
+  .ImprovingBlockItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: em(47px) em(80px);
+  }
+}
+
+.HowItWorksBlockContainer {
+  background: $black2;
+  .HowItWorksBlock {
+    width: 100%;
+    max-width: em(1530px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: em(129px);
+    padding-bottom: em(100px);
+    margin: 0 auto;
+
+    .HowItWorksBlockTitle {
+      width: em(1000px);
+      margin-bottom: em(60px);
+      h1 {
+        color: $white;
+        font-size: em(50px);
+        text-align: center;
+      }
+    }
+
+    .HowItWorksBlockImage {
+      position: relative;
+      width: em(1530px);
+      height: em(737px);
+      margin-bottom: em(114px);
+    }
+
+    .HowItWorksBlockSubtitle {
+      width: em(1000px);
+      h1 {
+        font-size: em(30px);
+        text-align: center;
+      }
+    }
+  }
+}

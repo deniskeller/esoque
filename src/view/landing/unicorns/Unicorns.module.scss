@@ -1,0 +1,127 @@
+.WelcomeBlock {
+  padding-top: em(311px);
+  padding-bottom: em(102px);
+  position: relative;
+
+  .WelcomeBlockTitle {
+    margin-bottom: em(37px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .WelcomeBlockUl {
+    max-width: em(715px);
+
+    .WelcomeBlockLi {
+      margin-bottom: em(20px);
+      list-style: none;
+
+      .WelcomeBlockText {
+        p {
+          font-size: em(21px);
+          font-family: $font-Calibri;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .WelcomeBlockImage {
+    position: absolute;
+    z-index: 1000;
+    top: em(233px);
+    right: em(21px);
+    width: em(542px);
+    height: em(522px);
+  }
+}
+
+.ServicesBlock {
+  padding-bottom: em(127px);
+}
+
+.OurWorkBlockContainer {
+  background: $black2;
+
+  .OurWorkBlock {
+    padding-top: em(136px);
+    padding-bottom: em(142px);
+    position: relative;
+
+    .OurWorkBlockImage {
+      position: absolute;
+      z-index: 1000;
+      top: em(84px);
+      right: 0;
+      width: em(526px);
+      height: em(502px);
+    }
+
+    .OurWorkBlockTitle {
+      margin-bottom: em(62px);
+      h1 {
+        color: $white;
+      }
+    }
+
+    .OurWorkBlockPlan {
+      max-width: em(624px);
+      margin-bottom: em(60px);
+      margin-left: em(30px);
+
+      .OurWorkBlockPlanItem {
+        position: relative;
+        color: $white;
+        list-style: none;
+        padding-left: em(36px);
+        margin-bottom: em(13px);
+        p {
+          font-size: em(21px);
+          line-height: 120%;
+          font-family: $font-Calibri;
+          font-weight: 400;
+        }
+      }
+
+      .PlanItemImage {
+        left: 0;
+      }
+    }
+
+    .OurWorkBlockPs {
+      display: block;
+      width: em(909px);
+      font-family: $font-Calibri;
+      color: $white;
+      font-weight: 400;
+      margin-bottom: em(99px);
+    }
+
+    .OurWorkBlockSubtitle {
+      width: em(909px);
+      margin-bottom: em(71px);
+      h1 {
+        font-size: em(30px);
+        line-height: 120%;
+        font-weight: 700;
+        color: $white;
+      }
+      h2 {
+        font-size: em(19px);
+        font-family: $font-Calibri;
+        color: $grey;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+
+    .OurWorkBusinessItems {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: em(62px) em(119px);
+    }
+  }
+}

@@ -34,7 +34,11 @@ const Signup: React.FC<Props> = () => {
         </BaseContainer>
       );
     case 2:
-      return <SecondStep nextStep={nextStep} />;
+      return (
+        <BaseContainer>
+          <SecondStep nextStep={nextStep} />
+        </BaseContainer>
+      );
 
     case 3:
       return (

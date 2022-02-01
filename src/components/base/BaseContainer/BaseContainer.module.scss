@@ -1,11 +1,10 @@
 .BaseContainer {
   width: 100%;
-  max-width: em(1532px);
+  max-width: em(1350px);
   margin: 0 auto;
   position: relative;
-  @include ifmobile {
-    // padding: em(25px);
-    // padding-top: em($navbar-height + 25px);
+  @include iftablet {
+    max-width: em(838px);
   }
 }
 

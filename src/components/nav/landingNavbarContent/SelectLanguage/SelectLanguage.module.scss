@@ -14,9 +14,13 @@
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
+  @include iftablet {
+    font-size: em(14px);
+  }
 }
 
 .Ul {
+  width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   max-height: em(170px);
@@ -38,6 +42,9 @@
   text-align: center;
   border-bottom: 1px solid #e4e4e4;
   cursor: pointer;
+  @include iftablet {
+    font-size: em(14px);
+  }
 }
 
 .Li:last-child {

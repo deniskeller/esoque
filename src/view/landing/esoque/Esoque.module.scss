@@ -1,0 +1,133 @@
+.WelcomeBlock {
+  padding-top: em(315px);
+  padding-bottom: em(80px);
+  position: relative;
+
+  .WelcomeBlockTitle {
+    margin-bottom: em(37px);
+    h1 {
+      color: $white;
+    }
+  }
+
+  .WelcomeBlockUl {
+    max-width: em(646px);
+
+    .WelcomeBlockLi {
+      margin-bottom: em(20px);
+      list-style: none;
+
+      .WelcomeBlockText {
+        p {
+          font-size: em(21px);
+          font-family: $font-Calibri;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .WelcomeBlockImage {
+    position: absolute;
+    z-index: 1000;
+    top: em(391px);
+    right: 0;
+    width: em(661px);
+    height: em(574px);
+  }
+}
+
+.AboutContainer {
+  background: $black2;
+
+  .About {
+    padding-top: em(419px);
+    padding-bottom: em(67px);
+    position: relative;
+    @extend %center;
+    flex-direction: column;
+
+    .AboutImage {
+      position: absolute;
+      z-index: 1000;
+      top: em(107px);
+      margin: 0 auto;
+      width: em(385px);
+      height: em(385px);
+    }
+
+    .AboutTitle {
+      width: em(900px);
+      position: relative;
+      z-index: 1000;
+      margin-bottom: em(54px);
+      h1 {
+        font-size: em(50px);
+        text-align: center;
+      }
+    }
+
+    .AboutSubtitle {
+      width: em(629px);
+      margin-bottom: em(85px);
+      p {
+        font-size: em(30px);
+        line-height: 100%;
+        font-weight: bold;
+        text-align: center;
+        color: $grey;
+      }
+    }
+
+    .AboutIcon {
+      width: em(168px);
+      height: em(168px);
+      border-radius: 50%;
+      background: $yellow;
+      @extend %center;
+
+      .AboutIconCircleDown {
+        position: absolute;
+        width: em(62px);
+        height: em(86px);
+      }
+    }
+  }
+}
+
+.GraphBlock {
+  padding-top: em(219px);
+  padding-bottom: em(175px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .GraphBlockTitle {
+    margin-bottom: em(48px);
+    h1 {
+      color: $white;
+      font-size: em(69px);
+    }
+  }
+
+  .GraphBlockSubtitle {
+    margin-bottom: em(123px);
+    h1 {
+      font-size: em(30px);
+    }
+  }
+
+  .GraphBlockImg {
+    display: block;
+    position: relative;
+    width: em(1358px);
+    height: em(618px);
+    margin-bottom: em(161px);
+  }
+
+  .GraphBlockBtn {
+    width: em(289px);
+    height: em(63px);
+  }
+}

@@ -14,38 +14,42 @@ const BaseSubtitle: React.FC<Props> = ({
   type = 'h1',
   className,
 }) => {
-  return (
-    <h1
-      style={{ ...style }}
-      className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-    >
-      {children}
-    </h1>
-  );
-  // if (type == 'h1') {
-  //   return (
-  //     <h1
-  //       style={{ ...style }}
-  //       className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-  //     >
-  //       {children}
-  //     </h1>
-  //   );
-  // } else if (type == 'h2') {
-  //   <h2
-  //     style={{ ...style }}
-  //     className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-  //   >
-  //     {children}
-  //   </h2>;
-  // } else if (type == 'h3') {
-  //   <h3
-  //     style={{ ...style }}
-  //     className={`${styles.Title} ${styles['Title_' + type]} ${className}`}
-  //   >
-  //     {children}
-  //   </h3>;
-  // }
+  if (type == 'h1') {
+    return (
+      <div className={`${className}`}>
+        <h1
+          style={{ ...style }}
+          className={`${styles.Subtitle} ${styles['Subtitle_' + type]}`}
+        >
+          {children}
+        </h1>
+      </div>
+    );
+  } else if (type == 'h2') {
+    return (
+      <div className={`${className}`}>
+        <h2
+          style={{ ...style }}
+          className={`${styles.Subtitle} ${styles['Subtitle_' + type]}`}
+        >
+          {children}
+        </h2>
+      </div>
+    );
+  } else if (type == 'h3') {
+    return (
+      <div className={`${className}`}>
+        <h3
+          style={{ ...style }}
+          className={`${styles.Subtitle} ${styles['Subtitle_' + type]}`}
+        >
+          {children}
+        </h3>
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default BaseSubtitle;

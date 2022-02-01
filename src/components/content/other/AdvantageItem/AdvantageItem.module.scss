@@ -1,0 +1,35 @@
+.AdvantageItem {
+  width: em(395px);
+  height: em(153px);
+  border-radius: 10px;
+
+  padding: em(26px) em(42px) em(26px) em(87px);
+  position: relative;
+
+  .AdvantageItemImage {
+    position: absolute;
+    width: em(51px);
+    height: em(51px);
+    left: em(26px);
+    top: em(47px);
+  }
+
+  .AdvantageItemTitle {
+    margin-bottom: em(10px);
+  }
+
+  .AdvantageItemSubtitle {
+    p {
+      font-size: em(17px);
+      font-family: $font-Calibri;
+    }
+  }
+}
+
+.Dark {
+  background: $black2;
+}
+
+.Light {
+  background: $black;
+}

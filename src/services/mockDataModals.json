@@ -1,0 +1,214 @@
+[
+  {
+    "id": 1,
+    "title": "SEPA Membership",
+    "text": "The European Union has its own internal payment system called SEPA. SORQ can help you to enter the eurozone by connecting you with one of the leading SEPA providers in the region. We will also guide you through the set-up process for SEPA services and direct debit & credit transfer.",
+    "content": [
+      {
+        "subtitle": "We provide:",
+        "contentItemList": [
+          "SEPA membership",
+          "SEPA certified service provider partnership",
+          "Connection to SEPA direct debit and credit transfer",
+          "Required documentation preparation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "SWIFT",
+    "text": "If you are a bank or financial institution and wish to become a SWIFT member – we will assist you through the whole process. We will help you to receive a unique BIC/PIC code and get all the technical infrastructure set up. You will be able to issue your own IBANs and manage your financial system independently.",
+    "content": [
+      {
+        "subtitle": "We provide:",
+        "contentItemList": [
+          "SWIFT registration",
+          "BIC/PIC code registration",
+          "Assistance in IBAN issuing procedure",
+          "Required documentation preparation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Blockchain",
+    "text": "Our extensive law and compliance knowledge base help us open new doors of opportunities quickly. In the meantime, our engineers can deliver tailored software solutions just in time for your next big move.",
+    "content": [
+      {
+        "subtitle": "We provide:",
+        "contentItemList": [
+          "Company formation for cryptocurrency business",
+          "Office registration",
+          "Business model preparation",
+          "Legal opinions from national financial market regulators",
+          "Explanation of taxation base",
+          "Certification for personal data collection (ICO)",
+          "AIS certification (account information security)",
+          "Obtaining PCI DSS if necessary Introducing you to the banks",
+          "Co-branded payment card issuing",
+          "Cryptocurrency exchange",
+          "Cryptocurrency mining",
+          "Cryptocurrency processing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Gambling and lottery licensing",
+    "text": "",
+    "content": [
+      {
+        "subtitle": "Gambling or lottery licences we offer:",
+        "contentItemList": [
+          "On-Line Gambling (United Kingdom)",
+          "On-Line Gambling (Curacao)",
+          "On-Line Gambling (Malta)",
+          "On-Line Gambling (Alderney)",
+          "On-Line Gambling (Jersey)"
+        ]
+      },
+      {
+        "subtitle": "We work directly with the following regulators:",
+        "contentItemList": [
+          "Gambling Commission – United Kingdom",
+          "Gambling Commission Curacao E-Gaming – Curacao E-Gaming Commission",
+          "MGA – Malta Gaming Authority",
+          "AGCC – Alderney Gambling Control Commission",
+          "GSC – Gambling Supervision Commission",
+          "JGC – The Jersey Gambling Commission"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "E-commerce business set-up",
+    "text": "",
+    "content": [
+      {
+        "subtitle": "We provide:",
+        "contentItemList": [
+          "Payment facilitator (PF)",
+          "Third-party processor (TPP)",
+          "ISO (independent sales organisation)",
+          "White-label set-up",
+          "Obtaining of ICO certificate",
+          "Obtaining PCI DSS certificate",
+          "Connection to acquiring banks (building the acquiring banks network",
+          "Consulting in due diligence tools and merchant monitoring services",
+          "Preparation of required documentation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Investment funds and brokerage companies",
+    "text": "We offer to license investment funds in the European Union and the United Kingdom.",
+    "content": [
+      {
+        "subtitle": "We provide:",
+        "contentItemList": [
+          "Alternative investment fund manager licence and registration of alternative investment funds, the Financial Conduct Authority of UK",
+          "Registered status of the alternative fund manager ('small licence') and registration of alternative investment funds, the Financial Conduct Authority of UK",
+          "Investment brokerage company licence, the Financial Conduct Authority of UK",
+          "Asset management company licence and registration of UCITS investment funds, the Financial Conduct Authority of UK"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "PCI DSS",
+    "text": "We help technical service providers and merchants to prepare the required documentation and pass the audits in order to obtain one of the following certification levels:",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": [
+          "PCI DSS Level 1 (TPP and merchants)",
+          "PCI DSS Level 2 (TPP and merchants)",
+          "PCI DSS Level 3 (merchants)",
+          "PCI DSS Level 4 (merchants)",
+          "PDA DSS (payment applications)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Patnents",
+    "text": "We provide a full service for achieving the patents to protect your intellectual property rights: ",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": [
+          "Europe",
+          "International",
+          "Country of incorporation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Trademark",
+    "text": "We offer trademark registration in the following regions:",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": [
+          "Europe",
+          "International",
+          "Country of incorporation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Account Opening",
+    "text": "We provide account-opening services for financial companies all around the world, helping with business models, filling in the forms and managing communications with banks and payment institutions.",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": []
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "NASDAQ",
+    "text": "We offer company share placement in:",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": [
+          "NASDAQ Nordic",
+          "NASDAQ USA",
+          "NASDAQ United Kingdom",
+          "LEI code achievement"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Additional offers",
+    "text": "",
+    "content": [
+      {
+        "subtitle": "",
+        "contentItemList": [
+          "Obtaining of ICO certificate",
+          "Obtaining of AIS certificate",
+          "AML registration",
+          "HMRC registration",
+          "FATCA registration with GIIN code"
+        ]
+      }
+    ]
+  }
+]

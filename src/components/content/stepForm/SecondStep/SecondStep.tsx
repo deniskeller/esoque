@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   BaseButton,
   BaseContainer,
   BaseInput,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './SecondStep.module.scss';
-import { LinkHome } from '@content/index';
+} from "@base/index";
+import styles from "./SecondStep.module.scss";
+import { LinkHome } from "@content/index";
 
 interface Props {
   nextStep: () => void;
 }
 
 //тестовый пароль для подтвержедния почты
-const mockEmail = 'alisa@wonderlabagency.com';
+const mockEmail = "alisa@wonderlabagency.com";
 
 const SecondStep: React.FC<Props> = ({ nextStep }) => {
-  const [confirmEmail, setConfirmEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState("");
 
   const confirmEmailHandler = (value: string) => {
     setConfirmEmail(value);
@@ -28,28 +28,28 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
 
     //тестовая валидация
     if (mockEmail == confirmEmail) {
-      alert('пароли совпадают');
-      setConfirmEmail('');
+      alert("пароли совпадают");
+      setConfirmEmail("");
       nextStep();
     } else {
-      alert('пароли не совпадают');
+      alert("пароли не совпадают");
     }
   };
 
   return (
-    <form action='' method='post' className={styles.ConfrimEmail}>
+    <form action="" method="post" className={styles.ConfrimEmail}>
       <BaseTitle className={styles.Title}>Confirm your email</BaseTitle>
       <BaseText className={styles.Subtitle}>
-        We've sent a confirmation code to {mockEmail}
+        We&apos;ve sent a confirmation code to {mockEmail}
       </BaseText>
 
       <BaseInput
         // label='Email'
         value={confirmEmail}
-        name='email'
+        name="email"
         onChange={confirmEmailHandler}
-        placeholder='Enter verification code here'
-        type='text'
+        placeholder="Enter verification code here"
+        type="text"
         required
         className={styles.Input}
       />

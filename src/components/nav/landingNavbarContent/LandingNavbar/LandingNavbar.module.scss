@@ -1,9 +1,14 @@
 .Container {
   width: 100%;
-  max-width: em(1350px);
+  max-width: em(1532px);
   margin: 0 auto;
   position: relative;
+
+  @include iftablet {
+    max-width: em(900px);
+  }
 }
+
 .Navbar {
   width: 100%;
   position: absolute;
@@ -33,7 +38,6 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin-right: em(75px);
     @include ifmobile {
       display: none;
     }
@@ -41,15 +45,26 @@
 }
 
 .Navbar__select_language {
-  width: em(87px);
-  margin-right: em(70px);
+  min-width: em(87px);
+  margin-left: em(77px);
+  margin-right: em(77px);
+  @include iftablet {
+    margin-left: em(42px);
+    margin-right: em(42px);
+  }
 }
 
 .BtnLogin {
   margin-right: em(36px);
+  @include iftablet {
+    margin-right: em(23px);
+  }
 }
 
 .BtnSignup {
   min-width: em(158px);
   height: em(43px);
+  @include iftablet {
+    min-width: em(100px);
+  }
 }
