@@ -10,17 +10,23 @@
 }
 
 .Navbar {
-  width: 100%;
-  position: absolute;
-  z-index: 1000;
-  top: 54px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  .NavbarDesktop {
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    top: 54px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include ifmobile {
+      display: none;
+    }
+  }
 
-  @include ifmobile {
-    // width: 100%;
-    // height: em($navbar-height);
+  .NavbarMobile {
+    @include ifmobile {
+      // display: block;
+    }
   }
 
   &__burger {

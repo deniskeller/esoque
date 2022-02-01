@@ -6,6 +6,10 @@
   padding-top: em(92px);
   padding-bottom: em(82px);
 
+  @include ifmobile {
+    display: none;
+  }
+
   .FooterLogoContent {
     display: flex;
     flex-direction: column;

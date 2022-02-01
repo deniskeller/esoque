@@ -8,15 +8,31 @@
       font-size: em(69px);
       font-weight: 700;
     }
+
+    @include iftablet {
+      font-size: em(50px);
+    }
+
     @include ifmobile {
-      font-size: em(26px);
+      font-size: em(33px);
     }
   }
   &_h2 {
-    font-size: em(50px);
     color: $white;
     text-decoration: underline;
     font-weight: bold;
+    @include ifdesktop {
+      font-size: em(50px);
+      font-weight: 700;
+    }
+
+    @include iftablet {
+      font-size: em(40px);
+    }
+
+    @include ifmobile {
+      font-size: em(24px);
+    }
   }
   &_h3 {
     font-size: em(20px);

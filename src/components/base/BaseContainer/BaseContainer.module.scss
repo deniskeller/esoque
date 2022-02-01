@@ -6,6 +6,9 @@
   @include iftablet {
     max-width: em(838px);
   }
+  @include ifmobile {
+    max-width: em(286px);
+  }
 }
 
 // .appContent {

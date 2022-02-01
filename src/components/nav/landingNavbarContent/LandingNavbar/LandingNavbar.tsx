@@ -72,39 +72,8 @@ const LandingNavbar: React.FC<Props> = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.Navbar}>
-        <ul className={styles.Navbar__nav}>
-          {links.map((link, index) => {
-            return (
-              <LandingNavbarLink
-                href={link.href}
-                title={link.title}
-                index={index}
-                key={index}
-              />
-            );
-          })}
-        </ul>
-
-        <SelectLanguage
-          className={styles.Navbar__select_language}
-          placeholder='en'
-          optionsValue={languages}
-          type='language'
-        />
-
-        <BaseButton
-          type='empty'
-          onClick={goToLogin}
-          className={styles.BtnLogin}
-        >
-          Log In
-        </BaseButton>
-        <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
-          Sign Up
-        </BaseButton>
-
-        <LandingMobileMenu visible={modal} setVisible={setModal}>
-          <ul>
+        <span className={styles.NavbarDesktop}>
+          <ul className={styles.Navbar__nav}>
             {links.map((link, index) => {
               return (
                 <LandingNavbarLink
@@ -116,7 +85,42 @@ const LandingNavbar: React.FC<Props> = () => {
               );
             })}
           </ul>
-        </LandingMobileMenu>
+
+          <SelectLanguage
+            className={styles.Navbar__select_language}
+            placeholder='en'
+            optionsValue={languages}
+            type='language'
+          />
+
+          <BaseButton
+            type='empty'
+            onClick={goToLogin}
+            className={styles.BtnLogin}
+          >
+            Log In
+          </BaseButton>
+          <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
+            Sign Up
+          </BaseButton>
+        </span>
+
+        <div className={styles.NavbarMobile}>
+          <LandingMobileMenu visible={modal} setVisible={setModal}>
+            <ul>
+              {links.map((link, index) => {
+                return (
+                  <LandingNavbarLink
+                    href={link.href}
+                    title={link.title}
+                    index={index}
+                    key={index}
+                  />
+                );
+              })}
+            </ul>
+          </LandingMobileMenu>
+        </div>
       </div>
     </div>
   );

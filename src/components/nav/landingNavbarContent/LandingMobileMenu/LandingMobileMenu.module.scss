@@ -11,8 +11,7 @@
   z-index: 10000000;
   min-height: 100%;
   overflow: auto;
-  overflow-y: scroll;
-  // @extend %background-gradient;
+  // overflow-y: scroll;
 }
 
 .MobileMenuPopup_content {
@@ -20,6 +19,8 @@
   min-height: inherit;
   padding: 90px 20px 40px;
   position: relative;
+  // width: em(263px);
+  // background: $black2;
 }
 .MobileMenuPopup_close {
   width: em(30px);

@@ -1,11 +1,11 @@
 @mixin ifmobile {
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     @content;
   }
 }
 
 @mixin ifmobileL {
-  @media only screen and (max-width: 768px) and (orientation: landscape) {
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
     @content;
   }
 }

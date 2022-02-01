@@ -15,11 +15,33 @@
   width: em(269px);
   height: em(20px);
   margin-bottom: em(28px);
+
+  @include iftablet {
+    width: em(180px);
+    height: em(13px);
+    margin-bottom: em(18px);
+  }
+
+  @include ifmobile {
+    width: em(90px);
+    height: em(7px);
+    margin-bottom: em(9px);
+  }
 }
 
 .Logo {
   width: em(439px);
   height: em(87px);
+
+  @include iftablet {
+    width: em(294px);
+    height: em(58px);
+  }
+
+  @include ifmobile {
+    width: em(147px);
+    height: em(29px);
+  }
 }
 
 // HelloBlock
@@ -29,6 +51,17 @@
   justify-content: space-between;
   padding-top: em(203px);
   padding-bottom: em(128px);
+
+  @include iftablet {
+    padding-top: em(84px);
+    padding-bottom: em(118px);
+  }
+
+  @include ifmobile {
+    flex-wrap: wrap;
+    padding-top: em(84px);
+    padding-bottom: em(40px);
+  }
 }
 
 .ContentText {
@@ -38,9 +71,23 @@
 
 .HelloBlockTitle {
   display: block;
-  margin-bottom: em(36px);
+  margin-bottom: em(52px);
   h1 {
     color: $white;
+  }
+
+  @include iftablet {
+    margin-bottom: em(27px);
+    h1 {
+      font-size: em(50px);
+    }
+  }
+
+  @include ifmobile {
+    margin-bottom: em(24px);
+    h1 {
+      font-size: em(33px);
+    }
   }
 }
 
@@ -51,6 +98,19 @@
   p {
     font-size: em(21px);
   }
+
+  @include iftablet {
+    max-width: em(437px);
+    p {
+      font-size: em(18px);
+    }
+  }
+
+  @include ifmobile {
+    p {
+      font-size: em(12px);
+    }
+  }
 }
 
 .ContentImage {
@@ -58,6 +118,34 @@
   position: relative;
   width: em(653px);
   height: em(503px);
+  left: em(-50px);
+  @include iftablet {
+    width: em(413px);
+    height: em(318px);
+  }
+
+  @include ifmobile {
+    width: em(150px);
+    height: em(115px);
+  }
+}
+
+.BlockLeft {
+  @include ifmobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .ContentText {
+      max-width: em(131px);
+      order: 1;
+    }
+
+    .ContentImage {
+      left: em(-24px);
+      top: em(43px);
+    }
+  }
 }
 
 .BlockRight {
@@ -65,14 +153,35 @@
   display: flex;
   flex-direction: column;
   text-align: right;
+  align-items: flex-end;
+  @include iftablet {
+    margin-top: em(133px);
+  }
+
+  @include ifmobile {
+    margin-top: em(30px);
+    text-align: left;
+  }
+
   .HelloBlockTitle {
     width: em(416px);
     align-self: flex-end;
+    @include ifmobile {
+      width: 100%;
+    }
   }
 
   .HelloBlockText {
     width: em(547px);
     margin-bottom: em(34px);
+    @include iftablet {
+      width: em(368px);
+    }
+
+    @include ifmobile {
+      width: 100%;
+      margin-bottom: em(20px);
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -86,33 +195,85 @@
   padding-bottom: em(265px);
   background: $black2;
 
+  @include iftablet {
+    padding-top: em(139px);
+    padding-bottom: em(160px);
+  }
+
+  @include ifmobile {
+    padding-top: em(60px);
+    padding-bottom: em(60px);
+  }
+
   .ServicesBlockTitle {
     margin-bottom: em(93px);
+    @include iftablet {
+      margin-bottom: em(62px);
+    }
+
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
   }
 
   .ServicesBlockItems {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: em(94px) em(192px);
+
+    @include iftablet {
+      gap: em(40px) em(185px);
+    }
+
+    @include ifmobile {
+      gap: 0;
+    }
 
     .ServicesBlockItem {
       width: em(577px);
-      margin-bottom: em(94px);
-      &:nth-last-of-type(-n + 2) {
-        margin-bottom: 0;
+
+      @include iftablet {
+        width: em(326px);
       }
+
+      @include ifmobile {
+        margin-bottom: em(28px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      // &:nth-last-of-type(-n + 2) {
+      //   margin-bottom: 0;
+      // }
     }
 
     .ServicesItemTitle {
       margin-bottom: em(52px);
+      @include iftablet {
+        margin-bottom: em(35px);
+      }
+
+      @include ifmobile {
+        margin-bottom: em(28px);
+      }
     }
 
     .ServicesItemText {
       font-size: em(21px);
+      line-height: 120%;
       font-weight: 400;
       color: $white;
       font-family: $font-Calibri;
+      @include iftablet {
+        font-size: em(18px);
+      }
+
+      @include ifmobile {
+        font-size: em(12px);
+      }
     }
   }
 }
@@ -122,7 +283,14 @@
   background-image: url('/images/landing/bgHome2.png');
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+
+  @include iftablet {
+    background-position: 70% 0%;
+  }
+
+  @include ifmobile {
+    background-position: 50% 0px;
+  }
 
   .ConclusionBlockContent {
     padding-top: em(525px);
@@ -132,20 +300,55 @@
     justify-content: center;
     align-items: center;
 
+    @include iftablet {
+      padding-top: em(293px);
+      padding-bottom: em(283px);
+    }
+
+    @include ifmobile {
+      padding-top: em(293px);
+      padding-bottom: em(198px);
+    }
+
     .ConclusionBlockImage {
       position: relative;
       width: em(138px);
       height: em(199px);
       margin-right: em(43px);
+      @include iftablet {
+        width: em(97px);
+        height: em(139px);
+      }
+      @include ifmobile {
+        width: em(55px);
+        height: em(79px);
+        position: absolute;
+        bottom: em(42px);
+        left: calc(50% - em(27px));
+      }
     }
 
     .ConclusionBlockTitle {
       width: em(980px);
+      @include iftablet {
+        width: em(591px);
+      }
+      @include ifmobile {
+        width: em(228px);
+        margin: 0 auto;
+      }
       p {
         font-size: em(50px);
         font-weight: 700;
         line-height: 120%;
         color: $pink;
+        @include iftablet {
+          font-size: em(40px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+          text-align: center;
+        }
       }
     }
   }
