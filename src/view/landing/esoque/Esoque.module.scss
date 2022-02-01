@@ -3,8 +3,25 @@
   padding-bottom: em(80px);
   position: relative;
 
+  @include iftablet {
+    padding-top: em(190px);
+    padding-bottom: em(60px);
+  }
+
+  @include ifmobile {
+    padding-top: em(84px);
+    padding-bottom: em(40px);
+  }
+
   .WelcomeBlockTitle {
     margin-bottom: em(37px);
+    @include iftablet {
+      margin-bottom: em(35px);
+    }
+
+    @include ifmobile {
+      margin-bottom: em(27px);
+    }
     h1 {
       color: $white;
     }
@@ -12,6 +29,13 @@
 
   .WelcomeBlockUl {
     max-width: em(646px);
+    @include iftablet {
+      max-width: em(502px);
+    }
+
+    @include ifmobile {
+      max-width: em(646px);
+    }
 
     .WelcomeBlockLi {
       margin-bottom: em(20px);
@@ -21,6 +45,13 @@
         p {
           font-size: em(21px);
           font-family: $font-Calibri;
+          @include iftablet {
+            font-size: em(18px);
+          }
+
+          @include ifmobile {
+            font-size: em(12px);
+          }
         }
       }
       &:last-child {
@@ -36,6 +67,16 @@
     right: 0;
     width: em(661px);
     height: em(574px);
+    @include iftablet {
+      width: em(378px);
+      height: em(313px);
+      top: em(278px);
+      right: em(-50px);
+    }
+    //решит вопрос с картинкой и текстом
+    @include ifmobile {
+      display: none;
+    }
   }
 }
 
@@ -49,6 +90,15 @@
     @extend %center;
     flex-direction: column;
 
+    @include iftablet {
+      padding-top: em(214px);
+      padding-bottom: em(56px);
+    }
+    @include ifmobile {
+      padding-top: em(148px);
+      padding-bottom: em(50px);
+    }
+
     .AboutImage {
       position: absolute;
       z-index: 1000;
@@ -56,21 +106,45 @@
       margin: 0 auto;
       width: em(385px);
       height: em(385px);
+      @include iftablet {
+        top: em(81px);
+        width: em(171px);
+        height: em(171px);
+      }
+      @include ifmobile {
+        top: em(72px);
+        width: em(107px);
+        height: em(107px);
+      }
     }
 
     .AboutTitle {
-      width: em(900px);
+      max-width: em(900px);
       position: relative;
       z-index: 1000;
-      margin-bottom: em(54px);
+      margin-bottom: em(126px);
       h1 {
         font-size: em(50px);
         text-align: center;
       }
+      @include iftablet {
+        max-width: em(716px);
+
+        h1 {
+          font-size: em(40px);
+        }
+      }
+      @include ifmobile {
+        max-width: em(260px);
+        margin-bottom: em(70px);
+        h1 {
+          font-size: em(24px);
+        }
+      }
     }
 
     .AboutSubtitle {
-      width: em(629px);
+      max-width: em(629px);
       margin-bottom: em(85px);
       p {
         font-size: em(30px);
@@ -78,6 +152,19 @@
         font-weight: bold;
         text-align: center;
         color: $grey;
+      }
+      @include iftablet {
+        margin-bottom: em(43px);
+        p {
+          font-size: em(24px);
+        }
+      }
+      @include ifmobile {
+        max-width: em(269px);
+        margin-bottom: em(70px);
+        p {
+          font-size: em(16px);
+        }
       }
     }
 
@@ -88,10 +175,27 @@
       background: $yellow;
       @extend %center;
 
+      @include iftablet {
+        width: em(92px);
+        height: em(92px);
+      }
+      @include ifmobile {
+        width: em(60px);
+        height: em(60px);
+      }
+
       .AboutIconCircleDown {
         position: absolute;
         width: em(62px);
         height: em(86px);
+        @include iftablet {
+          width: em(34px);
+          height: em(46px);
+        }
+        @include ifmobile {
+          width: em(22px);
+          height: em(30px);
+        }
       }
     }
   }
@@ -103,11 +207,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include iftablet {
+    padding-top: em(86px);
+    padding-bottom: em(50px);
+  }
+  @include ifmobile {
+    padding-top: em(72px);
+    padding-bottom: em(22px);
+  }
+
   .GraphBlockTitle {
     margin-bottom: em(48px);
     h1 {
       color: $white;
-      font-size: em(69px);
+      text-align: center;
+    }
+
+    @include iftablet {
+      margin-bottom: em(24px);
+    }
+    @include ifmobile {
+      margin-bottom: em(24px);
     }
   }
 
@@ -115,19 +236,62 @@
     margin-bottom: em(123px);
     h1 {
       font-size: em(30px);
+      text-align: center;
+    }
+
+    @include iftablet {
+      margin-bottom: em(34px);
+      h1 {
+        font-size: em(24px);
+      }
+    }
+    @include ifmobile {
+      margin-bottom: em(49px);
+      h1 {
+        font-size: em(16px);
+      }
     }
   }
 
   .GraphBlockImg {
-    display: block;
     position: relative;
+  }
+
+  .GraphBlockImgDesktop {
+    display: block;
     width: em(1358px);
     height: em(618px);
     margin-bottom: em(161px);
+    @include iftablet {
+      width: em(907px);
+      height: em(370px);
+      margin-bottom: em(80px);
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+  .GraphBlockImgMobile {
+    display: none;
+    width: em(306px);
+    height: em(322px);
+    margin-bottom: em(19px);
+    @include ifmobile {
+      display: block;
+    }
   }
 
   .GraphBlockBtn {
     width: em(289px);
     height: em(63px);
+
+    @include iftablet {
+      width: em(100px);
+      height: em(43px);
+    }
+    @include ifmobile {
+      width: em(76px);
+      height: em(33px);
+    }
   }
 }

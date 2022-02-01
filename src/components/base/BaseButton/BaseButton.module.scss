@@ -13,7 +13,7 @@
     font-size: em(14px);
   }
   @include ifmobile {
-    // width: 100%;
+    font-size: em(10px);
   }
 }
 

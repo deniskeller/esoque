@@ -113,9 +113,21 @@ const Esoque: React.FC<Props> = () => {
           <BaseTitle className={styles.GraphBlockSubtitle}>
             Total assets that are managed
           </BaseTitle>
-          <div className={styles.GraphBlockImg}>
+          <div
+            className={`${styles.GraphBlockImg} ${styles.GraphBlockImgDesktop}`}
+          >
             <Image
               src='/images/landing/imgEsoqueGraph.png'
+              layout={'fill'}
+              alt={'Esocue image'}
+            />
+          </div>
+
+          <div
+            className={`${styles.GraphBlockImg} ${styles.GraphBlockImgMobile}`}
+          >
+            <Image
+              src='/images/landing/imgEsoqueGraphMobile.png'
               layout={'fill'}
               alt={'Esocue image'}
             />
