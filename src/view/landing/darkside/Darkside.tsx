@@ -33,6 +33,20 @@ const advantages = [
     width: 46,
     height: 46,
   },
+  // {
+  //   title: 'Go Global',
+  //   subtitle: 'Extend and develop your business on an international scale',
+  //   image: 'iconDarksideGlobe.png',
+  //   width: 46,
+  //   height: 46,
+  // },
+  // {
+  //   title: 'Go Global',
+  //   subtitle: 'Extend and develop your business on an international scale',
+  //   image: 'iconDarksideGlobe.png',
+  //   width: 46,
+  //   height: 46,
+  // },
 ];
 
 const jurisdictions = [
@@ -48,6 +62,12 @@ const jurisdictions = [
     subtitle: 'Hong Kong [China] - 2100 EUR',
     image: 'imgDarksideHongkong',
   },
+  // {
+  //   id: 3,
+  //   title: 'Hong kong',
+  //   subtitle: 'Hong Kong [China] - 2100 EUR',
+  //   image: 'imgDarksideHongkong',
+  // },
 ];
 
 const sequencing = [

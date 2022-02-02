@@ -1,17 +1,39 @@
 .WelcomeBlock {
   padding-top: em(322px);
-  padding-bottom: em(235px);
+  padding-bottom: em(430px);
   position: relative;
+
+  @include iftablet {
+    padding-top: em(189px);
+    padding-bottom: em(171px);
+  }
+  @include ifmobile {
+    padding-top: em(84px);
+    padding-bottom: em(20px);
+  }
 
   .WelcomeBlockTitle {
     margin-bottom: em(37px);
     h1 {
       color: $white;
     }
+    @include iftablet {
+      margin-bottom: em(35px);
+    }
+    @include ifmobile {
+      margin-bottom: em(27px);
+    }
   }
 
   .WelcomeBlockUl {
     max-width: em(570px);
+
+    @include iftablet {
+      max-width: em(448px);
+    }
+    @include ifmobile {
+      max-width: em(166px);
+    }
 
     .WelcomeBlockLi {
       margin-bottom: em(20px);
@@ -19,7 +41,6 @@
 
       .WelcomeBlockText {
         p {
-          font-size: em(21px);
           font-family: $font-Calibri;
         }
       }
@@ -32,17 +53,33 @@
   .WelcomeBlockImage {
     position: absolute;
     z-index: 1000;
+    top: em(273px);
     right: 0;
-    bottom: 0;
     width: em(668px);
     height: em(543px);
+    @include iftablet {
+      top: em(184px);
+      width: em(332px);
+      height: em(270px);
+    }
+    @include ifmobile {
+      top: em(146px);
+      width: em(121px);
+      height: em(99px);
+    }
   }
 }
 
 .WidgetBlock {
-  padding-top: em(322px);
-  padding-bottom: em(235px);
+  padding-bottom: em(238px);
   position: relative;
+
+  @include iftablet {
+    padding-bottom: em(158px);
+  }
+  @include ifmobile {
+    padding-bottom: em(53px);
+  }
 
   .WidgetBlockImage {
     position: relative;
@@ -50,35 +87,61 @@
     width: em(204px);
     height: em(204px);
     margin-bottom: em(37px);
+    @include iftablet {
+      width: em(126px);
+      height: em(126px);
+      margin-bottom: em(54px);
+    }
+    @include ifmobile {
+      width: em(81px);
+      height: em(81px);
+      margin-bottom: em(8px);
+    }
   }
 
   .WidgetBlockTitle {
-    width: em(885px);
+    max-width: em(885px);
     margin: 0 auto;
     text-align: center;
-    margin-bottom: em(116px);
+    margin-bottom: em(106px);
+    @include iftablet {
+      margin-bottom: em(72px);
+    }
+    @include ifmobile {
+      margin-bottom: em(92px);
+    }
     h1 {
       font-size: em(50px);
       color: $white;
+      @include iftablet {
+        font-size: em(40px);
+      }
+      @include ifmobile {
+        font-size: em(24px);
+      }
     }
   }
 
   .WidgetBlockWidget {
     margin-bottom: em(184px);
+    @include iftablet {
+      margin-bottom: em(90px);
+    }
+    @include ifmobile {
+      margin-bottom: em(24px);
+    }
   }
 
   .WidgetBlockAdvantages {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-
-    .WidgetBlockAdvantagesItem {
-      margin-top: em(40px);
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        margin-top: 0;
-      }
+    gap: em(30px) em(82px);
+    @include iftablet {
+      gap: em(16px);
+    }
+    @include ifmobile {
+      gap: em(15px) em(16px);
     }
   }
 }
@@ -88,31 +151,58 @@
   padding-bottom: em(230px);
   position: relative;
   background: $black2;
+  @include iftablet {
+    padding-top: em(69px);
+    padding-bottom: em(180px);
+  }
+  @include ifmobile {
+    padding-top: em(60px);
+    padding-bottom: em(53px);
+  }
 
   .WelcomeBlockTitle {
     text-align: center;
     margin-bottom: em(111px);
+    @include iftablet {
+      margin-bottom: em(56px);
+    }
+    @include ifmobile {
+      margin-bottom: em(20px);
+    }
     h1 {
       color: $white;
     }
   }
 
   .JurisdictionsBlockCountry {
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // gap: em(28px);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: em(28px);
     max-width: em(1498px);
     width: 100%;
     margin: 0 auto;
     margin-bottom: em(144px);
+    @include iftablet {
+      max-width: em(909px);
+      margin-bottom: em(103px);
+      gap: em(25px);
+    }
+    @include ifmobile {
+      gap: em(18px);
+      margin-bottom: em(98px);
+    }
   }
 
   .HowItWorksTitle {
     text-align: center;
-    margin-bottom: em(199px);
+    margin-bottom: em(188px);
+    @include iftablet {
+      margin-bottom: em(50px);
+    }
+    @include ifmobile {
+      margin-bottom: em(39px);
+    }
     h1 {
       color: $white;
     }
@@ -120,16 +210,14 @@
 
   .HowItWorksItems {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-
-    .HowItWorksItem {
-      margin-top: em(40px);
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        margin-top: 0;
-      }
+    gap: em(30px) em(82px);
+    @include iftablet {
+      gap: em(16px);
+    }
+    @include ifmobile {
+      gap: em(15px) em(16px);
     }
   }
 }
@@ -139,14 +227,37 @@
   padding-bottom: em(245px);
   position: relative;
 
+  @include iftablet {
+    padding-top: em(144px);
+    padding-bottom: em(112px);
+  }
+  @include ifmobile {
+    padding-top: em(52px);
+    padding-bottom: em(92px);
+  }
+
   .JurisdictionsCountryBlockTitle {
     max-width: em(850px);
     text-align: center;
     margin: 0 auto;
-    margin-bottom: em(168px);
+    margin-bottom: em(161px);
+    @include iftablet {
+      max-width: em(679px);
+      margin-bottom: em(88px);
+    }
+    @include ifmobile {
+      max-width: em(679px);
+      margin-bottom: em(53px);
+    }
     h1 {
       color: $white;
       font-size: em(30px);
+      @include iftablet {
+        font-size: em(24px);
+      }
+      @include ifmobile {
+        font-size: em(16px);
+      }
     }
   }
 
@@ -155,37 +266,87 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: em(30px) em(55px);
+
+    @include iftablet {
+      gap: em(30px);
+    }
+    @include ifmobile {
+      gap: em(8px);
+    }
   }
 }
 
 .SomeBlockContainer {
   background: $black2;
   .SomeBlock {
-    padding-top: em(240px);
-    padding-bottom: em(267px);
+    padding-top: em(237px);
+    padding-bottom: em(261px);
+
+    @include iftablet {
+      padding-top: em(159px);
+      padding-bottom: em(126px);
+    }
+    @include ifmobile {
+      padding-top: em(54px);
+      padding-bottom: em(89px);
+    }
 
     .SomeBlockMore {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
-      // margin-bottom: em(82px);
-      // &:last-child {
-      //   margin-bottom: 0;
-      // }
+      gap: em(300px);
+      margin-bottom: em(75px);
+      @include iftablet {
+        gap: em(126px);
+        margin-bottom: em(110px);
+      }
+      @include ifmobile {
+        flex-direction: column;
+        gap: em(27px);
+        margin-bottom: em(45px);
+      }
 
       .SomeBlockMoreItem {
         display: flex;
         flex-direction: column;
         align-items: center;
         max-width: em(523px);
-        margin-bottom: em(82px);
+
+        @include iftablet {
+          max-width: em(356px);
+        }
+        @include ifmobile {
+          max-width: 70%;
+          align-items: flex-start;
+          &:nth-child(2n) {
+            align-items: flex-end;
+            align-self: flex-end;
+            text-align: right;
+            .WelcomeBlockImage {
+              margin-right: em(30px);
+            }
+          }
+        }
 
         .WelcomeBlockImage {
           position: relative;
           width: em(88px);
           height: em(88px);
           margin-bottom: em(38px);
+
+          @include iftablet {
+            width: em(65px);
+            height: em(65px);
+            margin-bottom: em(29px);
+          }
+          @include ifmobile {
+            width: em(37px);
+            height: em(37px);
+            margin-bottom: em(14px);
+            margin-left: em(30px);
+          }
         }
 
         p {
@@ -193,17 +354,38 @@
           color: $white;
           font-weight: bold;
           line-height: 120%;
+
+          @include iftablet {
+            font-size: em(24px);
+          }
+          @include ifmobile {
+            font-size: em(16px);
+          }
         }
 
         .Small {
           font-size: em(20px);
           font-weight: 400;
+
+          @include iftablet {
+            font-size: em(17px);
+          }
+          @include ifmobile {
+            font-size: em(11px);
+          }
         }
       }
     }
 
     .SomeBlockSolo {
       margin-bottom: em(82px);
+
+      @include iftablet {
+        margin-bottom: em(110px);
+      }
+      @include ifmobile {
+        margin-bottom: em(45px);
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -215,6 +397,12 @@
         align-items: center;
         text-align: center;
         margin-bottom: em(82px);
+
+        @include iftablet {
+          max-width: em(642px);
+        }
+        @include ifmobile {
+        }
         &:last-child {
           margin-bottom: 0;
         }
@@ -224,12 +412,29 @@
           width: em(88px);
           height: em(88px);
           margin-bottom: em(38px);
+
+          @include iftablet {
+            width: em(65px);
+            height: em(65px);
+            margin-bottom: em(29px);
+          }
+          @include ifmobile {
+            width: em(37px);
+            height: em(37px);
+            margin-bottom: em(14px);
+          }
         }
         p {
           font-size: em(30px);
           color: $white;
           font-weight: bold;
           line-height: 120%;
+          @include iftablet {
+            font-size: em(24px);
+          }
+          @include ifmobile {
+            font-size: em(16px);
+          }
         }
 
         .Pink {

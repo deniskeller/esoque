@@ -6,22 +6,49 @@
   height: em(189px);
   background: $black2;
   border-radius: 10px;
-  padding: em(42px);
+  padding: em(42px) em(42px) 0px;
   cursor: pointer;
+
+  @include iftablet {
+    width: em(259px);
+    height: em(145px);
+    padding: em(18px) em(30px) 0px;
+  }
+  @include ifmobile {
+    width: em(139px);
+    height: em(101px);
+    padding: em(21px) em(10px) 0px;
+  }
 
   .CountryItemImage {
     position: relative;
     width: em(37px);
     height: em(37px);
-    margin-bottom: em(15px);
+    margin-bottom: em(19px);
+    @include iftablet {
+      width: em(32px);
+      height: em(32px);
+      margin-bottom: em(25px);
+    }
+    @include ifmobile {
+      width: em(21px);
+      height: em(21px);
+      margin-bottom: em(10px);
+    }
   }
 
   .CountryItemTitle {
     font-size: em(20px);
-    line-height: 100%;
+    line-height: 120%;
     font-weight: bold;
     color: $green;
     text-transform: uppercase;
     text-align: center;
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+      font-size: em(10px);
+    }
   }
 }

@@ -6,8 +6,20 @@
   border-radius: 10px;
   cursor: pointer;
   padding: em(59px) em(75px) em(46px);
+
   &:last-child {
     margin: 0 auto;
+  }
+
+  @include iftablet {
+    width: em(442px);
+    height: em(343px);
+    padding: em(36px) em(28px) em(24px);
+  }
+  @include ifmobile {
+    width: em(292px);
+    height: em(227px);
+    padding: em(28px) em(18px) em(21px);
   }
 
   .CountryItemImage {
@@ -17,11 +29,28 @@
     border-radius: 10px;
     margin-bottom: em(48px);
 
+    @include iftablet {
+      width: em(386px);
+      height: em(231px);
+      margin-bottom: em(17px);
+    }
+    @include ifmobile {
+      width: em(256px);
+      height: em(153px);
+      margin-bottom: em(17px);
+    }
+
     .CountryItemTitle {
       position: absolute;
       bottom: em(32px);
       width: 100%;
       text-align: center;
+      @include iftablet {
+        bottom: em(22px);
+      }
+      @include ifmobile {
+        bottom: em(14px);
+      }
       h1 {
         font-family: $font-Flood;
         font-style: italic;
@@ -31,6 +60,12 @@
         line-height: 120%;
         text-align: center;
         color: $yellow;
+        @include iftablet {
+          font-size: em(35px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+        }
       }
     }
   }
@@ -40,8 +75,20 @@
     color: $white;
     position: relative;
     padding-right: em(70px);
+    @include iftablet {
+      padding-right: em(47px);
+    }
+    @include ifmobile {
+      padding-right: em(34px);
+    }
     P {
       font-size: em(21px);
+      @include iftablet {
+        font-size: em(14px);
+      }
+      @include ifmobile {
+        font-size: em(9px);
+      }
     }
     span {
       width: em(40px);
@@ -53,10 +100,25 @@
       right: 0;
       top: em(-5px);
       @extend %center;
+      @include iftablet {
+        width: em(31px);
+        height: em(28px);
+      }
+      @include ifmobile {
+        width: em(20px);
+        height: em(18px);
+        border-radius: 7px;
+      }
       p {
         font-size: em(37px);
         font-family: $font-Calibri;
         margin-top: em(-1px);
+        @include iftablet {
+          font-size: em(30px);
+        }
+        @include ifmobile {
+          font-size: em(16px);
+        }
       }
     }
   }
