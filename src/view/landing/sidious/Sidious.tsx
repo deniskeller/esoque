@@ -63,10 +63,8 @@ const Sidious: React.FC<Props> = () => {
                 can be utilized for KYC/KYB purposes.
               </BaseText>
             </li>
-            <li className={styles.WelcomeBlockLi}>
-              <BaseText
-                className={`${styles.WelcomeBlockText} ${styles.GreenTExt}`}
-              >
+            <li className={`${styles.WelcomeBlockLi} ${styles.GreenTExt}`}>
+              <BaseText className={`${styles.WelcomeBlockText}`}>
                 Information is based only on official / Government sources and
                 can be utilized for KYC/KYB purposes.
               </BaseText>
@@ -101,6 +99,19 @@ const Sidious: React.FC<Props> = () => {
               alt={''}
             />
           </div>
+
+          <div className={styles.RotateSmartphone}>
+            <div className={styles.RotateSmartphoneImage}>
+              <Image
+                src='/images/landing/iconSidiousRotateSmartphone.png'
+                layout={'fill'}
+                alt={''}
+              />
+            </div>
+            <div className={styles.RotateSmartphoneTitle}>
+              Please rotate your device
+            </div>
+          </div>
         </BaseContainer>
       </div>
 
@@ -125,7 +136,7 @@ const Sidious: React.FC<Props> = () => {
       <div className={styles.PlatformBenefitsBlockContainer}>
         <BaseContainer>
           <div className={styles.PlatformBenefitsBlock}>
-            <BaseTitle className={styles.PlatformBenefitsBlockTitle}>
+            <BaseTitle type='h2' className={styles.PlatformBenefitsBlockTitle}>
               KYC/KYB platform for onboarding and monitoring
             </BaseTitle>
 
@@ -187,7 +198,7 @@ const Sidious: React.FC<Props> = () => {
 
       <BaseContainer>
         <div className={styles.ImprovingBlock}>
-          <BaseTitle className={styles.ImprovingBlockTitle}>
+          <BaseTitle type='h2' className={styles.ImprovingBlockTitle}>
             Improving the process of onboarding
           </BaseTitle>
           <BaseTitle className={styles.ImprovingBlockSubtitle}>
@@ -210,13 +221,33 @@ const Sidious: React.FC<Props> = () => {
 
       <div className={styles.HowItWorksBlockContainer}>
         <div className={styles.HowItWorksBlock}>
-          <BaseTitle className={styles.HowItWorksBlockTitle}>
+          <BaseTitle type='h2' className={styles.HowItWorksBlockTitle}>
             How it works
           </BaseTitle>
 
-          <div className={styles.HowItWorksBlockImage}>
+          <div
+            className={`${styles.HowItWorksBlockImage} ${styles.DesktopImage}`}
+          >
             <Image
-              src='/images/landing/imgSidious5.png'
+              src='/images/landing/imgSidious5desktop.png'
+              layout={'fill'}
+              alt={''}
+            />
+          </div>
+          <div
+            className={`${styles.HowItWorksBlockImage} ${styles.TabletImage}`}
+          >
+            <Image
+              src='/images/landing/imgSidious5tablet.png'
+              layout={'fill'}
+              alt={''}
+            />
+          </div>
+          <div
+            className={`${styles.HowItWorksBlockImage} ${styles.MobileImage}`}
+          >
+            <Image
+              src='/images/landing/imgSidious5mobile.png'
               layout={'fill'}
               alt={''}
             />
