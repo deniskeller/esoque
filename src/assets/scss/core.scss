@@ -40,7 +40,7 @@ html {
   }
 
   @include if8k {
-    font-size: math.div(72, 7680) * 100vw;
+    font-size: math.div(76, 7680) * 100vw;
   }
 }
 
