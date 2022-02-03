@@ -9,6 +9,7 @@
   @include ifmobile {
     max-width: em(286px);
   }
+  // @include adaptiv('max-width', 1350, 286, 0);
 }
 
 // .appContent {

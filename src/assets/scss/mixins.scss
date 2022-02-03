@@ -22,6 +22,18 @@
   }
 }
 
+@mixin if4k {
+  @media only screen and (min-width: 1736px) {
+    @content;
+  }
+}
+
+@mixin if8k {
+  @media only screen and (min-width: 3841px) {
+    @content;
+  }
+}
+
 @mixin respondH($media) {
   @media only screen and (min-height: $media) {
     @content;

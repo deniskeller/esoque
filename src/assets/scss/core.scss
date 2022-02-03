@@ -34,6 +34,14 @@ html {
   @include ifmobile {
     font-size: math.div(18, 360) * 100vw;
   }
+
+  @include if4k {
+    font-size: math.div(36, 3840) * 100vw;
+  }
+
+  @include if8k {
+    font-size: math.div(72, 7680) * 100vw;
+  }
 }
 
 body {
