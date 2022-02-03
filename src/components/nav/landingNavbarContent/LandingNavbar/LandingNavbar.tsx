@@ -59,15 +59,15 @@ const LandingNavbar: React.FC<Props> = () => {
     router.push('/signup');
   };
 
-  React.useEffect(() => {
-    const className = 'overflow-hidden';
+  // React.useEffect(() => {
+  //   const className = 'overflow-hidden';
 
-    if (modal) {
-      document.body.classList.add(className);
-    } else {
-      document.body.classList.remove(className);
-    }
-  }, [modal]);
+  //   if (modal) {
+  //     document.body.classList.add(className);
+  //   } else {
+  //     document.body.classList.remove(className);
+  //   }
+  // }, [modal]);
 
   return (
     <div className={styles.Container}>
@@ -106,8 +106,14 @@ const LandingNavbar: React.FC<Props> = () => {
         </span>
 
         <div className={styles.NavbarMobile}>
+          <div className={styles.NavbarMobileBurger} onClick={menuOpen}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
           <LandingMobileMenu visible={modal} setVisible={setModal}>
-            <ul>
+            <ul className={styles.NavbarMobileNav}>
               {links.map((link, index) => {
                 return (
                   <LandingNavbarLink
@@ -119,6 +125,24 @@ const LandingNavbar: React.FC<Props> = () => {
                 );
               })}
             </ul>
+
+            <SelectLanguage
+              className={styles.Navbar__select_language}
+              placeholder='en'
+              optionsValue={languages}
+              type='language'
+            />
+
+            <BaseButton
+              type='empty'
+              onClick={goToLogin}
+              className={styles.BtnLogin}
+            >
+              Log In
+            </BaseButton>
+            <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
+              Sign Up
+            </BaseButton>
           </LandingMobileMenu>
         </div>
       </div>

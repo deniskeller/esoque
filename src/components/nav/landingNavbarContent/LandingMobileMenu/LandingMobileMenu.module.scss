@@ -14,21 +14,32 @@
   // overflow-y: scroll;
 }
 
-.MobileMenuPopup_content {
-  width: 100%;
-  min-height: inherit;
-  padding: 90px 20px 40px;
-  position: relative;
-  // width: em(263px);
-  // background: $black2;
-}
-.MobileMenuPopup_close {
-  width: em(30px);
-  height: em(30px);
+.MobileMenuPopupContent {
+  width: em(263px);
+  min-height: em(477px);
+  padding: em(68px) em(40px) em(28px);
   position: absolute;
-  top: em(30px);
-  right: em(15px);
+  right: 0;
+  background: $black2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.MobileMenuPopupClose {
+  width: em(18px);
+  height: em(9px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
+  position: absolute;
+  top: em(28px);
+  right: em(29px);
+  span {
+    width: 100%;
+    height: 1px;
+    background: $yellow;
+  }
 }
 
 .visible {

@@ -17,6 +17,9 @@
   @include iftablet {
     font-size: em(14px);
   }
+  @include ifmobile {
+    font-size: em(12px);
+  }
 }
 
 .Ul {
@@ -44,6 +47,9 @@
   cursor: pointer;
   @include iftablet {
     font-size: em(14px);
+  }
+  @include ifmobile {
+    font-size: em(12px);
   }
 }
 
