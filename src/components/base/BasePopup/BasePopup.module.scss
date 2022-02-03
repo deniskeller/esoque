@@ -13,17 +13,25 @@
 }
 
 .BasePopupContent {
-  width: 100%;
   position: relative;
   background: $black;
   margin: em(78px) auto;
+  width: 100%;
   max-width: em(1484px);
-  padding: em(273px) em(100px) em(100px) em(100px);
+  min-height: em(966px);
+  padding: em(273px) em(100px) em(100px);
   border-radius: 10px;
-  box-sizing: content-box;
+  @include iftablet {
+    max-width: em(874px);
+    min-height: em(638px);
+    padding: em(119px) em(68px) em(68px);
+    margin: em(60px) auto;
+  }
   @include ifmobile {
-    // margin: 0;
-    // padding: em(60px) em(20px) em(40px);
+    max-width: em(286px);
+    min-height: em(567px);
+    padding: em(69px) em(19px) em(19px);
+    margin: em(35px) auto;
   }
 }
 .BasePopupClose {
@@ -33,12 +41,18 @@
   top: em(34px);
   right: em(34px);
   cursor: pointer;
-  // @include ifmobile {
-  //   width: em(20px);
-  //   height: em(20px);
-  //   top: em(20px);
-  //   right: em(20px);
-  // }
+  @include iftablet {
+    width: em(19px);
+    height: em(26px);
+    top: em(30px);
+    right: em(34px);
+  }
+  @include ifmobile {
+    width: em(11px);
+    height: em(15px);
+    top: em(20px);
+    right: em(20px);
+  }
 }
 
 .Visible {

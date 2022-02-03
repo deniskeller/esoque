@@ -1,14 +1,17 @@
 .Subtitle {
-  margin: 0;
   color: $white;
   line-height: 100%;
 
   &_h1 {
-    font-size: em(30px);
     font-weight: bold;
-
+    @include ifdesktop {
+      font-size: em(30px);
+    }
+    @include iftablet {
+      font-size: em(24px);
+    }
     @include ifmobile {
-      font-size: em(26px);
+      font-size: em(16px);
     }
   }
   &_h2 {

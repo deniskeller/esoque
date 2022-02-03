@@ -75,7 +75,7 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
             {modalData.title}
           </BaseTitle>
           <BaseText className={styles.UnicornsPopupText}>
-            {modalData.title}
+            {modalData.text}
           </BaseText>
 
           <div
