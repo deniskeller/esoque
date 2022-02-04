@@ -19,6 +19,7 @@
   min-height: em(477px);
   padding: em(68px) em(40px) em(28px);
   position: absolute;
+  z-index: 100000;
   right: 0;
   background: $black2;
   display: flex;

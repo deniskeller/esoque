@@ -1,12 +1,15 @@
-import type { NextPage } from 'next';
+// import type { NextPage } from 'next';
 // import styles from './Home.module.scss';
 
-const Home: NextPage = () => {
+import { Application } from '@layouts/index';
+import { HomeApp } from '@view/index';
+
+const HomePageApp = () => {
   return (
-    <div>
-      <h1>Это приложуха</h1>
-    </div>
+    <Application>
+      <HomeApp />
+    </Application>
   );
 };
 
-export default Home;
+export default HomePageApp;

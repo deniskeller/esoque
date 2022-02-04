@@ -3,6 +3,7 @@ import { BaseContainer, BaseText, BaseTitle } from '@base/index';
 import styles from './Sidious.module.scss';
 import Image from 'next/image';
 import { ImprovingItem } from '@content/index';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {}
 
@@ -45,6 +46,12 @@ const improvingData = [
 ];
 
 const Sidious: React.FC<Props> = () => {
+  const size = useWindowSize();
+
+  React.useEffect(() => {
+    console.log('size: ', size);
+  }, [size]);
+
   return (
     <>
       <BaseContainer>
@@ -75,6 +82,9 @@ const Sidious: React.FC<Props> = () => {
               src='/images/landing/imgSidious1.png'
               layout={'fill'}
               alt={''}
+              blurDataURL='/images/landing/imgSidious1.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
 
@@ -84,6 +94,9 @@ const Sidious: React.FC<Props> = () => {
                 src='/images/landing/iconEsoqueArrowDown.png'
                 layout={'fill'}
                 alt={''}
+                blurDataURL='/images/landing/iconEsoqueArrowDown.png'
+                placeholder='blur'
+                loading='lazy'
               />
             </div>
           </div>
@@ -97,6 +110,9 @@ const Sidious: React.FC<Props> = () => {
               src='/images/landing/imgSidious2.png'
               layout={'fill'}
               alt={''}
+              blurDataURL='/images/landing/imgSidious2.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
 
@@ -106,6 +122,9 @@ const Sidious: React.FC<Props> = () => {
                 src='/images/landing/iconSidiousRotateSmartphone.png'
                 layout={'fill'}
                 alt={''}
+                blurDataURL='/images/landing/iconSidiousRotateSmartphone.png'
+                placeholder='blur'
+                loading='lazy'
               />
             </div>
             <div className={styles.RotateSmartphoneTitle}>
@@ -128,6 +147,9 @@ const Sidious: React.FC<Props> = () => {
               src='/images/landing/imgSidious3.png'
               layout={'fill'}
               alt={''}
+              blurDataURL='/images/landing/imgSidious3.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
         </div>
@@ -186,9 +208,12 @@ const Sidious: React.FC<Props> = () => {
               </div>
               <div className={styles.PlatformBenefitsImage}>
                 <Image
-                  src='/images/landing/imgSidious4.png'
                   layout={'fill'}
                   alt={''}
+                  src='/images/landing/imgSidious4.png'
+                  blurDataURL='/images/landing/imgSidious4.png'
+                  placeholder='blur'
+                  loading='lazy'
                 />
               </div>
             </div>
@@ -225,31 +250,79 @@ const Sidious: React.FC<Props> = () => {
             How it works
           </BaseTitle>
 
+          {/* <div className={`${styles.HowItWorksBlockImage}`}>
+            {size.width <= 1024 && size.width > 768 ? (
+              <Image
+                // layout={'fill'}
+                layout={'responsive'}
+                width={885}
+                height={597}
+                alt='preview'
+                src='/images/landing/imgSidious5tablet.png'
+                blurDataURL='/images/landing/imgSidious5tablet.png'
+                placeholder='blur'
+              />
+            ) : size.width <= 768 && size.width > 1 ? (
+              <Image
+                // layout={'fill'}
+                layout={'responsive'}
+                width={336}
+                height={722}
+                alt='preview'
+                src='/images/landing/imgSidious5mobile.png'
+                blurDataURL='/images/landing/imgSidious5mobile.png'
+                placeholder='blur'
+              />
+            ) : (
+              <Image
+                // layout={'fill'}
+                layout={'responsive'}
+                width={1531}
+                height={737}
+                alt='preview'
+                src='/images/landing/imgSidious5desktop.png'
+                blurDataURL='/images/landing/imgSidious5desktop.png'
+                placeholder='blur'
+              />
+            )}
+          </div> */}
+
           <div
             className={`${styles.HowItWorksBlockImage} ${styles.DesktopImage}`}
           >
             <Image
-              src='/images/landing/imgSidious5desktop.png'
               layout={'fill'}
-              alt={''}
+              alt='preview'
+              src='/images/landing/imgSidious5desktop.png'
+              blurDataURL='/images/landing/imgSidious5desktop.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
+
           <div
             className={`${styles.HowItWorksBlockImage} ${styles.TabletImage}`}
           >
             <Image
-              src='/images/landing/imgSidious5tablet.png'
               layout={'fill'}
-              alt={''}
+              alt='preview'
+              src='/images/landing/imgSidious5tablet.png'
+              blurDataURL='/images/landing/imgSidious5tablet.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
+
           <div
             className={`${styles.HowItWorksBlockImage} ${styles.MobileImage}`}
           >
             <Image
-              src='/images/landing/imgSidious5mobile.png'
               layout={'fill'}
-              alt={''}
+              alt='preview'
+              src='/images/landing/imgSidious5mobile.png'
+              blurDataURL='/images/landing/imgSidious5mobile.png'
+              placeholder='blur'
+              loading='lazy'
             />
           </div>
 

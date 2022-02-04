@@ -10,11 +10,15 @@ import {
 import styles from './Login.module.scss';
 import { LinkHome } from '@content/index';
 
+import { useRouter } from 'next/router';
+
 interface Props {}
 
 const Login: React.FC<Props> = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+
+  const router = useRouter();
 
   const changeHandlerEmail = (value: string) => {
     setEmail(value);
@@ -35,6 +39,8 @@ const Login: React.FC<Props> = () => {
     console.log('data: ', data);
     setEmail('');
     setPassword('');
+
+    router.push('/app/');
   };
 
   return (

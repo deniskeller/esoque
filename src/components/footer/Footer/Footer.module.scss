@@ -6,56 +6,125 @@
   padding-top: em(92px);
   padding-bottom: em(82px);
 
+  @include iftablet {
+    padding-top: em(73px);
+    padding-bottom: em(57px);
+    justify-content: flex-start;
+  }
   @include ifmobile {
-    display: none;
+    flex-wrap: wrap;
+    padding-top: em(44px);
+    padding-bottom: em(26px);
   }
 
   .FooterLogoContent {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+
+    @include iftablet {
+      margin-right: em(152px);
+    }
+    @include ifmobile {
+      order: 1;
+      flex-direction: row;
+      align-items: center;
+    }
 
     .FooterLogoContentTop {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: em(122px);
+      @include iftablet {
+        margin-bottom: em(72px);
+      }
+      @include ifmobile {
+        margin-bottom: 0;
+        margin-right: em(56px);
+      }
       .LogoText {
-        width: em(145px);
+        max-width: em(145px);
         height: em(11px);
         margin-bottom: em(14px);
+        @include iftablet {
+          max-width: em(85px);
+          height: em(7px);
+          margin-bottom: em(9px);
+        }
+        @include ifmobile {
+          max-width: em(59px);
+          height: em(5px);
+          margin-bottom: em(4px);
+        }
       }
 
       .Logo {
-        width: em(236px);
+        display: flex;
+        max-width: em(236px);
         height: em(47px);
+        @include iftablet {
+          max-width: em(140px);
+          height: em(28px);
+        }
+        @include ifmobile {
+          max-width: em(96px);
+          height: em(19px);
+        }
       }
     }
 
     .FooterLogoContentBottom {
-      display: flex;
+      position: relative;
+      width: em(174.18px);
+      height: em(16.84px);
+      @include iftablet {
+        width: em(130.63px);
+        height: em(12.63px);
+      }
+      @include ifmobile {
+        width: em(69.67px);
+        height: em(6.74px);
+      }
       .LogoEsoque {
-        width: em(180px);
-        height: em(24px);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
       }
     }
   }
 
   .FooterNavbar {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // max-width: em(670px);
+    width: 100%;
+    max-width: em(736px);
+
+    @include iftablet {
+      max-width: em(485px);
+    }
+    @include ifmobile {
+      margin-bottom: em(33px);
+    }
     .Link {
-      width: em(400px);
+      max-width: em(400px);
       font-size: em(17px);
-      line-height: 120%;
+      line-height: 100%;
       color: $grey;
       font-weight: 400;
       display: grid;
       align-self: end;
+      @include iftablet {
+        font-size: em(14px);
+      }
+      @include ifmobile {
+        width: 100%;
+        font-size: em(10px);
+        margin-bottom: em(14px);
+      }
       &:hover {
         color: $yellow;
       }
@@ -63,6 +132,13 @@
         // width: em(400px);
         width: max-content;
         margin-left: em(75px);
+        @include iftablet {
+          margin-left: em(0px);
+        }
+        @include ifmobile {
+          margin-left: em(30px);
+          width: 100%;
+        }
       }
     }
   }

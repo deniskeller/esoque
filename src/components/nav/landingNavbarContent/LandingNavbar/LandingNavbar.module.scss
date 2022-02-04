@@ -14,10 +14,13 @@
     width: 100%;
     position: absolute;
     z-index: 1000;
-    top: em(54px);
+    top: em(34px);
     display: flex;
     flex-direction: row;
     align-items: center;
+    @include iftablet {
+      top: em(30px);
+    }
     @include ifmobile {
       display: none;
     }

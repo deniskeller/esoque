@@ -301,7 +301,7 @@ const Unicorns: React.FC<Props> = () => {
           </div>
         </BaseContainer>
       </div>
-      <UnicornsPopup className='UnicornsPopup' />;
+      <UnicornsPopup className='UnicornsPopup' />
     </>
   );
 };

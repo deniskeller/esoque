@@ -3,6 +3,13 @@
   background-image: url('/images/landing/bgHome.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 72% 0;
+  @include iftablet {
+    background-position: 47% 0;
+  }
+  @include ifmobile {
+    background-position: 76% 0;
+  }
 }
 
 .HeaderBlockContainer {

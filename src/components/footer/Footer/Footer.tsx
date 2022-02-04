@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <div className={styles.FooterLogoContentBottom}>
               <BaseIcon
                 icon={ALL_ICONS.LOGO_ESOQUE}
-                viewBox='0 0 180 24'
+                viewBox='0 0 174 17'
                 className={styles.LogoEsoque}
               />
             </div>

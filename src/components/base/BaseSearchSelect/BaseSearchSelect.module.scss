@@ -56,14 +56,14 @@
 .Ul {
   max-height: em(170px);
   overflow-y: scroll;
-  // scrollbar-width: none; /* For Firefox */
-  // -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
-// .Ul::-webkit-scrollbar {
-//   display: none;
-//   width: 0px; /* For Chrome, Safari, and Opera */
-// }
+.Ul::-webkit-scrollbar {
+  display: none;
+  width: 0px; /* For Chrome, Safari, and Opera */
+}
 
 .Li {
   cursor: pointer;

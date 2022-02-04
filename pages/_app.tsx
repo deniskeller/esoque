@@ -8,14 +8,14 @@ import { store } from '../src/store/store';
 import { Application, Landing } from '@layouts/index';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const Auth = false;
-  if (!Auth) {
+  const Auth = true;
+  if (Auth) {
     return (
       <>
         <Head>
           <meta
             name='viewport'
-            content='width=device-width, initial-scale=1, maximum-scale=1'
+            content='width=device-width, initial-scale=1, maximum-scale=5'
           />
           <meta name='keywords' content='Esoque' />
           <meta name='author' content='Esoque' />
@@ -23,9 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <title>Esoque</title>
         </Head>
         <Provider store={store}>
-          <Application>
-            <Component {...pageProps} />
-          </Application>
+          <Component {...pageProps} />
         </Provider>
       </>
     );
@@ -43,9 +41,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <title>Esoque</title>
       </Head>
       <Provider store={store}>
-        <Landing>
-          <Component {...pageProps} />
-        </Landing>
+        <Component {...pageProps} />
       </Provider>
     </>
   );
