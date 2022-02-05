@@ -32,7 +32,7 @@ const BasePopup: React.FC<Props> = ({ children, className }) => {
     if (!popup) {
       hidePopup();
     }
-  }, [popup, id, showPopup, hidePopup]);
+  }, [popup, id]);
 
   const keyUp = (e: React.KeyboardEvent<Element>) => {
     if (e.keyCode == 27) {

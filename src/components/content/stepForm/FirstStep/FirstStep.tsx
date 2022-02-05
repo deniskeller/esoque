@@ -27,7 +27,7 @@ const FirstStep: React.FC<Props> = ({ nextStep }) => {
       </BaseText>
 
       <BaseInput
-        // label='Email'
+        label=''
         value={email}
         name='email'
         onChange={changeHandlerPhone}
@@ -35,6 +35,7 @@ const FirstStep: React.FC<Props> = ({ nextStep }) => {
         type='text'
         required
         className={styles.Input}
+        error=''
       />
 
       <BaseButton onClick={submitFormData} className={styles.BtnLogin}>

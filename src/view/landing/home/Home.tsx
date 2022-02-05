@@ -10,6 +10,18 @@ const Home: React.FC<Props> = () => {
   return (
     <div className={styles.HomePage}>
       <div className={styles.HeaderBlock}>
+        {/* <img
+          className={styles.HeaderBlockImage}
+          src='/images/landing/bgHome.png'
+          alt=''
+        /> */}
+        {/* <Image
+          src='/images/landing/bgHome.png'
+          layout='fill'
+          // width={100}
+          // height={100}
+          alt={''}
+        /> */}
         <BaseContainer>
           <div className={styles.HeaderBlockContainer}>
             <BaseIcon

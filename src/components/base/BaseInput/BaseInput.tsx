@@ -27,11 +27,7 @@ const BaseInput: React.FC<Props> = ({
   onChange,
 }) => {
   return (
-    <div
-      className={`${styles.BaseInput} ${className} ${
-        error ? styles.InputError : ''
-      }`}
-    >
+    <div className={`${styles.BaseInput} ${className}`}>
       {label ? <label className={styles.Label}>{label}</label> : ''}
       <input
         value={value}
@@ -45,7 +41,7 @@ const BaseInput: React.FC<Props> = ({
           onChange(e.target.value)
         }
       />
-      {error ? <label className={styles.ErrorText}>{error}</label> : ''}
+      {error ? <div className={styles.ErrorText}>{error}</div> : ''}
     </div>
   );
 };

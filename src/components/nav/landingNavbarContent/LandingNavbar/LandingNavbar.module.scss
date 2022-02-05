@@ -38,7 +38,7 @@
 
     .NavbarMobileBurger {
       width: em(18px);
-      height: em(9px);
+      height: em(10px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -92,19 +92,36 @@
 
 .BtnLogin {
   margin-right: em(36px);
+  button {
+    font-size: em(18px);
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(12px);
+    }
+  }
   @include iftablet {
     margin-right: em(23px);
   }
 
   @include ifmobile {
     margin-bottom: em(10px);
-    font-size: em(24px);
   }
 }
 
 .BtnSignup {
   min-width: em(158px);
   height: em(43px);
+  button {
+    font-size: em(18px);
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(12px);
+    }
+  }
   @include iftablet {
     min-width: em(100px);
   }
@@ -112,8 +129,5 @@
     min-width: em(76px);
     height: em(33px);
     margin-left: em(-16px);
-    button {
-      font-size: em(12px);
-    }
   }
 }
