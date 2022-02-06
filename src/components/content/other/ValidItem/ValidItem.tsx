@@ -12,20 +12,24 @@ const ValidItem: React.FC<Props> = ({ done = 'false', text }) => {
   return (
     <div className={styles.ValidItem}>
       {done == 'true' ? (
-        <BaseIcon
-          icon={ALL_ICONS.RIGHT}
-          viewBox='0 0 32 32'
-          className={styles.Icon}
-        />
+        <div className={styles.ValidItemIcon}>
+          <BaseIcon
+            icon={ALL_ICONS.RIGHT}
+            viewBox='0 0 32 32'
+            className={styles.Icon}
+          />
+        </div>
       ) : (
-        <BaseIcon
-          icon={ALL_ICONS.NOT_RIGHT}
-          viewBox='0 0 32 32'
-          className={styles.Icon}
-        />
+        <div className={styles.ValidItemIcon}>
+          <BaseIcon
+            icon={ALL_ICONS.NOT_RIGHT}
+            viewBox='0 0 32 32'
+            className={styles.Icon}
+          />
+        </div>
       )}
 
-      <span className={styles.Text}>{text}</span>
+      <p className={styles.Text}>{text}</p>
     </div>
   );
 };

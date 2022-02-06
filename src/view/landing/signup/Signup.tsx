@@ -16,7 +16,7 @@ import {
 interface Props {}
 
 const Signup: React.FC<Props> = () => {
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(6);
 
   const nextStep = () => {
     setStep(step + 1);

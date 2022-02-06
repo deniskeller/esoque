@@ -3,12 +3,39 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: em(28px);
+  position: relative;
+  padding-left: em(58px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include iftablet {
+    margin-bottom: em(24px);
+    padding-left: em(49px);
+  }
+  @include ifmobile {
+    margin-bottom: em(20px);
+    padding-left: em(23px);
+  }
+}
+
+.ValidItemIcon {
+  display: inline-flex;
+  position: absolute;
+  top: em(-4px);
+  left: 0;
 }
 
 .Icon {
   width: em(32px);
   height: em(32px);
-  margin-right: em(25px);
+  @include iftablet {
+    width: em(29px);
+    height: em(29px);
+  }
+  @include ifmobile {
+    width: em(13px);
+    height: em(13px);
+  }
 }
 
 .Text {
@@ -16,4 +43,11 @@
   line-height: 120%;
   font-weight: 400;
   color: $white;
+
+  @include iftablet {
+    font-size: em(17px);
+  }
+  @include ifmobile {
+    font-size: em(9px);
+  }
 }

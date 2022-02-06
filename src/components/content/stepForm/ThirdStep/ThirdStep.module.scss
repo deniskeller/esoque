@@ -6,40 +6,103 @@
   width: 100%;
   position: relative;
   padding-top: em(297px);
+  padding-bottom: em(87px);
+  @include iftablet {
+    padding-top: em(178px);
+  }
+  @include ifmobile {
+    padding-top: em(114px);
+  }
 }
 
 .Title {
-  margin-bottom: 18px;
+  margin-bottom: em(18px);
+  text-align: center;
+  @include iftablet {
+    margin-bottom: em(27px);
+  }
+  @include ifmobile {
+    margin-bottom: em(15px);
+  }
 }
 
 .Subtitle {
-  margin-bottom: 97px;
+  margin-bottom: em(97px);
+  text-align: center;
+  @include iftablet {
+    margin-bottom: em(82px);
+  }
+  @include ifmobile {
+    margin-bottom: em(26px);
+  }
 }
 
 .BtnLogin {
-  width: em(289px);
+  width: 100%;
+  max-width: em(289px);
   height: em(82px);
-  margin-bottom: em(10px);
+  margin-bottom: em(42px);
+  @include iftablet {
+    max-width: em(251px);
+    height: em(56px);
+    margin-bottom: em(45px);
+  }
+  @include ifmobile {
+    max-width: em(173px);
+    height: em(38px);
+    margin-bottom: em(25px);
+  }
 }
 
 .Inputs {
   width: 100%;
-  max-width: em(1104px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  max-width: em(1112px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: em(13px) em(28px);
   margin-bottom: em(127px);
+  @include iftablet {
+    margin-bottom: em(77px);
+    gap: em(25px);
+  }
   @include ifmobile {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    margin-bottom: em(61px);
   }
 }
 
 .Input {
-  width: em(541px);
-  height: em(83px);
+  width: 100%;
+  max-width: em(541px);
+  input {
+    padding: 0 em(47px);
+    min-height: em(83px, 20px);
+  }
+
+  @include iftablet {
+    max-width: em(440px);
+    input {
+      padding: 0 em(37px);
+      min-height: em(62px, 17px);
+    }
+  }
+  @include ifmobile {
+    max-width: em(286px);
+    input {
+      padding: 0 em(27px);
+      min-height: em(44px, 11px);
+    }
+  }
 }
 
 .SearchSelect {
-  width: em(541px);
-  height: em(81px);
+  width: 100%;
+  max-width: em(541px);
+  height: em(83px);
+  @include iftablet {
+    height: em(61px);
+  }
+  @include ifmobile {
+    height: em(44px);
+  }
 }

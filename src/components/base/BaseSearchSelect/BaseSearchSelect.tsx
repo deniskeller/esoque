@@ -64,10 +64,12 @@ const BaseSearchSelect: React.FC<Props> = ({
       <div
         className={`${styles.SelectHeader}  ${
           isOpen ? styles.SelectHeaderFocus : ''
-        } ${selectedOption ? styles.NotEmpty : ''}`}
+        } `}
         onClick={toggling}
       >
-        {selectedOption || placeholder}
+        <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
+          {selectedOption || placeholder}
+        </span>
         <BaseIcon
           icon={ALL_ICONS.SELECT_ARROW}
           viewBox='0 0 16 16'

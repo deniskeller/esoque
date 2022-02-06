@@ -64,6 +64,7 @@ const SixthStep: React.FC<Props> = ({ nextStep }) => {
         />
 
         <BaseInput
+          label=''
           name='firstName'
           placeholder='First Name'
           type='text'
@@ -71,6 +72,7 @@ const SixthStep: React.FC<Props> = ({ nextStep }) => {
           value={firstName}
           onChange={changeHandlerFirstName}
           className={`${styles.Input} ${styles.FirstName}`}
+          error=''
         />
 
         <BaseInput

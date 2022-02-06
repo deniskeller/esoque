@@ -8,17 +8,26 @@
   background: $input;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding: em(27px) em(38px);
-  font-size: em(20px);
-  font-weight: normal;
-  line-height: 120%;
-  color: $placeholder;
+  padding: 0 em(38px);
   position: relative;
   cursor: pointer;
-}
-
-.NotEmpty {
-  color: $black;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: em(20px);
+    font-weight: normal;
+    line-height: 100%;
+    color: $placeholder;
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
+  }
+  .NotEmpty {
+    color: $black;
+  }
 }
 
 .SelectHeaderFocus {
@@ -30,16 +39,38 @@
   height: em(16px);
   position: absolute;
   right: em(19px);
+  @include iftablet {
+    width: em(13px);
+    height: em(13px);
+    right: em(17px);
+  }
+  @include ifmobile {
+    width: em(7px);
+    height: em(7px);
+    right: em(13px);
+  }
 }
 
 .IconArrowTop {
-  top: em(18px);
+  top: calc(45% - em(16px));
+  @include iftablet {
+    top: calc(45% - em(13px));
+  }
+  @include ifmobile {
+    top: calc(45% - em(7px));
+  }
 }
 
 .IconArrowBottom {
-  bottom: em(18px);
+  bottom: calc(45% - em(18px));
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
+  @include iftablet {
+    bottom: calc(45% - em(13px));
+  }
+  @include ifmobile {
+    bottom: calc(45% - em(7px));
+  }
 }
 
 .SelectList {
@@ -51,6 +82,12 @@
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   overflow: hidden;
+  @include iftablet {
+    top: em(75px);
+  }
+  @include ifmobile {
+    top: em(49px);
+  }
 }
 
 .Ul {
@@ -58,6 +95,12 @@
   overflow-y: scroll;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  @include iftablet {
+    max-height: em(122px);
+  }
+  @include ifmobile {
+    max-height: em(88px);
+  }
 }
 
 .Ul::-webkit-scrollbar {
@@ -69,21 +112,46 @@
   cursor: pointer;
   width: 100%;
   height: em(83px);
-  font-size: em(20px);
-  font-weight: normal;
-  line-height: 120%;
   list-style: none;
-  padding: em(30px) em(40px) em(30px) em(66px);
+  display: flex;
+  align-items: center;
   color: $placeholder;
+  padding-left: em(72px);
+  padding-right: em(20px);
+  @include iftablet {
+    height: em(61px);
+  }
+  @include ifmobile {
+    height: em(44px);
+    padding-left: em(25px);
+  }
   &:hover {
     background: $light_grey;
+  }
+  span {
+    font-size: em(20px);
+    font-weight: normal;
+    line-height: 120%;
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
   }
 }
 
 .SelectSearch {
-  height: em(83px);
+  min-height: em(83px);
   position: relative;
   padding-left: em(72px);
+  @include iftablet {
+    min-height: em(61px);
+  }
+  @include ifmobile {
+    min-height: em(44px);
+    padding-left: em(45px);
+  }
 }
 
 .IconSearch {
@@ -92,11 +160,20 @@
   position: absolute;
   top: em(24px);
   left: em(20px);
+  @include iftablet {
+    width: em(25px);
+    height: em(25px);
+  }
+  @include ifmobile {
+    top: em(17px);
+    left: em(16px);
+    width: em(15px);
+    height: em(15px);
+  }
 }
 
 .Input {
-  width: 100%;
-  height: 100%;
+  width: 90%;
   font-size: em(20px);
   line-height: 120%;
   font-weight: 400;
@@ -105,9 +182,15 @@
   box-sizing: border-box;
   position: relative;
   background: $input;
-  border-radius: em(10px);
-  padding: em(30px) em(42px) em(30px) 0px;
+  // padding-top: em(20px);
   border: none;
+  margin-top: em(30px);
+  @include iftablet {
+    font-size: em(17px);
+  }
+  @include ifmobile {
+    font-size: em(11px);
+  }
 }
 
 .CountryCode {

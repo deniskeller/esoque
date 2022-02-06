@@ -3,12 +3,116 @@
   position: relative;
   display: flex;
   flex-direction: row;
+
+  @include ifmobile {
+    flex-direction: column;
+  }
 }
 .LeftBlock {
   width: 50vw;
   height: auto;
   min-height: 100vh;
   background: $black;
+  display: flex;
+  justify-content: flex-end;
+  @include ifmobile {
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+  }
+
+  .CreatePassword {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: em(680px);
+    padding-top: em(297px);
+    padding-bottom: em(21px);
+    margin-right: em(97px);
+
+    @include iftablet {
+      max-width: em(329px);
+      padding-top: em(123px);
+      margin-right: em(114px);
+    }
+    @include ifmobile {
+      max-width: em(286px);
+      padding-top: em(57px);
+      padding-bottom: em(20px);
+      margin-right: 0;
+    }
+
+    .Title {
+      margin-bottom: em(41px);
+      @include iftablet {
+        margin-bottom: em(28px);
+      }
+      @include ifmobile {
+        text-align: center;
+        margin-bottom: em(15px);
+      }
+    }
+
+    .Subtitle {
+      display: block;
+      margin-bottom: em(97px);
+      @include iftablet {
+        margin-bottom: em(49px);
+      }
+      @include ifmobile {
+        text-align: center;
+        margin-bottom: em(26px);
+      }
+    }
+
+    .Input {
+      width: 100%;
+      max-width: em(543px);
+      margin-bottom: em(30px);
+      @include iftablet {
+        max-width: em(329px);
+        margin-bottom: em(13px);
+      }
+      @include ifmobile {
+        max-width: em(286px);
+        margin-bottom: em(13px);
+      }
+    }
+
+    .Btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: em(289px);
+      margin-top: em(123px);
+      @include iftablet {
+        max-width: em(251px);
+        margin-top: em(30px);
+      }
+      @include ifmobile {
+        margin-top: em(30px);
+      }
+      .BtnLogin {
+        width: 100%;
+        max-width: em(289px);
+        height: em(82px);
+        margin-bottom: em(42px);
+        @include iftablet {
+          height: em(56px);
+          margin-bottom: em(45px);
+        }
+        @include ifmobile {
+          max-width: em(173px);
+          height: em(44px);
+          margin-bottom: em(28px);
+        }
+      }
+
+      .LinkHome {
+        width: max-content;
+      }
+    }
+  }
 }
 
 .RightBlock {
@@ -16,38 +120,31 @@
   height: auto;
   min-height: 100vh;
   background: $black2;
-}
-
-.CreatePassword {
-  padding-top: em(297px);
   display: flex;
-  justify-content: flex-end;
-  margin-right: em(70px);
-}
+  justify-content: flex-start;
 
-.Title {
-  margin-bottom: 41px;
-}
+  @include ifmobile {
+    width: 100%;
+    min-height: 100vmin;
+  }
 
-.Subtitle {
-  margin-bottom: 97px;
-}
-
-.Input {
-  width: em(543px);
-  height: em(81px);
-  margin-bottom: em(30px);
-}
-
-.Btn {
-  width: em(289px);
-  height: em(82px);
-  margin-top: em(123px);
-  margin-bottom: em(10px);
-}
-
-.ValidationPassword {
-  text-align: left;
-  margin-left: em(70px);
-  padding-top: em(398px);
+  .ValidationPassword {
+    text-align: left;
+    margin-left: em(70px);
+    padding-top: em(398px);
+    padding-right: em(36px);
+    @include iftablet {
+      padding-top: em(240px);
+      margin-left: em(88px);
+    }
+    @include ifmobile {
+      margin-left: 0;
+      padding-right: 0;
+      padding-top: em(30px);
+      padding-bottom: em(30px);
+      width: 100%;
+      max-width: em(286px);
+      margin: 0 auto;
+    }
+  }
 }

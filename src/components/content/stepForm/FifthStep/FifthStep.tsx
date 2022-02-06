@@ -61,11 +61,13 @@ const FifthStep: React.FC<Props> = ({ nextStep }) => {
               error='Your passwords did not match'
             />
 
-            <BaseButton onClick={submitFormData} className={styles.Btn}>
-              Continue
-            </BaseButton>
+            <div className={styles.Btns}>
+              <BaseButton onClick={submitFormData} className={styles.BtnLogin}>
+                Continue
+              </BaseButton>
 
-            <LinkHome />
+              <LinkHome className={styles.LinkHome} />
+            </div>
           </form>
         </div>
       </div>
@@ -75,6 +77,7 @@ const FifthStep: React.FC<Props> = ({ nextStep }) => {
             done='true'
             text='Passwords must contain at least one digit'
           />
+
           <ValidItem
             done='true'
             text='Passwords must contain at least one lowercase letter'

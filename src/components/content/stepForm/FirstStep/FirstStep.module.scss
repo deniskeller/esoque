@@ -9,11 +9,9 @@
   padding-bottom: em(87px);
   @include iftablet {
     padding-top: em(178px);
-    padding-bottom: em(87px);
   }
   @include ifmobile {
     padding-top: em(114px);
-    padding-bottom: em(87px);
   }
 }
 
@@ -43,25 +41,15 @@
   width: 100%;
   max-width: em(541px);
   margin-bottom: em(127px);
-  input {
-    padding: 0 em(47px);
-    min-height: em(83px, 20px);
-  }
+
   @include iftablet {
     max-width: em(440px);
     margin-bottom: em(77px);
-    input {
-      padding: 0 em(37px);
-      min-height: em(62px, 17px);
-    }
   }
+
   @include ifmobile {
     max-width: em(286px);
     margin-bottom: em(61px);
-    input {
-      padding: 0 em(27px);
-      min-height: em(44px, 11px);
-    }
   }
 }
 
@@ -71,7 +59,7 @@
   height: em(82px);
   margin-bottom: em(42px);
   @include iftablet {
-    max-width: em(203px);
+    max-width: em(251px);
     height: em(56px);
     margin-bottom: em(45px);
   }
