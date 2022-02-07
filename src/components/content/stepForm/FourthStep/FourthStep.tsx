@@ -18,15 +18,7 @@ const FourthStep: React.FC<Props> = ({ nextStep }) => {
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    //тестовая валидация
-    if (mockPhone == confirmPhone) {
-      alert('Телефоны совпадают');
-      setConfirmPhone('');
-      nextStep();
-    } else {
-      alert('Телефоны не совпадают');
-    }
+    nextStep();
   };
 
   return (

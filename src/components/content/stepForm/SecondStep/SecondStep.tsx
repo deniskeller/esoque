@@ -25,15 +25,7 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    //тестовая валидация
-    if (mockEmail == confirmEmail) {
-      alert('пароли совпадают');
-      setConfirmEmail('');
-      nextStep();
-    } else {
-      alert('пароли не совпадают');
-    }
+    nextStep();
   };
 
   return (
