@@ -18,6 +18,7 @@ export { default as AdvantageItem } from './other/AdvantageItem/AdvantageItem';
 export { default as JurisdictionCountryItem } from './other/JurisdictionCountryItem/JurisdictionCountryItem';
 export { default as CountryItem } from './other/CountryItem/CountryItem';
 export { default as ImprovingItem } from './other/ImprovingItem/ImprovingItem';
+export { default as Widget } from './widgets/Widget/Widget';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';
