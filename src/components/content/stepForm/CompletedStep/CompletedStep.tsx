@@ -29,8 +29,7 @@ const CompletedStep: React.FC<Props> = ({
       <div className={styles.Image}>
         <Image
           src='/images/landing/class.png'
-          width={195}
-          height={295}
+          layout='fill'
           alt={'Completed images'}
         />
       </div>

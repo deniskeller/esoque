@@ -7,12 +7,22 @@
   height: 100%;
   background: $input;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 0 em(38px);
+  border-radius: em(10px);
+  padding: 0 em(37px);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
+  height: em(83px);
+
+  @include iftablet {
+    height: em(61px);
+  }
+  @include ifmobile {
+    padding: 0 em(27px);
+    height: em(44px);
+  }
+
   span {
     font-size: em(20px);
     font-weight: normal;
@@ -80,13 +90,14 @@
   width: 100%;
   background: #f2f5f6;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  border-radius: em(10px);
   overflow: hidden;
   @include iftablet {
     top: em(75px);
   }
   @include ifmobile {
     top: em(49px);
+    // width: em(194px);
   }
 }
 
@@ -120,6 +131,7 @@
   padding-right: em(20px);
   @include iftablet {
     height: em(61px);
+    padding-left: em(54px);
   }
   @include ifmobile {
     height: em(44px);
@@ -147,6 +159,7 @@
   padding-left: em(72px);
   @include iftablet {
     min-height: em(61px);
+    padding-left: em(54px);
   }
   @include ifmobile {
     min-height: em(44px);

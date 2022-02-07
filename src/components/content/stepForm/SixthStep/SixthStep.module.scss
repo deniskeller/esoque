@@ -55,10 +55,6 @@
   }
 }
 
-.Input {
-  // min-height: em(83px);
-}
-
 .SelectGender {
   width: 100%;
   max-width: em(158px);
@@ -66,7 +62,7 @@
     max-width: em(134px);
   }
   @include ifmobile {
-    max-width: em(286px);
+    max-width: em(109px);
     margin-bottom: em(13px);
   }
 }
@@ -79,7 +75,20 @@
     max-width: em(207px);
   }
   @include ifmobile {
-    max-width: em(286px);
+    // max-width: em(286px);
+    margin-bottom: em(13px);
+  }
+}
+
+.FirstName {
+  @include ifmobile {
+    max-width: em(167px);
+    margin-bottom: em(13px);
+  }
+}
+.LastName {
+  @include ifmobile {
+    max-width: em(138px);
     margin-bottom: em(13px);
   }
 }
@@ -91,7 +100,7 @@
     max-width: em(207px);
   }
   @include ifmobile {
-    max-width: em(286px);
+    max-width: em(138px);
   }
 }
 

@@ -52,10 +52,12 @@ const BaseSelect: React.FC<Props> = ({
       <div
         className={`${styles.SelectHeader}  ${
           isOpen ? styles.SelectHeaderFocus : ''
-        } ${selectedOption ? styles.NotEmpty : ''}`}
+        }`}
         onClick={toggling}
       >
-        {selectedOption || placeholder}
+        <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
+          {selectedOption || placeholder}
+        </span>
         <BaseIcon
           icon={ALL_ICONS.SELECT_ARROW}
           viewBox='0 0 16 16'
@@ -75,7 +77,7 @@ const BaseSelect: React.FC<Props> = ({
               onClick={onOptionClicked(option.value)}
               key={Math.random()}
             >
-              {option.title}
+              <span className={styles.ListItemTitle}>{option.title}</span>
             </li>
           ))}
         </ul>

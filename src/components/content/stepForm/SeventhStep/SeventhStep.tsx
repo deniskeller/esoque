@@ -87,6 +87,7 @@ const SeventhStep: React.FC<Props> = ({ nextStep }) => {
             value={postcode}
             onChange={changeHandlerPostcode}
             className={`${styles.Input} ${styles.Postcode}`}
+            error=''
           />
 
           <BaseInput

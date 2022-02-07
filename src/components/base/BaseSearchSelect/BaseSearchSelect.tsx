@@ -101,7 +101,9 @@ const BaseSearchSelect: React.FC<Props> = ({
             {computedOptions(options).map((option: ISelectItem) => (
               <li
                 className={styles.Li}
-                onClick={onOptionClicked(option.title)}
+                onClick={onOptionClicked(
+                  option.code ? option.code! : option.title
+                )}
                 key={Math.random()}
               >
                 {option.code && (

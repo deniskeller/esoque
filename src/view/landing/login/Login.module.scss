@@ -6,19 +6,51 @@
   width: 100%;
   position: relative;
   padding-top: em(297px);
+  padding-bottom: em(87px);
+  @include iftablet {
+    padding-top: em(178px);
+  }
+  @include ifmobile {
+    padding-top: em(114px);
+  }
 }
 
 .Title {
-  margin-bottom: 18px;
+  margin-bottom: em(18px);
+  text-align: center;
+  @include iftablet {
+    margin-bottom: em(27px);
+  }
+  @include ifmobile {
+    margin-bottom: em(15px);
+  }
 }
 
 .Subtitle {
   margin-bottom: em(97px);
+  text-align: center;
+  @include iftablet {
+    margin-bottom: em(82px);
+  }
+  @include ifmobile {
+    margin-bottom: em(26px);
+  }
 }
 
 .Input {
-  width: em(543px);
+  width: 100%;
+  max-width: em(541px);
   margin-bottom: em(30px);
+
+  @include iftablet {
+    max-width: em(440px);
+    margin-bottom: em(23px);
+  }
+
+  @include ifmobile {
+    max-width: em(286px);
+    margin-bottom: em(13px);
+  }
 }
 
 .Navbar {
@@ -28,13 +60,42 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: em(123px);
+  margin-bottom: em(124px);
+  .Link {
+    font-size: em(26px);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include iftablet {
+    max-width: em(380px);
+    margin-bottom: em(57px);
+    .Link {
+      font-size: em(13px);
+    }
+  }
+  @include ifmobile {
+    max-width: em(217px);
+    margin-bottom: em(33px);
+    .Link {
+      font-size: em(9px);
+    }
+  }
 }
 
 .BtnLogin {
-  width: em(289px);
+  width: 100%;
+  max-width: em(289px);
   height: em(82px);
-  line-height: 120%;
-  font-weight: 600;
-  margin-bottom: em(10px);
+  margin-bottom: em(42px);
+  @include iftablet {
+    max-width: em(251px);
+    height: em(56px);
+    margin-bottom: em(45px);
+  }
+  @include ifmobile {
+    max-width: em(173px);
+    height: em(38px);
+    margin-bottom: em(25px);
+  }
 }

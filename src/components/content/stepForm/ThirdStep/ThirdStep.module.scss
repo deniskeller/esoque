@@ -59,14 +59,14 @@
   max-width: em(1112px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: em(13px) em(28px);
+  gap: 0 em(28px);
   margin-bottom: em(127px);
   @include iftablet {
     margin-bottom: em(77px);
-    gap: em(25px);
+    gap: 0 em(25px);
   }
   @include ifmobile {
-    grid-template-columns: 1fr;
+    gap: 0 em(14px);
     margin-bottom: em(61px);
   }
 }
@@ -87,7 +87,7 @@
     }
   }
   @include ifmobile {
-    max-width: em(286px);
+    max-width: em(136px);
     input {
       padding: 0 em(27px);
       min-height: em(44px, 11px);
@@ -103,6 +103,7 @@
     height: em(61px);
   }
   @include ifmobile {
+    max-width: em(136px);
     height: em(44px);
   }
 }
