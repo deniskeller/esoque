@@ -35,7 +35,6 @@ const Footer: React.FC = ({}) => {
           type == 'light' ? styles.Light : ''
         }`}
       >
-        {type}
         <BaseContainer>
           <div className={styles.Footer}>
             <div className={styles.FooterLogoContent}>
