@@ -42,6 +42,8 @@
   .ServicesItemSubtitle {
     display: block;
     P {
+      font-size: em(19px);
+      line-height: 100%;
       @include iftablet {
         font-size: em(15px);
       }

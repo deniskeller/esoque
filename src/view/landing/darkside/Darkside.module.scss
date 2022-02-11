@@ -26,18 +26,19 @@
   }
 
   .WelcomeBlockUl {
-    max-width: em(570px);
-
-    @include iftablet {
-      max-width: em(448px);
-    }
-    @include ifmobile {
-      max-width: em(166px);
-    }
+    position: relative;
 
     .WelcomeBlockLi {
+      max-width: 100%;
       margin-bottom: em(20px);
       list-style: none;
+
+      // @include iftablet {
+      //   max-width: em(448px);
+      // }
+      // @include ifmobile {
+      //   max-width: 100%;
+      // }
 
       .WelcomeBlockText {
         p {
@@ -51,28 +52,32 @@
   }
 
   .WelcomeBlockImage {
-    position: absolute;
-    z-index: 1000;
-    top: em(273px);
+    position: relative;
+    z-index: 100;
+    top: em(-160px);
     right: 0;
     width: em(668px);
     height: em(543px);
+    float: right;
+    margin-left: em(125px);
     @include iftablet {
-      top: em(184px);
+      top: em(-100px);
       width: em(332px);
       height: em(270px);
+      margin-left: em(40px);
     }
     @include ifmobile {
-      top: em(146px);
+      top: em(-5px);
       width: em(121px);
       height: em(99px);
+      margin-left: 0;
     }
   }
 }
 
 .WidgetBlock {
-  padding-bottom: em(238px);
   position: relative;
+  padding-bottom: em(238px);
 
   @include iftablet {
     padding-bottom: em(158px);
@@ -128,7 +133,7 @@
       margin-bottom: em(90px);
     }
     @include ifmobile {
-      margin-bottom: em(24px);
+      margin-bottom: em(59px);
     }
   }
 

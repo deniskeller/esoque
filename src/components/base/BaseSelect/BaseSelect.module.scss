@@ -16,7 +16,7 @@
   height: em(83px);
 
   @include iftablet {
-    max-width: em(134px);
+    // max-width: em(134px);
     height: em(61px);
   }
   @include ifmobile {
@@ -24,10 +24,10 @@
     height: em(44px);
   }
 
-  span {
+  p {
     font-size: em(20px);
     font-weight: normal;
-    line-height: 100%;
+    line-height: 120%;
     color: $placeholder;
     @include iftablet {
       font-size: em(17px);

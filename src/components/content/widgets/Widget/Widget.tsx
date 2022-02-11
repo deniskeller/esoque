@@ -1,4 +1,4 @@
-import { BaseInput, BaseSelect, BaseButton, BaseCheckbox } from '@base/index';
+import { BaseInput, BaseSelect, BaseButton } from '@base/index';
 import React from 'react';
 import styles from './Widget.module.scss';
 
@@ -30,20 +30,10 @@ const Widget: React.FC<Props> = ({}) => {
     setOption(value);
   };
 
-  //логика чекбокса
-  const [checkboxValue, setCheckboxValue] = React.useState<boolean>(true);
-  const changeHandlerCheckbox = (value: boolean) => {
-    setCheckboxValue(value);
-  };
-
   //сабмит
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
-
-  React.useEffect(() => {
-    console.log('checkboxValue: ', checkboxValue);
-  }, [checkboxValue]);
 
   return (
     <>
@@ -56,6 +46,7 @@ const Widget: React.FC<Props> = ({}) => {
             value={companyName}
             onChange={changeHandlerCompanyName}
             className={styles.Input}
+            error=''
           />
 
           <BaseSelect
@@ -69,12 +60,6 @@ const Widget: React.FC<Props> = ({}) => {
             Check
           </BaseButton>
         </div>
-        <BaseCheckbox
-          onClick={changeHandlerCheckbox}
-          checkboxValue={checkboxValue}
-        >
-          Show only ready-made companies
-        </BaseCheckbox>
       </div>
     </>
   );

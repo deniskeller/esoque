@@ -45,7 +45,7 @@
       }
       @include ifmobile {
         margin-bottom: 0;
-        margin-right: em(56px);
+        margin-right: em(65px);
       }
       .LogoText {
         max-width: em(145px);
@@ -83,11 +83,11 @@
       width: em(174.18px);
       height: em(16.84px);
       @include iftablet {
-        width: em(130.63px);
+        width: em(139px);
         height: em(12.63px);
       }
       @include ifmobile {
-        width: em(69.67px);
+        width: em(70px);
         height: em(6.74px);
       }
       .LogoEsoque {

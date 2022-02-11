@@ -28,18 +28,20 @@
   }
 
   .WelcomeBlockUl {
-    max-width: em(646px);
-    @include iftablet {
-      max-width: em(502px);
-    }
-
-    @include ifmobile {
-      max-width: em(646px);
-    }
+    position: relative;
 
     .WelcomeBlockLi {
+      max-width: em(646px);
       margin-bottom: em(20px);
       list-style: none;
+      position: relative;
+      @include iftablet {
+        max-width: em(502px);
+      }
+
+      @include ifmobile {
+        max-width: 100%;
+      }
 
       .WelcomeBlockText {
         p {
@@ -61,21 +63,25 @@
   }
 
   .WelcomeBlockImage {
-    position: absolute;
-    z-index: 1000;
-    top: em(391px);
+    position: relative;
+    z-index: 100;
+    top: em(-44px);
     right: 0;
     width: em(661px);
     height: em(574px);
+    float: right;
     @include iftablet {
       width: em(378px);
       height: em(313px);
-      top: em(278px);
+      top: em(0px);
       right: em(-50px);
     }
     //решит вопрос с картинкой и текстом
     @include ifmobile {
-      display: none;
+      top: em(-5px);
+      right: em(-14px);
+      width: em(137px);
+      height: em(132px);
     }
   }
 }
@@ -101,7 +107,7 @@
 
     .AboutImage {
       position: absolute;
-      z-index: 1000;
+      z-index: 10;
       top: em(107px);
       margin: 0 auto;
       width: em(385px);
@@ -121,7 +127,7 @@
     .AboutTitle {
       max-width: em(900px);
       position: relative;
-      z-index: 1000;
+      z-index: 11;
       margin-bottom: em(126px);
       h1 {
         font-size: em(50px);
@@ -259,11 +265,12 @@
 
   .GraphBlockImgDesktop {
     display: block;
-    width: em(1358px);
+    width: 100%;
     height: em(618px);
     margin-bottom: em(161px);
+    position: relative;
     @include iftablet {
-      width: em(907px);
+      width: 100%;
       height: em(370px);
       margin-bottom: em(80px);
     }
@@ -276,6 +283,7 @@
     width: em(306px);
     height: em(322px);
     margin-bottom: em(19px);
+    position: relative;
     @include ifmobile {
       display: block;
     }
@@ -295,3 +303,13 @@
     }
   }
 }
+
+// .GraphBlockGraph {
+//   width: 100%;
+
+//   .Graph {
+//     width: 100%;
+//     min-height: em(2097px);
+//     position: relative;
+//   }
+// }

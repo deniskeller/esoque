@@ -134,29 +134,29 @@ const Darkside: React.FC<Props> = () => {
       <BaseContainer>
         <div className={styles.WelcomeBlock}>
           <BaseTitle className={styles.WelcomeBlockTitle}>Dark Side</BaseTitle>
-          <ul className={styles.WelcomeBlockUl}>
-            <li className={styles.WelcomeBlockLi}>
+          <div className={styles.WelcomeBlockUl}>
+            <div className={styles.WelcomeBlockImage}>
+              <Image
+                src='/images/landing/imgDarksidePlanet.png'
+                layout={'fill'}
+                alt={'Unicorn image'}
+              />
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Welcome to the Dark Side, we have cookies and more! If you are a
                 FinTech firm, one of the first questions that you may have
                 before starting the business, is what jurisdiction to choose?
                 Right?
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 For decades we were developing our skills and now we can offer
                 you the fully automated online solution to establish a company
                 in minutes!
               </BaseText>
-            </li>
-          </ul>
-          <div className={styles.WelcomeBlockImage}>
-            <Image
-              src='/images/landing/imgDarksidePlanet.png'
-              layout={'fill'}
-              alt={'Unicorn image'}
-            />
+            </div>
           </div>
         </div>
 

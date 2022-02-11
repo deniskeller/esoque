@@ -7,7 +7,6 @@ export { default as Esoque } from './landing/esoque/Esoque';
 export { default as Login } from './landing/login/Login';
 export { default as Signup } from './landing/signup/Signup';
 export { default as Reset } from './landing/reset/Reset';
-export { default as MoreInfo } from './landing/moreInfo/MoreInfo';
 
 //app
 export { default as HomeApp } from './app/homeApp/HomeApp';

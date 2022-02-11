@@ -55,9 +55,9 @@ const BaseSelect: React.FC<Props> = ({
         }`}
         onClick={toggling}
       >
-        <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
+        <p className={`${selectedOption ? styles.NotEmpty : ''}`}>
           {selectedOption || placeholder}
-        </span>
+        </p>
         <BaseIcon
           icon={ALL_ICONS.SELECT_ARROW}
           viewBox='0 0 16 16'

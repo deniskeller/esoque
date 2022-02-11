@@ -187,34 +187,32 @@ const Unicorns: React.FC<Props> = () => {
       <BaseContainer>
         <div className={styles.WelcomeBlock}>
           <BaseTitle className={styles.WelcomeBlockTitle}>Unicorns</BaseTitle>
-          <ul className={styles.WelcomeBlockUl}>
-            <li className={styles.WelcomeBlockLi}>
+          <div className={styles.WelcomeBlockUl}>
+            <div className={styles.WelcomeBlockImage}>
+              <Image
+                src='/images/landing/imgUnicornsHorse1.png'
+                layout={'fill'}
+                alt={'Unicorn image'}
+              />
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Welcome to the Unicorn page! We really hope to see you like the
                 new Amazon, Google or PayPal.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 In the new world of the rapidly developing FinTech industry, we
                 are the ones that help you to achieve your results.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Here we offer our licensing services in different fields of the
                 financial business like:
               </BaseText>
-            </li>
-          </ul>
-          <div className={styles.WelcomeBlockImage}>
-            <Image
-              src='/images/landing/imgUnicornsHorse1.png'
-              layout={'fill'}
-              // width={}
-              // height={}
-              alt={'Unicorn image'}
-            />
+            </div>
           </div>
         </div>
 

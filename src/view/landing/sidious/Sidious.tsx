@@ -57,35 +57,35 @@ const Sidious: React.FC<Props> = () => {
       <BaseContainer>
         <div className={styles.WelcomeBlock}>
           <BaseTitle className={styles.WelcomeBlockTitle}>Sidious</BaseTitle>
-          <ul className={styles.WelcomeBlockUl}>
-            <li className={styles.WelcomeBlockLi}>
+          <div className={styles.WelcomeBlockUl}>
+            <div className={styles.WelcomeBlockImage}>
+              <Image
+                src='/images/landing/imgSidious1.png'
+                layout={'fill'}
+                alt={''}
+                blurDataURL='/images/landing/imgSidious1.png'
+                placeholder='blur'
+                loading='lazy'
+              />
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 With us now you have access to corporate information and
                 official company documents in almost all countries in the world.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Information is based only on official / Government sources and
                 can be utilized for KYC/KYB purposes.
               </BaseText>
-            </li>
-            <li className={`${styles.WelcomeBlockLi} ${styles.GreenTExt}`}>
+            </div>
+            <div className={`${styles.WelcomeBlockLi} ${styles.GreenTExt}`}>
               <BaseText className={`${styles.WelcomeBlockText}`}>
-                Information is based only on official / Government sources and
-                can be utilized for KYC/KYB purposes.
+                Validate Corporate/Personal Identity Online: Fast, Accurate,
+                Responsible.
               </BaseText>
-            </li>
-          </ul>
-          <div className={styles.WelcomeBlockImage}>
-            <Image
-              src='/images/landing/imgSidious1.png'
-              layout={'fill'}
-              alt={''}
-              blurDataURL='/images/landing/imgSidious1.png'
-              placeholder='blur'
-              loading='lazy'
-            />
+            </div>
           </div>
 
           <div className={styles.AboutIcon}>

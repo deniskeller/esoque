@@ -1,36 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BaseButton, BaseContainer, BaseText, BaseTitle } from '@base/index';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import styles from './Esoque.module.scss';
 
 interface Props {}
 
 const Esoque: React.FC<Props> = () => {
-  const router = useRouter();
+  const [moreInfo, setMoreInfo] = useState(false);
 
-  const goToMoreInfo = () => {
-    router.push('/more_info');
+  const moreInfoHandler = () => {
+    setMoreInfo(true);
   };
+
   return (
     <>
       <BaseContainer>
         <div className={styles.WelcomeBlock}>
           <BaseTitle className={styles.WelcomeBlockTitle}>Esoque</BaseTitle>
-          <ul className={styles.WelcomeBlockUl}>
-            <li className={styles.WelcomeBlockLi}>
+          <div className={styles.WelcomeBlockUl}>
+            <div className={styles.WelcomeBlockImage}>
+              <Image
+                src='/images/landing/imgEsoque.png'
+                layout={'fill'}
+                alt={'Esocue image'}
+              />
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Esoque is an investment company operating in the United States,
                 Canada, the United Kingdom, New Zealand and Australia.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 The headquarter of the company is located in New York,
                 Manhattan.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 By offering the regulatory service we can provide advice about
                 license achievement in any country that is listed on our
@@ -38,16 +45,16 @@ const Esoque: React.FC<Props> = () => {
                 advice and help you to structure your financial business in the
                 right way.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Our company is managed by professional management with extensive
                 knowledge and experience in the fields of compliance,
                 international law, finance, accounting, safeguarding,
                 regulatory, insurance and law enforcement authorities.
               </BaseText>
-            </li>
-            <li className={styles.WelcomeBlockLi}>
+            </div>
+            <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 For the decade we have been working with wealthy families all
                 around the world and helping them to build an international
@@ -58,14 +65,7 @@ const Esoque: React.FC<Props> = () => {
                 Chief Executive Officer was interviewed by Forbes and our
                 business got multi-million valuations from the Big 4.
               </BaseText>
-            </li>
-          </ul>
-          <div className={styles.WelcomeBlockImage}>
-            <Image
-              src='/images/landing/imgEsoque.png'
-              layout={'fill'}
-              alt={'Esocue image'}
-            />
+            </div>
           </div>
         </div>
       </BaseContainer>
@@ -119,8 +119,24 @@ const Esoque: React.FC<Props> = () => {
             <Image
               src='/images/landing/imgEsoqueGraph.png'
               layout={'fill'}
+              priority={true}
               alt={'Esocue image'}
             />
+            {/* {moreInfo && moreInfo ? (
+              <Image
+                src='/images/landing/imgEsoqueGraph2.png'
+                layout={'fill'}
+                priority={true}
+                alt={'Esocue image'}
+              />
+            ) : (
+              <Image
+                src='/images/landing/imgEsoqueGraph.png'
+                layout={'fill'}
+                priority={true}
+                alt={'Esocue image'}
+              />
+            )} */}
           </div>
 
           <div
@@ -129,13 +145,30 @@ const Esoque: React.FC<Props> = () => {
             <Image
               src='/images/landing/imgEsoqueGraphMobile.png'
               layout={'fill'}
+              priority={true}
               alt={'Esocue image'}
             />
+            {/* <Image
+              src='/images/landing/imgEsoqueGraph2.png'
+              layout={'fill'}
+              priority={true}
+              alt={'Esocue image'}
+            /> */}
           </div>
 
-          <BaseButton className={styles.GraphBlockBtn} onClick={goToMoreInfo}>
-            See more
-          </BaseButton>
+          {/* <div className={styles.GraphBlockGraph}>
+            <div className={styles.Graph}></div>
+          </div> */}
+          {moreInfo && moreInfo ? (
+            ''
+          ) : (
+            <BaseButton
+              className={styles.GraphBlockBtn}
+              onClick={moreInfoHandler}
+            >
+              See more
+            </BaseButton>
+          )}
         </div>
       </BaseContainer>
     </>

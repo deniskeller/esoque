@@ -26,16 +26,11 @@
   }
 
   .WelcomeBlockUl {
+    position: relative;
     .WelcomeBlockLi {
       margin-bottom: em(20px);
       list-style: none;
-      max-width: em(630px);
-      @include iftablet {
-        max-width: em(448px);
-      }
-      @include ifmobile {
-        max-width: em(125px);
-      }
+      max-width: 100%;
 
       &:last-child {
         margin-bottom: 0;
@@ -80,23 +75,27 @@
   }
 
   .WelcomeBlockImage {
-    position: absolute;
+    position: relative;
     z-index: 10;
     right: em(-40px);
-    top: em(227px);
+    top: em(-200px);
     width: em(637px);
     height: em(546px);
+    float: right;
+    margin-left: em(107px);
     @include iftablet {
       right: em(-40px);
-      top: em(201px);
+      top: em(-100px);
       width: em(378px);
       height: em(324px);
+      margin-left: em(15px);
     }
     @include ifmobile {
-      right: em(-5px);
-      top: em(130px);
+      top: em(-20px);
+      right: em(0px);
       width: em(148px);
       height: em(122px);
+      margin-left: 0;
     }
   }
 

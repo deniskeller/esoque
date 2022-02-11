@@ -21,6 +21,7 @@
   vertical-align: middle;
   padding: 0 em(37px, $size);
   height: em(83px, $size);
+  border: none;
   @include placeholder-color($placeholder);
   //Заменить на Термина
   font-family: $font-Circe;
