@@ -154,18 +154,6 @@
     min-height: 100vh;
   }
 
-  .Widget {
-    position: relative;
-    width: em(1350px);
-    height: em(652px);
-    @include iftablet {
-      width: 100%;
-    }
-    @include ifmobile {
-      display: none;
-    }
-  }
-
   .RotateSmartphone {
     display: none;
     width: 100%;

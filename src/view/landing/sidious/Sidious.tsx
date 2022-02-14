@@ -2,7 +2,7 @@ import React from 'react';
 import { BaseContainer, BaseText, BaseTitle } from '@base/index';
 import styles from './Sidious.module.scss';
 import Image from 'next/image';
-import { ImprovingItem } from '@content/index';
+import { ImprovingItem, WidgetSidious } from '@content/index';
 import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {}
@@ -105,16 +105,7 @@ const Sidious: React.FC<Props> = () => {
 
       <div className={styles.WidgetBlockContainer}>
         <BaseContainer>
-          <div className={styles.Widget}>
-            <Image
-              src='/images/landing/imgSidious2.png'
-              layout={'fill'}
-              alt={''}
-              blurDataURL='/images/landing/imgSidious2.png'
-              placeholder='blur'
-              loading='lazy'
-            />
-          </div>
+          <WidgetSidious />
 
           <div className={styles.RotateSmartphone}>
             <div className={styles.RotateSmartphoneImage}>

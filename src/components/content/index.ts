@@ -18,7 +18,8 @@ export { default as AdvantageItem } from './other/AdvantageItem/AdvantageItem';
 export { default as JurisdictionCountryItem } from './other/JurisdictionCountryItem/JurisdictionCountryItem';
 export { default as CountryItem } from './other/CountryItem/CountryItem';
 export { default as ImprovingItem } from './other/ImprovingItem/ImprovingItem';
-export { default as Widget } from './widgets/Widget/Widget';
+export { default as WidgetSidious } from './widgets/WidgetSidious/WidgetSidious';
+export { default as WidgetDarkside } from './widgets/WidgetDarkside/WidgetDarkside';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';

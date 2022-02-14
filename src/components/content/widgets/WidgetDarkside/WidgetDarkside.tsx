@@ -1,6 +1,6 @@
 import { BaseInput, BaseSelect, BaseButton } from '@base/index';
 import React from 'react';
-import styles from './Widget.module.scss';
+import styles from './WidgetDarkside.module.scss';
 
 interface Props {}
 
@@ -15,7 +15,7 @@ const options = [
   { value: 'SCOTLAND', title: 'CYPRUS' },
 ];
 
-const Widget: React.FC<Props> = ({}) => {
+const WidgetDarkside: React.FC<Props> = ({}) => {
   const [companyName, setCompanyName] = React.useState<string>('');
   const [option, setOption] = React.useState<string>('');
 
@@ -65,4 +65,4 @@ const Widget: React.FC<Props> = ({}) => {
   );
 };
 
-export default Widget;
+export default WidgetDarkside;

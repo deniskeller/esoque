@@ -5,7 +5,7 @@ import {
   AdvantageItem,
   CountryItem,
   JurisdictionCountryItem,
-  Widget,
+  WidgetDarkside,
 } from '@content/index';
 import styles from './Darkside.module.scss';
 
@@ -173,7 +173,7 @@ const Darkside: React.FC<Props> = () => {
           </BaseTitle>
 
           <div className={styles.WidgetBlockWidget}>
-            <Widget />
+            <WidgetDarkside />
           </div>
 
           <div className={styles.WidgetBlockAdvantages}>
