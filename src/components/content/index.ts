@@ -20,6 +20,9 @@ export { default as CountryItem } from './other/CountryItem/CountryItem';
 export { default as ImprovingItem } from './other/ImprovingItem/ImprovingItem';
 export { default as WidgetSidious } from './widgets/WidgetSidious/WidgetSidious';
 export { default as WidgetDarkside } from './widgets/WidgetDarkside/WidgetDarkside';
+export { default as CorporateDocuments } from './widgets/CorporateDocuments/CorporateDocuments';
+export { default as CopiesCertification } from './widgets/CopiesCertification/CopiesCertification';
+export { default as SignatureCertifications } from './widgets/SignatureCertifications/SignatureCertifications';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';

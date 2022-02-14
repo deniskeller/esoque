@@ -9,3 +9,4 @@ export { default as BaseText } from './BaseText/BaseText';
 export { default as BaseSelect } from './BaseSelect/BaseSelect';
 export { default as BaseSearchSelect } from './BaseSearchSelect/BaseSearchSelect';
 export { default as BaseCheckbox } from './BaseCheckbox/BaseCheckbox';
+export { default as BaseRadioButton } from './BaseRadioButton/BaseRadioButton';

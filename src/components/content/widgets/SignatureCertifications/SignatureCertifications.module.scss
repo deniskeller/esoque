@@ -1,0 +1,21 @@
+.SignatureCertifications {
+  .Description {
+    font-family: $font-Calibri;
+    font-style: normal;
+    font-weight: 400;
+    font-size: em(19px);
+    line-height: 120%;
+    color: $white;
+    margin-bottom: em(35px);
+  }
+
+  .CovidDescription {
+    font-family: $font-Calibri;
+    font-style: normal;
+    font-weight: 400;
+    font-size: em(19px);
+    line-height: 120%;
+    color: $pink;
+    margin-bottom: em(60px);
+  }
+}
