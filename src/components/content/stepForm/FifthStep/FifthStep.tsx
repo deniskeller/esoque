@@ -76,25 +76,34 @@ const FifthStep: React.FC<Props> = ({ nextStep }) => {
           <ValidItem
             done='true'
             text='Passwords must contain at least one digit'
+            className={styles.ValidItem}
           />
 
           <ValidItem
             done='true'
             text='Passwords must contain at least one lowercase letter'
+            className={styles.ValidItem}
           />
           <ValidItem
             done='true'
             text='Passwords must contain at least one uppercase letter'
+            className={styles.ValidItem}
           />
           <ValidItem
             done='true'
             text='Passwords must have a minimal length of 8 characters'
+            className={styles.ValidItem}
           />
           <ValidItem
             done='true'
             text='Passwords must contain at least one special character'
+            className={styles.ValidItem}
           />
-          <ValidItem done='false' text='Passwords must match' />
+          <ValidItem
+            done='false'
+            text='Passwords must match'
+            className={styles.ValidItem}
+          />
         </div>
       </div>
     </div>

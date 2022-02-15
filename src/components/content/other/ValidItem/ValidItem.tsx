@@ -5,12 +5,13 @@ import styles from './ValidItem.module.scss';
 
 interface Props {
   done: string;
-  text: string;
+  text?: string;
+  className?: string;
 }
 
-const ValidItem: React.FC<Props> = ({ done = 'false', text }) => {
+const ValidItem: React.FC<Props> = ({ done = 'false', text, className }) => {
   return (
-    <div className={styles.ValidItem}>
+    <div className={`${styles.ValidItem} ${className}`}>
       {done == 'true' ? (
         <div className={styles.ValidItemIcon}>
           <BaseIcon
@@ -29,7 +30,7 @@ const ValidItem: React.FC<Props> = ({ done = 'false', text }) => {
         </div>
       )}
 
-      <p className={styles.Text}>{text}</p>
+      {text && <p className={styles.Text}>{text}</p>}
     </div>
   );
 };

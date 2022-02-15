@@ -146,5 +146,18 @@
       max-width: em(286px);
       margin: 0 auto;
     }
+
+    .ValidItem {
+      margin-bottom: em(28px);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include iftablet {
+        margin-bottom: em(24px);
+      }
+      @include ifmobile {
+        margin-bottom: em(20px);
+      }
+    }
   }
 }

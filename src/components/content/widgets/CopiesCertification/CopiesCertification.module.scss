@@ -7,6 +7,13 @@
     line-height: 120%;
     color: $white;
     margin-bottom: em(35px);
+
+    @include iftablet {
+      font-size: em(15px);
+      margin-bottom: em(14px);
+    }
+    @include ifmobile {
+    }
   }
 
   .CovidDescription {
@@ -17,5 +24,252 @@
     line-height: 120%;
     color: $pink;
     margin-bottom: em(60px);
+    @include iftablet {
+      font-size: em(15px);
+      margin-bottom: em(26px);
+    }
+    @include ifmobile {
+    }
+  }
+
+  .Table {
+    margin-bottom: em(81px);
+    @include iftablet {
+      margin-bottom: em(49px);
+    }
+    @include ifmobile {
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      thead {
+        .Clear {
+          width: em(87px);
+          @include iftablet {
+            width: em(43px);
+          }
+          @include ifmobile {
+          }
+        }
+        .Name {
+          width: em(492px);
+          @include iftablet {
+            width: em(237px);
+          }
+          @include ifmobile {
+          }
+        }
+        .Qty {
+          width: em(400px);
+          @include iftablet {
+            width: em(182px);
+          }
+          @include ifmobile {
+          }
+        }
+        .Price {
+          width: em(260px);
+          @include iftablet {
+            width: em(165px);
+          }
+          @include ifmobile {
+          }
+        }
+
+        th {
+          font-weight: bold;
+          font-size: em(17px);
+          line-height: 100%;
+          letter-spacing: -0.05em;
+          color: $white;
+          border-bottom: 1px solid $white;
+          text-align: left;
+          padding: 0 em(22px) em(19px);
+          @include iftablet {
+            font-size: em(14px);
+            // padding-left: 0;
+          }
+          @include ifmobile {
+          }
+        }
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid $white;
+        }
+        td {
+          padding: em(22px);
+          padding-right: 0;
+          @include iftablet {
+            // padding-left: 0;
+          }
+          @include ifmobile {
+          }
+          .ValidItemDescription {
+            font-size: em(19px);
+            line-height: 100%;
+            font-family: $font-Calibri;
+            font-style: normal;
+            font-weight: normal;
+            color: $white;
+            padding-bottom: em(10px);
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+
+          .Select {
+            width: em(458px);
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+
+          .Input {
+            width: em(99px);
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+
+          .Question {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: em(32px);
+            height: em(32px);
+            border: 2px solid $yellow;
+            border-radius: 50%;
+            cursor: pointer;
+            box-sizing: border-box;
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+            .QuestionTitle {
+              font-size: em(19px);
+              line-height: 100%;
+              color: $yellow;
+              font-family: $font-Calibri;
+              font-style: normal;
+              font-weight: bold;
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+            }
+          }
+        }
+
+        .ValidItem {
+          justify-content: center;
+          svg {
+            width: em(32px);
+            height: em(32px);
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+        }
+
+        .tr_verification_apostil_N td {
+          padding-bottom: 0;
+        }
+        .tr_verification_apostil_N,
+        .tr_verification_apostil_Notary {
+          border-bottom: none;
+        }
+        .tr_verification_apostil_Notary td {
+          padding-top: em(11px);
+          padding-bottom: em(11px);
+          @include iftablet {
+          }
+          @include ifmobile {
+          }
+        }
+        .tr_verification_apostil_Y td {
+          padding-top: 0;
+        }
+
+        .Select {
+          text-align: center;
+          vertical-align: inherit;
+        }
+      }
+
+      tfoot {
+        tr {
+          border-bottom: none;
+          th {
+            padding: em(22px);
+            padding-right: 0;
+            text-align: left;
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+
+            .Total {
+              float: right;
+              font-size: em(17px);
+              color: $white;
+              font-weight: bold;
+              line-height: 89.5%;
+              letter-spacing: -0.05em;
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+            }
+          }
+        }
+      }
+
+      .PriceValue {
+        color: $pink;
+        font-size: em(19px);
+        line-height: 100%;
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: normal;
+        @include iftablet {
+        }
+        @include ifmobile {
+        }
+      }
+
+      .Currency {
+        color: $grey;
+        font-size: em(19px);
+        line-height: 100%;
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: normal;
+        @include iftablet {
+        }
+        @include ifmobile {
+        }
+      }
+
+      .Bold {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .Button {
+    width: 100%;
+    max-width: em(289px);
+    height: em(82px);
+    margin: 0 auto;
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
   }
 }

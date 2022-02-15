@@ -5,6 +5,7 @@ interface Props {
   type: string;
   name: string;
   label?: string;
+  min?: number;
   placeholder?: string;
   required?: boolean;
   className?: string;
@@ -20,6 +21,7 @@ const BaseInput: React.FC<Props> = ({
   type,
   error,
   name,
+  min,
   required = false,
   placeholder,
   className,
@@ -34,6 +36,7 @@ const BaseInput: React.FC<Props> = ({
         type={type}
         className={`${styles.Input} ${error ? styles.Error : ''}`}
         name={name}
+        min={min}
         placeholder={placeholder}
         required={required}
         autoComplete={autocomplete}

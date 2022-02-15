@@ -4,15 +4,43 @@ import {
   BaseButton,
   BaseRadioButton,
 } from '@base/index';
-import Image from 'next/image';
+import { ValidItem } from '@content/index';
 import React from 'react';
 import styles from './CopiesCertification.module.scss';
 
 interface Props {}
 
 const CopiesCertification: React.FC<Props> = ({}) => {
-  //checkbox
-  const [checkbox, setCheckbox] = React.useState(false);
+  //radio Button
+  const [radioValue, setRadioValue] = React.useState(false);
+
+  //select
+  const documents = [
+    {
+      value: 'Passport and Other ID document',
+      title: 'Passport and Other ID document',
+    },
+    {
+      value: 'Single Personal or Corporate document',
+      title: 'Single Personal or Corporate document',
+    },
+    {
+      value: 'Set of  Personal or Corporate documents',
+      title: 'Set of  Personal or Corporate documents',
+    },
+  ];
+  const [document, setDocument] = React.useState<string>('');
+  const changeHandlerDocuments = (value: string) => {
+    console.log('gender: ', value);
+    setDocument(value);
+  };
+
+  //quantity
+  const [quantity, setQuantity] = React.useState<number>(1);
+  const changeHandlerQuantity = (value: number) => {
+    setQuantity(value);
+  };
+
   return (
     <div className={styles.CopiesCertification}>
       <p className={styles.Description}>
@@ -29,80 +57,146 @@ const CopiesCertification: React.FC<Props> = ({}) => {
       <div className={styles.Table}>
         <table>
           <thead>
-            <tr>
-              <th>&nbsp;</th>
-              <th>Name</th>
-              <th>Qty</th>
-              <th>Price</th>
-              <th>Info</th>
+            <tr className={styles.TheadTr}>
+              <th className={styles.Clear}></th>
+              <th className={styles.Name}>Name</th>
+              <th className={styles.Qty}>Qty</th>
+              <th className={styles.Price}>Price</th>
+              <th className={styles.Info}>Info</th>
             </tr>
           </thead>
+
           <tbody>
-            <tr>
-              <td>
+            <tr className={styles.tr_verification_apostil_N}>
+              <td className={styles.Select}>
                 <BaseRadioButton
                   id='1'
-                  checkboxValue={checkbox}
-                  onClick={() => setCheckbox(!checkbox)}
+                  value={radioValue}
+                  onClick={() => setRadioValue(!radioValue)}
                 ></BaseRadioButton>
               </td>
-              <td>EU Licensed lawyer/company</td>
-              <td>8</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
+              <td colSpan={3} className={styles.CertcopyDocname}>
+                <p className={styles.ValidItemDescription}>
+                  EU Licensed lawyer/company
+                </p>
+              </td>
               <td>
+                <span className={styles.Question}>
+                  <p className={styles.QuestionTitle}>?</p>
+                </span>
+              </td>
+            </tr>
+
+            <tr className={styles.tr_verification_apostil_Notary}>
+              <td className={styles.Select}>
                 <BaseRadioButton
                   id='2'
-                  checkboxValue={checkbox}
-                  onClick={() => setCheckbox(!checkbox)}
+                  value={radioValue}
+                  onClick={() => setRadioValue(!radioValue)}
                 ></BaseRadioButton>
               </td>
-              <td>Notary</td>
-              <td>0</td>
-              <td>3</td>
-              <td>4</td>
-            </tr>
-            <tr>
+              <td colSpan={3} className={styles.CertcopyDocname}>
+                <p className={styles.ValidItemDescription}>Notary</p>
+              </td>
               <td>
+                <span className={styles.Question}>
+                  <p className={styles.QuestionTitle}>?</p>
+                </span>
+              </td>
+            </tr>
+
+            <tr className={styles.tr_verification_apostil_Y}>
+              <td className={styles.Select}>
                 <BaseRadioButton
                   id='3'
-                  checkboxValue={checkbox}
-                  onClick={() => setCheckbox(!checkbox)}
+                  value={radioValue}
+                  onClick={() => setRadioValue(!radioValue)}
                 ></BaseRadioButton>
               </td>
-              <td>Verification with Apostille</td>
-              <td>7</td>
-              <td>2</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>CompanyD</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>CompanyE</td>
-              <td>3</td>
-              <td>0</td>
-              <td>3</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Grand Total</strong>
+              <td colSpan={3} className={styles.CertcopyDocname}>
+                <p className={styles.ValidItemDescription}>
+                  Verification with Apostille
+                </p>
               </td>
-              <td>10</td>
-              <td>15</td>
-              <td>8</td>
-              <td>7</td>
+              <td>
+                <span className={styles.Question}>
+                  <p className={styles.QuestionTitle}>?</p>
+                </span>
+              </td>
+            </tr>
+
+            <tr className={styles.tr_certcopy_doc}>
+              <td className={styles.Select}>
+                <ValidItem done='false' className={styles.ValidItem} />
+              </td>
+              <td>
+                <BaseSelect
+                  placeholder='Select Document'
+                  options={documents}
+                  onChange={changeHandlerDocuments}
+                  className={styles.Select}
+                />
+              </td>
+              <td>
+                <BaseInput
+                  name='number'
+                  min={1}
+                  type='number'
+                  value={quantity}
+                  onChange={changeHandlerQuantity}
+                  className={styles.Input}
+                />
+              </td>
+              <td>
+                <span className={styles.PriceValue}>200.00</span>&ensp;
+                <span className={styles.Currency}>EUR</span>
+              </td>
+              <td>
+                <span className={styles.Question}>
+                  <p className={styles.QuestionTitle}>?</p>
+                </span>
+              </td>
+            </tr>
+
+            <tr className={styles.tr_certcopy_delivery}>
+              <td className={styles.Select}>
+                <ValidItem done='true' className={styles.ValidItem} />
+              </td>
+              <td colSpan={2}>
+                <p className={styles.ValidItemDescription}>
+                  International Delivery
+                </p>
+              </td>
+              <td>
+                <span className={styles.PriceValue}>200.00</span>&ensp;
+                <span className={styles.Currency}>EUR</span>
+              </td>
+              <td>
+                <span className={styles.Question}>
+                  <p className={styles.QuestionTitle}>?</p>
+                </span>
+              </td>
             </tr>
           </tbody>
+
+          <tfoot>
+            <tr className={styles.tr_foot}>
+              <th></th>
+              <th colSpan={2}>
+                <p className={styles.Total}>Total</p>
+              </th>
+              <th>
+                <span className={`${styles.PriceValue} ${styles.Bold}`}>
+                  200.00
+                </span>
+                &ensp;
+                <span className={`${styles.Currency} ${styles.Bold}`}>EUR</span>
+              </th>
+            </tr>
+          </tfoot>
         </table>
       </div>
+      <BaseButton className={styles.Button}>Request</BaseButton>
     </div>
   );
 };

@@ -19,7 +19,7 @@
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: em(10px, $size);
   vertical-align: middle;
-  padding: 0 em(37px, $size);
+  padding: 0 em(10px, $size) 0 em(37px, $size);
   height: em(83px, $size);
   border: none;
   @include placeholder-color($placeholder);

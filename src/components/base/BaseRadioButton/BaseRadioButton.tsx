@@ -7,7 +7,7 @@ interface Props {
   id?: string;
   className?: string;
   error?: string | boolean;
-  checkboxValue: boolean;
+  value: boolean;
   children?: ReactNode;
   onClick: (value: boolean) => void;
 }
@@ -17,10 +17,10 @@ const BaseRadioButton: React.FC<Props> = ({
   id = '',
   className,
   error,
-  checkboxValue,
+  value,
   onClick,
 }) => {
-  const [isActive, setIsActive] = React.useState<boolean>(checkboxValue);
+  const [isActive, setIsActive] = React.useState<boolean>(value);
 
   React.useEffect(() => {
     onClick(isActive);
@@ -28,7 +28,7 @@ const BaseRadioButton: React.FC<Props> = ({
 
   return (
     <div
-      className={`${className} ${styles.BaseCheckbox}`}
+      className={`${className} ${styles.BaseRadioButton}`}
       onClick={() => setIsActive(!isActive)}
     >
       <input
@@ -36,22 +36,18 @@ const BaseRadioButton: React.FC<Props> = ({
         checked={isActive}
         name='name'
         type='radio'
-        className={styles.BaseCheckboxInput}
+        className={styles.BaseRadioButton}
         readOnly
       />
       <div
-        className={` ${styles.BaseCheckboxCheck} ${
+        className={` ${styles.BaseRadioButtonCheck} ${
           isActive ? styles.isActive : ''
         } ${error && !isActive ? styles.isError : ''}`}
       >
-        <BaseIcon
-          icon={ALL_ICONS.CHECKBOX_CHECK}
-          viewBox='0 0 17 19'
-          className={styles.BaseCheckboxTick}
-        />
+        <div className={styles.BaseRadioButtonTick}></div>
       </div>
       {children ? (
-        <div className={styles.BaseCheckboxTitle}>{children}</div>
+        <div className={styles.BaseRadioButtonTitle}>{children}</div>
       ) : null}
     </div>
   );
