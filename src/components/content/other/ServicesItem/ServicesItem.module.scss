@@ -41,22 +41,24 @@
 
   .ServicesItemSubtitle {
     display: block;
-    P {
-      font-size: em(19px);
-      line-height: 100%;
-      @include iftablet {
-        font-size: em(15px);
-      }
 
-      @include ifmobile {
-        font-size: em(9px);
-      }
+    font-size: em(19px);
+    line-height: 100%;
+    font-family: $font-Calibri;
+    font-weight: 400;
+    color: $white;
+    @include iftablet {
+      font-size: em(15px);
+    }
+
+    @include ifmobile {
+      font-size: em(9px);
     }
   }
 
   .ServicesItemUl {
     display: block;
-
+    margin-top: em(2px);
     .ServicesItemLi {
       font-size: em(19px);
       line-height: 120%;
@@ -64,7 +66,7 @@
       font-weight: 400;
       color: $white;
       list-style: none;
-      margin-top: em(2px);
+
       @include iftablet {
         font-size: em(15px);
       }

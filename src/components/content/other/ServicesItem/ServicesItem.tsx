@@ -26,9 +26,7 @@ const ServicesItem: React.FC<Props> = ({ item }) => {
       <BaseTitle type='h3' className={styles.ServicesItemTitle}>
         {item.itemTitle}
       </BaseTitle>
-      <BaseText className={styles.ServicesItemSubtitle}>
-        {item.itemList[0]}
-      </BaseText>
+      <p className={styles.ServicesItemSubtitle}>{item.itemList[0]}</p>
       <ul
         className={`${styles.ServicesItemUl} ${!visible ? styles.Hidden : ''}`}
       >
