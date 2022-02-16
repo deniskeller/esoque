@@ -76,7 +76,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         />
 
         <BaseButton onClick={submitFormData} className={styles.Button}>
-          Check
+          Request
         </BaseButton>
       </div>
     </div>

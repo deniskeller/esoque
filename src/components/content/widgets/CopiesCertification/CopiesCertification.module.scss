@@ -45,33 +45,39 @@
       border-collapse: collapse;
       thead {
         .Clear {
-          width: em(87px);
+          width: 5%;
           @include iftablet {
-            width: em(43px);
           }
           @include ifmobile {
           }
         }
         .Name {
-          width: em(492px);
+          width: 35%;
           @include iftablet {
-            width: em(237px);
           }
           @include ifmobile {
           }
         }
         .Qty {
-          width: em(400px);
+          width: 30%;
           @include iftablet {
-            width: em(182px);
           }
           @include ifmobile {
           }
         }
         .Price {
-          width: em(260px);
+          width: 20%;
           @include iftablet {
-            width: em(165px);
+            width: 25%;
+          }
+          @include ifmobile {
+          }
+        }
+
+        .Info {
+          width: 10%;
+          @include iftablet {
+            width: 5%;
           }
           @include ifmobile {
           }
@@ -88,7 +94,7 @@
           padding: 0 em(22px) em(19px);
           @include iftablet {
             font-size: em(14px);
-            // padding-left: 0;
+            padding-left: 0;
           }
           @include ifmobile {
           }
@@ -101,20 +107,23 @@
         td {
           padding: em(22px);
           padding-right: 0;
+          line-height: 0;
+
           @include iftablet {
-            // padding-left: 0;
+            padding: em(19px);
+            padding-left: 0;
           }
           @include ifmobile {
           }
-          .ValidItemDescription {
+          .SelectItemDescription {
             font-size: em(19px);
             line-height: 100%;
             font-family: $font-Calibri;
             font-style: normal;
             font-weight: normal;
             color: $white;
-            padding-bottom: em(10px);
             @include iftablet {
+              font-size: em(15px);
             }
             @include ifmobile {
             }
@@ -123,14 +132,17 @@
           .Select {
             width: em(458px);
             @include iftablet {
+              width: em(304px);
             }
             @include ifmobile {
             }
           }
 
           .Input {
-            width: em(99px);
+            width: 100%;
+            max-width: em(99px);
             @include iftablet {
+              max-width: em(84px);
             }
             @include ifmobile {
             }
@@ -147,6 +159,8 @@
             cursor: pointer;
             box-sizing: border-box;
             @include iftablet {
+              width: em(23px);
+              height: em(23px);
             }
             @include ifmobile {
             }
@@ -158,6 +172,7 @@
               font-style: normal;
               font-weight: bold;
               @include iftablet {
+                font-size: em(15px);
               }
               @include ifmobile {
               }
@@ -167,10 +182,18 @@
 
         .ValidItem {
           justify-content: center;
+          @include iftablet {
+            justify-content: flex-start;
+          }
+          @include ifmobile {
+            justify-content: flex-start;
+          }
           svg {
             width: em(32px);
             height: em(32px);
             @include iftablet {
+              width: em(22px);
+              height: em(22px);
             }
             @include ifmobile {
             }
@@ -185,8 +208,8 @@
           border-bottom: none;
         }
         .tr_verification_apostil_Notary td {
-          padding-top: em(11px);
-          padding-bottom: em(11px);
+          padding-top: em(13px);
+          padding-bottom: em(13px);
           @include iftablet {
           }
           @include ifmobile {
@@ -196,9 +219,18 @@
           padding-top: 0;
         }
 
-        .Select {
+        .TdSelect {
           text-align: center;
           vertical-align: inherit;
+
+          @include iftablet {
+            padding-left: 0;
+            text-align-last: left;
+          }
+          @include ifmobile {
+            padding-left: 0;
+            text-align-last: left;
+          }
         }
       }
 
@@ -209,7 +241,10 @@
             padding: em(22px);
             padding-right: 0;
             text-align: left;
+            line-height: 0;
             @include iftablet {
+              padding: em(19px);
+              padding-left: 0;
             }
             @include ifmobile {
             }
@@ -219,9 +254,10 @@
               font-size: em(17px);
               color: $white;
               font-weight: bold;
-              line-height: 89.5%;
+              line-height: 100%;
               letter-spacing: -0.05em;
               @include iftablet {
+                font-size: em(14px);
               }
               @include ifmobile {
               }
@@ -238,6 +274,7 @@
         font-style: normal;
         font-weight: normal;
         @include iftablet {
+          font-size: em(15px);
         }
         @include ifmobile {
         }
@@ -251,6 +288,7 @@
         font-style: normal;
         font-weight: normal;
         @include iftablet {
+          font-size: em(15px);
         }
         @include ifmobile {
         }
@@ -268,6 +306,8 @@
     height: em(82px);
     margin: 0 auto;
     @include iftablet {
+      max-width: em(149px);
+      height: em(56px);
     }
     @include ifmobile {
     }

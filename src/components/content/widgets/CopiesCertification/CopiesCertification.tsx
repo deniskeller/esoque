@@ -68,7 +68,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
 
           <tbody>
             <tr className={styles.tr_verification_apostil_N}>
-              <td className={styles.Select}>
+              <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='1'
                   value={radioValue}
@@ -76,7 +76,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
-                <p className={styles.ValidItemDescription}>
+                <p className={styles.SelectItemDescription}>
                   EU Licensed lawyer/company
                 </p>
               </td>
@@ -88,7 +88,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
             </tr>
 
             <tr className={styles.tr_verification_apostil_Notary}>
-              <td className={styles.Select}>
+              <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='2'
                   value={radioValue}
@@ -96,7 +96,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
-                <p className={styles.ValidItemDescription}>Notary</p>
+                <p className={styles.SelectItemDescription}>Notary</p>
               </td>
               <td>
                 <span className={styles.Question}>
@@ -106,7 +106,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
             </tr>
 
             <tr className={styles.tr_verification_apostil_Y}>
-              <td className={styles.Select}>
+              <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='3'
                   value={radioValue}
@@ -114,7 +114,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
-                <p className={styles.ValidItemDescription}>
+                <p className={styles.SelectItemDescription}>
                   Verification with Apostille
                 </p>
               </td>
@@ -126,7 +126,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
             </tr>
 
             <tr className={styles.tr_certcopy_doc}>
-              <td className={styles.Select}>
+              <td className={styles.TdSelect}>
                 <ValidItem done='false' className={styles.ValidItem} />
               </td>
               <td>
@@ -159,11 +159,11 @@ const CopiesCertification: React.FC<Props> = ({}) => {
             </tr>
 
             <tr className={styles.tr_certcopy_delivery}>
-              <td className={styles.Select}>
+              <td className={styles.TdSelect}>
                 <ValidItem done='true' className={styles.ValidItem} />
               </td>
               <td colSpan={2}>
-                <p className={styles.ValidItemDescription}>
+                <p className={styles.SelectItemDescription}>
                   International Delivery
                 </p>
               </td>

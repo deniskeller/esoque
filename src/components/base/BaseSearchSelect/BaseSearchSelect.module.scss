@@ -19,7 +19,7 @@
     height: em(61px);
   }
   @include ifmobile {
-    padding: 0 em(27px);
+    padding: 0 em(17px);
     height: em(44px);
   }
 
@@ -28,6 +28,9 @@
     font-weight: normal;
     line-height: 100%;
     color: $placeholder;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     @include iftablet {
       font-size: em(17px);
     }
@@ -129,6 +132,7 @@
   color: $placeholder;
   padding-left: em(72px);
   padding-right: em(20px);
+
   @include iftablet {
     height: em(61px);
     padding-left: em(54px);
@@ -195,6 +199,7 @@
   box-sizing: border-box;
   position: relative;
   background: $input;
+  font-family: $font-Termina;
   // padding-top: em(20px);
   border: none;
   margin-top: em(30px);

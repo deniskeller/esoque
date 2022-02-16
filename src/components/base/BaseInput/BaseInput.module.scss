@@ -23,8 +23,7 @@
   height: em(83px, $size);
   border: none;
   @include placeholder-color($placeholder);
-  //Заменить на Термина
-  font-family: $font-Circe;
+  font-family: $font-Termina;
   &:focus {
     border: 2px solid $yellow;
   }
@@ -38,7 +37,7 @@
   @include ifmobile {
     $size: 11px;
     font-size: em($size);
-    padding: 0 em(27px, $size);
+    padding: 0 em(17px, $size);
     height: em(44px, $size);
     border-radius: em(10px, $size);
   }

@@ -7,6 +7,13 @@
     line-height: 120%;
     color: $white;
     margin-bottom: em(74px);
+
+    @include iftablet {
+      font-size: em(15px);
+      margin-bottom: em(36px);
+    }
+    @include ifmobile {
+    }
   }
 
   .ImageDesktop {
@@ -55,14 +62,29 @@
     .Input {
       width: 100%;
       max-width: em(543px);
+      @include iftablet {
+        max-width: em(330px);
+      }
+      @include ifmobile {
+      }
     }
     .Select {
       width: 100%;
       max-width: em(458px);
+      @include iftablet {
+        width: em(330px);
+      }
+      @include ifmobile {
+      }
     }
     .Button {
       width: 100%;
       max-width: em(289px);
+      @include iftablet {
+        max-width: em(149px);
+      }
+      @include ifmobile {
+      }
     }
   }
 }

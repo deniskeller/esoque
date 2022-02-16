@@ -20,7 +20,7 @@
     height: em(61px);
   }
   @include ifmobile {
-    padding: 0 em(27px);
+    padding: 0 em(17px);
     height: em(44px);
   }
 
@@ -29,6 +29,9 @@
     font-weight: normal;
     line-height: 120%;
     color: $placeholder;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     @include iftablet {
       font-size: em(17px);
     }
@@ -153,6 +156,6 @@
   }
   @include ifmobile {
     height: em(44px);
-    padding: 0 em(37px);
+    padding: 0 em(25px);
   }
 }

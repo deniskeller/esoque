@@ -3,6 +3,11 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: em(80px);
+  @include iftablet {
+    margin-bottom: em(36px);
+  }
+  @include ifmobile {
+  }
   .TabItem {
     color: $white;
     font-weight: 400;
@@ -14,6 +19,13 @@
     border-bottom: 2px solid $white;
     list-style: none;
     text-align: center;
+
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+    }
+
     &:first-child {
       text-align: left;
     }
