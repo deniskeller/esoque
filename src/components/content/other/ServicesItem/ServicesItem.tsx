@@ -22,7 +22,10 @@ const ServicesItem: React.FC<Props> = ({ item }) => {
 
   return (
     <div className={styles.ServicesItem} onClick={onClickVisibleHandler}>
-      <IconHorse className={styles.ServicesItemImage} />
+      <div className={styles.ServicesItemImage}>
+        <IconHorse className={styles.Image} />
+      </div>
+
       <BaseTitle type='h3' className={styles.ServicesItemTitle}>
         {item.itemTitle}
       </BaseTitle>

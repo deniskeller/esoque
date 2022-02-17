@@ -27,6 +27,9 @@
 
 .Subtitle {
   margin-bottom: em(26px);
+  p {
+    font-family: $font-Termina;
+  }
   @include iftablet {
     margin-bottom: em(62px);
   }

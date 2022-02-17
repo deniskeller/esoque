@@ -125,7 +125,8 @@
     }
 
     .AboutTitle {
-      max-width: em(900px);
+      width: 100%;
+      max-width: em(873px);
       position: relative;
       z-index: 11;
       margin-bottom: em(126px);
@@ -191,7 +192,7 @@
       }
 
       .AboutIconCircleDown {
-        position: absolute;
+        position: relative;
         width: em(62px);
         height: em(86px);
         @include iftablet {
@@ -290,15 +291,16 @@
   }
 
   .GraphBlockBtn {
-    width: em(289px);
+    width: 100%;
+    max-width: em(289px);
     height: em(63px);
 
     @include iftablet {
-      width: em(100px);
+      max-width: em(149px);
       height: em(43px);
     }
     @include ifmobile {
-      width: em(76px);
+      max-width: em(76px);
       height: em(33px);
     }
   }

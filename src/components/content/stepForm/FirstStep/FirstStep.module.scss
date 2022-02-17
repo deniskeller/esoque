@@ -29,6 +29,9 @@
 .Subtitle {
   margin-bottom: em(97px);
   text-align: center;
+  p {
+    font-family: $font-Termina;
+  }
   @include iftablet {
     margin-bottom: em(82px);
   }
@@ -71,14 +74,21 @@
 }
 
 .Question {
-  font-size: em(16px);
   margin-bottom: em(42px);
+  p {
+    font-size: em(16px);
+    font-family: $font-Termina;
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(10px);
+    }
+  }
   @include iftablet {
-    font-size: em(14px);
     margin-bottom: em(32px);
   }
   @include ifmobile {
-    font-size: em(12px);
     margin-bottom: em(26px);
   }
 }

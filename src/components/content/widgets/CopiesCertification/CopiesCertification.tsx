@@ -127,7 +127,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
 
             <tr className={styles.tr_certcopy_doc}>
               <td className={styles.TdSelect}>
-                <ValidItem done='false' className={styles.ValidItem} />
+                <ValidItem done={false} className={styles.ValidItem} />
               </td>
               <td>
                 <BaseSelect

@@ -192,6 +192,9 @@ const Unicorns: React.FC<Props> = () => {
               <Image
                 src='/images/landing/imgUnicornsHorse1.png'
                 layout={'fill'}
+                priority={true}
+                blurDataURL='/images/landing/imgUnicornsHorse1.png'
+                placeholder='blur'
                 alt={'Unicorn image'}
               />
             </div>
@@ -238,32 +241,43 @@ const Unicorns: React.FC<Props> = () => {
               What do we do?
             </BaseTitle>
 
-            <div className={styles.OurWorkBlockPlan}>
+            <ul className={styles.OurWorkBlockPlan}>
               <li className={styles.OurWorkBlockPlanItem}>
-                <IconHorse className={styles.PlanItemImage} />
+                <div className={styles.PlanItemImage}>
+                  <IconHorse className={styles.Image} />
+                </div>
+
                 <p>Draft or review your procedures</p>
               </li>
               <li className={styles.OurWorkBlockPlanItem}>
-                <IconHorse className={styles.PlanItemImage} />
+                <div className={styles.PlanItemImage}>
+                  <IconHorse className={styles.Image} />
+                </div>
                 <p>Approve your procedures with the regulator</p>
               </li>
               <li className={styles.OurWorkBlockPlanItem}>
-                <IconHorse className={styles.PlanItemImage} />
+                <div className={styles.PlanItemImage}>
+                  <IconHorse className={styles.Image} />
+                </div>
                 <p>
                   Update your business model so you can increase your income
                 </p>
               </li>
               <li className={styles.OurWorkBlockPlanItem}>
-                <IconHorse className={styles.PlanItemImage} />
+                <div className={styles.PlanItemImage}>
+                  <IconHorse className={styles.Image} />
+                </div>
                 <p>Help you throughout procedures and consultations</p>
               </li>
               <li className={styles.OurWorkBlockPlanItem}>
-                <IconHorse className={styles.PlanItemImage} />
+                <div className={styles.PlanItemImage}>
+                  <IconHorse className={styles.Image} />
+                </div>
                 <p>
                   Prepare the business plan and make the financial forecasts
                 </p>
               </li>
-            </div>
+            </ul>
 
             <BaseText className={styles.OurWorkBlockPs}>
               For us, it is a unique journey that we start with you and work

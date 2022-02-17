@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './ValidItem.module.scss';
 
 interface Props {
-  done: string;
+  done: boolean;
   text?: string;
   className?: string;
 }
@@ -12,7 +12,7 @@ interface Props {
 const ValidItem: React.FC<Props> = ({ done = 'false', text, className }) => {
   return (
     <div className={`${styles.ValidItem} ${className}`}>
-      {done == 'true' ? (
+      {done == true ? (
         <div className={styles.ValidItemIcon}>
           <BaseIcon
             icon={ALL_ICONS.RIGHT}

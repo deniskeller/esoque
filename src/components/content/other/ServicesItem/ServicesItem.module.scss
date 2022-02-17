@@ -18,6 +18,7 @@
   }
 
   .ServicesItemImage {
+    position: absolute;
     top: em(28px);
     left: em(34px);
     @include iftablet {
@@ -25,11 +26,13 @@
       left: em(40px);
     }
     @include ifmobile {
-      width: em(15px);
-      height: em(15px);
       top: em(13px);
       left: em(13px);
     }
+  }
+
+  .Image {
+    position: relative;
   }
 
   .ServicesItemTitle {

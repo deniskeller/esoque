@@ -137,9 +137,12 @@ const Darkside: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                src='/images/landing/imgDarksidePlanet.png'
                 layout={'fill'}
-                alt={'Unicorn image'}
+                alt={'Darkside Planet'}
+                priority={true}
+                blurDataURL='/images/landing/imgDarksidePlanet.png'
+                placeholder='blur'
+                src='/images/landing/imgDarksidePlanet.png'
               />
             </div>
             <div className={styles.WelcomeBlockLi}>

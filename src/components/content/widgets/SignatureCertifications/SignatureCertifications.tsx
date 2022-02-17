@@ -113,7 +113,7 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
 
             <tr className={styles.tr_certcopy_delivery}>
               <td className={styles.Select}>
-                <ValidItem done='true' className={styles.ValidItem} />
+                <ValidItem done={true} className={styles.ValidItem} />
               </td>
               <td colSpan={2}>
                 <p className={styles.SelectItemDescription}>

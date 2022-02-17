@@ -94,6 +94,7 @@
   margin-right: em(36px);
   button {
     font-size: em(18px);
+    font-weight: normal;
     @include iftablet {
       font-size: em(14px);
     }
@@ -115,6 +116,7 @@
   height: em(43px);
   button {
     font-size: em(18px);
+    font-weight: normal;
     @include iftablet {
       font-size: em(14px);
     }

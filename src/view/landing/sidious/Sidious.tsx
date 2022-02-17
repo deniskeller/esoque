@@ -46,11 +46,11 @@ const improvingData = [
 ];
 
 const Sidious: React.FC<Props> = () => {
-  const size = useWindowSize();
+  // const size = useWindowSize();
 
-  React.useEffect(() => {
-    console.log('size: ', size);
-  }, [size]);
+  // React.useEffect(() => {
+  //   console.log('size: ', size);
+  // }, [size]);
 
   return (
     <>
@@ -91,12 +91,12 @@ const Sidious: React.FC<Props> = () => {
           <div className={styles.AboutIcon}>
             <div className={styles.AboutIconCircleDown}>
               <Image
-                src='/images/landing/iconEsoqueArrowDown.png'
                 layout={'fill'}
                 alt={''}
-                blurDataURL='/images/landing/iconEsoqueArrowDown.png'
                 placeholder='blur'
                 loading='lazy'
+                blurDataURL='/images/landing/iconEsoqueArrowDown.png'
+                src='/images/landing/iconEsoqueArrowDown.png'
               />
             </div>
           </div>

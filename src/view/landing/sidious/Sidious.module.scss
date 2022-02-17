@@ -62,8 +62,7 @@
         color: $green;
         font-size: em(20px);
         font-weight: bold;
-        //Поменять рифт на Термину
-        font-family: Roboto, sans-serif !important;
+        font-family: $font-Termina !important;
         @include iftablet {
           font-size: em(17px);
         }
@@ -123,7 +122,7 @@
     }
 
     .AboutIconCircleDown {
-      position: absolute;
+      position: relative;
       width: em(62px);
       height: em(86px);
       @include iftablet {

@@ -20,9 +20,10 @@ const Esoque: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                src='/images/landing/imgEsoque.png'
                 layout={'fill'}
                 alt={'Esocue image'}
+                priority={true}
+                src='/images/landing/imgEsoque.png'
               />
             </div>
             <div className={styles.WelcomeBlockLi}>
@@ -117,10 +118,10 @@ const Esoque: React.FC<Props> = () => {
             className={`${styles.GraphBlockImg} ${styles.GraphBlockImgDesktop}`}
           >
             <Image
-              src='/images/landing/imgEsoqueGraph.png'
               layout={'fill'}
               priority={true}
               alt={'Esocue image'}
+              src='/images/landing/imgEsoqueGraph.png'
             />
             {/* {moreInfo && moreInfo ? (
               <Image

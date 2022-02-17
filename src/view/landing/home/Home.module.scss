@@ -100,7 +100,8 @@
 
 .HelloBlockText {
   display: block;
-  max-width: em(625px);
+  width: 100%;
+  max-width: em(652px);
   margin-bottom: em(60px);
   p {
     font-size: em(21px);
@@ -336,12 +337,13 @@
     }
 
     .ConclusionBlockTitle {
-      width: em(980px);
+      width: 100%;
+      max-width: em(960px);
       @include iftablet {
-        width: em(591px);
+        max-width: em(591px);
       }
       @include ifmobile {
-        width: em(228px);
+        max-width: em(228px);
         margin: 0 auto;
       }
       p {

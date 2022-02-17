@@ -116,7 +116,7 @@
 
     .OurWorkBlockImage {
       position: absolute;
-      z-index: 1000;
+      z-index: 100;
       top: em(84px);
       right: 0;
       width: em(526px);
@@ -152,6 +152,7 @@
       max-width: em(588px);
       margin-left: em(30px);
       margin-bottom: em(60px);
+      position: relative;
 
       @include iftablet {
         margin-left: em(30px);
@@ -175,9 +176,10 @@
         }
 
         .PlanItemImage {
-          @include ifmobile {
-            width: em(15px);
-            height: em(15px);
+          position: absolute;
+
+          .Image {
+            position: relative;
           }
         }
         &:last-child {

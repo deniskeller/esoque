@@ -3,6 +3,7 @@
   line-height: 120%;
   font-weight: 400;
   color: $white;
+  font-family: $font-Calibri;
   @include iftablet {
     font-size: em(18px);
   }
