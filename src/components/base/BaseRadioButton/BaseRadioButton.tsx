@@ -7,9 +7,9 @@ interface Props {
   id?: string;
   className?: string;
   error?: string | boolean;
-  value: boolean;
+  isActive: boolean;
   children?: ReactNode;
-  onClick: (value: boolean) => void;
+  onClick: () => void;
 }
 
 const BaseRadioButton: React.FC<Props> = ({
@@ -17,20 +17,11 @@ const BaseRadioButton: React.FC<Props> = ({
   id = '',
   className,
   error,
-  value,
+  isActive,
   onClick,
 }) => {
-  const [isActive, setIsActive] = React.useState<boolean>(value);
-
-  React.useEffect(() => {
-    onClick(isActive);
-  }, [isActive]);
-
   return (
-    <div
-      className={`${className} ${styles.BaseRadioButton}`}
-      onClick={() => setIsActive(!isActive)}
-    >
+    <div className={`${className} ${styles.BaseRadioButton}`} onClick={onClick}>
       <input
         id={id}
         checked={isActive}

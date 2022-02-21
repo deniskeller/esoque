@@ -12,7 +12,7 @@ interface Props {}
 
 const CopiesCertification: React.FC<Props> = ({}) => {
   //radio Button
-  const [radioValue, setRadioValue] = React.useState(false);
+  const [radioValue, setRadioValue] = React.useState(1);
 
   //select
   const documents = [
@@ -71,8 +71,8 @@ const CopiesCertification: React.FC<Props> = ({}) => {
               <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='1'
-                  value={radioValue}
-                  onClick={() => setRadioValue(!radioValue)}
+                  isActive={radioValue == 1}
+                  onClick={() => setRadioValue(1)}
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
@@ -91,8 +91,8 @@ const CopiesCertification: React.FC<Props> = ({}) => {
               <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='2'
-                  value={radioValue}
-                  onClick={() => setRadioValue(!radioValue)}
+                  isActive={radioValue == 2}
+                  onClick={() => setRadioValue(2)}
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
@@ -109,8 +109,8 @@ const CopiesCertification: React.FC<Props> = ({}) => {
               <td className={styles.TdSelect}>
                 <BaseRadioButton
                   id='3'
-                  value={radioValue}
-                  onClick={() => setRadioValue(!radioValue)}
+                  isActive={radioValue == 3}
+                  onClick={() => setRadioValue(3)}
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
@@ -160,7 +160,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
 
             <tr className={styles.tr_certcopy_delivery}>
               <td className={styles.TdSelect}>
-                <ValidItem done='true' className={styles.ValidItem} />
+                <ValidItem done={true} className={styles.ValidItem} />
               </td>
               <td colSpan={2}>
                 <p className={styles.SelectItemDescription}>

@@ -1,4 +1,4 @@
-import { BaseInput, BaseSelect, BaseButton } from '@base/index';
+import { BaseInput, BaseSearchSelect, BaseButton } from '@base/index';
 import Image from 'next/image';
 import React from 'react';
 import styles from './CorporateDocuments.module.scss';
@@ -23,7 +23,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
 
   //логика для селекта
   const changeHandlerJuristdiction = (value: string) => {
-    console.log('gender: ', value);
+    console.log('option-value: ', value);
     setOption(value);
   };
 
@@ -68,7 +68,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
           error=''
         />
 
-        <BaseSelect
+        <BaseSearchSelect
           placeholder='Selected Juristdiction'
           options={options}
           onChange={changeHandlerJuristdiction}

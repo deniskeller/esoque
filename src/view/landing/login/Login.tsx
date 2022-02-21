@@ -15,20 +15,22 @@ import { useRouter } from 'next/router';
 interface Props {}
 
 const Login: React.FC<Props> = () => {
+  const router = useRouter();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-
-  const router = useRouter();
 
   const changeHandlerEmail = (value: string) => {
     setEmail(value);
   };
 
-  const changeHandlerPassword = (value: string) => {
-    //доделать здездочки на пароль вместо точек
-    // const starText = Array(value.length).fill('*').join('');
-    setPassword(value);
+  const changeHandlerPassword = (e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace') setPassword((s) => s.slice(0, -1));
+    if (e.key.length === 1) setPassword((s) => s + e.key);
   };
+
+  React.useEffect(() => {
+    console.log('password: ', password);
+  }, [password]);
 
   const submitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -52,7 +54,6 @@ const Login: React.FC<Props> = () => {
         </BaseText>
 
         <BaseInput
-          // label='Email'
           value={email}
           name='email'
           onChange={changeHandlerEmail}
@@ -63,14 +64,14 @@ const Login: React.FC<Props> = () => {
         />
 
         <BaseInput
-          // label='password'
-          value={password}
+          value={password.replace(/[^*]/g, '*')}
+          onChange={() => {}}
           name='password'
-          onChange={changeHandlerPassword}
           placeholder='Password'
-          type='password'
+          type='text'
           required
           className={styles.Input}
+          onKeyDown={changeHandlerPassword}
         />
 
         <div className={styles.Navbar}>

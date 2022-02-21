@@ -7,7 +7,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './SecondStep.module.scss';
-import { LinkHome } from '@content/index';
+import { LinkHome, StepBack } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -50,7 +50,9 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
         Confirm and continue
       </BaseButton>
 
-      <LinkHome />
+      <LinkHome className={styles.LinkHome} />
+
+      <StepBack />
     </form>
   );
 };

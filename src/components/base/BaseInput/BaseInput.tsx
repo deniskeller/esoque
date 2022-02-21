@@ -13,6 +13,7 @@ interface Props {
   error?: string | boolean;
   value: string | number;
   onChange(value: string | number): void;
+  onKeyDown?: React.KeyboardEventHandler;
 }
 
 const BaseInput: React.FC<Props> = ({
@@ -27,14 +28,19 @@ const BaseInput: React.FC<Props> = ({
   className,
   autocomplete = 'off',
   onChange,
+  onKeyDown,
 }) => {
   return (
     <div className={`${styles.BaseInput} ${className}`}>
       {label ? <label className={styles.Label}>{label}</label> : ''}
+
+      {}
       <input
         value={value}
         type={type}
-        className={`${styles.Input} ${error ? styles.Error : ''}`}
+        className={`${styles.Input} ${styles.Input} ${
+          error ? styles.Error : ''
+        }`}
         name={name}
         min={min}
         placeholder={placeholder}
@@ -43,6 +49,7 @@ const BaseInput: React.FC<Props> = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           onChange(e.target.value)
         }
+        onKeyDown={onKeyDown}
       />
       {error ? <div className={styles.ErrorText}>{error}</div> : ''}
     </div>

@@ -23,6 +23,7 @@ export { default as WidgetDarkside } from './widgets/WidgetDarkside/WidgetDarksi
 export { default as CorporateDocuments } from './widgets/CorporateDocuments/CorporateDocuments';
 export { default as CopiesCertification } from './widgets/CopiesCertification/CopiesCertification';
 export { default as SignatureCertifications } from './widgets/SignatureCertifications/SignatureCertifications';
+export { default as StepBack } from './other/StepBack/StepBack';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';

@@ -2,24 +2,29 @@ import React from 'react';
 import Link from 'next/link';
 import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
 import styles from './FifthStep.module.scss';
-import { LinkHome, ValidItem } from '@content/index';
+import { LinkHome, ValidItem, StepBack } from '@content/index';
 
 interface Props {
   nextStep: () => void;
 }
 
 const FifthStep: React.FC<Props> = ({ nextStep }) => {
-  const [password, setPassword] = React.useState<number | string>('');
-  const changeHandlerPassword = (value: number) => {
-    setPassword(value);
+  const [password, setPassword] = React.useState<string>('');
+  const changeHandlerPassword = (e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace') setPassword((s) => s.slice(0, -1));
+    if (e.key.length === 1) setPassword((s) => s + e.key);
   };
 
-  const [repeatPassword, setRepeatPassword] = React.useState<number | string>(
-    ''
-  );
-  const changeHandlerRepeatPassword = (value: number) => {
-    setRepeatPassword(value);
+  const [repeatPassword, setRepeatPassword] = React.useState<string>('');
+  const changeHandlerRepeatPassword = (e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace') setRepeatPassword((s) => s.slice(0, -1));
+    if (e.key.length === 1) setRepeatPassword((s) => s + e.key);
   };
+
+  React.useEffect(() => {
+    console.log('phone: ', password);
+    console.log('repeatPassword: ', repeatPassword);
+  }, [password, repeatPassword]);
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -41,22 +46,24 @@ const FifthStep: React.FC<Props> = ({ nextStep }) => {
             <BaseInput
               name='password'
               placeholder='Password'
-              type='password'
+              type='text'
               required
               autocomplete='on'
-              value={password}
-              onChange={changeHandlerPassword}
+              value={password.replace(/[^*]/g, '*')}
+              onChange={() => {}}
+              onKeyDown={changeHandlerPassword}
               className={styles.Input}
             />
 
             <BaseInput
               name='password'
               placeholder='Repeat Password'
-              type='password'
+              type='text'
               required
               autocomplete='on'
-              value={repeatPassword}
-              onChange={changeHandlerRepeatPassword}
+              value={repeatPassword.replace(/[^*]/g, '*')}
+              onChange={() => {}}
+              onKeyDown={changeHandlerRepeatPassword}
               className={styles.Input}
               error='Your passwords did not match'
             />
@@ -67,6 +74,8 @@ const FifthStep: React.FC<Props> = ({ nextStep }) => {
               </BaseButton>
 
               <LinkHome className={styles.LinkHome} />
+
+              <StepBack />
             </div>
           </form>
         </div>

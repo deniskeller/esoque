@@ -1,7 +1,7 @@
 import React from 'react';
 import { BaseButton, BaseText, BaseTitle } from '@base/index';
 import styles from './CompletedStep.module.scss';
-import { LinkHome } from '@content/index';
+import { LinkHome, StepBack } from '@content/index';
 import Image from 'next/image';
 
 interface Props {
@@ -39,7 +39,9 @@ const CompletedStep: React.FC<Props> = ({
         {btnText}
       </BaseButton>
 
-      <LinkHome />
+      <LinkHome className={styles.LinkHome} />
+
+      <StepBack />
     </form>
   );
 };

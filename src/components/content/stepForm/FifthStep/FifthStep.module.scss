@@ -113,6 +113,13 @@
 
       .LinkHome {
         width: max-content;
+        margin-bottom: em(40px);
+        @include iftablet {
+          margin-bottom: em(30px);
+        }
+        @include ifmobile {
+          margin-bottom: em(20px);
+        }
       }
     }
   }

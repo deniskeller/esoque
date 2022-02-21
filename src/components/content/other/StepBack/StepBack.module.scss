@@ -1,0 +1,32 @@
+.StepBack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.StepBackIcon {
+  width: em(16px);
+  height: em(16px);
+  margin-right: em(10px);
+  @include iftablet {
+    width: em(13px);
+    height: em(13px);
+  }
+  @include ifmobile {
+    width: em(10px);
+    height: em(10px);
+  }
+}
+
+.StepBackTitle {
+  font-size: em(16px);
+  line-height: 80%;
+  font-weight: 600;
+  color: $grey;
+  @include iftablet {
+    font-size: em(14px);
+  }
+  @include ifmobile {
+    font-size: em(10px);
+  }
+}

@@ -7,7 +7,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './NinthStep.module.scss';
-import { LinkHome } from '@content/index';
+import { LinkHome, StepBack } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -128,7 +128,9 @@ const NinthStep: React.FC<Props> = ({ nextStep }) => {
         Register Business
       </BaseButton>
 
-      <LinkHome />
+      <LinkHome className={styles.LinkHome} />
+
+      <StepBack />
     </form>
   );
 };

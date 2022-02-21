@@ -8,7 +8,7 @@ import {
   BaseTitle,
 } from '@base/index';
 import styles from './ThirdStep.module.scss';
-import { LinkHome } from '@content/index';
+import { LinkHome, StepBack } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -75,7 +75,9 @@ const ThirdStep: React.FC<Props> = ({ nextStep }) => {
         Confirm and continue
       </BaseButton>
 
-      <LinkHome />
+      <LinkHome className={styles.LinkHome} />
+
+      <StepBack />
     </form>
   );
 };

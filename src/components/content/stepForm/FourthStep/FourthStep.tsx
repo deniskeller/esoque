@@ -1,7 +1,7 @@
 import React from 'react';
 import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
 import styles from './FourthStep.module.scss';
-import { LinkHome } from '@content/index';
+import { LinkHome, StepBack } from '@content/index';
 
 interface Props {
   nextStep: () => void;
@@ -44,7 +44,9 @@ const FourthStep: React.FC<Props> = ({ nextStep }) => {
         Confirm and continue
       </BaseButton>
 
-      <LinkHome />
+      <LinkHome className={styles.LinkHome} />
+
+      <StepBack />
     </form>
   );
 };

@@ -12,7 +12,7 @@ interface Props {}
 
 const SignatureCertifications: React.FC<Props> = ({}) => {
   //radio Button
-  const [radioValue, setRadioValue] = React.useState(false);
+  const [radioValue, setRadioValue] = React.useState(1);
 
   //select
   const documents = [
@@ -71,8 +71,8 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
               <td className={styles.Select}>
                 <BaseRadioButton
                   id='1'
-                  value={radioValue}
-                  onClick={() => setRadioValue(!radioValue)}
+                  isActive={radioValue == 1}
+                  onClick={() => setRadioValue(1)}
                 ></BaseRadioButton>
               </td>
               <td colSpan={3} className={styles.CertcopyDocname}>
