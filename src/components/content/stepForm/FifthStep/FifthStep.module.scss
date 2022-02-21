@@ -50,6 +50,9 @@
       @include ifmobile {
         text-align: center;
         margin-bottom: em(15px);
+        h1 {
+          font-size: em(25px);
+        }
       }
     }
 

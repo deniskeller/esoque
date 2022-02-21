@@ -113,7 +113,7 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
           <div className={styles.UnicornsPopupNav}>
             <BaseIcon
               icon={ALL_ICONS.LANDING_POPUP_NEXT}
-              viewBox='0 0 21 24'
+              viewBox='1 0 21 23'
               className={`${styles.Btn} ${styles.PrevBtn} ${
                 prevDisable() ? styles.Disable : ''
               }`}
@@ -121,7 +121,7 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
             />
             <BaseIcon
               icon={ALL_ICONS.LANDING_POPUP_NEXT}
-              viewBox='0 0 21 24'
+              viewBox='1 0 21 23'
               className={`${styles.Btn} ${styles.NextBtn} ${
                 nextDisable() ? styles.Disable : ''
               }`}
