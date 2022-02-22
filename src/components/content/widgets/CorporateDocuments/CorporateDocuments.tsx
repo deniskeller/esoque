@@ -69,7 +69,6 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
 
         <BaseSearchSelect
           placeholder='Selected Juristdiction'
-          value={option}
           options={options}
           onChange={changeHandlerJuristdiction}
           className={`${styles.Select} ${styles.SelectJuristdiction}`}
