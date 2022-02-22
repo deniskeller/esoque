@@ -72,7 +72,6 @@ const WidgetDarkside: React.FC<Props> = ({}) => {
             value={companyName}
             onChange={changeHandlerCompanyName}
             className={styles.Input}
-            error=''
           />
 
           <BaseSelect

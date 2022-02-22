@@ -10,6 +10,7 @@ interface Props {
   type?: string;
   className?: string;
   styles?: string;
+  error?: string | boolean;
   options: ISelectItem[];
   name?: string;
   value?: string | number;
@@ -24,6 +25,7 @@ interface ISelectItem {
 const BaseSearchSelect: React.FC<Props> = ({
   placeholder,
   style,
+  error,
   className,
   type = 'default',
   options,
@@ -64,7 +66,7 @@ const BaseSearchSelect: React.FC<Props> = ({
       <div
         className={`${styles.SelectHeader}  ${
           isOpen ? styles.SelectHeaderFocus : ''
-        } `}
+        } ${error ? styles.Error : ''}`}
         onClick={toggling}
       >
         <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
@@ -81,6 +83,7 @@ const BaseSearchSelect: React.FC<Props> = ({
           className={`${styles.IconArrow} ${styles.IconArrowBottom}`}
         />
       </div>
+      {error ? <div className={styles.ErrorText}>{error}</div> : ''}
       {isOpen && (
         <div className={styles.SelectList}>
           <div className={styles.SelectSearch}>

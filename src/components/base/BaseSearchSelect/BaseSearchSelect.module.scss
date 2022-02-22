@@ -215,3 +215,21 @@
   color: $black;
   margin-right: em(24px);
 }
+
+.Error {
+  border: 2px solid $error;
+}
+
+.ErrorText {
+  display: block;
+  font-size: em(16px);
+  line-height: 120%;
+  color: $error;
+  margin-top: em(20px);
+  @include iftablet {
+    font-size: em(12px);
+  }
+  @include ifmobile {
+    font-size: em(9px);
+  }
+}

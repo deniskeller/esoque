@@ -9,6 +9,7 @@ interface Props {
   style?: object;
   type?: string;
   className?: string;
+  error?: string | boolean;
   styles?: string;
   options: ISelectItem[];
   onChange: (value: string) => void;
@@ -22,6 +23,7 @@ interface ISelectItem {
 const BaseSelect: React.FC<Props> = ({
   placeholder,
   style,
+  error,
   className,
   type = 'default',
   options,
@@ -52,7 +54,7 @@ const BaseSelect: React.FC<Props> = ({
       <div
         className={`${styles.SelectHeader}  ${
           isOpen ? styles.SelectHeaderFocus : ''
-        }`}
+        } ${error ? styles.Error : ''}`}
         onClick={toggling}
       >
         <p className={`${selectedOption ? styles.NotEmpty : ''}`}>
@@ -69,6 +71,7 @@ const BaseSelect: React.FC<Props> = ({
           className={`${styles.IconArrow} ${styles.IconArrowBottom}`}
         />
       </div>
+      {error ? <div className={styles.ErrorText}>{error}</div> : ''}
       {isOpen && (
         <ul className={styles.SelectList}>
           {options.map((option: ISelectItem) => (
