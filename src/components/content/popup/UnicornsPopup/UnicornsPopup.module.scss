@@ -125,16 +125,20 @@
   }
 
   .Btn {
-    width: em(21px);
-    height: em(24px);
+    display: inline-flex;
     cursor: pointer;
-    @include iftablet {
-      width: em(15px);
-      height: em(18px);
-    }
-    @include ifmobile {
-      width: em(10px);
-      height: em(13px);
+    overflow: hidden;
+    svg {
+      width: em(21px);
+      height: em(24px);
+      @include iftablet {
+        width: em(15px);
+        height: em(18px);
+      }
+      @include ifmobile {
+        width: em(10px);
+        height: em(13px);
+      }
     }
   }
 

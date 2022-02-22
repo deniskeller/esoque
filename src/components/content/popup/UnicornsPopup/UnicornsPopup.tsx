@@ -120,22 +120,29 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
               })}
           </div>
           <div className={styles.UnicornsPopupNav}>
-            <BaseIcon
-              icon={ALL_ICONS.LANDING_POPUP_NEXT}
-              viewBox='1 0 21 23'
+            <div
               className={`${styles.Btn} ${styles.PrevBtn} ${
                 prevDisable() ? styles.Disable : ''
               }`}
               onClick={prevPage}
-            />
-            <BaseIcon
-              icon={ALL_ICONS.LANDING_POPUP_NEXT}
-              viewBox='1 0 21 23'
+            >
+              <BaseIcon
+                icon={ALL_ICONS.LANDING_POPUP_NEXT}
+                viewBox='0 0 21 24'
+              />
+            </div>
+
+            <div
               className={`${styles.Btn} ${styles.NextBtn} ${
                 nextDisable() ? styles.Disable : ''
               }`}
               onClick={nextPage}
-            />
+            >
+              <BaseIcon
+                icon={ALL_ICONS.LANDING_POPUP_NEXT}
+                viewBox='0 0 21 24'
+              />
+            </div>
           </div>
         </BasePopup>
       </>
