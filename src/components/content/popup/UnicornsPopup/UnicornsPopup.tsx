@@ -91,7 +91,16 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
                       {item.subtitle}
                     </BaseSubtitle>
 
-                    <ul className={styles.UnicornsPopupContentUl}>
+                    <ul
+                      className={`${styles.UnicornsPopupContentUl} ${
+                        modalData.content &&
+                        modalData.content.length == 1 &&
+                        item.contentItemList &&
+                        item.contentItemList?.length <= 12
+                          ? styles.SoloStyle
+                          : ''
+                      }`}
+                    >
                       {item.contentItemList?.map((el, index) => {
                         return (
                           <li

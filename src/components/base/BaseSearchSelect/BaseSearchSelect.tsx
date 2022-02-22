@@ -11,8 +11,8 @@ interface Props {
   className?: string;
   styles?: string;
   options: ISelectItem[];
-  name: string;
-  value: string | number;
+  name?: string;
+  value?: string | number;
   onChange(value: string | number): void;
 }
 
@@ -68,7 +68,7 @@ const BaseSearchSelect: React.FC<Props> = ({
         onClick={toggling}
       >
         <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
-          {selectedOption || placeholder}
+          {selectedOption || placeholder || value}
         </span>
         <BaseIcon
           icon={ALL_ICONS.SELECT_ARROW}

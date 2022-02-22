@@ -23,7 +23,6 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
 
   //логика для селекта
   const changeHandlerJuristdiction = (value: string) => {
-    console.log('option-value: ', value);
     setOption(value);
   };
 
@@ -70,6 +69,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
 
         <BaseSearchSelect
           placeholder='Selected Juristdiction'
+          value={option}
           options={options}
           onChange={changeHandlerJuristdiction}
           className={`${styles.Select} ${styles.SelectJuristdiction}`}
