@@ -1,9 +1,8 @@
 import React from 'react';
 import { BaseContainer, BaseText, BaseTitle } from '@base/index';
-import styles from './Sidious.module.scss';
-import Image from 'next/image';
 import { ImprovingItem, WidgetSidious } from '@content/index';
-import useWindowSize from '@hooks/useWindowSize';
+import Image from 'next/image';
+import styles from './Sidious.module.scss';
 
 interface Props {}
 
@@ -46,12 +45,6 @@ const improvingData = [
 ];
 
 const Sidious: React.FC<Props> = () => {
-  // const size = useWindowSize();
-
-  // React.useEffect(() => {
-  //   console.log('size: ', size);
-  // }, [size]);
-
   return (
     <>
       <BaseContainer>
@@ -106,22 +99,6 @@ const Sidious: React.FC<Props> = () => {
       <div className={styles.WidgetBlockContainer}>
         <BaseContainer>
           <WidgetSidious />
-
-          <div className={styles.RotateSmartphone}>
-            <div className={styles.RotateSmartphoneImage}>
-              <Image
-                src='/images/landing/iconSidiousRotateSmartphone.png'
-                layout={'fill'}
-                alt={''}
-                blurDataURL='/images/landing/iconSidiousRotateSmartphone.png'
-                placeholder='blur'
-                loading='lazy'
-              />
-            </div>
-            <div className={styles.RotateSmartphoneTitle}>
-              Please rotate your device
-            </div>
-          </div>
         </BaseContainer>
       </div>
 

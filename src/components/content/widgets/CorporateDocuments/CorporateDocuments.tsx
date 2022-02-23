@@ -48,13 +48,6 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
           alt={''}
         />
       </div>
-      <div className={styles.ImageMobile}>
-        <Image
-          src={`/images/landing/imgSidious2Mobile.png`}
-          layout='fill'
-          alt={''}
-        />
-      </div>
 
       <div className={styles.Widgetform}>
         <BaseInput
@@ -77,6 +70,39 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         <BaseButton onClick={submitFormData} className={styles.Button}>
           Request
         </BaseButton>
+      </div>
+
+      <div className={styles.WidgetContent}>
+        {/* Вариант когда по введеной компании не принимаются запросы */}
+        <div className={styles.NotAccepting}>
+          <div className={styles.NotAcceptingMessage}>
+            <p>
+              Currently we are not accepting online orders for&nbsp;
+              <span>USA (New York)</span>. Still, you may send the Request and
+              we will process it manually. Please, specify which information
+              about the company you wish to receive.
+            </p>
+          </div>
+          <BaseButton className={styles.NotAcceptingBtn}>Request</BaseButton>
+        </div>
+
+        {/* Вариант когда много компаний с подобным названием */}
+        <div className={styles.ManyOptions}>
+          <p>
+            There are too many companies’ names with <span>diamond</span>.
+            <br /> Please be more specific with your company’s name.
+          </p>
+        </div>
+
+        {/* Вариант с несуществующим именем */}
+        <div className={styles.NonExistentName}>
+          <p>
+            The name <span>diamond1</span> was not found. It is possible, that
+            you entered non-existing name or online service is experiencing
+            technical troubles. You may send the Request anyway and we will
+            process it manually.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -152,28 +152,6 @@
     align-items: center;
     min-height: 100vh;
   }
-
-  .RotateSmartphone {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include ifmobile {
-      display: flex;
-    }
-
-    .RotateSmartphoneImage {
-      position: relative;
-      width: em(61px);
-      height: em(61px);
-      margin-bottom: em(23px);
-    }
-
-    .RotateSmartphoneTitle {
-      color: $yellow;
-    }
-  }
 }
 
 .AdaptationBlock {

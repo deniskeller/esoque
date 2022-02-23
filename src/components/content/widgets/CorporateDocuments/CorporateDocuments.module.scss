@@ -41,18 +41,6 @@
     }
   }
 
-  .ImageMobile {
-    display: none;
-    width: 100%;
-    max-width: em(973px);
-    min-height: em(60px);
-    position: relative;
-    margin-bottom: em(29px);
-    @include ifmobile {
-      display: block;
-    }
-  }
-
   .Widgetform {
     width: 100%;
     display: flex;
@@ -84,6 +72,57 @@
         max-width: em(149px);
       }
       @include ifmobile {
+      }
+    }
+  }
+
+  .WidgetContent {
+    .NotAccepting {
+      .NotAcceptingMessage {
+        padding: em(25px);
+        border: 2px solid $pink;
+        margin: em(25px) 0;
+        P {
+          font-size: em(19px);
+          line-height: 120%;
+          font-family: $font-Calibri;
+          font-style: normal;
+          font-weight: normal;
+          color: $white;
+          background: rgba(75, 75, 75, 0.7);
+          padding: em(35px);
+          border-radius: 10px;
+          span {
+            color: $pink;
+          }
+        }
+      }
+
+      .NotAcceptingBtn {
+        width: em(187px);
+        height: em(63px);
+        margin: 0 auto;
+        margin-top: em(63px);
+      }
+    }
+
+    .ManyOptions,
+    .NonExistentName {
+      padding: em(35px);
+      background: rgba(75, 75, 75, 0.7);
+      border-radius: 10px;
+      border-top: 2px solid $pink;
+      margin: em(30px) 0;
+      p {
+        font-size: em(19px);
+        line-height: 120%;
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: normal;
+        color: $white;
+        span {
+          color: $pink;
+        }
       }
     }
   }
