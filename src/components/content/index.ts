@@ -24,6 +24,7 @@ export { default as CorporateDocuments } from './widgets/CorporateDocuments/Corp
 export { default as CopiesCertification } from './widgets/CopiesCertification/CopiesCertification';
 export { default as SignatureCertifications } from './widgets/SignatureCertifications/SignatureCertifications';
 export { default as StepBack } from './other/StepBack/StepBack';
+export { default as CompanyItem } from './other/CompanyItem/CompanyItem';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';

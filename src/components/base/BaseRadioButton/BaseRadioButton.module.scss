@@ -56,6 +56,8 @@
       height: em(22px);
     }
     @include ifmobile {
+      width: em(20px);
+      height: em(20px);
     }
   }
 
@@ -74,6 +76,8 @@
       height: em(8px);
     }
     @include ifmobile {
+      width: em(8px);
+      height: em(8px);
     }
   }
 
@@ -91,6 +95,8 @@
       @include iftablet {
       }
       @include ifmobile {
+        top: 30%;
+        left: 30%;
       }
     }
   }

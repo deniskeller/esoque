@@ -1,0 +1,56 @@
+.CompanyItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 em(22px);
+  margin-bottom: em(20px);
+  @include ifmobile {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  &:first-child {
+    margin-top: em(88px);
+    @include ifmobile {
+      margin-top: em(30px);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: em(80px);
+    @include ifmobile {
+      margin-top: em(30px);
+    }
+  }
+
+  .CompanyChoice {
+    margin-right: em(20px);
+  }
+
+  .CompanyName,
+  .CompanyCode {
+    p {
+      font-family: $font-Calibri;
+      font-style: normal;
+      font-weight: normal;
+      font-size: em(19px);
+      line-height: 120%;
+      color: $white;
+      text-transform: uppercase;
+      @include ifmobile {
+        font-size: em(12px);
+      }
+    }
+  }
+
+  .CompanyName {
+    width: 100%;
+    max-width: em(500px);
+    margin-right: em(30px);
+    @include ifmobile {
+      max-width: em(160px);
+      margin-right: em(15px);
+    }
+  }
+}

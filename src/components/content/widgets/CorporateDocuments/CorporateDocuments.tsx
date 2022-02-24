@@ -1,9 +1,18 @@
 import { BaseInput, BaseSearchSelect, BaseButton } from '@base/index';
+import { CompanyItem } from '@content/index';
 import Image from 'next/image';
 import React from 'react';
 import styles from './CorporateDocuments.module.scss';
 
 interface Props {}
+
+const companiesList = [
+  { companyName: 'ЗАО "ДИАМОНД-BW"', companycode: 1234567890 },
+  {
+    companyName: 'CAMBRIDGE INSITU PRESSUREMETER TESTING NORTH AMERICA LIMITED',
+    companycode: 1234567890,
+  },
+];
 
 const options = [
   { value: 'SCOTLAND', title: 'SCOTLAND' },
@@ -30,6 +39,8 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
+
+  const [radioValue, setRadioValue] = React.useState(0);
 
   return (
     <div className={styles.CorporateDocuments}>
@@ -87,11 +98,28 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         </div>
 
         {/* Вариант когда много компаний с подобным названием */}
-        <div className={styles.ManyOptions}>
-          <p>
-            There are too many companies’ names with <span>diamond</span>.
-            <br /> Please be more specific with your company’s name.
-          </p>
+        <div className={styles.ChoiceCompany}>
+          <div className={styles.ManyOptions}>
+            <p>
+              There are too many companies’ names with <span>diamond</span>.
+              <br /> Please be more specific with your company’s name.
+            </p>
+          </div>
+
+          <div className={styles.CompaniesList}>
+            {companiesList &&
+              companiesList.map((item, index) => {
+                return (
+                  <CompanyItem
+                    id='1'
+                    isActive={radioValue == 1}
+                    onClick={() => setRadioValue(1)}
+                    companyName={item.companyName}
+                    companycode={item.companycode}
+                  />
+                );
+              })}
+          </div>
         </div>
 
         {/* Вариант с несуществующим именем */}

@@ -106,7 +106,30 @@
       }
     }
 
-    .ManyOptions,
+    .ChoiceCompany {
+      .ManyOptions {
+        padding: em(35px);
+        background: rgba(75, 75, 75, 0.7);
+        border-radius: 10px;
+        border-top: 2px solid $pink;
+        margin: em(30px) 0;
+        p {
+          font-size: em(19px);
+          line-height: 120%;
+          font-family: $font-Calibri;
+          font-style: normal;
+          font-weight: normal;
+          color: $white;
+          span {
+            color: $pink;
+          }
+        }
+      }
+
+      // .CompaniesList {
+      // }
+    }
+
     .NonExistentName {
       padding: em(35px);
       background: rgba(75, 75, 75, 0.7);
