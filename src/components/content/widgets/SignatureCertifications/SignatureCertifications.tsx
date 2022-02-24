@@ -4,36 +4,24 @@ import {
   BaseRadioButton,
   BaseButton,
 } from '@base/index';
-import { ValidItem } from '@content/index';
+import { ValidItem, RequestInfoItem } from '@content/index';
 import React from 'react';
 import styles from './SignatureCertifications.module.scss';
 
 interface Props {}
 
+const descriptionList = [
+  'Language: English',
+  'Hard copy of a document',
+  'Contains information about current status of a corporation or incorporated non-profit organization',
+  'Does not contain information about shareholders and directors of the company',
+  'Please note that Certificate of status is not available for trade names and partnerships',
+  'up to 14 working days',
+];
+
 const SignatureCertifications: React.FC<Props> = ({}) => {
   //radio Button
   const [radioValue, setRadioValue] = React.useState(1);
-
-  //select
-  const documents = [
-    {
-      value: 'Passport and Other ID document',
-      title: 'Passport and Other ID document',
-    },
-    {
-      value: 'Single Personal or Corporate document',
-      title: 'Single Personal or Corporate document',
-    },
-    {
-      value: 'Set of  Personal or Corporate documents',
-      title: 'Set of  Personal or Corporate documents',
-    },
-  ];
-  const [document, setDocument] = React.useState<string>('');
-  const changeHandlerDocuments = (value: string) => {
-    console.log('gender: ', value);
-    setDocument(value);
-  };
 
   //quantity
   const [quantity, setQuantity] = React.useState<number>(1);
@@ -81,9 +69,10 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
                 </p>
               </td>
               <td>
-                <span className={styles.Question}>
-                  <p className={styles.QuestionTitle}>?</p>
-                </span>
+                <RequestInfoItem
+                  title='EU Licensed lawyer/company'
+                  descriptionList={descriptionList}
+                />
               </td>
             </tr>
 
@@ -125,9 +114,10 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
                 <span className={styles.Currency}>EUR</span>
               </td>
               <td>
-                <span className={styles.Question}>
-                  <p className={styles.QuestionTitle}>?</p>
-                </span>
+                <RequestInfoItem
+                  title='EU Licensed lawyer/company'
+                  descriptionList={descriptionList}
+                />
               </td>
             </tr>
           </tbody>

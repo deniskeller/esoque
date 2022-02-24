@@ -25,6 +25,8 @@ export { default as CopiesCertification } from './widgets/CopiesCertification/Co
 export { default as SignatureCertifications } from './widgets/SignatureCertifications/SignatureCertifications';
 export { default as StepBack } from './other/StepBack/StepBack';
 export { default as CompanyItem } from './other/CompanyItem/CompanyItem';
+export { default as CheckAvailable } from './other/CheckAvailable/CheckAvailable';
+export { default as RequestInfoItem } from './other/RequestInfoItem/RequestInfoItem';
 
 //icons
 export { default as IconHorse } from './other/IconHorse/IconHorse';

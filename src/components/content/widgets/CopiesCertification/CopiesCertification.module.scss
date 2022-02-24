@@ -147,37 +147,6 @@
             @include ifmobile {
             }
           }
-
-          .Question {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: em(32px);
-            height: em(32px);
-            border: 2px solid $yellow;
-            border-radius: 50%;
-            cursor: pointer;
-            box-sizing: border-box;
-            @include iftablet {
-              width: em(23px);
-              height: em(23px);
-            }
-            @include ifmobile {
-            }
-            .QuestionTitle {
-              font-size: em(19px);
-              line-height: 100%;
-              color: $yellow;
-              font-family: $font-Calibri;
-              font-style: normal;
-              font-weight: bold;
-              @include iftablet {
-                font-size: em(15px);
-              }
-              @include ifmobile {
-              }
-            }
-          }
         }
 
         .ValidItem {

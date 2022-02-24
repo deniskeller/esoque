@@ -42,12 +42,21 @@
 
   .BaseCheckboxCheck {
     box-sizing: border-box;
-    width: em(35px);
-    height: em(35px);
+    width: em(32px);
+    height: em(32px);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: em(10px);
     background: $input;
     position: relative;
+
+    @include iftablet {
+      width: em(22px);
+      height: em(22px);
+    }
+    @include ifmobile {
+      width: em(13px);
+      height: em(13px);
+    }
   }
 
   .BaseCheckboxTick {

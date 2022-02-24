@@ -1,5 +1,16 @@
-import { BaseInput, BaseSearchSelect, BaseButton } from '@base/index';
-import { CompanyItem } from '@content/index';
+import {
+  BaseInput,
+  BaseSearchSelect,
+  BaseButton,
+  BaseSelect,
+  BaseCheckbox,
+} from '@base/index';
+import {
+  CompanyItem,
+  ValidItem,
+  CheckAvailable,
+  RequestInfoItem,
+} from '@content/index';
 import Image from 'next/image';
 import React from 'react';
 import styles from './CorporateDocuments.module.scss';
@@ -19,6 +30,15 @@ const options = [
   { value: 'IRELAND', title: 'IRELAND' },
   { value: 'CANADA', title: 'CANADA' },
   { value: 'CYPRUS', title: 'CYPRUS' },
+];
+
+const descriptionList = [
+  'Language: English',
+  'Hard copy of a document',
+  'Contains information about current status of a corporation or incorporated non-profit organization',
+  'Does not contain information about shareholders and directors of the company',
+  'Please note that Certificate of status is not available for trade names and partnerships',
+  'up to 14 working days',
 ];
 
 const CorporateDocuments: React.FC<Props> = ({}) => {
@@ -41,6 +61,29 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
   };
 
   const [radioValue, setRadioValue] = React.useState(0);
+
+  //select
+  const documents = [
+    {
+      value: 'Passport and Other ID document',
+      title: 'Passport and Other ID document',
+    },
+    {
+      value: 'Single Personal or Corporate document',
+      title: 'Single Personal or Corporate document',
+    },
+    {
+      value: 'Set of  Personal or Corporate documents',
+      title: 'Set of  Personal or Corporate documents',
+    },
+  ];
+  const [document, setDocument] = React.useState<string>('');
+  const changeHandlerDocuments = (value: string) => {
+    setDocument(value);
+  };
+
+  //checkbox
+  const [checkbox, setCheckbox] = React.useState<boolean>(false);
 
   return (
     <div className={styles.CorporateDocuments}>
@@ -131,6 +174,156 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
             process it manually.
           </p>
         </div>
+
+        {/* Таблица */}
+
+        <div className={styles.Table}>
+          <table>
+            <thead>
+              <tr className={styles.TheadTr}>
+                <th className={styles.Clear}></th>
+                <th className={styles.Name}>Name</th>
+                <th className={styles.Price}>Price</th>
+                <th className={styles.Info}>Info</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr className={styles.tr_certcopy_doc}>
+                <td className={styles.TdSelect}>
+                  <ValidItem done={false} className={styles.ValidItem} />
+                </td>
+                <td>
+                  <BaseSelect
+                    placeholder='Select Document'
+                    options={documents}
+                    onChange={changeHandlerDocuments}
+                    className={styles.Select}
+                  />
+                </td>
+                <td>
+                  <CheckAvailable title='By Request' />
+                </td>
+                <td>
+                  <RequestInfoItem
+                    title='EU Licensed lawyer/company'
+                    success='G'
+                    danger='O S U'
+                    info='H'
+                    descriptionList={descriptionList}
+                  />
+                </td>
+              </tr>
+
+              <tr className={styles.tr_certcopy_delivery}>
+                <td className={styles.TdSelect}>
+                  <ValidItem done={true} className={styles.ValidItem} />
+                </td>
+                <td>
+                  <p className={styles.SelectItemDescription}>
+                    International Delivery
+                  </p>
+                </td>
+                <td>
+                  <span className={styles.PriceValue}>200.00</span>&ensp;
+                  <span className={styles.Currency}>EUR</span>
+                </td>
+                <td>
+                  <RequestInfoItem
+                    title='EU Licensed lawyer/company'
+                    descriptionList={descriptionList}
+                  />
+                </td>
+              </tr>
+
+              <tr className={styles.tr_verification_apostil_N}>
+                <td className={styles.TdSelect}>
+                  <BaseCheckbox
+                    checkboxValue={checkbox}
+                    onClick={() => setCheckbox(!checkbox)}
+                  />
+                </td>
+                <td className={styles.CertcopyDocname}>
+                  <p className={styles.SelectItemDescription}>Apostille</p>
+                </td>
+                <td>
+                  <CheckAvailable />
+                </td>
+                <td>
+                  <RequestInfoItem
+                    title='EU Licensed lawyer/company'
+                    descriptionList={descriptionList}
+                  />
+                </td>
+              </tr>
+
+              <tr className={styles.tr_verification_apostil_Notary}>
+                <td className={styles.TdSelect}>
+                  <BaseCheckbox
+                    checkboxValue={checkbox}
+                    onClick={() => setCheckbox(!checkbox)}
+                  />
+                </td>
+                <td className={styles.CertcopyDocname}>
+                  <p className={styles.SelectItemDescription}>Translation</p>
+                </td>
+                <td>
+                  <span className={styles.PriceValue}>200.00</span>&ensp;
+                  <span className={styles.Currency}>EUR/page</span>
+                </td>
+                <td>
+                  <RequestInfoItem
+                    title='EU Licensed lawyer/company'
+                    descriptionList={descriptionList}
+                  />
+                </td>
+              </tr>
+
+              <tr className={styles.tr_verification_apostil_Y}>
+                <td className={styles.TdSelect}>
+                  <BaseCheckbox
+                    checkboxValue={checkbox}
+                    onClick={() => setCheckbox(!checkbox)}
+                  />
+                </td>
+                <td className={styles.CertcopyDocname}>
+                  <p className={styles.SelectItemDescription}>
+                    International Delivery
+                  </p>
+                </td>
+                <td>
+                  <span className={styles.PriceValue}>200.00</span>&ensp;
+                  <span className={styles.Currency}>EUR</span>
+                </td>
+                <td>
+                  <RequestInfoItem
+                    title='EU Licensed lawyer/company'
+                    descriptionList={descriptionList}
+                  />
+                </td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr className={styles.tr_foot}>
+                <th></th>
+                <th>
+                  <p className={styles.Total}>Total</p>
+                </th>
+                <th>
+                  <span className={`${styles.PriceValue} ${styles.Bold}`}>
+                    200.00
+                  </span>
+                  &ensp;
+                  <span className={`${styles.Currency} ${styles.Bold}`}>
+                    EUR
+                  </span>
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <BaseButton className={styles.Button}>Request</BaseButton>
       </div>
     </div>
   );

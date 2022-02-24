@@ -1,0 +1,115 @@
+.RequestInfoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: em(32px);
+  height: em(32px);
+  border: 2px solid $yellow;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  @include iftablet {
+    width: em(23px);
+    height: em(23px);
+  }
+  @include ifmobile {
+    width: em(18px);
+    height: em(18px);
+  }
+
+  &:hover {
+    .InfoContent {
+      display: block;
+    }
+  }
+  .InfoTitle {
+    font-size: em(19px);
+    line-height: 100%;
+    color: $yellow;
+    font-family: $font-Calibri;
+    font-style: normal;
+    font-weight: bold;
+    @include iftablet {
+      font-size: em(15px);
+    }
+    @include ifmobile {
+      font-size: em(12px);
+    }
+  }
+
+  .InfoContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    width: em(304px);
+    min-height: em(220px);
+    background: $black;
+    border-radius: em(10px);
+
+    .CountryItemHeader {
+      padding: em(44px) em(20px) em(20px);
+      border-bottom: 2px solid $yellow;
+
+      .CountryItemTitle {
+        font-size: em(17px);
+        font-weight: 400;
+        line-height: 120%;
+        color: $white;
+        margin-bottom: em(6px);
+      }
+
+      .CountryItemBadges {
+        display: flex;
+        flex-direction: row;
+
+        .Badge {
+          font-size: em(10px);
+          color: $white;
+          display: inline-flex;
+          font-family: $font-Calibri;
+          font-style: normal;
+          font-weight: bold;
+          line-height: 100%;
+          padding: em(6px);
+          font-weight: 700;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: baseline;
+          border-radius: 0.25rem;
+          margin-right: em(3px);
+        }
+
+        .BadgeSuccess {
+          background: $green;
+        }
+        .BadgeDanger {
+          background: $pink;
+        }
+        .BadgeInfo {
+          background: $yellow;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: em(30px) em(20px) em(30px) em(40px);
+      li {
+        position: relative;
+        font-size: em(17px);
+        line-height: 120%;
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: normal;
+        color: $white;
+        list-style: disc;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
