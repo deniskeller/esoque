@@ -33,3 +33,4 @@ export { default as IconHorse } from './other/IconHorse/IconHorse';
 
 //popup
 export { default as UnicornsPopup } from './popup/UnicornsPopup/UnicornsPopup';
+export { default as CertificationPopup } from './popup/CertificationPopup/CertificationPopup';

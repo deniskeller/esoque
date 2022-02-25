@@ -1,0 +1,67 @@
+.CertificationPopupTitle {
+  font-size: em(50px);
+  line-height: 100%;
+  font-weight: bold;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: em(45px, 50px);
+}
+
+.CertificationPopupSubtitle {
+  font-size: em(25px);
+  font-weight: bold;
+  line-height: 130%;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: em(75px, 25px);
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: em(53px);
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+      td {
+        font-size: em(19px);
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: normal;
+        color: $white;
+        border-bottom: 0.5px solid $white;
+        padding: em(10px) 0;
+
+        &:first-child {
+          padding-left: em(64px);
+        }
+        &:last-child {
+          padding-right: em(64px);
+        }
+      }
+
+      .TdHeader {
+        text-align: center;
+      }
+
+      .TdCounter {
+        width: em(60px);
+      }
+
+      .TdTotal {
+        text-align: right;
+        padding-right: em(20px);
+      }
+    }
+  }
+}
+
+.Input {
+  width: 100%;
+  margin-bottom: em(10px);
+}

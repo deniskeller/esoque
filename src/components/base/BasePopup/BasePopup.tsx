@@ -10,20 +10,25 @@ import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
   children: ReactNode | ReactNode[];
-  className: string;
+  className?: string;
+  type?: string;
 }
 
-const BasePopup: React.FC<Props> = ({ children, className }) => {
+const BasePopup: React.FC<Props> = ({
+  children,
+  className,
+  type = 'default',
+}) => {
   const dispatch = useDispatch();
   const { popup, id } = useSelector((state: RootState) => state.modal);
 
   const thisClass = React.useRef<HTMLDivElement>(null);
   const thisModal = React.useRef<HTMLDivElement>(null);
 
-  const clickOutsideHandler = () => {
-    hidePopup();
-  };
-  useOnClickOutside(thisModal, clickOutsideHandler);
+  // const clickOutsideHandler = () => {
+  //   hidePopup();
+  // };
+  // useOnClickOutside(thisModal, clickOutsideHandler);
 
   const bodyClassName = 'overflow-hidden';
 
@@ -61,7 +66,12 @@ const BasePopup: React.FC<Props> = ({ children, className }) => {
       } ${className}`}
       ref={thisClass}
     >
-      <div className={styles.BasePopupContent} ref={thisModal}>
+      <div
+        className={`${styles.BasePopupContent} ${
+          type == 'mini' ? styles.Mini : ''
+        }`}
+        ref={thisModal}
+      >
         <span onClick={hidePopup}>
           <BaseIcon
             icon={ALL_ICONS.LANDING_POPUP_CLOSE}

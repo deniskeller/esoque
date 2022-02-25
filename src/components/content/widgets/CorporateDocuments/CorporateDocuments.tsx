@@ -122,7 +122,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         />
 
         <BaseButton onClick={submitFormData} className={styles.Button}>
-          Request
+          New Request
         </BaseButton>
       </div>
 

@@ -334,6 +334,7 @@
               padding-right: 0;
               text-align: left;
               line-height: 0;
+              vertical-align: bottom;
               @include iftablet {
                 padding: em(19px);
                 padding-left: 0;
@@ -346,7 +347,7 @@
                 font-size: em(17px);
                 color: $white;
                 font-weight: bold;
-                line-height: 100%;
+                line-height: 80%;
                 letter-spacing: -0.05em;
                 @include iftablet {
                   font-size: em(14px);

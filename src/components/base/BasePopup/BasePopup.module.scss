@@ -34,6 +34,27 @@
     margin: em(35px) auto;
   }
 }
+
+.Mini {
+  width: 100%;
+  max-width: em(972px);
+  min-height: em(966px);
+  padding: em(110px) em(153px) em(126px);
+  margin: em(78px) auto;
+  @include iftablet {
+    max-width: em(874px);
+    min-height: em(638px);
+    padding: em(119px) em(68px) em(68px);
+    margin: em(60px) auto;
+  }
+  @include ifmobile {
+    max-width: em(286px);
+    min-height: em(567px);
+    padding: em(69px) em(19px) em(19px);
+    margin: em(35px) auto;
+  }
+}
+
 .BasePopupClose {
   width: em(24px);
   height: em(32px);
