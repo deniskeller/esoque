@@ -150,9 +150,8 @@
     }
 
     .Table {
-      margin-bottom: em(81px);
+      margin-top: em(30px);
       @include iftablet {
-        margin-bottom: em(49px);
       }
       @include ifmobile {
       }
@@ -391,19 +390,45 @@
           font-weight: bold;
         }
       }
-    }
 
-    .Button {
-      width: 100%;
-      max-width: em(187px);
-      height: em(63px);
-      margin-top: em(-115px);
-      margin-left: em(30px);
-      @include iftablet {
-        // max-width: em(149px);
-        // height: em(56px);
+      .Button {
+        width: 100%;
+        max-width: em(187px);
+        height: em(63px);
+        margin-top: em(-35px);
+        margin-left: em(30px);
+        @include iftablet {
+        }
+        @include ifmobile {
+        }
       }
-      @include ifmobile {
+
+      .DocumentDescription {
+        margin-top: em(25px);
+        display: flex;
+        flex-direction: column;
+        li {
+          list-style: none;
+          display: inline-flex;
+          margin-bottom: em(10px);
+          span {
+            font-size: em(19px);
+            line-height: 120%;
+            font-family: $font-Calibri;
+            font-style: normal;
+            font-weight: bold;
+            color: $green;
+            margin-right: em(25px);
+          }
+          p {
+            font-size: em(19px);
+            line-height: 120%;
+            font-family: $font-Calibri;
+            font-style: normal;
+            font-weight: normal;
+            color: $white;
+          }
+        }
       }
     }
   }

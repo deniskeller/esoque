@@ -322,8 +322,47 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
               </tr>
             </tfoot>
           </table>
+          <BaseButton className={styles.Button}>Request</BaseButton>
+
+          <ul className={styles.DocumentDescription}>
+            <li>
+              <span>G</span>
+              <p>
+                Contains general information about company - company name,
+                number and sometimes registered address.
+              </p>
+            </li>
+            <li>
+              <span>O</span>
+              <p>
+                Contains information about Directors and other officers of the
+                company.
+              </p>
+            </li>
+            <li>
+              <span>S</span>
+              <p>Contains Shareholders Information.</p>
+            </li>
+            <li>
+              <span>U</span>
+              <p>Contains information anout UBO.</p>
+            </li>
+            <li>
+              <span>E</span>
+              <p>
+                Electronic copy of document. Apostille may be not available for
+                this kind of documents.
+              </p>
+            </li>
+            <li>
+              <span>H</span>
+              <p>
+                Hard copy of documents available. Delivery must be added for
+                this kind document.
+              </p>
+            </li>
+          </ul>
         </div>
-        <BaseButton className={styles.Button}>Request</BaseButton>
       </div>
     </div>
   );
