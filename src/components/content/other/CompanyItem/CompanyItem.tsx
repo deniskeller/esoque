@@ -4,7 +4,7 @@ import styles from './CompanyItem.module.scss';
 
 interface Props {
   companyName: string;
-  companycode?: number;
+  companyCode?: number;
   id?: string;
   isActive: boolean;
   onClick: () => void;
@@ -12,7 +12,7 @@ interface Props {
 
 const CompanyItem: React.FC<Props> = ({
   companyName,
-  companycode,
+  companyCode,
   id,
   isActive,
   onClick,
@@ -29,7 +29,7 @@ const CompanyItem: React.FC<Props> = ({
         <p>{companyName}</p>
       </div>
       <div className={styles.CompanyCode}>
-        <p>{companycode}</p>
+        <p>{companyCode}</p>
       </div>
     </div>
   );

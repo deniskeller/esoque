@@ -56,7 +56,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(setPopup('CertificationPopup', 0));
+    dispatch(setPopup('CertificationPopup', 2));
   };
 
   return (

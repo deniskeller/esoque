@@ -1,12 +1,12 @@
 import React from 'react';
 import { BaseButton, BaseInput, BasePopup, BaseTextarea } from '@base/index';
-import styles from './CertificationPopup.module.scss';
+import styles from './CorporateDocumentsPopup.module.scss';
 
 interface Props {
   className?: string;
 }
 
-const CertificationPopup: React.FC<Props> = ({ className }) => {
+const CorporateDocumentsPopup: React.FC<Props> = ({ className }) => {
   const [single, setsingle] = React.useState<boolean>(true);
   const [formData1, setFormData1] = React.useState<string>('');
   const [formData2, setFormData2] = React.useState<string>('');
@@ -17,39 +17,44 @@ const CertificationPopup: React.FC<Props> = ({ className }) => {
   return (
     <>
       <BasePopup className={className} type='mini'>
-        <div className={styles.CertificationPopupTitle}>Send Request</div>
-        <div className={styles.CertificationPopupSubtitle}>
-          Pay now or send request for bank transfers and you will receive the
-          link to Notary Appointments’ Calendar
-        </div>
+        <div className={styles.CorporateDocumentsPopupTitle}>Send Request</div>
 
         <table className={styles.Table}>
           <tbody>
-            {single && (
-              <tr>
-                <td colSpan={3} className={styles.TdHeader}>
-                  Single Personal or Corporate document
-                </td>
-              </tr>
-            )}
-
             <tr>
-              <td>EU Licensed lawyer/company</td>
-              <td className={styles.TdCounter}>1</td>
+              <td className={styles.Large}>Jurisdiction</td>
+              <td>Canada (Alberta)</td>
+            </tr>
+            <tr>
+              <td className={styles.Large}>Company Name</td>
+              <td>GOOGLE PAYMENT CANADA CORP. (2112976507)</td>
+            </tr>
+            <tr>
+              <td className={styles.Large}>Corporate search report</td>
+              <td>
+                <span>40</span>&nbsp;EUR
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.Large}>Processing fee</td>
+              <td>
+                <span>150</span>&nbsp;EUR
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.Large}>Translation</td>
+              <td>
+                <span>25</span>&nbsp;EUR
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.Large}>International Delivery</td>
               <td>
                 <span>75</span>&nbsp;EUR
               </td>
             </tr>
             <tr>
-              <td colSpan={2}>International Delivery</td>
-              <td>
-                <span>75</span>&nbsp;EUR
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2} className={styles.TdTotal}>
-                Total
-              </td>
+              <td className={`${styles.TdTotal} ${styles.Large}`}>Total</td>
               <td>
                 <span>75</span>&nbsp;EUR
               </td>
@@ -110,4 +115,4 @@ const CertificationPopup: React.FC<Props> = ({ className }) => {
   );
 };
 
-export default CertificationPopup;
+export default CorporateDocumentsPopup;

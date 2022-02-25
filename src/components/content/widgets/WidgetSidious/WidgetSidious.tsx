@@ -1,23 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setPopup } from 'store/modals/actions';
 import {
   CorporateDocuments,
   CopiesCertification,
   SignatureCertifications,
   CertificationPopup,
+  CorporateDocumentsPopup,
+  NotAcceptingPopup,
 } from '@content/index';
 import styles from './WidgetSidious.module.scss';
 
 interface Props {}
 
 const WidgetSidious: React.FC<Props> = ({}) => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(setPopup('CertificationPopup', 0));
-  };
-
   const tabs = [
     { id: 1, title: 'Corporate Documents' },
     { id: 2, title: 'Copies Certification' },
@@ -71,7 +65,9 @@ const WidgetSidious: React.FC<Props> = ({}) => {
           </div>
         </div>
       </div>
+      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
       <CertificationPopup className='CertificationPopup' />
+      <NotAcceptingPopup className='NotAcceptingPopup' />
     </>
   );
 };

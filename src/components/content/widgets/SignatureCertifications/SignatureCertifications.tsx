@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   BaseInput,
   BaseSelect,
@@ -5,7 +6,8 @@ import {
   BaseButton,
 } from '@base/index';
 import { ValidItem, RequestInfoItem } from '@content/index';
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setPopup } from 'store/modals/actions';
 import styles from './SignatureCertifications.module.scss';
 
 interface Props {}
@@ -27,6 +29,13 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
   const [quantity, setQuantity] = React.useState<number>(1);
   const changeHandlerQuantity = (value: number) => {
     setQuantity(value);
+  };
+
+  //вызов модалки
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(setPopup('CertificationPopup', 2));
   };
 
   return (
@@ -139,7 +148,9 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
           </tfoot>
         </table>
       </div>
-      <BaseButton className={styles.Button}>Request</BaseButton>
+      <BaseButton className={styles.Button} onClick={handleClick}>
+        Request
+      </BaseButton>
     </div>
   );
 };

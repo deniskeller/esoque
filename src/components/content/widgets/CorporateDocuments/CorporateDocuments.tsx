@@ -1,3 +1,5 @@
+import React from 'react';
+import Image from 'next/image';
 import {
   BaseInput,
   BaseSearchSelect,
@@ -11,17 +13,17 @@ import {
   CheckAvailable,
   RequestInfoItem,
 } from '@content/index';
-import Image from 'next/image';
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setPopup } from 'store/modals/actions';
 import styles from './CorporateDocuments.module.scss';
 
 interface Props {}
 
 const companiesList = [
-  { companyName: 'ЗАО "ДИАМОНД-BW"', companycode: 1234567890 },
+  { companyName: 'ЗАО "ДИАМОНД-BW"', companyCode: 1234567890 },
   {
     companyName: 'CAMBRIDGE INSITU PRESSUREMETER TESTING NORTH AMERICA LIMITED',
-    companycode: 1234567890,
+    companyCode: 1234567890,
   },
 ];
 
@@ -85,6 +87,12 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
   //checkbox
   const [checkbox, setCheckbox] = React.useState<boolean>(false);
 
+  //вызов модалки
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(setPopup('CertificationPopup', 1));
+  };
+
   return (
     <div className={styles.CorporateDocuments}>
       <p className={styles.Description}>
@@ -137,7 +145,12 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
               about the company you wish to receive.
             </p>
           </div>
-          <BaseButton className={styles.NotAcceptingBtn}>Request</BaseButton>
+          <BaseButton
+            className={styles.NotAcceptingBtn}
+            onClick={() => dispatch(setPopup('NotAcceptingPopup', 3))}
+          >
+            Request
+          </BaseButton>
         </div>
 
         {/* Вариант когда много компаний с подобным названием */}
@@ -159,7 +172,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
                     isActive={radioValue == 1}
                     onClick={() => setRadioValue(1)}
                     companyName={item.companyName}
-                    companycode={item.companycode}
+                    companyCode={item.companyCode}
                   />
                 );
               })}
@@ -323,7 +336,9 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
               </tr>
             </tfoot>
           </table>
-          <BaseButton className={styles.Button}>Request</BaseButton>
+          <BaseButton className={styles.Button} onClick={handleClick}>
+            Request
+          </BaseButton>
 
           <ul className={styles.DocumentDescription}>
             <li>

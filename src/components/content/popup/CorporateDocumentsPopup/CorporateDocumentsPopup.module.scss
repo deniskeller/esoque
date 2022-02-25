@@ -1,19 +1,10 @@
-.CertificationPopupTitle {
+.CorporateDocumentsPopupTitle {
   font-size: em(50px);
   line-height: 100%;
   font-weight: bold;
   color: $yellow;
   text-align: center;
   margin-bottom: em(45px, 50px);
-}
-
-.CertificationPopupSubtitle {
-  font-size: em(25px);
-  font-weight: bold;
-  line-height: 130%;
-  color: $yellow;
-  text-align: center;
-  margin-bottom: em(75px, 25px);
 }
 
 .Table {
@@ -30,6 +21,7 @@
       }
       td {
         font-size: em(19px);
+        line-height: 120%;
         font-family: $font-Calibri;
         font-style: normal;
         font-weight: normal;
@@ -38,19 +30,15 @@
         padding: em(10px) 0;
 
         &:first-child {
-          padding-left: em(64px);
+          padding-left: em(60px);
         }
         &:last-child {
-          padding-right: em(64px);
+          padding-right: em(20px);
         }
       }
 
-      .TdHeader {
-        text-align: center;
-      }
-
-      .TdCounter {
-        width: em(60px);
+      .Large {
+        width: 60%;
       }
 
       .TdTotal {

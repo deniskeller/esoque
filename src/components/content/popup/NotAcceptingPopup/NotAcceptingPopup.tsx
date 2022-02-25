@@ -1,13 +1,12 @@
 import React from 'react';
 import { BaseButton, BaseInput, BasePopup, BaseTextarea } from '@base/index';
-import styles from './CertificationPopup.module.scss';
+import styles from './NotAcceptingPopup.module.scss';
 
 interface Props {
   className?: string;
 }
 
-const CertificationPopup: React.FC<Props> = ({ className }) => {
-  const [single, setsingle] = React.useState<boolean>(true);
+const NotAcceptingPopup: React.FC<Props> = ({ className }) => {
   const [formData1, setFormData1] = React.useState<string>('');
   const [formData2, setFormData2] = React.useState<string>('');
   const [formData3, setFormData3] = React.useState<string>('');
@@ -17,42 +16,17 @@ const CertificationPopup: React.FC<Props> = ({ className }) => {
   return (
     <>
       <BasePopup className={className} type='mini'>
-        <div className={styles.CertificationPopupTitle}>Send Request</div>
-        <div className={styles.CertificationPopupSubtitle}>
-          Pay now or send request for bank transfers and you will receive the
-          link to Notary Appointments’ Calendar
-        </div>
+        <div className={styles.NotAcceptingPopupTitle}>Send Request</div>
 
         <table className={styles.Table}>
           <tbody>
-            {single && (
-              <tr>
-                <td colSpan={3} className={styles.TdHeader}>
-                  Single Personal or Corporate document
-                </td>
-              </tr>
-            )}
-
             <tr>
-              <td>EU Licensed lawyer/company</td>
-              <td className={styles.TdCounter}>1</td>
-              <td>
-                <span>75</span>&nbsp;EUR
-              </td>
+              <td className={styles.Large}>Jurisdiction</td>
+              <td>USA (New York)</td>
             </tr>
             <tr>
-              <td colSpan={2}>International Delivery</td>
-              <td>
-                <span>75</span>&nbsp;EUR
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2} className={styles.TdTotal}>
-                Total
-              </td>
-              <td>
-                <span>75</span>&nbsp;EUR
-              </td>
+              <td className={styles.Large}>Company Name</td>
+              <td>Google</td>
             </tr>
           </tbody>
         </table>
@@ -91,17 +65,10 @@ const CertificationPopup: React.FC<Props> = ({ className }) => {
         />
 
         <BaseTextarea
-          placeholder='Delivery address for originals / hardcopies of documents'
+          placeholder='Please, specify which information about the company you wish to receive.'
           value={formData4}
           onChange={(val: string) => setFormData4(val)}
           className={`${styles.Textarea} ${styles.Textarea1}`}
-        />
-
-        <BaseTextarea
-          placeholder='Comment'
-          value={formData5}
-          onChange={(val: string) => setFormData5(val)}
-          className={`${styles.Textarea} ${styles.Textarea2}`}
         />
 
         <BaseButton className={styles.Button}>Request</BaseButton>
@@ -110,4 +77,4 @@ const CertificationPopup: React.FC<Props> = ({ className }) => {
   );
 };
 
-export default CertificationPopup;
+export default NotAcceptingPopup;

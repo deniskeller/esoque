@@ -81,3 +81,7 @@ input[type='number']:hover,
 input[type='number']:focus {
   -moz-appearance: number-input;
 }
+
+textarea::placeholder {
+  line-height: 120%;
+}
