@@ -44,8 +44,8 @@ const RequestInfoItem: React.FC<Props> = ({
         </div>
 
         <ul>
-          {descriptionList?.map((item) => {
-            return <li>{item}</li>;
+          {descriptionList?.map((item, index) => {
+            return <li key={index}>{item}</li>;
           })}
         </ul>
       </div>

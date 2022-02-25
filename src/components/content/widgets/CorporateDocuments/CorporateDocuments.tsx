@@ -154,6 +154,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
               companiesList.map((item, index) => {
                 return (
                   <CompanyItem
+                    key={index}
                     id='1'
                     isActive={radioValue == 1}
                     onClick={() => setRadioValue(1)}
