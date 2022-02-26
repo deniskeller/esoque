@@ -7,6 +7,7 @@ interface Props {
   danger?: string;
   info?: string;
   descriptionList?: string[];
+  className?: string;
 }
 
 const RequestInfoItem: React.FC<Props> = ({
@@ -15,9 +16,10 @@ const RequestInfoItem: React.FC<Props> = ({
   success,
   danger,
   info,
+  className,
 }) => {
   return (
-    <div className={styles.RequestInfoItem}>
+    <div className={`${styles.RequestInfoItem} ${className}`}>
       <p className={styles.InfoTitle}>?</p>
       <div className={styles.InfoContent}>
         <div className={styles.CountryItemHeader}>

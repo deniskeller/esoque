@@ -13,6 +13,8 @@
       margin-bottom: em(36px);
     }
     @include ifmobile {
+      font-size: em(16px);
+      margin-bottom: em(36px);
     }
   }
 
@@ -47,31 +49,40 @@
     flex-direction: row;
     justify-content: space-between;
 
+    @include ifmobile {
+      flex-wrap: wrap;
+    }
+
     .Input {
       width: 100%;
       max-width: em(543px);
       @include iftablet {
-        max-width: em(330px);
+        max-width: em(320px);
       }
       @include ifmobile {
+        margin-bottom: em(13px);
       }
     }
     .Select {
       width: 100%;
       max-width: em(458px);
       @include iftablet {
-        width: em(330px);
+        width: em(320px);
       }
       @include ifmobile {
+        margin-bottom: em(13px);
       }
     }
     .Button {
       width: 100%;
       max-width: em(289px);
       @include iftablet {
-        max-width: em(149px);
+        max-width: em(169px);
       }
       @include ifmobile {
+        max-width: em(173px);
+        height: em(38px);
+        margin: 0 auto;
       }
     }
   }
@@ -82,6 +93,9 @@
         padding: em(25px);
         border: 2px solid $pink;
         margin: em(25px) 0;
+        @include ifmobile {
+          padding: em(15px);
+        }
         P {
           font-size: em(19px);
           line-height: 120%;
@@ -95,6 +109,11 @@
           span {
             color: $pink;
           }
+
+          @include ifmobile {
+            font-size: em(16px);
+            padding: em(20px);
+          }
         }
       }
 
@@ -103,6 +122,12 @@
         height: em(63px);
         margin: 0 auto;
         margin-top: em(63px);
+
+        @include ifmobile {
+          max-width: em(173px);
+          height: em(38px);
+          margin-top: em(30px);
+        }
       }
     }
 
@@ -113,6 +138,10 @@
         border-radius: 10px;
         border-top: 2px solid $pink;
         margin: em(30px) 0;
+
+        @include ifmobile {
+          padding: em(20px);
+        }
         p {
           font-size: em(19px);
           line-height: 120%;
@@ -123,11 +152,12 @@
           span {
             color: $pink;
           }
+
+          @include ifmobile {
+            font-size: em(16px);
+          }
         }
       }
-
-      // .CompaniesList {
-      // }
     }
 
     .NonExistentName {
@@ -136,6 +166,10 @@
       border-radius: 10px;
       border-top: 2px solid $pink;
       margin: em(30px) 0;
+
+      @include ifmobile {
+        padding: em(20px);
+      }
       p {
         font-size: em(19px);
         line-height: 120%;
@@ -146,20 +180,24 @@
         span {
           color: $pink;
         }
+
+        @include ifmobile {
+          font-size: em(16px);
+        }
       }
     }
 
     .Table {
-      margin-top: em(30px);
-      @include iftablet {
-      }
-      @include ifmobile {
-      }
-
       table {
         width: 100%;
         border-collapse: collapse;
+        @include ifmobile {
+          margin-bottom: em(30px);
+        }
         thead {
+          @include ifmobile {
+            display: none;
+          }
           .Clear {
             width: 5%;
             @include iftablet {
@@ -212,15 +250,32 @@
         }
         tbody {
           tr {
+            position: relative;
+            @include ifmobile {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border: 1px solid #ffffff;
+              margin-bottom: 1.1111111111em;
+              border-radius: 10px;
+              padding: 1.1111111111em;
+            }
             &:first-child {
               td {
                 padding-top: em(25px);
+                @include ifmobile {
+                  padding-top: em(10px);
+                }
               }
             }
             &:last-child {
               border-bottom: 1px solid $white;
               td {
                 padding-bottom: em(25px);
+                @include ifmobile {
+                  padding-bottom: em(10px);
+                }
               }
             }
           }
@@ -230,11 +285,16 @@
             line-height: 0;
 
             @include iftablet {
-              padding: em(19px);
-              padding-left: 0;
+              padding: em(5px) 0;
             }
             @include ifmobile {
+              width: 100%;
+              max-width: em(220px);
+              display: flex;
+              justify-content: center;
+              padding: em(10px) 0;
             }
+
             .SelectItemDescription {
               font-size: em(19px);
               line-height: 100%;
@@ -246,6 +306,7 @@
                 font-size: em(15px);
               }
               @include ifmobile {
+                font-size: em(16px);
               }
             }
 
@@ -253,41 +314,16 @@
               width: 100%;
               max-width: em(542px);
               @include iftablet {
-                // max-width: em(304px);
+                max-width: em(400px);
               }
               @include ifmobile {
               }
             }
 
-            .Question {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: em(32px);
-              height: em(32px);
-              border: 2px solid $yellow;
-              border-radius: 50%;
-              cursor: pointer;
-              box-sizing: border-box;
-              @include iftablet {
-                width: em(23px);
-                height: em(23px);
-              }
-              @include ifmobile {
-              }
-              .QuestionTitle {
-                font-size: em(19px);
-                line-height: 100%;
-                color: $yellow;
-                font-family: $font-Calibri;
-                font-style: normal;
-                font-weight: bold;
-                @include iftablet {
-                  font-size: em(15px);
-                }
-                @include ifmobile {
-                }
-              }
+            .RequestInfoItem {
+              position: absolute;
+              top: em(10px);
+              right: em(10px);
             }
           }
 
@@ -307,6 +343,8 @@
                 height: em(22px);
               }
               @include ifmobile {
+                width: em(18px);
+                height: em(18px);
               }
             }
           }
@@ -329,6 +367,15 @@
         tfoot {
           tr {
             border-bottom: none;
+            @include ifmobile {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background: #dc3545;
+              border-radius: 10px;
+            }
+
             th {
               padding: em(22px);
               padding-right: 0;
@@ -340,14 +387,16 @@
                 padding-left: 0;
               }
               @include ifmobile {
+                padding: em(20px);
               }
-
-              .Total {
-                float: right;
+            }
+            .Total {
+              text-align: right;
+              span {
                 font-size: em(17px);
                 color: $white;
                 font-weight: bold;
-                line-height: 80%;
+                line-height: 100%;
                 letter-spacing: -0.05em;
                 @include iftablet {
                   font-size: em(14px);
@@ -389,6 +438,8 @@
 
         .Bold {
           font-weight: bold;
+          @include ifmobile {
+          }
         }
       }
 
@@ -401,6 +452,11 @@
         @include iftablet {
         }
         @include ifmobile {
+          max-width: em(173px);
+          height: em(38px);
+          margin-top: em(30px);
+          margin-left: 0;
+          margin: 0 auto;
         }
       }
 
@@ -420,6 +476,11 @@
             font-weight: bold;
             color: $green;
             margin-right: em(25px);
+            @include ifmobile {
+              font-size: em(16px);
+
+              margin-right: em(15px);
+            }
           }
           p {
             font-size: em(19px);
@@ -428,6 +489,9 @@
             font-style: normal;
             font-weight: normal;
             color: $white;
+            @include ifmobile {
+              font-size: em(16px);
+            }
           }
         }
       }

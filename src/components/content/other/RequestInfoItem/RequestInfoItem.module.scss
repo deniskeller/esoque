@@ -49,9 +49,17 @@
     background: $black;
     border-radius: em(10px);
 
+    @include ifmobile {
+      width: em(280px);
+    }
+
     .CountryItemHeader {
       padding: em(44px) em(20px) em(20px);
       border-bottom: 2px solid $yellow;
+
+      @include ifmobile {
+        padding: em(44px) em(20px) em(20px);
+      }
 
       .CountryItemTitle {
         font-size: em(17px);
@@ -59,6 +67,10 @@
         line-height: 120%;
         color: $white;
         margin-bottom: em(6px);
+
+        @include ifmobile {
+          font-size: em(14px);
+        }
       }
 
       .CountryItemBadges {
@@ -109,6 +121,9 @@
         color: $white;
         list-style: disc;
         padding-bottom: 10px;
+        @include ifmobile {
+          font-size: em(14px);
+        }
       }
     }
   }

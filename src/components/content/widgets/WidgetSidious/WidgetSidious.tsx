@@ -3,9 +3,6 @@ import {
   CorporateDocuments,
   CopiesCertification,
   SignatureCertifications,
-  CertificationPopup,
-  CorporateDocumentsPopup,
-  NotAcceptingPopup,
 } from '@content/index';
 import styles from './WidgetSidious.module.scss';
 
@@ -65,9 +62,6 @@ const WidgetSidious: React.FC<Props> = ({}) => {
           </div>
         </div>
       </div>
-      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
-      <CertificationPopup className='CertificationPopup' />
-      <NotAcceptingPopup className='NotAcceptingPopup' />
     </>
   );
 };

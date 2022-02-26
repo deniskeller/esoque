@@ -59,6 +59,11 @@ const BasePopup: React.FC<Props> = ({
     dispatch(setPopup('', 0));
   };
 
+  // React.useEffect(() => {
+  //   console.log('thisClass: ', thisClass);
+  //   console.log('popup: ', popup);
+  // }, [thisClass, popup]);
+
   return (
     <div
       className={` ${styles.BasePopup} ${

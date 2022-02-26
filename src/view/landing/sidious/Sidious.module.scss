@@ -146,8 +146,8 @@
     padding-bottom: em(126px);
   }
   @include ifmobile {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: em(80px);
+    padding-bottom: em(40px);
     display: flex;
     align-items: center;
     min-height: 100vh;
