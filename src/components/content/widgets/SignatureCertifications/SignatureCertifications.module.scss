@@ -7,6 +7,14 @@
     line-height: 120%;
     color: $white;
     margin-bottom: em(35px);
+
+    @include iftablet {
+      font-size: em(15px);
+      margin-bottom: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(16px);
+    }
   }
 
   .CovidDescription {
@@ -17,6 +25,14 @@
     line-height: 120%;
     color: $pink;
     margin-bottom: em(60px);
+
+    @include iftablet {
+      font-size: em(15px);
+      margin-bottom: em(26px);
+    }
+    @include ifmobile {
+      font-size: em(16px);
+    }
   }
 
   .Table {
@@ -25,12 +41,16 @@
       margin-bottom: em(49px);
     }
     @include ifmobile {
+      margin-bottom: em(30px);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       thead {
+        @include ifmobile {
+          display: none;
+        }
         .Clear {
           width: 5%;
           @include iftablet {
@@ -91,6 +111,17 @@
         tr {
           border-bottom: 1px solid $white;
           width: 100%;
+          position: relative;
+          @include ifmobile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid $white;
+            margin-bottom: em(20px);
+            border-radius: 10px;
+            padding: em(20px);
+          }
         }
         td {
           padding: em(22px);
@@ -101,8 +132,15 @@
             padding: em(19px);
             padding-left: 0;
           }
+
           @include ifmobile {
+            width: 100%;
+            max-width: em(220px);
+            display: flex;
+            justify-content: center;
+            padding: em(10px) 0;
           }
+
           .SelectItemDescription {
             font-size: em(19px);
             line-height: 100%;
@@ -114,6 +152,7 @@
               font-size: em(15px);
             }
             @include ifmobile {
+              text-align: center;
             }
           }
 
@@ -123,6 +162,7 @@
               width: em(304px);
             }
             @include ifmobile {
+              width: 100%;
             }
           }
 
@@ -135,35 +175,18 @@
             }
           }
 
-          .Question {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: em(32px);
-            height: em(32px);
-            border: 2px solid $yellow;
-            border-radius: 50%;
-            cursor: pointer;
-            box-sizing: border-box;
-            @include iftablet {
-              width: em(23px);
-              height: em(23px);
-            }
+          .RequestInfoItem {
             @include ifmobile {
+              position: absolute;
+              top: em(10px);
+              right: em(10px);
             }
-            .QuestionTitle {
-              font-size: em(19px);
-              line-height: 100%;
-              color: $yellow;
-              font-family: $font-Calibri;
-              font-style: normal;
-              font-weight: bold;
-              @include iftablet {
-                font-size: em(15px);
-              }
-              @include ifmobile {
-              }
-            }
+          }
+        }
+
+        .Hidden {
+          @include ifmobile {
+            display: none;
           }
         }
 
@@ -183,23 +206,36 @@
               height: em(22px);
             }
             @include ifmobile {
+              width: em(20px);
+              height: em(20px);
             }
           }
         }
 
         .tr_verification_apostil_N td {
           padding-bottom: 0;
+          @include ifmobile {
+            padding: em(10px) 0;
+          }
         }
         .tr_verification_apostil_N,
         .tr_certcopy_doc {
           border-bottom: none;
+          @include ifmobile {
+            border-bottom: 1px solid $white;
+          }
         }
         .tr_certcopy_doc td {
           padding-top: 0;
           padding-bottom: 0;
+          @include ifmobile {
+            padding: em(10px) 0;
+          }
         }
         .tr_certcopy_delivery {
-          border-top: 0;
+          @include ifmobile {
+            border-bottom: 1px solid $white;
+          }
         }
         .tr_certcopy_delivery td {
           padding-top: 0;
@@ -223,6 +259,15 @@
       tfoot {
         tr {
           border-bottom: none;
+          @include ifmobile {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #dc3545;
+            border-radius: 10px;
+          }
+
           th {
             padding: em(22px);
             padding-right: 0;
@@ -234,14 +279,16 @@
               padding-left: 0;
             }
             @include ifmobile {
+              padding: em(20px);
             }
-
-            .Total {
-              float: right;
+          }
+          .Total {
+            text-align: right;
+            span {
               font-size: em(17px);
               color: $white;
               font-weight: bold;
-              line-height: 80%;
+              line-height: 100%;
               letter-spacing: -0.05em;
               @include iftablet {
                 font-size: em(14px);
@@ -297,6 +344,9 @@
       height: em(56px);
     }
     @include ifmobile {
+      max-width: em(173px);
+      height: em(38px);
+      margin: 0 auto;
     }
   }
 }

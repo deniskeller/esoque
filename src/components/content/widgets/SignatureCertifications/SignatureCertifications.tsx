@@ -77,12 +77,13 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
 
               <tr className={styles.tr_certcopy_doc}>
-                <td className={styles.Select}></td>
+                <td className={styles.Hidden}></td>
                 <td>
                   <p className={styles.SelectItemDescription}>
                     Number of Documents/Persons to sign:
@@ -122,6 +123,7 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -129,9 +131,8 @@ const SignatureCertifications: React.FC<Props> = ({}) => {
 
             <tfoot>
               <tr className={styles.tr_foot}>
-                <th></th>
-                <th colSpan={2}>
-                  <p className={styles.Total}>Total</p>
+                <th colSpan={3} className={styles.Total}>
+                  <span>Total</span>
                 </th>
                 <th>
                   <span className={`${styles.PriceValue} ${styles.Bold}`}>

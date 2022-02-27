@@ -103,6 +103,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -122,6 +123,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -143,6 +145,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -177,6 +180,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -198,6 +202,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
                   <RequestInfoItem
                     title='EU Licensed lawyer/company'
                     descriptionList={descriptionList}
+                    className={styles.RequestInfoItem}
                   />
                 </td>
               </tr>
@@ -205,9 +210,8 @@ const CopiesCertification: React.FC<Props> = ({}) => {
 
             <tfoot>
               <tr className={styles.tr_foot}>
-                <th></th>
-                <th colSpan={2}>
-                  <p className={styles.Total}>Total</p>
+                <th colSpan={3} className={styles.Total}>
+                  <span>Total</span>
                 </th>
                 <th>
                   <span className={`${styles.PriceValue} ${styles.Bold}`}>

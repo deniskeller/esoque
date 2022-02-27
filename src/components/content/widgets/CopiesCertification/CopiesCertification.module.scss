@@ -13,6 +13,7 @@
       margin-bottom: em(14px);
     }
     @include ifmobile {
+      font-size: em(16px);
     }
   }
 
@@ -29,6 +30,7 @@
       margin-bottom: em(26px);
     }
     @include ifmobile {
+      font-size: em(16px);
     }
   }
 
@@ -38,12 +40,16 @@
       margin-bottom: em(49px);
     }
     @include ifmobile {
+      margin-bottom: em(30px);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       thead {
+        @include ifmobile {
+          display: none;
+        }
         .Clear {
           width: 5%;
           @include iftablet {
@@ -103,6 +109,17 @@
       tbody {
         tr {
           border-bottom: 1px solid $white;
+          position: relative;
+          @include ifmobile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid $white;
+            margin-bottom: em(20px);
+            border-radius: 10px;
+            padding: em(20px);
+          }
         }
         td {
           padding: em(22px);
@@ -113,8 +130,15 @@
             padding: em(19px);
             padding-left: 0;
           }
+
           @include ifmobile {
+            width: 100%;
+            max-width: em(220px);
+            display: flex;
+            justify-content: center;
+            padding: em(10px) 0;
           }
+
           .SelectItemDescription {
             font-size: em(19px);
             line-height: 100%;
@@ -126,6 +150,7 @@
               font-size: em(15px);
             }
             @include ifmobile {
+              text-align: center;
             }
           }
 
@@ -135,6 +160,7 @@
               width: em(304px);
             }
             @include ifmobile {
+              width: 100%;
             }
           }
 
@@ -145,6 +171,14 @@
               max-width: em(84px);
             }
             @include ifmobile {
+            }
+          }
+
+          .RequestInfoItem {
+            @include ifmobile {
+              position: absolute;
+              top: em(10px);
+              right: em(10px);
             }
           }
         }
@@ -165,16 +199,24 @@
               height: em(22px);
             }
             @include ifmobile {
+              width: em(20px);
+              height: em(20px);
             }
           }
         }
 
         .tr_verification_apostil_N td {
           padding-bottom: 0;
+          @include ifmobile {
+            padding: em(10px) 0;
+          }
         }
         .tr_verification_apostil_N,
         .tr_verification_apostil_Notary {
           border-bottom: none;
+          @include ifmobile {
+            border-bottom: 1px solid $white;
+          }
         }
         .tr_verification_apostil_Notary td {
           padding-top: em(13px);
@@ -182,10 +224,14 @@
           @include iftablet {
           }
           @include ifmobile {
+            padding: em(10px) 0;
           }
         }
         .tr_verification_apostil_Y td {
           padding-top: 0;
+          @include ifmobile {
+            padding: em(10px) 0;
+          }
         }
 
         .TdSelect {
@@ -206,6 +252,15 @@
       tfoot {
         tr {
           border-bottom: none;
+          @include ifmobile {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #dc3545;
+            border-radius: 10px;
+          }
+
           th {
             padding: em(22px);
             padding-right: 0;
@@ -217,14 +272,16 @@
               padding-left: 0;
             }
             @include ifmobile {
+              padding: em(20px);
             }
-
-            .Total {
-              float: right;
+          }
+          .Total {
+            text-align: right;
+            span {
               font-size: em(17px);
               color: $white;
               font-weight: bold;
-              line-height: 80%;
+              line-height: 100%;
               letter-spacing: -0.05em;
               @include iftablet {
                 font-size: em(14px);
@@ -280,6 +337,9 @@
       height: em(56px);
     }
     @include ifmobile {
+      max-width: em(173px);
+      height: em(38px);
+      margin: 0 auto;
     }
   }
 }

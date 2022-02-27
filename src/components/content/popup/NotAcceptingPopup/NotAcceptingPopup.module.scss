@@ -5,6 +5,10 @@
   color: $yellow;
   text-align: center;
   margin-bottom: em(45px, 50px);
+
+  @include ifmobile {
+    font-size: em(24px);
+  }
 }
 
 .Table {
@@ -29,16 +33,29 @@
         border-bottom: 0.5px solid $white;
         padding: em(10px) 0;
 
+        @include ifmobile {
+          font-size: em(12px);
+        }
+
         &:first-child {
           padding-left: em(60px);
+          @include ifmobile {
+            padding-left: 0;
+          }
         }
         &:last-child {
           padding-right: em(20px);
+          @include ifmobile {
+            padding-right: 0;
+          }
         }
       }
 
       .Large {
         width: 60%;
+        @include ifmobile {
+          width: 50%;
+        }
       }
     }
   }
@@ -66,4 +83,9 @@
   height: em(63px);
   margin: 0 auto;
   margin-top: em(86px);
+  @include ifmobile {
+    max-width: em(173px);
+    height: em(38px);
+    margin-top: em(30px);
+  }
 }

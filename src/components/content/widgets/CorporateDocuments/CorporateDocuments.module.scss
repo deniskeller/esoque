@@ -321,9 +321,11 @@
             }
 
             .RequestInfoItem {
-              position: absolute;
-              top: em(10px);
-              right: em(10px);
+              @include ifmobile {
+                position: absolute;
+                top: em(10px);
+                right: em(10px);
+              }
             }
           }
 
@@ -450,6 +452,8 @@
         margin-top: em(-35px);
         margin-left: em(30px);
         @include iftablet {
+          max-width: em(173px);
+          height: em(38px);
         }
         @include ifmobile {
           max-width: em(173px);
