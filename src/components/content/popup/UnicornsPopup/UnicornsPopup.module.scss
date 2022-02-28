@@ -13,9 +13,9 @@
 .UnicornsPopupText {
   display: block;
   max-width: em(1124px);
-  margin-bottom: em(87px);
+  margin-bottom: em(80px);
   @include iftablet {
-    margin-bottom: em(51px);
+    margin-bottom: em(50px);
   }
   @include ifmobile {
     margin-bottom: em(25px);
