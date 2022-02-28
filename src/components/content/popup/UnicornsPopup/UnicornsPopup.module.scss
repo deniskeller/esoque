@@ -90,18 +90,27 @@
         }
       }
     }
-    .SoloStyle {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: em(220px);
-    }
+    // .SoloStyle {
+    //   display: flex;
+    //   flex-direction: column;
+    //   flex-wrap: wrap;
+    //   height: em(220px);
+    //   @include iftablet {
+    //     .UnicornsPopupContentLi {
+    //       width: 48%;
+    //     }
+    //   }
+    // }
   }
 }
 
 .FullWidth {
   grid-template-columns: 1fr;
   max-width: 100% !important;
+  @include iftablet {
+  }
+  @include ifmobile {
+  }
 }
 
 .UnicornsPopupNav {

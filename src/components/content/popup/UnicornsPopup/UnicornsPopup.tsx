@@ -96,7 +96,7 @@ const UnicornsPopup: React.FC<Props> = ({ className }) => {
                         modalData.content &&
                         modalData.content.length == 1 &&
                         item.contentItemList &&
-                        item.contentItemList?.length <= 12
+                        item.contentItemList?.length >= 12
                           ? styles.SoloStyle
                           : ''
                       }`}
