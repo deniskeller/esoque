@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { BaseButton, BaseContainer } from '@base/index';
+import { BaseButton } from '@base/index';
 import { LandingMobileMenu, LandingNavbarLink } from '../../index';
 
 import styles from './LandingNavbar.module.scss';
@@ -48,6 +48,7 @@ const languages = [
 const LandingNavbar: React.FC<Props> = () => {
   const router = useRouter();
   const [modal, setModal] = React.useState(false);
+  const [auth, setAuth] = React.useState(true);
   const menuOpen = () => {
     setModal(true);
   };
@@ -93,16 +94,25 @@ const LandingNavbar: React.FC<Props> = () => {
             type='language'
           />
 
-          <BaseButton
-            type='empty'
-            onClick={goToLogin}
-            className={styles.BtnLogin}
-          >
-            Log In
-          </BaseButton>
-          <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
-            Sign Up
-          </BaseButton>
+          {!auth ? (
+            <>
+              <BaseButton
+                type='empty'
+                onClick={goToLogin}
+                className={styles.BtnLogin}
+              >
+                Log In
+              </BaseButton>
+              <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
+                Sign Up
+              </BaseButton>
+            </>
+          ) : (
+            <>
+              <div className={styles.User}>Hello, John Andersen</div>
+              <BaseButton className={styles.BtnSignup}>Logout</BaseButton>
+            </>
+          )}
         </span>
 
         <div className={styles.NavbarMobile}>
@@ -133,16 +143,25 @@ const LandingNavbar: React.FC<Props> = () => {
               type='language'
             />
 
-            <BaseButton
-              type='empty'
-              onClick={goToLogin}
-              className={styles.BtnLogin}
-            >
-              Log In
-            </BaseButton>
-            <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
-              Sign Up
-            </BaseButton>
+            {!auth ? (
+              <>
+                <BaseButton
+                  type='empty'
+                  onClick={goToLogin}
+                  className={styles.BtnLogin}
+                >
+                  Log In
+                </BaseButton>
+                <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
+                  Sign Up
+                </BaseButton>
+              </>
+            ) : (
+              <>
+                <div className={styles.User}>Hello, John Andersen</div>
+                <BaseButton className={styles.BtnSignup}>Logout</BaseButton>
+              </>
+            )}
           </LandingMobileMenu>
         </div>
       </div>

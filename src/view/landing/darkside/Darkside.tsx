@@ -140,8 +140,8 @@ const Darkside: React.FC<Props> = () => {
                 layout={'fill'}
                 alt={'Darkside Planet'}
                 priority={true}
-                blurDataURL='/images/landing/imgDarksidePlanet.png'
                 placeholder='blur'
+                blurDataURL='/images/landing/imgDarksidePlanet.png'
                 src='/images/landing/imgDarksidePlanet.png'
               />
             </div>
@@ -166,9 +166,10 @@ const Darkside: React.FC<Props> = () => {
         <div className={styles.WidgetBlock}>
           <div className={styles.WidgetBlockImage}>
             <Image
-              src='/images/landing/imgDarksideCompass.png'
               layout={'fill'}
               alt={'Unicorn image'}
+              blurDataURL='/images/landing/imgDarksideCompass.png'
+              src='/images/landing/imgDarksideCompass.png'
             />
           </div>
           <BaseTitle className={styles.WidgetBlockTitle}>

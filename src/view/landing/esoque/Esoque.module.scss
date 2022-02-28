@@ -80,8 +80,8 @@
     @include ifmobile {
       top: em(-5px);
       right: em(-14px);
-      width: em(137px);
-      height: em(132px);
+      width: em(151px);
+      height: em(128px);
     }
   }
 }
@@ -90,37 +90,35 @@
   background: $black2;
 
   .About {
-    padding-top: em(419px);
+    padding-top: em(147px);
     padding-bottom: em(67px);
     position: relative;
     @extend %center;
     flex-direction: column;
 
     @include iftablet {
-      padding-top: em(214px);
+      padding-top: em(114px);
       padding-bottom: em(56px);
     }
     @include ifmobile {
-      padding-top: em(148px);
+      padding-top: em(81px);
       padding-bottom: em(50px);
     }
 
     .AboutImage {
-      position: absolute;
-      z-index: 10;
-      top: em(107px);
+      width: em(250px);
+      height: em(236px);
+      position: relative;
       margin: 0 auto;
-      width: em(385px);
-      height: em(385px);
+      margin-bottom: em(40px);
       @include iftablet {
-        top: em(81px);
-        width: em(171px);
-        height: em(171px);
+        width: em(113px);
+        height: em(107px);
       }
       @include ifmobile {
-        top: em(72px);
-        width: em(107px);
-        height: em(107px);
+        width: em(70px);
+        height: em(66px);
+        margin-bottom: em(21px);
       }
     }
 

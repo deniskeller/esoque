@@ -9,7 +9,7 @@
   }
   @include ifmobile {
     padding-top: em(84px);
-    padding-bottom: em(20px);
+    padding-bottom: em(41px);
   }
 
   .WelcomeBlockTitle {
@@ -89,18 +89,18 @@
   .WidgetBlockImage {
     position: relative;
     margin: 0 auto;
-    width: em(204px);
-    height: em(204px);
-    margin-bottom: em(37px);
+    width: em(248px);
+    height: em(168px);
+    margin-bottom: em(80px);
     @include iftablet {
-      width: em(126px);
-      height: em(126px);
-      margin-bottom: em(54px);
+      width: em(148px);
+      height: em(100px);
+      margin-bottom: em(66px);
     }
     @include ifmobile {
-      width: em(81px);
-      height: em(81px);
-      margin-bottom: em(8px);
+      width: em(70px);
+      height: em(66px);
+      margin-bottom: em(21px);
     }
   }
 

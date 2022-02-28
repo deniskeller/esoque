@@ -98,6 +98,7 @@
 
 .OurWorkBlockContainer {
   background: $black2;
+  overflow: hidden;
 
   .OurWorkBlock {
     padding-top: em(136px);
@@ -124,12 +125,15 @@
 
       @include iftablet {
         top: em(84px);
-        width: em(260px);
-        height: em(250px);
+        width: em(310px);
+        height: em(288px);
       }
 
       @include ifmobile {
-        display: none;
+        top: em(39px);
+        right: -12.4%;
+        width: em(154px);
+        height: em(143px);
       }
     }
 
@@ -145,6 +149,7 @@
 
       @include ifmobile {
         margin-bottom: em(34px);
+        max-width: em(210px);
       }
     }
 

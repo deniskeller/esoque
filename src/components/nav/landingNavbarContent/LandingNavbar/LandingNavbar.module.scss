@@ -130,6 +130,23 @@
   @include ifmobile {
     min-width: em(76px);
     height: em(33px);
-    margin-left: em(-16px);
+    margin-left: em(-10px);
+  }
+}
+
+.User {
+  font-size: em(17px);
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  color: $yellow;
+  white-space: nowrap;
+  margin-right: em(27px);
+  @include iftablet {
+    font-size: em(14px);
+  }
+  @include ifmobile {
+    font-size: em(12px);
+    margin-bottom: em(20px);
   }
 }

@@ -78,23 +78,23 @@
     z-index: 10;
     right: em(-40px);
     top: em(-200px);
-    width: em(637px);
-    height: em(546px);
+    width: em(554px);
+    height: em(539px);
     float: right;
     margin-left: em(107px);
     @include iftablet {
       right: em(-40px);
       top: em(-100px);
-      width: em(378px);
-      height: em(324px);
+      width: em(353px);
+      height: em(343px);
       margin-left: em(15px);
     }
     @include ifmobile {
       top: em(-20px);
       right: em(0px);
-      width: em(148px);
-      height: em(122px);
-      margin-left: 0;
+      width: em(143px);
+      height: em(139px);
+      margin-left: em(20px);
     }
   }
 

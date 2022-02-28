@@ -10,18 +10,6 @@ const Home: React.FC<Props> = () => {
   return (
     <div className={styles.HomePage}>
       <div className={styles.HeaderBlock}>
-        {/* <img
-          className={styles.HeaderBlockImage}
-          src='/images/landing/bgHome.png'
-          alt=''
-        /> */}
-        {/* <Image
-          src='/images/landing/bgHome.png'
-          layout='fill'
-          // width={100}
-          // height={100}
-          alt={''}
-        /> */}
         <BaseContainer>
           <div className={styles.HeaderBlockContainer}>
             <BaseIcon
@@ -139,11 +127,11 @@ const Home: React.FC<Props> = () => {
           <div className={styles.ConclusionBlockContent}>
             <div className={styles.ConclusionBlockImage}>
               <Image
-                src='/images/landing/imgHomeMoneyBag.png'
                 layout={'fill'}
-                // width={653}
-                // height={503}
                 alt={'Money Bag image'}
+                loading='lazy'
+                blurDataURL='/images/landing/imgHomeMoneyBag.png'
+                src='/images/landing/imgHomeMoneyBag.png'
               />
             </div>
 

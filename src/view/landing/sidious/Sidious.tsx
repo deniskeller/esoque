@@ -53,12 +53,12 @@ const Sidious: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                src='/images/landing/imgSidious1.png'
                 layout={'fill'}
                 alt={''}
-                blurDataURL='/images/landing/imgSidious1.png'
+                priority={true}
                 placeholder='blur'
-                loading='lazy'
+                blurDataURL='/images/landing/imgSidious1.png'
+                src='/images/landing/imgSidious1.png'
               />
             </div>
             <div className={styles.WelcomeBlockLi}>

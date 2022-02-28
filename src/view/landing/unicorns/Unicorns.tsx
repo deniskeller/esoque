@@ -231,9 +231,11 @@ const Unicorns: React.FC<Props> = () => {
           <div className={styles.OurWorkBlock}>
             <div className={styles.OurWorkBlockImage}>
               <Image
-                src='/images/landing/imgUnicornsHorse2.png'
                 layout={'fill'}
                 alt={'Unicorn image'}
+                loading='lazy'
+                blurDataURL='/images/landing/imgUnicornsHorse2.png'
+                src='/images/landing/imgUnicornsHorse2.png'
               />
             </div>
 

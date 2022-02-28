@@ -23,6 +23,7 @@ const Esoque: React.FC<Props> = () => {
                 layout={'fill'}
                 alt={'Esocue image'}
                 priority={true}
+                blurDataURL='/images/landing/imgEsoque.png'
                 src='/images/landing/imgEsoque.png'
               />
             </div>
@@ -76,9 +77,9 @@ const Esoque: React.FC<Props> = () => {
           <div className={styles.About}>
             <div className={styles.AboutImage}>
               <Image
-                src='/images/landing/imgEsoque2.png'
                 layout={'fill'}
                 alt={'Esocue image'}
+                src='/images/landing/imgEsoque2.png'
               />
             </div>
             <BaseTitle className={styles.AboutTitle}>
