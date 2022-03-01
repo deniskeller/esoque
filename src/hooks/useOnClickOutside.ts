@@ -10,14 +10,14 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
     const listener = (event: Event) => {
       const el = ref?.current;
 
-      if (event instanceof MouseEvent) {
-        const x = event?.offsetX || 0;
-        const width = window?.innerWidth - 18;
+      // if (event instanceof MouseEvent) {
+      //   const x = event?.offsetX || 0;
+      //   const width = window?.innerWidth - 18;
 
-        if (x >= width) {
-          return;
-        }
-      }
+      //   if (x >= width) {
+      //     return;
+      //   }
+      // }
 
       if (!el || el.contains((event?.target as Node) || null)) {
         return;

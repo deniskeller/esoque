@@ -396,9 +396,9 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         </div>
       </div>
       {/* если юристидция не обсулживается */}
+      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
       <NotAcceptingPopup className='NotAcceptingPopup' />
       {/* дефолтная */}
-      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
     </>
   );
 };

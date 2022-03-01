@@ -25,10 +25,10 @@ const BasePopup: React.FC<Props> = ({
   const thisClass = React.useRef<HTMLDivElement>(null);
   const thisModal = React.useRef<HTMLDivElement>(null);
 
-  const clickOutsideHandler = () => {
-    hidePopup();
-  };
-  useOnClickOutside(thisModal, clickOutsideHandler);
+  // const clickOutsideHandler = () => {
+  //   hidePopup();
+  // };
+  // useOnClickOutside(thisModal, clickOutsideHandler);
 
   const bodyClassName = 'overflow-hidden';
 

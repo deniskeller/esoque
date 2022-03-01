@@ -15,7 +15,7 @@ const WidgetSidious: React.FC<Props> = ({}) => {
     { id: 3, title: 'Signature Certifications' },
   ];
 
-  const [tab, setTab] = React.useState(1);
+  const [tab, setTab] = React.useState(0);
 
   return (
     <>
