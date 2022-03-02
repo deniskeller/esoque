@@ -9,7 +9,7 @@ const Esoque: React.FC<Props> = () => {
   const [moreInfo, setMoreInfo] = useState(false);
 
   const moreInfoHandler = () => {
-    setMoreInfo(true);
+    setMoreInfo(!moreInfo);
   };
 
   return (
@@ -107,72 +107,245 @@ const Esoque: React.FC<Props> = () => {
         </BaseContainer>
       </div>
 
-      <BaseContainer>
-        <div className={styles.GraphBlock}>
-          <BaseTitle className={styles.GraphBlockTitle}>
-            Financial Historical Records
-          </BaseTitle>
-          <BaseTitle className={styles.GraphBlockSubtitle}>
-            Total assets that are managed
-          </BaseTitle>
-          <div
-            className={`${styles.GraphBlockImg} ${styles.GraphBlockImgDesktop}`}
-          >
-            <Image
-              layout={'fill'}
-              priority={true}
-              alt={'Esocue image'}
-              src='/images/landing/imgEsoqueGraph.png'
-            />
-            {/* {moreInfo && moreInfo ? (
-              <Image
-                src='/images/landing/imgEsoqueGraph2.png'
-                layout={'fill'}
-                priority={true}
-                alt={'Esocue image'}
-              />
-            ) : (
-              <Image
-                src='/images/landing/imgEsoqueGraph.png'
-                layout={'fill'}
-                priority={true}
-                alt={'Esocue image'}
-              />
-            )} */}
-          </div>
+      {/* <BaseContainer> */}
+      <div className={styles.GraphBlock}>
+        <BaseTitle className={styles.GraphBlockTitle}>
+          Financial Historical Records
+        </BaseTitle>
+        <BaseTitle className={styles.GraphBlockSubtitle}>
+          Total assets that are managed
+        </BaseTitle>
 
-          <div
-            className={`${styles.GraphBlockImg} ${styles.GraphBlockImgMobile}`}
-          >
-            <Image
-              src='/images/landing/imgEsoqueGraphMobile.png'
-              layout={'fill'}
-              priority={true}
-              alt={'Esocue image'}
-            />
-            {/* <Image
-              src='/images/landing/imgEsoqueGraph2.png'
-              layout={'fill'}
-              priority={true}
-              alt={'Esocue image'}
-            /> */}
-          </div>
+        <div
+          className={`${styles.GraphBlockContent} ${
+            moreInfo ? styles.FullHeight : ''
+          }`}
+        >
+          <div className={styles.LineCenter}></div>
+          <div className={styles.Gradient}></div>
+          <div className={styles.LineTop}></div>
 
-          {/* <div className={styles.GraphBlockGraph}>
-            <div className={styles.Graph}></div>
-          </div> */}
-          {moreInfo && moreInfo ? (
-            ''
-          ) : (
-            <BaseButton
-              className={styles.GraphBlockBtn}
-              onClick={moreInfoHandler}
+          <div className={styles.GraphBlockContentItem}>
+            <div className={`${styles.LeftItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p className={styles.PinkColor}>2021</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={`${styles.RightItem} ${styles.GraphItem} ${styles.LowPadding}`}
             >
-              See more
-            </BaseButton>
-          )}
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p className={styles.GreenColor}>2020</p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+
+                <div className={styles.RightColItem}>
+                  <p>
+                    Compliance Firms - <br />$ 9,377,400.00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.GraphBlockContentItem}>
+            <div className={`${styles.LeftItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p className={styles.YellowColor}>2019</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.RightItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p className={styles.PinkColor}>2018</p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.GraphBlockContentItem}>
+            <div className={`${styles.LeftItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p className={styles.GreenColor}>2017</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.RightItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p className={styles.YellowColor}>2016</p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.GraphBlockContentItem}>
+            <div className={`${styles.LeftItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p className={styles.PinkColor}>2015</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.RightItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p className={styles.GreenColor}>2014</p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.RightColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.GraphBlockContentItem}>
+            <div className={`${styles.LeftItem} ${styles.GraphItem}`}>
+              <div className={styles.LeftCol}>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Financial Institutions - <br /> $ 201,614,100.00
+                  </p>
+                </div>
+                <div className={styles.LeftColItem}>
+                  <p>
+                    Information Unicorns - <br /> $ 55,092,225.00
+                  </p>
+                </div>
+              </div>
+              <div className={styles.RightCol}>
+                <div className={styles.RightColItem}>
+                  <p className={styles.YellowColor}>2013</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </BaseContainer>
+
+        {moreInfo && moreInfo ? (
+          <BaseButton
+            className={styles.GraphBlockBtn}
+            onClick={moreInfoHandler}
+          >
+            Hide
+          </BaseButton>
+        ) : (
+          <BaseButton
+            className={styles.GraphBlockBtn}
+            onClick={moreInfoHandler}
+          >
+            See more
+          </BaseButton>
+        )}
+      </div>
+      {/* </BaseContainer> */}
     </>
   );
 };

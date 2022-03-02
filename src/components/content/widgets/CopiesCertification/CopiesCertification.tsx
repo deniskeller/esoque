@@ -230,7 +230,7 @@ const CopiesCertification: React.FC<Props> = ({}) => {
           Request
         </BaseButton>
       </div>
-      <CertificationPopup className='CertificationPopup' />
+      {/* <CertificationPopup className='CertificationPopup' /> */}
     </>
   );
 };

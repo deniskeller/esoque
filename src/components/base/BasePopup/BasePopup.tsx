@@ -21,10 +21,12 @@ const BasePopup: React.FC<Props> = ({
 }) => {
   const dispatch = useDispatch();
   const { popup, id } = useSelector((state: RootState) => state.modal);
+  console.log('popup: ', popup);
 
   const thisClass = React.useRef<HTMLDivElement>(null);
   const thisModal = React.useRef<HTMLDivElement>(null);
 
+  console.log('thisClass: ', thisClass.current);
   // const clickOutsideHandler = () => {
   //   hidePopup();
   // };

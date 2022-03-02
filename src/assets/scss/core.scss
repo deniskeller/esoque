@@ -69,18 +69,27 @@ a {
   overflow: hidden;
 }
 
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+// Это для браузера Chrome:
+// input[type='number']::-webkit-outer-spin-button,
+// input[type='number']::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// Это для браузера Firefox:
 input[type='number'] {
   -moz-appearance: textfield;
+  &:hover,
+  &:focus {
+    -moz-appearance: button;
+  }
 }
-input[type='number']:hover,
-input[type='number']:focus {
-  -moz-appearance: number-input;
-}
+
+// Это для остальных браузеров
+// input[type='number']:hover,
+// input[type='number']:focus {
+//   -moz-appearance: number-input;
+// }
 
 textarea::placeholder {
   line-height: 120%;

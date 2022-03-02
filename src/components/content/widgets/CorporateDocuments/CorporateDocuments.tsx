@@ -48,6 +48,7 @@ const descriptionList = [
 const CorporateDocuments: React.FC<Props> = ({}) => {
   const [companyName, setCompanyName] = React.useState<string>('');
   const [option, setOption] = React.useState<string>('');
+  const [NoApostille, setNoApostille] = React.useState<boolean>(true);
 
   //логика для инпута
   const changeHandlerCompanyName = (value: string) => {
@@ -260,7 +261,11 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
                 </tr>
 
                 <tr>
-                  <td className={styles.TdSelect}>
+                  <td
+                    className={`${styles.TdSelect} ${
+                      NoApostille ? styles.TdDisabled : ''
+                    }`}
+                  >
                     <BaseCheckbox
                       checkboxValue={checkbox}
                       onClick={() => setCheckbox(!checkbox)}
@@ -349,7 +354,7 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
             </table>
             <BaseButton
               className={styles.Button}
-              onClick={() => dispatch(setPopup('CorporateDocumentsPopup', 0))}
+              onClick={() => dispatch(setPopup('CorporateDocumentsPopup', 1))}
             >
               Request
             </BaseButton>
@@ -396,9 +401,9 @@ const CorporateDocuments: React.FC<Props> = ({}) => {
         </div>
       </div>
       {/* если юристидция не обсулживается */}
-      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
-      <NotAcceptingPopup className='NotAcceptingPopup' />
+      {/* <CorporateDocumentsPopup className='CorporateDocumentsPopup' /> */}
       {/* дефолтная */}
+      {/* <NotAcceptingPopup className='NotAcceptingPopup' /> */}
     </>
   );
 };

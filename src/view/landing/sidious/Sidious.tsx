@@ -1,6 +1,12 @@
 import React from 'react';
 import { BaseContainer, BaseText, BaseTitle } from '@base/index';
-import { ImprovingItem, WidgetSidious } from '@content/index';
+import {
+  CertificationPopup,
+  CorporateDocumentsPopup,
+  ImprovingItem,
+  NotAcceptingPopup,
+  WidgetSidious,
+} from '@content/index';
 import Image from 'next/image';
 import styles from './Sidious.module.scss';
 
@@ -299,6 +305,12 @@ const Sidious: React.FC<Props> = () => {
           </BaseTitle>
         </div>
       </div>
+
+      <CertificationPopup className='CertificationPopup' />
+      {/* если юристидция не обсулживается */}
+      <NotAcceptingPopup className='NotAcceptingPopup' />
+      {/* дефолтная */}
+      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
     </>
   );
 };
