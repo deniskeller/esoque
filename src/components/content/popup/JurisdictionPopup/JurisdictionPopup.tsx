@@ -19,10 +19,12 @@ interface Props {
 
 const JurisdictionPopup: React.FC<Props> = ({ className }) => {
   const { id } = useSelector((state: RootState) => state.modal);
+  console.log('id: ', id);
 
   const [page, setPage] = React.useState(id);
 
   let modalData: IModalData = jurisdictionData[page - 1];
+  console.log('modalData: ', modalData);
 
   const length = modalData?.content?.length;
 
@@ -47,6 +49,8 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
     }
     return false;
   };
+
+  JSON.stringify(``);
 
   React.useEffect(() => {
     setPage(page);
@@ -75,7 +79,6 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
           </BaseTitle>
 
           <div className={styles.Content}>
-            {/* {modalData.content} */}
             <p className={styles.SubtitleList}>
               In order to register a limited liability company (LLP) in Estonia,
               you must submit the following documents and provide the following
@@ -173,7 +176,7 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 </ul>
               </li>
               <li className={styles.ListLi}>
-                Charter <br /> The company's charter is an extract from the
+                Charter <br /> The company&#39;s charter is an extract from the
                 Commercial Code of Estonia and includes the main articles
                 regulating procedure for holding a General Meeting, voting of
                 owners, making decisions by the General Meeting, etc. Charter
@@ -198,6 +201,7 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               </li>
             </ul>
           </div>
+
           <div className={styles.UnicornsPopupNav}>
             <div
               className={`${styles.Btn} ${styles.PrevBtn} ${
