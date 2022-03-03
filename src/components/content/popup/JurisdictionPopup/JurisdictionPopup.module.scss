@@ -1,0 +1,150 @@
+.JurisdictionPopupWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(16, 16, 16, 0.59);
+  border-radius: 10px;
+}
+
+.BackgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.Title {
+  position: relative;
+  z-index: 10;
+  margin-bottom: em(44px);
+
+  @include iftablet {
+    margin-bottom: em(51px);
+  }
+
+  @include ifmobile {
+    margin-bottom: em(30px);
+  }
+}
+
+.Content {
+  position: relative;
+  z-index: 10;
+  height: em(440px);
+  padding-right: em(50px);
+  color: $white;
+  font-style: normal;
+  font-weight: 400;
+  overflow-y: auto;
+  direction: ltr;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: em(5px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.SubtitleList {
+  font-family: $font-Calibri;
+  font-size: em(19px);
+  line-height: 120%;
+}
+
+.Subtitle {
+  font-size: em(25px);
+  font-weight: bold;
+  font-family: $font-Termina;
+}
+
+.List {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  margin-bottom: em(23px);
+
+  .ListLi {
+    font-size: em(19px);
+    line-height: 120%;
+    font-family: $font-Calibri;
+    counter-increment: my-awesome-counter;
+    &::before {
+      content: counter(my-awesome-counter) '. ';
+    }
+  }
+}
+
+.Sublist {
+  margin-bottom: em(23px);
+  margin-left: em(40px);
+  list-style: disc;
+
+  .SublistLi {
+    font-size: em(19px);
+    line-height: 120%;
+    font-family: $font-Calibri;
+  }
+}
+
+.UnicornsPopupNav {
+  position: absolute;
+  z-index: 100;
+  right: em(86px);
+  bottom: em(47px);
+  max-width: em(100px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include iftablet {
+    max-width: em(83px);
+    right: em(34px);
+    bottom: em(27px);
+  }
+  @include ifmobile {
+    max-width: em(50px);
+    right: em(20px);
+    bottom: em(16px);
+  }
+
+  .Btn {
+    display: inline-flex;
+    cursor: pointer;
+    overflow: hidden;
+    svg {
+      width: em(21px);
+      height: em(24px);
+      @include iftablet {
+        width: em(15px);
+        height: em(18px);
+      }
+      @include ifmobile {
+        width: em(10px);
+        height: em(13px);
+      }
+    }
+  }
+
+  .PrevBtn {
+    -webkit-transform: scaleY(-1);
+    transform: scaleX(-1);
+  }
+
+  .Disable {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}

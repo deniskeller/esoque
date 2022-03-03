@@ -19,8 +19,11 @@
   width: 100%;
   max-width: em(1303px);
   min-height: em(765px);
-  padding: em(135px) em(100px) em(60px);
+  padding: em(104px) em(18px) em(113px) em(105px);
   border-radius: 10px;
+
+  overflow: hidden;
+
   @include iftablet {
     max-width: em(874px);
     min-height: em(638px);
@@ -62,6 +65,7 @@
   top: em(34px);
   right: em(34px);
   cursor: pointer;
+  z-index: 100;
   @include iftablet {
     width: em(19px);
     height: em(26px);

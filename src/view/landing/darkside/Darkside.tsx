@@ -5,6 +5,7 @@ import {
   AdvantageItem,
   CountryItem,
   JurisdictionCountryItem,
+  JurisdictionPopup,
   WidgetDarkside,
 } from '@content/index';
 import styles from './Darkside.module.scss';
@@ -52,23 +53,17 @@ const advantages = [
 
 const jurisdictions = [
   {
-    id: 1,
+    id: 16,
     title: 'London',
     subtitle: 'London [United Kingdom] - 550 EUR',
     image: 'imgDarksideLondon',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Hong kong',
     subtitle: 'Hong Kong [China] - 2100 EUR',
     image: 'imgDarksideHongkong',
   },
-  // {
-  //   id: 3,
-  //   title: 'Hong kong',
-  //   subtitle: 'Hong Kong [China] - 2100 EUR',
-  //   image: 'imgDarksideHongkong',
-  // },
 ];
 
 const sequencing = [
@@ -96,36 +91,41 @@ const sequencing = [
 ];
 
 const countryItems = [
-  { id: 1, title: 'SCOTLAND', image: 'flag-scotland.png' },
-  { id: 2, title: 'IRELAND', image: 'flag-ireland.png' },
-  { id: 3, title: 'CANADA', image: 'flag-canada.png' },
-  { id: 4, title: 'CYPRUS', image: 'flag-cyprus.png' },
-  { id: 5, title: 'LATVIA', image: 'flag-latvia.png' },
-  { id: 6, title: 'ESTONIA', image: 'flag-estonia.png' },
-  { id: 7, title: 'LITHUANIA', image: 'flag-lithuania.png' },
-  { id: 8, title: 'SWEDEN', image: 'flag-sweden.png' },
-  { id: 9, title: 'LIECHTENSTEIN', image: 'flag-liechtenstein.png' },
-  { id: 10, title: 'LUXEMBOURG', image: 'flag-luxembourg.png' },
-  { id: 11, title: 'NETHERLANDS', image: 'flag-netherlands.png' },
-  { id: 12, title: 'SWITZERLAND', image: 'flag-switzerland.png' },
-  { id: 13, title: 'SINGAPORE', image: 'flag-singapore.png' },
-  { id: 14, title: 'HONG KONG', image: 'flag-hong-kong.png' },
-  { id: 15, title: 'HUNGARY', image: 'flag-hungary.png' },
+  { id: 1, title: 'CANADA', image: 'flag-canada.png' },
+  { id: 2, title: 'CYPRUS', image: 'flag-cyprus.png' },
+  { id: 3, title: 'DOMINICA', image: 'flag-dominica.png' },
+  { id: 4, title: 'ESTONIA', image: 'flag-estonia.png' },
+  { id: 5, title: 'HONG KONG', image: 'flag-hong-kong.png' },
+  { id: 6, title: 'LATVIA', image: 'flag-latvia.png' },
+  { id: 7, title: 'LIECHTENSTEIN', image: 'flag-liechtenstein.png' },
+  { id: 8, title: 'MARSHALL ISLANDS', image: 'flag-marshall-islands.png' },
+  { id: 9, title: 'NETHERLANDS', image: 'flag-netherlands.png' },
   {
-    id: 16,
+    id: 10,
     title: 'SAINT VINCENT & THE GRENADINES',
     image: 'flag-st-vincent-grenadines.png',
   },
-  { id: 17, title: 'DOMINICA', image: 'flag-dominica.png' },
-  { id: 18, title: 'MARSHALL ISLANDS', image: 'flag-marshall-islands.png' },
-  { id: 19, title: 'SEYCHELLES', image: 'flag-seychelles.png' },
-  { id: 20, title: 'UNITED KINGDOM', image: 'flag-united-kingdom.png' },
-  { id: 21, title: 'CURACAO', image: 'flag-curacao.png' },
-  { id: 22, title: 'MALTA', image: 'flag-malta.png' },
-  { id: 23, title: 'ALDERNEY', image: 'flag-alderney.png' },
-  { id: 24, title: 'JERSEY', image: 'flag-jersey.png' },
-  { id: 25, title: 'GIBRALTAR', image: 'flag-gibraltar.png' },
-  { id: 26, title: 'USA', image: 'flag-united-states.png' },
+  { id: 11, title: 'SCOTLAND', image: 'flag-scotland.png' },
+  { id: 12, title: 'SEYCHELLES', image: 'flag-seychelles.png' },
+  { id: 13, title: 'SINGAPORE', image: 'flag-singapore.png' },
+  { id: 14, title: 'SWEDEN', image: 'flag-sweden.png' },
+  { id: 15, title: 'SWITZERLAND', image: 'flag-switzerland.png' },
+  { id: 16, title: 'UNITED KINGDOM', image: 'flag-united-kingdom.png' },
+  { id: 17, title: 'USA', image: 'flag-united-states.png' },
+
+  // есть модалка, но нет юрисдикции
+  //georgia
+
+  // нет модалок
+  // { id: 2, title: 'IRELAND', image: 'flag-ireland.png' },
+  // { id: 7, title: 'LITHUANIA', image: 'flag-lithuania.png' },
+  // { id: 10, title: 'LUXEMBOURG', image: 'flag-luxembourg.png' },
+  // { id: 15, title: 'HUNGARY', image: 'flag-hungary.png' },
+  // { id: 21, title: 'CURACAO', image: 'flag-curacao.png' },
+  // { id: 22, title: 'MALTA', image: 'flag-malta.png' },
+  // { id: 23, title: 'ALDERNEY', image: 'flag-alderney.png' },
+  // { id: 24, title: 'JERSEY', image: 'flag-jersey.png' },
+  // { id: 25, title: 'GIBRALTAR', image: 'flag-gibraltar.png' },
 ];
 
 const Darkside: React.FC<Props> = () => {
@@ -352,6 +352,8 @@ const Darkside: React.FC<Props> = () => {
           </div>
         </BaseContainer>
       </div>
+
+      <JurisdictionPopup className='JurisdictionPopup' />
     </>
   );
 };

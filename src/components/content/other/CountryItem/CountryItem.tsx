@@ -14,7 +14,7 @@ const CountryItem: React.FC<Props> = ({ id, title, image }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    // dispatch(setPopup('UnicornsPopup', id));
+    dispatch(setPopup('JurisdictionPopup', id));
   };
 
   return (
