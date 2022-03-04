@@ -139,12 +139,6 @@
   margin-left: em(40px);
   list-style: disc;
 
-  @include iftablet {
-  }
-
-  @include ifmobile {
-  }
-
   .SublistLi {
     font-size: em(19px);
     line-height: 120%;
