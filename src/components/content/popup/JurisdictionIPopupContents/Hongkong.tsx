@@ -43,7 +43,7 @@ const Hongkong: React.FC<Props> = () => {
           <br /> In order to register company:
         </p>
 
-        <ul className={styles.List}>
+        <ol className={styles.List}>
           <li className={styles.ListLi}>Desired name;</li>
           <li className={styles.ListLi}>
             To Beneficiary:
@@ -66,7 +66,7 @@ const Hongkong: React.FC<Props> = () => {
               </li>
             </ul>
           </li>
-        </ul>
+        </ol>
       </div>
     </>
   );

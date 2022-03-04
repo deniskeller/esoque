@@ -30,7 +30,7 @@ const Canada: React.FC<Props> = () => {
 
         <h2 className={styles.Subtitle}>Company structure:</h2>
 
-        <ul className={styles.List}>
+        <ol className={styles.List}>
           <li className={styles.ListLi}>
             The company does not have the status of separate legal entity, thus
             structure simultaneously consists of two corporate entities: a low
@@ -56,7 +56,7 @@ const Canada: React.FC<Props> = () => {
             representative - a resident of Canada, providing communication with
             government agencies.
           </li>
-        </ul>
+        </ol>
 
         <h2 className={styles.Subtitle}>Taxation and reporting</h2>
 

@@ -20,7 +20,7 @@ const Estonia: React.FC<Props> = () => {
           information:
         </p>
 
-        <ul className={styles.List}>
+        <ol className={styles.List}>
           <li className={styles.ListLi}>
             The name of company: with latin letters, English version is also
             possible. It must comply with the laws of the Republic of Estonia.
@@ -47,11 +47,11 @@ const Estonia: React.FC<Props> = () => {
             The desired amount of share capital - for a limited liability
             company the minimum amount of share capital is EUR 2500
           </li>
-        </ul>
+        </ol>
 
         <h2 className={styles.Subtitle}>Obligations to register:</h2>
 
-        <ul className={styles.List}>
+        <ol className={styles.List}>
           <li className={styles.ListLi}>
             Submit an inquiry from your chosen Estonian banking institution
             regarding payment of the authorized capital to a temporary account
@@ -77,13 +77,13 @@ const Estonia: React.FC<Props> = () => {
             would like to register as a VAT payer with the Estonian State
             Revenue Service.
           </li>
-        </ul>
+        </ol>
 
         <h2 className={styles.Subtitle}>
           After registration you will receive:
         </h2>
 
-        <ul className={styles.List}>
+        <ol className={styles.List}>
           <li className={styles.ListLi}>
             B-card <br /> The B-card is an extract from Estonian Commercial
             Register and contains the following information of Estonian company:
@@ -131,7 +131,7 @@ const Estonia: React.FC<Props> = () => {
               </li>
             </ul>
           </li>
-        </ul>
+        </ol>
       </div>
     </>
   );

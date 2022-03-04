@@ -10,6 +10,8 @@ import {
   Dominica,
   Estonia,
   Hongkong,
+  Latvia,
+  Liechtenstein,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
 
@@ -76,6 +78,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgEstonia
                 : page == 5
                 ? styles.BgHongkong
+                : page == 6
+                ? styles.BgLatvia
+                : page == 7
+                ? styles.BgLiechtenstein
                 : ''
             }`}
           >
@@ -89,6 +95,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Estonia />
             ) : page == 5 ? (
               <Hongkong />
+            ) : page == 6 ? (
+              <Latvia />
+            ) : page == 7 ? (
+              <Liechtenstein />
             ) : (
               ''
             )}

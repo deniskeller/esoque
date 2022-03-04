@@ -120,8 +120,11 @@
     line-height: 120%;
     font-family: $font-Calibri;
     counter-increment: my-awesome-counter;
+    padding-left: em(30px, 19px);
     &::before {
       content: counter(my-awesome-counter) '. ';
+      margin-left: em(-28px, 19px);
+      padding-right: em(6px, 19px);
     }
 
     @include iftablet {
@@ -135,17 +138,16 @@
 }
 
 .Sublist {
-  margin-bottom: em(23px);
   margin-left: em(40px);
   list-style: disc;
 
   .SublistLi {
-    font-size: em(19px);
+    font-size: em(19px, 19px);
     line-height: 120%;
     font-family: $font-Calibri;
 
     @include iftablet {
-      font-size: em(16px);
+      font-size: em(16px, 16px);
     }
 
     @include ifmobile {
