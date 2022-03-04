@@ -365,7 +365,7 @@
         .LeftCol {
           border-right: 3px solid $grey;
           @include ifmobile {
-            border-right: 1px solid $grey;
+            border-right: none;
           }
           .LeftColItem {
             position: relative;
@@ -574,7 +574,7 @@
         .RightCol {
           border-left: 3px solid $grey;
           @include ifmobile {
-            border-left: 1px solid $grey;
+            border-left: none;
           }
 
           .RightColItem {
