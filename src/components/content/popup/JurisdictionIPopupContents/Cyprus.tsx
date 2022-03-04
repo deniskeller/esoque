@@ -40,8 +40,8 @@ const Cyprus: React.FC<Props> = () => {
         <p className={styles.Paragraph}>
           Dividends received from a non-resident subsidiary are currently
           exempted from paying a defense fee of 20%, provided that the tax rate
-          on the company's profits in the subsidiary’s jurisdiction is at least
-          5%, no more than 50% of the subsidiary’s activity is investment.
+          on the company's profits in the subsidiary&#39;s jurisdiction is at
+          least 5%, no more than 50% of the subsidiary’s activity is investment.
           Withholding tax is 0%. Regarding the structure of the company it must
           have a registered address in Cyprus, moreover, the company may have
           one or more directors - individuals and / or legal entities resident
