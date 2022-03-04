@@ -21,9 +21,7 @@
   min-height: em(765px);
   padding: em(104px) em(18px) em(113px) em(105px);
   border-radius: 10px;
-
   overflow: hidden;
-
   @include iftablet {
     max-width: em(874px);
     min-height: em(638px);

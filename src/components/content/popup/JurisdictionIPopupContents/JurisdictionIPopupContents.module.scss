@@ -1,0 +1,161 @@
+.JurisdictionPopupWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(16, 16, 16, 0.59);
+  border-radius: 10px;
+}
+
+.BackgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.Title {
+  position: relative;
+  z-index: 10;
+  margin-bottom: em(44px);
+
+  @include iftablet {
+    margin-bottom: em(30px);
+  }
+
+  @include ifmobile {
+    margin-bottom: em(20px);
+  }
+}
+
+.Paragraph {
+  font-family: $font-Calibri;
+  font-size: em(19px);
+  line-height: 120%;
+  margin-bottom: em(20px);
+  @include iftablet {
+    font-size: em(16px);
+  }
+
+  @include ifmobile {
+    font-size: em(9px);
+  }
+}
+
+.Content {
+  position: relative;
+  z-index: 10;
+  height: em(440px);
+  padding-right: em(50px);
+  color: $white;
+  font-style: normal;
+  font-weight: 400;
+  overflow-y: auto;
+  direction: ltr;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+  @include iftablet {
+    height: em(400px);
+  }
+
+  @include ifmobile {
+    height: em(400px);
+    padding-right: em(10px);
+  }
+
+  &::-webkit-scrollbar {
+    width: em(5px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.SubtitleList {
+  font-family: $font-Calibri;
+  font-size: em(19px);
+  line-height: 120%;
+
+  @include iftablet {
+    font-size: em(16px);
+  }
+
+  @include ifmobile {
+    font-size: em(9px);
+  }
+}
+
+.Subtitle {
+  font-size: em(25px);
+  line-height: 120%;
+  font-weight: bold;
+  font-family: $font-Termina;
+
+  @include iftablet {
+    font-size: em(20px);
+  }
+
+  @include ifmobile {
+    font-size: em(16px);
+  }
+}
+
+.List {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  margin-bottom: em(23px);
+
+  .ListLi {
+    font-size: em(19px);
+    line-height: 120%;
+    font-family: $font-Calibri;
+    counter-increment: my-awesome-counter;
+    &::before {
+      content: counter(my-awesome-counter) '. ';
+    }
+
+    @include iftablet {
+      font-size: em(16px);
+    }
+
+    @include ifmobile {
+      font-size: em(9px);
+    }
+  }
+}
+
+.Sublist {
+  margin-bottom: em(23px);
+  margin-left: em(40px);
+  list-style: disc;
+
+  @include iftablet {
+  }
+
+  @include ifmobile {
+  }
+
+  .SublistLi {
+    font-size: em(19px);
+    line-height: 120%;
+    font-family: $font-Calibri;
+
+    @include iftablet {
+      font-size: em(16px);
+    }
+
+    @include ifmobile {
+      font-size: em(9px, 9px);
+    }
+  }
+}

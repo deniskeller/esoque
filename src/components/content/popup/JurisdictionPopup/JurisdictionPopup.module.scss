@@ -1,104 +1,3 @@
-.JurisdictionPopupWrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  background: rgba(16, 16, 16, 0.59);
-  border-radius: 10px;
-}
-
-.BackgroundImage {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: 10px;
-}
-
-.Title {
-  position: relative;
-  z-index: 10;
-  margin-bottom: em(44px);
-
-  @include iftablet {
-    margin-bottom: em(51px);
-  }
-
-  @include ifmobile {
-    margin-bottom: em(30px);
-  }
-}
-
-.Content {
-  position: relative;
-  z-index: 10;
-  height: em(440px);
-  padding-right: em(50px);
-  color: $white;
-  font-style: normal;
-  font-weight: 400;
-  overflow-y: auto;
-  direction: ltr;
-  scrollbar-color: #d4aa70 #e4e4e4;
-  scrollbar-width: thin;
-
-  &::-webkit-scrollbar {
-    width: em(5px);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.6);
-  }
-}
-
-.SubtitleList {
-  font-family: $font-Calibri;
-  font-size: em(19px);
-  line-height: 120%;
-}
-
-.Subtitle {
-  font-size: em(25px);
-  font-weight: bold;
-  font-family: $font-Termina;
-}
-
-.List {
-  list-style: none;
-  counter-reset: my-awesome-counter;
-  margin-bottom: em(23px);
-
-  .ListLi {
-    font-size: em(19px);
-    line-height: 120%;
-    font-family: $font-Calibri;
-    counter-increment: my-awesome-counter;
-    &::before {
-      content: counter(my-awesome-counter) '. ';
-    }
-  }
-}
-
-.Sublist {
-  margin-bottom: em(23px);
-  margin-left: em(40px);
-  list-style: disc;
-
-  .SublistLi {
-    font-size: em(19px);
-    line-height: 120%;
-    font-family: $font-Calibri;
-  }
-}
-
 .UnicornsPopupNav {
   position: absolute;
   z-index: 100;
@@ -147,4 +46,42 @@
     pointer-events: none;
     opacity: 0.3;
   }
+}
+
+.BgWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100px;
+  padding: em(104px) em(18px) em(113px) em(105px);
+
+  @include iftablet {
+    padding: em(90px) em(18px) em(54px) em(50px);
+  }
+
+  @include ifmobile {
+    padding: em(70px) em(19px) em(19px) em(19px);
+  }
+}
+
+.BgCanada {
+  background: url('/images/landing/jurisdictions/canada.jpg') center / cover
+    no-repeat;
+}
+
+.BgCyprus {
+  background: url('/images/landing/jurisdictions/cyprus.jpg') center / cover
+    no-repeat;
+}
+
+.BgDominica {
+  background: url('/images/landing/jurisdictions/dominica.jpg') center / cover
+    no-repeat;
+}
+
+.BgEstonia {
+  background: url('/images/landing/jurisdictions/estonia.jpg') center / cover
+    no-repeat;
 }
