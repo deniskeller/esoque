@@ -276,6 +276,7 @@
     height: em(710px);
     margin-bottom: em(36px);
     overflow: hidden;
+    transition: 0.5s;
 
     @include iftablet {
       height: em(581px);
