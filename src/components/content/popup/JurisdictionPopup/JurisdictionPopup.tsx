@@ -12,14 +12,9 @@ import {
   Hongkong,
   Latvia,
   Liechtenstein,
+  Marshall,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
-
-interface IModalData {
-  title?: string;
-  content?: string;
-  image?: string;
-}
 
 interface Props {
   className: string;
@@ -52,8 +47,6 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
     return false;
   };
 
-  JSON.stringify(``);
-
   React.useEffect(() => {
     setPage(page);
   }, [page]);
@@ -82,6 +75,8 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgLatvia
                 : page == 7
                 ? styles.BgLiechtenstein
+                : page == 8
+                ? styles.BgMarshall
                 : ''
             }`}
           >
@@ -99,6 +94,8 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Latvia />
             ) : page == 7 ? (
               <Liechtenstein />
+            ) : page == 8 ? (
+              <Marshall />
             ) : (
               ''
             )}
