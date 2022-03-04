@@ -40,18 +40,19 @@ const Cyprus: React.FC<Props> = () => {
         <p className={styles.Paragraph}>
           Dividends received from a non-resident subsidiary are currently
           exempted from paying a defense fee of 20%, provided that the tax rate
-          on the company's profits in the subsidiary&#39;s jurisdiction is at
-          least 5%, no more than 50% of the subsidiary’s activity is investment.
-          Withholding tax is 0%. Regarding the structure of the company it must
-          have a registered address in Cyprus, moreover, the company may have
-          one or more directors - individuals and / or legal entities resident
-          in any jurisdiction. Having one secretary is a necessary – a physical
-          or legal resident in any jurisdiction. Regarding equity, we register
-          companies with a capital of EUR 1,000.00 divided into 1,000 common
-          shares of EUR 1.00 each. It is important to emphasize that capital can
-          be increased in the course of the company. Type of shares - only
-          registered. In addition, the company may have one or more shareholders
-          - individuals and / or legal entities, residents of any jurisdiction.
+          on the company&#39;s profits in the subsidiary&#39;s jurisdiction is
+          at least 5%, no more than 50% of the subsidiary’s activity is
+          investment. Withholding tax is 0%. Regarding the structure of the
+          company it must have a registered address in Cyprus, moreover, the
+          company may have one or more directors - individuals and / or legal
+          entities resident in any jurisdiction. Having one secretary is a
+          necessary – a physical or legal resident in any jurisdiction.
+          Regarding equity, we register companies with a capital of EUR 1,000.00
+          divided into 1,000 common shares of EUR 1.00 each. It is important to
+          emphasize that capital can be increased in the course of the company.
+          Type of shares - only registered. In addition, the company may have
+          one or more shareholders - individuals and / or legal entities,
+          residents of any jurisdiction.
         </p>
         <p className={styles.Paragraph}>
           The period of financial statements is calendar year 01/01-31/12,

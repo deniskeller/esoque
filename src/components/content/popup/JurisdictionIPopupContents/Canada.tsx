@@ -21,8 +21,8 @@ const Canada: React.FC<Props> = () => {
         <p className={styles.Paragraph}>
           Canada is not considered an off-shore jurisdiction, subject to
           taxation is the entire global profit of the company. If the company
-          doesn’t operate in Canada, it’s not a tax resident, therefore none of
-          the taxes are applied. The reputation of Canada as a fairly
+          doesn&#39;t operate in Canada, it&#39;s not a tax resident, therefore
+          none of the taxes are applied. The reputation of Canada as a fairly
           transparent jurisdiction in terms of tax authorities and public
           authorities creates extra-provincial company an attractive tool for
           international tax planning.
@@ -35,12 +35,12 @@ const Canada: React.FC<Props> = () => {
             The company does not have the status of separate legal entity, thus
             structure simultaneously consists of two corporate entities: a low
             tax jurisdiction company and its corporate entity in Canada. After
-            the termination of company's existence in a low tax jurisdiction,
-            the Canadian company ceases to exist.
+            the termination of company&#39;s existence in a low tax
+            jurisdiction, the Canadian company ceases to exist.
           </li>
           <li className={styles.ListLi}>
-            The Canadian company doesn’t have a separate share capital. It forms
-            the authorized capital from company of low tax jurisdiction.
+            The Canadian company doesn&#39;t have a separate share capital. It
+            forms the authorized capital from company of low tax jurisdiction.
           </li>
           <li className={styles.ListLi}>
             The registered address is in Canada and it is not a compulsory to
