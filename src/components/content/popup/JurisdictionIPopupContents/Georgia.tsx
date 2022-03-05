@@ -37,8 +37,8 @@ const Georgia: React.FC<Props> = () => {
                 Document which proves the identity of founder: <br />
                 If the founder is already a legal entity, its constituent
                 documents and decisions are required. In case of foreign
-                company, the company's documents must be translated, legalized
-                and certified with an apostille.
+                company, the company&#39;s documents must be translated,
+                legalized and certified with an apostille.
               </li>
               <li className={styles.SublistLi}>Power of Attorney</li>
               <li className={styles.SublistLi}>
@@ -112,8 +112,12 @@ const Georgia: React.FC<Props> = () => {
           </li>
         </ol>
 
-        <p className={`${styles.Paragraph} ${styles.Italic}`}>Note: Assuming that legal entity contacts relevant authorities within one month to obtain the status of international financial company- it will be assigned in the same year. In case of date expiration this status will be assigned for the next calendar year.
-</p>
+        <p className={`${styles.Paragraph} ${styles.Italic}`}>
+          Note: Assuming that legal entity contacts relevant authorities within
+          one month to obtain the status of international financial company- it
+          will be assigned in the same year. In case of date expiration this
+          status will be assigned for the next calendar year.
+        </p>
       </div>
     </>
   );
