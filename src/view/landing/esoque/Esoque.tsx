@@ -11,15 +11,14 @@ const Esoque: React.FC<Props> = () => {
 
   const executeScroll = () => myRef.current.scrollIntoView();
 
-  const moreInfoHandler = () => {
-    setMoreInfo(!moreInfo);
+  const moreInfoOpen = () => {
+    setMoreInfo(true);
   };
 
-  React.useEffect(() => {
-    if (!moreInfo) {
-      executeScroll();
-    }
-  }, [moreInfo]);
+  const moreInfoClose = () => {
+    setMoreInfo(false);
+    executeScroll();
+  };
 
   return (
     <>
@@ -339,17 +338,11 @@ const Esoque: React.FC<Props> = () => {
         </div>
 
         {moreInfo && moreInfo ? (
-          <BaseButton
-            className={styles.GraphBlockBtn}
-            onClick={moreInfoHandler}
-          >
+          <BaseButton className={styles.GraphBlockBtn} onClick={moreInfoClose}>
             Hide
           </BaseButton>
         ) : (
-          <BaseButton
-            className={styles.GraphBlockBtn}
-            onClick={moreInfoHandler}
-          >
+          <BaseButton className={styles.GraphBlockBtn} onClick={moreInfoOpen}>
             See more
           </BaseButton>
         )}
