@@ -14,97 +14,106 @@ const Georgia: React.FC<Props> = () => {
       </BaseTitle>
 
       <div className={styles.Content}>
-        <p className={styles.Paragraph}>
-          Switzerland is not an off-shore jurisdiction, therefore taxation is
-          applied to company profits. Hence, depending on nature of the
-          business, exists a series of tax rebates and complete or partial
-          exemption from taxes imposed. These conditions of jurisdiction are
-          attractive for seperate business activities taking place in
-          Switzerland. Since the company is considered as resident of
-          Switzerland, it can utilize advantage of double tax treaties concluded
-          by Switzerland, an agreement between Switzerland and the EU can also
-          receive a certificate of Swiss tax residency.
-        </p>
-
-        <p className={styles.Paragraph}>
-          The most common form of Company in Switzerland: <br />
-          AG (Aktiengesselshaft), joint-stock Company
-        </p>
-
-        <h2 className={styles.Subtitle}>Registration Address</h2>
-
-        <p className={styles.Paragraph}>
-          The registration address of company must be in the territory
-          Switzerland.
-        </p>
-
-        <h2 className={styles.Subtitle}>The Management of Company</h2>
-
-        <p className={styles.Paragraph}>
-          In the company must be at least one director- a resident of
-          Switzerland who maintains the communication with Government Agencies
-          and is responsible for company obligation fulfillment related to
-          Federal Tax Administration and Zefix. (Registries of Commerce)
-        </p>
-
-        <p className={styles.Paragraph}>
-          Company meetings are a complete compulsory.
-        </p>
-
-        <h2 className={styles.Subtitle}>Initial Capital</h2>
-
         <p className={styles.SubtitleList}>
-          Minimal capital required- 100 000 Swiss Franks. <br />
-          Company ownership is determined by one from two possible share forms:
+          Georgia company registration <br />
+          Georgian company LTD for international business:
         </p>
 
         <ol className={styles.List}>
           <li className={styles.ListLi}>
-            Bearer shares- Company can issue bearer shares only on condition of
-            100% statutory capital payment. In this form of ownership there are
-            no requirements for the minimum number of shareholders.
+            Registration of a legal entity (LLC)
           </li>
           <li className={styles.ListLi}>
-            Registered shares- The minimum number of shareholders is three.
-            Shareholders can be both physical and legal persons; There are no
-            restrictions on legal entities - offshore companies.
+            Obtaining a license from international financial company and tax
+            authorities.
           </li>
         </ol>
 
-        <h2 className={styles.Subtitle}>Tax Sources</h2>
+        <ol className={styles.List}>
+          <li className={styles.ListLi}>
+            Required documents for registration of LLC:
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                Document which proves the identity of founder: <br />
+                If the founder is already a legal entity, its constituent
+                documents and decisions are required. In case of foreign
+                company, the company's documents must be translated, legalized
+                and certified with an apostille.
+              </li>
+              <li className={styles.SublistLi}>Power of Attorney</li>
+              <li className={styles.SublistLi}>
+                Consent from owner of real estate or a properly prepared and
+                certified contract with the right to use these things. (rent,
+                lend, etc.).
+              </li>
+              <li className={styles.SublistLi}>
+                Contract on appointment of an authorized person to management.{' '}
+                <br />
+                The registration of LLC is carried out in the business register
+                for which one must apply to the House of Justice or a public
+                register.
+              </li>
+            </ul>
+          </li>
 
-        <p className={styles.Paragraph}>
-          Withholding tax of 35% applies for the withdrawal of income, dividends
-          for non-residents. However, in cases when income is withdrawn to
-          persons - residents of countries that have an agreement on the
-          avoidance of double taxation with Switzerland, the tax can be reduced
-          to 20%, and to residents of EU countries - to 0%
-        </p>
+          <li className={styles.ListLi}>
+            Required documents for representative office registration in a
+            foreign company:
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                Constitutive documents of the company registration, which is
+                registered.
+              </li>
+              <li className={styles.SublistLi}>
+                Certified in accordance with the established procedure,
+                legalized or certified by an apostille of the decision (minutes
+                of the meeting) of the company whose representative office is
+                registered, subsequently translated and notarized.
+              </li>
+              <li className={styles.SublistLi}>
+                Power of attorney legalized and certified with an apostille,
+                subsequently translated and notarized.
+              </li>
+              <li className={styles.SublistLi}>
+                The consent of the authorized person from management by being
+                appointed to the specified position.
+              </li>
+            </ul>
+          </li>
 
-        <p className={styles.Paragraph}>
-          In Switzerland, there is no withholding tax on payments of interest,
-          fees from ownership as well as use of intellectual property by
-          non-residents.
-        </p>
+          <li className={styles.ListLi}>
+            To register a representative office in an offshore zone, the same
+            documentation and procedures are required as set out in Article 2.
+          </li>
 
-        <h2 className={styles.Subtitle}>General Rules</h2>
+          <li className={styles.ListLi}>
+            The necessary documents required in order to open bank accounts for
+            all 3 mentioned legal entities in Georgia:
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>Director’s address;</li>
+              <li className={styles.SublistLi}>Constitutive documents;</li>
+              <li className={styles.SublistLi}>Extracts.</li>
+            </ul>
+          </li>
 
-        <p className={styles.Paragraph}>
-          In Switzerland, taxation is carried out at two levels: federal and
-          cantonal. The federal tax is 8.5%, and the cantonal tax (in the canton
-          of Zug) is 6.5%. Thus, the total tax rate in the canton of Zug is 13%.
-          However, at the federal and cantonal levels, depending on the
-          company’s activities, there are several types of tax relief that can
-          significantly reduce the effective tax. At the federal level, the
-          holding company gains from dividends and capital gains income are
-          exempt from tax. At the cantonal level, there are two tax relief
-          regimes: <br />
-          Holding company - the main activity of the company should be long-term
-          ownership of shares of other companies and at least 2/3 of the
-          company’s income should be generated by the holding activity
-          (dividends and capital gains). All income of such a company is exempt
-          from tax at the cantonal level.
-        </p>
+          <li className={styles.ListLi}>
+            In order to obtain financial licenses in Georgia: <br />
+            Registration of international company and obtaining a corresponding
+            license is carried out by the Tax Service.
+          </li>
+        </ol>
+
+        <p className={styles.SubtitleList}>Documents to be submitted:</p>
+        <ol className={styles.List}>
+          <li className={styles.ListLi}>Certificate from the National Bank;</li>
+          <li className={styles.ListLi}>Extract from the business register;</li>
+          <li className={styles.ListLi}>
+            Power of Attorney (for office work through a representative office).
+          </li>
+        </ol>
+
+        <p className={`${styles.Paragraph} ${styles.Italic}`}>Note: Assuming that legal entity contacts relevant authorities within one month to obtain the status of international financial company- it will be assigned in the same year. In case of date expiration this status will be assigned for the next calendar year.
+</p>
       </div>
     </>
   );
