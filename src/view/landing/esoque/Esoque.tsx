@@ -7,9 +7,7 @@ interface Props {}
 
 const Esoque: React.FC<Props> = () => {
   const [moreInfo, setMoreInfo] = useState(false);
-  const myRef = React.useRef(null);
-
-  const executeScroll = () => myRef.current.scrollIntoView();
+  const myRef = React.useRef<HTMLDivElement>(null);
 
   const moreInfoOpen = () => {
     setMoreInfo(true);
@@ -17,7 +15,7 @@ const Esoque: React.FC<Props> = () => {
 
   const moreInfoClose = () => {
     setMoreInfo(false);
-    executeScroll();
+    myRef.current?.scrollIntoView();
   };
 
   return (
