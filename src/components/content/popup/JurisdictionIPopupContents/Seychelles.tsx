@@ -95,6 +95,3 @@ const Seychelles: React.FC<Props> = () => {
 };
 
 export default Seychelles;
-1;
-
-2;
