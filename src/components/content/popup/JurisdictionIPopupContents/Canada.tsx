@@ -22,8 +22,8 @@ const Canada: React.FC<Props> = () => {
           Canada is not considered an off-shore jurisdiction, subject to
           taxation is the entire global profit of the company. If the company
           doesn&#39;t operate in Canada, it&#39;s not a tax resident, therefore
-          none of the taxes are applied. The reputation of Canada as a fairly
-          transparent jurisdiction in terms of tax authorities and public
+          none of the taxes are applied. <br /> The reputation of Canada as a
+          fairly transparent jurisdiction in terms of tax authorities and public
           authorities creates extra-provincial company an attractive tool for
           international tax planning.
         </p>
@@ -63,9 +63,9 @@ const Canada: React.FC<Props> = () => {
         <p className={styles.Paragraph}>
           Canadian extra-provincial company is not subject to taxation in Canada
           if the sources of income are outside the country. The company does not
-          have to submit an annual report to the register. In order to confirm
-          the absence of company income from sources in Canada, company must
-          file a tax report where period is a calendar year. Submission
+          have to submit an annual report to the register. <br /> In order to
+          confirm the absence of company income from sources in Canada, company
+          must file a tax report where period is a calendar year. Submission
           deadline- June 30th.
         </p>
       </div>

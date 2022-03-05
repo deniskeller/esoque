@@ -59,14 +59,12 @@ const Netherlands: React.FC<Props> = () => {
 
         <ol className={styles.List}>
           <li className={styles.ListLi}>
-            Income taxes:
-            <p className={styles.SubtitleList}>
-              In the Netherlands there is a system of progressive income tax.
-              Profit up to a threshold of 200,000 euros is taxed at a rate of
-              20%. Profits exceeding 200,000 euros are taxed at a rate of 25%.{' '}
-              <br />A Dutch company is exempt from income tax on dividends
-              received and capital gains in cases when:
-            </p>
+            Income taxes: <br />
+            In the Netherlands there is a system of progressive income tax.
+            Profit up to a threshold of 200,000 euros is taxed at a rate of 20%.
+            Profits exceeding 200,000 euros are taxed at a rate of 25%.
+            <br />A Dutch company is exempt from income tax on dividends
+            received and capital gains in cases when:
             <ul className={styles.Sublist}>
               <li className={styles.SublistLi}>
                 the company owns at least 5% of a foreign company within one

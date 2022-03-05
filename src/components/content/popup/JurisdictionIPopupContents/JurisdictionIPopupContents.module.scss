@@ -119,6 +119,10 @@
   counter-reset: my-awesome-counter;
   margin-bottom: em(23px);
 
+  @include ifmobile {
+    margin-bottom: em(15px);
+  }
+
   .ListLi {
     font-size: em(19px);
     line-height: 120%;
