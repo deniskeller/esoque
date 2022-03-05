@@ -15,6 +15,8 @@ import {
   Marshall,
   Netherlands,
   SaintVincent,
+  Scotland,
+  Seychelles,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
 
@@ -83,6 +85,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgNetherlands
                 : page == 10
                 ? styles.BgSaintVincent
+                : page == 11
+                ? styles.BgScotland
+                : page == 12
+                ? styles.BgSeychelles
                 : ''
             }`}
           >
@@ -106,6 +112,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Netherlands />
             ) : page == 10 ? (
               <SaintVincent />
+            ) : page == 11 ? (
+              <Scotland />
+            ) : page == 12 ? (
+              <Seychelles />
             ) : (
               ''
             )}

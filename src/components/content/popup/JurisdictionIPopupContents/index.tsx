@@ -8,3 +8,5 @@ export { default as Liechtenstein } from '../JurisdictionIPopupContents/Liechten
 export { default as Marshall } from '../JurisdictionIPopupContents/Marshall';
 export { default as Netherlands } from '../JurisdictionIPopupContents/Netherlands';
 export { default as SaintVincent } from '../JurisdictionIPopupContents/SaintVincent';
+export { default as Scotland } from '../JurisdictionIPopupContents/Scotland';
+export { default as Seychelles } from '../JurisdictionIPopupContents/Seychelles';
