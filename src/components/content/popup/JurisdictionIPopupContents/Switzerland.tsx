@@ -14,144 +14,97 @@ const Switzerland: React.FC<Props> = () => {
       </BaseTitle>
 
       <div className={styles.Content}>
-        <h2 className={styles.Subtitle}>Features</h2>
+        <p className={styles.Paragraph}>
+          Switzerland is not an off-shore jurisdiction, therefore taxation is
+          applied to company profits. Hence, depending on nature of the
+          business, exists a series of tax rebates and complete or partial
+          exemption from taxes imposed. These conditions of jurisdiction are
+          attractive for seperate business activities taking place in
+          Switzerland. Since the company is considered as resident of
+          Switzerland, it can utilize advantage of double tax treaties concluded
+          by Switzerland, an agreement between Switzerland and the EU can also
+          receive a certificate of Swiss tax residency.
+        </p>
 
         <p className={styles.Paragraph}>
-          In Sweden there are 2 types of companies available for use in
-          international business. <br />
-          Limited Partnership (KB) and a limited liability company (AB). <br />
-          For trade operations, a limited partnership (KB) is more preferred
-          than a limited liability company (AB).
+          The most common form of Company in Switzerland: <br />
+          AG (Aktiengesselshaft), joint-stock Company
         </p>
+
+        <h2 className={styles.Subtitle}>Registration Address</h2>
+
+        <p className={styles.Paragraph}>
+          The registration address of company must be in the territory
+          Switzerland.
+        </p>
+
+        <h2 className={styles.Subtitle}>The Management of Company</h2>
+
+        <p className={styles.Paragraph}>
+          In the company must be at least one director- a resident of
+          Switzerland who maintains the communication with Government Agencies
+          and is responsible for company obligation fulfillment related to
+          Federal Tax Administration and Zefix. (Registries of Commerce)
+        </p>
+
+        <p className={styles.Paragraph}>
+          Company meetings are a complete compulsory.
+        </p>
+
+        <h2 className={styles.Subtitle}>Initial Capital</h2>
 
         <p className={styles.SubtitleList}>
-          Features of the partnership structure:
+          Minimal capital required- 100 000 Swiss Franks. <br />
+          Company ownership is determined by one from two possible share forms:
         </p>
 
         <ol className={styles.List}>
           <li className={styles.ListLi}>
-            At least two partners must be: one general and one with limited
-            liability.
+            Bearer shares- Company can issue bearer shares only on condition of
+            100% statutory capital payment. In this form of ownership there are
+            no requirements for the minimum number of shareholders.
           </li>
           <li className={styles.ListLi}>
-            Swedish corporate tax does not apply if all profits go to offshore
-            partners.
-          </li>
-          <li className={styles.ListLi}>
-            There is no partnership capital requirement. Partnership capital
-            consists of partner contributions (the amount of capital is
-            established by partners)
-          </li>
-          <li className={styles.ListLi}>No personal visit is required.</li>
-        </ol>
-
-        <h2 className={styles.Subtitle}>Application</h2>
-
-        <p className={styles.SubtitleList}>
-          SWEDISH COMMUNITY PARTNERSHIP (KB) FOR TRADE <br />
-          The Swedish limited partnership (‘’ KB ’’) has tax transparency and
-          flexibility, for instance, Swedish corporate tax is not charged if the
-          partners are non-residents and the partnership conducts trading
-          activities exclusively outside Sweden. <br />
-          Swedish limited partnership (‘’ KB ’’) is a partnership with two types
-          of partners: a limited liability company and a general partner (each
-          partner can be both individuals or legal entities):
-        </p>
-
-        <ol className={styles.List}>
-          <li className={styles.ListLi}>
-            The general partner (Komplementar) who owns the partnership
-            management- shares the company's profit in predetermined proportions
-            and bears unlimited liability for the debts of the partnership
-          </li>
-          <li className={styles.ListLi}>
-            Like shareholders, limited partners (Kommanditdelager) have limited
-            liability, that is, exclusively for the company's debts (min. SEK
-            100 or EUR 10) to the extent of their contribution and do not have
-            the right to manage the partnership.
+            Registered shares- The minimum number of shareholders is three.
+            Shareholders can be both physical and legal persons; There are no
+            restrictions on legal entities - offshore companies.
           </li>
         </ol>
 
+        <h2 className={styles.Subtitle}>Tax Sources</h2>
+
         <p className={styles.Paragraph}>
-          Limited partnership is often registered as a trading company with the
-          possibility of obtaining a Swedish VAT number - but only if one of the
-          partners is a resident of Sweden.
+          Withholding tax of 35% applies for the withdrawal of income, dividends
+          for non-residents. However, in cases when income is withdrawn to
+          persons - residents of countries that have an agreement on the
+          avoidance of double taxation with Switzerland, the tax can be reduced
+          to 20%, and to residents of EU countries - to 0%
         </p>
 
         <p className={styles.Paragraph}>
-          KB has rights to open bank accounts outside of Sweden. (Swedish bank
-          accounts are available only to those enterprises that conduct trading
-          activities in Sweden).
+          In Switzerland, there is no withholding tax on payments of interest,
+          fees from ownership as well as use of intellectual property by
+          non-residents.
         </p>
+
+        <h2 className={styles.Subtitle}>General Rules</h2>
 
         <p className={styles.Paragraph}>
-          KB has rights to open bank accounts outside of Sweden. (Swedish bank
-          accounts are available only to those enterprises that conduct trading
-          activities in Sweden).
+          In Switzerland, taxation is carried out at two levels: federal and
+          cantonal. The federal tax is 8.5%, and the cantonal tax (in the canton
+          of Zug) is 6.5%. Thus, the total tax rate in the canton of Zug is 13%.
+          However, at the federal and cantonal levels, depending on the
+          company's activities, there are several types of tax relief that can
+          significantly reduce the effective tax. At the federal level, the
+          holding company gains from dividends and capital gains income are
+          exempt from tax. At the cantonal level, there are two tax relief
+          regimes: <br />
+          Holding company - the main activity of the company should be long-term
+          ownership of shares of other companies and at least 2/3 of the
+          company's income should be generated by the holding activity
+          (dividends and capital gains). All income of such a company is exempt
+          from tax at the cantonal level.
         </p>
-
-        <h2 className={styles.Subtitle}>Taxes</h2>
-
-        <p className={styles.Paragraph}>
-          CORPORATE TAX (Corporate Profit Tax): The standard rate is 26.3%.{' '}
-          <br />
-          For limited partnerships (KB), corporate tax can be excluded if
-          partners operate only outside Sweden.
-        </p>
-
-        <p className={styles.Paragraph}>
-          INCOMING DIVIDENDS: 0% rate if profits are received from resident
-          companies + “Tax Exemption” requirements apply if: <br />
-          ownership of shares is at least 25%; <br />
-          the subsidiary has tax residency status in a country with a corporate
-          tax rate close to Sweden. If the "tax exemption" is not applicable,
-          then the tax rate on incoming dividends is 26.3%.
-        </p>
-
-        <p className={styles.Paragraph}>
-          TAX ON GROWTH OF CAPITAL: Capital gains from the sale of shares are
-          generally subject to a corporate tax of 26.3%. In the above terms, tax
-          exemption may also apply.
-        </p>
-
-        <p className={styles.SubtitleList}>WITHHOLDING TAX:</p>
-
-        <ol className={styles.List}>
-          <li className={styles.ListLi}>
-            BY ROYALTY: A royalty tax is usually not withheld. However, there is
-            a possibility that royalties may be considered profit of the
-            permanent establishment and therefore may be taxed at 26.3%.
-          </li>
-
-          <li className={styles.ListLi}>
-            ON DIVIDENDS: a total rate of 30%, which can be reduced under the
-            effect of an EU directive or a double tax treaty. Dividends paid by
-            a Swedish holding company may be exempt from tax, subject to
-            compliance with all requirements:
-            <ul className={styles.Sublist}>
-              <li className={styles.SublistLi}>
-                all shares are held in the company as business assets
-              </li>
-              <li className={styles.SublistLi}>
-                parent company is subject to income tax minimum 15.4%
-              </li>
-              <li className={styles.SublistLi}>
-                the parent company owns at least 25% of the Swedish company
-              </li>
-            </ul>
-          </li>
-
-          <li className={styles.ListLi}>
-            ON INTEREST PAYMENTS: tax is not withheld.
-          </li>
-          <li className={styles.ListLi}>
-            PUBLIC TAXATION AGREEMENT: with 80 countries, including Cyprus.
-          </li>
-          <li className={styles.ListLi}>
-            TAX ON ADDED COST (VAT): The standard rate for domestic sales is
-            25%.
-          </li>
-        </ol>
       </div>
     </>
   );
