@@ -7,10 +7,19 @@ interface Props {}
 
 const Esoque: React.FC<Props> = () => {
   const [moreInfo, setMoreInfo] = useState(false);
+  const myRef = React.useRef(null);
+
+  const executeScroll = () => myRef.current.scrollIntoView();
 
   const moreInfoHandler = () => {
     setMoreInfo(!moreInfo);
   };
+
+  React.useEffect(() => {
+    if (!moreInfo) {
+      executeScroll();
+    }
+  }, [moreInfo]);
 
   return (
     <>
@@ -107,11 +116,11 @@ const Esoque: React.FC<Props> = () => {
         </BaseContainer>
       </div>
 
-      {/* <BaseContainer> */}
-      <div className={styles.GraphBlock}>
+      <div className={styles.GraphBlock} ref={myRef}>
         <BaseTitle className={styles.GraphBlockTitle}>
           Financial Historical Records
         </BaseTitle>
+        <div className=''></div>
         <BaseTitle className={styles.GraphBlockSubtitle}>
           Total assets that are managed
         </BaseTitle>
@@ -345,7 +354,6 @@ const Esoque: React.FC<Props> = () => {
           </BaseButton>
         )}
       </div>
-      {/* </BaseContainer> */}
     </>
   );
 };
