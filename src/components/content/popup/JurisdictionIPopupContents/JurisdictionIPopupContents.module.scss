@@ -124,7 +124,7 @@
     &::before {
       content: counter(my-awesome-counter) '. ';
       margin-left: em(-28px, 19px);
-      padding-right: em(6px, 19px);
+      padding-right: em(8px);
     }
 
     @include iftablet {
@@ -138,8 +138,11 @@
 }
 
 .Sublist {
-  margin-left: em(18px);
+  margin-left: em(20px);
   list-style: disc;
+  @include ifmobile {
+    margin-left: em(27px);
+  }
 
   .SublistLi {
     font-size: em(19px, 19px);

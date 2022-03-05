@@ -14,97 +14,156 @@ const UnitedKingdom: React.FC<Props> = () => {
       </BaseTitle>
 
       <div className={styles.Content}>
+        <h2 className={styles.Subtitle}>Company Structure</h2>
+
         <p className={styles.Paragraph}>
-          Switzerland is not an off-shore jurisdiction, therefore taxation is
-          applied to company profits. Hence, depending on nature of the
-          business, exists a series of tax rebates and complete or partial
-          exemption from taxes imposed. These conditions of jurisdiction are
-          attractive for seperate business activities taking place in
-          Switzerland. Since the company is considered as resident of
-          Switzerland, it can utilize advantage of double tax treaties concluded
-          by Switzerland, an agreement between Switzerland and the EU can also
-          receive a certificate of Swiss tax residency.
+          Address of Registration: The company must have a registered address in
+          the UK.
         </p>
 
         <p className={styles.Paragraph}>
-          The most common form of Company in Switzerland: <br />
-          AG (Aktiengesselshaft), joint-stock Company
+          The company is managed with the help of a director.
         </p>
-
-        <h2 className={styles.Subtitle}>Registration Address</h2>
-
         <p className={styles.Paragraph}>
-          The registration address of company must be in the territory
-          Switzerland.
+          Secretary: The secretary performs only administrative tasks- receiving
+          and sending documents respectively. Secretary is not a representative
+          of the company to communicate with the tax administration (NOT tax
+          advisor, NOT tax agent).
         </p>
-
-        <h2 className={styles.Subtitle}>The Management of Company</h2>
-
-        <p className={styles.Paragraph}>
-          In the company must be at least one director- a resident of
-          Switzerland who maintains the communication with Government Agencies
-          and is responsible for company obligation fulfillment related to
-          Federal Tax Administration and Zefix. (Registries of Commerce)
-        </p>
-
-        <p className={styles.Paragraph}>
-          Company meetings are a complete compulsory.
-        </p>
-
-        <h2 className={styles.Subtitle}>Initial Capital</h2>
-
         <p className={styles.SubtitleList}>
-          Minimal capital required- 100 000 Swiss Franks. <br />
-          Company ownership is determined by one from two possible share forms:
+          Company capital (value, type of shares):
         </p>
+        <ol className={styles.List}>
+          <li className={styles.ListLi}>The minimum capital is 1 pound</li>
+          <li className={styles.ListLi}>
+            All registered (issued capital) must be distributed
+          </li>
+          <li className={styles.ListLi}>
+            A share certificate is issued only on paid-up capital
+          </li>
+        </ol>
+        <p className={styles.Paragraph}>
+          Shareholders: As part of the company's shareholders, it is necessary
+          to have at least one individual.
+        </p>
+
+        <h2 className={styles.Subtitle}>Taxation</h2>
 
         <ol className={styles.List}>
           <li className={styles.ListLi}>
-            Bearer shares- Company can issue bearer shares only on condition of
-            100% statutory capital payment. In this form of ownership there are
-            no requirements for the minimum number of shareholders.
+            General Rules (Tax Residency, Base and Rates):
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                In the standard case, the companies registered are not UK
+                residents, but all companies have a tax number
+              </li>
+              <li className={styles.SublistLi}>
+                The company is considered a tax resident of the United Kingdom
+                when company is registered in the UK and / or the company's
+                headquarters is located in the country. In case of disputable
+                issues, when the center of a foreign company is located in the
+                UK, it is necessary to consider the situation according to the
+                rules of the convention between specific countries.
+              </li>
+              <li className={styles.SublistLi}>
+                The global income of a resident company is subject to taxation,
+                taking into account the use of taxes paid outside the UK to
+                reduce payable tax.
+              </li>
+              <li className={styles.SublistLi}>
+                The rate on the profit of the enterprise depends on the size of
+                the taxable profit. In cases where taxable income: <br />
+                -is less than 300,000 pounds, then the rate of 20% is applicable
+                to the taxable profit of the enterprise, <br />
+                -with taxable profits between 300’000 and 1’500’000 pounds-
+                progressive rate of 20 to 24% is applied., <br />
+                -taxable profits in the amount of 1,500,000 pounds, apply a rate
+                of 24%.
+              </li>
+            </ul>
           </li>
+
           <li className={styles.ListLi}>
-            Registered shares- The minimum number of shareholders is three.
-            Shareholders can be both physical and legal persons; There are no
-            restrictions on legal entities - offshore companies.
+            Tax Exemption <br />
+            This type of company is exempted from paying capital gains tax
+          </li>
+
+          <li className={styles.ListLi}>
+            Tax Sources
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                Dividends - dividend distribution is not subject to withholding
+                tax paid by a UK company. A 20% withholding tax is applicable to
+                dividends paid by companies such as Real Estate Investment
+                Trust.
+              </li>
+              <li className={styles.SublistLi}>
+                Interest Payments- interest payments to non-residents of the UK
+                are withheld from the 20% source. (2012). This rate can be
+                reduced (by a separate request to the tax office) by the EU
+                directive on parent and subsidiary companies or under an
+                international convention, however, since the companies are
+                non-resident, they cannot use international conventions to
+                reduce the tax on the source.
+              </li>
+              <li className={styles.SublistLi}>
+                Reward of owning or utilizing intellectual property- Withholding
+                tax of 20% applies when paid to non-residents. This rate may be
+                reduced or income may be exempt from withholding tax in
+                accordance with the EU directive on interest payments and
+                remuneration from the ownership and use of intellectual
+                property.
+              </li>
+            </ul>
           </li>
         </ol>
 
-        <h2 className={styles.Subtitle}>Tax Sources</h2>
+        <h2 className={styles.Subtitle}>Annual Reports</h2>
 
-        <p className={styles.Paragraph}>
-          Withholding tax of 35% applies for the withdrawal of income, dividends
-          for non-residents. However, in cases when income is withdrawn to
-          persons - residents of countries that have an agreement on the
-          avoidance of double taxation with Switzerland, the tax can be reduced
-          to 20%, and to residents of EU countries - to 0%
-        </p>
+        <ol className={styles.List}>
+          <li className={styles.ListLi}>
+            Terms of annual maintenance, duties and fines
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                Company jurisdiction must be renewed by the date of registration
+                anniversary, but no later than 20 days after the anniversary of
+                registration.
+              </li>
+              <li className={styles.SublistLi}>
+                English companies are required to submit annual reports within
+                nine months after the end of the financial period (the end of
+                the financial period is considered the last calendar day of the
+                company's month of registration).
+              </li>
+            </ul>
+          </li>
 
-        <p className={styles.Paragraph}>
-          In Switzerland, there is no withholding tax on payments of interest,
-          fees from ownership as well as use of intellectual property by
-          non-residents.
-        </p>
+          <li className={styles.ListLi}>
+            Submission deadlines, periods and penalties <br />
+            British company is required to submit a tax report within 12 months
+            after the end of the company's tax period.
+          </li>
 
-        <h2 className={styles.Subtitle}>General Rules</h2>
+          <li className={styles.ListLi}>
+            Tax Payments <br />
+            Corporate Income Tax must be paid within 9 months and one day after
+            the end of the tax period.
+          </li>
 
-        <p className={styles.Paragraph}>
-          In Switzerland, taxation is carried out at two levels: federal and
-          cantonal. The federal tax is 8.5%, and the cantonal tax (in the canton
-          of Zug) is 6.5%. Thus, the total tax rate in the canton of Zug is 13%.
-          However, at the federal and cantonal levels, depending on the
-          company’s activities, there are several types of tax relief that can
-          significantly reduce the effective tax. At the federal level, the
-          holding company gains from dividends and capital gains income are
-          exempt from tax. At the cantonal level, there are two tax relief
-          regimes: <br />
-          Holding company - the main activity of the company should be long-term
-          ownership of shares of other companies and at least 2/3 of the
-          company’s income should be generated by the holding activity
-          (dividends and capital gains). All income of such a company is exempt
-          from tax at the cantonal level.
-        </p>
+          <li className={styles.ListLi}>
+            Additional reporting liabilities (tax audit) <br />
+            Financial statements of audit are obligatory only if the following
+            criteria are met:
+            <ul className={styles.Sublist}>
+              <li className={styles.SublistLi}>
+                Annual turnover is more than 6,5 million pounds
+              </li>
+              <li className={styles.SublistLi}>
+                Balance amount reaches 3.26 million pounds.
+              </li>
+            </ul>
+          </li>
+        </ol>
       </div>
     </>
   );
