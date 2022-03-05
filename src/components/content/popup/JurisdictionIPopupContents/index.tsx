@@ -13,3 +13,6 @@ export { default as Seychelles } from '../JurisdictionIPopupContents/Seychelles'
 export { default as Singapore } from '../JurisdictionIPopupContents/Singapore';
 export { default as Sweden } from '../JurisdictionIPopupContents/Sweden';
 export { default as Switzerland } from '../JurisdictionIPopupContents/Switzerland';
+export { default as UnitedKingdom } from '../JurisdictionIPopupContents/UnitedKingdom';
+export { default as Usa } from '../JurisdictionIPopupContents/Usa';
+export { default as Georgia } from '../JurisdictionIPopupContents/Georgia';

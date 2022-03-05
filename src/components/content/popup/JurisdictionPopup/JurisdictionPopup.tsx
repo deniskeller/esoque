@@ -9,6 +9,7 @@ import {
   Cyprus,
   Dominica,
   Estonia,
+  Georgia,
   Hongkong,
   Latvia,
   Liechtenstein,
@@ -20,6 +21,8 @@ import {
   Singapore,
   Sweden,
   Switzerland,
+  UnitedKingdom,
+  Usa,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
 
@@ -98,6 +101,12 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgSweden
                 : page == 15
                 ? styles.BgSwitzerland
+                : page == 16
+                ? styles.BgUnitedKingdom
+                : page == 17
+                ? styles.BgUsa
+                : page == 18
+                ? styles.BgGeorgia
                 : ''
             }`}
           >
@@ -131,6 +140,12 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Sweden />
             ) : page == 15 ? (
               <Switzerland />
+            ) : page == 16 ? (
+              <UnitedKingdom />
+            ) : page == 17 ? (
+              <Usa />
+            ) : page == 18 ? (
+              <Georgia />
             ) : (
               ''
             )}

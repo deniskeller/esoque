@@ -112,6 +112,7 @@ const countryItems = [
   { id: 15, title: 'SWITZERLAND', image: 'flag-switzerland.png' },
   { id: 16, title: 'UNITED KINGDOM', image: 'flag-united-kingdom.png' },
   { id: 17, title: 'USA', image: 'flag-united-states.png' },
+  { id: 18, title: 'GEORGIA', image: 'flag-united-states.png' },
 
   // есть модалка, но нет юрисдикции
   //georgia
