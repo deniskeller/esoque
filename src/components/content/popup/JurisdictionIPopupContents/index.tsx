@@ -11,3 +11,4 @@ export { default as SaintVincent } from '../JurisdictionIPopupContents/SaintVinc
 export { default as Scotland } from '../JurisdictionIPopupContents/Scotland';
 export { default as Seychelles } from '../JurisdictionIPopupContents/Seychelles';
 export { default as Singapore } from '../JurisdictionIPopupContents/Singapore';
+export { default as Sweden } from '../JurisdictionIPopupContents/Sweden';

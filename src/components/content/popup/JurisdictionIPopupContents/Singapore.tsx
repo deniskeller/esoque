@@ -34,7 +34,7 @@ const Singapore: React.FC<Props> = () => {
           sources in Singapore, which actually depends on whether activities are
           carried out to obtain / extract a specific income in the territory of
           Singapore. It is important to note that the company is considered a
-          tax resident of Singapore, provided that the company's center of
+          tax resident of Singapore, provided that the company’s center of
           control and management is located on the territory of Singapore
           (Directors are meeting in the country). <br />
           In relation to withholding tax, dividends which were received by a
@@ -52,7 +52,7 @@ const Singapore: React.FC<Props> = () => {
         <ol className={styles.List}>
           <li className={styles.ListLi}>Passport (In English);</li>
           <li className={styles.ListLi}>
-            Utility bill (where the beneficiary's address is visible, in
+            Utility bill (where the beneficiary’s address is visible, in
             English);
           </li>
           <li className={styles.ListLi}>Our trust agreements signed.</li>
