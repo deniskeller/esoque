@@ -15,95 +15,66 @@ const Usa: React.FC<Props> = () => {
 
       <div className={styles.Content}>
         <p className={styles.Paragraph}>
-          Switzerland is not an off-shore jurisdiction, therefore taxation is
-          applied to company profits. Hence, depending on nature of the
-          business, exists a series of tax rebates and complete or partial
-          exemption from taxes imposed. These conditions of jurisdiction are
-          attractive for seperate business activities taking place in
-          Switzerland. Since the company is considered as resident of
-          Switzerland, it can utilize advantage of double tax treaties concluded
-          by Switzerland, an agreement between Switzerland and the EU can also
-          receive a certificate of Swiss tax residency.
+          In standard cases, we register LLCs company after client’s order, this
+          type of partnership consists of two or more members, practically only
+          client members are registered (mainly physical, but it is also
+          possible to register legal entities). Registration of US companies is
+          possible only with client directors. The reason is as follows: several
+          years ago, the law changed in States and now it is necessary to submit
+          tax reports in a timely manner as well as declare income if it exceeds
+          10,000 USD. If the income is not declared - criminal responsibility is
+          applied to director.
         </p>
-
         <p className={styles.Paragraph}>
-          The most common form of Company in Switzerland: <br />
-          AG (Aktiengesselshaft), joint-stock Company
+          According to reporting, there are no requirements for submitting
+          financial statements in the US states for LLC forms of companies.
+          Although, there is a mandatory requirement for a tax report.
         </p>
-
-        <h2 className={styles.Subtitle}>Registration Address</h2>
-
         <p className={styles.Paragraph}>
-          The registration address of company must be in the territory
-          Switzerland.
+          Contribution of share capital is not required.
         </p>
-
-        <h2 className={styles.Subtitle}>The Management of Company</h2>
-
         <p className={styles.Paragraph}>
-          In the company must be at least one director- a resident of
-          Switzerland who maintains the communication with Government Agencies
-          and is responsible for company obligation fulfillment related to
-          Federal Tax Administration and Zefix. (Registries of Commerce)
+          Regarding the registration procedure, the prepared forms of
+          registration documents are signed by partners themselves and originals
+          are sent to our reg agent after receiving all the requested documents.
+          Deadlines for registering the company and receiving first registration
+          documents are about 2 weeks.
         </p>
-
         <p className={styles.Paragraph}>
-          Company meetings are a complete compulsory.
+          Documents under the Apostille don’t need to be legalized any further.
         </p>
-
-        <h2 className={styles.Subtitle}>Initial Capital</h2>
 
         <p className={styles.SubtitleList}>
-          Minimal capital required- 100 000 Swiss Franks. <br />
-          Company ownership is determined by one from two possible share forms:
+          For registration you must answer the questions from short profile of a
+          company.
         </p>
-
         <ol className={styles.List}>
           <li className={styles.ListLi}>
-            Bearer shares- Company can issue bearer shares only on condition of
-            100% statutory capital payment. In this form of ownership there are
-            no requirements for the minimum number of shareholders.
+            The beneficiary, what jurisdiction, special signs, of a professional
+            or a public nature.
           </li>
+          <li className={styles.ListLi}>Expected activity. (in detail)</li>
           <li className={styles.ListLi}>
-            Registered shares- The minimum number of shareholders is three.
-            Shareholders can be both physical and legal persons; There are no
-            restrictions on legal entities - offshore companies.
+            Company partners. (names and countries)
           </li>
+          <li className={styles.ListLi}>Estimated turnover.</li>
         </ol>
 
-        <h2 className={styles.Subtitle}>Tax Sources</h2>
-
         <p className={styles.Paragraph}>
-          Withholding tax of 35% applies for the withdrawal of income, dividends
-          for non-residents. However, in cases when income is withdrawn to
-          persons - residents of countries that have an agreement on the
-          avoidance of double taxation with Switzerland, the tax can be reduced
-          to 20%, and to residents of EU countries - to 0%
+          The prices of registering US companies are listed below (EUR). By
+          drawing your attention, the easiest way to register a company is in
+          the state of Oregon. Extension cost is the same.
         </p>
 
         <p className={styles.Paragraph}>
-          In Switzerland, there is no withholding tax on payments of interest,
-          fees from ownership as well as use of intellectual property by
-          non-residents.
+          <span>USA: Delaware</span>1,300.00
+          <br />
+          <span>USA: Oregon</span>750.00
         </p>
 
-        <h2 className={styles.Subtitle}>General Rules</h2>
-
         <p className={styles.Paragraph}>
-          In Switzerland, taxation is carried out at two levels: federal and
-          cantonal. The federal tax is 8.5%, and the cantonal tax (in the canton
-          of Zug) is 6.5%. Thus, the total tax rate in the canton of Zug is 13%.
-          However, at the federal and cantonal levels, depending on the
-          company’s activities, there are several types of tax relief that can
-          significantly reduce the effective tax. At the federal level, the
-          holding company gains from dividends and capital gains income are
-          exempt from tax. At the cantonal level, there are two tax relief
-          regimes: <br />
-          Holding company - the main activity of the company should be long-term
-          ownership of shares of other companies and at least 2/3 of the
-          company’s income should be generated by the holding activity
-          (dividends and capital gains). All income of such a company is exempt
-          from tax at the cantonal level.
+          From experience, the state of Oregon in terms of registration is the
+          fastest, and registration procedure the easiest.
         </p>
       </div>
     </>

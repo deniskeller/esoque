@@ -38,6 +38,10 @@
   font-size: em(19px);
   line-height: 120%;
   margin-bottom: em(20px);
+  span {
+    display: inline-block;
+    width: em(163px);
+  }
   @include iftablet {
     font-size: em(16px);
   }
