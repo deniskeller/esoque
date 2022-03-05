@@ -43,8 +43,8 @@ const UnitedKingdom: React.FC<Props> = () => {
           </li>
         </ol>
         <p className={styles.Paragraph}>
-          Shareholders: As part of the company's shareholders, it is necessary
-          to have at least one individual.
+          Shareholders: As part of the company&#39;s shareholders, it is
+          necessary to have at least one individual.
         </p>
 
         <h2 className={styles.Subtitle}>Taxation</h2>
@@ -59,7 +59,7 @@ const UnitedKingdom: React.FC<Props> = () => {
               </li>
               <li className={styles.SublistLi}>
                 The company is considered a tax resident of the United Kingdom
-                when company is registered in the UK and / or the company's
+                when company is registered in the UK and / or the company&#39;s
                 headquarters is located in the country. In case of disputable
                 issues, when the center of a foreign company is located in the
                 UK, it is necessary to consider the situation according to the
@@ -133,7 +133,7 @@ const UnitedKingdom: React.FC<Props> = () => {
                 English companies are required to submit annual reports within
                 nine months after the end of the financial period (the end of
                 the financial period is considered the last calendar day of the
-                company's month of registration).
+                company&#39;s month of registration).
               </li>
             </ul>
           </li>
@@ -141,7 +141,7 @@ const UnitedKingdom: React.FC<Props> = () => {
           <li className={styles.ListLi}>
             Submission deadlines, periods and penalties <br />
             British company is required to submit a tax report within 12 months
-            after the end of the company's tax period.
+            after the end of the company&#39;s tax period.
           </li>
 
           <li className={styles.ListLi}>
