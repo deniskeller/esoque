@@ -13,6 +13,8 @@ import {
   Latvia,
   Liechtenstein,
   Marshall,
+  Netherlands,
+  SaintVincent,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
 
@@ -77,6 +79,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgLiechtenstein
                 : page == 8
                 ? styles.BgMarshall
+                : page == 9
+                ? styles.BgNetherlands
+                : page == 10
+                ? styles.BgSaintVincent
                 : ''
             }`}
           >
@@ -96,6 +102,10 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Liechtenstein />
             ) : page == 8 ? (
               <Marshall />
+            ) : page == 9 ? (
+              <Netherlands />
+            ) : page == 10 ? (
+              <SaintVincent />
             ) : (
               ''
             )}

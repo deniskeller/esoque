@@ -6,3 +6,5 @@ export { default as Hongkong } from '../JurisdictionIPopupContents/Hongkong';
 export { default as Latvia } from '../JurisdictionIPopupContents/Latvia';
 export { default as Liechtenstein } from '../JurisdictionIPopupContents/Liechtenstein';
 export { default as Marshall } from '../JurisdictionIPopupContents/Marshall';
+export { default as Netherlands } from '../JurisdictionIPopupContents/Netherlands';
+export { default as SaintVincent } from '../JurisdictionIPopupContents/SaintVincent';
