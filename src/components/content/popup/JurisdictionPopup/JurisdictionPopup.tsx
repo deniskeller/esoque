@@ -18,6 +18,7 @@ import {
   Scotland,
   Seychelles,
   Singapore,
+  Sweden,
 } from '../JurisdictionIPopupContents';
 import styles from './JurisdictionPopup.module.scss';
 
@@ -92,6 +93,8 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgSeychelles
                 : page == 13
                 ? styles.BgSingapore
+                : page == 14
+                ? styles.BgSweden
                 : ''
             }`}
           >
@@ -121,6 +124,8 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
               <Seychelles />
             ) : page == 13 ? (
               <Singapore />
+            ) : page == 14 ? (
+              <Sweden />
             ) : (
               ''
             )}
