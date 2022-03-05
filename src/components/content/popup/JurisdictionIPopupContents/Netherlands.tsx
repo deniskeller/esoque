@@ -124,7 +124,7 @@ const Netherlands: React.FC<Props> = () => {
               <li className={styles.SublistLi}>
                 According to the provisions for the prevention of abuse
                 (Anti-abuse provisions), remuneration for the possession and use
-                of intellectual property cannot exceed 60% of the company's
+                of intellectual property cannot exceed 60% of the company&#39;s
                 total revenues.
               </li>
             </ul>
@@ -139,7 +139,7 @@ const Netherlands: React.FC<Props> = () => {
             served in the register of enterprises;
           </li>
           <li className={styles.ListLi}>
-            the company's fiscal year - the company itself can choose the
+            the company&#39;s fiscal year - the company itself can choose the
             reporting period
           </li>
           <li className={styles.ListLi}>

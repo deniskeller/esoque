@@ -51,7 +51,7 @@ const SaintVincent: React.FC<Props> = () => {
           transactions, documents must be stored for at least 7 years from the
           date release) and, if necessary, these statements can be provided to
           reg. agent on demand FSA (Financial Services Authority). <br />
-          The authorities also indicates that the company's financial period
+          The authorities also indicates that the company&#39;s financial period
           does not have to be from January to December, but the deadline for
           submitting declarations is December 31 of each calendar year.
         </p>
