@@ -4,13 +4,13 @@ import styles from './JurisdictionIPopupContents.module.scss';
 
 interface Props {}
 
-const Sweden: React.FC<Props> = () => {
+const Switzerland: React.FC<Props> = () => {
   return (
     <>
       <div className={styles.JurisdictionPopupWrapper}></div>
 
       <BaseTitle type='h2' className={styles.Title}>
-        Sweden
+        Switzerland
       </BaseTitle>
 
       <div className={styles.Content}>
@@ -61,12 +61,12 @@ const Sweden: React.FC<Props> = () => {
         <ol className={styles.List}>
           <li className={styles.ListLi}>
             The general partner (Komplementar) who owns the partnership
-            management- shares the company’s profit in predetermined proportions
+            management- shares the company's profit in predetermined proportions
             and bears unlimited liability for the debts of the partnership
           </li>
           <li className={styles.ListLi}>
             Like shareholders, limited partners (Kommanditdelager) have limited
-            liability, that is, exclusively for the company’s debts (min. SEK
+            liability, that is, exclusively for the company's debts (min. SEK
             100 or EUR 10) to the extent of their contribution and do not have
             the right to manage the partnership.
           </li>
@@ -93,7 +93,7 @@ const Sweden: React.FC<Props> = () => {
         <h2 className={styles.Subtitle}>Taxes</h2>
 
         <p className={styles.Paragraph}>
-          CORPORATE TAX (Corporate Profit Tax): The standard rate is 26.3%.
+          CORPORATE TAX (Corporate Profit Tax): The standard rate is 26.3%.{' '}
           <br />
           For limited partnerships (KB), corporate tax can be excluded if
           partners operate only outside Sweden.
@@ -104,8 +104,8 @@ const Sweden: React.FC<Props> = () => {
           companies + “Tax Exemption” requirements apply if: <br />
           ownership of shares is at least 25%; <br />
           the subsidiary has tax residency status in a country with a corporate
-          tax rate close to Sweden. If the &#34;tax exemption&#34; is not
-          applicable, then the tax rate on incoming dividends is 26.3%.
+          tax rate close to Sweden. If the "tax exemption" is not applicable,
+          then the tax rate on incoming dividends is 26.3%.
         </p>
 
         <p className={styles.Paragraph}>
@@ -157,4 +157,4 @@ const Sweden: React.FC<Props> = () => {
   );
 };
 
-export default Sweden;
+export default Switzerland;

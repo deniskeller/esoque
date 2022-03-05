@@ -12,3 +12,4 @@ export { default as Scotland } from '../JurisdictionIPopupContents/Scotland';
 export { default as Seychelles } from '../JurisdictionIPopupContents/Seychelles';
 export { default as Singapore } from '../JurisdictionIPopupContents/Singapore';
 export { default as Sweden } from '../JurisdictionIPopupContents/Sweden';
+export { default as Switzerland } from '../JurisdictionIPopupContents/Switzerland';
