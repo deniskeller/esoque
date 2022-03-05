@@ -20,7 +20,8 @@ const Dominica: React.FC<Props> = () => {
           Reporting and taxation - unaccountable jurisdiction. <br />
           The main type of company for conducting international trade and
           investment activities is the International Business Company
-          (International Business Company, hereinafter referred to as “IBC").
+          (International Business Company, hereinafter referred to as
+          &#34;IBC&#34;).
         </p>
 
         <h2 className={styles.Subtitle}>IBC doesn’t have the right to:</h2>
