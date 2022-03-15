@@ -47,7 +47,7 @@ const SecondStep: React.FC<Props> = ({ nextStep }) => {
       />
 
       <BaseButton onClick={submitFormData} className={styles.BtnLogin}>
-        Confirm and continue
+        Confirm
       </BaseButton>
 
       <LinkHome className={styles.LinkHome} />
