@@ -37,3 +37,4 @@ export { default as CertificationPopup } from './popup/CertificationPopup/Certif
 export { default as CorporateDocumentsPopup } from './popup/CorporateDocumentsPopup/CorporateDocumentsPopup';
 export { default as NotAcceptingPopup } from './popup/NotAcceptingPopup/NotAcceptingPopup';
 export { default as JurisdictionPopup } from './popup/JurisdictionPopup/JurisdictionPopup';
+export { default as RequestSuccessPopup } from './popup/RequestSuccessPopup/RequestSuccessPopup';

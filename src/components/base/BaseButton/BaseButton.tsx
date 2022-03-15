@@ -1,4 +1,6 @@
+import { ALL_ICONS } from '@constants/icons';
 import React, { ReactNode } from 'react';
+import { BaseIcon } from '..';
 import styles from './BaseButton.module.scss';
 
 interface Props {
@@ -9,6 +11,7 @@ interface Props {
   disabled?: boolean;
   className?: string;
   styles?: string;
+  loading?: boolean;
 }
 
 const BaseButton: React.FC<Props> = ({
@@ -18,6 +21,7 @@ const BaseButton: React.FC<Props> = ({
   type = 'default',
   disabled = false,
   className,
+  loading = false
 }) => {
   return (
     <div className={` ${className}`}>
@@ -27,7 +31,15 @@ const BaseButton: React.FC<Props> = ({
         className={`${styles.Button} ${styles['Button_' + type]}`}
         onClick={onClick}
       >
-        {children}
+        {
+          loading ?
+          <BaseIcon
+            icon={ALL_ICONS.LOADING}
+            viewBox='0 0 38 38'
+            className={styles.IconLoading}
+          /> 
+          : children
+        }        
       </button>
     </div>
   );

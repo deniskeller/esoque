@@ -5,6 +5,7 @@ import {
   CorporateDocumentsPopup,
   ImprovingItem,
   NotAcceptingPopup,
+  RequestSuccessPopup,
   WidgetSidious,
 } from '@content/index';
 import Image from 'next/image';
@@ -224,43 +225,6 @@ const Sidious: React.FC<Props> = () => {
             How it works
           </BaseTitle>
 
-          {/* <div className={`${styles.HowItWorksBlockImage}`}>
-            {size.width <= 1024 && size.width > 768 ? (
-              <Image
-                // layout={'fill'}
-                layout={'responsive'}
-                width={885}
-                height={597}
-                alt='preview'
-                src='/images/landing/imgSidious5tablet.png'
-                blurDataURL='/images/landing/imgSidious5tablet.png'
-                placeholder='blur'
-              />
-            ) : size.width <= 768 && size.width > 1 ? (
-              <Image
-                // layout={'fill'}
-                layout={'responsive'}
-                width={336}
-                height={722}
-                alt='preview'
-                src='/images/landing/imgSidious5mobile.png'
-                blurDataURL='/images/landing/imgSidious5mobile.png'
-                placeholder='blur'
-              />
-            ) : (
-              <Image
-                // layout={'fill'}
-                layout={'responsive'}
-                width={1531}
-                height={737}
-                alt='preview'
-                src='/images/landing/imgSidious5desktop.png'
-                blurDataURL='/images/landing/imgSidious5desktop.png'
-                placeholder='blur'
-              />
-            )}
-          </div> */}
-
           <div
             className={`${styles.HowItWorksBlockImage} ${styles.DesktopImage}`}
           >
@@ -311,6 +275,8 @@ const Sidious: React.FC<Props> = () => {
       <NotAcceptingPopup className='NotAcceptingPopup' />
       {/* дефолтная */}
       <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
+      {/* success */}
+      <RequestSuccessPopup className='RequestSuccessPopup' />
     </>
   );
 };

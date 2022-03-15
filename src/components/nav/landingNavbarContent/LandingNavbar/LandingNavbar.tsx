@@ -48,7 +48,7 @@ const languages = [
 const LandingNavbar: React.FC<Props> = () => {
   const router = useRouter();
   const [modal, setModal] = React.useState(false);
-  const [auth, setAuth] = React.useState(true);
+  const [auth, setAuth] = React.useState(false);
   const menuOpen = () => {
     setModal(true);
   };
