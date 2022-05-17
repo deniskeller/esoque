@@ -1,0 +1,63 @@
+.filter {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: em(63px);
+
+  &SelectGroup {
+    align-items: flex-end;
+    display: flex;
+  }
+  &Select {
+    width: em(251px);
+    margin-right: em(30px);
+  }
+  &BtnGroup {
+    display: flex;
+    height: em(49px);
+  }
+  &BtnApply {
+    max-width: em(185px);
+    width: 100%;
+
+    margin-right: em(20px);
+    button {
+      padding: em(15px) em(34px);
+      font-size: em(15px);
+    }
+  }
+  &BtnReset {
+    max-width: em(124px);
+    width: 100%;
+    font-size: em(15px);
+    button {
+      padding: em(15px) em(34px);
+      color: $black3;
+    }
+  }
+}
+
+.show {
+  max-width: em(180px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: $black3;
+  &Text {
+    margin-right: em(16px);
+  }
+  &Select {
+    width: em(98px);
+  }
+  &Subtitle {
+    white-space: nowrap;
+    position: absolute;
+    bottom: -60%;
+    right: 0;
+    font-size: em(15px);
+    opacity: 0.7;
+  }
+}

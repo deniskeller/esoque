@@ -1,6 +1,6 @@
 .Container {
   width: 100%;
-  max-width: em(1532px);
+  max-width: em(1552px);
   margin: 0 auto;
   position: relative;
 
@@ -26,6 +26,22 @@
     }
   }
 
+  .linkApp {
+    position: absolute;
+    bottom: em(-50px);
+    right: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    * {
+      color: $pink;
+      font-weight: bold;
+      font-size: em(17px);
+      letter-spacing: em(-0.5px);
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
   .NavbarMobile {
     display: none;
     position: absolute;
@@ -69,8 +85,37 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-right: em(110px);
+    @include iftablet {
+      margin-right: em(50px);
+    }
+  }
+  &__logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: em(150px);
+    width: em(195px);
+    height: em(40px);
+    cursor: pointer;
+    @include iftablet {
+      margin-right: em(50px);
+    }
   }
 }
+
+// Logo icons
+.logo {
+  width: em(146px);
+  height: em(29px);
+}
+.logo_text {
+  width: em(90px);
+  height: em(7px);
+}
+//
 
 .Navbar__select_language {
   min-width: em(87px);

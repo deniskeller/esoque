@@ -1,50 +1,72 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Link from "next/link";
 import {
   BaseButton,
   BaseInput,
   BaseSearchSelect,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './ThirdStep.module.scss';
-import { LinkHome, StepBack } from '@content/index';
+} from "@base/index";
+import styles from "./ThirdStep.module.scss";
+import { LinkHome, StepBack } from "@content/index";
+import { codes } from "@utils/codes";
+import { validateFields } from "@utils/validateInputs";
+import { CheckPhone } from "@store/signup/types";
 
 interface Props {
-  nextStep: () => void;
+  countryCode: string;
+  phone: string;
+  error: string;
+  checkPhone: (phoneData: CheckPhone) => void;
+  setStep: (step: number) => void;
+  clearPrevInputs: () => void;
 }
 
-const country = [
-  { code: 41, title: 'United Kingdom1' },
-  { code: 42, title: 'United Kingdom2' },
-  { code: 43, title: 'United Kingdom3' },
-  { code: 44, title: 'United Kingdom4' },
-  { code: 45, title: 'United Kingdom5' },
-  { code: 46, title: 'United Kingdom6' },
-  { code: 47, title: 'United Kingdom7' },
-  { code: 49, title: 'United Kingdom8' },
-];
+type Inputs = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
 
-const ThirdStep: React.FC<Props> = ({ nextStep }) => {
-  const [phoneCode, setPhoneCode] = React.useState<number | string>('');
-  const changeHandlerCode = (value: number) => {
-    setPhoneCode(value);
+const ThirdStep: React.FC<Props> = ({
+  phone,
+  countryCode,
+  error,
+  checkPhone,
+  setStep,
+  clearPrevInputs,
+}) => {
+  const [inputs, setInputs] = useState<Inputs>({
+    countryCode: { value: countryCode, error: "", type: "phoneCode" },
+    phone: { value: phone, error: "", type: "number" },
+  });
+  const changeInputs = (name: string, value: string) => {
+    const newInputs = { ...inputs };
+    newInputs[name].value = value.trim();
+    setInputs(newInputs);
   };
 
-  const [phone, setPhone] = React.useState<number | string>('');
-  const changeHandlerPhone = (value: number) => {
-    setPhone(value);
+  const prevStep = () => {
+    clearPrevInputs();
+    setStep(1);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('phoneCode: ', phoneCode);
-    console.log('phone: ', phone);
-    nextStep();
+    const { newObj, errors } = validateFields(inputs);
+
+    if (!errors) {
+      const obj = {
+        countryCode: newObj.countryCode.value,
+        phone: newObj.phone.value,
+      };
+      checkPhone(obj);
+    }
+    setInputs(newObj);
   };
 
   return (
-    <form action='' method='post' className={styles.Phone}>
+    <form action="" method="post" className={styles.Phone}>
       <BaseTitle className={styles.Title}>Enter your phone number</BaseTitle>
       <BaseText className={styles.Subtitle}>
         We will send you a 6-digit verification code
@@ -52,21 +74,23 @@ const ThirdStep: React.FC<Props> = ({ nextStep }) => {
 
       <div className={styles.Inputs}>
         <BaseSearchSelect
-          name='phoneCode'
-          placeholder='Country Code'
-          value={phoneCode}
-          onChange={changeHandlerCode}
-          options={country}
+          name="countryCode"
+          placeholder="Country Code"
+          value={inputs.countryCode.value}
+          error={inputs.countryCode.error || error}
+          onChange={(code: string) => changeInputs("countryCode", code)}
+          options={codes}
           className={styles.SearchSelect}
         />
 
         <BaseInput
-          name='phone'
-          placeholder='Enter code here'
-          type='text'
+          name="phone"
+          placeholder="Enter code here"
+          type="text"
           required
-          value={phone}
-          onChange={changeHandlerPhone}
+          value={inputs.phone.value}
+          error={inputs.phone.error || error}
+          onChange={(value: string) => changeInputs("phone", value)}
           className={styles.Input}
         />
       </div>
@@ -77,7 +101,7 @@ const ThirdStep: React.FC<Props> = ({ nextStep }) => {
 
       <LinkHome className={styles.LinkHome} />
 
-      <StepBack />
+      <StepBack onClick={prevStep} />
     </form>
   );
 };

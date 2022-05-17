@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "EU Licensed lawyer/company",
+    "name_ru": "Лицензированный в ЕС адвокат/ компания",
+    "description": "Verification is made by Non-EU Notary + Apostille\nFront Page included, 3 EUR for additional page.\nVerified as a copy.",
+    "description_ru": "Заверение осуществлено адвокатом или адвокатским бюро с лицензией ЕС. Для этого заверения апостиль не доступен",
+    "type": "option",
+    "quantity_min": "0",
+    "quantity_max": "1",
+    "price": "150.00",
+    "price_unit": "EUR",
+    "price_available": "Y",
+    "price_request": "N"
+  }
+]

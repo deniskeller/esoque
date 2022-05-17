@@ -1,7 +1,7 @@
-import { ALL_ICONS } from '@constants/icons';
-import React, { ReactNode } from 'react';
-import { BaseIcon } from '..';
-import styles from './BaseCheckbox.module.scss';
+import { ALL_ICONS } from "@constants/icons";
+import React, { ReactNode } from "react";
+import { BaseIcon } from "..";
+import styles from "./BaseCheckbox.module.scss";
 
 interface Props {
   id?: string;
@@ -14,7 +14,7 @@ interface Props {
 
 const BaseCheckbox: React.FC<Props> = ({
   children,
-  id = '',
+  id = "",
   className,
   error,
   checkboxValue,
@@ -34,25 +34,23 @@ const BaseCheckbox: React.FC<Props> = ({
       <input
         id={id}
         checked={isActive}
-        name='name'
-        type='checkbox'
+        name="name"
+        type="checkbox"
         className={styles.BaseCheckboxInput}
         readOnly
       />
       <div
-        className={` ${styles.BaseCheckboxCheck} ${
-          isActive ? styles.isActive : ''
-        } ${error && !isActive ? styles.isError : ''}`}
+        className={` ${styles.BaseCheckboxCheck} ${isActive ? styles.isActive : ""} ${
+          error && !isActive ? styles.isError : ""
+        }`}
       >
         <BaseIcon
           icon={ALL_ICONS.CHECKBOX_CHECK}
-          viewBox='0 0 17 19'
+          viewBox="0 0 17 19"
           className={styles.BaseCheckboxTick}
         />
       </div>
-      {children ? (
-        <div className={styles.BaseCheckboxTitle}>{children}</div>
-      ) : null}
+      {children ? <div className={styles.BaseCheckboxTitle}>{children}</div> : null}
     </div>
   );
 };

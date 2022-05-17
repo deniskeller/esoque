@@ -1,123 +1,155 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
   BaseButton,
   BaseInput,
   BaseSearchSelect,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './NinthStep.module.scss';
-import { LinkHome, StepBack } from '@content/index';
+} from "@base/index";
+import styles from "./NinthStep.module.scss";
+import { LinkHome, StepBack } from "@content/index";
+import { SetBusinessData } from "@store/signup/types";
+import { dateMask, validateFields } from "@utils/validateInputs";
 
 interface Props {
-  nextStep: () => void;
+  country: string;
+  legalName: string;
+  registNumber: string;
+  date: string;
+  businessType: string;
+  legalNameError: string;
+  registNumberError: string;
+  saveBusiness: (obj: SetBusinessData) => void;
+  setStep: (step: number) => void;
 }
 
+type Inputs = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
+
 const mockCountry = [
-  { title: 'Америка' },
-  { title: 'Канада' },
-  { title: 'Кипр' },
-  { title: 'Россия' },
-  { title: 'Германия' },
-  { title: 'Украина' },
-  { title: 'Франция' },
+  { title: "America" },
+  { title: "Canada" },
+  { title: "Cyprus" },
+  { title: "Russia" },
 ];
 
 const mockBusinessType = [
-  { title: 'Торговля' },
-  { title: 'Услуги' },
-  { title: 'Производство' },
+  { title: "Trade" },
+  { title: "Services" },
+  { title: "Production" },
 ];
 
-const NinthStep: React.FC<Props> = ({ nextStep }) => {
-  const [country, setCountry] = React.useState('');
-  const [legalName, setLegalName] = React.useState('');
+const NinthStep: React.FC<Props> = ({
+  country,
+  legalName,
+  registNumber,
+  date,
+  businessType,
+  legalNameError,
+  registNumberError,
+  saveBusiness,
+  setStep,
+}) => {
+  const [inputs, setInputs] = useState<Inputs>({
+    country: { value: country, error: "", type: "string" },
+    legalName: { value: legalName, error: "", type: "string" },
+    registNumber: { value: registNumber, error: "", type: "string" },
+    IncorporationDate: { value: date, error: "", type: "string" },
+    businessType: { value: businessType, error: "", type: "string" },
+  });
 
-  const [registNumber, setRegistNumber] = React.useState('');
-  const [date, setDate] = React.useState('');
-  const [businessType, setBusinessType] = React.useState('');
-
-  const changeHandlerCountry = (value: string) => {
-    console.log('country: ', value);
-    setCountry(value);
+  const changeInputs = (name: string, value: string) => {
+    const newInputs = { ...inputs };
+    newInputs[name].value = value;
+    setInputs(newInputs);
   };
 
-  const changeHandlerLegalName = (value: string) => {
-    console.log('legalName: ', value);
-    setLegalName(value);
-  };
-
-  const changeHandlerRegistNumber = (value: string) => {
-    console.log('registNumber: ', value);
-    setRegistNumber(value);
-  };
-
-  const changeHandlerDate = (value: string) => {
-    console.log('date: ', value);
-    setDate(value);
-  };
-
-  const changeHandlerBusinessType = (value: string) => {
-    console.log('businessType: ', value);
-    setBusinessType(value);
+  const changeHandlerData = (value: string) => {
+    const currentDate = dateMask(value);
+    changeInputs("IncorporationDate", currentDate);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    nextStep();
+    const { newObj, errors } = validateFields(inputs);
+    if (!errors) {
+      const obj = {
+        country: newObj.country.value,
+        legalName: newObj.legalName.value,
+        registNumber: newObj.registNumber.value,
+        date: newObj.IncorporationDate.value,
+        businessType: newObj.businessType.value,
+        legalNameError: "",
+        registNumberError: "",
+      };
+      saveBusiness(obj);
+    }
+    setInputs(newObj);
+  };
+
+  const prevStep = () => {
+    setStep(8);
   };
 
   return (
-    <form action='' method='post' className={styles.PersonalAddress}>
+    <form action="" method="post" className={styles.PersonalAddress}>
       <BaseTitle className={styles.Title}>Sign up your business</BaseTitle>
       <BaseText className={styles.Subtitle}>And start using Esoque</BaseText>
       <ul className={styles.Ul}>
         <li className={styles.Li}>
           <BaseSearchSelect
-            name='country'
-            placeholder='Country of Incorporation'
-            value={country}
-            onChange={changeHandlerCountry}
+            name="country"
+            placeholder="Country of Incorporation"
+            value={inputs.country.value}
+            error={inputs.country.error}
+            onChange={(value: string) => changeInputs("country", value)}
             options={mockCountry}
             className={`${styles.Input} ${styles.Country}`}
           />
 
           <BaseInput
-            name='legalName'
-            placeholder='Legal Name'
-            type='text'
+            name="legalName"
+            placeholder="Legal Name"
+            type="text"
             required
-            value={legalName}
-            onChange={changeHandlerLegalName}
+            value={inputs.legalName.value}
+            error={inputs.legalName.error || legalNameError}
+            onChange={(value: string) => changeInputs("legalName", value)}
             className={`${styles.Input} ${styles.LegalName}`}
           />
         </li>
         <li className={styles.Li}>
           <BaseInput
-            name='registNumber'
-            placeholder='Registration Number'
-            type='text'
+            name="registNumber"
+            placeholder="Registration Number"
+            type="text"
             required
-            value={registNumber}
-            onChange={changeHandlerRegistNumber}
+            value={inputs.registNumber.value}
+            error={inputs.registNumber.error || registNumberError}
+            onChange={(value: string) => changeInputs("registNumber", value)}
             className={`${styles.Input} ${styles.RegistNumber}`}
           />
 
           <BaseInput
-            name='date'
-            placeholder='Incorporation Date'
-            type='text'
+            name="IncorporationDate"
+            placeholder="Incorporation Date"
+            type="text"
             required
-            value={date}
-            onChange={changeHandlerDate}
+            value={inputs.IncorporationDate.value}
+            error={inputs.IncorporationDate.error}
+            onChange={changeHandlerData}
             className={`${styles.Input} ${styles.Date}`}
           />
 
           <BaseSearchSelect
-            name='businessType'
-            placeholder='Business Type'
-            value={businessType}
-            onChange={changeHandlerBusinessType}
+            name="businessType"
+            placeholder="Business Type"
+            value={inputs.businessType.value}
+            error={inputs.businessType.error}
+            onChange={(value: string) => changeInputs("businessType", value)}
             options={mockBusinessType}
             className={`${styles.Input} ${styles.BusinessType}`}
           />
@@ -130,7 +162,7 @@ const NinthStep: React.FC<Props> = ({ nextStep }) => {
 
       <LinkHome className={styles.LinkHome} />
 
-      <StepBack />
+      <StepBack onClick={prevStep} />
     </form>
   );
 };

@@ -1,7 +1,7 @@
-import { ALL_ICONS } from '@constants/icons';
-import React, { ReactNode } from 'react';
-import { BaseIcon } from '..';
-import styles from './BaseRadioButton.module.scss';
+import { ALL_ICONS } from "@constants/icons";
+import React, { ReactNode } from "react";
+import { BaseIcon } from "..";
+import styles from "./BaseRadioButton.module.scss";
 
 interface Props {
   id?: string;
@@ -14,7 +14,7 @@ interface Props {
 
 const BaseRadioButton: React.FC<Props> = ({
   children,
-  id = '',
+  id = "",
   className,
   error,
   isActive,
@@ -25,15 +25,15 @@ const BaseRadioButton: React.FC<Props> = ({
       <input
         id={id}
         checked={isActive}
-        name='name'
-        type='radio'
+        name="name"
+        type="radio"
         className={styles.BaseRadioButton}
         readOnly
       />
       <div
         className={` ${styles.BaseRadioButtonCheck} ${
-          isActive ? styles.isActive : ''
-        } ${error && !isActive ? styles.isError : ''}`}
+          isActive ? styles.isActive : ""
+        } ${error && !isActive ? styles.isError : ""}`}
       >
         <div className={styles.BaseRadioButtonTick}></div>
       </div>

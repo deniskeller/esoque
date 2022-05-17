@@ -1,10 +1,10 @@
-import { BaseRadioButton } from '@base/index';
-import React from 'react';
-import styles from './CompanyItem.module.scss';
+import { BaseRadioButton } from "@base/index";
+import React from "react";
+import styles from "./CompanyItem.module.scss";
 
 interface Props {
   companyName: string;
-  companyCode?: number;
+  companyCode?: string | number;
   id?: string;
   isActive: boolean;
   onClick: () => void;

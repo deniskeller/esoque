@@ -190,10 +190,10 @@ const Unicorns: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                src="/images/landing/imgUnicornsHorse1.png"
+                src="/images/landing/unicorns/imgUnicornsHorse1.png"
                 layout={"fill"}
                 priority={true}
-                blurDataURL="/images/landing/imgUnicornsHorse1.png"
+                blurDataURL="/images/landing/unicorns/imgUnicornsHorse1.png"
                 placeholder="blur"
                 alt={"Unicorn image"}
               />

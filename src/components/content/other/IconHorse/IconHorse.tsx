@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from './IconHorse.module.scss';
+import React from "react";
+import Image from "next/image";
+import styles from "./IconHorse.module.scss";
 
 interface Props {
   className?: string;
@@ -9,11 +9,13 @@ interface Props {
 const IconHorse: React.FC<Props> = ({ className }) => {
   return (
     <div className={`${styles.IconHorse} ${className}`}>
-      <Image
-        src='/images/landing/iconUnicornsHorse.png'
-        layout={'fill'}
-        alt={'Unicorn image'}
-      />
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <Image
+          src="/images/landing/unicorns/iconUnicornsHorse.png"
+          layout={"fill"}
+          alt={"Unicorn image"}
+        />
+      </div>
     </div>
   );
 };

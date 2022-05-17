@@ -1,0 +1,14 @@
+{
+  "menu-items": {
+    "home": "Главная",
+    "unicorns": "Юникорнс",
+    "darkside": "Темная сторона",
+    "sidious": "Сидиус",
+    "eco": "Эко",
+    "esoque": "Эсток"
+  },
+  "auth-buttons": {
+    "login": "Войти",
+    "signup": "Зарегистрироваться"
+  }
+}

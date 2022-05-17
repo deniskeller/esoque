@@ -1,36 +1,50 @@
-import React from 'react';
-import { BaseButton, BaseText, BaseTitle } from '@base/index';
-import styles from './CompletedStep.module.scss';
-import { LinkHome, StepBack } from '@content/index';
-import Image from 'next/image';
+import React from "react";
+import { BaseButton, BaseText, BaseTitle } from "@base/index";
+import { LinkHome, StepBack } from "@content/index";
+
+import Image from "next/image";
+
+import styles from "./CompletedStep.module.scss";
 
 interface Props {
-  nextStep?: () => void;
   title: string;
   subtitle: string;
   btnText: string;
+  setStep: (step: number) => void;
+  prevStepCount: number;
+  nextStepCount: number;
+  registerCompleted?: () => void;
 }
 
 const CompletedStep: React.FC<Props> = ({
-  nextStep,
   title,
   subtitle,
   btnText,
+  setStep,
+  prevStepCount,
+  nextStepCount,
+  registerCompleted,
 }) => {
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    nextStep!();
+    if (registerCompleted) {
+      registerCompleted();
+    }
+    setStep(nextStepCount);
   };
 
+  const prevStep = () => {
+    setStep(prevStepCount);
+  };
   return (
-    <form action='' method='post' className={styles.Completed}>
+    <form action="" method="post" className={styles.Completed}>
       <BaseTitle className={styles.Title}>{title}</BaseTitle>
 
       <div className={styles.Image}>
         <Image
-          src='/images/landing/class.png'
-          layout='fill'
-          alt={'Completed images'}
+          src="/images/landing/register/class.png"
+          layout="fill"
+          alt={"Completed images"}
         />
       </div>
 
@@ -41,7 +55,7 @@ const CompletedStep: React.FC<Props> = ({
 
       <LinkHome className={styles.LinkHome} />
 
-      <StepBack />
+      {nextStepCount !== 10 && <StepBack onClick={prevStep} />}
     </form>
   );
 };

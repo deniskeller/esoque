@@ -1,0 +1,51 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: em(186px);
+  padding-bottom: em(210px);
+  position: relative;
+}
+
+.Title {
+  margin-bottom: em(40px);
+  span {
+    color: $white;
+  }
+}
+.Breadcrumbs {
+  margin-bottom: em(80px);
+}
+
+.WrapperContent {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.List {
+  display: flex;
+  flex-direction: column;
+  max-width: em(900px);
+  width: 100%;
+  margin-bottom: em(110px);
+  color: $white;
+  &Item {
+    line-height: em(23px);
+    font-size: em(21px);
+    margin-bottom: em(30px);
+  }
+}
+
+.BlockImage {
+  position: relative;
+  z-index: 100;
+
+  right: 0;
+  width: em(345px);
+  height: em(326px);
+  float: right;
+  //   margin-left: em(80px);
+  @include iftablet {
+    width: em(200px);
+    height: em(200px);
+  }
+}

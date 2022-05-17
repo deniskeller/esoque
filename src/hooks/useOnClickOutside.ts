@@ -1,6 +1,12 @@
-import { useEffect, RefObject } from 'react';
+import { useEffect, RefObject } from "react";
 
 type Event = MouseEvent | TouchEvent;
+declare global {
+  interface Window {
+    offsetWidth: number;
+    clientWidth: number;
+  }
+}
 
 const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
@@ -8,6 +14,7 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
 ) => {
   useEffect(() => {
     const listener = (event: Event) => {
+      console.log("listeneer");
       const el = ref?.current;
 
       if (event instanceof MouseEvent) {
@@ -26,12 +33,12 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
       handler(event);
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]);
 };

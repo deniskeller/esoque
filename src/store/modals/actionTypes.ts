@@ -4,7 +4,7 @@ export interface IModalState {
 }
 
 export enum ModalActionTypes {
-  SET_POPUP = 'SET_POPUP',
+  SET_POPUP = "SET_POPUP",
 }
 
 interface ISetPopup {

@@ -13,9 +13,9 @@ RUN npm install
 # Copying source files
 COPY . /usr/src/app
 
-# # Building app
-# RUN npm run build
-# EXPOSE $PORT
+# Building app
+RUN npm run build
+EXPOSE $PORT
 
 # Running the app
-CMD "npm" "run" "serve" "--" "-p" "80"
+CMD "npm" "run" "start" "--" "-p" "80"

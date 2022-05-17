@@ -1,0 +1,37 @@
+.Widget {
+  width: 100%;
+}
+
+.Widgetform {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: em(37px);
+}
+
+.Input {
+  width: 100%;
+  max-width: em(568px);
+}
+
+.Select {
+  width: 100%;
+  max-width: em(541px);
+}
+
+.Button {
+  width: 100%;
+  max-width: em(193px);
+  height: em(83px);
+}
+
+.WidgetResponse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ResponseCompanyName {
+  color: $white;
+}

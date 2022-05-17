@@ -1,621 +1,623 @@
 .WelcomeBlock {
-    padding-top: em(315px);
-    padding-bottom: em(80px);
-    position: relative;
+  padding-top: em(315px);
+  padding-bottom: em(80px);
+  position: relative;
+  @include iftablet {
+    padding-top: em(190px);
+    padding-bottom: em(60px);
+  }
+  @include ifmobile {
+    padding-top: em(84px);
+    padding-bottom: em(40px);
+  }
+  .WelcomeBlockTitle {
+    margin-bottom: em(37px);
     @include iftablet {
-        padding-top: em(190px);
-        padding-bottom: em(60px);
+      margin-bottom: em(35px);
     }
     @include ifmobile {
-        padding-top: em(84px);
-        padding-bottom: em(40px);
+      margin-bottom: em(27px);
     }
-    .WelcomeBlockTitle {
-        margin-bottom: em(37px);
-        @include iftablet {
-            margin-bottom: em(35px);
-        }
-        @include ifmobile {
-            margin-bottom: em(27px);
-        }
-        h1 {
-            color: $white;
-        }
+    h1 {
+      color: $white;
     }
-    .WelcomeBlockUl {
-        position: relative;
-        .WelcomeBlockLi {
-            max-width: em(646px);
-            margin-bottom: em(20px);
-            list-style: none;
-            position: relative;
-            @include iftablet {
-                max-width: em(502px);
-            }
-            @include ifmobile {
-                max-width: 100%;
-            }
-            .WelcomeBlockText {
-                p {
-                    font-size: em(21px);
-                    font-family: $font-Calibri;
-                    @include iftablet {
-                        font-size: em(18px);
-                    }
-                    @include ifmobile {
-                        font-size: em(12px);
-                    }
-                }
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
+  }
+  .WelcomeBlockUl {
+    position: relative;
+    .WelcomeBlockLi {
+      max-width: em(646px);
+      margin-bottom: em(20px);
+      list-style: none;
+      position: relative;
+      @include iftablet {
+        max-width: em(502px);
+      }
+      @include ifmobile {
+        max-width: 100%;
+      }
+      .WelcomeBlockText {
+        p {
+          font-size: em(21px);
+          font-family: $font-Calibri;
+          @include iftablet {
+            font-size: em(18px);
+          }
+          @include ifmobile {
+            font-size: em(12px);
+          }
         }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    .WelcomeBlockImage {
-        position: relative;
-        z-index: 100;
-        top: em(-44px);
-        right: 0;
-        width: em(661px);
-        height: em(574px);
-        float: right;
-        @include iftablet {
-            width: em(378px);
-            height: em(313px);
-            top: em(0px);
-            right: em(-50px);
-        }
-        //решит вопрос с картинкой и текстом
-        @include ifmobile {
-            top: em(-5px);
-            right: em(-14px);
-            width: em(151px);
-            height: em(128px);
-        }
+  }
+  .WelcomeBlockImage {
+    position: relative;
+    z-index: 100;
+    top: em(-44px);
+    right: 0;
+    width: em(661px);
+    height: em(574px);
+    float: right;
+    @include iftablet {
+      width: em(378px);
+      height: em(313px);
+      top: em(0px);
+      right: em(-50px);
     }
+    //решит вопрос с картинкой и текстом
+    @include ifmobile {
+      top: em(-5px);
+      right: em(-14px);
+      width: em(151px);
+      height: em(128px);
+    }
+  }
 }
 
 .AboutContainer {
-    background: $black2;
-    .About {
-        padding-top: em(147px);
-        padding-bottom: em(67px);
+  background: $black2;
+  .About {
+    padding-top: em(147px);
+    padding-bottom: em(67px);
+    position: relative;
+    @extend %center;
+    flex-direction: column;
+    @include iftablet {
+      padding-top: em(114px);
+      padding-bottom: em(56px);
+    }
+    @include ifmobile {
+      padding-top: em(81px);
+      padding-bottom: em(50px);
+    }
+    .AboutImage {
+      width: em(250px);
+      height: em(236px);
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: em(40px);
+      @include iftablet {
+        width: em(113px);
+        height: em(107px);
+      }
+      @include ifmobile {
+        width: em(70px);
+        height: em(66px);
+        margin-bottom: em(21px);
+      }
+    }
+    .AboutTitle {
+      width: 100%;
+      max-width: em(873px);
+      position: relative;
+      z-index: 11;
+      margin-bottom: em(126px);
+      h1 {
+        font-size: em(50px);
+        text-align: center;
+      }
+      @include iftablet {
+        max-width: em(716px);
+        h1 {
+          font-size: em(40px);
+        }
+      }
+      @include ifmobile {
+        max-width: em(260px);
+        margin-bottom: em(70px);
+        h1 {
+          font-size: em(24px);
+        }
+      }
+    }
+    .AboutSubtitle {
+      max-width: em(629px);
+      margin-bottom: em(85px);
+      p {
+        font-size: em(30px);
+        line-height: 100%;
+        font-weight: bold;
+        text-align: center;
+        color: $grey;
+      }
+      @include iftablet {
+        margin-bottom: em(43px);
+        p {
+          font-size: em(24px);
+        }
+      }
+      @include ifmobile {
+        max-width: em(269px);
+        margin-bottom: em(70px);
+        p {
+          font-size: em(16px);
+        }
+      }
+    }
+    .AboutIcon {
+      width: em(168px);
+      height: em(168px);
+      border-radius: 50%;
+      background: $yellow;
+      @extend %center;
+      @include iftablet {
+        width: em(92px);
+        height: em(92px);
+      }
+      @include ifmobile {
+        width: em(60px);
+        height: em(60px);
+      }
+      .AboutIconCircleDown {
+        display: flex;
+        align-items: center;
         position: relative;
-        @extend %center;
-        flex-direction: column;
+        width: em(30px);
+        height: em(68px);
         @include iftablet {
-            padding-top: em(114px);
-            padding-bottom: em(56px);
+          width: em(34px);
+          height: em(46px);
         }
         @include ifmobile {
-            padding-top: em(81px);
-            padding-bottom: em(50px);
+          width: em(22px);
+          height: em(30px);
         }
-        .AboutImage {
-            width: em(250px);
-            height: em(236px);
-            position: relative;
-            margin: 0 auto;
-            margin-bottom: em(40px);
-            @include iftablet {
-                width: em(113px);
-                height: em(107px);
-            }
-            @include ifmobile {
-                width: em(70px);
-                height: em(66px);
-                margin-bottom: em(21px);
-            }
-        }
-        .AboutTitle {
-            width: 100%;
-            max-width: em(873px);
-            position: relative;
-            z-index: 11;
-            margin-bottom: em(126px);
-            h1 {
-                font-size: em(50px);
-                text-align: center;
-            }
-            @include iftablet {
-                max-width: em(716px);
-                h1 {
-                    font-size: em(40px);
-                }
-            }
-            @include ifmobile {
-                max-width: em(260px);
-                margin-bottom: em(70px);
-                h1 {
-                    font-size: em(24px);
-                }
-            }
-        }
-        .AboutSubtitle {
-            max-width: em(629px);
-            margin-bottom: em(85px);
-            p {
-                font-size: em(30px);
-                line-height: 100%;
-                font-weight: bold;
-                text-align: center;
-                color: $grey;
-            }
-            @include iftablet {
-                margin-bottom: em(43px);
-                p {
-                    font-size: em(24px);
-                }
-            }
-            @include ifmobile {
-                max-width: em(269px);
-                margin-bottom: em(70px);
-                p {
-                    font-size: em(16px);
-                }
-            }
-        }
-        .AboutIcon {
-            width: em(168px);
-            height: em(168px);
-            border-radius: 50%;
-            background: $yellow;
-            @extend %center;
-            @include iftablet {
-                width: em(92px);
-                height: em(92px);
-            }
-            @include ifmobile {
-                width: em(60px);
-                height: em(60px);
-            }
-            .AboutIconCircleDown {
-                position: relative;
-                width: em(62px);
-                height: em(86px);
-                @include iftablet {
-                    width: em(34px);
-                    height: em(46px);
-                }
-                @include ifmobile {
-                    width: em(22px);
-                    height: em(30px);
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .GraphBlock {
-    padding-top: em(219px);
-    padding-bottom: em(175px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: em(1350px);
-    margin: 0 auto;
-    position: relative;
+  padding-top: em(219px);
+  padding-bottom: em(175px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: em(1350px);
+  margin: 0 auto;
+  position: relative;
+  @include iftablet {
+    padding-top: em(86px);
+    padding-bottom: em(50px);
+    max-width: em(838px);
+  }
+  @include ifmobile {
+    padding-top: em(72px);
+    padding-bottom: em(22px);
+    max-width: 100%;
+  }
+  .GraphBlockTitle {
+    margin-bottom: em(48px);
+    h1 {
+      color: $white;
+      text-align: center;
+    }
     @include iftablet {
-        padding-top: em(86px);
-        padding-bottom: em(50px);
-        max-width: em(838px);
+      margin-bottom: em(24px);
+      h1 {
+        font-size: em(40px);
+      }
     }
     @include ifmobile {
-        padding-top: em(72px);
-        padding-bottom: em(22px);
-        max-width: 100%;
+      margin-bottom: em(24px);
+      h1 {
+        font-size: em(24px);
+      }
     }
-    .GraphBlockTitle {
-        margin-bottom: em(48px);
-        h1 {
-            color: $white;
-            text-align: center;
-        }
+  }
+  .GraphBlockSubtitle {
+    margin-bottom: em(209px);
+    h1 {
+      font-size: em(30px);
+      text-align: center;
+    }
+    @include iftablet {
+      margin-bottom: em(103px);
+      h1 {
+        font-size: em(24px);
+      }
+    }
+    @include ifmobile {
+      margin-bottom: em(49px);
+      h1 {
+        font-size: em(16px);
+      }
+    }
+  }
+  .GraphBlockContent {
+    position: relative;
+    width: 100%;
+    height: em(710px);
+    margin-bottom: em(36px);
+    overflow: hidden;
+    transition: 0.5s;
+    @include iftablet {
+      height: em(581px);
+    }
+    @include ifmobile {
+      height: em(322px);
+    }
+    .LineCenter {
+      position: absolute;
+      left: calc(50% - 3px);
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: $grey;
+      @include iftablet {
+        left: calc(50% - 3px);
+        width: 3px;
+      }
+      @include ifmobile {
+        left: calc(50% - 0.5px);
+        width: 1px;
+      }
+    }
+    .Gradient {
+      position: absolute;
+      width: em(100px);
+      height: em(66px);
+      left: calc(50% - em(50px));
+      bottom: 0;
+      background: linear-gradient(180deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+    .LineTop {
+      width: em(30px);
+      height: em(58px);
+      top: 0;
+      left: calc(50% - em(15px));
+      background: $black;
+      position: absolute;
+      @include iftablet {
+        height: em(48px);
+      }
+      @include ifmobile {
+        display: none;
+      }
+    }
+    .GraphBlockContentItem {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: flex-start;
+      @include ifmobile {
+        flex-wrap: wrap;
+      }
+      &:last-child {
+        margin-left: -40%;
         @include iftablet {
-            margin-bottom: em(24px);
-            h1 {
-                font-size: em(40px);
-            }
+          margin-left: -49%;
         }
         @include ifmobile {
-            margin-bottom: em(24px);
-            h1 {
-                font-size: em(24px);
-            }
+          margin-left: 0%;
         }
-    }
-    .GraphBlockSubtitle {
-        margin-bottom: em(209px);
-        h1 {
-            font-size: em(30px);
-            text-align: center;
-        }
-        @include iftablet {
-            margin-bottom: em(103px);
-            h1 {
-                font-size: em(24px);
-            }
-        }
-        @include ifmobile {
-            margin-bottom: em(49px);
-            h1 {
-                font-size: em(16px);
-            }
-        }
-    }
-    .GraphBlockContent {
+      }
+      .GraphItem {
         position: relative;
-        width: 100%;
-        height: em(710px);
-        margin-bottom: em(36px);
-        overflow: hidden;
-        transition: 0.5s;
-        @include iftablet {
-            height: em(581px);
-        }
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+      .LeftItem {
+        margin-left: 0%;
         @include ifmobile {
-            height: em(322px);
+          margin-left: -13.7%;
         }
-        .LineCenter {
-            position: absolute;
-            left: calc(50% - 3px);
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background: $grey;
+        .LeftCol {
+          border-right: 3px solid $grey;
+          @include ifmobile {
+            border-right: none;
+          }
+          .LeftColItem {
+            position: relative;
+            padding-right: em(67px);
+            margin-bottom: em(47px);
             @include iftablet {
-                left: calc(50% - 3px);
-                width: 3px;
+              padding-right: em(53px);
+              margin-bottom: em(43px);
             }
             @include ifmobile {
-                left: calc(50% - 0.5px);
-                width: 1px;
+              padding-right: em(17px);
+              margin-bottom: em(32px);
             }
-        }
-        .Gradient {
-            position: absolute;
-            width: em(100px);
-            height: em(66px);
-            left: calc(50% - em(50px));
-            bottom: 0;
-            background: linear-gradient(180deg, #101010 0%, rgba(16, 16, 16, 0) 100%);
-            transform: matrix(1, 0, 0, -1, 0, 0);
-        }
-        .LineTop {
-            width: em(30px);
-            height: em(58px);
-            top: 0;
-            left: calc(50% - em(15px));
-            background: $black;
-            position: absolute;
-            @include iftablet {
-                height: em(48px);
-            }
-            @include ifmobile {
-                display: none;
-            }
-        }
-        .GraphBlockContentItem {
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            align-items: flex-start;
-            @include ifmobile {
-                flex-wrap: wrap;
+            p {
+              font-size: em(17px);
+              line-height: 120%;
+              color: $grey;
+              text-align: right;
+              @include iftablet {
+                font-size: em(12px);
+              }
+              @include ifmobile {
+                font-size: em(10px);
+              }
             }
             &:last-child {
-                margin-left: -40%;
-                @include iftablet {
-                    margin-left: -49%;
-                }
-                @include ifmobile {
-                    margin-left: 0%;
-                }
+              margin-bottom: 0;
             }
-            .GraphItem {
-                position: relative;
-                display: flex;
-                align-items: center;
-                flex-direction: row;
+            &::after {
+              display: block;
+              content: " ";
+              width: em(34px);
+              height: 3px;
+              background: $grey;
+              position: absolute;
+              right: 0;
+              top: em(12px);
+              @include iftablet {
+                width: em(27px);
+              }
+              @include ifmobile {
+                width: em(10px);
+                height: 1px;
+              }
             }
-            .LeftItem {
-                margin-left: 0%;
-                @include ifmobile {
-                    margin-left: -13.7%;
-                }
-                .LeftCol {
-                    border-right: 3px solid $grey;
-                    @include ifmobile {
-                        border-right: none;
-                    }
-                    .LeftColItem {
-                        position: relative;
-                        padding-right: em(67px);
-                        margin-bottom: em(47px);
-                        @include iftablet {
-                            padding-right: em(53px);
-                            margin-bottom: em(43px);
-                        }
-                        @include ifmobile {
-                            padding-right: em(17px);
-                            margin-bottom: em(32px);
-                        }
-                        p {
-                            font-size: em(17px);
-                            line-height: 120%;
-                            color: $grey;
-                            text-align: right;
-                            @include iftablet {
-                                font-size: em(12px);
-                            }
-                            @include ifmobile {
-                                font-size: em(10px);
-                            }
-                        }
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                        &::after {
-                            display: block;
-                            content: ' ';
-                            width: em(34px);
-                            height: 3px;
-                            background: $grey;
-                            position: absolute;
-                            right: 0;
-                            top: em(12px);
-                            @include iftablet {
-                                width: em(27px);
-                            }
-                            @include ifmobile {
-                                width: em(10px);
-                                height: 1px;
-                            }
-                        }
-                    }
-                }
-                .RightCol {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: em(230px);
-                    position: relative;
-                    margin-top: em(-10px);
-                    @include iftablet {
-                        width: em(184px);
-                        margin-top: em(1px);
-                    }
-                    @include ifmobile {
-                        width: em(106px);
-                        justify-content: flex-end;
-                        margin-top: em(1px);
-                    }
-                    &::before {
-                        display: block;
-                        content: ' ';
-                        width: 100%;
-                        height: 3px;
-                        background: $grey;
-                        position: absolute;
-                        right: 0;
-                        top: calc(50% - 3px);
-                        @include iftablet {
-                            height: 3px;
-                            top: calc(50% - 3px);
-                        }
-                        @include ifmobile {
-                            height: 1px;
-                            top: calc(50% - 0.5px);
-                        }
-                    }
-                    .RightColItem {
-                        width: em(109px);
-                        height: em(109px);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: $black2;
-                        position: relative;
-                        z-index: 10;
-                        @include iftablet {
-                            width: em(87px);
-                            height: em(87px);
-                        }
-                        @include ifmobile {
-                            width: em(60px);
-                            height: em(60px);
-                        }
-                        P {
-                            font-size: em(24px);
-                            font-weight: bold;
-                            @include iftablet {
-                                font-size: em(19px);
-                            }
-                            @include ifmobile {
-                                font-size: em(14px);
-                            }
-                        }
-                    }
-                }
-            }
-            .RightItem {
-                padding-top: em(223px);
-                padding-bottom: em(50px);
-                @include iftablet {
-                    padding-top: em(179px);
-                    padding-bottom: em(60px);
-                }
-                @include ifmobile {
-                    padding-top: em(48px);
-                    padding-bottom: em(50px);
-                    margin-right: -14%;
-                }
-                .LeftCol {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: em(230px);
-                    position: relative;
-                    margin-top: em(-10px);
-                    @include iftablet {
-                        width: em(184px);
-                        margin-top: em(-12px);
-                    }
-                    @include ifmobile {
-                        width: em(106px);
-                        justify-content: flex-start;
-                        margin-top: em(-1px);
-                    }
-                    &::before {
-                        display: block;
-                        content: ' ';
-                        width: 100%;
-                        height: 3px;
-                        background: $grey;
-                        position: absolute;
-                        right: 0;
-                        top: calc(50% - 3px);
-                        @include iftablet {
-                            height: 3px;
-                            top: calc(50% + 3px);
-                        }
-                        @include ifmobile {
-                            height: 1px;
-                            top: calc(50% + 0.5px);
-                        }
-                    }
-                    .LeftColItem {
-                        width: em(109px);
-                        height: em(109px);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: $black2;
-                        position: relative;
-                        z-index: 10;
-                        @include iftablet {
-                            width: em(87px);
-                            height: em(87px);
-                        }
-                        @include ifmobile {
-                            width: em(60px);
-                            height: em(60px);
-                        }
-                        P {
-                            font-size: em(24px);
-                            font-weight: bold;
-                            @include iftablet {
-                                font-size: em(19px);
-                            }
-                            @include ifmobile {
-                                font-size: em(14px);
-                            }
-                        }
-                    }
-                }
-                .RightCol {
-                    border-left: 3px solid $grey;
-                    @include ifmobile {
-                        border-left: none;
-                    }
-                    .RightColItem {
-                        position: relative;
-                        padding-left: em(67px);
-                        margin-bottom: em(47px);
-                        @include iftablet {
-                            padding-left: em(53px);
-                            margin-bottom: em(43px);
-                        }
-                        @include ifmobile {
-                            padding-left: em(17px);
-                            margin-bottom: em(32px);
-                        }
-                        p {
-                            font-size: em(17px);
-                            line-height: 120%;
-                            color: $grey;
-                            text-align: left;
-                            @include iftablet {
-                                font-size: em(12px);
-                            }
-                            @include ifmobile {
-                                font-size: em(10px);
-                            }
-                        }
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                        &::after {
-                            display: block;
-                            content: ' ';
-                            width: em(34px);
-                            height: 3px;
-                            background: $grey;
-                            position: absolute;
-                            left: 0;
-                            top: em(12px);
-                            @include iftablet {
-                                width: em(27px);
-                            }
-                            @include ifmobile {
-                                width: em(10px);
-                                height: 1px;
-                            }
-                        }
-                    }
-                }
-            }
-            .LowPadding {
-                padding-top: em(100px);
-                padding-bottom: 0;
-                @include iftablet {
-                    padding-top: em(75px);
-                    padding-bottom: 0;
-                }
-                @include ifmobile {
-                    padding-top: em(48px);
-                    padding-bottom: em(60px);
-                    margin-right: -14%;
-                }
-            }
+          }
         }
-    }
-    .FullHeight {
-        height: em(1691px);
+        .RightCol {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: em(230px);
+          position: relative;
+          margin-top: em(-10px);
+          @include iftablet {
+            width: em(184px);
+            margin-top: em(1px);
+          }
+          @include ifmobile {
+            width: em(106px);
+            justify-content: flex-end;
+            margin-top: em(1px);
+          }
+          &::before {
+            display: block;
+            content: " ";
+            width: 100%;
+            height: 3px;
+            background: $grey;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 3px);
+            @include iftablet {
+              height: 3px;
+              top: calc(50% - 3px);
+            }
+            @include ifmobile {
+              height: 1px;
+              top: calc(50% - 0.5px);
+            }
+          }
+          .RightColItem {
+            width: em(109px);
+            height: em(109px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $black2;
+            position: relative;
+            z-index: 10;
+            @include iftablet {
+              width: em(87px);
+              height: em(87px);
+            }
+            @include ifmobile {
+              width: em(60px);
+              height: em(60px);
+            }
+            P {
+              font-size: em(24px);
+              font-weight: bold;
+              @include iftablet {
+                font-size: em(19px);
+              }
+              @include ifmobile {
+                font-size: em(14px);
+              }
+            }
+          }
+        }
+      }
+      .RightItem {
+        padding-top: em(223px);
+        padding-bottom: em(50px);
         @include iftablet {
-            height: em(1450px);
+          padding-top: em(179px);
+          padding-bottom: em(60px);
         }
         @include ifmobile {
-            height: em(1306px);
+          padding-top: em(48px);
+          padding-bottom: em(50px);
+          margin-right: -14%;
         }
-    }
-    .GraphBlockBtn {
-        width: 100%;
-        max-width: em(289px);
-        height: em(63px);
+        .LeftCol {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: em(230px);
+          position: relative;
+          margin-top: em(-10px);
+          @include iftablet {
+            width: em(184px);
+            margin-top: em(-12px);
+          }
+          @include ifmobile {
+            width: em(106px);
+            justify-content: flex-start;
+            margin-top: em(-1px);
+          }
+          &::before {
+            display: block;
+            content: " ";
+            width: 100%;
+            height: 3px;
+            background: $grey;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 3px);
+            @include iftablet {
+              height: 3px;
+              top: calc(50% + 3px);
+            }
+            @include ifmobile {
+              height: 1px;
+              top: calc(50% + 0.5px);
+            }
+          }
+          .LeftColItem {
+            width: em(109px);
+            height: em(109px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $black2;
+            position: relative;
+            z-index: 10;
+            @include iftablet {
+              width: em(87px);
+              height: em(87px);
+            }
+            @include ifmobile {
+              width: em(60px);
+              height: em(60px);
+            }
+            P {
+              font-size: em(24px);
+              font-weight: bold;
+              @include iftablet {
+                font-size: em(19px);
+              }
+              @include ifmobile {
+                font-size: em(14px);
+              }
+            }
+          }
+        }
+        .RightCol {
+          border-left: 3px solid $grey;
+          @include ifmobile {
+            border-left: none;
+          }
+          .RightColItem {
+            position: relative;
+            padding-left: em(67px);
+            margin-bottom: em(47px);
+            @include iftablet {
+              padding-left: em(53px);
+              margin-bottom: em(43px);
+            }
+            @include ifmobile {
+              padding-left: em(17px);
+              margin-bottom: em(32px);
+            }
+            p {
+              font-size: em(17px);
+              line-height: 120%;
+              color: $grey;
+              text-align: left;
+              @include iftablet {
+                font-size: em(12px);
+              }
+              @include ifmobile {
+                font-size: em(10px);
+              }
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &::after {
+              display: block;
+              content: " ";
+              width: em(34px);
+              height: 3px;
+              background: $grey;
+              position: absolute;
+              left: 0;
+              top: em(12px);
+              @include iftablet {
+                width: em(27px);
+              }
+              @include ifmobile {
+                width: em(10px);
+                height: 1px;
+              }
+            }
+          }
+        }
+      }
+      .LowPadding {
+        padding-top: em(100px);
+        padding-bottom: 0;
         @include iftablet {
-            max-width: em(149px);
-            height: em(43px);
+          padding-top: em(75px);
+          padding-bottom: 0;
         }
         @include ifmobile {
-            max-width: em(76px);
-            height: em(33px);
+          padding-top: em(48px);
+          padding-bottom: em(60px);
+          margin-right: -14%;
         }
+      }
     }
+  }
+  .FullHeight {
+    height: em(1691px);
+    @include iftablet {
+      height: em(1450px);
+    }
+    @include ifmobile {
+      height: em(1306px);
+    }
+  }
+  .GraphBlockBtn {
+    width: 100%;
+    max-width: em(289px);
+    height: em(63px);
+    @include iftablet {
+      max-width: em(149px);
+      height: em(43px);
+    }
+    @include ifmobile {
+      max-width: em(76px);
+      height: em(33px);
+    }
+  }
 }
 
 .GreenColor {
-    color: $green;
+  color: $green;
 }
 
 .PinkColor {
-    color: $pink;
+  color: $pink;
 }
 
 .YellowColor {
-    color: $yellow;
+  color: $yellow;
 }

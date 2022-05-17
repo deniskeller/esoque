@@ -1,77 +1,90 @@
 //общие
 .Button {
-    width: 100%;
-    height: 100%;
-    @extend %button;
-    border-radius: 10px;
-    font-size: em(20px);
-    font-weight: 600;
-    line-height: 120%;
-    font-family: $font-Termina;
-    white-space: nowrap;
-    @include iftablet {
-        font-size: em(17px);
-    }
-    @include ifmobile {
-        font-size: em(11px);
-    }
+  width: 100%;
+  height: 100%;
+  @extend %button;
+  border-radius: 10px;
+  font-size: em(20px);
+  font-weight: 600;
+  line-height: 120%;
+  font-family: $font-Termina;
+  white-space: nowrap;
+  @include iftablet {
+    font-size: em(17px);
+  }
+  @include ifmobile {
+    font-size: em(11px);
+  }
 }
 
 .Button:disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 //стандартаня желтая
 .Button_default {
-    color: $black;
-    background: $yellow;
-    &:hover {
-        background: rgba(226, 240, 99, 0.65);
-    }
-    &:active {
-        background: rgba(226, 240, 99, 0.8);
-        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
+  color: $black;
+  background: $yellow;
+  &:hover {
+    background: rgba(226, 240, 99, 0.65);
+  }
+  &:active {
+    background: rgba(226, 240, 99, 0.8);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }
 
 //стандартаня желтая
 .Button_white {
-    color: $black;
-    background: $white;
-    border: 5px solid $yellow;
+  color: $black;
+  background: $white;
+  border: 5px solid $yellow;
 }
 
 //пустая
 .Button_empty {
-    color: $white;
-    background: none;
-    &:hover {
-        color: $yellow;
-    }
+  color: $white;
+  background: none;
+  &:hover {
+    color: $yellow;
+  }
 }
 
 //желтая рамка
 .Button_success {
-    color: $yellow;
-    background: none;
-    border: em(5px) solid $yellow;
+  color: $yellow;
+  background: none;
+  border: em(5px) solid $yellow;
+}
+
+// Желтая рамка и белый цвет текста
+.Button_success_white {
+  color: $white;
+  background: none;
+  border: em(5px) solid $yellow;
+}
+
+.Button_success_black {
+  color: $black;
+  background: none;
+  border: em(5px) solid $yellow;
 }
 
 .IconLoading {
-    width: em(38px);
-    height: em(38px);
-    transition: all 0.5s ease;
-    animation: rotate 1s linear infinite;
-    @include ifmobile {
-        width: em(30px);
-        height: em(30px);
-    }
+  width: em(38px);
+  height: em(38px);
+  transition: all 0.5s ease;
+  animation: rotate 1s linear infinite;
+  @include ifmobile {
+    width: em(30px);
+    height: em(30px);
+  }
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(360deg);
+  }
 }

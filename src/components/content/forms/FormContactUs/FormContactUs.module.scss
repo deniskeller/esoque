@@ -1,0 +1,83 @@
+.Form {
+  max-width: em(1050px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &Title {
+    margin-bottom: em(55px);
+    * {
+      color: $white;
+      font-size: em(50px);
+      font-weight: bold;
+    }
+  }
+  &SubTitle {
+    max-width: em(545px);
+    width: 100%;
+    margin-bottom: em(30px);
+    * {
+      font-family: $font-Termina;
+      color: $yellow;
+      font-size: em(20px);
+      text-align: center;
+    }
+  }
+  .Row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: em(30px);
+
+    .Input {
+      width: 49%;
+      div {
+        display: none;
+      }
+    }
+  }
+  .FormPhoneInput {
+    width: 49%;
+  }
+  .Textarea {
+    width: 100%;
+    height: em(462px);
+    margin-bottom: em(17px);
+  }
+
+  .FormFiles {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: em(50px);
+    &Name {
+      width: 60%;
+    }
+    &Btn {
+      width: 38%;
+    }
+  }
+
+  .CheckBoxContainer {
+    color: $white;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: em(15px);
+  }
+  .CheckBoxText {
+    margin-left: em(24px);
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .SubmitBtn {
+    margin-top: em(15px);
+    width: em(193px);
+    height: em(63px);
+    * {
+      font-size: em(20px);
+    }
+  }
+}

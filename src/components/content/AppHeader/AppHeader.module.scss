@@ -1,0 +1,49 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: em(91px);
+}
+.logo {
+  max-width: em(238px);
+  width: 100%;
+  height: em(47px);
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: em(260px);
+  width: 100%;
+  &Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
+    span {
+      margin-left: em(12px);
+      font-size: em(17px);
+      font-weight: 600;
+      color: $black3;
+    }
+    &Icon {
+      width: em(38px);
+      height: em(38px);
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+.SelectContainer {
+  position: relative;
+}
+
+.SelectHeader {
+  $size: 10px;
+  width: 100%;
+  height: 100%;
+  background: $input;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: em(10px);
+  padding: 0 em(37px);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: em(52px);
+  font-size: em(20px);
+  border-radius: em(5px, 10px);
+  @include iftablet {
+    height: em(55px);
+  }
+  @include ifmobile {
+    border-radius: em(10px, $size);
+    padding: 0 em(17px);
+    height: em(55px);
+  }
+
+  p {
+    font-weight: normal;
+    line-height: 120%;
+    color: $placeholder;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
+  }
+  .NotEmpty {
+    color: $black;
+  }
+}
+
+.NotEmpty {
+  color: $black;
+}
+
+.SelectHeaderFocus {
+  border: 2px solid $yellow;
+}
+
+.IconArrow {
+  width: em(13px);
+  height: em(13px);
+  position: absolute;
+  right: em(19px);
+  @include iftablet {
+    width: em(13px);
+    height: em(13px);
+    right: em(17px);
+  }
+  @include ifmobile {
+    width: em(7px);
+    height: em(7px);
+    right: em(13px);
+  }
+}
+
+.IconArrowTop {
+  top: calc(45% - em(10px));
+  @include iftablet {
+    top: calc(45% - em(10px));
+  }
+  @include ifmobile {
+    top: calc(45% - em(7px));
+  }
+}
+
+.IconArrowBottom {
+  bottom: calc(45% - em(12px));
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  @include iftablet {
+    bottom: calc(45% - em(13px));
+  }
+  @include ifmobile {
+    bottom: calc(45% - em(7px));
+  }
+}
+
+.SelectList {
+  position: absolute;
+  top: em(60px);
+  z-index: 1000;
+  width: 100%;
+  background: #f2f5f6;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: em(10px);
+  max-height: em(166px);
+  overflow-y: scroll;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  @include iftablet {
+    top: em(75px);
+    max-height: em(134px);
+  }
+  @include ifmobile {
+    top: em(60px);
+    max-height: em(110px);
+  }
+}
+
+.SelectList::-webkit-scrollbar {
+  display: none;
+  width: 0px; /* For Chrome, Safari, and Opera */
+}
+
+.ListItem {
+  cursor: pointer;
+  height: em(55px);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 em(37px);
+  color: $placeholder;
+
+  &:first-child {
+    border-top-left-radius: em(10px);
+    border-top-right-radius: em(10px);
+  }
+  &:last-child {
+    border-bottom-left-radius: em(10px);
+    border-bottom-right-radius: em(10px);
+  }
+  &:hover {
+    background: $light_grey;
+  }
+
+  .ListItemTitle {
+    font-size: em(20px);
+    font-weight: normal;
+    line-height: 100%;
+    @include iftablet {
+      font-size: em(17px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
+  }
+
+  @include iftablet {
+    height: em(61px);
+  }
+  @include ifmobile {
+    height: em(44px);
+    padding: 0 em(25px);
+  }
+}
+
+.Error {
+  border: 2px solid $error;
+}
+
+.ErrorText {
+  display: block;
+  font-size: em(16px);
+  line-height: 120%;
+  color: $error;
+  margin-top: em(20px);
+  @include iftablet {
+    font-size: em(12px);
+  }
+  @include ifmobile {
+    font-size: em(9px);
+  }
+}

@@ -13,8 +13,11 @@
       // "@tinaPage/*": ["tina/page/*"],
       "@hooks/*": ["hooks/*"],
       "@tina/*": ["tina/*"],
-      "@tinaDenis/*": ["tinaDenis/*"],
-      "@services/*": ["services/*"]
+      "@store/*": ["store/*"],
+      "@utils/*": ["utils/*"],
+      "@api/*": ["api/*"],
+      "@services/*": ["services/*"],
+      "@type/*": ["types/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

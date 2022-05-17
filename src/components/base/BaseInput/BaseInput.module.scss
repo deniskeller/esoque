@@ -27,6 +27,9 @@
   &:focus {
     border: 2px solid $yellow;
   }
+  &[type="password"] {
+    font-family: $font-stars;
+  }
 
   @include iftablet {
     $size: 17px;

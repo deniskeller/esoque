@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.requaired {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: em(10px);
+  span {
+    font-size: em(17px);
+    color: $pink;
+  }
+}
+.filter {
+  margin-bottom: em(63px);
+}
+
+.userName {
+  font-size: em(19px);
+  color: $black3;
+  margin-bottom: em(32px);
+  span {
+    margin-left: em(28px);
+  }
+}
+
+.btnGroup {
+  display: flex;
+  height: em(62px);
+  margin-bottom: em(60px);
+
+  button {
+    font-size: em(20px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &Create {
+    max-width: em(340px);
+    width: 100%;
+    margin-right: em(24px);
+  }
+  &Reassign {
+    max-width: em(427px);
+    width: 100%;
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.titlePage {
+  margin-bottom: em(32px);
+}

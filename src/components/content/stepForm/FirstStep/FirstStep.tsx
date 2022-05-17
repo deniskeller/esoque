@@ -1,41 +1,54 @@
-import React from 'react';
-import Link from 'next/link';
-import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
-import styles from './FirstStep.module.scss';
-import { LinkHome } from '@content/index';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { BaseButton, BaseInput, BaseText, BaseTitle } from "@base/index";
+import styles from "./FirstStep.module.scss";
+import { LinkHome } from "@content/index";
+import { validateEmail } from "@utils/validateInputs";
 
 interface Props {
-  nextStep: () => void;
+  checkEmail: (email: string) => void;
+  email: string;
+  error: string;
 }
 
-const FirstStep: React.FC<Props> = ({ nextStep }) => {
-  const [email, setEmail] = React.useState<string>('');
+const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
+  const [emailInput, setEmailInput] = useState<string>(email);
+  const [textError, setTextError] = useState(error);
+
   const changeHandlerPhone = (value: string) => {
-    setEmail(value);
+    setEmailInput(value);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    nextStep();
+    if (validateEmail(emailInput)) {
+      checkEmail(emailInput);
+    } else {
+      setTextError("Please enter a valid email");
+    }
   };
 
+  useEffect(() => {
+    setTextError(error);
+  }, [error]);
+
   return (
-    <form action='' method='post' className={styles.Email}>
+    <form action="" method="post" className={styles.Email}>
       <BaseTitle className={styles.Title}>Enter your email</BaseTitle>
       <BaseText className={styles.Subtitle}>
         This address will be associated with your Company’s profile.
       </BaseText>
 
       <BaseInput
-        label=''
-        value={email}
-        name='email'
+        // label='Email'
+        error={textError}
+        value={emailInput}
+        name="email"
         onChange={changeHandlerPhone}
-        placeholder='Email'
-        type='text'
+        placeholder="Email"
+        type="text"
         required
         className={styles.Input}
-        error=''
       />
 
       <BaseButton onClick={submitFormData} className={styles.BtnLogin}>
@@ -43,8 +56,8 @@ const FirstStep: React.FC<Props> = ({ nextStep }) => {
       </BaseButton>
 
       <BaseText className={styles.Question}>
-        Already have an account?{' '}
-        <Link href={'/login'}>
+        Already have an account?{" "}
+        <Link href={"/login"}>
           <a className={`${styles.Link} ${styles.LinkQuestion}`}>Sign in.</a>
         </Link>
       </BaseText>

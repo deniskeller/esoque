@@ -4,7 +4,7 @@
 const HomeApp = () => {
   return (
     <div>
-      <h1 style={{ color: 'red' }}>Это приложуха / страница HOME</h1>
+      <h1 style={{ color: "red" }}>Это приложуха / страница HOME</h1>
     </div>
   );
 };

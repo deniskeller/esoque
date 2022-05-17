@@ -1,0 +1,93 @@
+.Eco {
+  position: relative;
+
+  background: url("/images/landing/eco/eco-bg.png") center / cover no-repeat;
+  * {
+    font-family: $font-Termina;
+  }
+}
+.blur {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(16, 16, 16, 0.44);
+}
+
+.WrapperPage {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  //   align-items: flex-start;
+  min-height: 100vh;
+}
+.Title {
+  margin-bottom: em(40px);
+}
+.white {
+  color: $white;
+}
+.green {
+  color: $green;
+}
+.pink {
+  font-weight: bold;
+  * {
+    color: $pink;
+  }
+}
+.WrapperContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  max-width: em(853px);
+  width: 100%;
+  @include iftablet {
+    max-width: em(500px);
+  }
+  &Item {
+    font-size: em(18px);
+    line-height: em(21px);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+.ListIconWrapper {
+  display: flex;
+}
+.IconText {
+  position: relative;
+  display: inline-flex;
+  margin-right: em(34px);
+  width: em(100px);
+  height: em(100px);
+}
+.Btn {
+  display: flex;
+  align-items: center;
+}
+.IconBtn {
+  position: relative;
+  display: inline-flex;
+  margin-left: em(20px);
+  width: em(50px);
+  height: em(50px);
+}
+.WelcomeBlockImage {
+  position: relative;
+  z-index: 100;
+  right: 0;
+  width: em(382px);
+  height: em(382px);
+  float: right;
+  @include iftablet {
+    width: em(200px);
+    height: em(200px);
+  }
+}

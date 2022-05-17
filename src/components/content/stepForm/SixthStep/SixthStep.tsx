@@ -1,55 +1,82 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
   BaseButton,
   BaseInput,
   BaseSelect,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './SixthStep.module.scss';
-import { LinkHome, StepBack } from '@content/index';
+} from "@base/index";
+import styles from "./SixthStep.module.scss";
+import { LinkHome, StepBack } from "@content/index";
+import { dateMask, validateFields } from "@utils/validateInputs";
+import { SetPersonalData } from "@store/signup/types";
+import { titles } from "@utils/titles";
 
 interface Props {
-  nextStep: () => void;
+  title: string;
+  firstName: string;
+  lastName: string;
+  birthday: string;
+  setStep: (step: number) => void;
+  savePersonalDate: (obj: SetPersonalData) => void;
 }
 
-const genders = [
-  { value: 'Mr', title: 'Mr' },
-  { value: 'Mrs', title: 'Mrs' },
-];
+type Inputs = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
 
-const SixthStep: React.FC<Props> = ({ nextStep }) => {
-  const [gender, setGender] = React.useState<string>('');
-  const [firstName, setFirstName] = React.useState<string>('');
-  const [lastName, setLastName] = React.useState<string>('');
-  const [data, setData] = React.useState<string>('');
+const SixthStep: React.FC<Props> = ({
+  title,
+  firstName,
+  lastName,
+  birthday,
+  setStep,
+  savePersonalDate,
+}) => {
+  const [inputs, setInputs] = useState<Inputs>({
+    title: { value: title, error: "", type: "string" },
+    firstName: { value: firstName, error: "", type: "string" },
+    lastName: { value: lastName, error: "", type: "string" },
+    birthday: { value: birthday, error: "", type: "string" },
+  });
 
-  const changeHandlerGender = (value: string) => {
-    console.log('gender: ', value);
-    setGender(value);
+  const changeInputs = (name: string, value: string) => {
+    const newInputs = { ...inputs };
+    newInputs[name].value = value;
+    setInputs(newInputs);
   };
 
-  const changeHandlerFirstName = (value: string) => {
-    console.log('firstName: ', value);
-    setFirstName(value);
-  };
-
-  const changeHandlerLastName = (value: string) => {
-    console.log('lastName: ', value);
-    setLastName(value);
-  };
   const changeHandlerData = (value: string) => {
-    console.log('data: ', value);
-    setData(value);
+    const currentDate = dateMask(value);
+    changeInputs("birthday", currentDate);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    nextStep();
+
+    const { newObj, errors } = validateFields(inputs);
+
+    if (!errors) {
+      const obj = {
+        title: newObj.title.value,
+        firstName: newObj.firstName.value,
+        lastName: newObj.lastName.value,
+        birthday: newObj.birthday.value,
+      };
+      savePersonalDate(obj);
+    }
+
+    setInputs(newObj);
+  };
+
+  const prevStep = () => {
+    setStep(5);
   };
 
   return (
-    <form action='' method='post' className={styles.PersonalData}>
+    <form action="" method="post" className={styles.PersonalData}>
       <BaseTitle className={styles.Title}>Enter personal data</BaseTitle>
       <BaseText className={styles.Subtitle}>
         Just a few more things to figure out
@@ -57,40 +84,42 @@ const SixthStep: React.FC<Props> = ({ nextStep }) => {
 
       <div className={styles.Inputs}>
         <BaseSelect
-          placeholder='Title'
-          options={genders}
-          onChange={changeHandlerGender}
+          error={inputs.title.error}
+          placeholder="Title"
+          options={titles}
+          onChange={(value: string) => changeInputs("title", value)}
           className={`${styles.Input} ${styles.SelectGender}`}
         />
 
         <BaseInput
-          label=''
-          name='firstName'
-          placeholder='First Name'
-          type='text'
+          name="firstName"
+          placeholder="First Name"
+          error={inputs.firstName.error}
+          type="text"
           required
-          value={firstName}
-          onChange={changeHandlerFirstName}
+          value={inputs.firstName.value}
+          onChange={(value: string) => changeInputs("firstName", value)}
           className={`${styles.Input} ${styles.FirstName}`}
-          error=''
         />
 
         <BaseInput
-          name='lastName'
-          placeholder='Last Name'
-          type='text'
+          name="lastName"
+          placeholder="Last Name"
+          error={inputs.lastName.error}
+          type="text"
           required
-          value={lastName}
-          onChange={changeHandlerLastName}
+          value={inputs.lastName.value}
+          onChange={(value: string) => changeInputs("lastName", value)}
           className={`${styles.Input} ${styles.LastName}`}
         />
 
         <BaseInput
-          name='data'
-          placeholder='DD/MM/YYYY'
-          type='text'
+          name="data"
+          placeholder="DD/MM/YYYY"
+          type="text"
+          error={inputs.birthday.error}
           required
-          value={data}
+          value={inputs.birthday.value}
           onChange={changeHandlerData}
           className={`${styles.Input} ${styles.Data}`}
         />
@@ -102,7 +131,7 @@ const SixthStep: React.FC<Props> = ({ nextStep }) => {
 
       <LinkHome className={styles.LinkHome} />
 
-<StepBack />
+      <StepBack onClick={prevStep} />
     </form>
   );
 };

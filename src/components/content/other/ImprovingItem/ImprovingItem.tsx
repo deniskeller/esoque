@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './ImprovingItem.module.scss';
+import Image from "next/image";
+import React from "react";
+import styles from "./ImprovingItem.module.scss";
 
 interface Props {
   itemList: string[];
@@ -12,11 +12,7 @@ const ImprovingItem: React.FC<Props> = ({ itemList, image }) => {
     <div className={styles.ImprovingItem}>
       <div className={styles.ImprovingItemText}>
         <div className={styles.ImprovingItemImage}>
-          <Image
-            src={`/images/landing/${image}.png`}
-            layout={'fill'}
-            alt={''}
-          />
+          <Image src={image} layout={"fill"} alt={""} priority />
         </div>
         {itemList &&
           itemList.map((item, index) => {

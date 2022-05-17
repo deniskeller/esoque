@@ -122,9 +122,11 @@
     }
 
     .AboutIconCircleDown {
+      display: flex;
+      align-items: center;
       position: relative;
-      width: em(62px);
-      height: em(86px);
+      width: em(30px);
+      height: em(66px);
       @include iftablet {
         width: em(34px);
         height: em(46px);

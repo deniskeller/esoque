@@ -1,49 +1,102 @@
-import Head from 'next/head';
-import '../styles/globals.scss';
-import type { AppProps } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
+import React, { useEffect } from "react";
+import App from "next/app";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { Provider } from 'react-redux';
-import { store } from '../src/store/store';
-import { Application, Landing } from '@layouts/index';
+import { wrapper } from "@store/store";
+import { Application } from "@layouts/index";
+import { actions as userActions } from "@store/user/reducer";
+import { END } from "redux-saga";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const Auth = true;
-  if (Auth) {
+import { parseCookie } from "@utils/helpers";
+import { checkToken } from "@api/login";
+
+import type { AppInitialProps } from "next/app";
+import { UserRoles } from "types/user";
+
+import "../styles/globals.scss";
+import "../i18next";
+
+class WrappedApp extends App<AppInitialProps> {
+  public static getInitialProps = wrapper.getInitialAppProps(
+    (store) =>
+      async ({ Component, ctx }) => {
+        const cookies = ctx.req ? ctx.req.headers.cookie : undefined;
+
+        let userCookie = undefined;
+        let isAuth;
+
+        if (cookies) {
+          userCookie = parseCookie(cookies, "access");
+        }
+
+        console.log(userCookie, "userCookie");
+
+        if (userCookie) {
+          const userData = await checkToken(cookies);
+
+          console.log(userData, "userData");
+          if (userData) {
+            store.dispatch(userActions.setUserData({ userData }));
+            store.dispatch(userActions.setUser({ isAuthenificated: true }));
+            store.dispatch(userActions.setRole({ role: UserRoles.admin }));
+          }
+
+          isAuth = store.getState().user.isAuthenificated;
+          // store.dispatch(END);
+        }
+
+        console.log(isAuth, "isAuth - _app.tsx");
+        return {
+          pageProps: {
+            ...(Component.getInitialProps
+              ? await Component.getInitialProps(ctx)
+              : {}),
+            appProp: ctx.pathname,
+            isAuth,
+          },
+        };
+      }
+  );
+
+  public render() {
+    const { Component, pageProps } = this.props;
+
     return (
       <>
         <Head>
           <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1, maximum-scale=5'
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
           />
-          <meta name='keywords' content='Esoque' />
-          <meta name='author' content='Esoque' />
-          <meta name='description' content='Esoque' />
+          <meta name="keywords" content="Esoque" />
+          <meta name="author" content="Esoque" />
+          <meta name="description" content="Esoque" />
           <title>Esoque</title>
         </Head>
-        <Provider store={store}>
+
+        <ApplicationWrapper>
           <Component {...pageProps} />
-        </Provider>
+        </ApplicationWrapper>
       </>
     );
   }
-  return (
-    <>
-      <Head>
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1'
-        />
-        <meta name='keywords' content='Esoque' />
-        <meta name='author' content='Esoque' />
-        <meta name='description' content='Esoque' />
-        <title>Esoque</title>
-      </Head>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </>
-  );
+}
+
+type AppWrapProps = {
+  children: JSX.Element;
 };
-export default appWithTranslation(MyApp);
+
+const ApplicationWrapper: React.FC<AppWrapProps> = ({ children }) => {
+  const router = useRouter();
+
+  const [isApp, setIsApp] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    router.asPath.includes("/app") ? setIsApp(true) : setIsApp(false);
+  }, [router.asPath]);
+
+  return isApp ? <Application>{children}</Application> : <>{children}</>;
+};
+
+export default wrapper.withRedux(WrappedApp);

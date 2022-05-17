@@ -1,12 +1,16 @@
-export { default as Home } from './landing/home/Home';
-export { default as Unicorns } from './landing/unicorns/Unicorns';
-export { default as Darkside } from './landing/darkside/Darkside';
-export { default as Sidious } from './landing/sidious/Sidious';
-export { default as Eco } from './landing/eco/Eco';
-export { default as Esoque } from './landing/esoque/Esoque';
-export { default as Login } from './landing/login/Login';
-export { default as Signup } from './landing/signup/Signup';
-export { default as Reset } from './landing/reset/Reset';
-
+export { default as Home } from "./landing/home/Home";
+export { default as Unicorns } from "./landing/unicorns/Unicorns";
+export { default as Darkside } from "./landing/darkside/Darkside";
+export { default as Sidious } from "./landing/sidious/Sidious";
+export { default as Eco } from "./landing/eco/Eco";
+export { default as Esoque } from "./landing/esoque/Esoque";
+export { default as Login } from "./landing/login/Login";
+export { default as Signup } from "./landing/signup/Signup";
+export { default as Reset } from "./landing/reset/Reset";
+export { default as ConfirmReset } from "./landing/confirmReset/ConfirmReset";
+export { default as CheckEmail } from "./landing/checkEmail/CheckEmail";
+export { default as Complaints } from "./landing/complaints/Complaints";
+export { default as Pricing } from "./landing/pricing/Pricing";
+export { default as Contacts } from "./landing/contacts/Contacts";
 //app
-export { default as HomeApp } from './app/homeApp/HomeApp';
+export { default as HomeApp } from "./app/homeApp/HomeApp";

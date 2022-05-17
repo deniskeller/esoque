@@ -1,70 +1,75 @@
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
+import { TinaCMS, TinaProvider } from "tinacms";
 
-import { Landing } from '@layouts/index';
-import { Home } from '@view/index';
-import { TinaCMS, TinaProvider } from 'tinacms';
-import { HOME_BLOCKS } from '@tina/configSections';
-import { TinaPageWrapper } from '@tina/TinaPageWrapper';
+import { HOME_BLOCKS } from "@tina/configSections";
+import { TinaPageWrapper } from "@tina/TinaPageWrapper";
+import { MDMediaStore } from "@tina/media/tinaMedia";
+import { wrapper } from "@store/store";
+import { Landing } from "@layouts/index";
 
-import styles from '@view/landing/home/Home.module.scss';
+import { parseCookie } from "@utils/helpers";
+import { getContent } from "@api/content";
 
-// Позднее этот объект будет вынесен на бэкенд
-// и я его буду подгружать при загрузке стр
-export const pageData = {
-  blocks: [
-    // Некоторые поля тут как пример
+import { IPageData } from "@tina/defaultTemplate/types";
 
-    {
-      title: 'esoque',
-      subtitle: 'New yourk 2005 EST',
-      color: '#E2F063',
-      _template: 'headerBlock',
-    },
-    {
-      title: 'esoque',
-      subtitle: 'New yourk 2005 EST',
-      color: '#E2F063',
-      _template: 'helloBlock',
-    },
-    {
-      title: 'esoque',
-      subtitle: 'New yourk 2005 EST',
-      color: '#E2F063',
-      _template: 'servicesBlock',
-    },
-    {
-      title: 'esoque',
-      subtitle: 'New yourk 2005 EST',
-      color: '#E2F063',
-      _template: 'conclusionBlock',
-    },
-  ],
-};
+import styles from "@view/landing/home/Home.module.scss";
 
-const HomePage: React.FC = () => {
+// Default template in case you need to restore the original look
+// import { homeData } from "@tina/defaultTemplate";
+
+interface Props {
+  page: string;
+  lang: string;
+  pageData: IPageData;
+  isAuth: boolean;
+}
+
+const HomePage: React.FC<Props> = ({ page, pageData, lang, isAuth }) => {
   const cms = useMemo(() => {
     return new TinaCMS({
-      enabled: true,
+      enabled: isAuth,
       sidebar: {
-        position: 'overlay',
+        position: "overlay",
       },
+      media: new MDMediaStore({ page, lang }),
     });
-  }, []);
+  }, [page, lang, isAuth]);
 
   return (
-    // <TinaProvider cms={cms}>
-    <Landing>
-      {/* <div className={styles.HomePage}>
+    <TinaProvider cms={cms}>
+      <Landing>
+        <div className={styles.HomePage}>
           <TinaPageWrapper
-            pageName={"HomePage"}
+            page={page}
+            lang={lang}
             blockSchema={HOME_BLOCKS}
             data={pageData}
           />
-        </div> */}
-      <Home />
-    </Landing>
-    // </TinaProvider>
+        </div>
+      </Landing>
+    </TinaProvider>
   );
 };
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) =>
+    async ({ req, res, ...etc }) => {
+      const page = "HomePage";
+      const cookie = req.headers.cookie;
+      const lang = (await parseCookie(cookie, "i18next")) || "en";
+      const pageData = (await getContent({ page, lang })) || {};
+      const { isAuthenificated } = store.getState().user;
+      console.log(isAuthenificated, "isAuth  - home page");
+
+      return {
+        props: {
+          pageData,
+          page,
+          lang,
+          isAuth: isAuthenificated,
+        },
+      };
+    }
+);
 
 export default HomePage;

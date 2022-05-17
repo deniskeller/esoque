@@ -1,0 +1,55 @@
+.Wrapper {
+  color: $white;
+  font-weight: bold;
+  width: 100%;
+  padding-bottom: em(27px);
+  font-size: em(17px);
+  line-height: em(15px);
+  letter-spacing: em(-1px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.white {
+  color: $white;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: em(-5px);
+    left: 0;
+    height: em(2px);
+    background-color: $white;
+  }
+  &:hover {
+    &::after {
+      animation: bottomLine 0.7s linear forwards;
+    }
+  }
+}
+
+.pink {
+  color: $pink;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: em(-5px);
+    left: 0;
+    height: em(2px);
+    background-color: $pink;
+  }
+  &:hover {
+    &::after {
+      animation: bottomLine 0.7s linear forwards;
+    }
+  }
+}
+
+@keyframes bottomLine {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

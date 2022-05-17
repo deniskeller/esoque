@@ -1,8 +1,8 @@
-import React, { ReactNode, useState, useRef } from 'react';
-import useOnClickOutside from '@hooks/useOnClickOutside';
-import { SelectContext, useSelectContext } from './selectContext';
-import styles from './SelectLanguage.module.scss';
-import Option from './option';
+import React, { ReactNode, useState, useRef } from "react";
+import useOnClickOutside from "@hooks/useOnClickOutside";
+import { SelectContext, useSelectContext } from "./selectContext";
+import styles from "./SelectLanguage.module.scss";
+import Option from "./option";
 
 interface Props {
   defaultValue?: string;
@@ -12,6 +12,7 @@ interface Props {
   className?: string;
   styles?: string;
   optionsValue: ISelectItem[];
+  changeLanguage: (lang: string) => void;
 }
 
 interface ISelectItem {
@@ -24,25 +25,27 @@ const SelectLanguage: React.FC<Props> = ({
   placeholder,
   style,
   className,
-  type = 'default',
+  type = "default",
   optionsValue,
+  changeLanguage,
 }) => {
   // console.log('optionsValue: ', optionsValue);
-  const [selectedOption, setSelectedOption] = useState(defaultValue || '');
+  const [selectedOption, setSelectedOption] = useState(defaultValue || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const showDropdownHandler = () => setShowDropdown(!showDropdown);
-  const selectPlaceholder = placeholder || 'Choose an option';
+  const selectPlaceholder = placeholder || "Choose an option";
   const selectContainerRef = useRef(null);
   const { changeSelectedOption } = useSelectContext();
-
   const clickOutsideHandler = () => setShowDropdown(false);
 
   useOnClickOutside(selectContainerRef, clickOutsideHandler);
 
   const updateSelectedOption = (option: string) => {
-    console.log('option: ', option);
-    setSelectedOption(option);
-    setShowDropdown(false);
+    if (option !== selectedOption) {
+      changeLanguage(option);
+      setSelectedOption(option);
+      setShowDropdown(false);
+    }
   };
 
   return (
@@ -53,7 +56,7 @@ const SelectLanguage: React.FC<Props> = ({
         ref={selectContainerRef}
         style={{ ...style }}
         className={`${styles.SelectContainer} ${
-          styles['Select_' + type]
+          styles["Select_" + type]
         } ${className}`}
       >
         <div

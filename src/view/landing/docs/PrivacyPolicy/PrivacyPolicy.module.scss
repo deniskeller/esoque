@@ -1,0 +1,20 @@
+.wrapper {
+  padding-top: em(80px);
+
+  * {
+    color: $white;
+  }
+}
+
+.title {
+  margin-bottom: em(36px);
+}
+.headerText {
+}
+.text {
+  display: inline-block;
+  margin-bottom: em(20px);
+}
+.text:last-child {
+  margin-bottom: em(171px);
+}

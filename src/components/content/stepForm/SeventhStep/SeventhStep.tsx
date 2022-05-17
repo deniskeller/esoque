@@ -1,69 +1,78 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
   BaseButton,
   BaseInput,
   BaseSearchSelect,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './SeventhStep.module.scss';
-import { LinkHome, StepBack } from '@content/index';
+} from "@base/index";
 
+import { LinkHome, StepBack } from "@content/index";
+import { validateFields } from "@utils/validateInputs";
+import { SetPesonalAddress } from "@store/signup/types";
+import { countries } from "@utils/countries";
+
+import styles from "./SeventhStep.module.scss";
 interface Props {
-  nextStep: () => void;
+  country: string;
+  postcode: string;
+  city: string;
+  address: string;
+  addressTwo: string;
+  savePersonalAddress: (obj: SetPesonalAddress) => void;
+  setStep: (step: number) => void;
 }
 
-const mockCountryData = [
-  { title: 'United Kingdom1123' },
-  { title: 'United Kingdom2sadfds' },
-  { title: 'United Kingdom312312' },
-  { title: 'United Kingdom4' },
-  { title: 'United Kingdom5' },
-  { title: 'United Kingdom6' },
-  { title: 'United Kingdom7' },
-  { title: 'United Kingdom8' },
-];
-
-const SeventhStep: React.FC<Props> = ({ nextStep }) => {
-  const [country, setCountry] = React.useState('');
-  const [postcode, setPostcode] = React.useState('');
-
-  const [city, setCity] = React.useState('');
-  const [address, setAddress] = React.useState('');
-  const [addressTwo, setAddressTwo] = React.useState('');
-
-  const changeHandlerCountry = (value: string) => {
-    console.log('country: ', value);
-    setCountry(value);
+type Inputs = {
+  [key: string]: {
+    [key: string]: string;
   };
+};
 
-  const changeHandlerPostcode = (value: string) => {
-    console.log('postcode: ', value);
-    setPostcode(value);
-  };
+const SeventhStep: React.FC<Props> = ({
+  country,
+  postcode,
+  city,
+  address,
+  addressTwo,
+  setStep,
+  savePersonalAddress,
+}) => {
+  const [inputs, setInputs] = useState<Inputs>({
+    country: { value: country, error: "", type: "string" },
+    postcode: { value: postcode, error: "", type: "string" },
+    city: { value: city, error: "", type: "string" },
+    address: { value: address, error: "", type: "string" },
+    addressTwo: { value: addressTwo, error: "", type: "string" },
+  });
 
-  const changeHandlerCity = (value: string) => {
-    console.log('city: ', value);
-    setCity(value);
-  };
-
-  const changeHandlerAddress = (value: string) => {
-    console.log('address: ', value);
-    setAddress(value);
-  };
-
-  const changeHandlerAddressTwo = (value: string) => {
-    console.log('addressTwo: ', value);
-    setAddressTwo(value);
+  const changeInputs = (name: string, value: string) => {
+    const newInputs = { ...inputs };
+    newInputs[name].value = value;
+    setInputs(newInputs);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    nextStep();
+    const { newObj, errors } = validateFields(inputs);
+    if (!errors) {
+      const obj = {
+        country: newObj.country.value,
+        postcode: newObj.postcode.value,
+        city: newObj.city.value,
+        address: newObj.address.value,
+        addressTwo: newObj.addressTwo.value,
+      };
+      savePersonalAddress(obj);
+    }
+    setInputs(newObj);
   };
 
+  const prevStep = () => {
+    setStep(6);
+  };
   return (
-    <form action='' method='post' className={styles.PersonalAddress}>
+    <form action="" method="post" className={styles.PersonalAddress}>
       <BaseTitle className={styles.Title}>Enter personal address</BaseTitle>
       <BaseText className={styles.Subtitle}>
         This will complete your personal profile
@@ -71,52 +80,56 @@ const SeventhStep: React.FC<Props> = ({ nextStep }) => {
       <ul className={styles.Ul}>
         <li className={styles.Li}>
           <BaseSearchSelect
-            name='country'
-            placeholder='Country'
-            value={country}
-            onChange={changeHandlerCountry}
-            options={mockCountryData}
+            name="country"
+            placeholder="Country"
+            value={inputs.country.value}
+            error={inputs.country.error}
+            onChange={(value: string) => changeInputs("country", value)}
+            options={countries}
             className={`${styles.Input} ${styles.Country}`}
           />
 
           <BaseInput
-            name='postcode'
-            placeholder='Postcode'
-            type='text'
+            name="postcode"
+            placeholder="Postcode"
+            type="text"
             required
-            value={postcode}
-            onChange={changeHandlerPostcode}
+            value={inputs.postcode.value}
+            error={inputs.postcode.error}
+            onChange={(value: string) => changeInputs("postcode", value)}
             className={`${styles.Input} ${styles.Postcode}`}
-            error=''
           />
 
           <BaseInput
-            name='city'
-            placeholder='City'
-            type='text'
+            name="city"
+            placeholder="City"
+            type="text"
             required
-            value={city}
-            onChange={changeHandlerCity}
+            value={inputs.city.value}
+            error={inputs.city.error}
+            onChange={(value: string) => changeInputs("city", value)}
             className={`${styles.Input} ${styles.City}`}
           />
         </li>
         <li className={styles.Li}>
           <BaseInput
-            name='address'
-            placeholder='Address line'
-            type='text'
+            name="address"
+            placeholder="Address line"
+            type="text"
             required
-            value={address}
-            onChange={changeHandlerAddress}
+            value={inputs.address.value}
+            error={inputs.address.error}
+            onChange={(value: string) => changeInputs("address", value)}
             className={`${styles.Input} ${styles.Address}`}
           />
           <BaseInput
-            name='addressTwo'
-            placeholder='Address line 2 (optional)'
-            type='text'
+            name="addressTwo"
+            placeholder="Address line 2 (optional)"
+            type="text"
             required
-            value={addressTwo}
-            onChange={changeHandlerAddressTwo}
+            value={inputs.addressTwo.value}
+            error={inputs.addressTwo.error}
+            onChange={(value: string) => changeInputs("addressTwo", value)}
             className={`${styles.Input} ${styles.AddressTwo}`}
           />
         </li>
@@ -128,7 +141,7 @@ const SeventhStep: React.FC<Props> = ({ nextStep }) => {
 
       <LinkHome className={styles.LinkHome} />
 
-      <StepBack />
+      <StepBack onClick={prevStep} />
     </form>
   );
 };

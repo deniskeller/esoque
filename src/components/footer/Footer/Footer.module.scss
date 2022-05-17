@@ -1,147 +1,262 @@
 .Light {
   background: $black2;
 }
+
 .Footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+
+  max-width: em(1552px);
   width: 100%;
+  margin: 0 auto;
+  position: relative;
+
   padding-top: em(92px);
   padding-bottom: em(82px);
+  padding-left: em(100px);
 
   @include iftablet {
     padding-top: em(73px);
     padding-bottom: em(57px);
-    justify-content: flex-start;
+    max-width: em(900px);
   }
+
   @include ifmobile {
     flex-wrap: wrap;
     padding-top: em(44px);
     padding-bottom: em(26px);
   }
 
-  .FooterLogoContent {
+  &Top {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-
-    @include iftablet {
-      margin-right: em(152px);
-    }
-    @include ifmobile {
-      order: 1;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .FooterLogoContentTop {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: em(122px);
-      @include iftablet {
-        margin-bottom: em(72px);
-      }
-      @include ifmobile {
-        margin-bottom: 0;
-        margin-right: em(65px);
-      }
-      .LogoText {
-        max-width: em(145px);
-        height: em(11px);
-        margin-bottom: em(14px);
-        @include iftablet {
-          max-width: em(85px);
-          height: em(7px);
-          margin-bottom: em(9px);
-        }
-        @include ifmobile {
-          max-width: em(59px);
-          height: em(5px);
-          margin-bottom: em(4px);
-        }
-      }
-
-      .Logo {
-        display: flex;
-        max-width: em(236px);
-        height: em(47px);
-        @include iftablet {
-          max-width: em(140px);
-          height: em(28px);
-        }
-        @include ifmobile {
-          max-width: em(96px);
-          height: em(19px);
-        }
-      }
-    }
-
-    .FooterLogoContentBottom {
-      position: relative;
-      width: em(174.18px);
-      height: em(16.84px);
-      @include iftablet {
-        width: em(139px);
-        height: em(12.63px);
-      }
-      @include ifmobile {
-        width: em(70px);
-        height: em(6.74px);
-      }
-      .LogoEsoque {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
+    margin-bottom: em(40px);
+  }
+  &Center {
+    width: 100%;
+    margin-bottom: em(34px);
   }
 
-  .FooterNavbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  &Bottom {
+    display: flex;
     width: 100%;
-    max-width: em(736px);
+    flex-direction: column;
+  }
+}
 
+.FooterLogoWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: em(500px);
+  width: 100%;
+  line-height: em(21px);
+}
+.FooterLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: em(236px);
+  width: 100%;
+  margin-bottom: em(21px);
+  .LogoText {
+    margin-bottom: em(15px);
+    max-width: em(144px);
+    height: em(10px);
+    width: 100%;
+  }
+  .Logo {
+    max-width: em(236px);
+    width: 100%;
+    height: em(46px);
+  }
+}
+.LogoSubText {
+  color: $yellow;
+  opacity: 0.5;
+  font-size: em(17px);
+  width: 100%;
+}
+
+.FooterEmailForm {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: $yellow;
+    font-size: em(17px);
+    line-height: em(20px);
+    margin-right: em(28px);
+  }
+  &Input {
+    margin-right: em(23px);
+    font-size: em(17px);
+    div {
+      display: none;
+    }
+    input {
+      max-width: em(294px);
+      height: em(49px);
+      width: 100%;
+    }
+  }
+  &Btn {
+    max-width: em(193px);
+    height: em(49px);
+    width: 100%;
+    font-size: em(17px);
+  }
+}
+
+.EmailSuccessWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: em(66px);
+}
+.EmailSuccess {
+  max-width: em(811px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $yellow;
+  span {
+    color: $yellow;
+    font-size: em(17px);
+    font-weight: bold;
+  }
+}
+
+.PaymentsText {
+  width: 100%;
+  font-size: em(17px);
+  line-height: em(20px);
+  color: $grey;
+  margin-bottom: 20px;
+}
+.PaymentsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.PaymentsIcons {
+  display: flex;
+  max-width: em(1040px);
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// Icons
+.PaymentsIcon {
+  &Visa {
+    width: em(90px);
+    height: em(29px);
+  }
+  &MS {
+    width: em(59px);
+    height: em(45px);
+  }
+  &UnionPay {
+    width: em(54px);
+    height: em(34px);
+  }
+  &Express {
+    width: em(41px);
+    height: em(41px);
+  }
+  &Discover {
+    width: em(105px);
+    height: em(27px);
+  }
+  &Denis {
+    width: em(116px);
+    height: em(30px);
+  }
+  &Swift {
+    width: em(47px);
+    height: em(46px);
+  }
+  &Binance {
+    width: em(127px);
+    height: em(25px);
+  }
+  &PCI {
+    width: em(117px);
+    height: em(40px);
+  }
+}
+.Social {
+  max-width: em(177px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &Fb {
+    width: em(13px);
+    height: em(28px);
+  }
+  &Inst {
+    width: em(25px);
+    height: em(27px);
+  }
+  &Tw {
+    width: em(27px);
+    height: em(23px);
+  }
+  &Linkedin {
+    width: em(24px);
+    height: em(24px);
+  }
+}
+
+.FooterNavbar {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  max-width: em(838px);
+  width: 100%;
+
+  @include iftablet {
+    max-width: em(485px);
+  }
+  @include ifmobile {
+    margin-bottom: em(33px);
+  }
+  .Link {
+    max-width: em(400px);
+    font-size: em(17px);
+    line-height: 100%;
+    color: $grey;
+    font-weight: 400;
+    display: grid;
+    margin-bottom: 20px;
+    // align-self: end;
     @include iftablet {
-      max-width: em(485px);
+      font-size: em(14px);
     }
     @include ifmobile {
-      margin-bottom: em(33px);
+      width: 100%;
+      font-size: em(10px);
+      margin-bottom: em(14px);
     }
-    .Link {
-      max-width: em(400px);
-      font-size: em(17px);
-      line-height: 100%;
-      color: $grey;
-      font-weight: 400;
-      display: grid;
-      align-self: end;
+    &:hover {
+      color: $yellow;
+    }
+    &:nth-child(2n) {
+      width: em(400px);
+      width: max-content;
+      margin-left: em(75px);
       @include iftablet {
-        font-size: em(14px);
+        margin-left: em(0px);
       }
       @include ifmobile {
+        margin-left: em(30px);
         width: 100%;
-        font-size: em(10px);
-        margin-bottom: em(14px);
-      }
-      &:hover {
-        color: $yellow;
-      }
-      &:nth-child(2n) {
-        // width: em(400px);
-        width: max-content;
-        margin-left: em(75px);
-        @include iftablet {
-          margin-left: em(0px);
-        }
-        @include ifmobile {
-          margin-left: em(30px);
-          width: 100%;
-        }
       }
     }
   }

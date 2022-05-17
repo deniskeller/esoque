@@ -3,27 +3,40 @@ import React from "react";
 import { useForm, usePlugin, useCMS } from "tinacms";
 import { InlineForm, InlineBlocks } from "react-tinacms-inline";
 
+import { setContent } from "@api/content";
 interface Props {
   blockSchema: any;
-  data: any;
-  pageName: string;
+  data: {
+    blocks: { [key: string]: string | { [key: string]: string | number }[] }[];
+  };
+  page: string;
+  lang: string;
+}
+
+interface Content {
+  blocks: { [key: string]: string | { [key: string]: string }[] }[];
 }
 
 export const TinaPageWrapper: React.FC<Props> = ({
   blockSchema,
   data,
-  pageName,
+  page,
+  lang,
 }) => {
   const cms = useCMS();
 
   const formConfig = {
-    id: pageName,
+    id: page,
     initialValues: data,
 
-    onSubmit: async (content: any) => {
+    onSubmit: async (content: Content) => {
       try {
-        console.log(content, "content save");
-        cms.alerts.success("Сохранено!");
+        const status = await setContent({ page, lang, content });
+        if (status) {
+          cms.alerts.success("Сохранено!");
+        } else {
+          throw new Error("Error onSubmit setContent");
+        }
       } catch (err) {
         cms.alerts.error("Ошибка сети!");
       }

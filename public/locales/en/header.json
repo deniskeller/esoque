@@ -1,0 +1,14 @@
+{
+  "menu-items": {
+    "home": "Home",
+    "unicorns": "Unicorns",
+    "darkside": "Dark Side",
+    "sidious": "Sidious",
+    "eco": "Eco",
+    "esoque": "Esoque"
+  },
+  "auth-buttons": {
+    "login": "Log In",
+    "signup": "Sign Up"
+  }
+}

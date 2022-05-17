@@ -1,0 +1,75 @@
+.Container {
+  width: 100%;
+  max-width: em(1552px);
+  margin: 0 auto;
+  position: relative;
+
+  @include iftablet {
+    max-width: em(900px);
+  }
+}
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: em(186px);
+  padding-bottom: em(210px);
+  position: relative;
+}
+.Breadcrumbs {
+  margin-bottom: em(80px);
+}
+
+.TextBlock {
+  padding-left: em(92px);
+  margin-bottom: em(80px);
+}
+
+.Title {
+  margin-bottom: em(40px);
+  span {
+    color: $white;
+  }
+}
+.Description {
+  display: block;
+  max-width: em(853px);
+  font-size: em(21px);
+  line-height: em(25px);
+  width: 100%;
+}
+.List {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.Card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: $black2;
+  border-radius: 10px;
+  padding: em(30px) em(47px);
+  width: em(283px);
+
+  margin-bottom: em(25px);
+  &Title {
+    margin-bottom: em(20px);
+    font-size: em(20px);
+    color: $green;
+    font-weight: bold;
+    text-align: center;
+  }
+  &Img {
+    position: relative;
+    height: em(150px);
+    margin-bottom: em(70px);
+  }
+  &Btn {
+    color: $yellow;
+    text-decoration: underline;
+  }
+}

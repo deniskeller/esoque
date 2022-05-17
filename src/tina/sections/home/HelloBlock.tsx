@@ -1,72 +1,103 @@
 import React from "react";
-
+import Image from "next/image";
 import { BlocksControls, Block } from "react-tinacms-inline";
+
 import { BaseContainer, BaseText, BaseTitle } from "@base/index";
 
 import styles from "@view/landing/home/Home.module.scss";
 
-import Image from "next/image";
-
 interface Props {
   titleLeft: string;
-  subtitleLeft: string;
+  titleLeftAlign: string;
+  leftItems: { [key: string]: string }[];
+  leftItemsAlign: string;
   titleRight: string;
-  subtitleRight: string;
-  img: string;
+  titleRightAlign: string;
+  rightItems: { [key: string]: string }[];
+  rightItemsAlign: string;
+  image: Img;
   backgroundColor: string;
+}
+interface Img {
+  directory: string;
+  filename: string;
+  id: number;
+  previewSrc: string;
+  type: string;
 }
 
 export const HelloBlockComponents: React.FC<Props> = ({
   titleLeft,
-  subtitleLeft,
+  titleLeftAlign,
+  leftItems,
+  leftItemsAlign,
   titleRight,
-  subtitleRight,
-  img,
+  titleRightAlign,
+  rightItems,
+  rightItemsAlign,
+  image,
   backgroundColor,
 }) => {
   return (
     <BaseContainer>
-      <div className={styles.HelloBlock}>
+      <div
+        className={styles.HelloBlock}
+        style={{ backgroundColor: backgroundColor }}
+      >
         <div className={styles.BlockLeft}>
           <span className={styles.ContentText}>
-            <BaseTitle className={styles.HelloBlockTitle}>Hello!</BaseTitle>
-            <BaseText className={styles.HelloBlockText}>
-              Welcome to Esoque, the foundation of the future of the financial
-              world. We are the best experts in the financial industry with more
-              than 16 years of modern finance and information technologies
-              knowledge.
-            </BaseText>
+            <BaseTitle
+              className={styles.HelloBlockTitle}
+              style={{ textAlign: titleLeftAlign }}
+            >
+              {titleLeft}
+            </BaseTitle>
+            {leftItems.length &&
+              leftItems.map((item, idx) => {
+                return (
+                  <BaseText
+                    key={idx}
+                    className={styles.HelloBlockText}
+                    style={{ textAlign: leftItemsAlign }}
+                  >
+                    {item.text}
+                  </BaseText>
+                );
+              })}
           </span>
           <span className={styles.ContentImage}>
-            <Image
-              src="/images/landing/imgHomeUnicorn.png"
-              layout={"fill"}
-              // width={653}
-              // height={503}
-              alt={"Unicorn image"}
-            />
+            {image?.previewSrc?.length && (
+              <Image
+                src={
+                  image?.previewSrc || "/images/landing/home/imgHomeUnicorn.png"
+                }
+                layout={"fill"}
+                alt={"Unicorn image"}
+                priority
+              />
+            )}
           </span>
         </div>
 
         <div className={styles.BlockRight}>
-          <BaseTitle className={styles.HelloBlockTitle}>
-            We build Unicorns!
+          <BaseTitle
+            className={styles.HelloBlockTitle}
+            style={{ textAlign: titleRightAlign }}
+          >
+            {titleRight}
           </BaseTitle>
-          <BaseText className={styles.HelloBlockText}>
-            Yes, that is true, you can make a new PayPal, Stripe or Revolut, or
-            even launch the financial projects for the space.
-          </BaseText>
-          <BaseText className={styles.HelloBlockText}>
-            Our team would help you to find the proper jurisdiction for your
-            business and get all required regulatory permissions to launch your
-            unicorn.
-          </BaseText>
-          <BaseText className={styles.HelloBlockText}>
-            If you are a well-established business we will help you to expand it
-            and grow your opportunities. We have successfully been working with
-            European banks to develop their financial infrastructure and get
-            regulatory permissions.
-          </BaseText>
+          {rightItems.length &&
+            rightItems.map((item, idx) => {
+              return (
+                <BaseText
+                  key={idx}
+                  className={styles.HelloBlockText}
+                  style={{ textAlign: rightItemsAlign }}
+                >
+                  {item.text}
+                </BaseText>
+              );
+            })}
         </div>
       </div>
     </BaseContainer>
@@ -84,34 +115,97 @@ export const HelloBlockTemplate = {
 
   defaultItem: {
     titleLeft: "Please enter title-left text",
-    subtitleLeft: "Please enter subtitle-left text",
+    titleLeftAlign: "left",
+    leftItems: [{ text: "Please enter text" }],
+    leftItemsAlign: "left",
+
     titleRight: "Please enter title-right text",
-    subtitleRight: "Please enter subtitle-right text",
-    img: "/images/landing/imgHomeUnicorn.png",
+    titleRightAlign: "right",
+    rightItems: [{ text: "Please enter text" }],
+    rightItemsAlign: "right",
+    image: {
+      directory: "",
+      filename: "",
+      id: 0,
+      previewSrc: "",
+      type: "",
+    },
     backgroundColor: "#101010",
   },
   fields: [
     {
       name: "titleLeft",
-      label: "title-left",
+      label: "Title left",
       component: "text",
     },
     {
-      name: "subtitleLeft",
-      label: "subititle-left",
-      component: "text",
+      name: "titleLeftAlign",
+      label: "Align left title",
+      component: "select",
+      options: ["left", "right"],
     },
+    {
+      label: "Left text items",
+      name: "leftItems",
+      component: "group-list",
+      fields: [
+        {
+          label: "text",
+          name: "text",
+          component: "text",
+          clearable: false,
+        },
+      ],
+    },
+    {
+      label: "Align left items",
+      name: "leftItemsAlign",
+      component: "select",
+      options: ["left", "right"],
+    },
+
     {
       name: "titleRight",
-      label: "title-right",
+      label: "Title right",
       component: "text",
     },
     {
-      name: "subtitleRight",
-      label: "subtitle-right",
-      component: "text",
+      label: "Align right title",
+      name: "titleRightAlign",
+      component: "select",
+      options: ["left", "right"],
     },
-    { label: "background-color", name: "backgroundColor", component: "color" },
+    {
+      label: "Right text items",
+      name: "rightItems",
+      component: "group-list",
+      fields: [
+        {
+          label: "text",
+          name: "text",
+          component: "text",
+          clearable: true,
+        },
+      ],
+    },
+    {
+      label: "Align right items",
+      name: "rightItemsAlign",
+      component: "select",
+      options: ["left", "right"],
+    },
+    {
+      name: "image",
+      label: "Image",
+      component: "image",
+      description: "Please select an image",
+    },
+
+    {
+      name: "backgroundColor",
+      label: "background",
+      component: "color",
+    },
   ],
 };
 

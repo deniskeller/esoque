@@ -1,8 +1,8 @@
-import React from 'react';
-import { BaseContainer, BaseIcon, BaseText, BaseTitle } from '@base/index';
-import styles from './Home.module.scss';
-import { ALL_ICONS } from '@constants/icons';
-import Image from 'next/image';
+import React from "react";
+import { BaseContainer, BaseIcon, BaseText, BaseTitle } from "@base/index";
+import styles from "./Home.module.scss";
+import { ALL_ICONS } from "@constants/icons";
+import Image from "next/image";
 
 interface Props {}
 
@@ -14,13 +14,13 @@ const Home: React.FC<Props> = () => {
           <div className={styles.HeaderBlockContainer}>
             <BaseIcon
               icon={ALL_ICONS.LOGO_TEXT}
-              viewBox='0 0 269 20'
+              viewBox="0 0 269 20"
               className={styles.LogoText}
             />
 
             <BaseIcon
               icon={ALL_ICONS.LOGO}
-              viewBox='0 0 439 87'
+              viewBox="0 0 439 87"
               className={styles.Logo}
             />
           </div>
@@ -41,11 +41,11 @@ const Home: React.FC<Props> = () => {
             </span>
             <span className={styles.ContentImage}>
               <Image
-                src='/images/landing/imgHomeUnicorn.png'
-                layout={'fill'}
+                src="/images/landing/home/imgHomeUnicorn.png"
+                layout={"fill"}
                 // width={653}
                 // height={503}
-                alt={'Unicorn image'}
+                alt={"Unicorn image"}
               />
             </span>
           </div>
@@ -80,7 +80,7 @@ const Home: React.FC<Props> = () => {
           </BaseTitle>
           <div className={styles.ServicesBlockItems}>
             <div className={styles.ServicesBlockItem}>
-              <BaseTitle type='h2' className={styles.ServicesItemTitle}>
+              <BaseTitle type="h2" className={styles.ServicesItemTitle}>
                 Unicorns
               </BaseTitle>
               <div className={styles.ServicesItemText}>
@@ -89,7 +89,7 @@ const Home: React.FC<Props> = () => {
               </div>
             </div>
             <div className={styles.ServicesBlockItem}>
-              <BaseTitle type='h2' className={styles.ServicesItemTitle}>
+              <BaseTitle type="h2" className={styles.ServicesItemTitle}>
                 Sidious
               </BaseTitle>
               <div className={styles.ServicesItemText}>
@@ -99,7 +99,7 @@ const Home: React.FC<Props> = () => {
               </div>
             </div>
             <div className={styles.ServicesBlockItem}>
-              <BaseTitle type='h2' className={styles.ServicesItemTitle}>
+              <BaseTitle type="h2" className={styles.ServicesItemTitle}>
                 Dark Side
               </BaseTitle>
               <div className={styles.ServicesItemText}>
@@ -109,7 +109,7 @@ const Home: React.FC<Props> = () => {
               </div>
             </div>
             <div className={styles.ServicesBlockItem}>
-              <BaseTitle type='h2' className={styles.ServicesItemTitle}>
+              <BaseTitle type="h2" className={styles.ServicesItemTitle}>
                 Eco
               </BaseTitle>
               <div className={styles.ServicesItemText}>
@@ -127,11 +127,11 @@ const Home: React.FC<Props> = () => {
           <div className={styles.ConclusionBlockContent}>
             <div className={styles.ConclusionBlockImage}>
               <Image
-                layout={'fill'}
-                alt={'Money Bag image'}
-                loading='lazy'
-                blurDataURL='/images/landing/imgHomeMoneyBag.png'
-                src='/images/landing/imgHomeMoneyBag.png'
+                layout={"fill"}
+                alt={"Money Bag image"}
+                loading="lazy"
+                blurDataURL="/images/landing/home/imgHomeMoneyBag.png"
+                src="/images/landing/home/imgHomeMoneyBag.png"
               />
             </div>
 

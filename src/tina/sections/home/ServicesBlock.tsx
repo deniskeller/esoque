@@ -1,59 +1,55 @@
 import React from "react";
-
-import { BaseContainer, BaseIcon, BaseTitle } from "@base/index";
 import { Block, BlocksControls } from "react-tinacms-inline";
 
+import { BaseContainer, BaseTitle } from "@base/index";
+
 import styles from "@view/landing/home/Home.module.scss";
+import Link from "next/link";
 
-interface Props {}
-
-export const ServicesBlockComponents: React.FC<Props> = () => {
+interface Props {
+  titleBlock: string;
+  items: { [key: string]: string }[];
+  titleColor: string;
+  textColor: string;
+}
+export const ServicesBlockComponents: React.FC<Props> = ({
+  titleBlock,
+  items,
+  titleColor,
+  textColor,
+}) => {
   return (
     <div className={styles.ServicesBlock}>
       <BaseContainer>
-        <BaseTitle className={styles.ServicesBlockTitle}>
-          Services we offer
+        <BaseTitle
+          className={styles.ServicesBlockTitle}
+          style={{ color: titleColor }}
+        >
+          {titleBlock}
         </BaseTitle>
         <div className={styles.ServicesBlockItems}>
-          <div className={styles.ServicesBlockItem}>
-            <BaseTitle type="h2" className={styles.ServicesItemTitle}>
-              Unicorns
-            </BaseTitle>
-            <div className={styles.ServicesItemText}>
-              We would help to build a new revolutionary business. Need help
-              with the regulatory permissions? Here we are!
-            </div>
-          </div>
-          <div className={styles.ServicesBlockItem}>
-            <BaseTitle type="h2" className={styles.ServicesItemTitle}>
-              Sidious
-            </BaseTitle>
-            <div className={styles.ServicesItemText}>
-              If you are looking for a solution that would help you to work with
-              your customers, our KYC platform is the best choice. Automate your
-              B2B or B2C flows!
-            </div>
-          </div>
-          <div className={styles.ServicesBlockItem}>
-            <BaseTitle type="h2" className={styles.ServicesItemTitle}>
-              Dark Side
-            </BaseTitle>
-            <div className={styles.ServicesItemText}>
-              Come to the dark side and join us. We will help you to incorporate
-              the company in a few hours and get started your business with the
-              space speed!
-            </div>
-          </div>
-          <div className={styles.ServicesBlockItem}>
-            <BaseTitle type="h2" className={styles.ServicesItemTitle}>
-              Eco
-            </BaseTitle>
-            <div className={styles.ServicesItemText}>
-              We can help you not only to grow your business but also to save
-              the planet. Join the growing trend of eco-friendly fintech
-              startups with us!
-            </div>
-          </div>
+          {items.length &&
+            items.map((item, idx) => {
+              return (
+                <div key={idx} className={styles.ServicesBlockItem}>
+                  <BaseTitle
+                    type="h2"
+                    className={styles.ServicesItemTitle}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <Link href={item?.linkItem || "/default"}>
+                      {item.titleItem}
+                    </Link>
+                  </BaseTitle>
+                  <div
+                    className={styles.ServicesItemText}
+                    style={{ color: `${textColor}` }}
+                  >
+                    {item.subtitleItem}
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </BaseContainer>
     </div>
@@ -70,12 +66,14 @@ export const ServicesBlockTemplate = {
   label: "Services Block",
 
   defaultItem: {
-    colorTitle: "#e2f063",
+    titleBlock: "Please enter title text",
+    titleColor: "#E2F063",
+    textColor: "#ffffff",
     items: [
       {
-        id: 1,
         titleItem: "Please enter title-block text",
         subtitleItem: "Please enter subtitle-block text",
+        linkItem: "/default",
       },
     ],
   },
@@ -85,6 +83,7 @@ export const ServicesBlockTemplate = {
       name: "titleBlock",
       component: "text",
     },
+
     {
       label: "Items block",
       name: "items",
@@ -94,21 +93,30 @@ export const ServicesBlockTemplate = {
           label: "Title item",
           name: "titleItem",
           component: "text",
-          clearable: true,
         },
         {
           label: "Subtitle item",
           name: "subtitleItem",
           component: "text",
-          clearable: true,
         },
         {
           label: "link to the page",
           name: "linkItem",
           component: "text",
+          placeholder: "/default",
           description: "example: /home",
         },
       ],
+    },
+    {
+      label: "Color title",
+      name: "titleColor",
+      component: "color",
+    },
+    {
+      label: "Text color",
+      name: "textColor",
+      component: "color",
     },
   ],
 };

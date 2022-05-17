@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
-import { BaseButton, BaseContainer, BaseText, BaseTitle } from '@base/index';
-import Image from 'next/image';
-import styles from './Esoque.module.scss';
+import React, { useState } from "react";
+import {
+  BaseButton,
+  BaseContainer,
+  BaseIcon,
+  BaseText,
+  BaseTitle,
+} from "@base/index";
+import Image from "next/image";
+import styles from "./Esoque.module.scss";
+import { ALL_ICONS } from "@constants/icons";
 
 interface Props {}
 
@@ -26,11 +33,11 @@ const Esoque: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                layout={'fill'}
-                alt={'Esocue image'}
+                layout={"fill"}
+                alt={"Esocue image"}
                 priority={true}
-                blurDataURL='/images/landing/imgEsoque.png'
-                src='/images/landing/imgEsoque.png'
+                blurDataURL="/images/landing/esoque/imgEsoque.png"
+                src="/images/landing/esoque/imgEsoque.png"
               />
             </div>
             <div className={styles.WelcomeBlockLi}>
@@ -83,9 +90,9 @@ const Esoque: React.FC<Props> = () => {
           <div className={styles.About}>
             <div className={styles.AboutImage}>
               <Image
-                layout={'fill'}
-                alt={'Esocue image'}
-                src='/images/landing/imgEsoque2.png'
+                layout={"fill"}
+                alt={"Esocue image"}
+                src="/images/landing/esoque/imgEsoque2.png"
               />
             </div>
             <BaseTitle className={styles.AboutTitle}>
@@ -102,11 +109,7 @@ const Esoque: React.FC<Props> = () => {
 
             <div className={styles.AboutIcon}>
               <div className={styles.AboutIconCircleDown}>
-                <Image
-                  src='/images/landing/iconEsoqueArrowDown.png'
-                  layout={'fill'}
-                  alt={'Esocue image'}
-                />
+                <BaseIcon icon={ALL_ICONS.ARROW_DOWN} viewBox="0 0 30 68" />
               </div>
             </div>
           </div>
@@ -117,14 +120,14 @@ const Esoque: React.FC<Props> = () => {
         <BaseTitle className={styles.GraphBlockTitle}>
           Financial Historical Records
         </BaseTitle>
-        <div className=''></div>
+        <div className=""></div>
         <BaseTitle className={styles.GraphBlockSubtitle}>
           Total assets that are managed
         </BaseTitle>
 
         <div
           className={`${styles.GraphBlockContent} ${
-            moreInfo ? styles.FullHeight : ''
+            moreInfo ? styles.FullHeight : ""
           }`}
         >
           <div className={styles.LineCenter}></div>

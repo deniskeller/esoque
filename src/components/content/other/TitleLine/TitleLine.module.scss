@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  padding: em(20px) em(34px);
+
+  span {
+    font-size: em(17px);
+    font-weight: 700;
+  }
+}
+
+.line_dark {
+  background-color: $black2;
+  color: $white;
+}
+
+.line_yellow {
+  background-color: $yellow;
+  color: $black3;
+}

@@ -1,14 +1,90 @@
 // HeaderBlock
 .HeaderBlock {
-  background: url('/images/landing/bgHome.png') center / cover no-repeat;
+  background: url("/images/landing/home/bgHome.png") center / cover no-repeat;
+}
+
+.BackgroundImage {
+  z-index: 0;
+}
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  max-width: em(1552px);
+  margin: 0 auto;
+  position: relative;
+  @include iftablet {
+    max-width: em(900px);
+  }
 }
 
 .HeaderBlockContainer {
   @extend %center;
-  flex-direction: column;
+  color: $white;
+  width: 100%;
   min-height: 100vh;
+  justify-content: space-between;
+  padding-top: 200px;
+
+  @include iftablet {
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+  }
+  @include ifmobile {
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
+.HeaderBlockText {
+  max-width: em(745px);
+  margin-left: em(100px);
+  @include iftablet {
+    margin-bottom: em(50px);
+  }
+}
+
+.BlockText {
+  &Title {
+    font-size: em(69px);
+    line-height: em(20px);
+    margin-bottom: em(20px);
+    font-weight: bold;
+  }
+  &Description {
+    position: relative;
+    font-size: em(19px);
+    line-height: em(23px);
+    max-width: em(628px);
+    margin-bottom: em(40px);
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      top: em(-20px);
+    }
+  }
+  &Icons {
+    width: em(385px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    // img {
+    // cursor: pointer;
+    // filter: gray; /* IE6-9 */
+    // -webkit-filter: grayscale(100%);
+    // transition: 0.3s;
+    // &:hover {
+    //   filter: none;
+    // }
+    // }
+  }
+}
 .LogoText {
   width: em(269px);
   height: em(20px);
@@ -278,7 +354,7 @@
 
 //ConclusionBlock
 .ConclusionBlock {
-  background-image: url('/images/landing/bgHome2.png');
+  // background-image: url("/images/landing/bgHome2.png");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -350,5 +426,49 @@
         }
       }
     }
+  }
+}
+
+// Icons
+.Clients {
+  &EnglandBank {
+    position: relative;
+    width: em(50px);
+    height: em(50px);
+  }
+  &Treasury {
+    position: relative;
+    width: em(50px);
+    height: em(50px);
+  }
+  &Departament {
+    position: relative;
+    width: em(50px);
+    height: em(50px);
+  }
+  &Canada {
+    position: relative;
+    width: em(86px);
+    height: em(20px);
+  }
+  &Fca {
+    position: relative;
+    width: em(88px);
+    height: em(28px);
+  }
+  &Fma {
+    position: relative;
+    width: em(100px);
+    height: em(30px);
+  }
+  &Bank {
+    position: relative;
+    width: em(140px);
+    height: em(60px);
+  }
+  &Asic {
+    position: relative;
+    width: em(120px);
+    height: em(25px);
   }
 }

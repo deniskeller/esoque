@@ -1,3 +1,17 @@
-.App {
-  background: green;
+.wrapper {
+  display: flex;
+  background: $white;
+  min-height: 100vh;
+  height: auto;
+}
+.sidebar {
+  background-color: $black2;
+  max-width: em(462px);
+  width: 100%;
+}
+.content {
+  padding-top: em(158px);
+  padding-left: em(71px);
+  padding-right: em(108px);
+  width: 100%;
 }

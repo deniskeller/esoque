@@ -1,0 +1,40 @@
+.wrapperPage {
+  background: $black;
+  min-height: 100vh;
+  height: auto;
+}
+.imgContainer {
+  position: relative;
+  background: $black;
+  min-height: 100v;
+  height: auto;
+  background: url("/images/landing/docs/docs-bg.png") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+}
+
+.wrapperContent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar {
+  max-width: em(395px);
+  width: 100%;
+  padding-top: em(307px);
+}
+
+.content {
+  max-width: em(1040px);
+  width: 100%;
+  margin: 0 auto;
+  padding-top: em(185px);
+}

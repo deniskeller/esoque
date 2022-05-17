@@ -1,5 +1,5 @@
-import React from 'react';
-import { BaseContainer, BaseText, BaseTitle } from '@base/index';
+import React from "react";
+import { BaseContainer, BaseIcon, BaseText, BaseTitle } from "@base/index";
 import {
   CertificationPopup,
   CorporateDocumentsPopup,
@@ -7,46 +7,47 @@ import {
   NotAcceptingPopup,
   RequestSuccessPopup,
   WidgetSidious,
-} from '@content/index';
-import Image from 'next/image';
-import styles from './Sidious.module.scss';
+} from "@content/index";
+import Image from "next/image";
+import styles from "./Sidious.module.scss";
+import { ALL_ICONS } from "@constants/icons";
 
 interface Props {}
 
 const improvingData = [
   {
-    image: 'iconSidiousManOfficeWorker',
+    image: "/images/landing/sidious/iconSidiousManOfficeWorker",
     dataList: [
-      'Corporate Lawyers',
-      'Real Estate Agents',
-      'Real Estate Lawyers',
-      'Divorce / Inheritance Lawyers',
+      "Corporate Lawyers",
+      "Real Estate Agents",
+      "Real Estate Lawyers",
+      "Divorce / Inheritance Lawyers",
     ],
   },
   {
-    image: 'iconSidiousBank',
+    image: "/images/landing/sidious/iconSidiousBank",
     dataList: [
-      'Compliance / Onboarding Specialists',
-      'Electronic Money Institutionss',
-      'Banks',
-      'Other Regulated Entitie',
+      "Compliance / Onboarding Specialists",
+      "Electronic Money Institutionss",
+      "Banks",
+      "Other Regulated Entitie",
     ],
   },
   {
-    image: 'iconSidiousShoppingCart',
+    image: "/images/landing/sidious/iconSidiousShoppingCart",
     dataList: [
-      'Logistics Platforms',
-      'Market Places',
-      'Registered Agents',
-      'Co-Working',
+      "Logistics Platforms",
+      "Market Places",
+      "Registered Agents",
+      "Co-Working",
     ],
   },
   {
-    image: 'iconSidiousDollarBanknote',
+    image: "/images/landing/sidious/iconSidiousDollarBanknote",
     dataList: [
-      'Security Brokers',
-      'Financial Investments Companies',
-      'Wealth Management Offices',
+      "Security Brokers",
+      "Financial Investments Companies",
+      "Wealth Management Offices",
     ],
   },
 ];
@@ -60,12 +61,12 @@ const Sidious: React.FC<Props> = () => {
           <div className={styles.WelcomeBlockUl}>
             <div className={styles.WelcomeBlockImage}>
               <Image
-                layout={'fill'}
-                alt={''}
+                layout={"fill"}
+                alt={""}
                 priority={true}
-                placeholder='blur'
-                blurDataURL='/images/landing/imgSidious1.png'
-                src='/images/landing/imgSidious1.png'
+                placeholder="blur"
+                blurDataURL="/images/landing/sidious/imgSidious1.png"
+                src="/images/landing/sidious/imgSidious1.png"
               />
             </div>
             <div className={styles.WelcomeBlockLi}>
@@ -90,14 +91,7 @@ const Sidious: React.FC<Props> = () => {
 
           <div className={styles.AboutIcon}>
             <div className={styles.AboutIconCircleDown}>
-              <Image
-                layout={'fill'}
-                alt={''}
-                placeholder='blur'
-                loading='lazy'
-                blurDataURL='/images/landing/iconEsoqueArrowDown.png'
-                src='/images/landing/iconEsoqueArrowDown.png'
-              />
+              <BaseIcon icon={ALL_ICONS.ARROW_DOWN} viewBox="0 0 30 68" />
             </div>
           </div>
         </div>
@@ -119,12 +113,12 @@ const Sidious: React.FC<Props> = () => {
           </BaseTitle>
           <div className={styles.AdaptationBlockImage}>
             <Image
-              src='/images/landing/imgSidious3.png'
-              layout={'fill'}
-              alt={''}
-              blurDataURL='/images/landing/imgSidious3.png'
-              placeholder='blur'
-              loading='lazy'
+              src="/images/landing/sidious/imgSidious3.png"
+              layout={"fill"}
+              alt={""}
+              blurDataURL="/images/landing/sidious/imgSidious3.png"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
         </div>
@@ -133,7 +127,7 @@ const Sidious: React.FC<Props> = () => {
       <div className={styles.PlatformBenefitsBlockContainer}>
         <BaseContainer>
           <div className={styles.PlatformBenefitsBlock}>
-            <BaseTitle type='h2' className={styles.PlatformBenefitsBlockTitle}>
+            <BaseTitle type="h2" className={styles.PlatformBenefitsBlockTitle}>
               KYC/KYB platform for onboarding and monitoring
             </BaseTitle>
 
@@ -183,12 +177,12 @@ const Sidious: React.FC<Props> = () => {
               </div>
               <div className={styles.PlatformBenefitsImage}>
                 <Image
-                  layout={'fill'}
-                  alt={''}
-                  src='/images/landing/imgSidious4.png'
-                  blurDataURL='/images/landing/imgSidious4.png'
-                  placeholder='blur'
-                  loading='lazy'
+                  layout={"fill"}
+                  alt={""}
+                  src="/images/landing/sidious/imgSidious4.png"
+                  blurDataURL="/images/landing/sidious/imgSidious4.png"
+                  placeholder="blur"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -198,7 +192,7 @@ const Sidious: React.FC<Props> = () => {
 
       <BaseContainer>
         <div className={styles.ImprovingBlock}>
-          <BaseTitle type='h2' className={styles.ImprovingBlockTitle}>
+          <BaseTitle type="h2" className={styles.ImprovingBlockTitle}>
             Improving the process of onboarding
           </BaseTitle>
           <BaseTitle className={styles.ImprovingBlockSubtitle}>
@@ -221,7 +215,7 @@ const Sidious: React.FC<Props> = () => {
 
       <div className={styles.HowItWorksBlockContainer}>
         <div className={styles.HowItWorksBlock}>
-          <BaseTitle type='h2' className={styles.HowItWorksBlockTitle}>
+          <BaseTitle type="h2" className={styles.HowItWorksBlockTitle}>
             How it works
           </BaseTitle>
 
@@ -229,12 +223,12 @@ const Sidious: React.FC<Props> = () => {
             className={`${styles.HowItWorksBlockImage} ${styles.DesktopImage}`}
           >
             <Image
-              layout={'fill'}
-              alt='preview'
-              src='/images/landing/imgSidious5desktop.png'
-              blurDataURL='/images/landing/imgSidious5desktop.png'
-              placeholder='blur'
-              loading='lazy'
+              layout={"fill"}
+              alt="preview"
+              src="/images/landing/sidious/imgSidious5desktop.png"
+              blurDataURL="/images/landing/sidious/imgSidious5desktop.png"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
 
@@ -242,12 +236,12 @@ const Sidious: React.FC<Props> = () => {
             className={`${styles.HowItWorksBlockImage} ${styles.TabletImage}`}
           >
             <Image
-              layout={'fill'}
-              alt='preview'
-              src='/images/landing/imgSidious5tablet.png'
-              blurDataURL='/images/landing/imgSidious5tablet.png'
-              placeholder='blur'
-              loading='lazy'
+              layout={"fill"}
+              alt="preview"
+              src="/images/landing/sidious/imgSidious5tablet.png"
+              blurDataURL="/images/landing/sidious/imgSidious5tablet.png"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
 
@@ -255,12 +249,12 @@ const Sidious: React.FC<Props> = () => {
             className={`${styles.HowItWorksBlockImage} ${styles.MobileImage}`}
           >
             <Image
-              layout={'fill'}
-              alt='preview'
-              src='/images/landing/imgSidious5mobile.png'
-              blurDataURL='/images/landing/imgSidious5mobile.png'
-              placeholder='blur'
-              loading='lazy'
+              layout={"fill"}
+              alt="preview"
+              src="/images/landing/imgSidious5mobile.png"
+              blurDataURL="/images/landing/sidious/imgSidious5mobile.png"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
 
@@ -270,13 +264,13 @@ const Sidious: React.FC<Props> = () => {
         </div>
       </div>
 
-      <CertificationPopup className='CertificationPopup' />
+      <CertificationPopup className="CertificationPopup" />
       {/* если юристидция не обсулживается */}
-      <NotAcceptingPopup className='NotAcceptingPopup' />
+      <NotAcceptingPopup className="NotAcceptingPopup" />
       {/* дефолтная */}
-      <CorporateDocumentsPopup className='CorporateDocumentsPopup' />
+      <CorporateDocumentsPopup className="CorporateDocumentsPopup" />
       {/* success */}
-      <RequestSuccessPopup className='RequestSuccessPopup' />
+      <RequestSuccessPopup className="RequestSuccessPopup" />
     </>
   );
 };

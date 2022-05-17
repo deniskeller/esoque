@@ -1,53 +1,75 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from "react";
+
+import Link from "next/link";
+
 import {
   BaseButton,
   BaseContainer,
   BaseInput,
   BaseText,
   BaseTitle,
-} from '@base/index';
-import styles from './Login.module.scss';
-import { LinkHome } from '@content/index';
+} from "@base/index";
 
-import { useRouter } from 'next/router';
+import { LinkHome } from "@content/index";
 
-interface Props {}
+import { validateEmail } from "@utils/validateInputs";
 
-const Login: React.FC<Props> = () => {
-  const router = useRouter();
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+import styles from "./Login.module.scss";
+interface Props {
+  error: string;
+  loginUser: (data: LoginData) => void;
+}
 
+type LoginData = {
+  email: string;
+  password: string;
+};
+
+const Login: React.FC<Props> = ({ error, loginUser }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const changeHandlerEmail = (value: string) => {
     setEmail(value);
   };
 
-  const changeHandlerPassword = (e: React.KeyboardEvent) => {
-    if (e.key === 'Backspace') setPassword((s) => s.slice(0, -1));
-    if (e.key.length === 1) setPassword((s) => s + e.key);
+  // Password
+  const changePassword = (val: string) => {
+    if (!val) {
+      setPassword("");
+      return;
+    }
+    setPassword(val);
   };
-
-  React.useEffect(() => {
-    console.log('password: ', password);
-  }, [password]);
 
   const submitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const data = {
-      email: email,
-      password: password,
-    };
-    console.log('data: ', data);
-    setEmail('');
-    setPassword('');
+    setEmailError("");
+    setPasswordError("");
 
-    router.push('/app/');
+    if (!validateEmail(email)) {
+      setEmailError("please enter a valid email");
+      return;
+    }
+
+    if (password.length < 8) {
+      setPasswordError("Min length 8");
+      return;
+    }
+
+    if (!emailError && !passwordError) {
+      const data: LoginData = {
+        email: email,
+        password: password,
+      };
+      loginUser(data);
+    }
   };
 
   return (
     <BaseContainer>
-      <form action='' method='post' className={styles.Login}>
+      <form action="" method="post" className={styles.Login}>
         <BaseTitle className={styles.Title}>Sign in to Esoque</BaseTitle>
         <BaseText className={styles.Subtitle}>
           It is great to see you back! Please log in.
@@ -55,30 +77,31 @@ const Login: React.FC<Props> = () => {
 
         <BaseInput
           value={email}
-          name='email'
+          name="email"
+          error={emailError}
           onChange={changeHandlerEmail}
-          placeholder='Email'
-          type='text'
+          placeholder="Email"
+          type="text"
           required
           className={styles.Input}
         />
 
         <BaseInput
-          value={password.replace(/[^*]/g, '*')}
-          onChange={() => {}}
-          name='password'
-          placeholder='Password'
-          type='text'
+          value={password}
+          onChange={changePassword}
+          name="password"
+          error={passwordError || error}
+          placeholder="Password"
+          type="password"
           required
           className={styles.Input}
-          onKeyDown={changeHandlerPassword}
         />
 
         <div className={styles.Navbar}>
-          <Link href={'/reset'}>
+          <Link href={"/reset"}>
             <a className={styles.Link}>Password Reset</a>
           </Link>
-          <Link href={'/signup'}>
+          <Link href={"/signup"}>
             <a className={styles.Link}>Create New Account</a>
           </Link>
         </div>

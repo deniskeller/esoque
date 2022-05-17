@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './RequestInfoItem.module.scss';
+import React from "react";
+import styles from "./RequestInfoItem.module.scss";
 
 interface Props {
   title?: string;

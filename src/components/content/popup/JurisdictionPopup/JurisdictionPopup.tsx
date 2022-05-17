@@ -1,9 +1,10 @@
-import React from 'react';
-import { BaseIcon, BasePopup } from '@base/index';
-import { useSelector } from 'react-redux';
-import { RootState } from 'store/reducers/rootReducer';
-import { ALL_ICONS } from '@constants/icons';
-import jurisdictionData from '@services/jurisdictionData.json';
+import React from "react";
+import { BaseIcon, BasePopup } from "@base/index";
+import { useSelector } from "react-redux";
+import { ALL_ICONS } from "@constants/icons";
+
+import jurisdictionData from "@services/jurisdictionData.json";
+
 import {
   Canada,
   Cyprus,
@@ -23,15 +24,17 @@ import {
   Switzerland,
   UnitedKingdom,
   Usa,
-} from '../JurisdictionIPopupContents';
-import styles from './JurisdictionPopup.module.scss';
+} from "../JurisdictionIPopupContents";
+import { EsoqueState } from "@store/store";
+
+import styles from "./JurisdictionPopup.module.scss";
 
 interface Props {
   className: string;
 }
 
 const JurisdictionPopup: React.FC<Props> = ({ className }) => {
-  const { id } = useSelector((state: RootState) => state.modal);
+  const { id } = useSelector((state: EsoqueState) => state.modals);
   const [page, setPage] = React.useState(id);
   let modalData = jurisdictionData[page - 1];
 
@@ -107,7 +110,7 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
                 ? styles.BgUsa
                 : page == 18
                 ? styles.BgGeorgia
-                : ''
+                : ""
             }`}
           >
             {page == 1 ? (
@@ -147,31 +150,31 @@ const JurisdictionPopup: React.FC<Props> = ({ className }) => {
             ) : page == 18 ? (
               <Georgia />
             ) : (
-              ''
+              ""
             )}
 
             <div className={styles.UnicornsPopupNav}>
               <div
                 className={`${styles.Btn} ${styles.PrevBtn} ${
-                  prevDisable() ? styles.Disable : ''
+                  prevDisable() ? styles.Disable : ""
                 }`}
                 onClick={prevPage}
               >
                 <BaseIcon
                   icon={ALL_ICONS.LANDING_POPUP_NEXT}
-                  viewBox='0 0 21 24'
+                  viewBox="0 0 21 24"
                 />
               </div>
 
               <div
                 className={`${styles.Btn} ${styles.NextBtn} ${
-                  nextDisable() ? styles.Disable : ''
+                  nextDisable() ? styles.Disable : ""
                 }`}
                 onClick={nextPage}
               >
                 <BaseIcon
                   icon={ALL_ICONS.LANDING_POPUP_NEXT}
-                  viewBox='0 0 21 24'
+                  viewBox="0 0 21 24"
                 />
               </div>
             </div>

@@ -1,0 +1,43 @@
+.wrapper {
+  margin-top: 100px;
+  display: flex;
+}
+
+.prevBtn {
+  width: em(145px);
+  height: em(63px);
+
+  border-radius: 10px 0 0 10px;
+}
+.nextBtn {
+  width: em(145px);
+  height: em(63px);
+  border-radius: 0 10px 10px 0;
+}
+.pageBtn {
+  width: em(67px);
+  height: em(63px);
+  border-left: 1px solid rgba(75, 75, 75, 0.34);
+  border-right: 1px solid rgba(75, 75, 75, 0.34);
+}
+
+.prevBtn,
+.nextBtn,
+.pageBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: em(20px);
+  color: $black3;
+  background: $input;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.active {
+  background-color: $yellow;
+}

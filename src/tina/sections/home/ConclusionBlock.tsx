@@ -1,34 +1,56 @@
 import React from "react";
-
-import { BaseContainer, BaseIcon, BaseTitle } from "@base/index";
+import Image from "next/image";
 import { Block, BlocksControls } from "react-tinacms-inline";
 
-import Image from "next/image";
+import { BaseContainer } from "@base/index";
 
 import styles from "@view/landing/home/Home.module.scss";
 
-interface Props {}
+interface Props {
+  text: string;
+  textColor: string;
+  image: Img;
+  backgroundImage: Img;
+}
+interface Img {
+  directory: string;
+  filename: string;
+  id: number;
+  previewSrc: string;
+  type: string;
+}
 
-export const ConclusionBlockComponents: React.FC<Props> = () => {
+export const ConclusionBlockComponents: React.FC<Props> = ({
+  text,
+  textColor,
+  image,
+  backgroundImage,
+}) => {
   return (
-    <div className={styles.ConclusionBlock}>
+    <div
+      className={styles.ConclusionBlock}
+      style={{ backgroundImage: `url(${backgroundImage.previewSrc})` }}
+    >
       <BaseContainer>
         <div className={styles.ConclusionBlockContent}>
           <div className={styles.ConclusionBlockImage}>
-            <Image
-              src="/images/landing/imgHomeMoneyBag.png"
-              layout={"fill"}
-              // width={653}
-              // height={503}
-              alt={"Money Bag image"}
-            />
+            {image?.previewSrc?.length && (
+              <Image
+                src={
+                  image?.previewSrc ||
+                  "/images/landing/home/imgHomeMoneyBag.png"
+                }
+                layout={"fill"}
+                alt={"Money Bag image"}
+                // loading="lazy"
+                priority
+                blurDataURL="/images/landing/home/imgHomeMoneyBag.png"
+              />
+            )}
           </div>
 
           <div className={styles.ConclusionBlockTitle}>
-            <p>
-              Build the future with us and we will open you to a new dimension
-              of FinTech.
-            </p>
+            <p style={{ color: textColor }}>{text}</p>
           </div>
         </div>
       </BaseContainer>
@@ -48,8 +70,20 @@ export const ConclusionBlockTemplate = {
   defaultItem: {
     text: "Please enter title text",
     textColor: "#ea93d1",
-    fontSize: "2rem",
-    backgroundImage: "/images/landing/imgHomeMoneyBag.png",
+    image: {
+      directory: "",
+      filename: "",
+      id: 0,
+      previewSrc: "",
+      type: "",
+    },
+    backgroundImage: {
+      directory: "",
+      filename: "",
+      id: 0,
+      previewSrc: "",
+      type: "",
+    },
   },
   fields: [
     {
@@ -58,19 +92,19 @@ export const ConclusionBlockTemplate = {
       component: "text",
     },
     {
-      name: "fontSize",
-      label: "Font-size",
-      component: "number",
+      name: "textColor",
+      label: "Text color",
+      component: "color",
+    },
+    {
+      name: "image",
+      label: "Image from text",
+      component: "image",
     },
     {
       name: "backgroundImage",
       label: "Background image",
       component: "image",
-    },
-    {
-      name: "textColor",
-      label: "Text color",
-      component: "color",
     },
   ],
 };
