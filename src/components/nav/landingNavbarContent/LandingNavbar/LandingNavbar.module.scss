@@ -98,7 +98,6 @@
     justify-content: space-between;
     margin-right: em(150px);
     width: em(195px);
-    height: em(40px);
     cursor: pointer;
     @include iftablet {
       margin-right: em(50px);
@@ -110,10 +109,20 @@
 .logo {
   width: em(146px);
   height: em(29px);
+  @include iftablet {
+    width: em(80.28px);
+    height: em(15.83px);
+  }
 }
 .logo_text {
   width: em(90px);
   height: em(7px);
+  margin-bottom: em(9px);
+  @include iftablet {
+    width: em(49.14px);
+    height: em(3.61px);
+    margin-bottom: em(5px);
+  }
 }
 //
 

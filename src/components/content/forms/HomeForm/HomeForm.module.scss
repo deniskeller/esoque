@@ -2,50 +2,140 @@
   display: flex;
   flex-direction: column;
   // align-items: center;
-  max-width: em(592px);
   align-items: center;
+  width: em(592px);
   background-color: $black;
   box-shadow: 1px 2px 12px -4px rgba(226, 240, 99, 0.49);
-  padding: 42px 74px 54px;
+  border-radius: 30px;
+  padding: em(58px) em(66px) em(64px) em(74px);
+
+  @include iftablet {
+    width: em(480px);
+    padding: em(40px) em(66px) em(41px) em(74px);
+  }
+
+  @include ifmobile {
+    width: em(318px);
+    padding: em(15px) em(26px) em(18px);
+  }
 }
+
+.wrapperProceed {
+  padding: em(116px) em(66px) em(116px) em(73px);
+  @include iftablet {
+    padding: em(64px) em(74px);
+  }
+
+  @include ifmobile {
+    padding: em(25px) em(24px);
+  }
+}
+.Subscription {
+  width: em(453px);
+  height: em(396px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #e2f063;
+  @include iftablet {
+    width: em(340px);
+    height: em(414px);
+  }
+
+  @include ifmobile {
+    width: em(270px);
+    height: em(342px);
+  }
+  p {
+    font-family: $font-Termina;
+    font-style: normal;
+    font-weight: 700;
+    font-size: em(17px);
+    line-height: 120%;
+    color: #e2f063;
+    @include iftablet {
+      font-size: em(14px);
+    }
+
+    @include ifmobile {
+      font-size: em(14px);
+    }
+  }
+}
+
 .titleText {
   font-size: em(24px);
-  line-height: em(23px);
+  line-height: em(29.7px);
   font-weight: 400;
   width: 100%;
   margin-bottom: em(20px);
+  @include iftablet {
+    font-size: em(18px);
+    margin-bottom: em(23px);
+  }
+
+  @include ifmobile {
+    font-size: em(13px);
+    text-align: center;
+  }
   span {
     color: $yellow;
   }
 }
 .bottomText {
-  font-size: em(25px);
+  font-size: em(20px);
   line-height: em(24px);
+  margin-top: em(23px);
   margin-bottom: em(22px);
   text-align: start;
   width: 100%;
+  @include iftablet {
+    font-size: em(16px);
+    font-weight: 300;
+  }
+
+  @include ifmobile {
+    font-size: em(14px);
+  }
 }
 
 .input {
-  font-size: em(20px);
-  line-height: em(24px);
-  margin-bottom: em(16px);
   width: 100%;
-  input {
-    font-size: em(20px);
-    line-height: em(24px);
-    height: em(49px);
+  height: 100%;
+  margin-bottom: em(8px);
+  @include iftablet {
   }
-  div {
-    display: none;
+
+  @include ifmobile {
+  }
+  input {
+    height: em(59px);
+    @include iftablet {
+      font-size: em(14px);
+      height: em(56px);
+    }
+
+    @include ifmobile {
+    }
   }
 }
 
 .inputSelect {
   width: 100%;
-  margin-bottom: em(16px);
+  height: em(59px);
+  margin-bottom: em(8px);
   input {
-    display: none !important;
+    height: em(59px);
+  }
+  @include iftablet {
+    font-size: em(14px);
+    height: em(56px);
+  }
+
+  @include ifmobile {
+    font-size: em(14px);
+    height: em(47px);
   }
 }
 
@@ -53,4 +143,13 @@
   width: em(193px);
   height: em(63px);
   align-items: center;
+  @include iftablet {
+    width: em(149px);
+    height: em(42px);
+  }
+
+  @include ifmobile {
+    width: em(173px);
+    height: em(38px);
+  }
 }

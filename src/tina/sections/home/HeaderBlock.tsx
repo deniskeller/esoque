@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { Block, BlocksControls } from "react-tinacms-inline";
+import React from 'react';
+import Image from 'next/image';
+import { Block, BlocksControls } from 'react-tinacms-inline';
 
 import {
   BlackIcon,
@@ -11,9 +11,10 @@ import {
   Fma,
   Bank,
   Asic,
-} from "../../../../public/images/landing/clients";
-import styles from "@view/landing/home/Home.module.scss";
-import HomeForm from "@content/forms/HomeForm/HomeForm";
+} from '../../../../public/images/landing/clients';
+import styles from '@view/landing/home/Home.module.scss';
+import HomeForm from '@content/forms/HomeForm/HomeForm';
+import { BaseContainer } from '@base/index';
 
 interface Props {
   color: string;
@@ -39,22 +40,25 @@ export const HeaderBlockComponents: React.FC<Props> = ({
     <div className={styles.HeaderBlock} style={{ ...styled }}>
       <Image
         className={styles.BackgroundImage}
-        src={backgroundImage?.previewSrc || "/images/landing/home/bgHome.png"}
+        src={backgroundImage?.previewSrc || '/images/landing/home/bgHome.png'}
         layout="fill"
         objectFit="cover"
-        objectPosition="center"
-        alt={"Unicorn image"}
+        // objectPosition="center"
+        alt={'Unicorn image'}
         priority
       />
-      <div className={styles.container}>
+      <BaseContainer>
         <div className={styles.HeaderBlockContainer}>
           <div className={styles.HeaderBlockText}>
             <div className={styles.BlockTextTitle}>
               Beyond the&nbsp;borders of&nbsp;financial world
             </div>
             <div className={styles.BlockTextDescription}>
-              We are working with the following government authorities in order
-              to provide the consultancy services to our customers and more:
+              <p>
+                We are working with the following government authorities in
+                order to provide the consultancy services to our customers and
+                more:
+              </p>
             </div>
             <div className={styles.BlockTextIcons}>
               {/* <BaseIcon icon={ALL_ICONS.ENGLAND_BANK} /> */}
@@ -88,7 +92,7 @@ export const HeaderBlockComponents: React.FC<Props> = ({
             <HomeForm />
           </div>
         </div>
-      </div>
+      </BaseContainer>
     </div>
   );
 };
@@ -100,23 +104,23 @@ export const HeaderBlockTina = ({ index, data }: any) => (
 );
 
 export const HeaderBlockTemplate = {
-  label: "Header Block",
+  label: 'Header Block',
 
   defaultItem: {
     backgroundImage: {
-      directory: "",
-      filename: "",
+      directory: '',
+      filename: '',
       id: 0,
-      previewSrc: "",
-      type: "",
+      previewSrc: '',
+      type: '',
     },
   },
   fields: [
     {
-      name: "backgroundImage",
-      label: "background-image",
-      component: "image",
-      description: "Please select an image for the background",
+      name: 'backgroundImage',
+      label: 'background-image',
+      component: 'image',
+      description: 'Please select an image for the background',
     },
   ],
 };

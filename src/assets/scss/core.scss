@@ -5,7 +5,8 @@ html {
   font-family: $font-Termina;
   font-size: math.div(18, 720) * 100vh;
   min-height: 100%;
-  line-height: 1.8;
+  // line-height: 1.8;
+  line-height: 120%;
   scroll-behavior: smooth;
 }
 

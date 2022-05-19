@@ -1,8 +1,8 @@
-import React, { ReactNode, useState, useRef } from "react";
-import useOnClickOutside from "@hooks/useOnClickOutside";
-import styles from "./BaseSelect.module.scss";
-import { BaseIcon } from "@base/index";
-import { ALL_ICONS } from "@constants/icons";
+import React, { ReactNode, useState, useRef } from 'react';
+import useOnClickOutside from '@hooks/useOnClickOutside';
+import styles from './BaseSelect.module.scss';
+import { BaseIcon } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
   placeholder?: string;
@@ -28,13 +28,13 @@ const BaseSelect: React.FC<Props> = ({
   style,
 
   className,
-  type = "default",
+  type = 'default',
   options,
   error,
   onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
   const selectContainerRef = React.useRef(null);
 
   const clickOutsideHandler = () => setIsOpen(false);
@@ -51,17 +51,17 @@ const BaseSelect: React.FC<Props> = ({
   return (
     <div
       className={`${styles.SelectContainer} ${
-        styles["Select_" + type]
-      } ${className} ${error ? styles.SelectError : ""} `}
+        styles['Select_' + type]
+      } ${className} ${error ? styles.SelectError : ''} `}
       ref={selectContainerRef}
     >
       <div
         className={`${styles.SelectHeader}  ${
-          isOpen ? styles.SelectHeaderFocus : ""
-        } ${error ? styles.Error : ""}`}
+          isOpen ? styles.SelectHeaderFocus : ''
+        } ${error ? styles.Error : ''}`}
         onClick={toggling}
       >
-        <p className={`${selectedOption ? styles.NotEmpty : ""}`}>
+        <p className={`${selectedOption ? styles.NotEmpty : ''}`}>
           {selectedOption || placeholder}
         </p>
         <BaseIcon
@@ -75,7 +75,7 @@ const BaseSelect: React.FC<Props> = ({
           className={`${styles.IconArrow} ${styles.IconArrowBottom}`}
         />
       </div>
-      {error ? <div className={styles.ErrorText}>{error}</div> : ""}
+      {error ? <div className={styles.ErrorText}>{error}</div> : ''}
       {isOpen && (
         <ul className={styles.SelectList}>
           {options.map((option: ISelectItem) => (

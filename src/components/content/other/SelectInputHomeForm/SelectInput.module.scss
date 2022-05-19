@@ -14,16 +14,15 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: em(52px);
   font-size: em(20px);
   border-radius: em(5px, 10px);
   @include iftablet {
-    height: em(55px);
+    padding: 0 em(30px);
   }
   @include ifmobile {
+    $size: 17px;
     border-radius: em(10px, $size);
     padding: 0 em(17px);
-    height: em(55px);
   }
 
   p {
@@ -37,7 +36,7 @@
       font-size: em(17px);
     }
     @include ifmobile {
-      font-size: em(11px);
+      font-size: em(14px);
     }
   }
   .NotEmpty {
