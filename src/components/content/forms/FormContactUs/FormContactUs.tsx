@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   BaseButton,
@@ -7,15 +7,15 @@ import {
   BaseText,
   BaseTextarea,
   BaseTitle,
-} from "@base/index";
+} from '@base/index';
 
-import UploadFile from "@content/other/UploadFileBtn/UploadFileBtn";
-import UploadZoneFile from "@content/other/UploadZoneFile/UploadZoneFile";
+import UploadFile from '@content/other/UploadFileBtn/UploadFileBtn';
+import UploadZoneFile from '@content/other/UploadZoneFile/UploadZoneFile';
 
-import styles from "./FormContactUs.module.scss";
-import PhoneInput from "@content/other/PhoneInput/PhoneInput";
-import { validateEmail, validateFields } from "@utils/validateInputs";
-import { feedbackFull } from "@api/feedbackForms";
+import styles from './FormContactUs.module.scss';
+import PhoneInput from '@content/other/PhoneInput/PhoneInput';
+import { validateEmail, validateFields } from '@utils/validateInputs';
+import { feedbackFull } from '@api/feedbackForms';
 
 type TInputs = {
   [key: string]: { [key: string]: string };
@@ -23,7 +23,7 @@ type TInputs = {
 
 const FormContactUs = () => {
   const [files, setFiles] = React.useState<File[]>();
-  const [email, setEmail] = React.useState<string>("");
+  const [email, setEmail] = React.useState<string>('');
   const [emailError, setEmailError] = React.useState<boolean>(false);
 
   const [isConfirm, setIsConfirm] = React.useState<boolean>(false);
@@ -32,20 +32,23 @@ const FormContactUs = () => {
   const [submitSuccess, setSubmitSuccess] = React.useState(false);
   const [disabled, setDisabled] = React.useState<boolean>(true);
 
+  //моковое подтверждение
+  const [apply, setApply] = React.useState<boolean>(false);
+
   const [inputs, setInputs] = React.useState<TInputs>({
-    firstName: { value: "", error: "", type: "string" },
-    lastName: { value: "", error: "", type: "string" },
-    phone: { value: "", error: "", type: "phone" },
-    phoneCode: { value: "", error: "", type: "phoneCode" },
+    firstName: { value: '', error: '', type: 'string' },
+    lastName: { value: '', error: '', type: 'string' },
+    phone: { value: '', error: '', type: 'phone' },
+    phoneCode: { value: '', error: '', type: 'phoneCode' },
   });
 
   // Optional input
-  const [desc, setDesc] = React.useState<string>("");
+  const [desc, setDesc] = React.useState<string>('');
 
   const changeInputs = (name: string, value: string) => {
     const newInputs = { ...inputs };
     newInputs[name].value = value;
-    newInputs[name].error = "";
+    newInputs[name].error = '';
     setInputs(newInputs);
   };
 
@@ -56,7 +59,7 @@ const FormContactUs = () => {
   };
 
   const uploadDropFile = React.useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles, "acceptedFiles");
+    console.log(acceptedFiles, 'acceptedFiles');
     setFiles(acceptedFiles);
   }, []);
 
@@ -84,11 +87,12 @@ const FormContactUs = () => {
       const res = await feedbackFull(data);
       if (res) {
         setSubmitSuccess(true);
-        alert("Успешно");
+        alert('Успешно');
       }
     }
 
     setInputs(newObj);
+    setApply(true);
   };
 
   React.useEffect(() => {
@@ -109,94 +113,110 @@ const FormContactUs = () => {
   }, [email]);
 
   return (
-    <div className={styles.Form}>
-      <BaseTitle className={styles.FormTitle}>Contact us</BaseTitle>
-      <BaseText className={styles.FormSubTitle}>
-        Please feel free to contact or ask your questions. We are happy to help!
-      </BaseText>
-      <div className={styles.Row}>
-        <BaseInput
-          className={styles.Input}
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-          value={inputs.firstName.value}
-          error={inputs.firstName.error}
-          onChange={(value: string) => changeInputs("firstName", value)}
-        />
-        <BaseInput
-          className={styles.Input}
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          value={inputs.lastName.value}
-          error={inputs.lastName.error}
-          onChange={(value: string) => changeInputs("lastName", value)}
-        />
-      </div>
-      <div className={styles.Row}>
-        <BaseInput
-          className={styles.Input}
-          type="text"
-          name="email"
-          value={email}
-          onChange={(value: string) => setEmail(value)}
-          placeholder="Email Address"
-          error={emailError}
-        />
-        <div className={styles.FormPhoneInput}>
-          <PhoneInput
-            errorCode={Boolean(inputs.phoneCode.error)}
-            errorPhone={Boolean(inputs.phone.error)}
-            value={inputs.phone.value}
-            onChangeCode={(value: string) => {
-              changeInputs("phoneCode", value);
-            }}
-            onChangePhone={(value: string) => changeInputs("phone", value)}
-          />
-        </div>
-      </div>
-      <BaseTextarea
-        className={styles.Textarea}
-        placeholder="Type here.."
-        value={desc}
-        onChange={setDesc}
-      />
-      <div className={styles.Row}>
-        <div className={styles.FormFiles}>
-          <div className={styles.FormFilesName}>
-            <UploadZoneFile onDrop={uploadDropFile} />
+    <>
+      <div className={styles.Form}>
+        <BaseTitle className={styles.FormTitle}>Contact us</BaseTitle>
+        <BaseText className={styles.FormSubTitle}>
+          Please feel free to contact or ask your questions. We are happy to
+          help!
+        </BaseText>
+        {!apply ? (
+          <>
+            <div className={styles.Row}>
+              <BaseInput
+                className={styles.Input}
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={inputs.firstName.value}
+                error={inputs.firstName.error}
+                onChange={(value: string) => changeInputs('firstName', value)}
+              />
+              <BaseInput
+                className={styles.Input}
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={inputs.lastName.value}
+                error={inputs.lastName.error}
+                onChange={(value: string) => changeInputs('lastName', value)}
+              />
+            </div>
+            <div className={styles.Row}>
+              <BaseInput
+                className={styles.Input}
+                type="text"
+                name="email"
+                value={email}
+                onChange={(value: string) => setEmail(value)}
+                placeholder="Email Address"
+                error={emailError}
+              />
+              <div className={styles.FormPhoneInput}>
+                <PhoneInput
+                  errorCode={Boolean(inputs.phoneCode.error)}
+                  errorPhone={Boolean(inputs.phone.error)}
+                  value={inputs.phone.value}
+                  onChangeCode={(value: string) => {
+                    changeInputs('phoneCode', value);
+                  }}
+                  onChangePhone={(value: string) =>
+                    changeInputs('phone', value)
+                  }
+                />
+              </div>
+            </div>
+            <BaseTextarea
+              className={styles.Textarea}
+              placeholder="Type here.."
+              value={desc}
+              onChange={setDesc}
+            />
+            <div className={styles.Row}>
+              <div className={styles.FormFiles}>
+                <div className={styles.FormFilesName}>
+                  <UploadZoneFile onDrop={uploadDropFile} />
+                </div>
+                <div className={styles.FormFilesBtn}>
+                  <UploadFile uploadFiles={uploadFile} />
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.CheckBoxContainer}>
+              <BaseCheckbox checkboxValue={isConfirm} onClick={setIsConfirm} />
+              <div className={styles.CheckBoxText}>
+                I confirm that I have read and expressly understand how my
+                personal data will be used for the purposes described in{' '}
+                <span>Privacy Policy.</span>
+              </div>
+            </div>
+
+            <div className={styles.CheckBoxContainer}>
+              <BaseCheckbox checkboxValue={isRead} onClick={setIsRead} />
+              <div className={styles.CheckBoxText}>
+                I&apos;ve read and understand the <span>Privacy Policy</span>.
+              </div>
+            </div>
+
+            <BaseButton
+              disabled={disabled}
+              className={styles.SubmitBtn}
+              onClick={submitFormData}
+            >
+              Apply
+            </BaseButton>
+          </>
+        ) : (
+          <div className={styles.Apply}>
+            <div className={styles.ApplyTitle}>
+              Thank you for <br /> getting in touch! <br />
+              Your message has been <br /> successfully sent.
+            </div>
           </div>
-          <div className={styles.FormFilesBtn}>
-            <UploadFile uploadFiles={uploadFile} />
-          </div>
-        </div>
+        )}
       </div>
-
-      <div className={styles.CheckBoxContainer}>
-        <BaseCheckbox checkboxValue={isConfirm} onClick={setIsConfirm} />
-        <div className={styles.CheckBoxText}>
-          I confirm that I have read and expressly understand how my personal
-          data will be used for the purposes described in{" "}
-          <span>Privacy Policy.</span>
-        </div>
-      </div>
-
-      <div className={styles.CheckBoxContainer}>
-        <BaseCheckbox checkboxValue={isRead} onClick={setIsRead} />
-        <div className={styles.CheckBoxText}>
-          I&apos;ve read and understand the <span>Privacy Policy</span>.
-        </div>
-      </div>
-
-      <BaseButton
-        disabled={disabled}
-        className={styles.SubmitBtn}
-        onClick={submitFormData}
-      >
-        Apply
-      </BaseButton>
-    </div>
+    </>
   );
 };
 export default FormContactUs;

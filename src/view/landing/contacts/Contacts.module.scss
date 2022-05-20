@@ -1,6 +1,6 @@
 .bg {
   position: relative;
-  background-image: url("/images/landing/contacts/contacts-bg.png");
+  background-image: url('/images/landing/contacts/contacts-bg.png');
   background-position: center;
   background-size: cover;
   .blur {
@@ -15,15 +15,31 @@
   display: flex;
   flex-direction: column;
   padding-top: em(186px);
-  padding-bottom: em(210px);
+  padding-bottom: em(179px);
   position: relative;
+  @include iftablet {
+  }
+  @include ifmobile {
+    padding-top: em(68px);
+    padding-bottom: em(68px);
+  }
 }
 
 .Breadcrumbs {
   margin-bottom: em(80px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    display: none;
+  }
 }
 .Title {
   margin-bottom: em(40px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    margin-bottom: em(30px);
+  }
   span {
     color: $white;
   }
@@ -33,16 +49,32 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: em(91px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    margin-bottom: em(35px);
+    flex-wrap: wrap;
+  }
   &Info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: em(545px);
     width: 100%;
+    max-width: em(545px);
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
   }
   &Map {
-    max-width: em(809px);
     width: 100%;
+    max-width: em(809px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      height: em(183px);
+      order: -1;
+    }
   }
 }
 
@@ -51,10 +83,25 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: em(44px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include iftablet {
+  }
+  @include ifmobile {
+    margin-bottom: em(15px);
+  }
   &Title {
     color: $yellow;
     margin-bottom: em(8px);
+    line-height: 100%;
     font-weight: bold;
+    @include iftablet {
+    }
+    @include ifmobile {
+      font-weight: 500;
+      font-size: em(16px);
+    }
   }
   &SubTitle {
     display: inline-block;
@@ -62,6 +109,10 @@
     max-width: em(336px);
     width: 100%;
     font-size: em(21px);
+    @include iftablet {
+    }
+    @include ifmobile {
+    }
   }
 }
 
@@ -69,6 +120,11 @@
   display: flex;
   justify-content: center;
   margin-bottom: em(81px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    margin-bottom: em(30px);
+  }
 
   .ArrowDownWrapper {
     width: em(168px);
@@ -79,11 +135,27 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    @include iftablet {
+      width: em(92px);
+      height: em(92px);
+    }
+    @include ifmobile {
+      width: em(52px);
+      height: em(52px);
+    }
   }
   .ArrowDownIconWrapper {
     position: relative;
     width: em(30px);
     height: em(66px);
+    @include iftablet {
+      width: em(17px);
+      height: em(38px);
+    }
+    @include ifmobile {
+      width: em(10px);
+      height: em(22px);
+    }
   }
 }
 

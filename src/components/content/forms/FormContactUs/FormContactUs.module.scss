@@ -6,21 +6,41 @@
   align-items: center;
   &Title {
     margin-bottom: em(55px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      margin-bottom: em(10px);
+    }
     * {
       color: $white;
       font-size: em(50px);
       font-weight: bold;
+      @include iftablet {
+      }
+      @include ifmobile {
+        font-size: em(36px);
+      }
     }
   }
   &SubTitle {
     max-width: em(545px);
     width: 100%;
-    margin-bottom: em(30px);
+    margin-bottom: em(47px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      margin-bottom: em(20px);
+    }
     * {
       font-family: $font-Termina;
       color: $yellow;
       font-size: em(20px);
       text-align: center;
+      @include iftablet {
+      }
+      @include ifmobile {
+        font-size: em(16px);
+      }
     }
   }
   .Row {
@@ -28,9 +48,20 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: em(30px);
+    @include ifmobile {
+      flex-wrap: wrap;
+    }
+
+    @include ifmobile {
+      margin-bottom: 0;
+    }
 
     .Input {
       width: 49%;
+      @include ifmobile {
+        width: 100%;
+        margin-bottom: em(11px);
+      }
       div {
         display: none;
       }
@@ -38,11 +69,19 @@
   }
   .FormPhoneInput {
     width: 49%;
+    @include ifmobile {
+      width: 100%;
+    }
   }
   .Textarea {
     width: 100%;
     height: em(462px);
     margin-bottom: em(17px);
+    @include ifmobile {
+      height: em(100px);
+      margin-top: em(11px);
+      margin-bottom: em(11px);
+    }
   }
 
   .FormFiles {
@@ -50,11 +89,23 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: em(50px);
+    @include ifmobile {
+      flex-wrap: wrap;
+      margin-bottom: em(20px);
+    }
     &Name {
       width: 60%;
+      @include ifmobile {
+        width: 100%;
+        margin-bottom: em(25px);
+      }
     }
     &Btn {
       width: 38%;
+      @include ifmobile {
+        width: 100%;
+        height: em(44px);
+      }
     }
   }
 
@@ -64,9 +115,17 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: em(15px);
+    @include ifmobile {
+      margin-bottom: em(30px);
+    }
   }
   .CheckBoxText {
     margin-left: em(24px);
+    @include ifmobile {
+      font-size: em(14px);
+      line-height: 120%;
+      margin-left: em(10px);
+    }
     span {
       text-decoration: underline;
     }
@@ -76,8 +135,42 @@
     margin-top: em(15px);
     width: em(193px);
     height: em(63px);
+    @include ifmobile {
+      width: em(173px);
+      height: em(38px);
+      margin-top: em(10px);
+    }
     * {
       font-size: em(20px);
+      @include ifmobile {
+        font-size: em(14px);
+      }
+    }
+  }
+}
+
+.Apply {
+  width: em(659px);
+  height: em(871px);
+  border: 2px solid #e2f063;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include iftablet {
+  }
+  @include ifmobile {
+    width: 100%;
+    height: em(570px);
+  }
+  .ApplyTitle {
+    font-weight: 700;
+    font-size: em(17px);
+    text-align: center;
+    font-family: $font-Termina;
+    font-style: normal;
+    color: #e2f063;
+    @include ifmobile {
+      font-size: em(16px);
     }
   }
 }
