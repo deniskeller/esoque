@@ -1,12 +1,12 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { linksData } from "./linksData";
+import { linksData } from './linksData';
 
-import styles from "./SidebarDocs.module.scss";
+import styles from './SidebarDocs.module.scss';
 
 const SidebarDocs: React.FC = (): JSX.Element => {
   const router = useRouter();
@@ -15,13 +15,24 @@ const SidebarDocs: React.FC = (): JSX.Element => {
     return (
       <div key={link.url} className={styles.linkWrapper}>
         <div className={styles.link}>
-          <Image
-            src={`/images/landing/sidebar/${link.img}`}
-            width="20px"
-            height="20px"
-          />
-          <div>
-            <Link href={link.url}>{link.name}</Link>
+          <div className={styles.linkImage}>
+            <Image
+              src={`/images/landing/sidebar/${link.img}`}
+              layout={'fill'}
+              alt={''}
+              priority
+            />
+          </div>
+          <div className={styles.linkTitle}>
+            <Link href={link.url}>
+              <a
+                className={`${
+                  router.pathname === link.url ? styles.Active : ''
+                }`}
+              >
+                {link.name}
+              </a>
+            </Link>
           </div>
         </div>
 
@@ -39,7 +50,7 @@ const SidebarDocs: React.FC = (): JSX.Element => {
         )}
 
         <span
-          className={router.asPath.includes(link.url) ? styles.active : ""}
+          className={router.asPath.includes(link.url) ? styles.active : ''}
         />
       </div>
     );

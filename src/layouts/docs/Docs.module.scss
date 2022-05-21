@@ -8,7 +8,7 @@
   background: $black;
   min-height: 100v;
   height: auto;
-  background: url("/images/landing/docs/docs-bg.png") center center no-repeat;
+  background: url('/images/landing/docs/docs-bg.png') center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -27,6 +27,8 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 0;
   max-width: em(395px);
   width: 100%;
   padding-top: em(307px);

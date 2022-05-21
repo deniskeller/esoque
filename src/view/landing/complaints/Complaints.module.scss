@@ -4,16 +4,37 @@
   padding-top: em(186px);
   padding-bottom: em(210px);
   position: relative;
+  @include iftablet {
+    padding-top: em(137px);
+    padding-bottom: em(59px);
+  }
+  @include ifmobile {
+    padding-top: em(68px);
+    padding-bottom: em(71px);
+  }
 }
 
 .Title {
   margin-bottom: em(40px);
+  @include iftablet {
+    max-width: em(407px);
+    margin-bottom: em(36px);
+  }
+  @include ifmobile {
+    margin-bottom: em(10px);
+  }
   span {
     color: $white;
   }
 }
 .Breadcrumbs {
   margin-bottom: em(80px);
+  @include iftablet {
+    margin-bottom: em(48px);
+  }
+  @include ifmobile {
+    display: none;
+  }
 }
 
 .WrapperContent {
@@ -22,30 +43,52 @@
   justify-content: space-between;
 }
 .List {
-  display: flex;
-  flex-direction: column;
-  max-width: em(900px);
   width: 100%;
   margin-bottom: em(110px);
   color: $white;
+
+  @include iftablet {
+    margin-bottom: em(44px);
+  }
+  @include ifmobile {
+    margin-bottom: em(20px);
+  }
   &Item {
     line-height: em(23px);
     font-size: em(21px);
     margin-bottom: em(30px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include iftablet {
+    }
+    @include ifmobile {
+      margin-bottom: em(15px);
+    }
   }
 }
 
 .BlockImage {
   position: relative;
-  z-index: 100;
-
   right: 0;
   width: em(345px);
   height: em(326px);
   float: right;
-  //   margin-left: em(80px);
+  margin-left: em(137px);
+  margin-bottom: em(30px);
+
   @include iftablet {
-    width: em(200px);
-    height: em(200px);
+    top: em(-140px);
+    width: em(239px);
+    height: em(226px);
+    margin-left: em(20px);
+    margin-bottom: em(10px);
+  }
+  @include ifmobile {
+    top: 0;
+    width: em(128px);
+    height: em(120.95px);
+    margin-left: 0;
   }
 }
