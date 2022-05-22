@@ -14,18 +14,52 @@
   padding-top: em(186px);
   padding-bottom: em(210px);
   position: relative;
+
+  @include iftablet {
+    padding-top: em(137px);
+    padding-bottom: em(60px);
+  }
+  @include ifmobile {
+    padding-top: em(68px);
+    padding-bottom: em(38px);
+  }
 }
 .Breadcrumbs {
   margin-bottom: em(80px);
+
+  @include iftablet {
+    margin-bottom: em(48px);
+  }
+  @include ifmobile {
+    display: none;
+  }
 }
 
 .TextBlock {
   padding-left: em(92px);
   margin-bottom: em(80px);
+
+  @include iftablet {
+    padding-left: em(30px);
+    margin-bottom: em(58px);
+  }
+  @include ifmobile {
+    padding-left: em(30px);
+    padding-right: em(30px);
+    margin-bottom: em(20px);
+  }
 }
 
 .Title {
   margin-bottom: em(40px);
+
+  @include iftablet {
+    max-width: em(407px);
+    margin-bottom: em(36px);
+  }
+  @include ifmobile {
+    margin-bottom: em(15px);
+  }
   span {
     color: $white;
   }
@@ -36,40 +70,105 @@
   font-size: em(21px);
   line-height: em(25px);
   width: 100%;
+
+  @include iftablet {
+  }
+  @include ifmobile {
+  }
 }
 .List {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  @include ifmobile {
+    flex-wrap: wrap;
+    padding-left: em(30px);
+    padding-right: em(30px);
+  }
 }
 .Card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  text-align: center;
   align-items: center;
-
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
   background-color: $black2;
-  border-radius: 10px;
-  padding: em(30px) em(47px);
+  border-radius: em(10px);
   width: em(283px);
+  padding: em(50px) em(35px);
 
-  margin-bottom: em(25px);
+  @include iftablet {
+    width: em(170px);
+    padding: em(34px) 0;
+  }
+  @include ifmobile {
+    width: 100%;
+    min-height: em(80px);
+    padding: em(26px) em(10px) em(11px) em(87px);
+    margin-bottom: em(11px);
+    justify-content: flex-start;
+    align-items: flex-start;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &Title {
-    margin-bottom: em(20px);
     font-size: em(20px);
+    margin-bottom: em(20px);
     color: $green;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
+
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(12px);
+      margin-bottom: em(11px);
+      line-height: 100%;
+    }
   }
   &Img {
     position: relative;
+    width: em(150px);
     height: em(150px);
+    display: flex;
+    text-align: center;
+    align-items: center;
     margin-bottom: em(70px);
+    img {
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    @include iftablet {
+      width: 100%;
+      height: em(91px);
+      margin-bottom: em(47px);
+    }
+    @include ifmobile {
+      width: em(60px);
+      height: em(56px);
+      position: absolute;
+      left: em(10px);
+      top: em(10px);
+    }
   }
   &Btn {
     color: $yellow;
     text-decoration: underline;
+    cursor: pointer;
+
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+      line-height: 100%;
+    }
   }
 }

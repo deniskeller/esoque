@@ -12,5 +12,6 @@ export { default as CheckEmail } from "./landing/checkEmail/CheckEmail";
 export { default as Complaints } from "./landing/complaints/Complaints";
 export { default as Pricing } from "./landing/pricing/Pricing";
 export { default as Contacts } from "./landing/contacts/Contacts";
+export { default as Licensing } from "./landing/licensing/Licensing";
 //app
 export { default as HomeApp } from "./app/homeApp/HomeApp";

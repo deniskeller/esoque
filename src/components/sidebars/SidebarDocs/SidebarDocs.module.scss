@@ -6,6 +6,12 @@
   padding-bottom: em(300px);
   display: flex;
   flex-direction: column;
+  @include iftablet {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @include ifmobile {
+  }
 }
 
 .listLink {
@@ -19,6 +25,11 @@
   padding-left: em(67px);
   padding-top: em(25px);
   padding-bottom: em(25px);
+  @include iftablet {
+    padding-left: em(41px);
+  }
+  @include ifmobile {
+  }
 }
 
 .link {
@@ -37,6 +48,11 @@
     margin-left: em(30px);
     font-weight: bold;
     transition: 0.3s;
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+    }
     &:hover {
       a {
         color: #e2f063;

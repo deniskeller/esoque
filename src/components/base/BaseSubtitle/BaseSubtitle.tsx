@@ -12,7 +12,7 @@ const BaseSubtitle: React.FC<Props> = ({
   children,
   style,
   type = 'h1',
-  className,
+  className = '',
 }) => {
   if (type == 'h1') {
     return (

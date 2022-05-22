@@ -1,6 +1,10 @@
 .wrapper {
   padding-top: em(80px);
 
+  @include iftablet {
+    padding-top: em(53px);
+  }
+
   * {
     color: $white;
   }

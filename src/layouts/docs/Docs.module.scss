@@ -6,7 +6,7 @@
 .imgContainer {
   position: relative;
   background: $black;
-  min-height: 100v;
+  min-height: 100vh;
   height: auto;
   background: url('/images/landing/docs/docs-bg.png') center center no-repeat;
   background-size: cover;
@@ -32,6 +32,13 @@
   max-width: em(395px);
   width: 100%;
   padding-top: em(307px);
+  @include iftablet {
+    max-width: em(282px);
+    padding-top: em(205px);
+  }
+  @include ifmobile {
+    display: none;
+  }
 }
 
 .content {
@@ -39,4 +46,11 @@
   width: 100%;
   margin: 0 auto;
   padding-top: em(185px);
+
+  @include iftablet {
+    padding-top: em(137px);
+    max-width: em(590px);
+  }
+  @include ifmobile {
+  }
 }

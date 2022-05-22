@@ -1,0 +1,89 @@
+.Container {
+  padding-top: em(183px);
+  padding-bottom: em(107px);
+  position: relative;
+  background: $black;
+  min-height: 100vh;
+  height: auto;
+  background: url('/images/landing/licensing/bgLicensing.png') center center
+    no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .Breadcrumbs {
+    margin-bottom: em(91px);
+  }
+
+  .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: em(82px);
+
+    .HeaderDescription {
+      .Title {
+        margin-bottom: em(42px);
+        h1 {
+          color: $green;
+          line-height: 100%;
+        }
+      }
+    }
+
+    .HeaderActions {
+      text-align: right;
+      .Calculated {
+        width: em(376px);
+        height: em(62px);
+        border: 1px solid #13de4c;
+        position: relative;
+        @extend %center;
+        cursor: pointer;
+        margin-bottom: em(15px);
+        span {
+          font-size: em(20px);
+          line-height: 100%;
+          color: $green;
+          font-weight: 700;
+        }
+
+        .CalculatedPopup {
+          width: em(645px);
+          position: absolute;
+          top: em(121px);
+          right: em(-90px);
+          background: $black;
+          border: 1px solid #13de4c;
+          cursor: default;
+          padding: em(98px) em(78px) em(63px) em(42px);
+
+          .Close {
+            width: em(40px);
+            height: em(40px);
+            background: $green;
+            @extend %center;
+            border-radius: 50%;
+            position: absolute;
+            top: em(15px);
+            right: em(20px);
+            cursor: pointer;
+            z-index: 100;
+            .IconClose {
+              width: em(19.58px);
+              height: em(23.49px);
+            }
+          }
+        }
+      }
+      .Order {
+        font-size: em(20px);
+        font-weight: 400;
+        line-height: 100%;
+        color: $green;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

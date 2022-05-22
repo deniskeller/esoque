@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import { BaseText, BaseTitle } from "@base/index";
-import Breadcrumbs from "@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs";
+import { BaseText, BaseTitle } from '@base/index';
+import Breadcrumbs from '@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs';
+import Link from 'next/link';
 
-import styles from "./Pricing.module.scss";
+import styles from './Pricing.module.scss';
 
 const imgNames = [
-  { title: "Licensing", img: "licensing.png" },
-  { title: "Company Formation", img: "company.png" },
-  { title: "Compliance Software", img: "software.png" },
-  { title: "Payment Software", img: "payment.png" },
-  { title: "Support Services", img: "support.png" },
+  { title: 'Licensing', img: 'licensing.png', href: '/licensing' },
+  { title: 'Company Formation', img: 'company.png', href: '/' },
+  { title: 'Compliance Software', img: 'software.png', href: '/' },
+  { title: 'Payment Software', img: 'payment.png', href: '/' },
+  { title: 'Support Services', img: 'support.png', href: '/' },
 ];
 
 const Pricing = () => {
@@ -35,7 +36,7 @@ const Pricing = () => {
 
         <div className={styles.List}>
           {imgNames.map((el, i) => (
-            <Card key={i} title={el.title} img={el.img} />
+            <Card key={i} title={el.title} img={el.img} href={el.href} />
           ))}
         </div>
       </div>
@@ -48,16 +49,19 @@ export default Pricing;
 type Card = {
   title: string;
   img: string;
+  href: string;
 };
 
-const Card = ({ title, img }: Card) => {
+const Card = ({ title, img, href }: Card) => {
   return (
     <div className={styles.Card}>
       <div className={styles.CardTitle}>{title}</div>
       <div className={styles.CardImg}>
         <img src={`/images/landing/pricing/${img}`} />
       </div>
-      <div className={styles.CardBtn}>Price-list</div>
+      <Link href={href}>
+        <a className={styles.CardBtn}>Price-list</a>
+      </Link>
     </div>
   );
 };
