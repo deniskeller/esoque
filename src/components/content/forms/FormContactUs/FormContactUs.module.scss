@@ -4,10 +4,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include iftablet {
+    max-width: em(536px);
+  }
   &Title {
     margin-bottom: em(55px);
     @include iftablet {
+      margin-bottom: em(20px);
     }
+
     @include ifmobile {
       margin-bottom: em(10px);
     }
@@ -27,6 +32,9 @@
     width: 100%;
     margin-bottom: em(47px);
     @include iftablet {
+      max-width: em(400px);
+      margin: 0 auto;
+      margin-bottom: em(37px);
     }
     @include ifmobile {
       margin-bottom: em(20px);
@@ -37,6 +45,7 @@
       font-size: em(20px);
       text-align: center;
       @include iftablet {
+        font-size: em(17px);
       }
       @include ifmobile {
         font-size: em(16px);
@@ -48,11 +57,12 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: em(30px);
-    @include ifmobile {
-      flex-wrap: wrap;
+    @include iftablet {
+      margin-bottom: em(11px);
     }
 
     @include ifmobile {
+      flex-wrap: wrap;
       margin-bottom: 0;
     }
 
@@ -89,6 +99,9 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: em(50px);
+    @include iftablet {
+      margin-bottom: em(20px);
+    }
     @include ifmobile {
       flex-wrap: wrap;
       margin-bottom: em(20px);
@@ -121,6 +134,10 @@
   }
   .CheckBoxText {
     margin-left: em(24px);
+    @include iftablet {
+      font-size: em(15px);
+      margin-left: em(15px);
+    }
     @include ifmobile {
       font-size: em(14px);
       line-height: 120%;
