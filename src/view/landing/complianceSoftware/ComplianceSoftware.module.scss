@@ -1,0 +1,345 @@
+.Container {
+  padding-top: em(183px);
+  padding-bottom: em(107px);
+  position: relative;
+  background: $black;
+  min-height: 100vh;
+  height: auto;
+  background: url('/images/landing/bgComplianceSoftware.png') center center
+    no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @include iftablet {
+    padding-top: em(137px);
+    padding-bottom: em(42px);
+  }
+  @include ifmobile {
+    padding-top: em(64px);
+    padding-bottom: em(60px);
+  }
+
+  .Breadcrumbs {
+    margin-bottom: em(91px);
+    @include iftablet {
+      margin-bottom: em(48px);
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+
+  .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: em(82px);
+    position: relative;
+    @include iftablet {
+      margin-bottom: em(44px);
+    }
+    @include ifmobile {
+      margin-bottom: em(42px);
+    }
+
+    .HeaderDescription {
+      .Title {
+        margin-bottom: em(42px);
+        @include iftablet {
+        }
+        @include ifmobile {
+          margin-bottom: em(74px);
+        }
+        h1 {
+          color: $green;
+          line-height: 100%;
+          @include ifmobile {
+            font-size: em(27px);
+          }
+        }
+      }
+
+      .Subtitle {
+        h3 {
+          @include iftablet {
+            font-size: em(18px);
+          }
+          @include ifmobile {
+            font-size: em(11px);
+            line-height: 120%;
+          }
+        }
+      }
+    }
+
+    .HeaderActions {
+      text-align: right;
+      @include ifmobile {
+        position: absolute;
+        top: em(75px);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .Calculated {
+        width: em(376px);
+        height: em(62px);
+        border: 1px solid #13de4c;
+        position: relative;
+        @extend %center;
+        cursor: pointer;
+        margin-bottom: em(15px);
+
+        @include iftablet {
+          width: em(192px);
+          height: em(78px);
+        }
+        @include ifmobile {
+          width: em(211px);
+          height: em(34px);
+          margin-bottom: 0;
+        }
+        span {
+          font-size: em(20px);
+          line-height: 100%;
+          color: $green;
+          font-weight: 700;
+
+          @include iftablet {
+            width: em(160px);
+            font-size: em(18px);
+            text-align: left;
+          }
+          @include ifmobile {
+            width: 100%;
+            font-size: em(11px);
+            text-align: center;
+          }
+        }
+
+        .CalculatedPopup {
+          width: em(645px);
+          position: absolute;
+          z-index: 100;
+          top: em(121px);
+          right: em(-90px);
+          background: $black;
+          border: 1px solid #13de4c;
+          cursor: default;
+          padding: em(98px) em(78px) em(63px) em(42px);
+          display: flex;
+          flex-direction: column;
+
+          @include iftablet {
+          }
+          @include ifmobile {
+          }
+
+          .Close {
+            width: em(40px);
+            height: em(40px);
+            background: $green;
+            @extend %center;
+            border-radius: 50%;
+            position: absolute;
+            top: em(15px);
+            right: em(20px);
+            cursor: pointer;
+            z-index: 100;
+
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+            .IconClose {
+              width: em(19.58px);
+              height: em(23.49px);
+
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+            }
+          }
+
+          .List {
+            margin-bottom: em(35px);
+
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+            .ListItem {
+              display: flex;
+              flex-direction: row;
+              align-items: baseline;
+              margin-bottom: em(16px);
+
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .ListItemDelete {
+                width: em(22px);
+                height: em(23px);
+                cursor: pointer;
+                margin-right: em(21px);
+
+                @include iftablet {
+                }
+                @include ifmobile {
+                }
+                svg {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .ListItemName,
+              .ListItemPrice {
+                font-size: em(20px);
+                font-weight: 400;
+                line-height: 100%;
+                color: $white;
+
+                @include iftablet {
+                }
+                @include ifmobile {
+                }
+              }
+              .ListItemPrice {
+                margin-left: auto;
+              }
+            }
+          }
+
+          .Info {
+            display: inline-flex;
+            align-self: flex-end;
+            .Total,
+            .Price {
+              font-size: em(20px);
+              line-height: 100%;
+              font-weight: 700;
+              color: $green;
+
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+            }
+            .Total {
+              margin-right: em(64px);
+
+              @include iftablet {
+              }
+              @include ifmobile {
+              }
+            }
+          }
+        }
+
+        .Hidden {
+          display: none;
+        }
+      }
+      .Order {
+        font-size: em(20px);
+        font-weight: 400;
+        line-height: 100%;
+        color: $green;
+        text-decoration: underline;
+        cursor: pointer;
+
+        @include iftablet {
+          font-size: em(18px);
+        }
+        @include ifmobile {
+          font-size: em(11px);
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  //accordion
+  .Accordion {
+    border-top: 1px solid $white;
+
+    .List {
+      padding-left: em(30px);
+      padding-bottom: em(15px);
+
+      @include ifmobile {
+        padding-left: 0;
+      }
+
+      .ListTitle {
+        font-size: em(20px);
+        font-weight: 400;
+        line-height: 100%;
+        color: $yellow;
+        margin-top: em(22px);
+        margin-bottom: em(16px);
+        @include ifmobile {
+          font-size: em(11px);
+          margin-top: 0;
+          margin-bottom: em(15px);
+        }
+      }
+      .ListItem {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: em(8px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .Checkbox {
+          margin-right: em(21px);
+          @include ifmobile {
+            width: em(20px);
+            height: em(20px);
+            margin-right: em(11px);
+          }
+        }
+        .Title,
+        .Value {
+          font-size: em(20px);
+          font-weight: 400;
+          line-height: 100%;
+          color: $white;
+          font-family: $font-Calibri;
+          @include iftablet {
+            font-size: em(18px);
+          }
+          @include ifmobile {
+            font-size: em(11px);
+          }
+        }
+        .Title {
+          width: em(928px, 20px);
+          @include iftablet {
+            width: em(597px, 18px);
+          }
+          @include ifmobile {
+            width: em(220px, 11px);
+          }
+        }
+
+        .Value {
+          @include ifmobile {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -88,7 +88,7 @@ const ComplaintsForm = () => {
 
   return (
     <>
-      {!submitSuccess ? (
+      {submitSuccess ? (
         <div className={styles.MessageContainer}>
           <div className={styles.Message}>
             <span>
