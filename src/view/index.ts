@@ -13,5 +13,6 @@ export { default as Complaints } from "./landing/complaints/Complaints";
 export { default as Pricing } from "./landing/pricing/Pricing";
 export { default as Contacts } from "./landing/contacts/Contacts";
 export { default as Licensing } from "./landing/licensing/Licensing";
+export { default as CompanyFormation } from "./landing/companyFormation/CompanyFormation";
 //app
 export { default as HomeApp } from "./app/homeApp/HomeApp";

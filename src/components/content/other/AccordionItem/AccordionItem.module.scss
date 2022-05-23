@@ -1,0 +1,104 @@
+.AccordionItem {
+  border-bottom: 1px solid $white;
+
+  .AccordionHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: em(20px) 0;
+
+    @include iftablet {
+    }
+    @include ifmobile {
+      padding: em(17px) 0;
+    }
+
+    .AccordionHeaderTitle {
+      font-size: em(20px);
+      line-height: 100%;
+      color: $white;
+      font-weight: 700;
+      padding-left: em(35px);
+      text-transform: uppercase;
+
+      @include iftablet {
+      }
+      @include ifmobile {
+        font-size: em(11px);
+        padding-left: 0;
+      }
+    }
+
+    .AccordionHeaderToggle {
+      position: absolute;
+    }
+    .Open {
+      width: em(23.49px);
+      height: em(20.78px);
+      top: em(20.51px);
+      right: em(32.21px);
+
+      @include iftablet {
+        width: em(16.44px);
+        height: em(14.54px);
+        right: em(29px);
+      }
+      @include ifmobile {
+        width: em(18px);
+        height: em(15px);
+        top: em(14px);
+        right: em(4px);
+      }
+    }
+
+    .Close {
+      width: em(40px);
+      height: em(40px);
+      border-radius: 50%;
+      background: $green;
+      top: em(11px);
+      right: em(23px);
+      @extend %center;
+
+      @include iftablet {
+        width: em(28px);
+        height: em(28px);
+        top: em(16px);
+      }
+      @include ifmobile {
+        width: em(25px);
+        height: em(25px);
+        top: em(11px);
+        right: 0;
+      }
+      .IconAccordionClose {
+        width: em(19.58px);
+        height: em(23.49px);
+
+        @include iftablet {
+          width: em(13.71px);
+          height: em(16.44px);
+        }
+        @include ifmobile {
+          width: em(9.4px);
+          height: em(11.27px);
+        }
+      }
+    }
+  }
+
+  .AccordionContent {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+  }
+
+  .AccordionContentHidden {
+    max-height: 0;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  }
+}

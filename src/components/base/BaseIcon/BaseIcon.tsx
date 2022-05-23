@@ -14,7 +14,7 @@ interface Props {
 const BaseIcon: React.FC<Props> = ({
   icon,
   viewBox = '0 0 30 30',
-  className,
+  className = '',
   fill = 'none',
   onClick,
 }) => (

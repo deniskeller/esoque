@@ -77,7 +77,7 @@
       text-align: right;
       @include ifmobile {
         position: absolute;
-        top: em(40px);
+        top: em(75px);
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -271,45 +271,6 @@
   //accordion
   .Accordion {
     border-top: 1px solid $white;
-
-    .ListTotal {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: em(17px);
-      @include ifmobile {
-        margin-bottom: em(11px);
-      }
-
-      .Checkbox {
-        margin-right: em(21px);
-        @include ifmobile {
-          margin-right: em(11px);
-        }
-      }
-
-      .Title,
-      .Value {
-        font-size: em(20px);
-        font-weight: 400;
-        line-height: 100%;
-        color: $yellow;
-        @include iftablet {
-          font-size: em(18px);
-        }
-        @include ifmobile {
-          font-size: em(11px);
-        }
-      }
-      .Title {
-        width: em(960px, 20px);
-        @include iftablet {
-          width: em(625px, 18px);
-        }
-        @include ifmobile {
-          width: em(197px, 11px);
-        }
-      }
-    }
 
     .List {
       padding-left: em(30px);
