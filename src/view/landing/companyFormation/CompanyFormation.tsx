@@ -358,6 +358,19 @@ const mockData = [
       },
     ],
   },
+  {
+    title: 'GEORGIA',
+    items: [
+      {
+        name: 'Ready Made',
+        price: '£ 1,600',
+      },
+      {
+        name: 'Custom Made',
+        price: '£ 1,450',
+      },
+    ],
+  },
 ];
 
 const CompanyFormation: React.FC = () => {
