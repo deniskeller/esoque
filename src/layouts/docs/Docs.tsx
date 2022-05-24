@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { Footer } from "components/footer";
-import { LandingNavbar } from "@nav/index";
+import { Footer } from 'components/footer';
+import { LandingNavbar } from '@nav/index';
 
-import styles from "./Docs.module.scss";
-import Breadcrumbs from "@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs";
-import SidebarDocs from "components/sidebars/SidebarDocs/SidebarDocs";
+import styles from './Docs.module.scss';
+import Breadcrumbs from '@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs';
+import SidebarDocs from 'components/sidebars/SidebarDocs/SidebarDocs';
 
 const Docs: React.FC = ({ children }): JSX.Element => {
   return (
@@ -20,7 +20,10 @@ const Docs: React.FC = ({ children }): JSX.Element => {
           </div>
 
           <div className={styles.content}>
-            <Breadcrumbs roorHref="/" rootPathName="Home" />
+            <span className={styles.Breadcrumbs}>
+              <Breadcrumbs roorHref="/" rootPathName="Home" />
+            </span>
+
             {children}
           </div>
         </div>

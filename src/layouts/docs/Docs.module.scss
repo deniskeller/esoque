@@ -47,10 +47,18 @@
   margin: 0 auto;
   padding-top: em(185px);
 
+  .Breadcrumbs {
+    @include ifmobile {
+      display: none;
+    }
+  }
+
   @include iftablet {
     padding-top: em(137px);
     max-width: em(590px);
   }
   @include ifmobile {
+    max-width: em(300px);
+    padding-top: em(68px);
   }
 }

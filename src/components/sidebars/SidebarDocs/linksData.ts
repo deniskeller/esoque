@@ -18,4 +18,5 @@ export const linksData = [
   { name: "Cookies Policy", url: "/cookies_policy", img: "cookie.png" },
   { name: "COVID-19 Company", url: "/covid19_policy", img: "covid.png" },
   { name: "Website Terms", url: "/website_terms", img: "computer.png" },
+  { name: "Modern Slavery Statement", url: "/modern_slavery_statement", img: "computer.png" },
 ];

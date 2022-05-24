@@ -1,0 +1,36 @@
+.wrapper {
+  padding-top: em(80px);
+  padding-bottom: em(215px);
+
+  @include ifmobile {
+    padding-top: 0;
+    padding-bottom: em(75px);
+  }
+
+  * {
+    color: $white;
+  }
+}
+
+.title {
+  margin-bottom: em(36px);
+  * {
+    font-weight: bold;
+  }
+}
+.smallTitle {
+  margin-bottom: em(45px);
+  * {
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+.headerText {
+}
+.text {
+  display: inline-block;
+  margin-bottom: em(20px);
+}
+.text:last-child {
+  margin-bottom: em(171px);
+}
