@@ -8,12 +8,38 @@ import {
   BaseTitle,
 } from '@base/index';
 import Breadcrumbs from '@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs';
-import Link from 'next/link';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 
 import styles from './SupportServices.module.scss';
 import { ALL_ICONS } from '@constants/icons';
 import AccordionItem from '@content/other/AccordionItem/AccordionItem';
+
+const mockAdditionalFinancialServices = [
+  { name: 'Active SWIFT/BIC', value: '£ 150,000' },
+  { name: 'Passive SWIFT/BIC', value: '£ 50,000' },
+  { name: 'Issuing License for VISA', value: '£ 100,000' },
+  { name: 'Issuing License for MasterCard', value: '£ 100,000' },
+  { name: 'Issuing License for China Union Pay', value: '£ 100,000' },
+  { name: 'Issuing License for American Express', value: '£ 100,000' },
+  { name: 'Issuing License for Discover', value: '£ 100,000' },
+  { name: 'Issuing License for Diners Club', value: '£ 100,000' },
+  { name: 'Issuing License for JSB', value: '£ 100,000' },
+  { name: 'Acquiring License for VISA', value: '£ 100,000' },
+  { name: 'Acquiring License for MasterCard', value: '£ 100,000' },
+  { name: 'Acquiring License for China Union Pay', value: '£ 100,000' },
+  { name: 'Acquiring License for American Express', value: '£ 100,000' },
+  { name: 'Acquiring License for Discover', value: '£ 100,000' },
+  { name: 'Acquiring License for Diners Club', value: '£ 100,000' },
+  { name: 'Acquiring License for JSB', value: '£ 100,000' },
+];
+
+const mockOther = [
+  { name: 'Employment of directors', value: '£ 80,000' },
+  {
+    name: 'Company monthly outsourcing fee for reporting and procedures',
+    value: '£ 35,000',
+  },
+];
 
 const SupportServices: React.FC = () => {
   //логика модалки калькулятора
@@ -117,8 +143,9 @@ const SupportServices: React.FC = () => {
                   onClick={setIsChecked}
                 />
               </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 1, 061,000</div>
+              <div className={styles.Title}>
+                Option 1: Custom Design and Dashboard Development
+              </div>
             </div>
             <div className={styles.List}>
               <div className={styles.ListItem}>
@@ -128,10 +155,18 @@ const SupportServices: React.FC = () => {
                     onClick={setIsChecked}
                   />
                 </div>
-                <div className={styles.Title}>
-                  Requirements to the authorised capital
+                <div className={styles.Title}>Web Design & Development</div>
+                <div className={styles.Value}>from £ 25,000</div>
+              </div>
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
                 </div>
-                <div className={styles.Value}>£ 305,000</div>
+                <div className={styles.Title}>Dashboard Development</div>
+                <div className={styles.Value}>from £ 35,000</div>
               </div>
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
@@ -141,9 +176,69 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  Commission in the FCA treasury for a financial company
+                  Corporate Brand Identity & Style Guidelines
                 </div>
-                <div className={styles.Value}>£ 6,000</div>
+                <div className={styles.Value}>£ 10,000</div>
+              </div>
+
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>
+                  Brand Strategy & Copywriting (English)
+                </div>
+                <div className={styles.Value}>£ 10,000</div>
+              </div>
+
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>SMM & Blogging</div>
+                <div className={styles.Value}>£ 2,500 / monthly</div>
+              </div>
+            </div>
+
+            <div className={styles.ListTotal}>
+              <div className={styles.Checkbox}>
+                <BaseCheckbox
+                  checkboxValue={isChecked}
+                  onClick={setIsChecked}
+                />
+              </div>
+              <div className={styles.Title}>
+                Option 2: Custom Design and Third-party Platform Integration
+              </div>
+              <div className={styles.Value}>from £ 42,500</div>
+            </div>
+
+            <div className={styles.List}>
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>Web Design & Development</div>
+                <div className={styles.Value}>from £ 25,000</div>
+              </div>
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>Dashboard Development</div>
+                <div className={styles.Value}>from £ 35,000</div>
               </div>
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
@@ -153,24 +248,38 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  Cost of preparation of documents and infrastructure
+                  Corporate Brand Identity & Style Guidelines
                 </div>
-                <div className={styles.Value}>£ 750,000</div>
+                <div className={styles.Value}>£ 10,000</div>
+              </div>
+
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>
+                  Brand Strategy & Copywriting (English)
+                </div>
+                <div className={styles.Value}>£ 10,000</div>
+              </div>
+
+              <div className={styles.ListItem}>
+                <div className={styles.Checkbox}>
+                  <BaseCheckbox
+                    checkboxValue={isChecked}
+                    onClick={setIsChecked}
+                  />
+                </div>
+                <div className={styles.Title}>SMM & Blogging</div>
+                <div className={styles.Value}>£ 2,500 / monthly</div>
               </div>
             </div>
           </AccordionItem>
 
           <AccordionItem title="company registration in United Kingdom">
-            <div className={styles.ListTotal}>
-              <div className={styles.Checkbox}>
-                <BaseCheckbox
-                  checkboxValue={isChecked}
-                  onClick={setIsChecked}
-                />
-              </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 201,500</div>
-            </div>
             <div className={styles.List}>
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
@@ -179,49 +288,23 @@ const SupportServices: React.FC = () => {
                     onClick={setIsChecked}
                   />
                 </div>
-                <div className={styles.Title}>
-                  Requirements to the authorised capital
-                </div>
-                <div className={styles.Value}>£ 0,00</div>
+                <div className={styles.Title}>Limited Company (LTD)</div>
+                <div className={styles.Value}>£ 5,000</div>
               </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Commission in the FCA treasury for a financial company
-                </div>
-                <div className={styles.Value}>£ 1,500</div>
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Cost of preparation of documents and infrastructure
-                </div>
-                <div className={styles.Value}>£ 200,000</div>
+
+              <div className={styles.Includes}>
+                <div className={styles.IncludesTitle}>Includes:</div>
+                <ul className={styles.IncludesList}>
+                  <li>legal address for 1 year;</li>
+                  <li>correspondence address for 1 year;</li>
+                  <li>notarized constituent documants package;</li>
+                  <li>apostille on documents</li>
+                </ul>
               </div>
             </div>
           </AccordionItem>
 
           <AccordionItem title="physical office in united kingdom">
-            <div className={styles.ListTotal}>
-              <div className={styles.Checkbox}>
-                <BaseCheckbox
-                  checkboxValue={isChecked}
-                  onClick={setIsChecked}
-                />
-              </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 775,000</div>
-            </div>
             <div className={styles.List}>
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
@@ -230,43 +313,10 @@ const SupportServices: React.FC = () => {
                     onClick={setIsChecked}
                   />
                 </div>
-                <div className={styles.Title}>Government Application Fee</div>
-                <div className={styles.Value}>£ 25,000</div>
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
+                <div className={styles.Title}>
+                  Virtual office on London (one time set-up fee)
                 </div>
-                <div className={styles.Title}>Application Fee</div>
-                <div className={styles.Value}>£ 750,000</div>
-              </div>
-
-              <div className={styles.ListTitle}>
-                Expanses on the sub-license
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Drafting the business plan</div>
-                <div className={styles.Value}>£ 10,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Government fee</div>
-                <div className={styles.Value}>£ 2,000</div>
+                <div className={styles.Value}>£ 1,500</div>
               </div>
 
               <div className={styles.ListItem}>
@@ -277,50 +327,14 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  One time set up fee of the technical system
+                  Physical office on London (one time set-up fee)
                 </div>
-                <div className={styles.Value}>£ 15,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Application design and sending to the FCA
-                </div>
-                <div className={styles.Value}>£ 10,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Drafting of the internal procedures for the agent
-                </div>
-                <div className={styles.Value}>£ 5,500</div>
+                <div className={styles.Value}>£ 5,000</div>
               </div>
             </div>
           </AccordionItem>
 
           <AccordionItem title="bank account opening">
-            <div className={styles.ListTotal}>
-              <div className={styles.Checkbox}>
-                <BaseCheckbox
-                  checkboxValue={isChecked}
-                  onClick={setIsChecked}
-                />
-              </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 1, 061,000</div>
-            </div>
             <div className={styles.List}>
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
@@ -330,10 +344,11 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  Requirements to the authorised capital
+                  Tier 1 British Bank Correspondence Account
                 </div>
-                <div className={styles.Value}>£ 305,000</div>
+                <div className={styles.Value}>£ 175,000</div>
               </div>
+
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
                   <BaseCheckbox
@@ -342,10 +357,11 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  Commission in the FCA treasury for a financial company
+                  Tier 2 British Bank Correspondence Account
                 </div>
-                <div className={styles.Value}>£ 6,000</div>
+                <div className={styles.Value}>£ 100,000</div>
               </div>
+
               <div className={styles.ListItem}>
                 <div className={styles.Checkbox}>
                   <BaseCheckbox
@@ -354,160 +370,48 @@ const SupportServices: React.FC = () => {
                   />
                 </div>
                 <div className={styles.Title}>
-                  Cost of preparation of documents and infrastructure
+                  Tier 3 British Bank Correspondence Account
                 </div>
-                <div className={styles.Value}>£ 750,000</div>
+                <div className={styles.Value}>£ 50,000</div>
               </div>
             </div>
           </AccordionItem>
 
           <AccordionItem title="additional financial services">
-            <div className={styles.ListTotal}>
-              <div className={styles.Checkbox}>
-                <BaseCheckbox
-                  checkboxValue={isChecked}
-                  onClick={setIsChecked}
-                />
-              </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 201,500</div>
-            </div>
             <div className={styles.List}>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Requirements to the authorised capital
-                </div>
-                <div className={styles.Value}>£ 0,00</div>
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Commission in the FCA treasury for a financial company
-                </div>
-                <div className={styles.Value}>£ 1,500</div>
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Cost of preparation of documents and infrastructure
-                </div>
-                <div className={styles.Value}>£ 200,000</div>
-              </div>
+              {mockAdditionalFinancialServices?.map((item, index) => {
+                return (
+                  <div className={styles.ListItem} key={index}>
+                    <div className={styles.Checkbox}>
+                      <BaseCheckbox
+                        checkboxValue={isChecked}
+                        onClick={setIsChecked}
+                      />
+                    </div>
+                    <div className={styles.Title}>{item.name}</div>
+                    <div className={styles.Value}>{item.value}</div>
+                  </div>
+                );
+              })}
             </div>
           </AccordionItem>
 
           <AccordionItem title="other">
-            <div className={styles.ListTotal}>
-              <div className={styles.Checkbox}>
-                <BaseCheckbox
-                  checkboxValue={isChecked}
-                  onClick={setIsChecked}
-                />
-              </div>
-              <div className={styles.Title}>Total Cost</div>
-              <div className={styles.Value}>£ 775,000</div>
-            </div>
             <div className={styles.List}>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Government Application Fee</div>
-                <div className={styles.Value}>£ 25,000</div>
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Application Fee</div>
-                <div className={styles.Value}>£ 750,000</div>
-              </div>
-
-              <div className={styles.ListTitle}>
-                Expanses on the sub-license
-              </div>
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Drafting the business plan</div>
-                <div className={styles.Value}>£ 10,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>Government fee</div>
-                <div className={styles.Value}>£ 2,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  One time set up fee of the technical system
-                </div>
-                <div className={styles.Value}>£ 15,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Application design and sending to the FCA
-                </div>
-                <div className={styles.Value}>£ 10,000</div>
-              </div>
-
-              <div className={styles.ListItem}>
-                <div className={styles.Checkbox}>
-                  <BaseCheckbox
-                    checkboxValue={isChecked}
-                    onClick={setIsChecked}
-                  />
-                </div>
-                <div className={styles.Title}>
-                  Drafting of the internal procedures for the agent
-                </div>
-                <div className={styles.Value}>£ 5,500</div>
-              </div>
+              {mockOther?.map((item, index) => {
+                return (
+                  <div className={styles.ListItem} key={index}>
+                    <div className={styles.Checkbox}>
+                      <BaseCheckbox
+                        checkboxValue={isChecked}
+                        onClick={setIsChecked}
+                      />
+                    </div>
+                    <div className={styles.Title}>{item.name}</div>
+                    <div className={styles.Value}>{item.value}</div>
+                  </div>
+                );
+              })}
             </div>
           </AccordionItem>
         </div>

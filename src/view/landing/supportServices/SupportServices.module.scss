@@ -271,113 +271,150 @@
   //accordion
   .Accordion {
     border-top: 1px solid $white;
+  }
+}
 
-    .ListTotal {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: em(17px);
-      @include ifmobile {
-        margin-bottom: em(11px);
-      }
+.ListTotal {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: em(17px);
+  @include ifmobile {
+    margin-bottom: em(11px);
+  }
 
-      .Checkbox {
-        margin-right: em(21px);
-        @include ifmobile {
-          margin-right: em(11px);
-        }
-      }
+  .Checkbox {
+    margin-right: em(21px);
+    @include ifmobile {
+      margin-right: em(11px);
+    }
+  }
 
-      .Title,
-      .Value {
-        font-size: em(20px);
-        font-weight: 400;
-        line-height: 100%;
-        color: $yellow;
-        @include iftablet {
-          font-size: em(18px);
-        }
-        @include ifmobile {
-          font-size: em(11px);
-        }
-      }
-      .Title {
-        width: em(960px, 20px);
-        @include iftablet {
-          width: em(625px, 18px);
-        }
-        @include ifmobile {
-          width: em(197px, 11px);
-        }
-      }
+  .Title,
+  .Value {
+    font-size: em(20px);
+    font-weight: 400;
+    line-height: 100%;
+    color: $yellow;
+    @include iftablet {
+      font-size: em(18px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
+  }
+  .Title {
+    width: em(960px, 20px);
+    @include iftablet {
+      width: em(625px, 18px);
+    }
+    @include ifmobile {
+      width: em(197px, 11px);
+    }
+  }
+}
+
+.List {
+  padding-left: em(30px);
+  padding-bottom: em(15px);
+
+  @include ifmobile {
+    padding-left: 0;
+  }
+
+  .ListTitle {
+    font-size: em(20px);
+    font-weight: 400;
+    line-height: 100%;
+    color: $yellow;
+    margin-top: em(22px);
+    margin-bottom: em(16px);
+    @include ifmobile {
+      font-size: em(11px);
+      margin-top: 0;
+      margin-bottom: em(15px);
+    }
+  }
+}
+
+.ListItem {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: em(8px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .Checkbox {
+    margin-right: em(21px);
+    @include ifmobile {
+      width: em(20px);
+      height: em(20px);
+      margin-right: em(11px);
+    }
+  }
+  .Title,
+  .Value {
+    font-size: em(20px);
+    font-weight: 400;
+    line-height: 100%;
+    color: $white;
+    font-family: $font-Calibri;
+    @include iftablet {
+      font-size: em(18px);
+    }
+    @include ifmobile {
+      font-size: em(11px);
+    }
+  }
+  .Title {
+    width: em(928px, 20px);
+    @include iftablet {
+      width: em(597px, 18px);
+    }
+    @include ifmobile {
+      width: em(180px, 11px);
+    }
+  }
+
+  .Value {
+    @include ifmobile {
+      margin-left: auto;
+    }
+  }
+}
+
+.Includes {
+  padding-left: em(53px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    padding-left: em(10px);
+  }
+  .IncludesTitle {
+    margin-bottom: em(5px);
+  }
+  .IncludesList {
+    padding-left: em(30px);
+  }
+  .IncludesTitle,
+  .IncludesList {
+    font-size: em(21px);
+    font-weight: 400;
+    font-family: $font-Calibri;
+    font-style: normal;
+    color: $white;
+    line-height: 100%;
+    @include iftablet {
+    }
+    @include ifmobile {
+      font-size: em(11px);
     }
 
-    .List {
-      padding-left: em(30px);
-      padding-bottom: em(15px);
-
-      @include ifmobile {
-        padding-left: 0;
-      }
-
-      .ListTitle {
-        font-size: em(20px);
-        font-weight: 400;
-        line-height: 100%;
-        color: $yellow;
-        margin-top: em(22px);
-        margin-bottom: em(16px);
-        @include ifmobile {
-          font-size: em(11px);
-          margin-top: 0;
-          margin-bottom: em(15px);
-        }
-      }
-      .ListItem {
-        width: 100%;
-        display: inline-flex;
-        align-items: center;
-        margin-bottom: em(8px);
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .Checkbox {
-          margin-right: em(21px);
-          @include ifmobile {
-            width: em(20px);
-            height: em(20px);
-            margin-right: em(11px);
-          }
-        }
-        .Title,
-        .Value {
-          font-size: em(20px);
-          font-weight: 400;
-          line-height: 100%;
-          color: $white;
-          font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(18px);
-          }
-          @include ifmobile {
-            font-size: em(11px);
-          }
-        }
-        .Title {
-          width: em(928px, 20px);
-          @include iftablet {
-            width: em(597px, 18px);
-          }
-          @include ifmobile {
-            width: em(220px, 11px);
-          }
-        }
-
-        .Value {
-          @include ifmobile {
-            margin-left: auto;
-          }
-        }
+    li {
+      margin-bottom: em(5px);
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
