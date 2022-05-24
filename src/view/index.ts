@@ -17,5 +17,6 @@ export { default as CompanyFormation } from "./landing/companyFormation/CompanyF
 export { default as ComplianceSoftware } from "./landing/complianceSoftware/ComplianceSoftware";
 export { default as PaymentSoftware } from "./landing/paymentSoftware/PaymentSoftware";
 export { default as SupportServices } from "./landing/supportServices/SupportServices";
+export { default as News } from "./landing/newsAndInsights/NewsAndInsights";
 //app
 export { default as HomeApp } from "./app/homeApp/HomeApp";

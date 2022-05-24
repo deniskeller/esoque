@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import styles from "./Breadcrumbs.module.scss";
+import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs = ({
-  rootPathName = "Home",
-  roorHref = "/",
+  rootPathName = 'Home',
+  roorHref = '/',
 }: Breadcrumbs) => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbList>();
 
   useEffect(() => {
     if (router) {
-      const linkPath = router.asPath.split("/");
+      const linkPath = router.asPath.split('/');
       linkPath.shift();
 
       const pathArray = linkPath.map((path, i) => {
         return {
           breadcrumb: path,
-          href: "/" + linkPath.slice(0, i + 1).join("/"),
+          href: '/' + linkPath.slice(0, i + 1).join('/'),
         };
       });
       setBreadcrumbs(pathArray);
@@ -42,7 +42,7 @@ const Breadcrumbs = ({
           return (
             <Link key={breadcrumb.href} href={breadcrumb.href}>
               <a>
-                {" / "}
+                {' / '}
                 <span className={styles.pink}>
                   {convertBreadcrumb(breadcrumb.breadcrumb)}
                 </span>
@@ -53,7 +53,7 @@ const Breadcrumbs = ({
         return (
           <Link key={breadcrumb.href} href={breadcrumb.href}>
             <a className={styles.white}>
-              {" "}
+              {' '}
               / {convertBreadcrumb(breadcrumb.breadcrumb)}
             </a>
           </Link>
@@ -67,10 +67,10 @@ export default Breadcrumbs;
 
 const convertBreadcrumb = (str: string) => {
   return str
-    .replace(/#.*$/, "")
-    .replace(/_and_/g, " & ")
-    .replace(/-/g, " ")
-    .replace(/_/g, " ")
+    .replace(/#.*$/, '')
+    .replace(/_and_/g, ' & ')
+    .replace(/-/g, ' ')
+    .replace(/_/g, ' ')
 
     .toUpperCase();
 };

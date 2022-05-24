@@ -1,34 +1,34 @@
-import React from "react";
+import React from 'react';
 
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import { BaseButton, BaseIcon, BaseInput } from "@base/index";
-import { ALL_ICONS } from "@constants/icons";
-import { feedbackSubscribe } from "@api/feedbackForms";
-import { validateEmail } from "@utils/validateInputs";
+import { BaseButton, BaseIcon, BaseInput } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
+import { feedbackSubscribe } from '@api/feedbackForms';
+import { validateEmail } from '@utils/validateInputs';
 
-import styles from "./Footer.module.scss";
+import styles from './Footer.module.scss';
 
 const links = [
-  { href: "/privacy_policy", title: "Privacy Policy" },
-  { href: "/contacts", title: "Contacts" },
-  { href: "/terms_and_conditions", title: "Terms & Conditions" },
-  { href: "/pricing_information", title: "Pricing Information" },
-  { href: "/cookies_policy", title: "Cookies Policy" },
-  { href: "/complaints_procedure", title: "Complaints Procedure" },
-  { href: "/covid19_policy", title: "COVID-19 Company Policy" },
-  { href: "/", title: "Modern Slavery Statement" },
-  { href: "/website_terms", title: "Website Terms" },
-  { href: "/", title: "Careers" },
-  { href: "/", title: "News & Insights" },
+  { href: '/privacy_policy', title: 'Privacy Policy' },
+  { href: '/contacts', title: 'Contacts' },
+  { href: '/terms_and_conditions', title: 'Terms & Conditions' },
+  { href: '/pricing_information', title: 'Pricing Information' },
+  { href: '/cookies_policy', title: 'Cookies Policy' },
+  { href: '/complaints_procedure', title: 'Complaints Procedure' },
+  { href: '/covid19_policy', title: 'COVID-19 Company Policy' },
+  { href: '/modern_slavery_statement', title: 'Modern Slavery Statement' },
+  { href: '/website_terms', title: 'Website Terms' },
+  { href: '/careers', title: 'Careers' },
+  { href: '/news_and_insights', title: 'News & Insights' },
 ];
 
 const Footer: React.FC = ({}) => {
   const router = useRouter();
-  const [type, setType] = React.useState("");
+  const [type, setType] = React.useState('');
 
-  const [email, setEmail] = React.useState<string>("");
+  const [email, setEmail] = React.useState<string>('');
 
   const [emailErr, setEmailErr] = React.useState<boolean>(false);
   const [subEmail, setSubEmail] = React.useState<boolean>(false);
@@ -41,8 +41,8 @@ const Footer: React.FC = ({}) => {
   };
 
   React.useEffect(() => {
-    if (router.pathname == "/esoque") {
-      setType("light");
+    if (router.pathname == '/esoque') {
+      setType('light');
     }
   }, [router.pathname]);
 
@@ -58,7 +58,7 @@ const Footer: React.FC = ({}) => {
   return (
     <div
       className={`${styles.FooterWrapper} ${
-        type == "light" ? styles.Light : ""
+        type == 'light' ? styles.Light : ''
       }`}
     >
       <div className={styles.Footer}>

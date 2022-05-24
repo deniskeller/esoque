@@ -1,10 +1,6 @@
 .Eco {
   position: relative;
-
-  background: url("/images/landing/eco/eco-bg.png") center / cover no-repeat;
-  * {
-    font-family: $font-Termina;
-  }
+  background: url('/images/landing/eco/eco-bg.png') center / cover no-repeat;
 }
 .blur {
   position: absolute;
@@ -16,78 +12,179 @@
 .WrapperPage {
   position: relative;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  //   align-items: flex-start;
   min-height: 100vh;
+  padding-top: em(311px);
+  padding-bottom: em(208px);
+
+  @include iftablet {
+    padding-top: em(214px);
+    padding-bottom: em(66px);
+  }
+
+  @include ifmobile {
+    padding-top: em(68px);
+    padding-bottom: em(70px);
+  }
 }
 .Title {
   margin-bottom: em(40px);
-}
-.white {
-  color: $white;
-}
-.green {
-  color: $green;
-}
-.pink {
-  font-weight: bold;
-  * {
-    color: $pink;
+
+  @include iftablet {
+    max-width: em(583px);
+    margin-bottom: em(22px);
   }
-}
-.WrapperContent {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  @include ifmobile {
+    display: block;
+    max-width: em(254px);
+    margin-bottom: em(30px);
+  }
+  .white {
+    color: $white;
+    @include ifmobile {
+      display: block;
+      width: 100%;
+    }
+  }
+  .green {
+    color: $green;
+  }
 }
 
-.List {
-  display: flex;
-  flex-direction: column;
-  max-width: em(853px);
-  width: 100%;
+.Content {
+  margin-bottom: em(50px);
   @include iftablet {
-    max-width: em(500px);
+    margin-bottom: em(26px);
   }
-  &Item {
-    font-size: em(18px);
-    line-height: em(21px);
-    margin-bottom: 20px;
+  @include ifmobile {
+    margin-bottom: em(22px);
+  }
+  .Row {
     width: 100%;
+    position: relative;
+
+    .Paragraph {
+      p {
+        font-size: em(21px);
+        margin-bottom: em(15px);
+        @include iftablet {
+          font-size: em(18px);
+        }
+        @include ifmobile {
+          font-size: em(16px);
+        }
+      }
+    }
+
+    .Description {
+      width: 100%;
+      max-width: em(853px);
+      @include iftablet {
+        max-width: em(554px);
+      }
+      .Image1 {
+        width: em(90px);
+        height: em(90px);
+        position: relative;
+        float: left;
+        margin-right: em(34px);
+
+        @include ifmobile {
+          width: em(28px);
+          height: em(28px);
+          margin-right: em(5px);
+          margin-bottom: em(-10px);
+        }
+      }
+
+      .Subtitle {
+        font-family: $font-Termina;
+        font-style: normal;
+        font-weight: 700;
+        font-size: em(18px);
+        line-height: 100%;
+        color: $white;
+        margin: em(35px) 0;
+        @include iftablet {
+          font-size: em(13px);
+          margin: em(30px) 0;
+        }
+        @include ifmobile {
+          font-size: em(18px);
+          margin: em(20px) 0;
+        }
+      }
+    }
+
+    .Image2 {
+      width: em(389px);
+      height: em(389px);
+      position: absolute;
+      top: em(50px);
+      right: 0;
+
+      @include iftablet {
+        width: em(261px);
+        height: em(261px);
+        top: em(-60px);
+      }
+      @include ifmobile {
+        position: relative;
+        order: -1;
+        width: em(128px);
+        height: em(128px);
+        margin: 0 auto;
+        top: 0;
+        margin-bottom: em(20px);
+      }
+    }
+  }
+
+  .RowFirst {
+    @include ifmobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .RowSecond {
+    width: 100%;
+    max-width: em(853px);
   }
 }
-.ListIconWrapper {
-  display: flex;
-}
-.IconText {
-  position: relative;
+
+.LinkToLogin {
   display: inline-flex;
-  margin-right: em(34px);
-  width: em(100px);
-  height: em(100px);
-}
-.Btn {
-  display: flex;
   align-items: center;
-}
-.IconBtn {
-  position: relative;
-  display: inline-flex;
-  margin-left: em(20px);
-  width: em(50px);
-  height: em(50px);
-}
-.WelcomeBlockImage {
-  position: relative;
-  z-index: 100;
-  right: 0;
-  width: em(382px);
-  height: em(382px);
-  float: right;
-  @include iftablet {
-    width: em(200px);
-    height: em(200px);
+  .Link {
+    font-family: $font-Termina;
+    font-style: normal;
+    font-weight: 700;
+    font-size: em(18px);
+    color: $pink;
+    margin-right: em(23px);
+    @include iftablet {
+      font-size: em(13px);
+    }
+    @include ifmobile {
+      font-size: em(18px);
+      margin-right: em(9px);
+    }
+  }
+  .Icon {
+    width: em(50px);
+    height: em(50px);
+    position: relative;
+    @include iftablet {
+      width: em(28px);
+      height: em(28px);
+    }
+    @include ifmobile {
+      width: em(28px);
+      height: em(28px);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
