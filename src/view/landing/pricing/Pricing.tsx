@@ -7,19 +7,31 @@ import Link from 'next/link';
 import styles from './Pricing.module.scss';
 
 const imgNames = [
-  { title: 'Licensing', img: 'licensing.png', href: '/licensing' },
+  {
+    title: 'Licensing',
+    img: 'licensing.png',
+    href: '/pricing_information/licensing',
+  },
   {
     title: 'Company Formation',
     img: 'company.png',
-    href: '/company_formation',
+    href: '/pricing_information/company_formation',
   },
   {
     title: 'Compliance Software',
     img: 'software.png',
-    href: '/compliance_software',
+    href: '/pricing_information/compliance_software',
   },
-  { title: 'Payment Software', img: 'payment.png', href: '/payment_software' },
-  { title: 'Support Services', img: 'support.png', href: '/support_services' },
+  {
+    title: 'Payment Software',
+    img: 'payment.png',
+    href: '/pricing_information/payment_software',
+  },
+  {
+    title: 'Support Services',
+    img: 'support.png',
+    href: '/pricing_information/support_services',
+  },
 ];
 
 const Pricing = () => {

@@ -49,7 +49,7 @@ const Licensing: React.FC = () => {
     <div className={styles.Container}>
       <BaseContainer>
         <div className={styles.Breadcrumbs}>
-          <Breadcrumbs roorHref="/" rootPathName="Home/Pricing Information" />
+          <Breadcrumbs roorHref="/" rootPathName="Home" />
         </div>
 
         <div className={styles.Header}>
