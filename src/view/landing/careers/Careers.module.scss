@@ -1,0 +1,39 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: em(186px);
+  padding-bottom: em(222px);
+  position: relative;
+  background: $black;
+  @include iftablet {
+    padding-top: em(137px);
+    padding-bottom: em(101px);
+  }
+  @include ifmobile {
+    padding-top: em(68px);
+    padding-bottom: em(64px);
+  }
+
+  .Breadcrumbs {
+    margin-bottom: em(89px);
+    @include iftablet {
+      margin-bottom: em(48px);
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+
+  .Title {
+    margin-bottom: em(120px);
+    @include iftablet {
+      margin-bottom: em(36px);
+    }
+    @include ifmobile {
+      margin-bottom: em(20px);
+    }
+    h1 {
+      color: $white;
+    }
+  }
+}
