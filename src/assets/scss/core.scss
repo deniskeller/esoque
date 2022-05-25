@@ -96,3 +96,33 @@ input[type='number'] {
 textarea::placeholder {
   line-height: 120%;
 }
+
+.slick-slide {
+  width: em(356px) !important;
+  margin: 0 em(71px) !important;
+  @include iftablet {
+    width: em(266px) !important;
+    margin: 0 em(10px) !important;
+  }
+  @include ifmobile {
+    width: 100%;
+    width: em(144px) !important;
+    margin: 0 em(6px) !important;
+  }
+}
+.slick-list {
+  margin-left: em(-71px) !important;
+  margin-right: em(-71px) !important;
+  @include iftablet {
+    margin-left: em(-10px) !important;
+    margin-right: em(-10px) !important;
+  }
+  @include ifmobile {
+    margin-left: em(-6px) !important;
+    margin-right: em(-6px) !important;
+  }
+}
+
+.slick-arrow {
+  z-index: 1000;
+}

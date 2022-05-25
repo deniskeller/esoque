@@ -67,6 +67,7 @@ const NewsAndInsights = () => {
   const goToNews = (id: number) => {
     router.push('/news_and_insights/' + id);
   };
+
   return (
     <div className={styles.Wrapper}>
       <BaseContainer>
