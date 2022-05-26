@@ -120,8 +120,20 @@
           flex-direction: column;
 
           @include iftablet {
+            width: em(360px);
+            position: absolute;
+            z-index: 100;
+            top: em(90px);
+            right: 0;
+            padding: em(52px) em(16px) em(28px) em(16px);
           }
           @include ifmobile {
+            width: em(210px);
+            position: absolute;
+            z-index: 100;
+            top: em(50px);
+            right: 0;
+            padding: em(52px) em(16px) em(28px) em(16px);
           }
 
           .Close {
@@ -137,16 +149,28 @@
             z-index: 100;
 
             @include iftablet {
+              width: em(26px);
+              height: em(26px);
+              top: em(15px);
+              right: em(16px);
             }
             @include ifmobile {
+              width: em(26px);
+              height: em(26px);
+              top: em(15px);
+              right: em(16px);
             }
             .IconClose {
               width: em(19.58px);
               height: em(23.49px);
 
               @include iftablet {
+                width: em(9.4px);
+                height: em(11.27px);
               }
               @include ifmobile {
+                width: em(9.4px);
+                height: em(11.27px);
               }
             }
           }
@@ -167,6 +191,7 @@
               @include iftablet {
               }
               @include ifmobile {
+                margin-bottom: em(11px);
               }
 
               &:last-child {
@@ -176,12 +201,18 @@
               .ListItemDelete {
                 width: em(22px);
                 height: em(23px);
-                cursor: pointer;
                 margin-right: em(21px);
+                cursor: pointer;
 
                 @include iftablet {
+                  width: em(14px);
+                  height: em(15px);
+                  margin-right: em(15px);
                 }
                 @include ifmobile {
+                  width: em(10px);
+                  height: em(11px);
+                  margin-right: em(8px);
                 }
                 svg {
                   width: 100%;
@@ -197,8 +228,10 @@
                 color: $white;
 
                 @include iftablet {
+                  font-size: em(14px);
                 }
                 @include ifmobile {
+                  font-size: em(11px);
                 }
               }
               .ListItemPrice {
@@ -218,8 +251,10 @@
               color: $green;
 
               @include iftablet {
+                font-size: em(14px);
               }
               @include ifmobile {
+                font-size: em(11px);
               }
             }
             .Total {
