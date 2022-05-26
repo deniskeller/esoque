@@ -25,7 +25,7 @@
   }
 
   .Title {
-    margin-bottom: em(120px);
+    margin-bottom: em(40px);
     @include iftablet {
       margin-bottom: em(36px);
     }
@@ -36,4 +36,229 @@
       color: $white;
     }
   }
+}
+
+.Discription {
+  margin-bottom: em(66px);
+  @include iftablet {
+    margin-bottom: em(53px);
+  }
+  @include ifmobile {
+    margin-bottom: em(20px);
+  }
+
+  .DiscriptionImage {
+    position: relative;
+    top: em(-125px);
+    width: em(345px);
+    height: em(287.9px);
+    float: right;
+    margin-left: em(113px);
+    @include iftablet {
+      top: em(-40px);
+      width: em(271px);
+      height: em(226px);
+      margin-left: em(27px);
+    }
+    @include ifmobile {
+      top: em(-10px);
+      width: em(128px);
+      height: em(106px);
+      margin-left: 0;
+    }
+  }
+}
+
+.Accordions {
+  // margin-bottom: em(40px);
+  @include iftablet {
+  }
+  @include ifmobile {
+  }
+
+  .AccordionsTitle {
+    font-size: em(30px);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 100%;
+    color: $white;
+    margin-bottom: em(76px, 30px);
+    @include iftablet {
+      font-size: em(24px);
+      margin-bottom: em(50px, 24px);
+    }
+    @include ifmobile {
+      font-size: em(14px);
+      margin-bottom: em(30px, 14px);
+    }
+  }
+}
+
+.CareerItem {
+  padding: em(30px) em(67px);
+  @include iftablet {
+    padding: em(20px) em(37px);
+  }
+  @include ifmobile {
+    padding: em(20px) em(20px);
+  }
+  .CareerItemRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: em(55px);
+    @include iftablet {
+      margin-bottom: em(45px);
+    }
+    @include ifmobile {
+      flex-wrap: wrap;
+      margin-bottom: em(20px);
+    }
+
+    .CareerItemName {
+      display: inline-flex;
+      align-items: center;
+      @include ifmobile {
+        margin-bottom: em(9px);
+      }
+      .RowImage {
+        position: relative;
+        width: em(40px);
+        height: em(40px);
+        margin-right: em(17px);
+        @include iftablet {
+          width: em(22px);
+          height: em(22px);
+          margin-right: em(15px);
+        }
+        @include ifmobile {
+          width: em(28px);
+          height: em(28px);
+          margin-right: em(15px);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .RowTitle {
+        font-size: em(20px);
+        line-height: 100%;
+        color: $white;
+        font-weight: 400;
+        @include iftablet {
+          font-size: em(14px);
+        }
+        @include ifmobile {
+          font-size: em(14px);
+        }
+      }
+    }
+
+    .CareerItemDiscription {
+      width: 100%;
+      max-width: em(766px);
+      @include iftablet {
+        max-width: em(475px);
+      }
+      @include ifmobile {
+      }
+
+      .Paragraph,
+      .List li {
+        font-size: em(21px);
+        font-family: $font-Calibri;
+        font-style: normal;
+        font-weight: 400;
+        color: $white;
+        line-height: 120%;
+        @include iftablet {
+          font-size: em(18px);
+        }
+        @include ifmobile {
+          font-size: em(14px);
+        }
+      }
+
+      .List {
+        list-style: none;
+      }
+      .List li {
+        position: relative;
+      }
+
+      .List li:before {
+        content: '•';
+        vertical-align: top;
+        position: absolute;
+        left: em(-17px);
+      }
+    }
+  }
+}
+
+.CareerItemApply {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding-left: em(67px);
+  padding-bottom: em(50px);
+  @include iftablet {
+    padding-left: em(37px);
+  }
+  @include ifmobile {
+    padding-left: em(20px);
+  }
+  .Image {
+    position: relative;
+    width: em(40px);
+    height: em(40px);
+    margin-right: em(17px);
+    @include iftablet {
+      width: em(22px);
+      height: em(22px);
+      margin-right: em(15px);
+    }
+    @include ifmobile {
+      width: em(28px);
+      height: em(28px);
+      margin-right: em(15px);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .CareerItemApplyTitle {
+    font-size: em(20px);
+    font-weight: 400;
+    color: $pink;
+    @include iftablet {
+      font-size: em(14px);
+    }
+    @include ifmobile {
+      font-size: em(14px);
+    }
+  }
+}
+
+.CareersForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: em(100px);
+  @include iftablet {
+    padding-top: em(50px);
+  }
+  @include ifmobile {
+    padding-top: em(30px);
+  }
+}
+
+.Hidden {
+  display: none;
 }

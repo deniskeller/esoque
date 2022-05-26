@@ -1,6 +1,6 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent } from 'react';
 
-import styles from "./UploadFileBtn.module.scss";
+import styles from './UploadFileBtn.module.scss';
 
 interface IUpload {
   uploadFiles: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,7 +9,7 @@ interface IUpload {
 const UploadFileBtn: React.FC<IUpload> = ({ uploadFiles }): JSX.Element => {
   return (
     <label className={styles.Upload}>
-      <span>Select file to attach</span>
+      <span>Select file</span>
       <input type="file" onChange={uploadFiles} />
     </label>
   );

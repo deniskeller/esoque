@@ -3,8 +3,24 @@ import { BaseContainer, BaseText, BaseTitle } from '@base/index';
 import Image from 'next/image';
 import styles from './Careers.module.scss';
 import Breadcrumbs from '@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs';
+import { AccordionCareerItem } from '@content/index';
+import CareersForm from '@content/forms/CareersForm/CareersForm';
 
 const Careers = () => {
+  const [isVisibleForm, setIsVisibleForm] = React.useState(false);
+  const myRef = React.useRef<HTMLDivElement>(null);
+
+  const applyHandler = () => {
+    setIsVisibleForm(true);
+    myRef.current?.scrollIntoView();
+  };
+
+  React.useEffect(() => {
+    if (myRef.current) {
+      myRef.current?.scrollIntoView();
+    }
+  }, [myRef.current, isVisibleForm]);
+
   return (
     <div className={styles.Wrapper}>
       <BaseContainer>
@@ -12,6 +28,472 @@ const Careers = () => {
           <Breadcrumbs roorHref="/" rootPathName="Home" />
         </div>
         <BaseTitle className={styles.Title}>Careers</BaseTitle>
+        <div className={styles.Discription}>
+          <div className={styles.DiscriptionImage}>
+            <Image
+              src="/images/landing/imgCareers.png"
+              layout="fill"
+              alt={'Careers'}
+            />
+          </div>
+          <BaseText className={styles.DiscriptionText}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat
+            risus commodo et. Ut cursus laoreet massa, vitae malesuada enim
+            iaculis ut. Pellentesque sed nisl ultrices, tincidunt ante finibus,
+            rutrum diam. Ut non euismod turpis. Aenean eros orci, interdum ut
+            consequat nec, aliquam non justo. Curabitur lacinia scelerisque
+            semper. Ut non accumsan mi. Ut justo felis, pulvinar at urna et,
+            bibendum aliquam felis. Ut cursus laoreet massa, vitae malesuada
+            enim iaculis ut. Pellentesque sed nisl ultrices, tincidunt ante
+            finibus, rutrum diam. Ut non euismod turpis. Aenean eros orci,
+            interdum ut consequat nec, aliquam non justo.
+          </BaseText>
+        </div>
+
+        <div className={styles.Accordions}>
+          <h1 className={styles.AccordionsTitle}>AVAILABLE VACANCIES</h1>
+          <AccordionCareerItem title="IT Project Manager">
+            <div className={styles.CareerItem}>
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconAbout.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>About the role</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <p className={styles.Paragraph}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam vitae laoreet odio. Phasellus suscipit tincidunt
+                    enim, et volutpat risus commodo et. Ut cursus laoreet massa,
+                    vitae malesuada enim iaculis ut. Pellentesque sed nisl
+                    ultrices, tincidunt ante finibus, rutrum diam. Ut non
+                    euismod turpis. Aenean eros orci, interdum ut consequat nec,
+                    aliquam non justo.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconBedoing.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you’ll be doing</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconNeed.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you'll need</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={styles.CareerItemApply} onClick={applyHandler}>
+              <div className={styles.Image}>
+                <Image
+                  src="/images/landing/careers/iconApply.png"
+                  layout="fill"
+                  alt={'Careers'}
+                />
+              </div>
+              <div className={styles.CareerItemApplyTitle}>
+                Apply for this role!
+              </div>
+            </div>
+          </AccordionCareerItem>
+
+          <AccordionCareerItem title="iOS Developer">
+            <div className={styles.CareerItem}>
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconAbout.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>About the role</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <p className={styles.Paragraph}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam vitae laoreet odio. Phasellus suscipit tincidunt
+                    enim, et volutpat risus commodo et. Ut cursus laoreet massa,
+                    vitae malesuada enim iaculis ut. Pellentesque sed nisl
+                    ultrices, tincidunt ante finibus, rutrum diam. Ut non
+                    euismod turpis. Aenean eros orci, interdum ut consequat nec,
+                    aliquam non justo.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconBedoing.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you’ll be doing</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconNeed.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you'll need</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={styles.CareerItemApply} onClick={applyHandler}>
+              <div className={styles.Image}>
+                <Image
+                  src="/images/landing/careers/iconApply.png"
+                  layout="fill"
+                  alt={'Careers'}
+                />
+              </div>
+              <div className={styles.CareerItemApplyTitle}>
+                Apply for this role!
+              </div>
+            </div>
+          </AccordionCareerItem>
+
+          <AccordionCareerItem title="Marketing Director">
+            <div className={styles.CareerItem}>
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconAbout.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>About the role</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <p className={styles.Paragraph}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam vitae laoreet odio. Phasellus suscipit tincidunt
+                    enim, et volutpat risus commodo et. Ut cursus laoreet massa,
+                    vitae malesuada enim iaculis ut. Pellentesque sed nisl
+                    ultrices, tincidunt ante finibus, rutrum diam. Ut non
+                    euismod turpis. Aenean eros orci, interdum ut consequat nec,
+                    aliquam non justo.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconBedoing.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you’ll be doing</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconNeed.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you'll need</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={styles.CareerItemApply} onClick={applyHandler}>
+              <div className={styles.Image}>
+                <Image
+                  src="/images/landing/careers/iconApply.png"
+                  layout="fill"
+                  alt={'Careers'}
+                />
+              </div>
+              <div className={styles.CareerItemApplyTitle}>
+                Apply for this role!
+              </div>
+            </div>
+          </AccordionCareerItem>
+
+          <AccordionCareerItem title="Copywriter">
+            <div className={styles.CareerItem}>
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconAbout.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>About the role</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <p className={styles.Paragraph}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam vitae laoreet odio. Phasellus suscipit tincidunt
+                    enim, et volutpat risus commodo et. Ut cursus laoreet massa,
+                    vitae malesuada enim iaculis ut. Pellentesque sed nisl
+                    ultrices, tincidunt ante finibus, rutrum diam. Ut non
+                    euismod turpis. Aenean eros orci, interdum ut consequat nec,
+                    aliquam non justo.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconBedoing.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you’ll be doing</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.CareerItemRow}>
+                <div className={styles.CareerItemName}>
+                  <div className={styles.RowImage}>
+                    <Image
+                      src="/images/landing/careers/iconNeed.png"
+                      layout="fill"
+                      alt={'Careers'}
+                    />
+                  </div>
+                  <div className={styles.RowTitle}>What you'll need</div>
+                </div>
+                <div className={styles.CareerItemDiscription}>
+                  <ul className={styles.List}>
+                    <li>
+                      Delivering high quality copy adapted in target language
+                      and ensuring that daily volume expectation are met
+                    </li>
+                    <li>
+                      Adapting long term strategic brand tone vision to local
+                      markets culture differences and perceptions
+                    </li>
+                    <li>
+                      Contributing to and suggest long-term strategic content
+                      projects
+                    </li>
+                    <li>
+                      Contributing to live updates in respective languages of
+                      the brand tone of voice and strategic messaging that
+                      aligns to wider company goals
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={styles.CareerItemApply} onClick={applyHandler}>
+              <div className={styles.Image}>
+                <Image
+                  src="/images/landing/careers/iconApply.png"
+                  layout="fill"
+                  alt={'Careers'}
+                />
+              </div>
+              <div className={styles.CareerItemApplyTitle}>
+                Apply for this role!
+              </div>
+            </div>
+          </AccordionCareerItem>
+        </div>
+
+        <div
+          className={`${styles.CareersForm} ${
+            !isVisibleForm ? styles.Hidden : ''
+          }`}
+          ref={myRef}
+        >
+          <CareersForm />
+        </div>
       </BaseContainer>
     </div>
   );

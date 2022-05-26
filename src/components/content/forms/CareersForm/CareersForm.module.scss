@@ -1,0 +1,149 @@
+.Form {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include iftablet {
+    width: 100%;
+    max-width: em(536px);
+    margin: 0 auto;
+  }
+  @include ifmobile {
+    width: 100%;
+  }
+
+  &Input {
+    max-width: 49%;
+    width: 100%;
+    margin-bottom: em(15px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      max-width: 100%;
+      margin-bottom: em(11px);
+    }
+    // error message
+    div {
+      display: none;
+    }
+  }
+  &PhoneInput {
+    max-width: 49%;
+    width: 100%;
+    margin-bottom: em(15px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      max-width: 100%;
+      margin-bottom: em(11px);
+    }
+  }
+  &Textarea {
+    width: 100%;
+    height: em(462px);
+    margin-bottom: em(30px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      height: em(100px);
+      margin-bottom: em(11px);
+    }
+  }
+
+  &Files {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: em(50px);
+    @include iftablet {
+    }
+    @include ifmobile {
+      margin-bottom: em(11px);
+    }
+    &Name {
+      max-width: em(809px);
+      width: 100%;
+
+      @include iftablet {
+        max-width: em(390px);
+      }
+      @include ifmobile {
+        max-width: 100%;
+        margin-bottom: em(11px);
+      }
+    }
+    &Btn {
+      max-width: em(315px);
+      width: 100%;
+      @include iftablet {
+        max-width: em(136px);
+      }
+      @include ifmobile {
+        font-size: em(14px);
+        height: em(44px, 14px);
+        max-width: 100%;
+      }
+    }
+  }
+  &Submit {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &Btn {
+      max-width: em(289px);
+      height: em(82px);
+      width: 100%;
+      @include iftablet {
+        max-width: em(149px);
+        height: em(56px);
+      }
+      @include ifmobile {
+        max-width: 100%;
+        height: em(44px);
+      }
+    }
+  }
+}
+
+.MessageContainer {
+  width: 100%;
+  height: em(382px);
+  display: flex;
+  justify-content: center;
+  transition: all 1s;
+  @include iftablet {
+    width: 100%;
+    max-width: em(540px);
+    height: em(667px);
+    margin: 0 auto;
+  }
+  @include ifmobile {
+    max-width: 100%;
+    height: em(576px);
+  }
+}
+
+.Message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: em(1027px);
+  width: 100%;
+  height: 100%;
+  border: solid em(2px) $yellow;
+
+  span {
+    color: $yellow;
+    width: 100%;
+    text-align: center;
+    font-size: em(17px);
+    font-weight: bold;
+    @include iftablet {
+    }
+    @include ifmobile {
+      font-size: em(16px);
+    }
+  }
+}
