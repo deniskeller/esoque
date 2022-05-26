@@ -102,10 +102,7 @@ const Footer: React.FC = ({}) => {
             {subEmail ? (
               <div className={styles.EmailSuccessWrapper}>
                 <div className={styles.EmailSuccess}>
-                  <span>
-                    Congratulations! You have successfully subscribed to
-                    updates.
-                  </span>
+                  Congratulations! You have successfully subscribed to updates.
                 </div>
               </div>
             ) : (

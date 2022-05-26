@@ -64,6 +64,10 @@
   color: $white;
   background: none;
   border: em(5px) solid $yellow;
+  &:hover {
+    color: $black;
+    background: $yellow;
+  }
 }
 
 .Button_success_black {
