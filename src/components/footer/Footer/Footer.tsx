@@ -22,6 +22,7 @@ const links = [
   { href: '/website_terms', title: 'Website Terms' },
   { href: '/careers', title: 'Careers' },
   { href: '/news_and_insights', title: 'News & Insights' },
+  { href: '/news_and_insights', title: 'News & Insights' },
 ];
 
 const Footer: React.FC = ({}) => {
