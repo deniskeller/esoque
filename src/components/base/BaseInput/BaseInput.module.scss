@@ -38,7 +38,7 @@
     border-radius: em(10px, $size);
   }
   @include ifmobile {
-    $size: 11px;
+    $size: 12px;
     font-size: em($size);
     padding: 0 em(17px, $size);
     height: em(44px, $size);

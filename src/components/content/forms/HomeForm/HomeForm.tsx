@@ -61,8 +61,15 @@ const HomeForm = () => {
           <div className={styles.titleText}>
             Start your business right now and become <span>a new Unicorn!</span>
           </div>
-          <SelectInput
+          {/* <SelectInput
             className={styles.inputSelect}
+            placeholder="Choose your country"
+            options={mockData}
+            onChange={(e) => e}
+          /> */}
+
+          <BaseSelect
+            className={styles.Select}
             placeholder="Choose your country"
             options={mockData}
             onChange={(e) => e}

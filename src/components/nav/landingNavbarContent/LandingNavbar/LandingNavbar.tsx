@@ -96,9 +96,9 @@ const LandingNavbar: React.FC<Props> = () => {
     <div className={styles.Container}>
       <div className={styles.Navbar}>
         <span className={styles.NavbarDesktop}>
-          <div className={styles.Navbar__logo}>
-            <Link href="/">
-              <>
+          <Link href="/">
+            <a>
+              <div className={styles.Navbar__logo}>
                 <BaseIcon
                   className={styles.logo_text}
                   icon={ALL_ICONS.LOGO_TEXT}
@@ -109,9 +109,9 @@ const LandingNavbar: React.FC<Props> = () => {
                   icon={ALL_ICONS.LOGO}
                   viewBox="0 0 440 70"
                 />
-              </>
-            </Link>
-          </div>
+              </div>
+            </a>
+          </Link>
 
           <ul className={styles.Navbar__nav}>
             {links.map((link, index) => {

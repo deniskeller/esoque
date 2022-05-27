@@ -65,18 +65,22 @@ const Footer: React.FC = ({}) => {
         {/* top */}
         <div className={styles.FooterTop}>
           <div className={styles.FooterLogoWrapper}>
-            <div className={styles.FooterLogo}>
-              <BaseIcon
-                icon={ALL_ICONS.LOGO_TEXT}
-                viewBox="0 0 290 22"
-                className={styles.LogoText}
-              />
-              <BaseIcon
-                icon={ALL_ICONS.LOGO}
-                viewBox="0 0 440 70"
-                className={styles.Logo}
-              />
-            </div>
+            <Link href="/">
+              <a>
+                <div className={styles.FooterLogo}>
+                  <BaseIcon
+                    icon={ALL_ICONS.LOGO_TEXT}
+                    viewBox="0 0 290 22"
+                    className={styles.LogoText}
+                  />
+                  <BaseIcon
+                    icon={ALL_ICONS.LOGO}
+                    viewBox="0 0 440 70"
+                    className={styles.Logo}
+                  />
+                </div>
+              </a>
+            </Link>
 
             <div className={styles.LogoSubText}>
               Copyright © 2022 Esoque Inc, 17 State Street Suite 4000,

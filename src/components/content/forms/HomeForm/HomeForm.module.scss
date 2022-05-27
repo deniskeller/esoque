@@ -110,10 +110,10 @@
   @include ifmobile {
   }
   input {
-    height: em(59px);
+    // height: em(59px);
     @include iftablet {
-      font-size: em(14px);
-      height: em(56px);
+      // font-size: em(14px);
+      // height: em(56px);
     }
 
     @include ifmobile {
@@ -121,23 +121,28 @@
   }
 }
 
-.inputSelect {
+.Select {
   width: 100%;
-  height: em(59px);
   margin-bottom: em(8px);
-  input {
-    height: em(59px);
-  }
-  @include iftablet {
-    font-size: em(14px);
-    height: em(56px);
-  }
-
-  @include ifmobile {
-    font-size: em(14px);
-    height: em(47px);
-  }
 }
+
+// .inputSelect {
+//   width: 100%;
+//   height: em(59px);
+//   margin-bottom: em(11px);
+//   input {
+//     height: em(59px);
+//   }
+//   @include iftablet {
+//     font-size: em(14px);
+//     height: em(56px);
+//   }
+
+//   @include ifmobile {
+//     font-size: em(13px);
+//     height: em(47px, 15px);
+//   }
+// }
 
 .btn {
   width: em(193px);
