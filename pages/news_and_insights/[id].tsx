@@ -96,17 +96,17 @@ const News = () => {
     ],
   };
 
-  const sliderRef = React.useRef<HTMLDivElement>(null);
+  const sliderRef = React.useRef(null);
 
   // React.useEffect(() => {
   //   console.log('sliderRef: ', sliderRef);
   // }, [sliderRef]);
   //правильно типизировать методы слайдера
   const prevSlide = () => {
-    sliderRef?.current?.slickPrev();
+    sliderRef.current.slickPrev();
   };
   const nextSlide = () => {
-    sliderRef?.current?.slickNext();
+    sliderRef.current.slickNext();
   };
 
   return (
