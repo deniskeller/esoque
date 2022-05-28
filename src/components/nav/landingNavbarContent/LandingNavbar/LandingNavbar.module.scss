@@ -69,7 +69,8 @@
     .NavbarMobileNav {
       text-align: left;
       list-style: none;
-      margin-bottom: em(83px);
+      // margin-bottom: em(83px);
+      margin-bottom: auto;
       li {
         font-size: em(12px);
         margin-bottom: em(19px);

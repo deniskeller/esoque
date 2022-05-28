@@ -16,6 +16,7 @@ import styles from './FormContactUs.module.scss';
 import PhoneInput from '@content/other/PhoneInput/PhoneInput';
 import { validateEmail, validateFields } from '@utils/validateInputs';
 import { feedbackFull } from '@api/feedbackForms';
+import Link from 'next/link';
 
 type TInputs = {
   [key: string]: { [key: string]: string };
@@ -188,14 +189,23 @@ const FormContactUs = () => {
               <div className={styles.CheckBoxText}>
                 I confirm that I have read and expressly understand how my
                 personal data will be used for the purposes described in{' '}
-                <span>Privacy Policy.</span>
+                <Link href="/privacy_policy">
+                  <a>Privacy Policy</a>
+                </Link>
+                .
               </div>
             </div>
 
-            <div className={styles.CheckBoxContainer}>
+            <div
+              className={`${styles.CheckBoxContainer} ${styles.CheckBoxContainer2}`}
+            >
               <BaseCheckbox checkboxValue={isRead} onClick={setIsRead} />
               <div className={styles.CheckBoxText}>
-                I&apos;ve read and understand the <span>Privacy Policy</span>.
+                I&apos;ve read and understand the{' '}
+                <Link href="/privacy_policy">
+                  <a>Privacy Policy</a>
+                </Link>
+                .
               </div>
             </div>
 

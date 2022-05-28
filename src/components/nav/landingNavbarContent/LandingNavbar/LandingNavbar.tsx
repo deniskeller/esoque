@@ -22,23 +22,23 @@ const links = [
   // },
   {
     href: '/unicorns',
-    title: 'unicorns',
+    title: 'Unicorns',
   },
   {
     href: '/darkside',
-    title: 'darkside',
+    title: 'Dark Side',
   },
   {
     href: '/sidious',
-    title: 'sidious',
+    title: 'Sidious',
   },
   {
     href: '/eco',
-    title: 'eco',
+    title: 'Eco',
   },
   {
     href: '/esoque',
-    title: 'esoque',
+    title: 'Esoque',
   },
 ];
 

@@ -201,6 +201,7 @@
     margin-bottom: em(24px);
     h1 {
       font-size: em(33px);
+      text-align: left !important;
     }
   }
 }
@@ -224,6 +225,7 @@
   @include ifmobile {
     p {
       font-size: em(12px);
+      text-align: left !important;
     }
   }
 }

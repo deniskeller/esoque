@@ -70,14 +70,14 @@
   .CountryItemDescription {
     text-align: right;
     color: $white;
-    position: relative;
-    padding-right: em(70px);
-    @include iftablet {
-      padding-right: em(47px);
-    }
-    @include ifmobile {
-      padding-right: em(34px);
-    }
+    text-align: center;
+    // padding-right: em(70px);
+    // @include iftablet {
+    //   padding-right: em(47px);
+    // }
+    // @include ifmobile {
+    //   padding-right: em(34px);
+    // }
     P {
       font-size: em(21px);
       @include iftablet {
@@ -92,29 +92,33 @@
       height: em(36px);
       @extend %center;
       background: $grey;
-      border-radius: 10px;
+      border-radius: em(10px);
       position: absolute;
-      right: 0;
-      top: em(-5px);
+      right: em(72px);
+      bottom: em(49px);
       @extend %center;
       @include iftablet {
         width: em(31px);
         height: em(28px);
+        right: em(27px);
+        bottom: em(36px);
       }
       @include ifmobile {
         width: em(20px);
         height: em(18px);
-        border-radius: 7px;
+        right: em(18px);
+        bottom: em(11px);
+        border-radius: em(6px);
       }
       p {
-        font-size: em(37px);
+        font-size: em(36px);
         font-family: $font-Calibri;
         margin-top: em(-1px);
         @include iftablet {
-          font-size: em(30px);
+          font-size: em(28px);
         }
         @include ifmobile {
-          font-size: em(16px);
+          font-size: em(15px);
         }
       }
     }

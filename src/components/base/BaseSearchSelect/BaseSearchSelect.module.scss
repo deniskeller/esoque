@@ -177,6 +177,11 @@
   position: absolute;
   top: em(24px);
   left: em(20px);
+
+  path {
+    stroke: rgba(0, 0, 0, 0.39);
+  }
+
   @include iftablet {
     width: em(25px);
     height: em(25px);
@@ -194,7 +199,7 @@
   font-size: em(20px);
   line-height: 120%;
   font-weight: 400;
-  color: $black;
+  color: $black2;
   outline: none;
   box-sizing: border-box;
   position: relative;
@@ -209,6 +214,10 @@
   @include ifmobile {
     font-size: em(11px);
   }
+}
+
+.Input::placeholder {
+  color: rgba(0, 0, 0, 0.39);
 }
 
 .CountryCode {

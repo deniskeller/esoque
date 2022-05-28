@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   @include iftablet {
-    max-width: em(536px);
+    max-width: 100%;
   }
   &Title {
     margin-bottom: em(55px);
@@ -128,10 +128,16 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: em(15px);
+
     @include ifmobile {
       margin-bottom: em(30px);
     }
   }
+
+  .CheckBoxContainer2 {
+    align-items: center;
+  }
+
   .CheckBoxText {
     margin-left: em(24px);
     @include iftablet {
@@ -143,8 +149,11 @@
       line-height: 120%;
       margin-left: em(10px);
     }
-    span {
+    a {
       text-decoration: underline;
+      &:hover {
+        color: $yellow;
+      }
     }
   }
 

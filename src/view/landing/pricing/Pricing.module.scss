@@ -160,8 +160,11 @@
   }
   &Btn {
     color: $yellow;
-    text-decoration: underline;
     cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     @include iftablet {
       font-size: em(14px);

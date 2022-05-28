@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import {
   BaseButton,
@@ -6,10 +6,10 @@ import {
   BaseInput,
   BaseText,
   BaseTitle,
-} from "@base/index";
-import styles from "./SecondStep.module.scss";
-import { LinkHome, StepBack } from "@content/index";
-import { validateEmailCode, validateFields } from "@utils/validateInputs";
+} from '@base/index';
+import styles from './SecondStep.module.scss';
+import { LinkHome, StepBack } from '@content/index';
+import { validateEmailCode, validateFields } from '@utils/validateInputs';
 
 interface Props {
   email: string;
@@ -32,7 +32,7 @@ const SecondStep: React.FC<Props> = ({
   verifyEmailCode,
 }) => {
   const [inputs, setInputs] = useState<Inputs>({
-    code: { value: code, error: "", type: "number" },
+    code: { value: code, error: '', type: 'number' },
   });
 
   const changeInputs = (name: string, value: string) => {
@@ -46,7 +46,7 @@ const SecondStep: React.FC<Props> = ({
 
     if (inputs.code.value.length !== 6) {
       const newObj = { ...inputs };
-      newObj.code.error = "Code length 6 symbols";
+      newObj.code.error = 'Code length 6 symbols';
       setInputs(newObj);
       return;
     }
@@ -74,7 +74,7 @@ const SecondStep: React.FC<Props> = ({
         error={inputs.code.error || error}
         value={inputs.code.value}
         name="email"
-        onChange={(value: string) => changeInputs("code", value)}
+        onChange={(value: string) => changeInputs('code', value)}
         placeholder="Enter verification code here"
         type="text"
         required
@@ -82,7 +82,7 @@ const SecondStep: React.FC<Props> = ({
       />
 
       <BaseButton onClick={submitFormData} className={styles.BtnLogin}>
-        Confirm
+        Confirm and continue
       </BaseButton>
 
       <LinkHome className={styles.LinkHome} />

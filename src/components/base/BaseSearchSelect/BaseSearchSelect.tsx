@@ -1,8 +1,8 @@
-import React from "react";
-import useOnClickOutside from "@hooks/useOnClickOutside";
-import styles from "./BaseSearchSelect.module.scss";
-import { BaseIcon } from "@base/index";
-import { ALL_ICONS } from "@constants/icons";
+import React from 'react';
+import useOnClickOutside from '@hooks/useOnClickOutside';
+import styles from './BaseSearchSelect.module.scss';
+import { BaseIcon } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
 
 interface Props {
   placeholder?: string;
@@ -26,16 +26,16 @@ const BaseSearchSelect: React.FC<Props> = ({
   placeholder,
   style,
   className,
-  type = "default",
+  type = 'default',
   options,
   value,
   error,
   onChange,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = React.useState('');
   const [selectedOption, setSelectedOption] = React.useState<number | string>(
-    ""
+    ''
   );
   const selectContainerRef = React.useRef(null);
 
@@ -59,17 +59,17 @@ const BaseSearchSelect: React.FC<Props> = ({
   return (
     <div
       className={`${styles.SelectContainer} ${
-        styles["Select_" + type]
+        styles['Select_' + type]
       } ${className}`}
       ref={selectContainerRef}
     >
       <div
         className={`${styles.SelectHeader}  ${
-          isOpen ? styles.SelectHeaderFocus : ""
-        } ${error ? styles.Error : ""}`}
+          isOpen ? styles.SelectHeaderFocus : ''
+        } ${error ? styles.Error : ''}`}
         onClick={toggling}
       >
-        <span className={`${selectedOption ? styles.NotEmpty : ""}`}>
+        <span className={`${selectedOption ? styles.NotEmpty : ''}`}>
           {selectedOption || placeholder || value}
         </span>
         <BaseIcon
@@ -83,14 +83,14 @@ const BaseSearchSelect: React.FC<Props> = ({
           className={`${styles.IconArrow} ${styles.IconArrowBottom}`}
         />
       </div>
-      {error ? <div className={styles.ErrorText}>{error}</div> : ""}
+      {error ? <div className={styles.ErrorText}>{error}</div> : ''}
       {isOpen && (
         <div className={styles.SelectList}>
           <div className={styles.SelectSearch}>
             <BaseIcon
               icon={ALL_ICONS.SEARCH}
               viewBox="0 0 34 34"
-              fill="grey"
+              fill="none"
               className={styles.IconSearch}
             />
             <input

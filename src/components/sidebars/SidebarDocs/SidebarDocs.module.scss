@@ -2,8 +2,6 @@
   width: 100%;
   height: 100%;
   background-color: $black2;
-  padding-top: em(128px);
-  padding-bottom: em(300px);
   display: flex;
   flex-direction: column;
   @include iftablet {
@@ -25,6 +23,9 @@
   padding-left: em(67px);
   padding-top: em(25px);
   padding-bottom: em(25px);
+  &:last-child {
+    border-bottom: none;
+  }
   @include iftablet {
     padding-left: em(41px);
   }
