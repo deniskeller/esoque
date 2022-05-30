@@ -241,6 +241,7 @@
 
   @include ifmobile {
     font-size: em(9px);
+    text-align: center;
   }
 }
 .PaymentsWrapper {

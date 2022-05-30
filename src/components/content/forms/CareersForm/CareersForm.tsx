@@ -113,7 +113,7 @@ const CareersForm = () => {
             type="text"
             name="companyName"
             onChange={setCompanyName}
-            placeholder="LinkedIn Profile"
+            placeholder="LinkedIn Profile (if applicable)"
           />
 
           <div className={styles.FormPhoneInput}>

@@ -17,6 +17,7 @@
 
   @include iftablet {
     height: em(61px);
+    padding: 0 em(30px);
   }
   @include ifmobile {
     padding: 0 em(17px);

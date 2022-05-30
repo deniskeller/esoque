@@ -5,8 +5,6 @@
   justify-content: space-between;
   @include iftablet {
     width: 100%;
-    max-width: em(536px);
-    margin: 0 auto;
   }
   @include ifmobile {
     width: 100%;
@@ -17,6 +15,7 @@
     width: 100%;
     margin-bottom: em(15px);
     @include iftablet {
+      margin-bottom: em(11px);
     }
     @include ifmobile {
       max-width: 100%;
@@ -30,8 +29,9 @@
   &PhoneInput {
     max-width: 49%;
     width: 100%;
-    margin-bottom: em(15px);
+    margin-bottom: em(17px);
     @include iftablet {
+      margin-bottom: em(11px);
     }
     @include ifmobile {
       max-width: 100%;
@@ -41,8 +41,9 @@
   &Textarea {
     width: 100%;
     height: em(462px);
-    margin-bottom: em(30px);
+    margin-bottom: em(27px);
     @include iftablet {
+      margin-bottom: em(17px);
     }
     @include ifmobile {
       height: em(100px);
@@ -66,7 +67,7 @@
       width: 100%;
 
       @include iftablet {
-        max-width: em(390px);
+        max-width: em(685px);
       }
       @include ifmobile {
         max-width: 100%;
