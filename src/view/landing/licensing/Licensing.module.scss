@@ -308,6 +308,7 @@
     border-top: 1px solid $white;
 
     .ListTotal {
+      width: 100%;
       display: inline-flex;
       align-items: center;
       margin-bottom: em(17px);
@@ -341,8 +342,12 @@
           width: em(625px, 18px);
         }
         @include ifmobile {
-          width: em(197px, 11px);
+          width: em(170px, 11px);
         }
+      }
+
+      .Value {
+        margin-left: auto;
       }
     }
 

@@ -26,7 +26,7 @@
     }
     @include ifmobile {
       font-size: em(12px);
-      width: 25%;
+      width: 27%;
       // white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -38,6 +38,9 @@
     }
     &:last-child {
       text-align: right;
+      @include ifmobile {
+        text-align: left;
+      }
     }
 
     &.Active {
@@ -46,7 +49,7 @@
       transition: 0.5s;
       @include ifmobile {
         text-align: left;
-        width: 50%;
+        width: 47%;
       }
     }
   }

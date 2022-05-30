@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import { JurisdictionPopup } from "@content/index";
+import Image from 'next/image';
+import React from 'react';
+import { JurisdictionPopup } from '@content/index';
 
-import styles from "./JurisdictionCountryItem.module.scss";
+import styles from './JurisdictionCountryItem.module.scss';
 
 interface Props {
   popup?: string;
@@ -27,7 +27,7 @@ const JurisdictionCountryItem: React.FC<Props> = ({
   return (
     <div className={styles.CountryItem}>
       <div className={styles.CountryItemImage}>
-        <Image src={image} layout={"fill"} alt={""} />
+        <Image src={image} layout={'fill'} alt={''} />
         <div className={styles.CountryItemTitle}>
           <h1>{title}</h1>
         </div>

@@ -110,10 +110,12 @@
         bottom: em(11px);
         border-radius: em(6px);
       }
+
       p {
         font-size: em(36px);
         font-family: $font-Calibri;
         margin-top: em(-1px);
+        line-height: 100%;
         @include iftablet {
           font-size: em(28px);
         }

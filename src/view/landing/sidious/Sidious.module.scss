@@ -126,14 +126,11 @@
       align-items: center;
       position: relative;
       width: em(30px);
-      height: em(66px);
       @include iftablet {
-        width: em(34px);
-        height: em(46px);
+        width: em(17px);
       }
       @include ifmobile {
-        width: em(20px);
-        height: em(26px);
+        width: em(11px);
       }
     }
   }
@@ -152,7 +149,7 @@
     padding-bottom: em(40px);
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100%;
   }
 }
 
