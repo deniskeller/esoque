@@ -155,47 +155,53 @@
     }
   }
   &Input {
+    width: em(294px);
     margin-right: em(23px);
-    font-size: em(17px);
+    // font-size: em(17px);
+    @include iftablet {
+      width: em(206px);
+    }
     @include ifmobile {
       margin-right: 0;
       width: 100%;
       margin-bottom: em(11px);
     }
 
-    div {
-      display: none;
-    }
-    input {
-      width: 100%;
-      max-width: em(294px);
-      height: em(49px);
-      @include iftablet {
-        font-size: em(14px);
-        max-width: em(206px, 14px);
-        height: em(38px, 14px);
-      }
-      @include ifmobile {
-        font-size: em(14px);
-        max-width: 100%;
-        height: em(44px, 14px);
-      }
-    }
+    // div {
+    //   display: none;
+    // }
+    // input {
+    //   width: 100%;
+    //   max-width: em(294px);
+    //   // height: em(48px);
+    //   @include iftablet {
+    //     // font-size: em(14px);
+    //     max-width: em(206px, 14px);
+    //     // height: em(38px, 14px);
+    //   }
+    //   @include ifmobile {
+    //     // font-size: em(14px);
+    //     max-width: 100%;
+    //     // height: em(44px, 14px);
+    //   }
+    // }
   }
   &Btn {
+    width: 100%;
     max-width: em(193px);
     height: em(48px);
-    width: 100%;
-    font-size: em(17px);
+    // height: em(48px);
     @include iftablet {
-      font-size: em(14px);
-      max-width: em(136px, 14px);
-      height: em(38px, 14px);
+      max-width: em(136px);
+      // font-size: em(14px);
+      // max-width: em(136px, 14px);
+      // height: em(38px, 14px);
     }
     @include ifmobile {
-      font-size: em(17px);
       max-width: em(127px);
-      height: em(33px);
+      // font-size: em(17px);
+      // max-width: em(127px);
+      // height: em(33px);
     }
   }
 }
@@ -259,7 +265,8 @@
 }
 .PaymentsIcons {
   display: flex;
-  max-width: em(1040px);
+  // max-width: em(1040px);
+  max-width: em(540px);
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -275,8 +282,10 @@
 // Icons
 .PaymentsIcon {
   &Visa {
-    width: em(90px);
-    height: em(29px);
+    // width: em(90px);
+    // height: em(29px);
+    width: em(49.95px);
+    height: em(15.95px);
     @include iftablet {
       width: em(49.95px);
       height: em(15.95px);
@@ -287,8 +296,10 @@
     }
   }
   &MS {
-    width: em(59px);
-    height: em(45px);
+    // width: em(59px);
+    // height: em(45px);
+    width: em(33px);
+    height: em(25px);
     @include iftablet {
       width: em(33px);
       height: em(25px);
@@ -299,8 +310,10 @@
     }
   }
   &UnionPay {
-    width: em(54px);
-    height: em(34px);
+    // width: em(54px);
+    // height: em(34px);
+    width: em(29px);
+    height: em(19px);
     @include iftablet {
       width: em(29px);
       height: em(19px);
@@ -311,8 +324,10 @@
     }
   }
   &Express {
-    width: em(41px);
-    height: em(41px);
+    // width: em(41px);
+    // height: em(41px);
+    width: em(21px);
+    height: em(21px);
     @include iftablet {
       width: em(21px);
       height: em(21px);
@@ -323,8 +338,10 @@
     }
   }
   &Discover {
-    width: em(105px);
-    height: em(27px);
+    // width: em(105px);
+    // height: em(27px);
+    width: em(58.59px);
+    height: em(15.03px);
     @include iftablet {
       width: em(58.59px);
       height: em(15.03px);
@@ -335,8 +352,10 @@
     }
   }
   &Denis {
-    width: em(116px);
-    height: em(30px);
+    // width: em(116px);
+    // height: em(30px);
+    width: em(64px);
+    height: em(16px);
     @include iftablet {
       width: em(64px);
       height: em(16px);
@@ -347,8 +366,10 @@
     }
   }
   &Swift {
-    width: em(47px);
-    height: em(46px);
+    // width: em(47px);
+    // height: em(46px);
+    width: em(26px);
+    height: em(25px);
     @include iftablet {
       width: em(26px);
       height: em(25px);
@@ -359,8 +380,10 @@
     }
   }
   &Binance {
-    width: em(127px);
-    height: em(25px);
+    // width: em(127px);
+    // height: em(25px);
+    width: em(71px);
+    height: em(14px);
     @include iftablet {
       width: em(71px);
       height: em(14px);
@@ -371,8 +394,10 @@
     }
   }
   &PCI {
-    width: em(117px);
-    height: em(40px);
+    // width: em(117px);
+    // height: em(40px);
+    width: em(65.14px);
+    height: em(22.35px);
     @include iftablet {
       width: em(65.14px);
       height: em(22.35px);
@@ -384,7 +409,8 @@
   }
 }
 .Social {
-  max-width: em(177px);
+  max-width: em(100px);
+  // max-width: em(177px);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -407,8 +433,10 @@
   }
 
   &Fb {
-    width: em(13px);
-    height: em(28px);
+    // width: em(13px);
+    // height: em(28px);
+    width: em(8px);
+    height: em(17px);
     @include iftablet {
       width: em(8px);
       height: em(17px);
@@ -419,8 +447,10 @@
     }
   }
   &Inst {
-    width: em(25px);
-    height: em(27px);
+    // width: em(25px);
+    // height: em(27px);
+    width: em(15px);
+    height: em(17px);
     @include iftablet {
       width: em(15px);
       height: em(17px);
@@ -431,8 +461,10 @@
     }
   }
   &Tw {
-    width: em(27px);
-    height: em(23px);
+    // width: em(27px);
+    // height: em(23px);
+    width: em(17px);
+    height: em(15px);
     @include iftablet {
       width: em(17px);
       height: em(15px);
@@ -443,8 +475,10 @@
     }
   }
   &Linkedin {
-    width: em(24px);
-    height: em(24px);
+    // width: em(24px);
+    // height: em(24px);
+    width: em(15px);
+    height: em(15px);
     @include iftablet {
       width: em(15px);
       height: em(15px);
