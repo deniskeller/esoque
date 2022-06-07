@@ -1,17 +1,13 @@
 import React from "react";
 
-import {
-  FilterSelectTable,
-  Pagination,
-  TitleLine,
-  UserManagmentTable,
-} from "@content/index";
+import { FilterSelectTable, Pagination, TitleLine, UserManagmentTable } from "@content/index";
 
-import styles from "./ManageFirmUsers.module.scss";
 import { BaseButton } from "@base/index";
 import { getFirmsOptions, getFirmUsersList } from "@api/firmUsers";
 import { UserManagmentData } from "types/tables";
 import { useRouter } from "next/router";
+
+import styles from "./ManageFirmUsers.module.scss";
 
 type Options = {
   title: string;
@@ -24,33 +20,37 @@ type Firm = {
 };
 
 const statusOptions: Options = [
-  { title: "All", value: "" },
-  { title: "Enable", value: "Enable" },
-  { title: "Disable", value: "Disable" },
+  { title: "All", value: "All" },
+  { title: "Enabled", value: "Enabled" },
+  { title: "Disabled", value: "Disabled" },
 ];
 
 const showOptions: Options = [
   { title: "10", value: "10" },
   { title: "20", value: "20" },
-  { title: "30", value: "30" },
+  { title: "50", value: "50" },
 ];
+
+const statusFormat: any = {
+  Enabled: true,
+  Disabled: false,
+};
+
+type IParamsFilter = {
+  business: string;
+  limit?: number;
+  page?: number;
+  status?: boolean;
+};
 
 const ManageFirmUsers: React.FC = (): JSX.Element => {
   const router = useRouter();
+
   const [page, setPage] = React.useState<number>(1);
   const [firmOptions, setFirmOptions] = React.useState<Options>([]);
-
-  const [currentFirm, setCurrentFirm] = React.useState<Firm>({
-    title: "",
-    value: "",
-  });
-
-  console.log(currentFirm, "currentFirm");
-  console.log(firmOptions, "firmOptions");
-  const [currentStatus, setCurrentStatus] = React.useState<string>("");
-
+  const [currentFirm, setCurrentFirm] = React.useState<Firm>({ title: "", value: "" });
+  const [currentStatus, setCurrentStatus] = React.useState<string>(statusOptions[0].title);
   const [show, setShow] = React.useState<string>("10");
-
   const [tableData, setTableData] = React.useState<UserManagmentData>();
 
   const onChangeSelectFirm = (value: string) => {
@@ -65,26 +65,67 @@ const ManageFirmUsers: React.FC = (): JSX.Element => {
     router.push(`manage_users/users_detail/1?firm=${currentFirm.value}`);
   };
 
-  const applyFilters = async () => {
-    const dataTable = await getFirmUsersList({
-      business: currentFirm.value,
-      status: currentStatus,
-      limit: +show,
-      page,
-    });
-    if (dataTable?.data?.length) setTableData(dataTable);
+  const onReassingUser = () => {
+    router.push(`/app/manage_users/reassign_principal_user/${currentFirm.value}`);
+  };
+
+  const onChangeShow = async (show: string) => {
+    await applyFilters(
+      {
+        business: currentFirm?.value,
+        limit: +show,
+        page: 1,
+      },
+      currentStatus
+    );
+    setPage(1);
+    setShow(show);
+  };
+
+  const applyFilters = async (params: IParamsFilter, status: string) => {
+    if (status && status !== "All") {
+      params.status = statusFormat[currentStatus];
+    }
+
+    const dataTable = await getFirmUsersList(params);
+    if (dataTable?.data) setTableData(dataTable);
+  };
+
+  const resetFilters = async () => {
+    setCurrentFirm(firmOptions[0]);
+    setCurrentStatus("All");
+    setShow("10");
+
+    await applyFilters(
+      {
+        business: firmOptions[0]?.value,
+        limit: 10,
+        page: 1,
+      },
+      "All"
+    );
   };
 
   React.useEffect(() => {
-    applyFilters();
+    applyFilters(
+      {
+        business: currentFirm?.value,
+        limit: +show,
+        page,
+      },
+      currentStatus
+    );
   }, [page]);
+
+  React.useEffect(() => {
+    onChangeShow(show);
+  }, [show]);
 
   React.useEffect(() => {
     (async () => {
       const options = await getFirmsOptions({});
       const dataTable = await getFirmUsersList({ business: options[0].value });
       setCurrentFirm(options[0]);
-      console.log(dataTable, "dataTable");
       if (options) setFirmOptions(options);
       if (dataTable?.data?.length) setTableData(dataTable);
     })();
@@ -95,16 +136,33 @@ const ManageFirmUsers: React.FC = (): JSX.Element => {
     <div className={styles.wrapper}>
       <TitleLine type="dark" text="Manage Firm Users" className={styles.titlePage} />
       <FilterSelectTable
-        firmOptions={firmOptions}
-        statusOptions={statusOptions}
+        page={page}
+        skip={tableData?.skip || 0}
         className={styles.filter}
+        // firm
+        firmOptions={firmOptions}
+        selectedFirm={currentFirm?.title}
+        // status
+        statusOptions={statusOptions}
+        selectedStatus={currentStatus}
+        // show
         showOptions={showOptions}
         show={show}
         countShow={tableData?.count || 1}
-        onSelectShow={setShow}
+        onSelectShow={onChangeShow}
         onSelectFirm={onChangeSelectFirm}
         onSelectStatus={onChangeSelectStatus}
-        applyFilters={applyFilters}
+        applyFilters={() =>
+          applyFilters(
+            {
+              business: currentFirm?.value,
+              limit: 10,
+              page: 1,
+            },
+            currentStatus
+          )
+        }
+        resetFilters={resetFilters}
       />
       <div className={styles.userName}>
         PRINCIPAL USER: <span>John Andersen</span>
@@ -113,7 +171,7 @@ const ManageFirmUsers: React.FC = (): JSX.Element => {
         <BaseButton className={styles.btnGroupCreate} onClick={onCreateUser}>
           Create new user
         </BaseButton>
-        <BaseButton className={styles.btnGroupReassign}>
+        <BaseButton className={styles.btnGroupReassign} onClick={onReassingUser}>
           Reassign Principal User
         </BaseButton>
       </div>
@@ -123,11 +181,9 @@ const ManageFirmUsers: React.FC = (): JSX.Element => {
       {Boolean(tableData?.data.length) && (
         <div className={styles.pagination}>
           <Pagination
+            availablePages={tableData?.availablePages!}
             page={page}
             setPage={setPage}
-            limit={tableData?.limit || 1}
-            skip={0}
-            count={1}
             totalPage={tableData?.totalPage || 1}
           />
         </div>

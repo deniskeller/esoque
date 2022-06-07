@@ -25,7 +25,8 @@ const TableRow: React.FC<User> = ({ data, openUserDetails }) => {
       <td>{data?.email || "-"}</td>
       <td>{data?.lastLogged || "-"}</td>
       <td>
-        <div>{data?.status ? "Enable" : "Disabled"}</div>
+        <div>{data?.status ? "Enabled" : "Disabled"}</div>
+
         <div className={styles.btnOpen} onClick={openUserDetails.bind(null, data.id)}>
           <span>{">"}</span>
         </div>
@@ -55,9 +56,7 @@ const UserManagmentTable: React.FC<Props> = ({ data }): JSX.Element => {
         </thead>
         <tbody>
           {Boolean(data.length) &&
-            data.map((user) => (
-              <TableRow key={user?.id} data={user} openUserDetails={openUserDetails} />
-            ))}
+            data.map((user) => <TableRow key={user?.id} data={user} openUserDetails={openUserDetails} />)}
         </tbody>
       </table>
 

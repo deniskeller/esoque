@@ -1,49 +1,49 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { BaseButton, BaseIcon } from '@base/index';
-import { LandingMobileMenu, LandingNavbarLink } from '../../index';
+import React from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { BaseButton, BaseIcon } from "@base/index";
+import { LandingMobileMenu, LandingNavbarLink } from "../../index";
 
-import styles from './LandingNavbar.module.scss';
-import SelectLanguage from '../SelectLanguage/SelectLanguage';
-import { useTranslation } from 'next-i18next';
-import { EsoqueState } from '@store/store';
-import { useSelector } from 'react-redux';
-import { logout } from '@api/login';
+import styles from "./LandingNavbar.module.scss";
+import SelectLanguage from "../SelectLanguage/SelectLanguage";
+import { useTranslation } from "next-i18next";
+import { EsoqueState } from "@store/store";
+import { useSelector } from "react-redux";
+import { logout } from "@api/login";
 
-import Link from 'next/link';
-import { ALL_ICONS } from '@constants/icons';
+import Link from "next/link";
+import { ALL_ICONS } from "@constants/icons";
+
 interface Props {}
 
 const links = [
   // {
+
   //   href: '/',
   //   title: 'home',
   // },
+
   {
-    href: '/unicorns',
-    title: 'Unicorns',
+    href: "/darkside",
+    title: "darkside",
   },
   {
-    href: '/darkside',
-    title: 'Dark Side',
+    href: "/sidious",
+    title: "sidious",
   },
   {
-    href: '/sidious',
-    title: 'Sidious',
+    href: "/eco",
+    title: "eco",
   },
   {
-    href: '/eco',
-    title: 'Eco',
-  },
-  {
-    href: '/esoque',
-    title: 'Esoque',
+    href: "/esoque",
+    title: "esoque",
   },
 ];
 
 const languages = [
-  { value: 'en', title: 'en' },
+  { value: "en", title: "en" },
+
   // { value: "ru", title: "ru" },
   // { value: "kz", title: "kz" },
   // { value: "ger", title: "ger" },
@@ -54,9 +54,7 @@ const languages = [
 const LandingNavbar: React.FC<Props> = () => {
   const [modal, setModal] = React.useState(false);
 
-  const { userData, isAuthenificated } = useSelector(
-    (state: EsoqueState) => state.user
-  );
+  const { userData, isAuthenificated } = useSelector((state: EsoqueState) => state.user);
 
   const { i18n, t } = useTranslation();
   const router = useRouter();
@@ -70,10 +68,10 @@ const LandingNavbar: React.FC<Props> = () => {
     setModal(true);
   };
   const goToLogin = () => {
-    router.push('/login');
+    router.push("/login");
   };
   const goToRegister = () => {
-    router.push('/signup');
+    router.push("/signup");
   };
 
   const logoutUser = async () => {
@@ -84,7 +82,8 @@ const LandingNavbar: React.FC<Props> = () => {
   };
 
   React.useEffect(() => {
-    const className = 'overflow-hidden';
+    const className = "overflow-hidden";
+
     if (modal) {
       document.body.classList.add(className);
     } else {
@@ -99,16 +98,8 @@ const LandingNavbar: React.FC<Props> = () => {
           <Link href="/">
             <a>
               <div className={styles.Navbar__logo}>
-                <BaseIcon
-                  className={styles.logo_text}
-                  icon={ALL_ICONS.LOGO_TEXT}
-                  viewBox="0 0 290 22"
-                />
-                <BaseIcon
-                  className={styles.logo}
-                  icon={ALL_ICONS.LOGO}
-                  viewBox="0 0 440 70"
-                />
+                <BaseIcon className={styles.logo_text} icon={ALL_ICONS.LOGO_TEXT} viewBox="0 0 290 22" />
+                <BaseIcon className={styles.logo} icon={ALL_ICONS.LOGO} viewBox="0 0 440 70" />
               </div>
             </a>
           </Link>
@@ -134,15 +125,11 @@ const LandingNavbar: React.FC<Props> = () => {
           /> */}
           {!isAuthenificated ? (
             <>
-              <BaseButton
-                type="empty"
-                onClick={goToLogin}
-                className={styles.BtnLogin}
-              >
-                {t('header:auth-buttons.login')}
+              <BaseButton type="empty" onClick={goToLogin} className={styles.BtnLogin}>
+                {t("header:auth-buttons.login")}
               </BaseButton>
               <BaseButton onClick={goToRegister} className={styles.BtnSignup}>
-                {t('header:auth-buttons.signup')}
+                {t("header:auth-buttons.signup")}
               </BaseButton>
             </>
           ) : (
@@ -154,7 +141,7 @@ const LandingNavbar: React.FC<Props> = () => {
                 Logout
               </BaseButton>
               <div className={styles.linkApp}>
-                <Link href={'/app/'}>Hello, esoque.com!</Link>
+                <Link href={"/app/"}>Hello, esoque.com!</Link>
               </div>
             </>
           )}
@@ -173,7 +160,7 @@ const LandingNavbar: React.FC<Props> = () => {
                 return (
                   <LandingNavbarLink
                     href={link.href}
-                    title={link.title}
+                    title={t(`header:menu-items.${link.title}`)}
                     index={index}
                     key={index}
                   />
@@ -191,11 +178,7 @@ const LandingNavbar: React.FC<Props> = () => {
 
             {!isAuthenificated ? (
               <>
-                <BaseButton
-                  type="empty"
-                  onClick={goToLogin}
-                  className={styles.BtnLogin}
-                >
+                <BaseButton type="empty" onClick={goToLogin} className={styles.BtnLogin}>
                   Log In
                 </BaseButton>
                 <BaseButton onClick={goToRegister} className={styles.BtnSignup}>

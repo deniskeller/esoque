@@ -6,7 +6,8 @@
 }
 
 .Input {
-  $size: 20px;
+  // $size: 20px;
+  $size: 16px;
   width: 100%;
   height: 100%;
   font-size: em($size);
@@ -20,13 +21,15 @@
   border-radius: em(10px, $size);
   vertical-align: middle;
   padding: 0 em(10px, $size) 0 em(37px, $size);
-  height: em(83px, $size);
+  // height: em(83px, $size);
+  height: em(48px, $size);
   border: none;
   @include placeholder-color($placeholder);
   font-family: $font-Termina;
   &:focus {
     border: 2px solid $yellow;
   }
+
   &[type='password'] {
     font-family: $font-stars;
   }

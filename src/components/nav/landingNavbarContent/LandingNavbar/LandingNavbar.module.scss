@@ -110,6 +110,7 @@
 .logo {
   width: em(146px);
   height: em(29px);
+
   @include iftablet {
     width: em(80.28px);
     height: em(15.83px);
@@ -118,6 +119,7 @@
 .logo_text {
   width: em(90px);
   height: em(7px);
+
   margin-bottom: em(9px);
   @include iftablet {
     width: em(49.14px);

@@ -5,19 +5,19 @@
   justify-content: space-between;
   margin-bottom: em(63px);
 
-  &SelectGroup {
+  .filterSelectGroup {
     align-items: flex-end;
     display: flex;
   }
-  &Select {
+  .filterSelect {
     width: em(251px);
     margin-right: em(30px);
   }
-  &BtnGroup {
+  .filterBtnGroup {
     display: flex;
     height: em(49px);
   }
-  &BtnApply {
+  .filterBtnApply {
     max-width: em(185px);
     width: 100%;
 
@@ -27,11 +27,13 @@
       font-size: em(15px);
     }
   }
-  &BtnReset {
+  .filterBtnReset {
     max-width: em(124px);
     width: 100%;
-    font-size: em(15px);
+
     button {
+      font-size: em(15px);
+
       padding: em(15px) em(34px);
       color: $black3;
     }
@@ -46,13 +48,13 @@
   align-items: center;
   font-weight: 600;
   color: $black3;
-  &Text {
+  .showText {
     margin-right: em(16px);
   }
-  &Select {
+  .showSelect {
     width: em(98px);
   }
-  &Subtitle {
+  .showSubtitle {
     white-space: nowrap;
     position: absolute;
     bottom: -60%;

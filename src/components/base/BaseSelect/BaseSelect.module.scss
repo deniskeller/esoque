@@ -13,7 +13,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: em(83px);
+  // height: em(83px);
+  height: em(48px);
 
   @include iftablet {
     // max-width: em(134px);
@@ -25,7 +26,8 @@
   }
 
   p {
-    font-size: em(20px);
+    font-size: em(16px);
+    // font-size: em(20px);
     font-weight: normal;
     line-height: 120%;
     color: $placeholder;
@@ -53,8 +55,8 @@
 }
 
 .IconArrow {
-  width: em(16px);
-  height: em(16px);
+  width: em(12px);
+  height: em(12px);
   position: absolute;
   right: em(19px);
   @include iftablet {
@@ -70,7 +72,7 @@
 }
 
 .IconArrowTop {
-  top: calc(45% - em(16px));
+  top: calc(45% - em(12px));
   @include iftablet {
     top: calc(45% - em(13px));
   }
@@ -80,7 +82,7 @@
 }
 
 .IconArrowBottom {
-  bottom: calc(45% - em(18px));
+  bottom: calc(45% - em(12px));
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
   @include iftablet {

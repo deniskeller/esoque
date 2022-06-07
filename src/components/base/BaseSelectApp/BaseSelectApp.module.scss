@@ -248,13 +248,16 @@
 
 .Select_Medium {
   .SelectHeader {
-    height: em(57px);
+    height: em(65px);
+
     p {
       font-size: em(18px);
     }
   }
+
   .SelectList {
-    top: em(65px);
+    top: 105%;
+    max-height: em(175px);
   }
   .ListItem {
     height: em(59px);

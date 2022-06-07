@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import { Block, BlocksControls } from 'react-tinacms-inline';
+import React from "react";
+import Image from "next/image";
+import { Block, BlocksControls } from "react-tinacms-inline";
 
 import {
   BlackIcon,
@@ -11,10 +11,10 @@ import {
   Fma,
   Bank,
   Asic,
-} from '../../../../public/images/landing/clients';
-import styles from '@view/landing/home/Home.module.scss';
-import HomeForm from '@content/forms/HomeForm/HomeForm';
-import { BaseContainer } from '@base/index';
+} from "../../../../public/images/landing/clients";
+import styles from "@view/landing/home/Home.module.scss";
+import HomeForm from "@content/forms/HomeForm/HomeForm";
+import { BaseContainer } from "@base/index";
 
 interface Props {
   color: string;
@@ -28,10 +28,7 @@ interface Img {
   type: string;
 }
 
-export const HeaderBlockComponents: React.FC<Props> = ({
-  color,
-  backgroundImage,
-}) => {
+export const HeaderBlockComponents: React.FC<Props> = ({ color, backgroundImage }) => {
   const styled = {
     color: `${color}`,
   };
@@ -40,24 +37,21 @@ export const HeaderBlockComponents: React.FC<Props> = ({
     <div className={styles.HeaderBlock} style={{ ...styled }}>
       <Image
         className={styles.BackgroundImage}
-        src={backgroundImage?.previewSrc || '/images/landing/home/bgHome.png'}
+        src={backgroundImage?.previewSrc || "/images/landing/home/bgHome.png"}
         layout="fill"
         objectFit="cover"
         // objectPosition="center"
-        alt={'Unicorn image'}
+        alt={"Unicorn image"}
         priority
       />
       <BaseContainer>
         <div className={styles.HeaderBlockContainer}>
           <div className={styles.HeaderBlockText}>
-            <div className={styles.BlockTextTitle}>
-              Beyond the&nbsp;borders of&nbsp;financial world
-            </div>
+            <div className={styles.BlockTextTitle}>Beyond the&nbsp;borders of&nbsp;financial world</div>
             <div className={styles.BlockTextDescription}>
               <p>
-                We are working with the following government authorities in
-                order to provide the consultancy services to our customers and
-                more:
+                We are working with the following government authorities in order to provide the consultancy services to
+                our customers and more:
               </p>
             </div>
             <div className={styles.BlockTextIcons}>
@@ -104,23 +98,23 @@ export const HeaderBlockTina = ({ index, data }: any) => (
 );
 
 export const HeaderBlockTemplate = {
-  label: 'Header Block',
+  label: "Header Block",
 
   defaultItem: {
     backgroundImage: {
-      directory: '',
-      filename: '',
+      directory: "",
+      filename: "",
       id: 0,
-      previewSrc: '',
-      type: '',
+      previewSrc: "",
+      type: "",
     },
   },
   fields: [
     {
-      name: 'backgroundImage',
-      label: 'background-image',
-      component: 'image',
-      description: 'Please select an image for the background',
+      name: "backgroundImage",
+      label: "background-image",
+      component: "image",
+      description: "Please select an image for the background",
     },
   ],
 };

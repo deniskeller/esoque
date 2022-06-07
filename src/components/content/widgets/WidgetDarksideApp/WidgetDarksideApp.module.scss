@@ -1,0 +1,421 @@
+.Widget {
+  width: 100%;
+}
+
+.Widgetform {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include ifmobile {
+    flex-wrap: wrap;
+  }
+
+  .Input {
+    width: 100%;
+    max-width: em(368px);
+
+    @include iftablet {
+      max-width: em(328px);
+    }
+    @include ifmobile {
+      max-width: em(288px);
+      margin-bottom: em(13px);
+    }
+  }
+
+  .Select {
+    width: 100%;
+    max-width: em(368px);
+
+    @include iftablet {
+      max-width: em(328px);
+    }
+    @include ifmobile {
+      max-width: em(288px);
+      margin-bottom: em(13px);
+    }
+  }
+
+  .Button {
+    width: 100%;
+    max-width: em(298px);
+    height: em(62px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    @include iftablet {
+      max-width: em(149px);
+      height: em(61px);
+    }
+    @include ifmobile {
+      max-width: em(173px);
+      height: em(38px);
+      margin: 0 auto;
+    }
+  }
+}
+
+.WidgetContent {
+  .NonExistent {
+    width: 100%;
+    max-width: em(673px);
+    background: rgba(30, 30, 30, 0.05);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: em(35px);
+    padding: em(30px) 0 em(33px);
+
+    @include ifmobile {
+      padding: em(15px) 0 em(15px);
+    }
+
+    .NonExistentTitle {
+      font-size: em(17px);
+      color: $black;
+      font-weight: 600;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      margin-bottom: em(28px);
+
+      @include ifmobile {
+        font-size: em(12px);
+        margin-bottom: em(17px);
+      }
+      span {
+        color: $pink;
+      }
+    }
+
+    .NonExistentSubtitle {
+      font-size: em(15px);
+      line-height: 100%;
+      font-weight: normal;
+      color: $pink;
+      @include ifmobile {
+        font-size: em(10px);
+      }
+    }
+  }
+
+  .Existent {
+    margin-top: em(111px);
+
+    @include ifmobile {
+      margin-top: em(40px);
+    }
+    .ExistentHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: em(107px);
+
+      @include iftablet {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      @include ifmobile {
+        flex-wrap: wrap;
+        margin-bottom: em(40px);
+      }
+
+      .CompanyName {
+        width: 100%;
+        max-width: em(532px);
+        background: rgba(30, 30, 30, 0.05);
+        border-radius: 10px;
+        padding: em(65px) em(58px) em(86px);
+        text-align: center;
+
+        @include iftablet {
+          margin-bottom: em(40px);
+        }
+        @include ifmobile {
+          padding: em(30px);
+          margin-bottom: em(30px);
+        }
+
+        .Name {
+          color: $pink;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: em(30px);
+          line-height: 100%;
+          text-align: center;
+          letter-spacing: -0.05em;
+          border-bottom: 1px solid $black3;
+          padding-bottom: em(13px);
+          margin-bottom: em(28px);
+
+          @include ifmobile {
+            font-size: em(20px);
+            padding-bottom: em(5px);
+            margin-bottom: em(15px);
+          }
+        }
+
+        .Title {
+          font-size: em(17px);
+          font-weight: 600;
+          line-height: 100%;
+          color: $black;
+          text-align: center;
+          letter-spacing: -0.05em;
+          margin-bottom: em(22px);
+
+          @include ifmobile {
+            font-size: em(14px);
+            margin-bottom: em(15px);
+          }
+        }
+
+        .Subtitle {
+          font-size: em(17px);
+          line-height: 100%;
+          color: $black3;
+          text-align: center;
+
+          @include ifmobile {
+            font-size: em(12px);
+          }
+        }
+      }
+
+      .CompanyPrice {
+        width: 100%;
+        max-width: em(531px);
+
+        @include iftablet {
+        }
+        @include ifmobile {
+        }
+
+        .Title {
+          font-size: em(17px);
+          font-weight: bold;
+          line-height: 89.5%;
+          letter-spacing: -0.05em;
+          color: $black;
+          margin-bottom: em(30px);
+          @include iftablet {
+            text-align: center;
+          }
+          @include ifmobile {
+            font-size: em(14px);
+            text-align: center;
+            line-height: 120%;
+          }
+          span {
+            color: $pink;
+            text-transform: uppercase;
+          }
+        }
+
+        .Description {
+          font-size: em(17px);
+          line-height: 120%;
+          color: $black3;
+          margin-bottom: em(13px);
+
+          @include iftablet {
+            text-align: center;
+          }
+          @include ifmobile {
+            font-size: em(12px);
+            text-align: center;
+          }
+        }
+
+        .Price {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .PriceTitle {
+            font-size: em(17px);
+            font-weight: bold;
+            letter-spacing: -0.05em;
+            line-height: 100%;
+            color: $black;
+            margin-right: em(16px);
+
+            @include ifmobile {
+              font-size: em(12px);
+            }
+          }
+
+          .PriceValue {
+            font-size: em(17px);
+            font-weight: bold;
+            letter-spacing: -0.05em;
+            line-height: 100%;
+            color: $black;
+            margin-right: em(79px);
+
+            @include ifmobile {
+              font-size: em(12px);
+              margin-right: 0;
+            }
+            span {
+              color: $green;
+            }
+          }
+
+          .PriceButton {
+            width: em(139px);
+            height: em(63px);
+
+            @include iftablet {
+              margin-left: auto;
+            }
+            @include ifmobile {
+              width: em(80px);
+              height: em(43px);
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .ExistentDescription {
+      margin-bottom: em(92px);
+      text-align: center;
+      @include ifmobile {
+        margin-bottom: em(40px);
+      }
+
+      .ExistentDescriptionTitle {
+        font-size: em(30px);
+        color: $pink;
+        font-weight: bold;
+        line-height: 89.5%;
+        text-align: center;
+        letter-spacing: -0.05em;
+        margin-bottom: em(27px);
+
+        @include ifmobile {
+          font-size: em(18px);
+          line-height: 100%;
+          margin-bottom: em(15px);
+        }
+      }
+
+      .ExistentDescriptionSubtitle {
+        font-size: em(17px);
+        color: $white;
+
+        @include iftablet {
+        }
+        @include ifmobile {
+          font-size: em(12px);
+          line-height: 120%;
+        }
+      }
+    }
+
+    .ExistentTable {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        thead {
+          @include ifmobile {
+            display: none;
+          }
+          tr {
+            th {
+              font-weight: bold;
+              font-size: em(17px);
+              line-height: 100%;
+              letter-spacing: -0.05em;
+              color: $white;
+              border-bottom: 1px solid $white;
+              text-align: left;
+              padding-bottom: em(25px);
+              @include iftablet {
+                font-size: em(14px);
+              }
+            }
+            .CompanyName {
+              width: 40%;
+            }
+            .RegistationDate {
+              width: 30%;
+            }
+            .Price {
+              width: 18%;
+            }
+            .Actions {
+              width: 12%;
+            }
+          }
+        }
+        tbody {
+          tr {
+            @include ifmobile {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border: 1px solid $white;
+              margin-bottom: em(20px);
+              border-radius: 10px;
+              padding: em(20px);
+            }
+            td {
+              font-size: em(15px);
+              text-transform: uppercase;
+              font-weight: 600;
+              line-height: 89.5%;
+              letter-spacing: -0.05em;
+              color: rgba(255, 255, 255, 0.7);
+              padding: em(7px) 0;
+              border-bottom: 1px solid $white;
+              @include iftablet {
+                font-size: em(12px);
+              }
+              @include ifmobile {
+                font-size: em(12px);
+                border-bottom: none;
+              }
+            }
+
+            .TdCompanyName {
+              padding-left: em(20px);
+              @include iftablet {
+              }
+              @include ifmobile {
+                text-align: center;
+                padding-left: 0;
+              }
+            }
+
+            .TdPrice {
+              span {
+                color: $pink;
+                margin-right: em(18px);
+              }
+            }
+            .TdActions {
+              .TdActionsButton {
+                font-size: em(15px);
+                width: em(127px, 13px);
+                height: em(43px, 13px);
+
+                @include ifmobile {
+                  font-size: em(18px);
+                  width: em(127px);
+                  height: em(43px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

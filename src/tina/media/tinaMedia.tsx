@@ -69,7 +69,8 @@ export class MDMediaStore implements MediaStore {
         id: result.id,
         directory: "",
         filename: parsedName,
-        previewSrc: `${IMG_STORAGE}/api/${result.url}`,
+        previewSrc: result.url,
+        // previewSrc: `${IMG_STORAGE}/api/${result.url}`,
       } as Media;
       return [medaData];
     });
@@ -80,36 +81,34 @@ export class MDMediaStore implements MediaStore {
   }
 
   list(): Promise<MediaList> {
-    return listFiles({ page: this.pageName, lang: this.langName }).then(
-      (data) => {
-        if (!data.length) {
-          return {
-            items: [],
-            limit: 0,
-            offset: 0,
-            totalCount: 0,
-          };
-        }
-
+    return listFiles({ page: this.pageName, lang: this.langName }).then((data) => {
+      if (!data.length) {
         return {
-          items: data.map((item: ListItem) => {
-            const splittedName = item.url.split("/");
-            const parsedName = splittedName[splittedName.length - 1];
-
-            return {
-              type: "file",
-              id: item.id,
-              directory: "/images/",
-              filename: parsedName,
-              previewSrc: item.url,
-            };
-          }),
-          limit: data.length,
+          items: [],
+          limit: 0,
           offset: 0,
-          totalCount: data.length,
+          totalCount: 0,
         };
       }
-    );
+
+      return {
+        items: data.map((item: ListItem) => {
+          const splittedName = item.url.split("/");
+          const parsedName = splittedName[splittedName.length - 1];
+
+          return {
+            type: "file",
+            id: item.id,
+            directory: "/images/",
+            filename: parsedName,
+            previewSrc: item.url,
+          };
+        }),
+        limit: data.length,
+        offset: 0,
+        totalCount: data.length,
+      };
+    });
   }
 
   delete(media: Media) {

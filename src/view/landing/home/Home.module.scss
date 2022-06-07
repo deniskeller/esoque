@@ -5,7 +5,8 @@
 
 .HeaderBlock {
   position: relative;
-  padding-top: em(338px);
+  // padding-top: em(338px);
+  padding-top: em(240px);
   padding-bottom: em(177px);
   min-height: 100vh;
   @include iftablet {
@@ -34,8 +35,10 @@
 }
 
 .HeaderBlockText {
-  max-width: em(745px);
-  padding-top: em(82px);
+  // max-width: em(745px);
+  max-width: em(600px);
+  padding-top: em(40px);
+  // padding-top: em(82px);
   @include iftablet {
     margin-bottom: em(50px);
     padding-top: em(30px);
@@ -46,7 +49,7 @@
 }
 
 .HeaderBlockForm {
-  margin-right: em(-100px);
+  // margin-right: em(-100px);
   @include iftablet {
     margin-right: em(-60px);
   }
@@ -57,7 +60,8 @@
 
 .BlockText {
   &Title {
-    font-size: em(69px);
+    // font-size: em(69px);
+    font-size: em(54px);
     line-height: 120%;
     margin-bottom: em(22px);
     font-weight: bold;
@@ -164,7 +168,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: em(203px);
+  padding-top: em(150px);
+  // padding-top: em(203px);
   padding-bottom: em(128px);
 
   @include iftablet {
@@ -212,7 +217,8 @@
   max-width: em(652px);
   margin-bottom: em(60px);
   p {
-    font-size: em(21px);
+    font-size: em(18px);
+    // font-size: em(21px);
   }
 
   @include iftablet {
@@ -308,9 +314,12 @@
 
 //ServicesBlock
 .ServicesBlock {
-  padding-top: em(236px);
-  padding-bottom: em(265px);
+  padding-top: em(150px);
+  padding-bottom: em(130px);
+  // padding-top: em(236px);
+  // padding-bottom: em(265px);
   background: $black2;
+  min-height: 100vh;
 
   @include iftablet {
     padding-top: em(139px);
@@ -368,7 +377,8 @@
     }
 
     .ServicesItemTitle {
-      margin-bottom: em(52px);
+      margin-bottom: em(30px);
+      // margin-bottom: em(52px);
       @include iftablet {
         margin-bottom: em(35px);
       }
@@ -410,8 +420,11 @@
   }
 
   .ConclusionBlockContent {
-    padding-top: em(525px);
-    padding-bottom: em(403px);
+    padding-top: em(150px);
+    padding-bottom: em(130px);
+    min-height: 100vh;
+    // padding-top: em(525px);
+    // padding-bottom: em(403px);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -456,7 +469,7 @@
         margin: 0 auto;
       }
       p {
-        font-size: em(50px);
+        font-size: em(54px);
         font-weight: 700;
         line-height: 120%;
         color: $pink;

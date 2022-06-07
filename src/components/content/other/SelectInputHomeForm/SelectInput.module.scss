@@ -14,6 +14,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+
   font-size: em(20px);
   border-radius: em(5px, 10px);
   @include iftablet {

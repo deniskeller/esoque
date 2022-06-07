@@ -1,9 +1,6 @@
 import { ISignup } from "@store/signup/types";
 
-export const parseCookie = (
-  cookie: string | undefined,
-  key: string
-): string => {
+export const parseCookie = (cookie: string | undefined, key: string): string => {
   let result = "";
   if (!cookie || !key) {
     return result;
@@ -85,9 +82,26 @@ export const formatBusinessData = (userData: ISignup, owner: string) => {
   return data;
 };
 
+type ConvertFormatDate = {
+  date: string;
+  noSwap?: boolean;
+};
+
+export const convertFormatDate = ({ date, noSwap }: ConvertFormatDate) => {
+  if (!date) return "";
+
+  const dateArr = date.split("/");
+
+  // Если нам нужно просто добавить 0 перед цифрами, без изменения порядка
+  if (noSwap) {
+    return `${dateArr[0].padStart(2, "0")}/${dateArr[1].padStart(2, "0")}/${dateArr[2]}`;
+  }
+
+  return `${dateArr[1].padStart(2, "0")}/${dateArr[0].padStart(2, "0")}/${dateArr[2]}`;
+};
+
 // ENV
 export const API_URL = process.env.API_URL;
 export const IMG_STORAGE = process.env.IMG_STORAGE;
 export const DEV = process.env.DEV;
-export const REACT_APP_GOOGLE_MAPS_API_KEY =
-  process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+export const REACT_APP_GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;

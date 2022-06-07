@@ -33,12 +33,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/_document.js",
-    "pages/api/index.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js", "pages/api/index.js"],
   "exclude": ["node_modules"]
 }

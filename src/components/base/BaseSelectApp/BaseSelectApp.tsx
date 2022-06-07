@@ -7,7 +7,7 @@ import { ALL_ICONS } from "@constants/icons";
 interface Props {
   placeholder?: string;
   style?: object;
-  type?: string;
+  inputSize?: string;
   className?: string;
   error?: string | boolean;
   styles?: string;
@@ -25,7 +25,7 @@ const BaseSelectApp: React.FC<Props> = ({
   placeholder,
   style,
   className,
-  type = "default",
+  inputSize,
   options,
   error,
   onChange,
@@ -41,7 +41,7 @@ const BaseSelectApp: React.FC<Props> = ({
 
   useOnClickOutside(selectContainerRef, clickOutsideHandler);
 
-  const toggling = () => setIsOpen(!isOpen);
+  const toggling = () => setIsOpen((prev)=>!prev);
 
   const onOptionClicked =
     ({ title, value }: ISelectItem) =>
@@ -53,19 +53,17 @@ const BaseSelectApp: React.FC<Props> = ({
 
   return (
     <div
-      className={`${styles.SelectContainer} ${styles["Select_" + type]} ${className} ${
+      className={`${styles.SelectContainer} ${styles["Select_" + inputSize]} ${className} ${
         error ? styles.SelectError : ""
       } `}
       ref={selectContainerRef}
     >
       <div
-        className={`${styles.SelectHeader}  ${isOpen ? styles.SelectHeaderFocus : ""} ${
-          error ? styles.Error : ""
-        }`}
+        className={`${styles.SelectHeader}  ${isOpen ? styles.SelectHeaderFocus : ""} ${error ? styles.Error : ""}`}
         onClick={toggling}
       >
-        <p className={`${selectedOption ? styles.NotEmpty : ""}`}>
-          {selectedOption || placeholder}
+        <p className={`${selectedOption || selectedValue ? styles.NotEmpty : ""}`}>
+          {selectedValue || selectedOption || placeholder}
         </p>
         <BaseIcon
           icon={ALL_ICONS.SELECT_ARROW}
@@ -82,11 +80,7 @@ const BaseSelectApp: React.FC<Props> = ({
       {isOpen && (
         <ul className={styles.SelectList}>
           {options.map(({ title, value }: ISelectItem) => (
-            <li
-              className={styles.ListItem}
-              onClick={onOptionClicked({ title, value })}
-              key={Math.random()}
-            >
+            <li className={styles.ListItem} onClick={onOptionClicked({ title, value })} key={Math.random()}>
               <span className={styles.ListItemTitle}>{title}</span>
             </li>
           ))}

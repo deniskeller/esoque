@@ -1,36 +1,36 @@
-import React from 'react';
+import React from "react";
 
-import { BaseText, BaseTitle } from '@base/index';
-import Breadcrumbs from '@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs';
-import Link from 'next/link';
+import { BaseText, BaseTitle } from "@base/index";
+import Breadcrumbs from "@content/other/breadcrumbs/landingBreadcrumbs/Breadcrumbs";
+import Link from "next/link";
 
-import styles from './Pricing.module.scss';
+import styles from "./Pricing.module.scss";
 
 const imgNames = [
   {
-    title: 'Licensing',
-    img: 'licensing.png',
-    href: '/pricing_information/licensing',
+    title: "Licensing",
+    img: "licensing.png",
+    href: "/pricing_information/licensing",
   },
   {
-    title: 'Company Formation',
-    img: 'company.png',
-    href: '/pricing_information/company_formation',
+    title: "Company Formation",
+    img: "company.png",
+    href: "/pricing_information/company_formation",
   },
   {
-    title: 'Compliance Software',
-    img: 'software.png',
-    href: '/pricing_information/compliance_software',
+    title: "Compliance Software",
+    img: "software.png",
+    href: "/pricing_information/compliance_software",
   },
   {
-    title: 'Payment Software',
-    img: 'payment.png',
-    href: '/pricing_information/payment_software',
+    title: "Payment Software",
+    img: "payment.png",
+    href: "/pricing_information/payment_software",
   },
   {
-    title: 'Support Services',
-    img: 'support.png',
-    href: '/pricing_information/support_services',
+    title: "Support Services",
+    img: "support.png",
+    href: "/pricing_information/support_services",
   },
 ];
 
@@ -46,11 +46,9 @@ const Pricing = () => {
             <span>Pricing Information</span>
           </BaseTitle>
           <BaseText className={styles.Description}>
-            With Esoque account, you can access the following key features. The
-            earlier you join, the better offer you will receive to undertake
-            business account and set up with us. Our offer is simple, and with
-            no commitment, you can manage your bills, invoices, tax and more
-            from one Esoque business account.
+            With Esoque account, you can access the following key features. The earlier you join, the better offer you
+            will receive to undertake business account and set up with us. Our offer is simple, and with no commitment,
+            you can manage your bills, invoices, tax and more from one Esoque business account.
           </BaseText>
         </div>
 

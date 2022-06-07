@@ -6,9 +6,11 @@
 .imgContainer {
   position: relative;
   background: $black;
+
   min-height: 100vh;
   height: auto;
-  background: url('/images/landing/docs/docs-bg.png') center center no-repeat;
+  background: url("/images/landing/docs/docs-bg.png") center center no-repeat;
+
   background-size: cover;
   background-attachment: fixed;
 }

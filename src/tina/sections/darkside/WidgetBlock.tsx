@@ -30,31 +30,20 @@ interface Img {
   type: string;
 }
 
-export const WidgetBlockComponents: React.FC<Props> = ({
-  title,
-  titleColor,
-  list,
-  image,
-}) => {
+export const WidgetBlockComponents: React.FC<Props> = ({ title, titleColor, list, image }) => {
   return (
     <>
       <BaseContainer>
         <div className={styles.WidgetBlock}>
           <div className={styles.WidgetBlockImage}>
             <Image
-              src={
-                image?.previewSrc ||
-                "/images/landing/darkside/imgDarksideCompass.png"
-              }
+              src={image?.previewSrc || "/images/landing/darkside/imgDarksideCompass.png"}
               layout={"fill"}
               blurDataURL="/images/landing/darkside/imgDarksideCompass.png"
               alt={"Unicorn image"}
             />
           </div>
-          <BaseTitle
-            className={styles.WidgetBlockTitle}
-            style={{ color: `${titleColor ? titleColor : ""}` }}
-          >
+          <BaseTitle className={styles.WidgetBlockTitle} style={{ color: `${titleColor ? titleColor : ""}` }}>
             {title}
           </BaseTitle>
 
@@ -69,10 +58,7 @@ export const WidgetBlockComponents: React.FC<Props> = ({
                   <AdvantageItem
                     title={item.title}
                     subtitle={item.subTitle}
-                    image={
-                      item?.image?.previewSrc ||
-                      "/images/landing/darkside/iconDarksideHourglassDone.png"
-                    }
+                    image={item?.image?.previewSrc || "/images/landing/darkside/iconDarksideHourglassDone.png"}
                     width={Math.abs(item.width) || 20}
                     height={Math.abs(item.height) || 20}
                     key={index}

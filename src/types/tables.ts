@@ -7,6 +7,7 @@ export type UserManagmentData = {
   page: number;
   skip: number;
   totalPage: number;
+  availablePages: Array<number | string>;
 };
 
 export type Pagination = {};
@@ -26,4 +27,26 @@ export type UserData = {
   readOnly: boolean;
   status: boolean;
   firm: string;
+};
+
+export type BussinessData = {
+  country: string;
+  id: string;
+  importationDate: string;
+  name: string;
+  owner: string;
+  principial: UserData;
+  registrationNumber: string;
+  type: string;
+};
+
+export type IncorporationData = {
+  session_id: string;
+  js: string;
+  cn: string;
+  userLink: string;
+  status: string;
+  created_at: string;
+  orderList: string;
+  email: string;
 };

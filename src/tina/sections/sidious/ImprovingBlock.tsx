@@ -22,13 +22,7 @@ interface Img {
   type: string;
 }
 
-export const ImprovingBlockComponents: React.FC<Props> = ({
-  title,
-  titleColor,
-  subTitle,
-  subTitleColor,
-  list,
-}) => {
+export const ImprovingBlockComponents: React.FC<Props> = ({ title, titleColor, subTitle, subTitleColor, list }) => {
   return (
     <BaseContainer>
       <div className={styles.ImprovingBlock}>
@@ -39,26 +33,18 @@ export const ImprovingBlockComponents: React.FC<Props> = ({
         >
           {title}
         </BaseTitle>
-        <BaseTitle
-          className={styles.ImprovingBlockSubtitle}
-          style={{ color: `${subTitleColor ? subTitleColor : ""}` }}
-        >
+        <BaseTitle className={styles.ImprovingBlockSubtitle} style={{ color: `${subTitleColor ? subTitleColor : ""}` }}>
           {subTitle}
         </BaseTitle>
         <div className={styles.ImprovingBlockItems}>
           {list.length &&
             list.map((item, index) => {
-              const formatText = item?.items?.length
-                ? item?.items?.split(";")
-                : [];
+              const formatText = item?.items?.length ? item?.items?.split(";") : [];
               return (
                 <ImprovingItem
                   key={index}
                   itemList={formatText}
-                  image={
-                    item?.image?.previewSrc ||
-                    "/images/landing/sidious/iconSidiousManOfficeWorker.png"
-                  }
+                  image={item?.image?.previewSrc || "/images/landing/sidious/iconSidiousManOfficeWorker.png"}
                 />
               );
             })}

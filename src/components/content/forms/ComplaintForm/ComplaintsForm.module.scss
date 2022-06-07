@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   @include iftablet {
     width: 100%;
     max-width: em(536px);
@@ -16,12 +17,14 @@
     max-width: 49%;
     width: 100%;
     margin-bottom: em(15px);
+
     @include iftablet {
     }
     @include ifmobile {
       max-width: 100%;
       margin-bottom: em(11px);
     }
+
     // error message
     div {
       display: none;
@@ -31,6 +34,7 @@
     max-width: 49%;
     width: 100%;
     margin-bottom: em(15px);
+
     @include iftablet {
     }
     @include ifmobile {
@@ -42,6 +46,7 @@
     width: 100%;
     height: em(462px);
     margin-bottom: em(30px);
+
     @include iftablet {
     }
     @include ifmobile {
@@ -54,6 +59,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+
     flex-wrap: wrap;
     margin-bottom: em(50px);
     @include iftablet {
@@ -76,6 +82,7 @@
     &Btn {
       max-width: em(315px);
       width: 100%;
+
       @include iftablet {
         max-width: em(136px);
       }
@@ -94,6 +101,7 @@
       max-width: em(289px);
       height: em(82px);
       width: 100%;
+
       @include iftablet {
         max-width: em(149px);
         height: em(56px);
@@ -112,6 +120,7 @@
   display: flex;
   justify-content: center;
   transition: all 1s;
+
   @include iftablet {
     width: 100%;
     max-width: em(540px);
@@ -140,6 +149,7 @@
     text-align: center;
     font-size: em(17px);
     font-weight: bold;
+
     @include iftablet {
     }
     @include ifmobile {

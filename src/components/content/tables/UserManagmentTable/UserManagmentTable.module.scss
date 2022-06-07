@@ -37,6 +37,9 @@
         padding: em(21px) em(12px);
         font-size: em(15px);
         color: opacity($color: $black);
+
+        font-weight: 600;
+
         opacity: 0.7;
         &:nth-child(5) {
           display: flex;

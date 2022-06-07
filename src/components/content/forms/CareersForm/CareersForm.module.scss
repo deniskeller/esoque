@@ -73,6 +73,30 @@
         max-width: 100%;
         margin-bottom: em(11px);
       }
+      &Wrap{
+        $size: 20px;
+        background: #f2f5f6;
+        width: 100%;
+        font-size: em($size);
+        font-weight: 400;
+        color: $black;
+        outline: none;
+        box-sizing: border-box;
+        position: relative;
+        background: $input;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: em(10px, $size);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px 0 em(37px, $size);
+        height: 30px;
+        border: none;
+      }
+      &File{
+         overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
     &Btn {
       max-width: em(315px);
@@ -84,6 +108,14 @@
         font-size: em(14px);
         height: em(44px, 14px);
         max-width: 100%;
+      }
+      &Close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
   }

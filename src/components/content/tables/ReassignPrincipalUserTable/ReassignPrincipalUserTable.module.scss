@@ -1,0 +1,65 @@
+.wrapper {
+  width: 100%;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    font-size: em(15px);
+    border-bottom: 1px solid rgba(75, 75, 75, 0.7);
+    tr {
+      th {
+        text-align: left;
+        padding: em(21px) 0;
+
+        padding-bottom: em(25px);
+        &:nth-child(1) {
+          width: em(164px);
+        }
+        &:nth-child(2) {
+          width: em(194px);
+        }
+        &:nth-child(3) {
+          width: em(194px);
+        }
+        &:nth-child(4) {
+          width: em(362px);
+        }
+        &:nth-child(5) {
+          width: em(187px);
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $black3;
+
+      td {
+        padding: em(21px) 0;
+        align-items: center;
+        font-size: em(15px);
+        font-weight: 600;
+        vertical-align: middle;
+        color: opacity($color: $black);
+        opacity: 0.7;
+
+        &:first-child {
+          padding-left: em(12px);
+        }
+      }
+    }
+  }
+}
+
+.empty {
+  width: 100%;
+  margin-top: em(80px);
+  &Icon {
+    position: relative;
+    max-width: em(242px);
+    height: em(85px);
+    width: 100%;
+    margin: 0 auto;
+  }
+}

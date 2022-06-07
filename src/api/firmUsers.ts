@@ -2,14 +2,6 @@ import axios from "axios";
 import { axiosWithCredentials } from "@utils/api";
 import { API_URL } from "@utils/helpers";
 
-type GetFirmUsers = {
-  limit?: number;
-  status?: "ENABLED" | "DISABLED";
-  page: number;
-  field: string;
-  order?: "ASC" | "DESC";
-};
-
 export const getFirmUsers = () => {
   return axios.get(`${API_URL}/api/firm/users`, {
     params: {},
@@ -18,7 +10,7 @@ export const getFirmUsers = () => {
 
 type GetFirmUserList = {
   business: string;
-  status?: string;
+  status?: boolean;
   page?: number;
   limit?: number;
   field?: string;
@@ -33,7 +25,7 @@ export const getFirmUsersList = (params: GetFirmUserList) => {
       if (res.status !== 200) {
         return [];
       }
-      console.log(res, "res");
+
       return res.data;
     })
     .catch((e) => {
@@ -58,4 +50,23 @@ export const getFirmsOptions = ({ cookie }: { cookie?: any }) => {
       return [{ title: "No data", value: "No data" }];
     });
 };
-// /business/my;
+
+export const getCurrentPrincipal = ({ id }: { id: string }) => {
+  return axiosWithCredentials
+    .get(`${API_URL}/api/business/${id}`, {
+      params: {
+        withPrincipial: true,
+      },
+    })
+    .then((res) => {
+      if (res.status !== 200) {
+        return {};
+      }
+      console.log(res?.data?.principial, ":A:A::A:A:A:");
+      return res?.data?.principial;
+    })
+    .catch((err) => {
+      console.log(err, "err getCurrentPrincipal");
+      return {};
+    });
+};

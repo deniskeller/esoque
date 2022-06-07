@@ -1,0 +1,22 @@
+.backdrop {
+  background-color: #ccc;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.3;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 100%;
+  z-index: 110;
+  outline: 0;
+  margin: auto;
+}

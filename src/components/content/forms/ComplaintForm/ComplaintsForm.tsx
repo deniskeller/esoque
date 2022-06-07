@@ -1,40 +1,43 @@
-import React from 'react';
+import React from "react";
 
-import { BaseButton, BaseInput, BaseTextarea } from '@base/index';
-import PhoneInput from '@content/other/PhoneInput/PhoneInput';
+import { BaseButton, BaseInput, BaseTextarea } from "@base/index";
+import PhoneInput from "@content/other/PhoneInput/PhoneInput";
 
-import UploadFile from '@content/other/UploadFileBtn/UploadFileBtn';
-import UploadZoneFile from '@content/other/UploadZoneFile/UploadZoneFile';
+import UploadFile from "@content/other/UploadFileBtn/UploadFileBtn";
+import UploadZoneFile from "@content/other/UploadZoneFile/UploadZoneFile";
 
-import { validateEmail, validateFields } from '@utils/validateInputs';
+import { validateEmail, validateFields } from "@utils/validateInputs";
 
-import styles from './ComplaintsForm.module.scss';
-import { feedbackCompany } from '@api/feedbackForms';
+import styles from "./ComplaintsForm.module.scss";
+import { feedbackCompany } from "@api/feedbackForms";
 
 type TInputs = {
   [key: string]: { [key: string]: string };
 };
 
 const ComplaintsForm = () => {
-  const [email, setEmail] = React.useState<string>('');
+  const [email, setEmail] = React.useState<string>("");
+
   const [emailError, setEmailError] = React.useState<boolean>(false);
   const [files, setFiles] = React.useState<File[]>();
   const [submitSuccess, setSubmitSuccess] = React.useState<boolean>(false);
 
   const [inputs, setInputs] = React.useState<TInputs>({
-    firstName: { value: '', error: '', type: 'string' },
-    phone: { value: '', error: '', type: 'phone' },
-    phoneCode: { value: '', error: '', type: 'phoneCode' },
+    firstName: { value: "", error: "", type: "string" },
+    phone: { value: "", error: "", type: "phone" },
+    phoneCode: { value: "", error: "", type: "phoneCode" },
   });
 
   // Optional input
-  const [desc, setDesc] = React.useState<string>('');
-  const [companyName, setCompanyName] = React.useState<string | number>('');
+  const [desc, setDesc] = React.useState<string>("");
+  const [companyName, setCompanyName] = React.useState<string | number>("");
 
   const changeInputs = (name: string, value: string) => {
     const newInputs = { ...inputs };
     newInputs[name].value = value;
-    newInputs[name].error = '';
+
+    newInputs[name].error = "";
+
     setInputs(newInputs);
   };
 
@@ -44,7 +47,8 @@ const ComplaintsForm = () => {
   };
 
   const uploadDropFile = React.useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles, 'acceptedFiles');
+    console.log(acceptedFiles, "acceptedFiles");
+
     setFiles(acceptedFiles);
   }, []);
 
@@ -104,7 +108,7 @@ const ComplaintsForm = () => {
             type="text"
             name="firstName"
             error={!!inputs.firstName.error}
-            onChange={(value: string) => changeInputs('firstName', value)}
+            onChange={(value: string) => changeInputs("firstName", value)}
             placeholder="Name Surname"
           />
           <BaseInput
@@ -122,9 +126,9 @@ const ComplaintsForm = () => {
               errorPhone={!!inputs.phone.error}
               value={inputs.phone.value}
               onChangeCode={(value: string) => {
-                changeInputs('phoneCode', value);
+                changeInputs("phoneCode", value);
               }}
-              onChangePhone={(value: string) => changeInputs('phone', value)}
+              onChangePhone={(value: string) => changeInputs("phone", value)}
             />
           </div>
           <BaseInput
@@ -152,11 +156,7 @@ const ComplaintsForm = () => {
             </div>
           </div>
           <div className={styles.FormSubmit}>
-            <BaseButton
-              onClick={submitFormData}
-              className={styles.FormSubmitBtn}
-              type="default"
-            >
+            <BaseButton onClick={submitFormData} className={styles.FormSubmitBtn} type="default">
               Submit
             </BaseButton>
           </div>

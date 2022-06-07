@@ -1,0 +1,122 @@
+.BaseInputWrapper {
+  position: relative;
+}
+.BaseInput {
+  position: relative;
+}
+
+.Input {
+  $size: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: em($size);
+  font-weight: 400;
+  color: $black;
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+  background: $input;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: em(10px, $size);
+  vertical-align: middle;
+  padding: 0 em(10px, $size) 0 em(37px, $size);
+  height: em(83px, $size);
+  border: none;
+  @include placeholder-color($placeholder);
+  font-family: $font-Termina;
+  &:focus {
+    border: 2px solid $yellow;
+  }
+  &[type="password"] {
+    font-family: $font-stars;
+  }
+
+  @include iftablet {
+    $size: 17px;
+    font-size: em($size);
+    height: em(62px, $size);
+    border-radius: em(10px, $size);
+  }
+  @include ifmobile {
+    $size: 11px;
+    font-size: em($size);
+    padding: 0 em(17px, $size);
+    height: em(44px, $size);
+    border-radius: em(10px, $size);
+  }
+}
+
+.Error {
+  border: 2px solid $error;
+}
+
+.ErrorText {
+  display: block;
+  font-size: em(16px);
+  line-height: 120%;
+  color: $error;
+  margin-top: em(20px);
+  @include iftablet {
+    font-size: em(12px);
+  }
+  @include ifmobile {
+    font-size: em(9px);
+  }
+}
+
+.Label {
+  font-size: em(19px);
+  line-height: 120%;
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: em(19px);
+  @include iftablet {
+  }
+  @include ifmobile {
+    font-size: em(12px);
+  }
+}
+
+.dateIcon {
+  position: absolute;
+  width: em(50px);
+  height: em(50px);
+  right: em(18px);
+  top: em(12px);
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.calendar {
+  position: absolute;
+  width: 100%;
+  background-color: $white;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.15));
+  border-radius: 10px;
+  z-index: 1;
+  top: 110%;
+}
+.todayBtn {
+  width: 100%;
+  height: em(40px);
+  background: none;
+  border: none;
+  color: $yellow;
+  font-weight: bold;
+  font-size: em(20px);
+  text-align: center;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.BaseInput_Medium {
+  .Input {
+    height: em(62px);
+  }
+}

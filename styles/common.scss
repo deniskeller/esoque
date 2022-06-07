@@ -1,0 +1,29 @@
+.pink {
+  color: $pink;
+  position: relative;
+  * {
+    color: $pink;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: em(-5px);
+    left: 0;
+    height: em(2px);
+    background-color: $pink;
+  }
+  &:hover {
+    &::after {
+      animation: bottomLine 0.7s linear forwards;
+    }
+  }
+}
+
+@keyframes bottomLine {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -27,6 +27,7 @@ export { default as StepBack } from "./other/StepBack/StepBack";
 export { default as CompanyItem } from "./other/CompanyItem/CompanyItem";
 export { default as CheckAvailable } from "./other/CheckAvailable/CheckAvailable";
 export { default as RequestInfoItem } from "./other/RequestInfoItem/RequestInfoItem";
+
 export { default as Accordion } from "./other/AccordionItem/AccordionItem";
 export { default as AccordionCareerItem } from "./other/AccordionCareerItem/AccordionCareerItem";
 
@@ -43,18 +44,25 @@ export { default as RequestSuccessPopup } from "./popup/RequestSuccessPopup/Requ
 export { default as RequestErrorPopup } from "./popup/RequestErrorPopup/RequestErrorPopup";
 
 // app
+export { default as LabelWrapper } from "./other/LabelWrapper/LabelWrapper";
 export { default as AppHeader } from "./AppHeader/AppHeader";
 export { default as FilterSelectTable } from "./other/FilterSelectTable/FilterSelectTable";
 export { default as TitleLine } from "./other/TitleLine/TitleLine";
 export { default as Pagination } from "./other/Pagination/Pagination";
+export { default as WidgetDarksideApp } from "./widgets/WidgetDarksideApp/WidgetDarksideApp";
 
 // tables
 export { default as UserManagmentTable } from "./tables/UserManagmentTable/UserManagmentTable";
-
+export { default as ReassignPrincipalUserTable } from "./tables/ReassignPrincipalUserTable/ReassignPrincipalUserTable";
+export { default as CompanyManagementTable } from "./tables/CompanyManagementTable/CompanyManagementTable";
+export { default as IncorporationTable } from "./tables/IncorporationTable/IncorporationTable";
 // table forms
 export { default as UserDetailsForm } from "./forms/UserDetailsForm/UserDetailsForm";
+export { default as CompanyDetailsForm } from "./forms/CompanyDetailsForm/CompanyDetailsForm";
 
-export { default as AppInput } from "./other/AppInput/AppInput";
-export { default as AppSelect } from "./other/AppSelect/AppSelect";
-
-export { default as AppSearchSelect } from "./other/AppSearchSelect/AppSearchSelect";
+// modals
+export { default as CoreModal } from "./modals/CoreModal/CoreModal";
+export { default as UserManagmentModal } from "./modals/UserManagmentModal/UserManagmentModal";
+export { default as ReassignPrincipalModal } from "./modals/ReassignPrincipalModal/ReassignPrincipalModal";
+export { default as AddNewCompanyModal } from "./modals/AddNewCompanyModal/AddNewCompanyModal";
+export { default as CompanyManagementModal } from "./modals/CompanyManagementModal/CompanyManagementModal";

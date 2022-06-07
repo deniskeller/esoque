@@ -237,7 +237,8 @@
 
 .SelectSearch_Medium {
   .SelectHeader {
-    height: em(57px);
+    height: em(69px);
+
     p {
       font-size: em(18px);
     }
@@ -245,6 +246,7 @@
   .SelectSearch {
     min-height: em(59px);
     font-size: em(18px);
+
     padding-left: em(100px);
   }
   .IconSearch {
@@ -255,7 +257,7 @@
     margin-top: em(20px);
   }
   .SelectList {
-    top: em(65px);
+    top: 105%;
   }
   .Li {
     height: em(59px);

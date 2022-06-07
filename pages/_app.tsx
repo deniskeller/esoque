@@ -18,46 +18,43 @@ import "../styles/globals.scss";
 import "../i18next";
 
 class WrappedApp extends App<AppInitialProps> {
-  public static getInitialProps = wrapper.getInitialAppProps(
-    (store) =>
-      async ({ Component, ctx }) => {
-        const cookies = ctx.req ? ctx.req.headers.cookie : undefined;
+  public static getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
+    const cookies = ctx.req ? ctx.req.headers.cookie : undefined;
 
-        let userCookie = undefined;
-        let isAuth;
+    let userCookie = undefined;
+    let isAuth;
 
-        if (cookies) {
-          userCookie = parseCookie(cookies, "access");
-        }
+    if (cookies) {
+      userCookie = parseCookie(cookies, "access");
+    }
 
-        console.log(userCookie, "userCookie");
+    console.log(userCookie, "userCookie");
 
-        if (userCookie) {
-          const userData = await checkToken(cookies);
+    if (userCookie) {
+      const userData = await checkToken(cookies);
 
-          console.log(userData, "userData");
-          if (userData) {
-            store.dispatch(userActions.setUserData({ userData }));
-            store.dispatch(userActions.setUser({ isAuthenificated: true }));
-            store.dispatch(userActions.setRole({ role: UserRoles.admin }));
-          }
-
-          isAuth = store.getState().user.isAuthenificated;
-          // store.dispatch(END);
-        }
-
-        console.log(isAuth, "isAuth - _app.tsx");
-        return {
-          pageProps: {
-            ...(Component.getInitialProps
-              ? await Component.getInitialProps(ctx)
-              : {}),
-            appProp: ctx.pathname,
-            isAuth,
-          },
-        };
+      console.log(userData, "userData");
+      if (userData) {
+        store.dispatch(userActions.setUserData({ userData }));
+        store.dispatch(userActions.setUser({ isAuthenificated: true }));
+        store.dispatch(userActions.setRole({ role: UserRoles.admin }));
       }
-  );
+
+      isAuth = store.getState().user.isAuthenificated;
+      // store.dispatch(END);
+    }
+
+    console.log(isAuth, "isAuth - _app.tsx");
+
+    return {
+      pageProps: {
+        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+
+        appProp: ctx.pathname,
+        isAuth,
+      },
+    };
+  });
 
   public render() {
     const { Component, pageProps } = this.props;
@@ -65,10 +62,7 @@ class WrappedApp extends App<AppInitialProps> {
     return (
       <>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
           <meta name="keywords" content="Esoque" />
           <meta name="author" content="Esoque" />
           <meta name="description" content="Esoque" />

@@ -1,22 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import {
-  BaseButton,
-  BaseCheckbox,
-  BaseInput,
-  BaseText,
-  BaseTextarea,
-  BaseTitle,
-} from '@base/index';
+import { BaseButton, BaseCheckbox, BaseInput, BaseText, BaseTextarea, BaseTitle } from "@base/index";
 
-import UploadFile from '@content/other/UploadFileBtn/UploadFileBtn';
-import UploadZoneFile from '@content/other/UploadZoneFile/UploadZoneFile';
+import UploadFile from "@content/other/UploadFileBtn/UploadFileBtn";
+import UploadZoneFile from "@content/other/UploadZoneFile/UploadZoneFile";
 
-import styles from './FormContactUs.module.scss';
-import PhoneInput from '@content/other/PhoneInput/PhoneInput';
-import { validateEmail, validateFields } from '@utils/validateInputs';
-import { feedbackFull } from '@api/feedbackForms';
-import Link from 'next/link';
+import styles from "./FormContactUs.module.scss";
+import PhoneInput from "@content/other/PhoneInput/PhoneInput";
+import { validateEmail, validateFields } from "@utils/validateInputs";
+import { feedbackFull } from "@api/feedbackForms";
+import Link from "next/link";
 
 type TInputs = {
   [key: string]: { [key: string]: string };
@@ -24,7 +17,9 @@ type TInputs = {
 
 const FormContactUs = () => {
   const [files, setFiles] = React.useState<File[]>();
-  const [email, setEmail] = React.useState<string>('');
+
+  const [email, setEmail] = React.useState<string>("");
+
   const [emailError, setEmailError] = React.useState<boolean>(false);
 
   const [isConfirm, setIsConfirm] = React.useState<boolean>(false);
@@ -37,19 +32,21 @@ const FormContactUs = () => {
   const [apply, setApply] = React.useState<boolean>(false);
 
   const [inputs, setInputs] = React.useState<TInputs>({
-    firstName: { value: '', error: '', type: 'string' },
-    lastName: { value: '', error: '', type: 'string' },
-    phone: { value: '', error: '', type: 'phone' },
-    phoneCode: { value: '', error: '', type: 'phoneCode' },
+    firstName: { value: "", error: "", type: "string" },
+    lastName: { value: "", error: "", type: "string" },
+    phone: { value: "", error: "", type: "phone" },
+    phoneCode: { value: "", error: "", type: "phoneCode" },
   });
 
   // Optional input
-  const [desc, setDesc] = React.useState<string>('');
+  const [desc, setDesc] = React.useState<string>("");
 
   const changeInputs = (name: string, value: string) => {
     const newInputs = { ...inputs };
     newInputs[name].value = value;
-    newInputs[name].error = '';
+
+    newInputs[name].error = "";
+
     setInputs(newInputs);
   };
 
@@ -60,7 +57,8 @@ const FormContactUs = () => {
   };
 
   const uploadDropFile = React.useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles, 'acceptedFiles');
+    console.log(acceptedFiles, "acceptedFiles");
+
     setFiles(acceptedFiles);
   }, []);
 
@@ -88,7 +86,8 @@ const FormContactUs = () => {
       const res = await feedbackFull(data);
       if (res) {
         setSubmitSuccess(true);
-        alert('Успешно');
+
+        alert("Успешно");
       }
     }
 
@@ -118,8 +117,7 @@ const FormContactUs = () => {
       <div className={styles.Form}>
         <BaseTitle className={styles.FormTitle}>Contact us</BaseTitle>
         <BaseText className={styles.FormSubTitle}>
-          Please feel free to contact or ask your questions. We are happy to
-          help!
+          Please feel free to contact or ask your questions. We are happy to help!
         </BaseText>
         {!apply ? (
           <>
@@ -131,7 +129,7 @@ const FormContactUs = () => {
                 placeholder="First Name"
                 value={inputs.firstName.value}
                 error={inputs.firstName.error}
-                onChange={(value: string) => changeInputs('firstName', value)}
+                onChange={(value: string) => changeInputs("firstName", value)}
               />
               <BaseInput
                 className={styles.Input}
@@ -140,7 +138,7 @@ const FormContactUs = () => {
                 placeholder="Last Name"
                 value={inputs.lastName.value}
                 error={inputs.lastName.error}
-                onChange={(value: string) => changeInputs('lastName', value)}
+                onChange={(value: string) => changeInputs("lastName", value)}
               />
             </div>
             <div className={styles.Row}>
@@ -159,20 +157,13 @@ const FormContactUs = () => {
                   errorPhone={Boolean(inputs.phone.error)}
                   value={inputs.phone.value}
                   onChangeCode={(value: string) => {
-                    changeInputs('phoneCode', value);
+                    changeInputs("phoneCode", value);
                   }}
-                  onChangePhone={(value: string) =>
-                    changeInputs('phone', value)
-                  }
+                  onChangePhone={(value: string) => changeInputs("phone", value)}
                 />
               </div>
             </div>
-            <BaseTextarea
-              className={styles.Textarea}
-              placeholder="Type here.."
-              value={desc}
-              onChange={setDesc}
-            />
+            <BaseTextarea className={styles.Textarea} placeholder="Type here.." value={desc} onChange={setDesc} />
             <div className={styles.Row}>
               <div className={styles.FormFiles}>
                 <div className={styles.FormFilesName}>
@@ -187,8 +178,8 @@ const FormContactUs = () => {
             <div className={styles.CheckBoxContainer}>
               <BaseCheckbox checkboxValue={isConfirm} onClick={setIsConfirm} />
               <div className={styles.CheckBoxText}>
-                I confirm that I have read and expressly understand how my
-                personal data will be used for the purposes described in{' '}
+                I confirm that I have read and expressly understand how my personal data will be used for the purposes
+                described in{" "}
                 <Link href="/privacy_policy">
                   <a>Privacy Policy</a>
                 </Link>
@@ -196,12 +187,10 @@ const FormContactUs = () => {
               </div>
             </div>
 
-            <div
-              className={`${styles.CheckBoxContainer} ${styles.CheckBoxContainer2}`}
-            >
+            <div className={`${styles.CheckBoxContainer} ${styles.CheckBoxContainer2}`}>
               <BaseCheckbox checkboxValue={isRead} onClick={setIsRead} />
               <div className={styles.CheckBoxText}>
-                I&apos;ve read and understand the{' '}
+                I&apos;ve read and understand the{" "}
                 <Link href="/privacy_policy">
                   <a>Privacy Policy</a>
                 </Link>
@@ -209,11 +198,7 @@ const FormContactUs = () => {
               </div>
             </div>
 
-            <BaseButton
-              disabled={disabled}
-              className={styles.SubmitBtn}
-              onClick={submitFormData}
-            >
+            <BaseButton disabled={disabled} className={styles.SubmitBtn} onClick={submitFormData}>
               Apply
             </BaseButton>
           </>

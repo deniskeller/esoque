@@ -88,10 +88,9 @@ export const signupSlice = createSlice({
       state.phone.countryCode = countryCode;
       state.phone.error = error;
     },
-    startVerifyPhoneCode: (
-      state,
-      { payload }: PayloadAction<CheckVerifyPhoneCode>
-    ) => {},
+
+    startVerifyPhoneCode: (state, { payload }: PayloadAction<CheckVerifyPhoneCode>) => {},
+
     setPhoneCode: (state, { payload }: PayloadAction<SetPhoneCode>) => {
       const { value, error } = payload;
       state.phoneCode.value = value;
@@ -108,18 +107,15 @@ export const signupSlice = createSlice({
       state.pesonalData = payload;
       state.step = step + 1;
     },
-    setPesonalAddress: (
-      state,
-      { payload }: PayloadAction<SetPesonalAddress>
-    ) => {
+
+    setPesonalAddress: (state, { payload }: PayloadAction<SetPesonalAddress>) => {
       const step = current(state).step;
       state.personalAddress = payload;
       state.step = step + 1;
     },
-    startSetBusiness: (
-      state,
-      { payload }: PayloadAction<SetBusinessData>
-    ) => {},
+
+    startSetBusiness: (state, { payload }: PayloadAction<SetBusinessData>) => {},
+
     setBusiness: (state, { payload }: PayloadAction<SetBusinessData>) => {
       state.bussiness = payload;
     },

@@ -1,0 +1,78 @@
+.wrapper {
+  max-width: em(570px);
+  width: 100%;
+  padding: em(59px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  margin: auto;
+  box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.45);
+  border-radius: em(10px);
+}
+.activeModal {
+  animation: modalOpen 0.5s;
+}
+.close {
+  position: absolute;
+  top: em(20px);
+  right: em(25px);
+  font-size: em(25px);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: $black3;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.textBlock {
+  margin-bottom: em(56px);
+}
+.title {
+  * {
+    font-weight: 700;
+    font-size: em(30px);
+
+    color: $black;
+  }
+  text-align: center;
+  margin-bottom: em(16px);
+}
+.description {
+  * {
+    font-weight: 600;
+    font-size: em(20px);
+    line-height: em(18px);
+    letter-spacing: -5%;
+    color: $black;
+    text-align: center;
+  }
+}
+.btnGroup {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  max-width: 100%;
+  * {
+    font-size: em(15px);
+    font-weight: 600;
+  }
+}
+
+.btnCancel {
+  width: em(132px);
+  height: em(49px);
+}
+
+.btnReassign {
+  width: em(156px);
+  height: em(49px);
+}
+
+@keyframes modalOpen {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

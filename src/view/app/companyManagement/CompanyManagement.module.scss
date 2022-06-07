@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: em(153px);
+}
+.titleTable {
+  margin-bottom: em(40px);
+  margin-top: em(60px);
+}
+.btn {
+  * {
+    width: em(369px);
+    height: em(62px);
+    margin-bottom: em(40px);
+    font-size: em(20px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

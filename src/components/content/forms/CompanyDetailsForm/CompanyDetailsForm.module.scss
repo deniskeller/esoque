@@ -1,0 +1,130 @@
+.wrapper {
+  color: $black3;
+}
+.rowTitle {
+  margin-bottom: em(32px);
+}
+.requareText {
+  width: 100%;
+  text-align: right;
+  color: $pink;
+  font-size: em(17px);
+  margin-bottom: em(8px);
+}
+.firmName {
+  font-size: em(19px);
+  text-transform: uppercase;
+  margin-bottom: em(36px);
+  :last-child {
+    margin-left: em(28px);
+  }
+}
+.lineInputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: em(36px);
+}
+.input {
+  position: relative;
+  max-width: em(531px);
+  width: 100%;
+}
+.emailDescription {
+  font-size: em(17px);
+  opacity: 0.3;
+  margin-bottom: em(36px);
+  line-height: em(20px);
+}
+
+.firmStatus {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: em(60px);
+  > span {
+    font-size: em(17px);
+    opacity: 0.3;
+    line-height: em(20px);
+    max-width: em(517px);
+    width: 100%;
+  }
+}
+
+.disabled {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: not-allowed;
+  }
+}
+
+.permissions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: em(60px);
+}
+
+.advanced {
+  display: flex;
+  align-items: center;
+  margin-bottom: em(58px);
+  span {
+    margin-right: em(36px);
+    font-size: em(19px);
+  }
+  .advancedCheckbox {
+    position: relative;
+    .advancedCheckboxIcon {
+      z-index: 100;
+      position: absolute;
+      width: em(32px);
+      height: em(32px);
+      right: -120%;
+      top: -30%;
+    }
+  }
+}
+
+.applicationsList {
+  display: flex;
+  justify-content: space-between;
+  .applicationsListItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      font-weight: bold;
+      font-size: em(17px);
+      margin-bottom: em(10px);
+    }
+  }
+}
+
+.groupBtn {
+  display: flex;
+  justify-content: center;
+  gap: em(31px);
+}
+
+.btnCancel {
+  width: em(218px);
+  height: em(62px);
+}
+
+.btnSave {
+  width: em(309px);
+  height: em(62px);
+  button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.btnCancel,
+.btnSave {
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,9 +1,17 @@
 import React from "react";
 
-import { AppInput, AppSelect, AppSearchSelect, TitleLine } from "@content/index";
+import { TitleLine, LabelWrapper } from "@content/index";
 
 import styles from "./UserDetailsForm.module.scss";
-import { BaseButton, BaseSingleCheckboxApp, BaseIcon, BaseCheckbox } from "@base/index";
+import {
+  BaseButton,
+  BaseSingleCheckboxApp,
+  BaseIcon,
+  BaseCheckbox,
+  BaseSelectApp,
+  BaseInputApp,
+  BaseSearchSelectApp,
+} from "@base/index";
 
 import { ALL_ICONS } from "@constants/icons";
 
@@ -17,9 +25,15 @@ import { actions } from "@store/app/userDetails/reducer";
 import { useRouter } from "next/router";
 import { IUserDetailsData } from "@store/app/userDetails/types";
 
+import useModal from "@hooks/useModal";
+import UserManagmentModal from "@content/modals/UserManagmentModal/UserManagmentModal";
+import { deleteUser } from "@api/app/manage_users/detailsUser";
+
 const userStatus = [
   { title: "Disabled", value: "Disabled" },
   { title: "Enabled", value: "Enabled" },
+
+  { title: "Deleted", value: "Deleted" },
 ];
 
 type Props = {};
@@ -34,12 +48,12 @@ type Status = {
 };
 
 const UserDetailsForm: React.FC<Props> = () => {
+  const { isShowing, toggle } = useModal();
+
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const { details, currentFirm } = useSelector((state: EsoqueState) => state.userDetails);
-
-  console.log(details, "details");
+  const { details, currentFirm, fieldErrors, success } = useSelector((state: EsoqueState) => state.userDetails);
 
   // Firm status
   const [status, setStatus] = React.useState<Status>({
@@ -60,11 +74,16 @@ const UserDetailsForm: React.FC<Props> = () => {
   });
 
   // Permissions
-  const [canManageUsers, setCanManageUsers] = React.useState<boolean>(false);
-  const [checkBoxs, setCheckBoxs] = React.useState<string>("");
+
+  const [canManageUsers, setCanManageUsers] = React.useState<boolean>(details?.canManageUsers || false);
+  const [checkBoxs, setCheckBoxs] = React.useState<string>(details?.permission || "readOnly");
 
   // Handlers
   const onChangeInputs = (name: string, value: string) => {
+    if (inputs[name].error) {
+      dispatch(actions.setError({ errors: { ...fieldErrors, [name]: "" } }));
+    }
+
     const newInputs = { ...inputs };
     newInputs[name].value = value;
     newInputs[name].error = "";
@@ -75,8 +94,23 @@ const UserDetailsForm: React.FC<Props> = () => {
     router.back();
   };
 
+  const onDeleteUser = async (id: string) => {
+    if (status.value === "Deleted") {
+      const res = await deleteUser(id);
+      res ? router.back() : alert("Ошибка удаления юзера");
+    }
+  };
+
   // Save \ Create user
   const onSubmit = () => {
+    // Удаление юзера
+    if (status.value === "Deleted") {
+      toggle();
+      return;
+    }
+
+    // Validate
+
     const { newObj, errors } = validateFields(inputs);
 
     // check repeatEmail
@@ -100,8 +134,19 @@ const UserDetailsForm: React.FC<Props> = () => {
 
       if (details?.firm) {
         // Update data users
-        dispatch(actions.sendUserDetails(newDetails));
+
+        // Change status
+        newDetails.status = status.value;
+
+        dispatch(
+          actions.updateUserDetails({
+            details: newDetails,
+            id: details?.id,
+          })
+        );
       } else {
+        // Create new user
+
         newDetails.firm = currentFirm.value;
         dispatch(actions.sendUserDetails(newDetails));
       }
@@ -109,6 +154,23 @@ const UserDetailsForm: React.FC<Props> = () => {
 
     setInputs(newObj);
   };
+
+  React.useEffect(() => {
+    if (success) {
+      // Open modal
+      toggle();
+    }
+  }, [success]);
+
+  React.useEffect(() => {
+    if (fieldErrors) {
+      setInputs((prev) => ({
+        ...prev,
+        email: { ...prev.email, error: fieldErrors.email },
+        telephoneNumber: { ...prev.telephoneNumber, error: fieldErrors.phone },
+      }));
+    }
+  }, [fieldErrors]);
 
   return (
     <div className={styles.wrapper}>
@@ -122,150 +184,148 @@ const UserDetailsForm: React.FC<Props> = () => {
       </div>
       <div className={styles.userForm}>
         <div className={styles.lineInputs}>
-          <AppSelect
-            label="TITLE"
-            placeholder="Title"
-            className={styles.input}
-            isRequared={true}
-            inputSize="Medium"
-            options={userTitles}
-            selectedValue={inputs.title.value}
-            error={Boolean(inputs?.title.error)}
-            onChange={(value: string) => onChangeInputs("title", value)}
-          />
-          <AppInput
-            inputSize="Small"
-            value={inputs?.firstName?.value}
-            isRequared={true}
-            label="FIRST NAME"
-            placeholder="First name"
-            name="firstName"
-            type="text"
-            className={styles.input}
-            error={Boolean(inputs?.firstName.error)}
-            onChange={(value: string) => onChangeInputs("firstName", value)}
-          />
+          <LabelWrapper className={styles.input} label="TITLE" isRequared={true}>
+            <BaseSelectApp
+              selectedValue={inputs.title.value}
+              className={styles.select}
+              placeholder="Title"
+              inputSize="Medium"
+              onChange={(value: string) => onChangeInputs("title", value)}
+              options={userTitles}
+              error={Boolean(inputs?.title.error)}
+            />
+          </LabelWrapper>
+
+          <LabelWrapper className={styles.input} label="TITLE" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs?.firstName.error)}
+              type="text"
+              value={inputs?.firstName?.value}
+              name="firstName"
+              className={styles.input}
+              placeholder="First name"
+              onChange={(value: string) => onChangeInputs("firstName", value)}
+            />
+          </LabelWrapper>
         </div>
         <div className={styles.lineInputs}>
-          <AppInput
-            inputSize="Small"
-            value={inputs?.lastName?.value}
-            isRequared={true}
-            label="LAST NAME"
-            placeholder="Last name"
-            name="lastName"
-            type="text"
-            className={styles.input}
-            error={Boolean(inputs?.lastName.error)}
-            onChange={(value: string) => onChangeInputs("lastName", value)}
-          />
-          <AppInput
-            inputSize="Small"
-            value={inputs?.jobTitle?.value}
-            isRequared={true}
-            label="JOB TITLE"
-            placeholder="Job Title"
-            name="jobTitle"
-            type="text"
-            className={styles.input}
-            error={Boolean(inputs?.jobTitle.error)}
-            onChange={(value: string) => onChangeInputs("jobTitle", value)}
-          />
+          <LabelWrapper className={styles.input} label="LAST NAME" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs?.lastName.error)}
+              type="text"
+              value={inputs?.lastName?.value}
+              name="lastName"
+              placeholder="Last name"
+              onChange={(value: string) => onChangeInputs("lastName", value)}
+            />
+          </LabelWrapper>
+
+          <LabelWrapper className={styles.input} label="JOB TITLE" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs?.jobTitle.error)}
+              type="text"
+              value={inputs?.jobTitle?.value}
+              name="jobTitle"
+              placeholder="Job Title"
+              onChange={(value: string) => onChangeInputs("jobTitle", value)}
+            />
+          </LabelWrapper>
         </div>
         <div className={styles.lineInputs}>
-          <AppInput
-            inputSize="Small"
-            label="EMAIL ADDRESS"
-            placeholder="Email address"
-            className={styles.input}
-            isRequared={true}
-            value={inputs?.email.value}
-            name="email"
-            type="text"
-            error={Boolean(inputs.email.error)}
-            onChange={(value: string) => onChangeInputs("email", value)}
-          />
-          <AppInput
-            label="CONFIRM EMAIL ADDRESS"
-            placeholder="Email Address"
-            inputSize="Small"
-            className={styles.input}
-            isRequared={true}
-            value={inputs?.repeatEmail?.value}
-            name="email"
-            type="text"
-            error={Boolean(inputs?.repeatEmail.error)}
-            onChange={(value: string) => onChangeInputs("repeatEmail", value)}
-          />
+          <LabelWrapper className={styles.input} label="EMAIL ADDRESS" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs.email.error)}
+              type="text"
+              value={inputs?.email.value}
+              name="email"
+              placeholder="Email address"
+              onChange={(value: string) => onChangeInputs("email", value)}
+            />
+          </LabelWrapper>
+
+          <LabelWrapper className={styles.input} label="CONFIRM EMAIL ADDRESS" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs?.repeatEmail.error)}
+              type="text"
+              value={inputs?.repeatEmail?.value}
+              name="email"
+              placeholder="Email Address"
+              onChange={(value: string) => onChangeInputs("repeatEmail", value)}
+            />
+          </LabelWrapper>
         </div>
         <div className={styles.emailDescription}>
           Your email address will be your username. <br />
-          Please enter an individual address rather ran a group or consolidated email
-          address.
+          Please enter an individual address rather ran a group or consolidated email address.
         </div>
         <div className={styles.lineInputs}>
-          <AppSearchSelect
-            label="PHONE COUNTRY CODE"
-            placeholder="Select an Option"
-            className={styles.input}
-            isRequared={true}
-            inputSize="Medium"
-            options={phoneCodes}
-            selectedValue={inputs?.countryCode?.value}
-            error={Boolean(inputs?.countryCode.error)}
-            onChange={(value: string) => onChangeInputs("countryCode", value)}
-          />
-          <AppInput
-            label="TELEPHONE NUMBER"
-            placeholder="Phone number"
-            inputSize="Small"
-            className={styles.input}
-            isRequared={true}
-            value={inputs?.telephoneNumber?.value}
-            name="phone"
-            type="text"
-            error={Boolean(inputs?.telephoneNumber.error)}
-            onChange={(value: string) => onChangeInputs("telephoneNumber", value)}
-          />
+          <LabelWrapper className={styles.input} label="PHONE COUNTRY CODE" isRequared={true}>
+            <BaseSearchSelectApp
+              error={Boolean(inputs?.countryCode.error)}
+              placeholder="Select an Option"
+              onChange={(value: string) => onChangeInputs("countryCode", value)}
+              options={phoneCodes}
+              inputSize="Medium"
+              selectedValue={inputs?.countryCode?.value}
+            />
+          </LabelWrapper>
+
+          <LabelWrapper className={styles.input} label="TELEPHONE NUMBER" isRequared={true}>
+            <BaseInputApp
+              inputSize="Medium"
+              error={Boolean(inputs?.telephoneNumber.error)}
+              type={"text"}
+              value={inputs?.telephoneNumber?.value}
+              name="phone"
+              placeholder="Phone number"
+              onChange={(value: string) => onChangeInputs("telephoneNumber", value)}
+            />
+          </LabelWrapper>
         </div>
       </div>
       {/* Firm status */}
       <>
         <TitleLine type="yellow" text="Firm Status" className={styles.rowTitle} />
         <div className={styles.firmStatus}>
-          <AppSelect
+          <LabelWrapper
+            className={`${styles.input} ${!details?.lastLogged ? styles.disabled : ""}`}
             label="STATUS"
-            placeholder="Disabled"
-            className={`${styles.input} ${!details?.status ? styles.disabled : ""}`}
             isRequared={true}
-            inputSize="Medium"
-            options={userStatus}
-            selectedValue={details?.status ? status.value : ""}
-            onChange={(value: string) => setStatus({ value, error: "" })}
-          />
+          >
+            <BaseSelectApp
+              selectedValue={details?.status ? status.value : ""}
+              placeholder="Disabled"
+              inputSize="Medium"
+              onChange={(value: string) => {
+                if (details?.lastLogged) setStatus({ value, error: "" });
+              }}
+              options={userStatus}
+              error={Boolean(inputs?.title.error)}
+            />
+          </LabelWrapper>
+
           <span className={styles.firmStatusDesc}>
-            Your email address will be your username. Please enter an individual address
-            rather ran a group or consolidated email address.
+            Your email address will be your username. Please enter an individual address rather ran a group or
+            consolidated email address.
           </span>
         </div>
       </>
       {/* Permissions */}
       <>
-        <TitleLine
-          type="yellow"
-          text="Applications Permissions"
-          className={styles.rowTitle}
-        />
+        <TitleLine type="yellow" text="Applications Permissions" className={styles.rowTitle} />
+
         <div className={styles.permissions}>
           <div className={styles.advanced}>
             <span>Enable Advanced User Management</span>
             <div className={styles.advancedCheckbox}>
               <BaseCheckbox checkboxValue={canManageUsers} onClick={setCanManageUsers} />
-              <BaseIcon
-                className={styles.advancedCheckboxIcon}
-                icon={ALL_ICONS.INFO_ICON}
-                viewBox="0 0 32 33"
-              />
+
+              <BaseIcon className={styles.advancedCheckboxIcon} icon={ALL_ICONS.INFO_ICON} viewBox="0 0 32 33" />
             </div>
           </div>
 
@@ -300,17 +360,21 @@ const UserDetailsForm: React.FC<Props> = () => {
       </>
 
       <div className={styles.groupBtn}>
-        <BaseButton
-          className={styles.btn}
-          type="success_black"
-          onClick={cancelCreateUser}
-        >
+        <BaseButton className={styles.btn} type="success_black" onClick={cancelCreateUser}>
           Cancel
         </BaseButton>
         <BaseButton className={styles.btn} onClick={onSubmit}>
           {details?.id ? "Save" : "Create"}
         </BaseButton>
       </div>
+
+      <UserManagmentModal
+        isShowing={isShowing}
+        hide={toggle}
+        option={status.value === "Deleted" ? "delete" : "save"}
+        onSave={cancelCreateUser}
+        onDeleteUser={() => onDeleteUser(details?.id)}
+      />
     </div>
   );
 };

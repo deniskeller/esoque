@@ -12,8 +12,6 @@ type TFeedbackCompany = {
 };
 
 export const feedbackCompany = (data: TFeedbackCompany) => {
-  console.log(data, "data");
-
   let formData = new FormData();
 
   Object.entries(data).forEach((el) => {

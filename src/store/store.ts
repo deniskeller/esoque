@@ -14,11 +14,14 @@ import { modalSlice } from "@store/modals/reducer";
 import { widgetDoxSlice } from "@store/widgetDox/reducer";
 import { userDetailsSlice } from "@store/app/userDetails/reducer";
 
+import { companyDetailsSlice } from "./app/companyDetails/reducer";
+
 // Saga
 import { contentSaga } from "@store/content/saga";
 import { signupSaga } from "@store/signup/saga";
 import { loginSaga } from "@store/login/saga";
 import { userDetailsSaga } from "@store/app/userDetails/saga";
+import { companyDetailsSaga } from "./app/companyDetails/saga";
 
 export interface SagaStore extends Store {
   sagaTask?: Task;
@@ -29,6 +32,7 @@ export function* rootSaga() {
   yield fork(signupSaga);
   yield fork(loginSaga);
   yield fork(userDetailsSaga);
+  yield fork(companyDetailsSaga);
 }
 
 const combinedReducer = combineReducers({
@@ -39,6 +43,7 @@ const combinedReducer = combineReducers({
   modals: modalSlice.reducer,
   widgetDox: widgetDoxSlice.reducer,
   userDetails: userDetailsSlice.reducer,
+  companyDetails: companyDetailsSlice.reducer,
 });
 
 export type EsoqueState = ReturnType<typeof combinedReducer>;

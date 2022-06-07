@@ -11,6 +11,9 @@ export { default as BaseSearchSelect } from "./BaseSearchSelect/BaseSearchSelect
 export { default as BaseCheckbox } from "./BaseCheckbox/BaseCheckbox";
 export { default as BaseTextarea } from "./BaseTextarea/BaseTextarea";
 export { default as BaseRadioButton } from "./BaseRadioButton/BaseRadioButton";
+
+export { default as BaseDatePicker } from "./BaseDatePicker/BaseDatePicker";
+
 export { default as BaseInputApp } from "./BaseInputApp/BaseInputApp";
 export { default as BaseSelectApp } from "./BaseSelectApp/BaseSelectApp";
 export { default as BaseSearchSelectApp } from "./BaseSearchSelectApp/BaseSearchSelectApp";

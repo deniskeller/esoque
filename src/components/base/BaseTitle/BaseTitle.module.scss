@@ -6,7 +6,8 @@
 
   &_h1 {
     @include ifdesktop {
-      font-size: em(69px);
+      font-size: em(54px);
+      // font-size: em(69px);
     }
 
     @include iftablet {
@@ -22,7 +23,8 @@
     text-decoration: underline;
     font-weight: bold;
     @include ifdesktop {
-      font-size: em(50px);
+      font-size: em(40px);
+      // font-size: em(50px);
       font-weight: 700;
     }
 

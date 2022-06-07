@@ -20,7 +20,6 @@ interface Props {
 const BaseInput: React.FC<Props> = ({
   value,
   label,
-
   type,
   error,
   name,
@@ -39,18 +38,14 @@ const BaseInput: React.FC<Props> = ({
       <input
         value={value}
         type={type}
-        className={`${styles.Input} ${styles.Input} ${
-          error ? styles.Error : ""
-        }`}
+        className={`${styles.Input} ${styles.Input} ${error ? styles.Error : ""}`}
         name={name}
         min={min}
         max={max}
         placeholder={placeholder}
         required={required}
         autoComplete={autocomplete}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.target.value)
-        }
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
         onKeyDown={onKeyDown}
       />
       {error ? <div className={styles.ErrorText}>{error}</div> : ""}

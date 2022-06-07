@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import {
-  BaseButton,
-  BaseInput,
-  BaseSearchSelect,
-  BaseText,
-  BaseTitle,
-} from "@base/index";
+
+import { BaseButton, BaseInput, BaseSearchSelect, BaseText, BaseTitle } from "@base/index";
 import styles from "./NinthStep.module.scss";
 import { LinkHome, StepBack } from "@content/index";
 import { SetBusinessData } from "@store/signup/types";
@@ -29,18 +24,9 @@ type Inputs = {
   };
 };
 
-const mockCountry = [
-  { title: "America" },
-  { title: "Canada" },
-  { title: "Cyprus" },
-  { title: "Russia" },
-];
+const mockCountry = [{ title: "America" }, { title: "Canada" }, { title: "Cyprus" }, { title: "Russia" }];
 
-const mockBusinessType = [
-  { title: "Trade" },
-  { title: "Services" },
-  { title: "Production" },
-];
+const mockBusinessType = [{ title: "Trade" }, { title: "Services" }, { title: "Production" }];
 
 const NinthStep: React.FC<Props> = ({
   country,

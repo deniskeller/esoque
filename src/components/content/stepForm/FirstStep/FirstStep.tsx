@@ -16,6 +16,7 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
   const [textError, setTextError] = useState(error);
 
   const changeHandlerPhone = (value: string) => {
+    setTextError("");
     setEmailInput(value);
   };
 
@@ -35,9 +36,7 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
   return (
     <form action="" method="post" className={styles.Email}>
       <BaseTitle className={styles.Title}>Enter your email</BaseTitle>
-      <BaseText className={styles.Subtitle}>
-        This address will be associated with your Company’s profile.
-      </BaseText>
+      <BaseText className={styles.Subtitle}>This address will be associated with your Company’s profile.</BaseText>
 
       <BaseInput
         // label='Email'

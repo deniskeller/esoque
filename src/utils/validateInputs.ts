@@ -35,8 +35,7 @@ export const dateMask = (birtday: string) => {
       res = value.slice(0, 2) + "/" + value.slice(2);
     }
     if (value.length >= 4) {
-      res =
-        value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4, 8);
+      res = value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4, 8);
     }
   } else {
     res = value;
@@ -138,8 +137,9 @@ export const validateInput = (value: string, type: string) => {
   const validation: Validation = {
     string: /[a-zA-Z0-9]/,
     number: /^\d+$/,
-    phone: /^.{4,16}$/,
+    phone: /^[0-9]{4,16}$/,
     phoneCode: /[0-9\-\+\ \.]/,
+    date: /[0-9\-\+\ \.]/,
     email:
       /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/,
   };

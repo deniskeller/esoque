@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: em(153px);
+}
+.titlePage {
+  margin-bottom: em(25px);
+}
+.title {
+  padding-left: em(33px);
+  margin-bottom: em(51px);
+  * {
+    font-weight: 700;
+    font-size: em(17px);
+    line-height: em(15.22px);
+    letter-spacing: -5%;
+    color: $pink;
+  }
+}
+.userInfo {
+  min-width: em(550px);
+  margin: 0 auto;
+  margin-bottom: em(106px);
+  * {
+    white-space: nowrap;
+    font-size: em(17px);
+  }
+  .userInfoRow {
+    margin-bottom: em(40px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span:first-child {
+      display: inline-block;
+      font-weight: bold;
+      max-width: em(190px);
+      width: 100%;
+    }
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: em(30px);
+  margin-bottom: em(88px);
+}
+
+.btnGroup {
+  max-width: em(400px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.btn {
+  width: em(193px);
+  height: em(63px);
+  * {
+    font-size: em(20px);
+    font-weight: 600;
+    line-height: em(24px);
+  }
+}

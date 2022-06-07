@@ -5,10 +5,18 @@ import styles from "./UploadZoneFile.module.scss";
 
 interface IProps {
   onDrop: (files: File[]) => void;
+  isMultiple?: boolean
 }
 
-const UploadZoneFile: React.FC<IProps> = ({ onDrop }): JSX.Element => {
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+const UploadZoneFile: React.FC<IProps> = ({ onDrop, isMultiple }): JSX.Element => {
+  function onDropFunc(files: File[]){
+    if (files.length > 1 && isMultiple === false){
+      onDrop([files[0]])
+    }else{
+      onDrop(files)
+    }
+  }
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop: onDropFunc });
   return (
     <div
       className={`${styles.Wrapper} ${isDragActive ? styles.Active : ""}`}

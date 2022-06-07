@@ -19,5 +19,12 @@ export { default as PaymentSoftware } from "./landing/paymentSoftware/PaymentSof
 export { default as SupportServices } from "./landing/supportServices/SupportServices";
 export { default as News } from "./landing/newsAndInsights/NewsAndInsights";
 export { default as Careers } from "./landing/careers/Careers";
+
 //app
 export { default as HomeApp } from "./app/homeApp/HomeApp";
+export { default as ManageFirmUsers } from "./app/manageUsers/ManageFirmUsers";
+export { default as UserDetail } from "./app/userDetail/UserDetail";
+export { default as ReassingPrincipalUser } from "./app/reassingPrincipalUser/ReassingPrincipalUser";
+export { default as CompanyManagement } from "./app/companyManagement/CompanyManagement";
+export { default as EditCompany } from "./app/editCompany/EditCompany";
+export { default as DocumentsAndVerification } from "./app/documentsAndVerification/DocumentsAndVerification";
