@@ -426,7 +426,8 @@
     // padding-top: em(525px);
     // padding-bottom: em(403px);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    // flex-direction: row;
     justify-content: center;
     align-items: center;
 
@@ -445,7 +446,7 @@
       position: relative;
       width: em(271px);
       height: em(271px);
-      margin-right: em(43px);
+      margin-bottom: em(40px);
       @include iftablet {
         width: em(104px);
         height: em(104px);
@@ -461,6 +462,7 @@
     .ConclusionBlockTitle {
       width: 100%;
       max-width: em(960px);
+      text-align: center;
       @include iftablet {
         max-width: em(591px);
       }
