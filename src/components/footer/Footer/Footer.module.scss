@@ -134,7 +134,7 @@
 
 .FooterEmailForm {
   display: flex;
-  align-items: center;
+  // align-items: center;
   @include ifmobile {
     flex-direction: column;
   }
@@ -145,6 +145,7 @@
     // font-size: em(17px);
     line-height: em(20px);
     margin-right: auto;
+    align-self: center;
     @include iftablet {
       font-size: em(12px);
     }
