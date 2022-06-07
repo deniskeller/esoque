@@ -9,8 +9,10 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding-top: em(92px);
-  padding-bottom: em(82px);
+  padding-top: em(40px);
+  padding-bottom: em(20px);
+  // padding-top: em(92px);
+  // padding-bottom: em(82px);
 
   @include iftablet {
     padding-top: em(73px);
@@ -41,7 +43,8 @@
   }
   &Center {
     width: 100%;
-    margin-bottom: em(34px);
+    margin-bottom: em(10px);
+    // margin-bottom: em(34px);
   }
 
   &Bottom {
@@ -138,7 +141,8 @@
 
   span {
     color: $yellow;
-    font-size: em(17px);
+    font-size: em(12px);
+    // font-size: em(17px);
     line-height: em(20px);
     margin-right: auto;
     @include iftablet {
@@ -231,7 +235,8 @@
 
 .PaymentsText {
   width: 100%;
-  font-size: em(17px);
+  font-size: em(12px);
+  // font-size: em(17px);
   line-height: em(20px);
   color: $grey;
   margin-bottom: em(20px);
@@ -465,7 +470,8 @@
   }
   .Link {
     max-width: em(400px);
-    font-size: em(17px);
+    font-size: em(12px);
+    // font-size: em(17px);
     line-height: 100%;
     color: $grey;
     font-weight: 400;
