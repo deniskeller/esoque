@@ -3,30 +3,34 @@
 }
 
 .SelectHeader {
+  $size: 12px;
   width: 100%;
   height: 100%;
   background: $input;
+  font-size: em($size);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: em(10px);
-  padding: 0 em(37px);
+  border-radius: em(10px, $size);
+  // padding: 0 em(37px);
+  padding: 0 em(17px, $size);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   // height: em(83px);
-  height: em(48px);
+  // height: em(44px);
+  height: em(44px, $size);
 
-  @include iftablet {
-    // max-width: em(134px);
-    height: em(61px);
-  }
-  @include ifmobile {
-    padding: 0 em(17px);
-    height: em(44px);
-  }
+  // @include iftablet {
+  //   // max-width: em(134px);
+  //   height: em(61px);
+  // }
+  // @include ifmobile {
+  //   padding: 0 em(17px);
+  //   height: em(44px);
+  // }
 
   p {
-    font-size: em(16px);
+    // font-size: em(12px);
     // font-size: em(20px);
     font-weight: normal;
     line-height: 120%;
@@ -34,12 +38,12 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    @include iftablet {
-      font-size: em(17px);
-    }
-    @include ifmobile {
-      font-size: em(11px);
-    }
+    // @include iftablet {
+    //   font-size: em(17px);
+    // }
+    // @include ifmobile {
+    //   font-size: em(11px);
+    // }
   }
   .NotEmpty {
     color: $black;

@@ -7,7 +7,7 @@
 
 .Input {
   // $size: 20px;
-  $size: 16px;
+  $size: 12px;
   width: 100%;
   height: 100%;
   font-size: em($size);
@@ -20,9 +20,10 @@
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: em(10px, $size);
   vertical-align: middle;
-  padding: 0 em(10px, $size) 0 em(37px, $size);
+  // padding: 0 em(10px, $size) 0 em(37px, $size);
+  padding: 0 em(17px, $size);
   // height: em(83px, $size);
-  height: em(48px, $size);
+  height: em(44px, $size);
   border: none;
   @include placeholder-color($placeholder);
   font-family: $font-Termina;
@@ -34,12 +35,12 @@
     font-family: $font-stars;
   }
 
-  @include iftablet {
-    $size: 17px;
-    font-size: em($size);
-    height: em(62px, $size);
-    border-radius: em(10px, $size);
-  }
+  // @include iftablet {
+  //   $size: 17px;
+  //   font-size: em($size);
+  //   height: em(62px, $size);
+  //   border-radius: em(10px, $size);
+  // }
   @include ifmobile {
     $size: 12px;
     font-size: em($size);
