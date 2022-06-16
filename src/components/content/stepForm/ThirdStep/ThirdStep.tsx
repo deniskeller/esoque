@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   BaseButton,
   BaseInput,
   BaseSearchSelect,
   BaseText,
   BaseTitle,
-} from "@base/index";
-import styles from "./ThirdStep.module.scss";
-import { LinkHome, StepBack } from "@content/index";
-import { codes } from "@utils/codes";
-import { validateFields } from "@utils/validateInputs";
-import { CheckPhone } from "@store/signup/types";
+} from '@base/index';
+import styles from './ThirdStep.module.scss';
+import { LinkHome, StepBack } from '@content/index';
+import { codes } from '@utils/codes';
+import { validateFields } from '@utils/validateInputs';
+import { CheckPhone } from '@store/signup/types';
 
 interface Props {
   countryCode: string;
@@ -37,8 +37,8 @@ const ThirdStep: React.FC<Props> = ({
   clearPrevInputs,
 }) => {
   const [inputs, setInputs] = useState<Inputs>({
-    countryCode: { value: countryCode, error: "", type: "phoneCode" },
-    phone: { value: phone, error: "", type: "number" },
+    countryCode: { value: countryCode, error: '', type: 'phoneCode' },
+    phone: { value: phone, error: '', type: 'number' },
   });
   const changeInputs = (name: string, value: string) => {
     const newInputs = { ...inputs };
@@ -53,16 +53,17 @@ const ThirdStep: React.FC<Props> = ({
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const { newObj, errors } = validateFields(inputs);
+    setStep(4);
+    // const { newObj, errors } = validateFields(inputs);
 
-    if (!errors) {
-      const obj = {
-        countryCode: newObj.countryCode.value,
-        phone: newObj.phone.value,
-      };
-      checkPhone(obj);
-    }
-    setInputs(newObj);
+    // if (!errors) {
+    //   const obj = {
+    //     countryCode: newObj.countryCode.value,
+    //     phone: newObj.phone.value,
+    //   };
+    //   checkPhone(obj);
+    // }
+    // setInputs(newObj);
   };
 
   return (
@@ -78,19 +79,19 @@ const ThirdStep: React.FC<Props> = ({
           placeholder="Country Code"
           value={inputs.countryCode.value}
           error={inputs.countryCode.error || error}
-          onChange={(code: string) => changeInputs("countryCode", code)}
+          onChange={(code: string) => changeInputs('countryCode', code)}
           options={codes}
           className={styles.SearchSelect}
         />
 
         <BaseInput
           name="phone"
-          placeholder="Enter code here"
+          placeholder="Enter number"
           type="text"
           required
           value={inputs.phone.value}
           error={inputs.phone.error || error}
-          onChange={(value: string) => changeInputs("phone", value)}
+          onChange={(value: string) => changeInputs('phone', value)}
           className={styles.Input}
         />
       </div>

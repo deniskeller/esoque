@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { BaseButton, BaseInput, BaseText, BaseTitle } from "@base/index";
-import styles from "./FourthStep.module.scss";
-import { LinkHome, StepBack } from "@content/index";
-import { validateFields } from "@utils/validateInputs";
-import { CheckVerifyPhoneCode } from "@store/signup/types";
+import React, { useState } from 'react';
+import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
+import styles from './FourthStep.module.scss';
+import { LinkHome, StepBack } from '@content/index';
+import { validateFields } from '@utils/validateInputs';
+import { CheckVerifyPhoneCode } from '@store/signup/types';
 
 interface Props {
   phoneData: {
@@ -29,7 +29,7 @@ const FourthStep: React.FC<Props> = ({
   validatePhoneCode,
 }) => {
   const [inputs, setInputs] = useState<Inputs>({
-    code: { value: code, error: "", type: "number" },
+    code: { value: code, error: '', type: 'number' },
   });
   const { countryCode, phone } = phoneData;
 
@@ -43,22 +43,24 @@ const FourthStep: React.FC<Props> = ({
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    if (inputs.code.value.length !== 6) {
-      const newObj = { ...inputs };
-      newObj.code.error = "Code length 6 symbols";
-      setInputs(newObj);
-      return;
-    }
+    setStep(5);
 
-    const { newObj, errors } = validateFields(inputs);
-    if (!errors) {
-      const obj = {
-        phone: normalizeFormat,
-        value: newObj.code.value,
-      };
-      validatePhoneCode(obj);
-    }
-    setInputs(newObj);
+    // if (inputs.code.value.length !== 6) {
+    //   const newObj = { ...inputs };
+    //   newObj.code.error = "Code length 6 symbols";
+    //   setInputs(newObj);
+    //   return;
+    // }
+
+    // const { newObj, errors } = validateFields(inputs);
+    // if (!errors) {
+    //   const obj = {
+    //     phone: normalizeFormat,
+    //     value: newObj.code.value,
+    //   };
+    //   validatePhoneCode(obj);
+    // }
+    // setInputs(newObj);
   };
 
   const prevStep = () => {
@@ -80,7 +82,7 @@ const FourthStep: React.FC<Props> = ({
         required
         value={inputs.code.value}
         error={inputs.code.error || error}
-        onChange={(value: string) => changeInputs("code", value)}
+        onChange={(value: string) => changeInputs('code', value)}
         className={styles.Input}
       />
 

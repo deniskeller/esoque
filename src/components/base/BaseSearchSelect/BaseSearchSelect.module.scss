@@ -3,40 +3,27 @@
 }
 
 .SelectHeader {
+  $size: 12px;
   width: 100%;
   height: 100%;
   background: $input;
+  font-size: em($size);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: em(10px);
-  padding: 0 em(37px);
+  border-radius: em(10px, $size);
+  padding: 0 em(17px, $size);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: em(83px);
+  height: em(44px, $size);
 
-  @include iftablet {
-    height: em(61px);
-  }
-  @include ifmobile {
-    padding: 0 em(17px);
-    height: em(44px);
-  }
-
-  span {
-    font-size: em(20px);
+  p {
     font-weight: normal;
-    line-height: 100%;
+    line-height: 120%;
     color: $placeholder;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    @include iftablet {
-      font-size: em(17px);
-    }
-    @include ifmobile {
-      font-size: em(11px);
-    }
   }
   .NotEmpty {
     color: $black;
@@ -48,73 +35,41 @@
 }
 
 .IconArrow {
-  width: em(16px);
-  height: em(16px);
+  width: em(12px);
+  height: em(12px);
   position: absolute;
   right: em(19px);
-  @include iftablet {
-    width: em(13px);
-    height: em(13px);
-    right: em(17px);
-  }
-  @include ifmobile {
-    width: em(7px);
-    height: em(7px);
-    right: em(13px);
-  }
 }
 
 .IconArrowTop {
-  top: calc(45% - em(16px));
-  @include iftablet {
-    top: calc(45% - em(13px));
-  }
-  @include ifmobile {
-    top: calc(45% - em(7px));
-  }
+  top: calc(45% - em(12px));
 }
 
 .IconArrowBottom {
-  bottom: calc(45% - em(18px));
+  bottom: calc(45% - em(12px));
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  @include iftablet {
-    bottom: calc(45% - em(13px));
-  }
-  @include ifmobile {
-    bottom: calc(45% - em(7px));
-  }
 }
 
 .SelectList {
   position: absolute;
-  top: em(96px);
+  top: em(50px);
   z-index: 1000;
   width: 100%;
   background: #f2f5f6;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: em(10px);
   overflow: hidden;
-  @include iftablet {
-    top: em(75px);
-  }
   @include ifmobile {
-    top: em(49px);
-    // width: em(194px);
+    min-width: em(270px);
   }
 }
 
 .Ul {
-  max-height: em(170px);
+  max-height: em(166px);
   overflow-y: scroll;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
-  @include iftablet {
-    max-height: em(122px);
-  }
-  @include ifmobile {
-    max-height: em(88px);
-  }
 }
 
 .Ul::-webkit-scrollbar {
@@ -125,78 +80,44 @@
 .Li {
   cursor: pointer;
   width: 100%;
-  height: em(83px);
+  height: em(44px);
   list-style: none;
   display: flex;
   align-items: center;
   color: $placeholder;
-  padding-left: em(72px);
-  padding-right: em(20px);
-
-  @include iftablet {
-    height: em(61px);
-    padding-left: em(54px);
-  }
-  @include ifmobile {
-    height: em(44px);
-    padding-left: em(25px);
-  }
+  padding: 0 em(17px);
   &:hover {
     background: $light_grey;
   }
   span {
-    font-size: em(20px);
+    font-size: em(12px);
     font-weight: normal;
     line-height: 120%;
-    @include iftablet {
-      font-size: em(17px);
-    }
-    @include ifmobile {
-      font-size: em(11px);
-    }
   }
 }
 
 .SelectSearch {
-  min-height: em(83px);
+  min-height: em(44px);
   position: relative;
-  padding-left: em(72px);
-  @include iftablet {
-    min-height: em(61px);
-    padding-left: em(54px);
-  }
-  @include ifmobile {
-    min-height: em(44px);
-    padding-left: em(45px);
-  }
+  padding-left: em(40px);
+  display: flex;
+  align-items: center;
 }
 
 .IconSearch {
-  width: em(34px);
-  height: em(34px);
   position: absolute;
-  top: em(24px);
-  left: em(20px);
-
+  top: calc(50% - em(8px));
+  left: em(16px);
+  width: em(16px);
+  height: em(16px);
   path {
     stroke: rgba(0, 0, 0, 0.39);
-  }
-
-  @include iftablet {
-    width: em(25px);
-    height: em(25px);
-  }
-  @include ifmobile {
-    top: em(17px);
-    left: em(16px);
-    width: em(15px);
-    height: em(15px);
   }
 }
 
 .Input {
   width: 90%;
-  font-size: em(20px);
+  font-size: em(12px);
   line-height: 120%;
   font-weight: 400;
   color: $black2;
@@ -205,15 +126,7 @@
   position: relative;
   background: $input;
   font-family: $font-Termina;
-  // padding-top: em(20px);
   border: none;
-  margin-top: em(30px);
-  @include iftablet {
-    font-size: em(17px);
-  }
-  @include ifmobile {
-    font-size: em(11px);
-  }
 }
 
 .Input::placeholder {
@@ -221,7 +134,10 @@
 }
 
 .CountryCode {
+  $size: 12px;
+  font-size: $size;
   color: $black;
+  min-width: em(50px, $size);
   margin-right: em(24px);
 }
 
@@ -231,14 +147,8 @@
 
 .ErrorText {
   display: block;
-  font-size: em(16px);
+  font-size: em(12px);
   line-height: 120%;
   color: $error;
   margin-top: em(20px);
-  @include iftablet {
-    font-size: em(12px);
-  }
-  @include ifmobile {
-    font-size: em(9px);
-  }
 }

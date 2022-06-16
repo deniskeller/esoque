@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   BaseButton,
   BaseInput,
   BaseSearchSelect,
   BaseText,
   BaseTitle,
-} from "@base/index";
+} from '@base/index';
 
-import { LinkHome, StepBack } from "@content/index";
-import { validateFields } from "@utils/validateInputs";
-import { SetPesonalAddress } from "@store/signup/types";
-import { countries } from "@utils/countries";
+import { LinkHome, StepBack } from '@content/index';
+import { validateFields } from '@utils/validateInputs';
+import { SetPesonalAddress } from '@store/signup/types';
+import { countries } from '@utils/countries';
 
-import styles from "./SeventhStep.module.scss";
+import styles from './SeventhStep.module.scss';
 interface Props {
   country: string;
   postcode: string;
@@ -39,11 +39,11 @@ const SeventhStep: React.FC<Props> = ({
   savePersonalAddress,
 }) => {
   const [inputs, setInputs] = useState<Inputs>({
-    country: { value: country, error: "", type: "string" },
-    postcode: { value: postcode, error: "", type: "string" },
-    city: { value: city, error: "", type: "string" },
-    address: { value: address, error: "", type: "string" },
-    addressTwo: { value: addressTwo, error: "", type: "string" },
+    country: { value: country, error: '', type: 'string' },
+    postcode: { value: postcode, error: '', type: 'string' },
+    city: { value: city, error: '', type: 'string' },
+    address: { value: address, error: '', type: 'string' },
+    addressTwo: { value: addressTwo, error: '', type: 'string' },
   });
 
   const changeInputs = (name: string, value: string) => {
@@ -54,18 +54,19 @@ const SeventhStep: React.FC<Props> = ({
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const { newObj, errors } = validateFields(inputs);
-    if (!errors) {
-      const obj = {
-        country: newObj.country.value,
-        postcode: newObj.postcode.value,
-        city: newObj.city.value,
-        address: newObj.address.value,
-        addressTwo: newObj.addressTwo.value,
-      };
-      savePersonalAddress(obj);
-    }
-    setInputs(newObj);
+    setStep(8);
+    // const { newObj, errors } = validateFields(inputs);
+    // if (!errors) {
+    //   const obj = {
+    //     country: newObj.country.value,
+    //     postcode: newObj.postcode.value,
+    //     city: newObj.city.value,
+    //     address: newObj.address.value,
+    //     addressTwo: newObj.addressTwo.value,
+    //   };
+    //   savePersonalAddress(obj);
+    // }
+    // setInputs(newObj);
   };
 
   const prevStep = () => {
@@ -84,7 +85,7 @@ const SeventhStep: React.FC<Props> = ({
             placeholder="Country"
             value={inputs.country.value}
             error={inputs.country.error}
-            onChange={(value: string) => changeInputs("country", value)}
+            onChange={(value: string) => changeInputs('country', value)}
             options={countries}
             className={`${styles.Input} ${styles.Country}`}
           />
@@ -96,7 +97,7 @@ const SeventhStep: React.FC<Props> = ({
             required
             value={inputs.postcode.value}
             error={inputs.postcode.error}
-            onChange={(value: string) => changeInputs("postcode", value)}
+            onChange={(value: string) => changeInputs('postcode', value)}
             className={`${styles.Input} ${styles.Postcode}`}
           />
 
@@ -107,7 +108,7 @@ const SeventhStep: React.FC<Props> = ({
             required
             value={inputs.city.value}
             error={inputs.city.error}
-            onChange={(value: string) => changeInputs("city", value)}
+            onChange={(value: string) => changeInputs('city', value)}
             className={`${styles.Input} ${styles.City}`}
           />
         </li>
@@ -119,7 +120,7 @@ const SeventhStep: React.FC<Props> = ({
             required
             value={inputs.address.value}
             error={inputs.address.error}
-            onChange={(value: string) => changeInputs("address", value)}
+            onChange={(value: string) => changeInputs('address', value)}
             className={`${styles.Input} ${styles.Address}`}
           />
           <BaseInput
@@ -129,7 +130,7 @@ const SeventhStep: React.FC<Props> = ({
             required
             value={inputs.addressTwo.value}
             error={inputs.addressTwo.error}
-            onChange={(value: string) => changeInputs("addressTwo", value)}
+            onChange={(value: string) => changeInputs('addressTwo', value)}
             className={`${styles.Input} ${styles.AddressTwo}`}
           />
         </li>

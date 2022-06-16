@@ -10,40 +10,20 @@
   font-size: em($size);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: em(10px, $size);
-  // padding: 0 em(37px);
   padding: 0 em(17px, $size);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
-  // height: em(83px);
-  // height: em(44px);
   height: em(44px, $size);
 
-  // @include iftablet {
-  //   // max-width: em(134px);
-  //   height: em(61px);
-  // }
-  // @include ifmobile {
-  //   padding: 0 em(17px);
-  //   height: em(44px);
-  // }
-
   p {
-    // font-size: em(12px);
-    // font-size: em(20px);
     font-weight: normal;
     line-height: 120%;
     color: $placeholder;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    // @include iftablet {
-    //   font-size: em(17px);
-    // }
-    // @include ifmobile {
-    //   font-size: em(11px);
-    // }
   }
   .NotEmpty {
     color: $black;
@@ -63,43 +43,21 @@
   height: em(12px);
   position: absolute;
   right: em(19px);
-  @include iftablet {
-    width: em(13px);
-    height: em(13px);
-    right: em(17px);
-  }
-  @include ifmobile {
-    width: em(7px);
-    height: em(7px);
-    right: em(13px);
-  }
 }
 
 .IconArrowTop {
   top: calc(45% - em(12px));
-  @include iftablet {
-    top: calc(45% - em(13px));
-  }
-  @include ifmobile {
-    top: calc(45% - em(7px));
-  }
 }
 
 .IconArrowBottom {
   bottom: calc(45% - em(12px));
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  @include iftablet {
-    bottom: calc(45% - em(13px));
-  }
-  @include ifmobile {
-    bottom: calc(45% - em(7px));
-  }
 }
 
 .SelectList {
   position: absolute;
-  top: em(96px);
+  top: em(50px);
   z-index: 1000;
   width: 100%;
   background: #f2f5f6;
@@ -110,14 +68,6 @@
   overflow-y: scroll;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
-  @include iftablet {
-    top: em(75px);
-    max-height: em(134px);
-  }
-  @include ifmobile {
-    top: em(49px);
-    max-height: em(110px);
-  }
 }
 
 .SelectList::-webkit-scrollbar {
@@ -127,11 +77,11 @@
 
 .ListItem {
   cursor: pointer;
-  height: em(83px);
+  height: em(44px);
   list-style: none;
   display: flex;
   align-items: center;
-  padding: 0 em(37px);
+  padding: 0 em(17px);
   color: $placeholder;
 
   &:first-child {
@@ -147,24 +97,18 @@
   }
 
   .ListItemTitle {
-    font-size: em(20px);
+    font-size: em(12px);
     font-weight: normal;
-    line-height: 100%;
-    @include iftablet {
-      font-size: em(17px);
-    }
-    @include ifmobile {
-      font-size: em(11px);
-    }
+    line-height: 120%;
   }
 
-  @include iftablet {
-    height: em(61px);
-  }
-  @include ifmobile {
-    height: em(44px);
-    padding: 0 em(25px);
-  }
+  // @include iftablet {
+  //   height: em(61px);
+  // }
+  // @include ifmobile {
+  //   height: em(44px);
+  //   padding: 0 em(25px);
+  // }
 }
 
 .Error {
@@ -173,16 +117,10 @@
 
 .ErrorText {
   display: block;
-  font-size: em(16px);
+  font-size: em(12px);
   line-height: 120%;
   color: $error;
   margin-top: em(20px);
-  @include iftablet {
-    font-size: em(12px);
-  }
-  @include ifmobile {
-    font-size: em(9px);
-  }
 }
 
 // Обертки для форм в App части

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { BaseButton, BaseInput, BaseText, BaseTitle } from "@base/index";
-import styles from "./FifthStep.module.scss";
-import { LinkHome, StepBack, ValidItem } from "@content/index";
-import { checkValidValues, validatePassword } from "@utils/validateInputs";
+import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
+import styles from './FifthStep.module.scss';
+import { LinkHome, StepBack, ValidItem } from '@content/index';
+import { checkValidValues, validatePassword } from '@utils/validateInputs';
 
 interface Props {
   savePassword: (password: string) => void;
@@ -20,11 +20,11 @@ const FifthStep: React.FC<Props> = ({
   setStep,
   clearPrevInputs,
 }) => {
-  const [password, setPassword] = useState<string>("");
+  const [password, setPassword] = useState<string>('');
 
-  const [repeatPassword, setRepeatPassword] = useState<string>("");
+  const [repeatPassword, setRepeatPassword] = useState<string>('');
 
-  const [repeatError, setRepeatError] = useState<string>("");
+  const [repeatError, setRepeatError] = useState<string>('');
 
   const [validateItems, setValidateItems] = useState<ValidateInputs>({
     digit: false,
@@ -51,20 +51,21 @@ const FifthStep: React.FC<Props> = ({
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const arrValues = Object.values(validateItems);
-    const isValid = checkValidValues(arrValues);
+    setStep(6);
+    // const arrValues = Object.values(validateItems);
+    // const isValid = checkValidValues(arrValues);
 
-    if (!isValid && !repeatError.length) {
-      savePassword(password);
-    }
+    // if (!isValid && !repeatError.length) {
+    //   savePassword(password);
+    // }
   };
 
   // Validate match repeat
   React.useEffect(() => {
     if (password === repeatPassword) {
-      setRepeatError("");
+      setRepeatError('');
     } else {
-      setRepeatError("Your passwords did not match");
+      setRepeatError('Your passwords did not match');
     }
   }, [password, repeatPassword]);
 
@@ -146,7 +147,7 @@ const FifthStep: React.FC<Props> = ({
             className={styles.ValidItem}
           />
           <ValidItem
-            done={repeatError.length || repeatPassword === "" ? false : true}
+            done={repeatError.length || repeatPassword === '' ? false : true}
             text="Passwords must match"
             className={styles.ValidItem}
           />

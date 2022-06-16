@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { BaseButton, BaseInput, BaseText, BaseTitle } from "@base/index";
-import styles from "./FirstStep.module.scss";
-import { LinkHome } from "@content/index";
-import { validateEmail } from "@utils/validateInputs";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { BaseButton, BaseInput, BaseText, BaseTitle } from '@base/index';
+import styles from './FirstStep.module.scss';
+import { LinkHome } from '@content/index';
+import { validateEmail } from '@utils/validateInputs';
 
 interface Props {
   checkEmail: (email: string) => void;
@@ -16,17 +16,18 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
   const [textError, setTextError] = useState(error);
 
   const changeHandlerPhone = (value: string) => {
-    setTextError("");
+    setTextError('');
     setEmailInput(value);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (validateEmail(emailInput)) {
-      checkEmail(emailInput);
-    } else {
-      setTextError("Please enter a valid email");
-    }
+    checkEmail(emailInput);
+    // if (validateEmail(emailInput)) {
+    //   checkEmail(emailInput);
+    // } else {
+    //   setTextError("Please enter a valid email");
+    // }
   };
 
   useEffect(() => {
@@ -36,7 +37,9 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
   return (
     <form action="" method="post" className={styles.Email}>
       <BaseTitle className={styles.Title}>Enter your email</BaseTitle>
-      <BaseText className={styles.Subtitle}>This address will be associated with your Company’s profile.</BaseText>
+      <BaseText className={styles.Subtitle}>
+        This address will be associated with your Company’s profile.
+      </BaseText>
 
       <BaseInput
         // label='Email'
@@ -55,8 +58,8 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
       </BaseButton>
 
       <BaseText className={styles.Question}>
-        Already have an account?{" "}
-        <Link href={"/login"}>
+        Already have an account?{' '}
+        <Link href={'/login'}>
           <a className={`${styles.Link} ${styles.LinkQuestion}`}>Sign in.</a>
         </Link>
       </BaseText>

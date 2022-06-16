@@ -1,10 +1,10 @@
-import React from "react";
-import { BaseButton, BaseText, BaseTitle } from "@base/index";
-import { LinkHome, StepBack } from "@content/index";
+import React from 'react';
+import { BaseButton, BaseText, BaseTitle } from '@base/index';
+import { LinkHome, StepBack } from '@content/index';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import styles from "./CompletedStep.module.scss";
+import styles from './CompletedStep.module.scss';
 
 interface Props {
   title: string;
@@ -27,15 +27,17 @@ const CompletedStep: React.FC<Props> = ({
 }) => {
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (registerCompleted) {
-      registerCompleted();
-    }
-    setStep(nextStepCount);
+    setStep(9);
+    // if (registerCompleted) {
+    //   registerCompleted();
+    // }
+    // setStep(nextStepCount);
   };
 
   const prevStep = () => {
     setStep(prevStepCount);
   };
+
   return (
     <form action="" method="post" className={styles.Completed}>
       <BaseTitle className={styles.Title}>{title}</BaseTitle>
@@ -44,7 +46,7 @@ const CompletedStep: React.FC<Props> = ({
         <Image
           src="/images/landing/register/class.png"
           layout="fill"
-          alt={"Completed images"}
+          alt={'Completed images'}
         />
       </div>
 

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   BaseButton,
   BaseInput,
   BaseSelect,
   BaseText,
   BaseTitle,
-} from "@base/index";
-import styles from "./SixthStep.module.scss";
-import { LinkHome, StepBack } from "@content/index";
-import { dateMask, validateFields } from "@utils/validateInputs";
-import { SetPersonalData } from "@store/signup/types";
-import { titles } from "@utils/titles";
+} from '@base/index';
+import styles from './SixthStep.module.scss';
+import { LinkHome, StepBack } from '@content/index';
+import { dateMask, validateFields } from '@utils/validateInputs';
+import { SetPersonalData } from '@store/signup/types';
+import { titles } from '@utils/titles';
 
 interface Props {
   title: string;
@@ -36,10 +36,10 @@ const SixthStep: React.FC<Props> = ({
   savePersonalDate,
 }) => {
   const [inputs, setInputs] = useState<Inputs>({
-    title: { value: title, error: "", type: "string" },
-    firstName: { value: firstName, error: "", type: "string" },
-    lastName: { value: lastName, error: "", type: "string" },
-    birthday: { value: birthday, error: "", type: "string" },
+    title: { value: title, error: '', type: 'string' },
+    firstName: { value: firstName, error: '', type: 'string' },
+    lastName: { value: lastName, error: '', type: 'string' },
+    birthday: { value: birthday, error: '', type: 'string' },
   });
 
   const changeInputs = (name: string, value: string) => {
@@ -50,25 +50,26 @@ const SixthStep: React.FC<Props> = ({
 
   const changeHandlerData = (value: string) => {
     const currentDate = dateMask(value);
-    changeInputs("birthday", currentDate);
+    changeInputs('birthday', currentDate);
   };
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    setStep(7);
 
-    const { newObj, errors } = validateFields(inputs);
+    // const { newObj, errors } = validateFields(inputs);
 
-    if (!errors) {
-      const obj = {
-        title: newObj.title.value,
-        firstName: newObj.firstName.value,
-        lastName: newObj.lastName.value,
-        birthday: newObj.birthday.value,
-      };
-      savePersonalDate(obj);
-    }
+    // if (!errors) {
+    //   const obj = {
+    //     title: newObj.title.value,
+    //     firstName: newObj.firstName.value,
+    //     lastName: newObj.lastName.value,
+    //     birthday: newObj.birthday.value,
+    //   };
+    //   savePersonalDate(obj);
+    // }
 
-    setInputs(newObj);
+    // setInputs(newObj);
   };
 
   const prevStep = () => {
@@ -87,7 +88,7 @@ const SixthStep: React.FC<Props> = ({
           error={inputs.title.error}
           placeholder="Title"
           options={titles}
-          onChange={(value: string) => changeInputs("title", value)}
+          onChange={(value: string) => changeInputs('title', value)}
           className={`${styles.Input} ${styles.SelectGender}`}
         />
 
@@ -98,7 +99,7 @@ const SixthStep: React.FC<Props> = ({
           type="text"
           required
           value={inputs.firstName.value}
-          onChange={(value: string) => changeInputs("firstName", value)}
+          onChange={(value: string) => changeInputs('firstName', value)}
           className={`${styles.Input} ${styles.FirstName}`}
         />
 
@@ -109,7 +110,7 @@ const SixthStep: React.FC<Props> = ({
           type="text"
           required
           value={inputs.lastName.value}
-          onChange={(value: string) => changeInputs("lastName", value)}
+          onChange={(value: string) => changeInputs('lastName', value)}
           className={`${styles.Input} ${styles.LastName}`}
         />
 

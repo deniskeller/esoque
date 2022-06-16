@@ -5,11 +5,8 @@
   justify-content: center;
   width: 100%;
   position: relative;
-  padding-top: em(297px);
+  padding-top: em(200px);
   padding-bottom: em(87px);
-  @include iftablet {
-    padding-top: em(178px);
-  }
   @include ifmobile {
     padding-top: em(114px);
   }
@@ -18,9 +15,6 @@
 .Title {
   margin-bottom: em(18px);
   text-align: center;
-  @include iftablet {
-    margin-bottom: em(27px);
-  }
   @include ifmobile {
     margin-bottom: em(15px);
     h1 {
@@ -30,13 +24,10 @@
 }
 
 .Subtitle {
-  margin-bottom: em(97px);
+  margin-bottom: em(60px);
   text-align: center;
   p {
     font-family: $font-Termina;
-  }
-  @include iftablet {
-    margin-bottom: em(82px);
   }
   @include ifmobile {
     margin-bottom: em(26px);
@@ -50,14 +41,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: em(127px);
+  margin-bottom: em(60px);
   @include iftablet {
     max-width: em(800px);
-    margin-bottom: em(77px);
   }
   @include ifmobile {
     flex-wrap: wrap;
-    margin-bottom: em(60px);
   }
 }
 
@@ -113,25 +102,18 @@
 .Btn {
   width: 100%;
   max-width: em(289px);
-  height: em(82px);
-  margin-bottom: em(42px);
+  height: em(44px);
+  margin-bottom: em(20px);
   @include iftablet {
     max-width: em(251px);
-    height: em(56px);
     margin-bottom: em(45px);
   }
   @include ifmobile {
     max-width: em(173px);
     height: em(38px);
-    margin-bottom: em(25px);
   }
 }
+
 .LinkHome {
-  margin-bottom: em(40px);
-  @include iftablet {
-    margin-bottom: em(30px);
-  }
-  @include ifmobile {
-    margin-bottom: em(20px);
-  }
+  margin-bottom: em(20px);
 }
