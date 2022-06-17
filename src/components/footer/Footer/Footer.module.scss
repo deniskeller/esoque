@@ -155,7 +155,7 @@
     max-width: em(200px);
     margin-right: em(10px);
     input {
-      $size: 10px;
+      $size: 11px;
       font-size: $size;
       height: em(36px, $size);
       @include ifmobile {
@@ -171,7 +171,7 @@
     }
   }
   &Btn {
-    $size: 10px;
+    $size: 11px;
     width: 100%;
     max-width: em(120px, $size);
     font-size: $size;
