@@ -61,13 +61,13 @@
 .subMenu {
   display: flex;
   flex-direction: column;
-  padding-top: em(25px);
+  padding-top: em(15px);
   * {
     color: $grey;
   }
   &Item {
-    margin-bottom: em(15px);
-    font-size: em(15px);
+    font-size: em(12px);
+    margin-bottom: em(5px);
     &:last-child {
       margin-bottom: 0px;
     }
