@@ -1,6 +1,6 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { BaseContainer } from "@base/index";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { BaseContainer } from '@base/index';
 import {
   CompletedStep,
   FifthStep,
@@ -11,21 +11,21 @@ import {
   SeventhStep,
   SixthStep,
   ThirdStep,
-} from "@content/index";
+} from '@content/index';
 
-import { useDispatch, useSelector } from "react-redux";
-import { actions as actionsSignup } from "@store/signup/reducer";
+import { useDispatch, useSelector } from 'react-redux';
+import { actions as actionsSignup } from '@store/signup/reducer';
 
-import { EsoqueState } from "@store/store";
+import { EsoqueState } from '@store/store';
 import {
   CheckPhone,
   CheckVerifyPhoneCode,
   SetBusinessData,
   SetPersonalData,
   SetPesonalAddress,
-} from "@store/signup/types";
+} from '@store/signup/types';
 
-import styles from "./Signup.module.scss";
+import styles from './Signup.module.scss';
 
 const signupState = (state: EsoqueState) => {
   return {
@@ -95,15 +95,15 @@ const Signup: React.FC<Props> = () => {
   };
 
   const clearEmailCode = () => {
-    dispatch(actionsSignup.clearEmailCode({ value: "", error: "" }));
+    dispatch(actionsSignup.clearEmailCode({ value: '', error: '' }));
   };
 
   const clearPhoneCode = () => {
-    dispatch(actionsSignup.clearPhoneCode({ value: "", error: "" }));
+    dispatch(actionsSignup.clearPhoneCode({ value: '', error: '' }));
   };
 
   const registerCompleted = () => {
-    router.push("/login");
+    router.push('/login');
     dispatch(actionsSignup.clearState());
   };
 
@@ -115,6 +115,7 @@ const Signup: React.FC<Props> = () => {
             checkEmail={checkEmail}
             email={email.value}
             error={email.error}
+            setStep={setStep}
           />
         </BaseContainer>
       );

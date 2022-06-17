@@ -9,9 +9,10 @@ interface Props {
   checkEmail: (email: string) => void;
   email: string;
   error: string;
+  setStep: (step: number) => void;
 }
 
-const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
+const FirstStep: React.FC<Props> = ({ email, error, checkEmail, setStep }) => {
   const [emailInput, setEmailInput] = useState<string>(email);
   const [textError, setTextError] = useState(error);
 
@@ -22,7 +23,7 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    checkEmail('emailInput');
+    setStep(2);
     // if (validateEmail(emailInput)) {
     //   checkEmail(emailInput);
     // } else {
