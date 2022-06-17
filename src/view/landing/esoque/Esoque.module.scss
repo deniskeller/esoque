@@ -1,7 +1,8 @@
 .WelcomeBlock {
-  padding-top: em(315px);
+  padding-top: em(300px);
   padding-bottom: em(80px);
   position: relative;
+  min-height: 100vh;
   @include iftablet {
     padding-top: em(190px);
     padding-bottom: em(60px);
@@ -37,14 +38,7 @@
       }
       .WelcomeBlockText {
         p {
-          font-size: em(21px);
           font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(18px);
-          }
-          @include ifmobile {
-            font-size: em(12px);
-          }
         }
       }
       &:last-child {
@@ -55,10 +49,10 @@
   .WelcomeBlockImage {
     position: relative;
     z-index: 100;
-    top: em(-44px);
+    top: em(-100px);
     right: 0;
-    width: em(661px);
-    height: em(574px);
+    width: em(561px);
+    height: em(474px);
     float: right;
     @include iftablet {
       width: em(378px);
@@ -79,7 +73,9 @@
 .AboutContainer {
   background: $black2;
   .About {
-    padding-top: em(147px);
+    width: 100%;
+    min-height: 100vh;
+    padding-top: em(150px);
     padding-bottom: em(67px);
     position: relative;
     @extend %center;
@@ -113,22 +109,19 @@
       max-width: em(873px);
       position: relative;
       z-index: 11;
-      margin-bottom: em(126px);
+      margin-bottom: em(60px);
       h1 {
-        font-size: em(50px);
+        font-size: em(24px);
         text-align: center;
       }
       @include iftablet {
         max-width: em(716px);
-        h1 {
-          font-size: em(40px);
-        }
       }
       @include ifmobile {
         max-width: em(260px);
-        margin-bottom: em(70px);
+        margin-bottom: em(30px);
         h1 {
-          font-size: em(24px);
+          font-size: em(16px);
         }
       }
     }
@@ -136,7 +129,7 @@
       max-width: em(629px);
       margin-bottom: em(85px);
       p {
-        font-size: em(30px);
+        font-size: em(24px);
         line-height: 100%;
         font-weight: bold;
         text-align: center;
@@ -144,9 +137,6 @@
       }
       @include iftablet {
         margin-bottom: em(43px);
-        p {
-          font-size: em(24px);
-        }
       }
       @include ifmobile {
         max-width: em(269px);
@@ -157,15 +147,11 @@
       }
     }
     .AboutIcon {
-      width: em(168px);
-      height: em(168px);
+      width: em(92px);
+      height: em(92px);
       border-radius: 50%;
       background: $yellow;
       @extend %center;
-      @include iftablet {
-        width: em(92px);
-        height: em(92px);
-      }
       @include ifmobile {
         width: em(60px);
         height: em(60px);
@@ -174,10 +160,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        width: em(30px);
-        @include iftablet {
-          width: em(17px);
-        }
+        width: em(17px);
         @include ifmobile {
           width: em(11px);
         }
@@ -187,13 +170,14 @@
 }
 
 .GraphBlock {
-  padding-top: em(219px);
+  padding-top: em(150px);
   padding-bottom: em(175px);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: em(1350px);
+  min-height: 100vh;
   margin: 0 auto;
   position: relative;
   @include iftablet {
@@ -207,35 +191,22 @@
     max-width: 100%;
   }
   .GraphBlockTitle {
-    margin-bottom: em(48px);
+    margin-bottom: em(24px);
     h1 {
       color: $white;
       text-align: center;
     }
-    @include iftablet {
-      margin-bottom: em(24px);
-      h1 {
-        font-size: em(40px);
-      }
-    }
     @include ifmobile {
-      margin-bottom: em(24px);
       h1 {
         font-size: em(24px);
       }
     }
   }
   .GraphBlockSubtitle {
-    margin-bottom: em(209px);
+    margin-bottom: em(100px);
     h1 {
-      font-size: em(30px);
+      font-size: em(24px);
       text-align: center;
-    }
-    @include iftablet {
-      margin-bottom: em(103px);
-      h1 {
-        font-size: em(24px);
-      }
     }
     @include ifmobile {
       margin-bottom: em(49px);
@@ -247,7 +218,7 @@
   .GraphBlockContent {
     position: relative;
     width: 100%;
-    height: em(710px);
+    height: em(400px);
     margin-bottom: em(36px);
     overflow: hidden;
     transition: 0.5s;
@@ -259,15 +230,11 @@
     }
     .LineCenter {
       position: absolute;
-      left: calc(50% - 3px);
+      left: calc(50% - 1px);
       top: 0;
-      width: 3px;
+      width: 2px;
       height: 100%;
       background: $grey;
-      @include iftablet {
-        left: calc(50% - 3px);
-        width: 3px;
-      }
       @include ifmobile {
         left: calc(50% - 0.5px);
         width: 1px;
@@ -285,7 +252,7 @@
     .LineTop {
       width: em(30px);
       height: em(58px);
-      top: 0;
+      top: em(-19px);
       left: calc(50% - em(15px));
       background: $black;
       position: absolute;
@@ -305,9 +272,9 @@
         flex-wrap: wrap;
       }
       &:last-child {
-        margin-left: -40%;
+        margin-left: -28%;
         @include iftablet {
-          margin-left: -49%;
+          margin-left: -48%;
         }
         @include ifmobile {
           margin-left: 0%;
@@ -325,30 +292,22 @@
           margin-left: -13.7%;
         }
         .LeftCol {
-          border-right: 3px solid $grey;
+          border-right: 2px solid $grey;
           @include ifmobile {
             border-right: none;
           }
           .LeftColItem {
             position: relative;
-            padding-right: em(67px);
-            margin-bottom: em(47px);
-            @include iftablet {
-              padding-right: em(53px);
-              margin-bottom: em(43px);
-            }
+            padding-right: em(50px);
+            margin-bottom: em(20px);
             @include ifmobile {
               padding-right: em(17px);
-              margin-bottom: em(32px);
             }
             p {
-              font-size: em(17px);
+              font-size: em(12px);
               line-height: 120%;
               color: $grey;
               text-align: right;
-              @include iftablet {
-                font-size: em(12px);
-              }
               @include ifmobile {
                 font-size: em(10px);
               }
@@ -358,9 +317,9 @@
             }
             &::after {
               display: block;
-              content: " ";
+              content: ' ';
               width: em(34px);
-              height: 3px;
+              height: 2px;
               background: $grey;
               position: absolute;
               right: 0;
@@ -379,9 +338,9 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: em(230px);
+          width: em(160px);
           position: relative;
-          margin-top: em(-10px);
+          // margin-top: em(-10px);
           @include iftablet {
             width: em(184px);
             margin-top: em(1px);
@@ -393,25 +352,21 @@
           }
           &::before {
             display: block;
-            content: " ";
+            content: ' ';
             width: 100%;
-            height: 3px;
+            height: 2px;
             background: $grey;
             position: absolute;
             right: 0;
-            top: calc(50% - 3px);
-            @include iftablet {
-              height: 3px;
-              top: calc(50% - 3px);
-            }
+            top: calc(50% - 1px);
             @include ifmobile {
               height: 1px;
               top: calc(50% - 0.5px);
             }
           }
           .RightColItem {
-            width: em(109px);
-            height: em(109px);
+            width: em(80px);
+            height: em(80px);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -428,14 +383,8 @@
               height: em(60px);
             }
             P {
-              font-size: em(24px);
+              font-size: em(14px);
               font-weight: bold;
-              @include iftablet {
-                font-size: em(19px);
-              }
-              @include ifmobile {
-                font-size: em(14px);
-              }
             }
           }
         }
@@ -456,7 +405,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: em(230px);
+          width: em(160px);
           position: relative;
           margin-top: em(-10px);
           @include iftablet {
@@ -470,25 +419,21 @@
           }
           &::before {
             display: block;
-            content: " ";
+            content: ' ';
             width: 100%;
-            height: 3px;
+            height: 2px;
             background: $grey;
             position: absolute;
             right: 0;
-            top: calc(50% - 3px);
-            @include iftablet {
-              height: 3px;
-              top: calc(50% + 3px);
-            }
+            top: calc(50% - 1px);
             @include ifmobile {
               height: 1px;
-              top: calc(50% + 0.5px);
+              top: calc(50% - 0.5px);
             }
           }
           .LeftColItem {
-            width: em(109px);
-            height: em(109px);
+            width: em(80px);
+            height: em(80px);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -505,42 +450,28 @@
               height: em(60px);
             }
             P {
-              font-size: em(24px);
+              font-size: em(14px);
               font-weight: bold;
-              @include iftablet {
-                font-size: em(19px);
-              }
-              @include ifmobile {
-                font-size: em(14px);
-              }
             }
           }
         }
         .RightCol {
-          border-left: 3px solid $grey;
+          border-left: 2px solid $grey;
           @include ifmobile {
             border-left: none;
           }
           .RightColItem {
             position: relative;
-            padding-left: em(67px);
-            margin-bottom: em(47px);
-            @include iftablet {
-              padding-left: em(53px);
-              margin-bottom: em(43px);
-            }
+            padding-left: em(50px);
+            margin-bottom: em(20px);
             @include ifmobile {
               padding-left: em(17px);
-              margin-bottom: em(32px);
             }
             p {
-              font-size: em(17px);
+              font-size: em(12px);
               line-height: 120%;
               color: $grey;
               text-align: left;
-              @include iftablet {
-                font-size: em(12px);
-              }
               @include ifmobile {
                 font-size: em(10px);
               }
@@ -550,9 +481,9 @@
             }
             &::after {
               display: block;
-              content: " ";
+              content: ' ';
               width: em(34px);
-              height: 3px;
+              height: 2px;
               background: $grey;
               position: absolute;
               left: 0;
@@ -584,25 +515,24 @@
     }
   }
   .FullHeight {
-    height: em(1691px);
+    height: em(1500px);
     @include iftablet {
-      height: em(1450px);
+      height: em(1350px);
     }
     @include ifmobile {
-      height: em(1306px);
+      height: em(1200px);
     }
   }
   .GraphBlockBtn {
     width: 100%;
-    max-width: em(289px);
-    height: em(63px);
+    max-width: em(200px);
+    height: em(43px);
     @include iftablet {
-      max-width: em(149px);
-      height: em(43px);
+      max-width: em(150px);
     }
     @include ifmobile {
-      max-width: em(76px);
-      height: em(33px);
+      max-width: em(150px);
+      height: em(38px);
     }
   }
 }
