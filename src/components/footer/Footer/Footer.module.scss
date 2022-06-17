@@ -73,8 +73,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: em(236px);
-  margin-bottom: em(21px);
+  max-width: em(146px);
+  margin-bottom: em(20px);
   @include iftablet {
     max-width: em(139px);
     margin-bottom: em(9px);
@@ -85,14 +85,9 @@
   }
   .LogoText {
     width: 100%;
-    max-width: em(144px);
-    height: em(10px);
-    margin-bottom: em(15px);
-    @include iftablet {
-      max-width: em(85.27px);
-      height: em(6.29px);
-      margin-bottom: em(8px);
-    }
+    max-width: em(90px);
+    height: em(7px);
+    margin-bottom: em(9px);
     @include ifmobile {
       max-width: em(58.77px);
       height: em(4.43px);
@@ -101,12 +96,8 @@
   }
   .Logo {
     width: 100%;
-    max-width: em(236px);
-    height: em(46px);
-    @include iftablet {
-      max-width: em(139.29px);
-      height: em(27.55px);
-    }
+    max-width: em(146px);
+    height: em(29px);
     @include ifmobile {
       max-width: em(96px);
       height: em(19.39px);
@@ -117,7 +108,7 @@
   font-family: $font-Calibri;
   color: $yellow;
   opacity: 0.5;
-  font-size: em(17px);
+  font-size: em(14px);
   line-height: 120%;
   width: 100%;
   max-width: em(322px);

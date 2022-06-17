@@ -47,15 +47,10 @@
   }
 
   .linkTitle {
-    font-size: em(17px);
+    font-size: em(14px);
     margin-left: em(30px);
     font-weight: bold;
     transition: 0.3s;
-    @include iftablet {
-      font-size: em(14px);
-    }
-    @include ifmobile {
-    }
     &:hover {
       a {
         color: #e2f063;
