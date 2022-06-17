@@ -22,7 +22,7 @@ const FirstStep: React.FC<Props> = ({ email, error, checkEmail }) => {
 
   const submitFormData = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    checkEmail(emailInput);
+    checkEmail('emailInput');
     // if (validateEmail(emailInput)) {
     //   checkEmail(emailInput);
     // } else {
