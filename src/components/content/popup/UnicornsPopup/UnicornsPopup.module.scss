@@ -1,5 +1,5 @@
 .UnicornsPopupTitle {
-  margin-bottom: em(65px);
+  margin-bottom: em(40px);
 
   @include iftablet {
     margin-bottom: em(51px);
@@ -13,7 +13,7 @@
 .UnicornsPopupText {
   display: block;
   max-width: em(1124px);
-  margin-bottom: em(80px);
+  margin-bottom: em(60px);
   @include iftablet {
     margin-bottom: em(50px);
   }

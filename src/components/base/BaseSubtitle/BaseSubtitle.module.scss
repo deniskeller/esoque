@@ -5,10 +5,7 @@
   &_h1 {
     font-weight: bold;
     @include ifdesktop {
-      font-size: em(30px);
-    }
-    @include iftablet {
-      font-size: em(24px);
+      font-size: em(18px);
     }
     @include ifmobile {
       font-size: em(16px);

@@ -1,15 +1,15 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from 'react';
 import {
   BaseIcon,
   BasePopup,
   BaseSubtitle,
   BaseText,
   BaseTitle,
-} from "@base/index";
-import { IconHorse } from "@content/index";
-import { ALL_ICONS } from "@constants/icons";
+} from '@base/index';
+import { IconHorse } from '@content/index';
+import { ALL_ICONS } from '@constants/icons';
 
-import styles from "./UnicornsPopup.module.scss";
+import styles from './UnicornsPopup.module.scss';
 
 interface Props {
   className: string;
@@ -66,20 +66,30 @@ const UnicornsPopup: React.FC<Props> = ({
           <BaseTitle type="h2" className={styles.UnicornsPopupTitle}>
             {data.title}
           </BaseTitle>
-          <BaseText className={styles.UnicornsPopupText}>{data.text}</BaseText>
+          {data.text && data.text ? (
+            <BaseText className={styles.UnicornsPopupText}>
+              {data.text}
+            </BaseText>
+          ) : (
+            ''
+          )}
 
           <div
             className={`${styles.UnicornsPopupContent} ${
-              data.content.length == 1 ? styles.FullWidth : ""
+              data.content.length == 1 ? styles.FullWidth : ''
             }`}
           >
             {data.content.length &&
               data.content.map((item, index) => {
                 return (
                   <div key={index} className={styles.UnicornsPopupContentList}>
-                    <BaseSubtitle className={styles.UnicornsPopupSubtitle}>
-                      {item.subtitle}
-                    </BaseSubtitle>
+                    {item.subtitle && item.subtitle ? (
+                      <BaseSubtitle className={styles.UnicornsPopupSubtitle}>
+                        {item.subtitle}
+                      </BaseSubtitle>
+                    ) : (
+                      ''
+                    )}
 
                     <ul
                       className={`${styles.UnicornsPopupContentUl} ${
@@ -88,7 +98,7 @@ const UnicornsPopup: React.FC<Props> = ({
                         item.contentItemList &&
                         item.contentItemList?.length >= 12
                           ? styles.SoloStyle
-                          : ""
+                          : ''
                       }`}
                     >
                       {item.contentItemList?.map((el, index) => {
@@ -100,7 +110,7 @@ const UnicornsPopup: React.FC<Props> = ({
                           <li
                             key={index}
                             className={`${styles.UnicornsPopupContentLi} ${
-                              data.content.length == 1 ? styles.FullWidth : ""
+                              data.content.length == 1 ? styles.FullWidth : ''
                             }`}
                           >
                             <IconHorse className={styles.ContentLiImage} />
@@ -116,7 +126,7 @@ const UnicornsPopup: React.FC<Props> = ({
           <div className={styles.UnicornsPopupNav}>
             <div
               className={`${styles.Btn} ${styles.PrevBtn} ${
-                prevDisable() ? styles.Disable : ""
+                prevDisable() ? styles.Disable : ''
               }`}
               onClick={prevPage}
             >
@@ -128,7 +138,7 @@ const UnicornsPopup: React.FC<Props> = ({
 
             <div
               className={`${styles.Btn} ${styles.NextBtn} ${
-                nextDisable() ? styles.Disable : ""
+                nextDisable() ? styles.Disable : ''
               }`}
               onClick={nextPage}
             >

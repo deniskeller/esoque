@@ -1,123 +1,123 @@
-import React from "react";
-import { BaseContainer, BaseText, BaseTitle } from "@base/index";
-import Image from "next/image";
-import styles from "./Unicorns.module.scss";
+import React from 'react';
+import { BaseContainer, BaseText, BaseTitle } from '@base/index';
+import Image from 'next/image';
+import styles from './Unicorns.module.scss';
 import {
   BusinessItem,
   IconHorse,
   ServicesItem,
   UnicornsPopup,
-} from "@content/index";
+} from '@content/index';
 
 interface Props {}
 
 //моковые данные
 const mockServicesItems = [
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Card Schemes Membership (INT)",
+    itemTitle: 'Card Schemes Membership (INT)',
     itemList: [
-      "Visa",
-      "MasterCard",
-      "UnionPay",
-      "JCB",
-      "Discover",
-      "Diners Club",
-      "American Express",
-      "Payment Аacilitator registration ",
-      "ISO (independent sales organisation) registration ",
-      "TPP (third party processor) registration ",
-      "DWO or SDWO (digital wallet operator or staged digital wallet operator) registration",
-      "Assistance during the card schemes internal and external audit ",
-      "Team education ",
-      "Chargeback management",
+      'Visa',
+      'MasterCard',
+      'UnionPay',
+      'JCB',
+      'Discover',
+      'Diners Club',
+      'American Express',
+      'Payment Аacilitator registration ',
+      'ISO (independent sales organisation) registration ',
+      'TPP (third party processor) registration ',
+      'DWO or SDWO (digital wallet operator or staged digital wallet operator) registration',
+      'Assistance during the card schemes internal and external audit ',
+      'Team education ',
+      'Chargeback management',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
   {
-    itemTitle: "Banking Licenses (UK & US)",
+    itemTitle: 'Banking Licenses (UK & US)',
     itemList: [
-      "Specialized Banking License (UK)",
-      "State Banking License (US)",
-      "Federal Banking License (US)",
+      'Specialized Banking License (UK)',
+      'State Banking License (US)',
+      'Federal Banking License (US)',
     ],
   },
 ];
@@ -125,51 +125,51 @@ const mockServicesItems = [
 const mockBbusinessItems = [
   {
     id: 1,
-    title: "SEPA Membership",
+    title: 'SEPA Membership',
   },
   {
     id: 2,
-    title: "SWIFT",
+    title: 'SWIFT',
   },
   {
     id: 3,
-    title: "Blockchain",
+    title: 'Blockchain',
   },
   {
     id: 4,
-    title: "Gambling and lottery licensing",
+    title: 'Gambling and lottery licensing',
   },
   {
     id: 5,
-    title: "E-commerce business set-up",
+    title: 'E-commerce business set-up',
   },
   {
     id: 6,
-    title: "Investment funds and brokerage companies",
+    title: 'Investment funds and brokerage companies',
   },
   {
     id: 7,
-    title: "PCI DSS",
+    title: 'PCI DSS',
   },
   {
     id: 8,
-    title: "Patents",
+    title: 'Patents',
   },
   {
     id: 9,
-    title: "Trademark",
+    title: 'Trademark',
   },
   {
     id: 10,
-    title: "Account opening",
+    title: 'Account opening',
   },
   {
     id: 11,
-    title: "NASDAQ",
+    title: 'NASDAQ',
   },
   {
     id: 12,
-    title: "Additional offers",
+    title: 'Additional offers',
   },
   // {
   //   id: 13,
@@ -191,23 +191,19 @@ const Unicorns: React.FC<Props> = () => {
             <div className={styles.WelcomeBlockImage}>
               <Image
                 src="/images/landing/unicorns/imgUnicornsHorse1.png"
-                layout={"fill"}
+                layout={'fill'}
                 priority={true}
                 blurDataURL="/images/landing/unicorns/imgUnicornsHorse1.png"
                 placeholder="blur"
-                alt={"Unicorn image"}
+                alt={'Unicorn image'}
               />
             </div>
             <div className={styles.WelcomeBlockLi}>
               <BaseText className={styles.WelcomeBlockText}>
                 Welcome to the Unicorn page! We really hope to see you like the
-                new Amazon, Google or PayPal.
-              </BaseText>
-            </div>
-            <div className={styles.WelcomeBlockLi}>
-              <BaseText className={styles.WelcomeBlockText}>
-                In the new world of the rapidly developing FinTech industry, we
-                are the ones that help you to achieve your results.
+                new Amazon, Google or PayPal. In the new world of the rapidly
+                developing FinTech industry, we are the ones that help you to
+                achieve your results.
               </BaseText>
             </div>
             <div className={styles.WelcomeBlockLi}>
@@ -231,8 +227,8 @@ const Unicorns: React.FC<Props> = () => {
           <div className={styles.OurWorkBlock}>
             <div className={styles.OurWorkBlockImage}>
               <Image
-                layout={"fill"}
-                alt={"Unicorn image"}
+                layout={'fill'}
+                alt={'Unicorn image'}
                 loading="lazy"
                 blurDataURL="/images/landing/imgUnicornsHorse2.png"
                 src="/images/landing/imgUnicornsHorse2.png"

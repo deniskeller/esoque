@@ -1,5 +1,5 @@
 .WelcomeBlock {
-  padding-top: em(311px);
+  padding-top: em(300px);
   padding-bottom: em(102px);
   position: relative;
 
@@ -34,23 +34,11 @@
     .WelcomeBlockLi {
       margin-bottom: em(20px);
       list-style: none;
-      // max-width: em(715px);
       max-width: 100%;
-      @include iftablet {
-        // max-width: em(502px);
-      }
 
       .WelcomeBlockText {
         p {
-          font-size: em(21px);
           font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(18px);
-          }
-
-          @include ifmobile {
-            font-size: em(12px);
-          }
         }
       }
       &:last-child {
@@ -64,8 +52,8 @@
     z-index: 100;
     top: em(-206px);
     right: 0;
-    width: em(542px);
-    height: em(522px);
+    width: em(442px);
+    height: em(422px);
     float: right;
     margin-left: em(80px);
     @include iftablet {
@@ -138,7 +126,7 @@
     }
 
     .OurWorkBlockTitle {
-      margin-bottom: em(62px);
+      margin-bottom: em(60px);
       h1 {
         color: $white;
       }
@@ -174,7 +162,7 @@
         color: $white;
         list-style: none;
         padding-left: em(36px);
-        margin-bottom: em(13px);
+        margin-bottom: em(5px);
 
         @include ifmobile {
           padding-left: em(30px);
@@ -216,7 +204,7 @@
       font-family: $font-Calibri;
       color: $white;
       font-weight: 400;
-      margin-bottom: em(99px);
+      margin-bottom: em(60px);
 
       @include iftablet {
         max-width: em(730px);
@@ -243,13 +231,10 @@
       .H1 {
         margin-bottom: em(10px);
         h1 {
-          font-size: em(30px);
+          font-size: em(24px);
           line-height: 120%;
           font-weight: 700;
           color: $white;
-          @include iftablet {
-            font-size: em(24px);
-          }
 
           @include ifmobile {
             font-size: em(16px);
@@ -264,7 +249,13 @@
         }
       }
       .P {
-        P {
+        cursor: pointer;
+        &:hover {
+          p {
+            color: $yellow;
+          }
+        }
+        p {
           font-size: em(19px);
           font-family: $font-Calibri;
           color: $grey;

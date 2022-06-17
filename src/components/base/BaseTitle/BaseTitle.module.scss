@@ -38,17 +38,12 @@
   }
   &_h3 {
     font-weight: 400;
-
     @include ifdesktop {
-      font-size: em(20px);
-    }
-
-    @include iftablet {
-      font-size: em(17px);
+      font-size: em(16px);
     }
 
     @include ifmobile {
-      font-size: em(11px);
+      font-size: em(12px);
     }
   }
 }

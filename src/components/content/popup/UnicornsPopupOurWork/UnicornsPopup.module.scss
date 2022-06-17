@@ -1,34 +1,16 @@
 .UnicornsPopupTitle {
-  margin-bottom: em(65px);
-
-  @include iftablet {
-    margin-bottom: em(51px);
-  }
-
-  @include ifmobile {
-    margin-bottom: em(30px);
-  }
+  margin-bottom: em(30px);
 }
 
 .UnicornsPopupText {
   display: block;
   max-width: em(1124px);
-  margin-bottom: em(80px);
-  @include iftablet {
-    margin-bottom: em(50px);
-  }
+  margin-bottom: em(50px);
   @include ifmobile {
     margin-bottom: em(25px);
   }
   p {
-    font-size: em(19px);
     font-family: $font-Calibri;
-    @include iftablet {
-      font-size: em(15px);
-    }
-    @include ifmobile {
-      font-size: em(9px);
-    }
   }
 }
 
@@ -45,7 +27,7 @@
   .UnicornsPopupContentList {
     .UnicornsPopupSubtitle {
       max-width: em(375px);
-      margin-bottom: em(31px);
+      margin-bottom: em(20px);
 
       @include ifmobile {
         margin-bottom: em(13px);
@@ -58,24 +40,20 @@
         color: $white;
         list-style: none;
         padding-left: em(36px);
-        margin-bottom: em(13px);
+        margin-bottom: em(5px);
         max-width: em(485px);
         @include iftablet {
         }
         @include ifmobile {
           padding-left: em(20px);
-          margin-bottom: em(8px);
         }
         p {
-          font-size: em(19px);
+          font-size: em(16px);
           line-height: 120%;
           font-weight: 400;
           font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(15px);
-          }
           @include ifmobile {
-            font-size: em(9px);
+            font-size: em(12px);
           }
         }
 
