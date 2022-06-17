@@ -273,7 +273,7 @@
       flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
-      gap: em(62px) em(118px);
+      gap: em(30px) em(90px);
 
       @include iftablet {
         gap: em(24px);

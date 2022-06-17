@@ -1,18 +1,13 @@
 .OurWorkBusinessItem {
-  width: em(371px);
-  height: em(189px);
+  width: em(263px);
+  height: em(150px);
   background: $black;
-  border-radius: 10px;
+  border-radius: em(10px);
   @extend %center;
   cursor: pointer;
   padding-left: em(45px);
   padding-right: em(45px);
   text-align: center;
-
-  @include iftablet {
-    width: em(263px);
-    height: em(172px);
-  }
 
   @include ifmobile {
     width: em(131px);
@@ -23,14 +18,11 @@
 }
 
 .OurWorkBusinessItemTitle {
-  font-size: em(20px);
+  font-size: em(14px);
   font-weight: 700;
   line-height: 120%;
   color: #13de4c;
-  @include iftablet {
-    font-size: em(17px);
-  }
   @include ifmobile {
-    font-size: em(11px);
+    font-size: em(12px);
   }
 }
