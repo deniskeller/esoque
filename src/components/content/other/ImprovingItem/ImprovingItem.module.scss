@@ -1,6 +1,6 @@
 .ImprovingItem {
-  width: em(469px);
-  height: em(271px);
+  width: em(389px);
+  height: em(215px);
   background: $black2;
   border-radius: 10px;
   padding: 0px em(20px) 0 em(33px);
@@ -8,11 +8,6 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-
-  @include iftablet {
-    width: em(389px);
-    height: em(215px);
-  }
   @include ifmobile {
     width: em(288px);
     height: em(143px);
@@ -20,10 +15,7 @@
 
   .ImprovingItemText {
     position: relative;
-    padding-left: em(87px);
-    @include iftablet {
-      padding-left: em(75px);
-    }
+    padding-left: em(70px);
     @include ifmobile {
       padding-left: em(55px);
     }
@@ -31,14 +23,9 @@
     .ImprovingItemImage {
       position: absolute;
       left: 0;
-      top: calc(50% - em(30px));
-      width: em(60px);
-      height: em(60px);
-      @include iftablet {
-        width: em(44px);
-        height: em(44px);
-        top: calc(50% - em(22px));
-      }
+      width: em(44px);
+      height: em(44px);
+      top: calc(50% - em(22px));
       @include ifmobile {
         width: em(30px);
         height: em(30px);
@@ -46,11 +33,9 @@
       }
     }
     p {
-      font-size: em(20px);
+      font-size: em(14px);
       color: $white;
-      @include iftablet {
-        font-size: em(17px);
-      }
+      line-height: 120%;
       @include ifmobile {
         font-size: em(11px);
       }

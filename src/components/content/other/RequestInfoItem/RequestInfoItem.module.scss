@@ -24,15 +24,12 @@
     }
   }
   .InfoTitle {
-    font-size: em(19px);
+    font-size: em(16px);
     line-height: 100%;
     color: $yellow;
     font-family: $font-Calibri;
     font-style: normal;
     font-weight: bold;
-    @include iftablet {
-      font-size: em(15px);
-    }
     @include ifmobile {
       font-size: em(12px);
     }
@@ -62,7 +59,7 @@
       }
 
       .CountryItemTitle {
-        font-size: em(17px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 120%;
         color: $white;
@@ -113,7 +110,7 @@
       padding: em(30px) em(20px) em(30px) em(40px);
       li {
         position: relative;
-        font-size: em(17px);
+        font-size: em(16px);
         line-height: 120%;
         font-family: $font-Calibri;
         font-style: normal;

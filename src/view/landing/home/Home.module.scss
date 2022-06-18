@@ -12,10 +12,12 @@
   @include iftablet {
     padding-top: em(154px);
     padding-bottom: em(73px);
+    min-height: 100%;
   }
   @include ifmobile {
     padding-top: em(60px);
     padding-bottom: em(81px);
+    min-height: 100%;
   }
 }
 
@@ -316,19 +318,19 @@
 .ServicesBlock {
   padding-top: em(150px);
   padding-bottom: em(130px);
-  // padding-top: em(236px);
-  // padding-bottom: em(265px);
   background: $black2;
   min-height: 100vh;
 
   @include iftablet {
     padding-top: em(139px);
     padding-bottom: em(160px);
+    min-height: 100%;
   }
 
   @include ifmobile {
     padding-top: em(60px);
     padding-bottom: em(60px);
+    min-height: 100%;
   }
 
   .ServicesBlockTitle {
@@ -410,42 +412,27 @@
   // background-image: url("/images/landing/bgHome2.png");
   background-size: cover;
   background-repeat: no-repeat;
-
-  @include iftablet {
-    background-position: 70% 0%;
-  }
-
-  @include ifmobile {
-    background-position: 50% 0px;
-  }
+  background-position: center;
 
   .ConclusionBlockContent {
     padding-top: em(150px);
     padding-bottom: em(130px);
     min-height: 100vh;
-    // padding-top: em(525px);
-    // padding-bottom: em(403px);
     display: flex;
     flex-direction: column;
-    // flex-direction: row;
     justify-content: center;
     align-items: center;
-
     @include iftablet {
-      padding-top: em(293px);
-      padding-bottom: em(283px);
+      min-height: 100%;
     }
-
     @include ifmobile {
-      flex-direction: column;
-      padding-top: em(293px);
-      padding-bottom: em(198px);
+      min-height: 100%;
     }
 
     .ConclusionBlockImage {
       position: relative;
-      width: em(271px);
-      height: em(271px);
+      width: em(200px);
+      height: em(200px);
       margin-bottom: em(40px);
       @include iftablet {
         width: em(104px);
@@ -461,25 +448,19 @@
 
     .ConclusionBlockTitle {
       width: 100%;
-      max-width: em(960px);
+      max-width: em(620px);
       text-align: center;
-      @include iftablet {
-        max-width: em(591px);
-      }
+      margin: 0 auto;
       @include ifmobile {
         max-width: em(228px);
-        margin: 0 auto;
       }
       p {
-        font-size: em(54px);
+        font-size: em(24px);
         font-weight: 700;
         line-height: 120%;
         color: $pink;
-        @include iftablet {
-          font-size: em(40px);
-        }
         @include ifmobile {
-          font-size: em(24px);
+          font-size: em(16px);
           text-align: center;
         }
       }

@@ -1,8 +1,8 @@
-import React from "react";
-import { BaseContainer, BaseIcon, BaseText, BaseTitle } from "@base/index";
-import styles from "./Home.module.scss";
-import { ALL_ICONS } from "@constants/icons";
-import Image from "next/image";
+import React from 'react';
+import { BaseContainer, BaseIcon, BaseText, BaseTitle } from '@base/index';
+import styles from './Home.module.scss';
+import { ALL_ICONS } from '@constants/icons';
+import Image from 'next/image';
 
 interface Props {}
 
@@ -42,10 +42,10 @@ const Home: React.FC<Props> = () => {
             <span className={styles.ContentImage}>
               <Image
                 src="/images/landing/home/imgHomeUnicorn.png"
-                layout={"fill"}
+                layout={'fill'}
                 // width={653}
                 // height={503}
-                alt={"Unicorn image"}
+                alt={'Unicorn image'}
               />
             </span>
           </div>
@@ -127,8 +127,8 @@ const Home: React.FC<Props> = () => {
           <div className={styles.ConclusionBlockContent}>
             <div className={styles.ConclusionBlockImage}>
               <Image
-                layout={"fill"}
-                alt={"Money Bag image"}
+                layout={'fill'}
+                alt={'Money Bag image'}
                 loading="lazy"
                 blurDataURL="/images/landing/home/imgHomeMoneyBag.png"
                 src="/images/landing/home/imgHomeMoneyBag.png"

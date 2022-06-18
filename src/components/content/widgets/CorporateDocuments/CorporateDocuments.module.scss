@@ -3,18 +3,12 @@
     font-family: $font-Calibri;
     font-style: normal;
     font-weight: 400;
-    font-size: em(19px);
+    font-size: em(16px);
     line-height: 120%;
     color: $white;
-    margin-bottom: em(74px);
-
-    @include iftablet {
-      font-size: em(15px);
-      margin-bottom: em(36px);
-    }
+    margin-bottom: em(40px);
     @include ifmobile {
-      font-size: em(16px);
-      margin-bottom: em(36px);
+      font-size: em(12px);
     }
   }
 
@@ -97,7 +91,7 @@
           padding: em(15px);
         }
         P {
-          font-size: em(19px);
+          font-size: em(16px);
           line-height: 120%;
           font-family: $font-Calibri;
           font-style: normal;
@@ -111,7 +105,10 @@
           }
 
           @include ifmobile {
-            font-size: em(16px);
+            font-size: em(12px);
+          }
+
+          @include ifmobile {
             padding: em(20px);
           }
         }
@@ -143,7 +140,7 @@
           padding: em(20px);
         }
         p {
-          font-size: em(19px);
+          font-size: em(16px);
           line-height: 120%;
           font-family: $font-Calibri;
           font-style: normal;
@@ -152,9 +149,8 @@
           span {
             color: $pink;
           }
-
           @include ifmobile {
-            font-size: em(16px);
+            font-size: em(12px);
           }
         }
       }
@@ -171,7 +167,7 @@
         padding: em(20px);
       }
       p {
-        font-size: em(19px);
+        font-size: em(16px);
         line-height: 120%;
         font-family: $font-Calibri;
         font-style: normal;
@@ -182,7 +178,7 @@
         }
 
         @include ifmobile {
-          font-size: em(16px);
+          font-size: em(12px);
         }
       }
     }
@@ -233,7 +229,7 @@
 
           th {
             font-weight: bold;
-            font-size: em(17px);
+            font-size: em(16px);
             line-height: 100%;
             letter-spacing: -0.05em;
             color: $white;
@@ -241,10 +237,10 @@
             text-align: left;
             padding: 0 em(22px) em(19px);
             @include iftablet {
-              font-size: em(14px);
               padding-left: 0;
             }
             @include ifmobile {
+              font-size: em(12px);
             }
           }
         }
@@ -296,17 +292,14 @@
             }
 
             .SelectItemDescription {
-              font-size: em(19px);
+              font-size: em(16px);
               line-height: 100%;
               font-family: $font-Calibri;
               font-style: normal;
               font-weight: normal;
               color: $white;
-              @include iftablet {
-                font-size: em(15px);
-              }
               @include ifmobile {
-                font-size: em(16px);
+                font-size: em(12px);
               }
             }
 
@@ -395,15 +388,13 @@
             .Total {
               text-align: right;
               span {
-                font-size: em(17px);
+                font-size: em(16px);
                 color: $white;
                 font-weight: bold;
                 line-height: 100%;
                 letter-spacing: -0.05em;
-                @include iftablet {
-                  font-size: em(14px);
-                }
                 @include ifmobile {
+                  font-size: em(12px);
                 }
               }
             }
@@ -412,29 +403,25 @@
 
         .PriceValue {
           color: $pink;
-          font-size: em(19px);
+          font-size: em(16px);
           line-height: 100%;
           font-family: $font-Calibri;
           font-style: normal;
           font-weight: normal;
-          @include iftablet {
-            font-size: em(15px);
-          }
           @include ifmobile {
+            font-size: em(14px);
           }
         }
 
         .Currency {
           color: $grey;
-          font-size: em(19px);
+          font-size: em(16px);
           line-height: 100%;
           font-family: $font-Calibri;
           font-style: normal;
           font-weight: normal;
-          @include iftablet {
-            font-size: em(15px);
-          }
           @include ifmobile {
+            font-size: em(14px);
           }
         }
 
@@ -448,13 +435,9 @@
       .Button {
         width: 100%;
         max-width: em(187px);
-        height: em(63px);
+        height: em(44px);
         margin-top: em(-35px);
         margin-left: em(30px);
-        @include iftablet {
-          max-width: em(173px);
-          height: em(38px);
-        }
         @include ifmobile {
           max-width: em(173px);
           height: em(38px);
@@ -473,7 +456,7 @@
           display: inline-flex;
           margin-bottom: em(10px);
           span {
-            font-size: em(19px);
+            font-size: em(16px);
             line-height: 120%;
             font-family: $font-Calibri;
             font-style: normal;
@@ -481,20 +464,19 @@
             color: $green;
             margin-right: em(25px);
             @include ifmobile {
-              font-size: em(16px);
-
+              font-size: em(12px);
               margin-right: em(15px);
             }
           }
           p {
-            font-size: em(19px);
+            font-size: em(16px);
             line-height: 120%;
             font-family: $font-Calibri;
             font-style: normal;
             font-weight: normal;
             color: $white;
             @include ifmobile {
-              font-size: em(16px);
+              font-size: em(12px);
             }
           }
         }

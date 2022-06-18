@@ -1,5 +1,5 @@
 .WelcomeBlock {
-  padding-top: em(311px);
+  padding-top: em(300px);
   padding-bottom: em(198px);
   position: relative;
 
@@ -38,14 +38,7 @@
 
       .WelcomeBlockText {
         p {
-          font-size: em(21px);
           font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(17px);
-          }
-          @include ifmobile {
-            font-size: em(12px);
-          }
         }
       }
     }
@@ -60,15 +53,8 @@
       }
       P {
         color: $green;
-        font-size: em(20px);
         font-weight: bold;
         font-family: $font-Termina !important;
-        @include iftablet {
-          font-size: em(17px);
-        }
-        @include ifmobile {
-          font-size: em(11px);
-        }
       }
     }
   }
@@ -99,20 +85,17 @@
   }
 
   .AboutIcon {
-    width: em(168px);
-    height: em(168px);
+    width: em(92px);
+    height: em(92px);
     border-radius: 50%;
     background: $yellow;
     @extend %center;
     position: absolute;
-    bottom: em(-84px);
-    right: calc(50% - em(84px));
+    bottom: em(-50px);
+    right: calc(50% - em(46px));
 
     @include iftablet {
-      width: em(92px);
-      height: em(92px);
       bottom: em(-46px);
-      right: calc(50% - em(46px));
     }
     @include ifmobile {
       width: em(52px);
@@ -125,10 +108,7 @@
       display: flex;
       align-items: center;
       position: relative;
-      width: em(30px);
-      @include iftablet {
-        width: em(17px);
-      }
+      width: em(17px);
       @include ifmobile {
         width: em(11px);
       }
@@ -137,7 +117,7 @@
 }
 
 .WidgetBlockContainer {
-  padding-top: em(231px);
+  padding-top: em(150px);
   padding-bottom: em(199px);
   background: $black2;
   @include iftablet {
@@ -154,7 +134,7 @@
 }
 
 .AdaptationBlock {
-  padding-top: em(147px);
+  padding-top: em(150px);
   padding-bottom: em(187px);
   display: flex;
   flex-direction: column;
@@ -171,11 +151,7 @@
 
   .AdaptationBlockTitle {
     max-width: em(1000px);
-    margin-bottom: em(48px);
-
-    @include iftablet {
-      margin-bottom: em(52px);
-    }
+    margin-bottom: em(40px);
     @include ifmobile {
       margin-bottom: em(35px);
     }
@@ -204,11 +180,8 @@
       margin-bottom: em(66px);
     }
     h1 {
-      font-size: em(30px);
+      font-size: em(24px);
       text-align: center;
-      @include iftablet {
-        font-size: em(24px);
-      }
       @include ifmobile {
         font-size: em(16px);
       }
@@ -217,12 +190,8 @@
 
   .AdaptationBlockImage {
     position: relative;
-    width: em(685px);
-    height: em(538px);
-    @include iftablet {
-      width: em(514px);
-      height: em(404px);
-    }
+    width: em(514px);
+    height: em(404px);
     @include ifmobile {
       width: em(253px);
       height: em(196px);
@@ -286,10 +255,7 @@
             margin-bottom: em(23px);
           }
           h1 {
-            font-size: em(30px);
-            @include iftablet {
-              font-size: em(24px);
-            }
+            font-size: em(24px);
             @include ifmobile {
               font-size: em(16px);
               text-align: center;
@@ -343,18 +309,14 @@
               }
             }
             P {
-              font-size: em(19px);
+              font-size: em(16px);
               color: $white;
               font-family: $font-Calibri;
               font-style: normal;
               font-weight: normal;
               line-height: 120%;
-
-              @include iftablet {
-                font-size: em(15px);
-              }
               @include ifmobile {
-                font-size: em(9px);
+                font-size: em(12px);
               }
             }
           }
@@ -383,7 +345,7 @@
 }
 
 .ImprovingBlock {
-  padding-top: em(164px);
+  padding-top: em(150px);
   padding-bottom: em(118px);
   display: flex;
   align-items: center;
@@ -424,11 +386,8 @@
       margin-bottom: em(29px);
     }
     h1 {
-      font-size: em(30px);
+      font-size: em(24px);
       text-align: center;
-      @include iftablet {
-        font-size: em(24px);
-      }
       @include ifmobile {
         font-size: em(16px);
       }
@@ -459,7 +418,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    padding-top: em(129px);
+    padding-top: em(150px);
     padding-bottom: em(100px);
     margin: 0 auto;
 
@@ -504,21 +463,21 @@
       width: em(1530px);
       height: em(737px);
       @include ifdesktop {
-        display: block;
+        display: none;
       }
     }
     .TabletImage {
-      display: none;
-      width: em(885px);
-      height: em(597px);
-      @include iftablet {
-        display: block;
+      display: block;
+      width: em(785px);
+      height: em(497px);
+      @include ifmobile {
+        display: none;
       }
     }
     .MobileImage {
       display: none;
-      width: em(336px);
-      height: em(722px);
+      width: em(300px);
+      height: em(680px);
       @include ifmobile {
         display: block;
       }

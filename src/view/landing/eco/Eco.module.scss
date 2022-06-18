@@ -19,11 +19,13 @@
   @include iftablet {
     padding-top: em(214px);
     padding-bottom: em(66px);
+    min-height: 100%;
   }
 
   @include ifmobile {
     padding-top: em(68px);
     padding-bottom: em(70px);
+    min-height: 100%;
   }
 }
 .Title {

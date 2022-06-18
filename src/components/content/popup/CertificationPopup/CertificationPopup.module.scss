@@ -12,7 +12,7 @@
 }
 
 .CertificationPopupSubtitle {
-  font-size: em(25px);
+  font-size: em(18px);
   font-weight: bold;
   line-height: 130%;
   color: $yellow;
@@ -37,7 +37,7 @@
         }
       }
       td {
-        font-size: em(19px);
+        font-size: em(16px);
         line-height: 120%;
         font-family: $font-Calibri;
         font-style: normal;
@@ -88,7 +88,6 @@
 .Textarea {
   width: 100%;
   margin-bottom: em(10px);
-  font-size: em(14px);
   textarea {
     resize: none;
   }
@@ -109,7 +108,7 @@
 .Button {
   width: 100%;
   max-width: em(187px);
-  height: em(63px);
+  height: em(44px);
   margin: 0 auto;
   margin-top: em(86px);
   @include ifmobile {

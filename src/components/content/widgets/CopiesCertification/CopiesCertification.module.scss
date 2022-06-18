@@ -3,17 +3,16 @@
     font-family: $font-Calibri;
     font-style: normal;
     font-weight: 400;
-    font-size: em(19px);
+    font-size: em(16px);
     line-height: 120%;
     color: $white;
     margin-bottom: em(35px);
 
     @include iftablet {
-      font-size: em(15px);
       margin-bottom: em(14px);
     }
     @include ifmobile {
-      font-size: em(16px);
+      font-size: em(12px);
     }
   }
 
@@ -21,16 +20,15 @@
     font-family: $font-Calibri;
     font-style: normal;
     font-weight: 400;
-    font-size: em(19px);
+    font-size: em(16px);
     line-height: 120%;
     color: $pink;
     margin-bottom: em(60px);
     @include iftablet {
-      font-size: em(15px);
       margin-bottom: em(26px);
     }
     @include ifmobile {
-      font-size: em(16px);
+      font-size: em(12px);
     }
   }
 
@@ -91,7 +89,7 @@
 
         th {
           font-weight: bold;
-          font-size: em(17px);
+          font-size: em(16px);
           line-height: 100%;
           letter-spacing: -0.05em;
           color: $white;
@@ -99,10 +97,10 @@
           text-align: left;
           padding: 0 em(22px) em(19px);
           @include iftablet {
-            font-size: em(14px);
             padding-left: 0;
           }
           @include ifmobile {
+            font-size: em(12px);
           }
         }
       }
@@ -140,16 +138,14 @@
           }
 
           .SelectItemDescription {
-            font-size: em(19px);
+            font-size: em(16px);
             line-height: 100%;
             font-family: $font-Calibri;
             font-style: normal;
             font-weight: normal;
             color: $white;
-            @include iftablet {
-              font-size: em(15px);
-            }
             @include ifmobile {
+              font-size: em(12px);
               text-align: center;
             }
           }
@@ -278,15 +274,13 @@
           .Total {
             text-align: right;
             span {
-              font-size: em(17px);
+              font-size: em(16px);
               color: $white;
               font-weight: bold;
               line-height: 100%;
               letter-spacing: -0.05em;
-              @include iftablet {
-                font-size: em(14px);
-              }
               @include ifmobile {
+                font-size: em(12px);
               }
             }
           }
@@ -295,29 +289,25 @@
 
       .PriceValue {
         color: $pink;
-        font-size: em(19px);
+        font-size: em(16px);
         line-height: 100%;
         font-family: $font-Calibri;
         font-style: normal;
         font-weight: normal;
-        @include iftablet {
-          font-size: em(15px);
-        }
         @include ifmobile {
+          font-size: em(14px);
         }
       }
 
       .Currency {
         color: $grey;
-        font-size: em(19px);
+        font-size: em(16px);
         line-height: 100%;
         font-family: $font-Calibri;
         font-style: normal;
         font-weight: normal;
-        @include iftablet {
-          font-size: em(15px);
-        }
         @include ifmobile {
+          font-size: em(14px);
         }
       }
 
@@ -329,13 +319,9 @@
 
   .Button {
     width: 100%;
-    max-width: em(289px);
-    height: em(82px);
+    max-width: em(187px);
+    height: em(44px);
     margin: 0 auto;
-    @include iftablet {
-      max-width: em(149px);
-      height: em(56px);
-    }
     @include ifmobile {
       max-width: em(173px);
       height: em(38px);

@@ -1,15 +1,18 @@
 .WelcomeBlock {
-  padding-top: em(322px);
-  padding-bottom: em(430px);
+  padding-top: em(300px);
+  padding-bottom: em(70px);
   position: relative;
+  min-height: 100vh;
 
   @include iftablet {
     padding-top: em(189px);
     padding-bottom: em(171px);
+    min-height: 100%;
   }
   @include ifmobile {
     padding-top: em(84px);
     padding-bottom: em(41px);
+    min-height: 100%;
   }
 
   .WelcomeBlockTitle {
@@ -32,13 +35,6 @@
       max-width: 100%;
       margin-bottom: em(20px);
       list-style: none;
-
-      // @include iftablet {
-      //   max-width: em(448px);
-      // }
-      // @include ifmobile {
-      //   max-width: 100%;
-      // }
 
       .WelcomeBlockText {
         p {
@@ -77,6 +73,7 @@
 
 .WidgetBlock {
   position: relative;
+  padding-top: em(40px);
   padding-bottom: em(238px);
 
   @include iftablet {
@@ -105,36 +102,24 @@
   }
 
   .WidgetBlockTitle {
-    max-width: em(885px);
+    max-width: em(600px);
     margin: 0 auto;
     text-align: center;
-    margin-bottom: em(106px);
-    @include iftablet {
-      margin-bottom: em(72px);
-    }
+    margin-bottom: em(60px);
     @include ifmobile {
-      margin-bottom: em(92px);
+      margin-bottom: em(30px);
     }
     h1 {
-      font-size: em(50px);
+      font-size: em(24px);
       color: $white;
-      @include iftablet {
-        font-size: em(40px);
-      }
       @include ifmobile {
-        font-size: em(24px);
+        font-size: em(16px);
       }
     }
   }
 
   .WidgetBlockWidget {
-    margin-bottom: em(184px);
-    @include iftablet {
-      margin-bottom: em(90px);
-    }
-    @include ifmobile {
-      margin-bottom: em(59px);
-    }
+    margin-bottom: em(60px);
   }
 
   .WidgetBlockAdvantages {
@@ -152,8 +137,8 @@
 }
 
 .JurisdictionsBlock {
-  padding-top: em(180px);
-  padding-bottom: em(230px);
+  padding-top: em(150px);
+  padding-bottom: em(200px);
   position: relative;
   background: $black2;
   @include iftablet {
@@ -167,9 +152,9 @@
 
   .WelcomeBlockTitle {
     text-align: center;
-    margin-bottom: em(111px);
+    margin-bottom: em(100px);
     @include iftablet {
-      margin-bottom: em(56px);
+      margin-bottom: em(50px);
     }
     @include ifmobile {
       margin-bottom: em(20px);
@@ -184,13 +169,12 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: em(28px);
-    max-width: em(1498px);
+    max-width: em(1350px);
     width: 100%;
     margin: 0 auto;
-    margin-bottom: em(144px);
+    margin-bottom: em(100px);
     @include iftablet {
       max-width: em(909px);
-      margin-bottom: em(103px);
       gap: em(25px);
     }
     @include ifmobile {
@@ -201,12 +185,12 @@
 
   .HowItWorksTitle {
     text-align: center;
-    margin-bottom: em(188px);
+    margin-bottom: em(100px);
     @include iftablet {
       margin-bottom: em(50px);
     }
     @include ifmobile {
-      margin-bottom: em(39px);
+      margin-bottom: em(20px);
     }
     h1 {
       color: $white;
@@ -228,7 +212,7 @@
 }
 
 .JurisdictionsCountryBlock {
-  padding-top: em(226px);
+  padding-top: em(150px);
   padding-bottom: em(245px);
   position: relative;
 
@@ -245,10 +229,9 @@
     max-width: em(850px);
     text-align: center;
     margin: 0 auto;
-    margin-bottom: em(161px);
+    margin-bottom: em(60px);
     @include iftablet {
       max-width: em(679px);
-      margin-bottom: em(88px);
     }
     @include ifmobile {
       max-width: em(679px);
@@ -284,7 +267,7 @@
 .SomeBlockContainer {
   background: $black2;
   .SomeBlock {
-    padding-top: em(237px);
+    padding-top: em(150px);
     padding-bottom: em(261px);
 
     @include iftablet {
@@ -337,46 +320,36 @@
 
         .WelcomeBlockImage {
           position: relative;
-          width: em(88px);
-          height: em(88px);
-          margin-bottom: em(38px);
+          width: em(50px);
+          height: em(50px);
+          margin-bottom: em(30px);
 
-          @include iftablet {
-            width: em(65px);
-            height: em(65px);
-            margin-bottom: em(29px);
-          }
           @include ifmobile {
             width: em(37px);
             height: em(37px);
-            margin-bottom: em(14px);
             margin-left: em(30px);
+            margin-bottom: em(14px);
           }
         }
 
         p {
-          font-size: em(30px);
+          font-size: em(18px);
           color: $white;
           font-weight: bold;
           line-height: 120%;
+          text-align: center;
 
-          @include iftablet {
-            font-size: em(24px);
-          }
           @include ifmobile {
-            font-size: em(16px);
+            font-size: em(12px);
+            text-align: inherit;
           }
         }
 
         .Small {
-          font-size: em(20px);
+          font-size: em(18px);
           font-weight: 400;
-
-          @include iftablet {
-            font-size: em(17px);
-          }
           @include ifmobile {
-            font-size: em(11px);
+            font-size: em(12px);
           }
         }
       }
@@ -414,15 +387,9 @@
 
         .WelcomeBlockImage {
           position: relative;
-          width: em(88px);
-          height: em(88px);
-          margin-bottom: em(38px);
-
-          @include iftablet {
-            width: em(65px);
-            height: em(65px);
-            margin-bottom: em(29px);
-          }
+          width: em(50px);
+          height: em(50px);
+          margin-bottom: em(30px);
           @include ifmobile {
             width: em(37px);
             height: em(37px);
@@ -430,15 +397,12 @@
           }
         }
         p {
-          font-size: em(30px);
+          font-size: em(18px);
           color: $white;
           font-weight: bold;
           line-height: 120%;
-          @include iftablet {
-            font-size: em(24px);
-          }
           @include ifmobile {
-            font-size: em(16px);
+            font-size: em(12px);
           }
         }
 

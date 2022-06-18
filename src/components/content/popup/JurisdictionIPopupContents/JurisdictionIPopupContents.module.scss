@@ -35,19 +35,16 @@
 
 .Paragraph {
   font-family: $font-Calibri;
-  font-size: em(19px);
+  font-size: em(14px);
   line-height: 120%;
   margin-bottom: em(20px);
   span {
     display: inline-block;
     width: em(163px);
   }
-  @include iftablet {
-    font-size: em(16px);
-  }
 
   @include ifmobile {
-    font-size: em(9px);
+    font-size: em(12px);
   }
 }
 
@@ -87,30 +84,22 @@
 
 .SubtitleList {
   font-family: $font-Calibri;
-  font-size: em(19px);
+  font-size: em(16px);
   line-height: 120%;
 
-  @include iftablet {
-    font-size: em(16px);
-  }
-
   @include ifmobile {
-    font-size: em(9px);
+    font-size: em(12px);
   }
 }
 
 .Subtitle {
-  font-size: em(25px);
+  font-size: em(16px);
   line-height: 120%;
   font-weight: bold;
   font-family: $font-Termina;
 
-  @include iftablet {
-    font-size: em(20px);
-  }
-
   @include ifmobile {
-    font-size: em(16px);
+    font-size: em(14px);
   }
 }
 
@@ -124,7 +113,7 @@
   }
 
   .ListLi {
-    font-size: em(19px);
+    font-size: em(16px);
     line-height: 120%;
     font-family: $font-Calibri;
     counter-increment: my-awesome-counter;
@@ -135,12 +124,8 @@
       padding-right: em(8px);
     }
 
-    @include iftablet {
-      font-size: em(16px);
-    }
-
     @include ifmobile {
-      font-size: em(9px);
+      font-size: em(12px);
     }
   }
 }
@@ -153,16 +138,12 @@
   }
 
   .SublistLi {
-    font-size: em(19px, 19px);
+    font-size: em(16px, 16px);
     line-height: 120%;
     font-family: $font-Calibri;
 
-    @include iftablet {
-      font-size: em(16px, 16px);
-    }
-
     @include ifmobile {
-      font-size: em(9px, 9px);
+      font-size: em(12px, 12px);
     }
   }
 }

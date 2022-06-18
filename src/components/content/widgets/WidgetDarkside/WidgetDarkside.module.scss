@@ -4,6 +4,7 @@
 
 .Widgetform {
   width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,7 +19,7 @@
       max-width: em(328px);
     }
     @include ifmobile {
-      max-width: em(288px);
+      max-width: 100%;
       margin-bottom: em(13px);
     }
   }
@@ -26,22 +27,25 @@
   .Select {
     width: 100%;
     max-width: em(541px);
+    margin-left: em(15px);
+    margin-right: em(15px);
     @include iftablet {
       max-width: em(328px);
     }
     @include ifmobile {
-      max-width: em(288px);
+      max-width: 100%;
       margin-bottom: em(13px);
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
   .Button {
     width: 100%;
     max-width: em(193px);
-    height: em(83px);
+    height: em(44px);
     @include iftablet {
       max-width: em(149px);
-      height: em(61px);
     }
     @include ifmobile {
       max-width: em(173px);
@@ -70,7 +74,7 @@
     }
 
     .NonExistentTitle {
-      font-size: em(17px);
+      font-size: em(14px);
       color: $white;
       font-weight: 600;
       line-height: 100%;
@@ -139,7 +143,7 @@
           color: $pink;
           text-transform: uppercase;
           font-weight: bold;
-          font-size: em(30px);
+          font-size: em(24px);
           line-height: 100%;
           text-align: center;
           letter-spacing: -0.05em;
@@ -148,14 +152,14 @@
           margin-bottom: em(28px);
 
           @include ifmobile {
-            font-size: em(20px);
+            font-size: em(18px);
             padding-bottom: em(5px);
             margin-bottom: em(15px);
           }
         }
 
         .Title {
-          font-size: em(17px);
+          font-size: em(16px);
           font-weight: 600;
           line-height: 100%;
           color: $white;
@@ -164,13 +168,13 @@
           margin-bottom: em(22px);
 
           @include ifmobile {
-            font-size: em(14px);
+            font-size: em(12px);
             margin-bottom: em(15px);
           }
         }
 
         .Subtitle {
-          font-size: em(17px);
+          font-size: em(16px);
           line-height: 100%;
           color: $white;
           text-align: center;
@@ -191,7 +195,7 @@
         }
 
         .Title {
-          font-size: em(17px);
+          font-size: em(16px);
           font-weight: bold;
           line-height: 89.5%;
           letter-spacing: -0.05em;
@@ -201,7 +205,7 @@
             text-align: center;
           }
           @include ifmobile {
-            font-size: em(14px);
+            font-size: em(12px);
             text-align: center;
             line-height: 120%;
           }
@@ -212,7 +216,7 @@
         }
 
         .Description {
-          font-size: em(17px);
+          font-size: em(16px);
           line-height: 120%;
           color: $white;
           margin-bottom: em(13px);
@@ -232,7 +236,7 @@
           align-items: center;
 
           .PriceTitle {
-            font-size: em(17px);
+            font-size: em(16px);
             font-weight: bold;
             letter-spacing: -0.05em;
             line-height: 100%;
@@ -245,7 +249,7 @@
           }
 
           .PriceValue {
-            font-size: em(17px);
+            font-size: em(16px);
             font-weight: bold;
             letter-spacing: -0.05em;
             line-height: 100%;
@@ -263,14 +267,14 @@
 
           .PriceButton {
             width: em(139px);
-            height: em(63px);
+            height: em(44px);
 
             @include iftablet {
               margin-left: auto;
             }
             @include ifmobile {
               width: em(80px);
-              height: em(43px);
+              height: em(38px);
               margin-left: auto;
             }
           }
@@ -286,7 +290,7 @@
       }
 
       .ExistentDescriptionTitle {
-        font-size: em(30px);
+        font-size: em(24px);
         color: $pink;
         font-weight: bold;
         line-height: 89.5%;
@@ -302,7 +306,7 @@
       }
 
       .ExistentDescriptionSubtitle {
-        font-size: em(17px);
+        font-size: em(16px);
         color: $white;
 
         @include iftablet {
@@ -325,7 +329,7 @@
           tr {
             th {
               font-weight: bold;
-              font-size: em(17px);
+              font-size: em(16px);
               line-height: 100%;
               letter-spacing: -0.05em;
               color: $white;
@@ -333,7 +337,7 @@
               text-align: left;
               padding-bottom: em(25px);
               @include iftablet {
-                font-size: em(14px);
+                font-size: em(12px);
               }
             }
             .CompanyName {
@@ -362,7 +366,7 @@
               padding: em(20px);
             }
             td {
-              font-size: em(15px);
+              font-size: em(16px);
               text-transform: uppercase;
               font-weight: 600;
               line-height: 89.5%;
@@ -370,9 +374,6 @@
               color: rgba(255, 255, 255, 0.7);
               padding: em(7px) 0;
               border-bottom: 1px solid $white;
-              @include iftablet {
-                font-size: em(12px);
-              }
               @include ifmobile {
                 font-size: em(12px);
                 border-bottom: none;
@@ -397,12 +398,11 @@
             }
             .TdActions {
               .TdActionsButton {
-                font-size: em(15px);
+                font-size: em(16px);
                 width: em(127px, 13px);
                 height: em(43px, 13px);
 
                 @include ifmobile {
-                  font-size: em(18px);
                   width: em(127px);
                   height: em(43px);
                 }

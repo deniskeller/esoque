@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { checkIncorporate, getJCInfo } from "@api/widget-safe";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { checkIncorporate, getJCInfo } from '@api/widget-safe';
+import { v4 as uuidv4 } from 'uuid';
 
-import { BaseInput, BaseSelect, BaseButton } from "@base/index";
-import { juristdictionData } from "@utils/juristdiction";
-import styles from "./WidgetDarkside.module.scss";
+import { BaseInput, BaseSelect, BaseButton } from '@base/index';
+import { juristdictionData } from '@utils/juristdiction';
+import styles from './WidgetDarkside.module.scss';
 
 const WidgetDarkside: React.FC<Props> = () => {
   const router = useRouter();
 
   // Input / Select
-  const [companyName, setCompanyName] = React.useState<string>("");
-  const [juristdiction, setJuristdiction] = useState("");
+  const [companyName, setCompanyName] = React.useState<string>('');
+  const [juristdiction, setJuristdiction] = useState('');
 
   const [disabled, setDisabled] = React.useState<boolean>(true);
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState("");
+  const [error, setError] = React.useState('');
 
   // Response data
   const [response, setResponse] = useState<Response>();
@@ -43,13 +43,13 @@ const WidgetDarkside: React.FC<Props> = () => {
 
     setLoading(true);
     setWidgetVisible(false);
-    setError("");
+    setError('');
 
     // Генерируем session_id, который,
     // нам потом нужно будет передать на наш бэкенд,
     // в случае если пользователь нажмет на кнопку buy
     const session_id = uuidv4();
-    sessionStorage.setItem("session_id", session_id);
+    sessionStorage.setItem('session_id', session_id);
 
     const data = {
       js: juristdiction,
@@ -67,14 +67,14 @@ const WidgetDarkside: React.FC<Props> = () => {
       setResponse(res);
     } else {
       setWidgetVisible(true);
-      setError("Network error please try again");
+      setError('Network error please try again');
     }
     setLoading(false);
   };
 
   const buy = async () => {
     // Получаем session_id из предыдущего шага
-    const session_id = sessionStorage.getItem("session_id");
+    const session_id = sessionStorage.getItem('session_id');
 
     const data = {
       js: juristdiction,
@@ -86,7 +86,7 @@ const WidgetDarkside: React.FC<Props> = () => {
     };
 
     const res = await checkIncorporate(data);
-    console.log(res, "check");
+    console.log(res, 'check');
 
     if (res) {
       router.push(response?.url_cart!);
@@ -95,7 +95,7 @@ const WidgetDarkside: React.FC<Props> = () => {
 
   React.useEffect(() => {
     if (!companyName) {
-      setError("");
+      setError('');
     }
     if (companyName.trim().length >= 3 && juristdiction) {
       setDisabled(false);
@@ -106,7 +106,7 @@ const WidgetDarkside: React.FC<Props> = () => {
 
   React.useEffect(() => {
     return () => {
-      sessionStorage.removeItem("session_id");
+      sessionStorage.removeItem('session_id');
     };
   }, []);
 
@@ -144,18 +144,18 @@ const WidgetDarkside: React.FC<Props> = () => {
 
         {widgetVisible && (
           <div className={styles.WidgetContent}>
-            {!response?.is_available ? (
+            {response?.is_available ? (
               <div className={styles.NonExistent}>
                 {error ? (
                   <p className={styles.NonExistentTitle}>{error}</p>
                 ) : (
                   <>
                     <p className={styles.NonExistentTitle}>
-                      This Company Name{" "}
+                      This Company Name{' '}
                       <span>
                         {response?.searched_company?.company_name ||
                           companyName}
-                      </span>{" "}
+                      </span>{' '}
                       is not available
                     </p>
                     <p className={styles.NonExistentSubtitle}>
@@ -176,12 +176,12 @@ const WidgetDarkside: React.FC<Props> = () => {
                     </div>
                     <div className={styles.Subtitle}>
                       {response?.product_description ||
-                        "Government and Notary Fees / Registered Address"}
+                        'Government and Notary Fees / Registered Address'}
                     </div>
                   </div>
                   <div className={styles.CompanyPrice}>
                     <div className={styles.Title}>
-                      Great, your company name:{" "}
+                      Great, your company name:{' '}
                       <span>{response?.company_name || companyName}</span> is
                       free.
                     </div>

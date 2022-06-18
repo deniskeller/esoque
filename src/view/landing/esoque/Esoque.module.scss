@@ -6,10 +6,12 @@
   @include iftablet {
     padding-top: em(190px);
     padding-bottom: em(60px);
+    min-height: 100%;
   }
   @include ifmobile {
     padding-top: em(84px);
     padding-bottom: em(40px);
+    min-height: 100%;
   }
   .WelcomeBlockTitle {
     margin-bottom: em(37px);
@@ -83,10 +85,12 @@
     @include iftablet {
       padding-top: em(114px);
       padding-bottom: em(56px);
+      min-height: 100%;
     }
     @include ifmobile {
       padding-top: em(81px);
       padding-bottom: em(50px);
+      min-height: 100%;
     }
     .AboutImage {
       width: em(250px);
@@ -189,6 +193,7 @@
     padding-top: em(72px);
     padding-bottom: em(22px);
     max-width: 100%;
+    min-height: 100%;
   }
   .GraphBlockTitle {
     margin-bottom: em(24px);

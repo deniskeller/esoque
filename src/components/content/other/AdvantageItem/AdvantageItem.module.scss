@@ -3,7 +3,7 @@
   height: em(153px);
   border-radius: 10px;
 
-  padding: em(26px) em(42px) em(26px) em(87px);
+  padding: em(26px) em(42px) em(26px) em(70px);
   position: relative;
   box-sizing: border-box;
 
@@ -14,42 +14,39 @@
   @include ifmobile {
     width: 100%;
     height: em(96px);
-    padding-left: em(80px);
   }
 
   .AdvantageItemImage {
     position: absolute;
-    width: em(51px);
-    height: em(51px);
-    left: em(26px);
-    top: calc(50% - em(25px));
-    @include iftablet {
-      width: em(43px);
-      height: em(43px);
-      top: calc(50% - em(21px));
-    }
+    width: em(43px);
+    height: em(43px);
+    top: calc(50% - em(21px));
+    left: em(15px);
     @include ifmobile {
       width: em(28px);
       height: em(28px);
       top: calc(50% - em(14px));
-      left: em(43px);
+      left: em(20px);
     }
   }
 
   .AdvantageItemTitle {
     margin-bottom: em(10px);
+    @include ifmobile {
+      margin-bottom: em(5px);
+    }
   }
 
   .AdvantageItemSubtitle {
     p {
-      font-size: em(17px);
+      font-size: em(16px);
+      line-height: 100%;
       font-family: $font-Calibri;
-
       @include iftablet {
         font-size: em(14px);
       }
       @include ifmobile {
-        font-size: em(10px);
+        font-size: em(12px);
       }
     }
   }

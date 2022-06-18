@@ -1,11 +1,11 @@
 .CountryItem {
-  width: em(735px);
-  height: em(572px);
+  width: em(635px);
+  height: em(472px);
   position: relative;
   background: $black;
   border-radius: 10px;
   cursor: pointer;
-  padding: em(59px) em(75px) em(46px);
+  padding: em(50px) em(50px) em(25px);
 
   &:last-child {
     margin: 0 auto;
@@ -24,19 +24,15 @@
 
   .CountryItemImage {
     position: relative;
-    width: em(588px);
-    height: em(391px);
-    border-radius: 10px;
+    width: 100%;
+    height: 80%;
+    border-radius: em(10px);
     margin-bottom: em(48px);
 
     @include iftablet {
-      width: em(386px);
-      height: em(231px);
-      margin-bottom: em(17px);
+      margin-bottom: em(34px);
     }
     @include ifmobile {
-      width: em(256px);
-      height: em(153px);
       margin-bottom: em(17px);
     }
 
@@ -52,13 +48,13 @@
         bottom: em(14px);
       }
       h1 {
-        font-size: em(57px);
+        font-size: em(48px);
         font-weight: normal;
         line-height: 120%;
         text-align: center;
         color: $yellow;
         @include iftablet {
-          font-size: em(35px);
+          font-size: em(34px);
         }
         @include ifmobile {
           font-size: em(24px);
@@ -79,9 +75,9 @@
     //   padding-right: em(34px);
     // }
     P {
-      font-size: em(21px);
+      font-size: em(16px);
       @include iftablet {
-        font-size: em(14px);
+        font-size: em(12px);
       }
       @include ifmobile {
         font-size: em(9px);
@@ -94,20 +90,20 @@
       background: $grey;
       border-radius: em(10px);
       position: absolute;
-      right: em(72px);
-      bottom: em(49px);
+      right: em(47px);
+      bottom: em(30px);
       @extend %center;
       @include iftablet {
         width: em(31px);
         height: em(28px);
         right: em(27px);
-        bottom: em(36px);
+        bottom: em(24px);
       }
       @include ifmobile {
         width: em(20px);
         height: em(18px);
         right: em(18px);
-        bottom: em(11px);
+        bottom: em(22px);
         border-radius: em(6px);
       }
 

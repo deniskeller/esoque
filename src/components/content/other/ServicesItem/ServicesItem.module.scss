@@ -36,6 +36,9 @@
 
   .ServicesItemTitle {
     margin-bottom: em(10px);
+    @include ifmobile {
+      margin-bottom: em(5px);
+    }
   }
 
   .ServicesItemSubtitle {
