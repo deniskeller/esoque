@@ -18,7 +18,10 @@
     font-weight: bold;
   }
   &_h3 {
-    font-size: em(20px);
+    font-size: em(18px);
     font-weight: normal;
+    @include ifmobile {
+      font-size: em(16px);
+    }
   }
 }

@@ -89,19 +89,18 @@
           margin-bottom: 0;
         }
         span {
-          font-size: em(20px);
+          font-size: em(16px);
           line-height: 100%;
           color: $green;
           font-weight: 700;
 
           @include iftablet {
             width: em(160px);
-            font-size: em(18px);
             text-align: left;
           }
           @include ifmobile {
             width: 100%;
-            font-size: em(11px);
+            font-size: em(12px);
             text-align: center;
           }
         }
@@ -137,23 +136,17 @@
           }
 
           .Close {
-            width: em(40px);
-            height: em(40px);
+            width: em(26px);
+            height: em(26px);
+            top: em(15px);
+            right: em(16px);
             background: $green;
             @extend %center;
             border-radius: 50%;
             position: absolute;
-            top: em(15px);
-            right: em(20px);
             cursor: pointer;
             z-index: 100;
 
-            @include iftablet {
-              width: em(26px);
-              height: em(26px);
-              top: em(15px);
-              right: em(16px);
-            }
             @include ifmobile {
               width: em(26px);
               height: em(26px);
@@ -161,13 +154,8 @@
               right: em(16px);
             }
             .IconClose {
-              width: em(19.58px);
-              height: em(23.49px);
-
-              @include iftablet {
-                width: em(9.4px);
-                height: em(11.27px);
-              }
+              width: em(9.4px);
+              height: em(11.27px);
               @include ifmobile {
                 width: em(9.4px);
                 height: em(11.27px);
@@ -222,16 +210,13 @@
 
               .ListItemName,
               .ListItemPrice {
-                font-size: em(20px);
+                font-size: em(16px);
                 font-weight: 400;
                 line-height: 100%;
                 color: $white;
 
-                @include iftablet {
-                  font-size: em(14px);
-                }
                 @include ifmobile {
-                  font-size: em(11px);
+                  font-size: em(12px);
                 }
               }
               .ListItemPrice {
@@ -245,7 +230,7 @@
             align-self: flex-end;
             .Total,
             .Price {
-              font-size: em(20px);
+              font-size: em(16px);
               line-height: 100%;
               font-weight: 700;
               color: $green;
@@ -273,18 +258,15 @@
         }
       }
       .Order {
-        font-size: em(20px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 100%;
         color: $green;
         text-decoration: underline;
         cursor: pointer;
 
-        @include iftablet {
-          font-size: em(18px);
-        }
         @include ifmobile {
-          font-size: em(11px);
+          font-size: em(12px);
           align-self: flex-end;
         }
       }
@@ -295,14 +277,14 @@
     padding-bottom: em(15px);
 
     .ListTitle {
-      font-size: em(20px);
+      font-size: em(16px);
       font-weight: 400;
       line-height: 100%;
       color: $yellow;
       margin-top: em(22px);
       margin-bottom: em(16px);
       @include ifmobile {
-        font-size: em(11px);
+        font-size: em(12px);
         margin-top: 0;
         margin-bottom: em(15px);
       }
@@ -326,25 +308,23 @@
       }
       .Title,
       .Value {
-        font-size: em(20px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 100%;
         color: $white;
         font-family: $font-Calibri;
-        @include iftablet {
-          font-size: em(18px);
-        }
+
         @include ifmobile {
-          font-size: em(11px);
+          font-size: em(12px);
         }
       }
       .Title {
-        width: em(895px, 20px);
+        width: em(895px, 16px);
         @include iftablet {
-          width: em(597px, 18px);
+          width: em(597px, 16px);
         }
         @include ifmobile {
-          width: em(190px, 11px);
+          width: em(190px, 12px);
         }
       }
 

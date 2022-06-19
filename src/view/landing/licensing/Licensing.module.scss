@@ -34,7 +34,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: em(82px);
+    margin-bottom: em(60px);
     position: relative;
     @include iftablet {
       margin-bottom: em(44px);
@@ -53,10 +53,6 @@
         }
         h1 {
           color: $green;
-          line-height: 100%;
-          @include ifmobile {
-            font-size: em(27px);
-          }
         }
       }
 
@@ -66,7 +62,7 @@
             font-size: em(18px);
           }
           @include ifmobile {
-            font-size: em(11px);
+            font-size: em(12px);
             line-height: 120%;
           }
         }
@@ -101,19 +97,18 @@
           margin-bottom: 0;
         }
         span {
-          font-size: em(20px);
+          font-size: em(16px);
           line-height: 100%;
           color: $green;
           font-weight: 700;
 
           @include iftablet {
             width: em(160px);
-            font-size: em(18px);
             text-align: left;
           }
           @include ifmobile {
             width: 100%;
-            font-size: em(11px);
+            font-size: em(12px);
             text-align: center;
           }
         }
@@ -149,23 +144,17 @@
           }
 
           .Close {
-            width: em(40px);
-            height: em(40px);
+            width: em(26px);
+            height: em(26px);
+            top: em(15px);
+            right: em(16px);
             background: $green;
             @extend %center;
             border-radius: 50%;
             position: absolute;
-            top: em(15px);
-            right: em(20px);
             cursor: pointer;
             z-index: 100;
 
-            @include iftablet {
-              width: em(26px);
-              height: em(26px);
-              top: em(15px);
-              right: em(16px);
-            }
             @include ifmobile {
               width: em(26px);
               height: em(26px);
@@ -173,13 +162,8 @@
               right: em(16px);
             }
             .IconClose {
-              width: em(19.58px);
-              height: em(23.49px);
-
-              @include iftablet {
-                width: em(9.4px);
-                height: em(11.27px);
-              }
+              width: em(9.4px);
+              height: em(11.27px);
               @include ifmobile {
                 width: em(9.4px);
                 height: em(11.27px);
@@ -234,16 +218,13 @@
 
               .ListItemName,
               .ListItemPrice {
-                font-size: em(20px);
+                font-size: em(16px);
                 font-weight: 400;
                 line-height: 100%;
                 color: $white;
 
-                @include iftablet {
-                  font-size: em(14px);
-                }
                 @include ifmobile {
-                  font-size: em(11px);
+                  font-size: em(12px);
                 }
               }
               .ListItemPrice {
@@ -257,7 +238,7 @@
             align-self: flex-end;
             .Total,
             .Price {
-              font-size: em(20px);
+              font-size: em(16px);
               line-height: 100%;
               font-weight: 700;
               color: $green;
@@ -285,18 +266,14 @@
         }
       }
       .Order {
-        font-size: em(20px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 100%;
         color: $green;
         text-decoration: underline;
         cursor: pointer;
-
-        @include iftablet {
-          font-size: em(18px);
-        }
         @include ifmobile {
-          font-size: em(11px);
+          font-size: em(12px);
           align-self: flex-end;
         }
       }
@@ -325,24 +302,21 @@
 
       .Title,
       .Value {
-        font-size: em(20px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 100%;
         color: $yellow;
-        @include iftablet {
-          font-size: em(18px);
-        }
         @include ifmobile {
-          font-size: em(11px);
+          font-size: em(12px);
         }
       }
       .Title {
-        width: em(960px, 20px);
+        width: em(960px, 16px);
         @include iftablet {
-          width: em(625px, 18px);
+          width: em(625px, 16px);
         }
         @include ifmobile {
-          width: em(170px, 11px);
+          width: em(170px, 12px);
         }
       }
 
@@ -391,25 +365,22 @@
         }
         .Title,
         .Value {
-          font-size: em(20px);
+          font-size: em(16px);
           font-weight: 400;
           line-height: 100%;
           color: $white;
           font-family: $font-Calibri;
-          @include iftablet {
-            font-size: em(18px);
-          }
           @include ifmobile {
-            font-size: em(11px);
+            font-size: em(12px);
           }
         }
         .Title {
-          width: em(928px, 20px);
+          width: em(928px, 16px);
           @include iftablet {
-            width: em(597px, 18px);
+            width: em(597px, 16px);
           }
           @include ifmobile {
-            width: em(220px, 11px);
+            width: em(180px, 12px);
           }
         }
 
