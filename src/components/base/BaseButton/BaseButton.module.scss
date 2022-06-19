@@ -8,11 +8,8 @@
   font-weight: 600;
   font-family: $font-Termina;
   white-space: nowrap;
-  @include iftablet {
-    font-size: em(17px);
-  }
   @include ifmobile {
-    font-size: em(11px);
+    font-size: em(12px);
   }
 }
 

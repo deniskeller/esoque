@@ -54,14 +54,10 @@
     margin-bottom: em(20px);
   }
   &Item {
-    line-height: em(23px);
-    font-size: em(21px);
     margin-bottom: em(30px);
+
     &:last-child {
       margin-bottom: 0;
-    }
-
-    @include iftablet {
     }
     @include ifmobile {
       margin-bottom: em(15px);

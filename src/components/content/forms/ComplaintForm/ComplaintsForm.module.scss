@@ -1,5 +1,7 @@
 .Form {
-  width: 85%;
+  width: 100%;
+  max-width: em(900px);
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -16,7 +18,7 @@
   &Input {
     max-width: 49%;
     width: 100%;
-    margin-bottom: em(15px);
+    margin-bottom: em(13px);
 
     @include iftablet {
     }
@@ -33,7 +35,7 @@
   &PhoneInput {
     max-width: 49%;
     width: 100%;
-    margin-bottom: em(15px);
+    margin-bottom: em(13px);
 
     @include iftablet {
     }
@@ -45,7 +47,7 @@
   &Textarea {
     width: 100%;
     height: em(462px);
-    margin-bottom: em(30px);
+    margin-bottom: em(13px);
 
     @include iftablet {
     }
@@ -68,28 +70,20 @@
       margin-bottom: em(11px);
     }
     &Name {
-      max-width: em(809px);
-      width: 100%;
-
-      @include iftablet {
-        max-width: em(390px);
-      }
+      width: 60%;
       @include ifmobile {
-        max-width: 100%;
+        width: 100%;
         margin-bottom: em(11px);
       }
     }
     &Btn {
-      max-width: em(315px);
-      width: 100%;
+      width: 38%;
+      height: em(44px);
 
       @include iftablet {
-        max-width: em(136px);
       }
       @include ifmobile {
-        font-size: em(14px);
-        height: em(44px, 14px);
-        max-width: 100%;
+        width: 100%;
       }
     }
   }
@@ -99,16 +93,14 @@
     width: 100%;
     &Btn {
       max-width: em(289px);
-      height: em(82px);
+      height: em(44px);
       width: 100%;
 
       @include iftablet {
         max-width: em(149px);
-        height: em(56px);
       }
       @include ifmobile {
         max-width: 100%;
-        height: em(44px);
       }
     }
   }

@@ -37,17 +37,6 @@
   &:focus {
     border: 2px solid $yellow;
   }
-  @include iftablet {
-    $size: 17px;
-    font-size: em($size);
-    border-radius: em(10px, $size);
-  }
-  @include ifmobile {
-    $size: 11px;
-    font-size: em($size);
-    padding: em(20px) em(17px, $size);
-    border-radius: em(10px, $size);
-  }
 }
 
 .Error {
