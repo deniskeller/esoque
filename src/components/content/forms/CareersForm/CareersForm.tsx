@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { BaseButton, BaseInput, BaseTextarea } from "@base/index";
-import PhoneInput from "@content/other/PhoneInput/PhoneInput";
+import { BaseButton, BaseInput, BaseTextarea } from '@base/index';
+import PhoneInput from '@content/other/PhoneInput/PhoneInput';
 
-import UploadFile from "@content/other/UploadFileBtn/UploadFileBtn";
-import UploadZoneFile from "@content/other/UploadZoneFile/UploadZoneFile";
+import UploadFile from '@content/other/UploadFileBtn/UploadFileBtn';
+import UploadZoneFile from '@content/other/UploadZoneFile/UploadZoneFile';
 
-import { validateEmail, validateFields } from "@utils/validateInputs";
+import { validateEmail, validateFields } from '@utils/validateInputs';
 
-import styles from "./CareersForm.module.scss";
-import { IApplyVacancy } from "@type/careers";
+import styles from './CareersForm.module.scss';
+import { IApplyVacancy } from '@type/careers';
 
 type TInputs = {
   [key: string]: { [key: string]: string };
@@ -20,25 +20,29 @@ interface Props {
   showSuccessForm: boolean;
 }
 
-const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) => {
-  const [email, setEmail] = React.useState<string>("");
+const CareersForm: React.FC<Props> = ({
+  id,
+  onSubmit,
+  showSuccessForm,
+}: Props) => {
+  const [email, setEmail] = React.useState<string>('');
   const [emailError, setEmailError] = React.useState<boolean>(false);
   const [files, setFiles] = React.useState<any[]>([]);
 
   const [inputs, setInputs] = React.useState<TInputs>({
-    firstName: { value: "", error: "", type: "string" },
-    phone: { value: "", error: "", type: "phone" },
-    phoneCode: { value: "", error: "", type: "phoneCode" },
+    firstName: { value: '', error: '', type: 'string' },
+    phone: { value: '', error: '', type: 'phone' },
+    phoneCode: { value: '', error: '', type: 'phoneCode' },
   });
 
   // Optional input
-  const [desc, setDesc] = React.useState<string>("");
-  const [companyName, setCompanyName] = React.useState<string | number>("");
+  const [desc, setDesc] = React.useState<string>('');
+  const [companyName, setCompanyName] = React.useState<string | number>('');
 
   const changeInputs = (name: string, value: string) => {
     const newInputs = { ...inputs };
     newInputs[name].value = value;
-    newInputs[name].error = "";
+    newInputs[name].error = '';
     setInputs(newInputs);
   };
 
@@ -48,7 +52,7 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
   };
 
   const uploadDropFile = React.useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles, "acceptedFiles");
+    console.log(acceptedFiles, 'acceptedFiles');
     setFiles(acceptedFiles);
   }, []);
 
@@ -57,7 +61,7 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
     e.preventDefault();
 
     const { newObj, errors } = validateFields(inputs);
-    console.log(newObj, "newObj");
+    console.log(newObj, 'newObj');
 
     if (!email.length) {
       setEmailError(true);
@@ -75,7 +79,7 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
       } as IApplyVacancy;
 
       onSubmit(data);
-      console.log("data Form", data);
+      console.log('data Form', data);
     }
 
     setInputs(newObj);
@@ -94,7 +98,7 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
       }
   }, [email]);
 
-  console.log("files", files);
+  console.log('files', files);
   return (
     <>
       {showSuccessForm ? (
@@ -113,7 +117,7 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
             type="text"
             name="firstName"
             error={!!inputs.firstName.error}
-            onChange={(value: string) => changeInputs("firstName", value)}
+            onChange={(value: string) => changeInputs('firstName', value)}
             placeholder="Name Surname"
           />
           <BaseInput
@@ -131,9 +135,9 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
               errorPhone={!!inputs.phone.error}
               value={inputs.phone.value}
               onChangeCode={(value: string) => {
-                changeInputs("phoneCode", value);
+                changeInputs('phoneCode', value);
               }}
-              onChangePhone={(value: string) => changeInputs("phone", value)}
+              onChangePhone={(value: string) => changeInputs('phone', value)}
             />
           </div>
           <BaseInput
@@ -156,7 +160,13 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
             <div className={styles.FormFilesName}>
               {files?.length > 0 ? (
                 files.map((file) => {
-                  return <FileSelected key={file?.name} file={file} onClose={onDeleteFile} />;
+                  return (
+                    <FileSelected
+                      key={file?.name}
+                      file={file}
+                      onClose={onDeleteFile}
+                    />
+                  );
                 })
               ) : (
                 <UploadZoneFile onDrop={uploadDropFile} isMultiple={false} />
@@ -167,7 +177,11 @@ const CareersForm: React.FC<Props> = ({ id, onSubmit, showSuccessForm }: Props) 
             </div>
           </div>
           <div className={styles.FormSubmit}>
-            <BaseButton onClick={submitFormData} className={styles.FormSubmitBtn} type="default">
+            <BaseButton
+              onClick={submitFormData}
+              className={styles.FormSubmitBtn}
+              type="default"
+            >
               Submit
             </BaseButton>
           </div>
@@ -184,11 +198,20 @@ interface FileProps {
 }
 
 const FileSelected: React.FC<FileProps> = ({ file, onClose }: FileProps) => {
+  const computedName = (file: string) => {
+    if (file.length > 15) {
+      const fileName = file.split('.')[0];
+      const fileType = file.split('.')[1];
+      const newStr = fileName.substring(0, 15);
+      return newStr + '...' + '.' + fileType;
+    }
+    return file;
+  };
   return (
     <div className={styles.FormFilesNameWrap}>
-      <div className={styles.FormFilesNameFile}>{file.name}</div>
+      <div className={styles.FormFilesNameFile}>{computedName(file.name)}</div>
       <div className={styles.FormFilesBtnClose} onClick={onClose}>
-        <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12.6 0.0999997H10.58L6.58 4.54L2.58 0.0999997H0.52L5.52 5.52L0.48 11H2.5L6.54 6.52L10.58 11H12.64L7.62 5.5L12.6 0.0999997Z"
             fill="black"

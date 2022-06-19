@@ -1,5 +1,6 @@
 .Form {
-  width: 85%;
+  width: 100%;
+  max-width: em(900px);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -13,7 +14,7 @@
   &Input {
     max-width: 49%;
     width: 100%;
-    margin-bottom: em(15px);
+    margin-bottom: em(13px);
     @include iftablet {
       margin-bottom: em(11px);
     }
@@ -29,7 +30,7 @@
   &PhoneInput {
     max-width: 49%;
     width: 100%;
-    margin-bottom: em(17px);
+    margin-bottom: em(13px);
     @include iftablet {
       margin-bottom: em(11px);
     }
@@ -41,10 +42,7 @@
   &Textarea {
     width: 100%;
     height: em(462px);
-    margin-bottom: em(27px);
-    @include iftablet {
-      margin-bottom: em(17px);
-    }
+    margin-bottom: em(13px);
     @include ifmobile {
       height: em(100px);
       margin-bottom: em(11px);
@@ -63,18 +61,13 @@
       margin-bottom: em(11px);
     }
     &Name {
-      max-width: em(809px);
-      width: 100%;
-
-      @include iftablet {
-        max-width: em(685px);
-      }
+      width: 60%;
       @include ifmobile {
-        max-width: 100%;
+        width: 100%;
         margin-bottom: em(11px);
       }
-      &Wrap{
-        $size: 20px;
+      &Wrap {
+        $size: 12px;
         background: #f2f5f6;
         width: 100%;
         font-size: em($size);
@@ -89,31 +82,28 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 30px 0 em(37px, $size);
-        height: 30px;
+        padding: 0 em(17px, $size);
+        height: em(44px, 12px);
         border: none;
       }
-      &File{
-         overflow: hidden;
+      &File {
+        overflow: hidden;
         text-overflow: ellipsis;
       }
     }
     &Btn {
-      max-width: em(315px);
-      width: 100%;
-      @include iftablet {
-        max-width: em(136px);
-      }
+      width: 38%;
+      height: em(44px);
       @include ifmobile {
-        font-size: em(14px);
-        height: em(44px, 14px);
-        max-width: 100%;
+        width: 100%;
       }
-      &Close{
+      &Close {
+        width: em(20px);
+        height: em(20px);
         position: absolute;
-        top: 10px;
-        right: 10px;
-        &:hover{
+        top: 30%;
+        right: em(20px);
+        &:hover {
           cursor: pointer;
         }
       }
@@ -125,15 +115,13 @@
     width: 100%;
     &Btn {
       max-width: em(289px);
-      height: em(82px);
+      height: em(44px);
       width: 100%;
       @include iftablet {
         max-width: em(149px);
-        height: em(56px);
       }
       @include ifmobile {
         max-width: 100%;
-        height: em(44px);
       }
     }
   }
@@ -162,21 +150,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: em(1027px);
+  max-width: em(900px);
   width: 100%;
-  height: 100%;
+  height: em(400px);
   border: solid em(2px) $yellow;
 
   span {
     color: $yellow;
     width: 100%;
     text-align: center;
-    font-size: em(17px);
+    font-size: em(16px);
     font-weight: bold;
-    @include iftablet {
-    }
     @include ifmobile {
-      font-size: em(16px);
+      font-size: em(12px);
     }
   }
 }
