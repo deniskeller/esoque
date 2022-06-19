@@ -8,37 +8,24 @@
   background: $input;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: em(10px);
-  padding: 0 em(37px);
+  padding: 0 em(17px);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: em(83px);
-
-  @include iftablet {
-    height: em(61px);
-
-    padding: 0 em(30px);
-  }
+  height: em(44px);
   @include ifmobile {
-    padding: 0 em(17px);
-    height: em(44px);
+    height: em(38px);
   }
 
   span {
-    font-size: em(20px);
+    font-size: em(12px);
     font-weight: normal;
     line-height: 100%;
     color: $placeholder;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    @include iftablet {
-      font-size: em(17px);
-    }
-    @include ifmobile {
-      font-size: em(11px);
-    }
   }
   .NotEmpty {
     color: $black;

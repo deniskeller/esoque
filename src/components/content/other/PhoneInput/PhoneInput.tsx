@@ -1,8 +1,8 @@
-import { BaseInput, BaseSearchSelect } from "@base/index";
-import React from "react";
-import { codes } from "@utils/codes";
-import styles from "./PhoneInput.module.scss";
-import SelectInputPhone from "../PhoneSelectInput/PhoneSelectInput";
+import { BaseInput, BaseSearchSelect } from '@base/index';
+import React from 'react';
+import { codes } from '@utils/codes';
+import styles from './PhoneInput.module.scss';
+import SelectInputPhone from '../PhoneSelectInput/PhoneSelectInput';
 
 type IPhoneInput = {
   className?: string;
@@ -24,12 +24,19 @@ const PhoneInput: React.FC<IPhoneInput> = ({
   return (
     <div className={`${styles.Wrapper} ${className}`}>
       <div className={styles.SelectInput}>
-        <SelectInputPhone
+        <BaseSearchSelect
           placeholder="Code"
           error={errorCode}
           onChange={(value) => onChangeCode(value.toString())}
           options={codes}
+          className={styles.Select}
         />
+        {/* <SelectInputPhone
+          placeholder="Code"
+          error={errorCode}
+          onChange={(value) => onChangeCode(value.toString())}
+          options={codes}
+        /> */}
       </div>
 
       <BaseInput

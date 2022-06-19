@@ -1,6 +1,6 @@
 .bg {
   position: relative;
-  background-image: url("/images/landing/contacts/contacts-bg.png");
+  background-image: url('/images/landing/contacts/contacts-bg.png');
   background-position: center;
   background-size: cover;
   .blur {
@@ -74,6 +74,7 @@
     @include ifmobile {
       height: em(183px);
       order: -1;
+      margin-bottom: em(30px);
     }
   }
 }
@@ -82,7 +83,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: em(44px);
+  margin-bottom: em(30px);
   &:last-child {
     margin-bottom: 0;
   }
@@ -93,14 +94,13 @@
   }
   &Title {
     color: $yellow;
-    margin-bottom: em(8px);
     line-height: 100%;
     font-weight: bold;
-    @include iftablet {
-    }
+    font-size: em(16px);
+    margin-bottom: em(5px);
     @include ifmobile {
+      font-size: em(12px);
       font-weight: 500;
-      font-size: em(16px);
     }
   }
   &SubTitle {
@@ -108,7 +108,7 @@
     color: $white;
     max-width: em(336px);
     width: 100%;
-    font-size: em(21px);
+    font-size: em(16px);
     @include iftablet {
     }
     @include ifmobile {
@@ -127,34 +127,26 @@
   }
 
   .ArrowDownWrapper {
-    width: em(168px);
-    height: em(168px);
-    background-color: $yellow;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    @include iftablet {
-      width: em(92px);
-      height: em(92px);
-    }
+    width: em(92px);
+    height: em(92px);
+    border-radius: 50%;
+    background: $yellow;
+    @extend %center;
     @include ifmobile {
-      width: em(52px);
-      height: em(52px);
+      width: em(60px);
+      height: em(60px);
     }
   }
+
   .ArrowDownIconWrapper {
+    display: flex;
+    align-items: center;
     position: relative;
-    width: em(30px);
+    width: em(17px);
+    position: relative;
     height: em(66px);
-    @include iftablet {
-      width: em(17px);
-      height: em(38px);
-    }
     @include ifmobile {
-      width: em(10px);
-      height: em(22px);
+      width: em(11px);
     }
   }
 }

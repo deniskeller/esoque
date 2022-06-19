@@ -42,37 +42,26 @@
 
   .BaseCheckboxCheck {
     box-sizing: border-box;
-    width: em(32px);
-    height: em(32px);
+    width: em(20px);
+    height: em(20px);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: em(10px);
+    border-radius: 10%;
     background: $input;
     position: relative;
-
-    @include iftablet {
-      width: em(22px);
-      height: em(22px);
-      border-radius: em(4px);
-    }
     @include ifmobile {
       width: em(18px);
       height: em(18px);
-      border-radius: em(2px);
     }
   }
 
   .BaseCheckboxTick {
-    width: em(17px);
-    height: em(19px);
+    width: em(12px);
+    height: em(14px);
     position: absolute;
     top: 25%;
     left: 25%;
     visibility: hidden;
     transform: scale(1.5);
-    @include iftablet {
-      width: em(12px);
-      height: em(14px);
-    }
     @include ifmobile {
       width: em(10px);
       height: em(12px);

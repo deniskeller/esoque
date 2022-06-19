@@ -24,7 +24,11 @@
   }
 
   /* Firefox */
-  input[type="number"] {
+  input[type='number'] {
     -moz-appearance: textfield;
   }
+}
+
+.Select {
+  width: 30%;
 }
