@@ -28,7 +28,7 @@
   }
 
   .Title {
-    margin-bottom: em(120px);
+    margin-bottom: em(60px);
     @include iftablet {
       margin-bottom: em(36px);
     }
@@ -42,11 +42,11 @@
 
   .News {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: em(106px) em(142px);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: em(80px) em(50px);
 
     @include iftablet {
-      gap: em(72px) em(116px);
+      gap: em(72px) em(30px);
     }
     @include ifmobile {
       grid-template-columns: 1fr;
@@ -56,18 +56,16 @@
     .NewsItem {
       .NewsItemImage {
         width: 100%;
-        height: em(412px);
+        height: em(300px);
         border-radius: em(10px);
         position: relative;
         overflow: hidden;
-        margin-bottom: em(46px);
+        margin-bottom: em(20px);
         @include iftablet {
-          height: em(221px);
-          margin-bottom: em(32px);
+          height: em(200px);
         }
         @include ifmobile {
           height: em(183px);
-          margin-bottom: em(20px);
         }
         img {
           height: 100%;
@@ -75,24 +73,25 @@
       }
 
       .NewsItemTitle {
-        font-size: em(20px);
+        font-size: em(16px);
         font-style: normal;
         font-weight: 400;
         line-height: 100%;
         color: $yellow;
-        margin-bottom: em(18px);
+        margin-bottom: em(10px);
         text-transform: uppercase;
         cursor: pointer;
-        @include iftablet {
-          font-size: em(17px);
-        }
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         @include ifmobile {
           font-size: em(12px);
         }
       }
 
       .NewsItemDescription {
-        font-size: em(21px);
+        font-size: em(16px);
         font-weight: 400;
         line-height: 120%;
         color: $white;
@@ -102,13 +101,8 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin-bottom: em(20px);
-        @include iftablet {
-          font-size: em(18px);
-          margin-bottom: em(13px);
-        }
         @include ifmobile {
-          font-size: em(11px);
-          margin-bottom: em(20px);
+          font-size: em(12px);
         }
       }
 
@@ -120,14 +114,15 @@
 
         .NewsItemRead,
         .NewsItemDate {
-          font-size: em(17px);
+          font-size: em(16px);
           font-weight: 400;
+          line-height: 100%;
           font-family: $font-Calibri;
           color: $grey;
           @include iftablet {
           }
           @include ifmobile {
-            font-size: em(11px);
+            font-size: em(12px);
           }
         }
 
@@ -146,22 +141,25 @@
 //стили для страницы новости
 
 .SelectedItemImage {
-  width: 100%;
-  height: em(684px);
+  width: 40%;
+  height: em(430px);
   border-radius: em(10px);
   overflow: hidden;
-  margin-bottom: em(90px);
+  margin-right: em(40px);
+  margin-bottom: em(10px);
   position: relative;
+  float: left;
 
   @include iftablet {
     max-width: em(622px);
     height: em(330px);
-    margin: 0 auto;
-    margin-bottom: em(45px);
   }
   @include ifmobile {
+    width: 100%;
     height: em(183px);
-    margin-bottom: em(20px);
+    margin-right: 0;
+    float: none;
+    margin-bottom: em(10px);
   }
 
   img {
@@ -214,12 +212,16 @@
     }
 
     .SliderTitle {
-      font-size: em(20px);
+      font-size: em(16px);
       font-weight: 400;
       line-height: 100%;
       text-transform: uppercase;
       color: $green;
       margin-bottom: em(44px);
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
       @include iftablet {
         font-size: em(14px);
@@ -296,7 +298,7 @@
           height: em(247px);
           border-radius: em(10px);
           overflow: hidden;
-          margin-bottom: em(28px);
+          margin-bottom: em(20px);
           position: relative;
 
           @include iftablet {
@@ -304,7 +306,7 @@
           }
           @include ifmobile {
             height: em(88px);
-            margin-bottom: em(20px);
+            margin-bottom: em(10px);
           }
           img {
             width: 100%;
@@ -313,16 +315,16 @@
         }
 
         .SlideItemTitle {
-          font-size: em(17px);
+          font-size: em(16px);
           font-weight: 400;
           line-height: 100%;
           color: $yellow;
-
-          @include iftablet {
-            font-size: em(14px);
-          }
+          -webkit-line-clamp: 1;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
           @include ifmobile {
-            font-size: em(11px);
+            font-size: em(12px);
           }
         }
       }
